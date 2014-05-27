@@ -584,6 +584,8 @@ COMMENT_SYSTEM_ID = ""
 # <!-- End of social buttons -->
 # """
 
+SOCIAL_BUTTONS_CODE=""
+
 # Show link to source for the posts?
 # Formerly known as HIDE_SOURCELINK (inverse)
 # SHOW_SOURCELINK = True
