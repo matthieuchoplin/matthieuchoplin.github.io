@@ -20,7 +20,11 @@ nikola init username.github.io
 nikola build <span class="o">&amp;&amp;</span> nikola serve -b
 </pre>
 <p>The website will open at the url <a class="reference external" href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>.</p>
-<p>Once you are happy with it, you can deploy to Github with the command:</p>
+<p>To deploy to Github, change the file conf.py such as:</p>
+<pre class="code python literal-block">
+<span class="n">GITHUB_DEPLOY_BRANCH</span> <span class="o">=</span> <span class="s">'master'</span>
+</pre>
+<p>And use the command:</p>
 <pre class="code bash literal-block">
 nikola github_deploy
 </pre>
@@ -28,4 +32,16 @@ nikola github_deploy
 <div class="section" id="posts-written-using-restructuredtext">
 <h1>Posts written using reStructuredText</h1>
 <p>Useful cheatsheet for the basics: <a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt">http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt</a></p>
+</div>
+<div class="section" id="publish-your-posts">
+<h1>Publish your posts</h1>
+<p>Build the website using:</p>
+<pre class="code bash literal-block">
+nikola build
+</pre>
+<p>Then, commit and push to Github:</p>
+<pre class="code bash literal-block">
+git commit -am <span class="s2">&quot;[POSTS] New posts about bla bla&quot;</span>
+git push origin master <span class="c"># or just 'git push' depending on your config</span>
+</pre>
 </div>

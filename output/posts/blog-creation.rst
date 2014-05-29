@@ -38,7 +38,13 @@ cd in this directory and execute this command:
 
 The website will open at the url http://127.0.0.1:8000.
 
-Once you are happy with it, you can deploy to Github with the command:
+To deploy to Github, change the file conf.py such as:
+
+.. code:: python
+
+  GITHUB_DEPLOY_BRANCH = 'master'
+
+And use the command:
 
 .. code:: bash
 
@@ -48,3 +54,20 @@ Posts written using reStructuredText
 ====================================
 
 Useful cheatsheet for the basics: http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt
+
+Publish your posts
+==================
+
+Build the website using:
+
+.. code:: bash
+
+  nikola build
+
+Then, commit and push to Github:
+
+.. code:: bash
+
+  git commit -am "[POSTS] New posts about bla bla"
+  git push origin master # or just 'git push' depending on your config
+

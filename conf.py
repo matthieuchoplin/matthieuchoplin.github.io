@@ -18,7 +18,7 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "Matthieu Choplin"  # (translatable)
-BLOG_TITLE = "[Blog] Matt Choplin"  # (translatable)
+BLOG_TITLE = "Standing on the shoulders of giants"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link
 SITE_URL = "http://matthieuchoplin.github.io/"
@@ -684,7 +684,7 @@ SOCIAL_BUTTONS_CODE=""
 UNSLUGIFY_TITLES = True
 
 # Additional metadata that is added to a post when creating a new_post
-# ADDITIONAL_METADATA = {}
+ADDITIONAL_METADATA = {}
 
 # Nikola supports Open Graph Protocol data for enhancing link sharing and
 # discoverability of your site on Facebook, Google+, and other services.

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="description" content="How this website is built">
 <meta name="viewport" content="width=device-width">
-<title>Blog creation | [Blog] Matt Choplin</title>
+<title>Blog creation | Standing on the shoulders of giants</title>
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="http://matthieuchoplin.github.io/posts/blog-creation.html">
@@ -12,7 +12,7 @@
 <meta name="og:title" content="Blog creation">
 <meta name="og:url" content="http://matthieuchoplin.github.io/posts/blog-creation.html">
 <meta name="og:description" content="How this website is built">
-<meta name="og:site_name" content="[Blog] Matt Choplin">
+<meta name="og:site_name" content="Standing on the shoulders of giants">
 <meta name="og:type" content="article">
 </head>
 <body>
@@ -30,7 +30,7 @@
             </button>
             <a class="navbar-brand" href="http://matthieuchoplin.github.io/">
 
-                <span id="blog-title">[Blog] Matt Choplin</span>
+                <span id="blog-title">Standing on the shoulders of giants</span>
             </a>
         </div>
 <!-- /.navbar-header -->
@@ -100,7 +100,11 @@ nikola init username.github.io
 nikola build <span class="o">&amp;&amp;</span> nikola serve -b
 </pre>
 <p>The website will open at the url <a class="reference external" href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>.</p>
-<p>Once you are happy with it, you can deploy to Github with the command:</p>
+<p>To deploy to Github, change the file conf.py such as:</p>
+<pre class="code python literal-block">
+<span class="n">GITHUB_DEPLOY_BRANCH</span> <span class="o">=</span> <span class="s">'master'</span>
+</pre>
+<p>And use the command:</p>
 <pre class="code bash literal-block">
 nikola github_deploy
 </pre>
@@ -109,10 +113,27 @@ nikola github_deploy
 <h2>Posts written using reStructuredText</h2>
 <p>Useful cheatsheet for the basics: <a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt">http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt</a></p>
 </div>
+<div class="section" id="publish-your-posts">
+<h2>Publish your posts</h2>
+<p>Build the website using:</p>
+<pre class="code bash literal-block">
+nikola build
+</pre>
+<p>Then, commit and push to Github:</p>
+<pre class="code bash literal-block">
+git commit -am <span class="s2">"[POSTS] New posts about bla bla"</span>
+git push origin master <span class="c"># or just 'git push' depending on your config</span>
+</pre>
+</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../categories/nikola.html" rel="tag">Nikola</a></li>
            <li><a class="tag p-category" href="../categories/blog.html" rel="tag">blog</a></li>
+        </ul>
+<ul class="pager">
+<li class="next">
+                <a href="learn-to-use-vim.html" rel="next" title="Learn to use Vim">Next post</a>
+            </li>
         </ul></nav></aside></article>
 </div>
         <!--End of body content-->
