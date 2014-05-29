@@ -55,6 +55,13 @@ Posts written using reStructuredText
 
 Useful cheatsheet for the basics: http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt
 
+Download a pre-built template from bootswatch
+=============================================
+
+.. code:: bash
+
+  nikola bootswatch_theme -n custom_theme -s spruce -p bootstrap3
+
 Publish your posts
 ==================
 
