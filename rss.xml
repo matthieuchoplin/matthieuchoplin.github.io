@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>[Blog] Matt Choplin</title><link>http://matthieuchoplin.github.io</link><description>Blog</description><language>en</language><lastBuildDate>Sun, 25 May 2014 10:57:37 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Blog creation</title><link>http://matthieuchoplin.github.io/posts/blog-creation.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="website-hosted-from-my-github-repository"&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://matthieuchoplin.github.io/</link><description>Blog</description><language>en</language><lastBuildDate>Fri, 30 May 2014 09:26:52 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Email from command line</title><link>http://matthieuchoplin.github.io/posts/email-from-command-line.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="install-mutt"&gt;
+&lt;h2&gt;Install Mutt&lt;/h2&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$sudo&lt;/span&gt; apt-get install mutt
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="install-sendmail"&gt;
+&lt;h2&gt;Install Sendmail&lt;/h2&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$sudo&lt;/span&gt; apt-get install sendmail
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="launch-mutt"&gt;
+&lt;h2&gt;Launch Mutt&lt;/h2&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$mutt&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;</description><category>email</category><category>linux</category><category>mutt</category><guid>http://matthieuchoplin.github.io/posts/email-from-command-line.html</guid><pubDate>Thu, 29 May 2014 18:48:42 GMT</pubDate></item><item><title>Symbolic Links</title><link>http://matthieuchoplin.github.io/posts/symbolic-links.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="find-broken-symlinks-and-delete-them"&gt;
+&lt;h2&gt;Find broken symlinks and delete them&lt;/h2&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$find&lt;/span&gt; -L /path/to/check -type l -delete
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="list-them"&gt;
+&lt;h2&gt;List them&lt;/h2&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$find&lt;/span&gt; -L /path -type l
+&lt;/pre&gt;
+&lt;p&gt;If you want to delete them with confirmation first, do&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+find -L /path -type l -exec rm -i &lt;span class="o"&gt;{}&lt;/span&gt; +
+&lt;/pre&gt;
+&lt;/div&gt;</description><category>linux</category><guid>http://matthieuchoplin.github.io/posts/symbolic-links.html</guid><pubDate>Wed, 28 May 2014 16:40:53 GMT</pubDate></item><item><title>Learn to use Vim</title><link>http://matthieuchoplin.github.io/posts/learn-to-use-vim.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;The built in tutorial of Vim is very useful to know the basics.
+To launch it simply type the following in your terminal:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$vimtutor&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;It will launch some lessons with an approach 'learning by doing'.&lt;/p&gt;</description><category>editor</category><category>vim</category><guid>http://matthieuchoplin.github.io/posts/learn-to-use-vim.html</guid><pubDate>Wed, 28 May 2014 08:19:41 GMT</pubDate></item><item><title>Blog creation</title><link>http://matthieuchoplin.github.io/posts/blog-creation.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="website-hosted-from-my-github-repository"&gt;
 &lt;h2&gt;Website hosted from my Github Repository&lt;/h2&gt;
 &lt;p&gt;It is using &lt;a class="reference external" href="https://pages.github.com/"&gt;Github Pages&lt;/a&gt;.
 Create a repository called &lt;em&gt;username.github.io&lt;/em&gt;, where username is your username (or organization name) on GitHub and put your website files in there.&lt;/p&gt;
@@ -21,7 +58,11 @@ nikola init username.github.io
 nikola build &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; nikola serve -b
 &lt;/pre&gt;
 &lt;p&gt;The website will open at the url &lt;a class="reference external" href="http://127.0.0.1:8000"&gt;http://127.0.0.1:8000&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Once you are happy with it, you can deploy to Github with the command:&lt;/p&gt;
+&lt;p&gt;To deploy to Github, change the file conf.py such as:&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="n"&gt;GITHUB_DEPLOY_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'master'&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;And use the command:&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 nikola github_deploy
 &lt;/pre&gt;
@@ -29,4 +70,22 @@ nikola github_deploy
 &lt;div class="section" id="posts-written-using-restructuredtext"&gt;
 &lt;h2&gt;Posts written using reStructuredText&lt;/h2&gt;
 &lt;p&gt;Useful cheatsheet for the basics: &lt;a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt"&gt;http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</description><category>Nikola</category><category>blog</category><guid>http://matthieuchoplin.github.io/posts/blog-creation.html</guid><pubDate>Sun, 25 May 2014 08:30:33 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;
+&lt;div class="section" id="download-a-pre-built-template-from-bootswatch"&gt;
+&lt;h2&gt;Download a pre-built template from bootswatch&lt;/h2&gt;
+&lt;pre class="code bash literal-block"&gt;
+nikola bootswatch_theme -n custom_theme -s spruce -p bootstrap3
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="publish-your-posts"&gt;
+&lt;h2&gt;Publish your posts&lt;/h2&gt;
+&lt;p&gt;Build the website using:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+nikola build
+&lt;/pre&gt;
+&lt;p&gt;Then, commit and push to Github:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+git commit -am &lt;span class="s2"&gt;"[POSTS] New posts about bla bla"&lt;/span&gt;
+git push origin master &lt;span class="c"&gt;# or just 'git push' depending on your config&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;</description><category>Nikola</category><category>blog</category><guid>http://matthieuchoplin.github.io/posts/blog-creation.html</guid><pubDate>Sun, 25 May 2014 08:30:00 GMT</pubDate></item></channel></rss>
