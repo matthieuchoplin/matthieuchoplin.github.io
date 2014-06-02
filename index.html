@@ -55,7 +55,34 @@
             
             
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/email-from-command-line.html" class="u-url">Email from command line</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/continuous-integration.html" class="u-url">Continuous integration</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
+            <p class="dateline"><a href="posts/continuous-integration.html" rel="bookmark"><time class="published dt-published" datetime="2014-05-30T09:48:01+01:00" itemprop="datePublished" title="Publication date">2014-05-30 09:48</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <div class="section" id="travis">
+<h2>Travis</h2>
+</div>
+<div class="section" id="jenkins">
+<h2>Jenkins</h2>
+</div>
+<div class="section" id="buildbot">
+<h2>Buildbot</h2>
+</div>
+<div class="section" id="runbot">
+<h2>Runbot</h2>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/python-testing.html" class="u-url">Python testing</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
+            <p class="dateline"><a href="posts/python-testing.html" rel="bookmark"><time class="published dt-published" datetime="2014-05-30T09:47:43+01:00" itemprop="datePublished" title="Publication date">2014-05-30 09:47</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    Source: <a class="reference external" href="http://pythontesting.net/start-here/">http://pythontesting.net/start-here/</a>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/email-from-command-line.html" class="u-url">Email from command line</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
             <p class="dateline"><a href="posts/email-from-command-line.html" rel="bookmark"><time class="published dt-published" datetime="2014-05-29T19:48:42+01:00" itemprop="datePublished" title="Publication date">2014-05-29 19:48</time></a></p>
@@ -109,12 +136,44 @@ find -L /path -type l -exec rm -i <span class="o">{}</span> +
             <p class="dateline"><a href="posts/learn-to-use-vim.html" rel="bookmark"><time class="published dt-published" datetime="2014-05-28T09:19:41+01:00" itemprop="datePublished" title="Publication date">2014-05-28 09:19</time></a></p>
         </div>
     </header><div class="e-content entry-content">
-    <p>The built in tutorial of Vim is very useful to know the basics.
+    <div class="section" id="vim-basics">
+<h2>VIM basics</h2>
+<p>The built in tutorial of Vim is very useful to know the basics.
 To launch it simply type the following in your terminal:</p>
 <pre class="code bash literal-block">
 <span class="nv">$vimtutor</span>
 </pre>
 <p>It will launch some lessons with an approach 'learning by doing'.</p>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration</h2>
+<p>The ~/.vimrc file provides Vim's default configuration, an example of which is provided below. Lines begginning with a "
+are comments:</p>
+<pre class="code bash literal-block">
+<span class="s2">" Indent automatically depending on filetype
+filetype indent on
+set autoindent
+
+"</span> Turn on line numbering. Turn it off with <span class="s2">"set nonu"</span>
+<span class="nb">set </span>number
+
+<span class="s2">" Set syntax on
+syntax on
+
+"</span> Case insensitive search
+<span class="nb">set </span>ic
+
+<span class="s2">" Higlhight search
+set hls
+
+"</span> Wrap text instead of being on one line
+<span class="nb">set </span>lbr
+
+<span class="err">"</span> Change colorscheme from default to delek
+colorscheme delek
+</pre>
+<p>Source: <a class="reference external" href="https://help.ubuntu.com/community/VimHowto">https://help.ubuntu.com/community/VimHowto</a></p>
+</div>
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/blog-creation.html" class="u-url">Blog creation</a></h1>
         <div class="metadata">
@@ -165,6 +224,8 @@ nikola bootswatch_theme -n custom_theme -s spruce -p bootstrap3
 </div>
 <div class="section" id="publish-your-posts">
 <h2>Publish your posts</h2>
+<p>Move your website to an <em>src</em> folder and in the <strong>conf.py</strong> file set the OUTPUT value to '..'.</p>
+<p>Other methods are described here: <a class="reference external" href="https://groups.google.com/forum/m/#!topic/nikola-discuss/aDbsPtu4pNc">https://groups.google.com/forum/m/#!topic/nikola-discuss/aDbsPtu4pNc</a></p>
 <p>Build the website using:</p>
 <pre class="code bash literal-block">
 nikola build
