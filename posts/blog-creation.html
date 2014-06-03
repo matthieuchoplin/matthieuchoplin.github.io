@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="description" content="How this website is built">
 <meta name="viewport" content="width=device-width">
-<title>Blog creation | [Blog] Matt Choplin</title>
+<title>Blog creation | Standing on the shoulders of giants</title>
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="http://matthieuchoplin.github.io/posts/blog-creation.html">
@@ -12,7 +12,7 @@
 <meta name="og:title" content="Blog creation">
 <meta name="og:url" content="http://matthieuchoplin.github.io/posts/blog-creation.html">
 <meta name="og:description" content="How this website is built">
-<meta name="og:site_name" content="[Blog] Matt Choplin">
+<meta name="og:site_name" content="Standing on the shoulders of giants">
 <meta name="og:type" content="article">
 </head>
 <body>
@@ -28,9 +28,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="http://matthieuchoplin.github.io">
+            <a class="navbar-brand" href="http://matthieuchoplin.github.io/">
 
-                <span id="blog-title">[Blog] Matt Choplin</span>
+                <span id="blog-title">Standing on the shoulders of giants</span>
             </a>
         </div>
 <!-- /.navbar-header -->
@@ -69,7 +69,7 @@
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-05-25T09:30:33+01:00" itemprop="datePublished" title="Publication date">2014-05-25 09:30</time></a></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-05-25T09:30:00+01:00" itemprop="datePublished" title="Publication date">2014-05-25 09:30</time></a></p>
             
         <p class="sourceline"><a href="blog-creation.rst" id="sourcelink">Source</a></p>
 
@@ -100,7 +100,11 @@ nikola init username.github.io
 nikola build <span class="o">&amp;&amp;</span> nikola serve -b
 </pre>
 <p>The website will open at the url <a class="reference external" href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>.</p>
-<p>Once you are happy with it, you can deploy to Github with the command:</p>
+<p>To deploy to Github, change the file conf.py such as:</p>
+<pre class="code python literal-block">
+<span class="n">GITHUB_DEPLOY_BRANCH</span> <span class="o">=</span> <span class="s">'master'</span>
+</pre>
+<p>And use the command:</p>
 <pre class="code bash literal-block">
 nikola github_deploy
 </pre>
@@ -109,10 +113,35 @@ nikola github_deploy
 <h2>Posts written using reStructuredText</h2>
 <p>Useful cheatsheet for the basics: <a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt">http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt</a></p>
 </div>
+<div class="section" id="download-a-pre-built-template-from-bootswatch">
+<h2>Download a pre-built template from bootswatch</h2>
+<pre class="code bash literal-block">
+nikola bootswatch_theme -n custom_theme -s spruce -p bootstrap3
+</pre>
+</div>
+<div class="section" id="publish-your-posts">
+<h2>Publish your posts</h2>
+<p>Move your website to an <em>src</em> folder and in the <strong>conf.py</strong> file set the OUTPUT value to '..'.</p>
+<p>Other methods are described here: <a class="reference external" href="https://groups.google.com/forum/m/#!topic/nikola-discuss/aDbsPtu4pNc">https://groups.google.com/forum/m/#!topic/nikola-discuss/aDbsPtu4pNc</a></p>
+<p>Build the website using:</p>
+<pre class="code bash literal-block">
+nikola build
+</pre>
+<p>Then, commit and push to Github:</p>
+<pre class="code bash literal-block">
+git commit -am <span class="s2">"[POSTS] New posts about bla bla"</span>
+git push origin master <span class="c"># or just 'git push' depending on your config</span>
+</pre>
+</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../categories/nikola.html" rel="tag">Nikola</a></li>
            <li><a class="tag p-category" href="../categories/blog.html" rel="tag">blog</a></li>
+        </ul>
+<ul class="pager">
+<li class="next">
+                <a href="learn-to-use-vim.html" rel="next" title="Learn to use Vim">Next post</a>
+            </li>
         </ul></nav></aside></article>
 </div>
         <!--End of body content-->
@@ -125,23 +154,6 @@ nikola github_deploy
 </div>
 
 
-            <script src="../assets/js/all-nocdn.js"></script><!-- Social buttons --><div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
-<a class="addthis_button_more">Share</a>
-<ul>
-<li>
-<a class="addthis_button_facebook"></a>
-</li>
-<li>
-<a class="addthis_button_google_plusone_share"></a>
-</li>
-<li>
-<a class="addthis_button_linkedin"></a>
-</li>
-<li>
-<a class="addthis_button_twitter"></a>
-</li>
-</ul>
-</div>
-<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script><!-- End of social buttons --><script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script>
+            <script src="../assets/js/all-nocdn.js"></script><script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script>
 </body>
 </html>

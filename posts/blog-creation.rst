@@ -65,6 +65,10 @@ Download a pre-built template from bootswatch
 Publish your posts
 ==================
 
+Move your website to an *src* folder and in the **conf.py** file set the OUTPUT value to '..'.
+
+Other methods are described here: https://groups.google.com/forum/m/#!topic/nikola-discuss/aDbsPtu4pNc
+
 Build the website using:
 
 .. code:: bash
