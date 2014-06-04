@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://matthieuchoplin.github.io/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Wed, 04 Jun 2014 22:33:41 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Blog creation</title><link>http://matthieuchoplin.github.io/posts/blog-creation.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="website-hosted-from-my-github-repository"&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://matthieuchoplin.github.io/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Wed, 04 Jun 2014 22:47:47 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Symbolic links</title><link>http://matthieuchoplin.github.io/posts/symbolic-links.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;Find broken symlinks and delete them&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$find&lt;/span&gt; -L /path/to/check -type l -delete
+&lt;/pre&gt;
+&lt;p&gt;List them&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$find&lt;/span&gt; -L /path -type l
+&lt;/pre&gt;
+&lt;p&gt;If you want to delete them with confirmation first, do&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+find -L /path -type l -exec rm -i &lt;span class="o"&gt;{}&lt;/span&gt; +
+&lt;/pre&gt;</description><category>sysadmin</category><guid>http://matthieuchoplin.github.io/posts/symbolic-links.html</guid><pubDate>Wed, 04 Jun 2014 21:38:08 GMT</pubDate></item><item><title>Blog creation</title><link>http://matthieuchoplin.github.io/posts/blog-creation.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="website-hosted-from-my-github-repository"&gt;
 &lt;h2&gt;Website hosted from my Github Repository&lt;/h2&gt;
 &lt;p&gt;It is using &lt;a class="reference external" href="https://pages.github.com/"&gt;Github Pages&lt;/a&gt;.
 Create a repository called &lt;em&gt;username.github.io&lt;/em&gt;, where username is your username (or organization name) on GitHub and put your website files in there.&lt;/p&gt;
