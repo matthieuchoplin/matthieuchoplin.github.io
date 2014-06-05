@@ -3,26 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Port forwarding | Standing on the shoulders of giants</title>
+<title>Extract list of installed packages | Standing on the shoulders of giants</title>
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
-<link rel="canonical" href="http://matthieuchoplin.github.io/posts/port-forwarding.html">
+<link rel="canonical" href="http://matthieuchoplin.github.io/posts/extract-list-of-installed-packages.html">
 <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="Matthieu Choplin">
-<meta name="og:title" content="Port forwarding">
-<meta name="og:url" content="http://matthieuchoplin.github.io/posts/port-forwarding.html">
-<meta name="og:description" content="Proxy configuration
+<meta name="og:title" content="Extract list of installed packages">
+<meta name="og:url" content="http://matthieuchoplin.github.io/posts/extract-list-of-installed-packages.html">
+<meta name="og:description" content="dpkg-query -l | awk '{print $2 $3}'
 
-ssh -D 8888 youruser@yourserver.com
-
-
-
-For Firefox
-Install foxyproxy addons.
-
-
-For Chrome
-Install Foxy Proxy standard:
-https://chrome.google.com/webstore/detail/foxyproxy-standard">
+Notice the combinatin of dpkg-query and awk!">
 <meta name="og:site_name" content="Standing on the shoulders of giants">
 <meta name="og:type" content="article">
 </head>
@@ -61,7 +51,7 @@ https://chrome.google.com/webstore/detail/foxyproxy-standard">
 </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-    <a href="port-forwarding.rst" id="sourcelink">Source</a>
+    <a href="extract-list-of-installed-packages.rst" id="sourcelink">Source</a>
     </li>
 
                 
@@ -76,50 +66,26 @@ https://chrome.google.com/webstore/detail/foxyproxy-standard">
         <div class="row">
             
             
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Port forwarding</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Extract list of installed packages</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-06-05T14:21:55+01:00" itemprop="datePublished" title="Publication date">2014-06-05 14:21</time></a></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-06-05T15:03:35+01:00" itemprop="datePublished" title="Publication date">2014-06-05 15:03</time></a></p>
             
-        <p class="sourceline"><a href="port-forwarding.rst" id="sourcelink">Source</a></p>
+        <p class="sourceline"><a href="extract-list-of-installed-packages.rst" id="sourcelink">Source</a></p>
 
         </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div class="section" id="proxy-configuration">
-<h2>Proxy configuration</h2>
-<pre class="code bash literal-block">
-ssh -D 8888 youruser@yourserver.com
+    <pre class="code bash literal-block">
+dpkg-query -l | awk <span class="s1">'{print $2 $3}'</span>
 </pre>
-</div>
-<div class="section" id="for-firefox">
-<h2>For Firefox</h2>
-<p>Install foxyproxy addons.</p>
-</div>
-<div class="section" id="for-chrome">
-<h2>For Chrome</h2>
-<p>Install Foxy Proxy standard:
-<a class="reference external" href="https://chrome.google.com/webstore/detail/foxyproxy-standard/gcknhkkoolaabfmlnjonogaaifnjlfnp">https://chrome.google.com/webstore/detail/foxyproxy-standard/gcknhkkoolaabfmlnjonogaaifnjlfnp</a></p>
-<p>Then in Tools | Extensions | Options of FoxyProxy, change the settings.</p>
-<dl class="docutils">
-<dt>Other links:</dt>
-<dd><ul class="first last simple">
-<li><a class="reference external" href="http://fr.flossmanuals.net/comment-contourner-la-censure-sur-internet/ch019_reglages-proxy-et-foxyproxy">http://fr.flossmanuals.net/comment-contourner-la-censure-sur-internet/ch019_reglages-proxy-et-foxyproxy</a></li>
-</ul></dd>
-</dl>
-</div>
+<p>Notice the combinatin of dpkg-query and awk!</p>
     </div>
-    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../categories/internet.html" rel="tag">internet</a></li>
-        </ul>
-<ul class="pager">
+    <aside class="postpromonav"><nav><ul class="pager">
 <li class="previous">
-                <a href="progress-bar-in-python.html" rel="prev" title="Progress bar in python">Previous post</a>
-            </li>
-            <li class="next">
-                <a href="extract-list-of-installed-packages.html" rel="next" title="Extract list of installed packages">Next post</a>
+                <a href="port-forwarding.html" rel="prev" title="Port forwarding">Previous post</a>
             </li>
         </ul></nav></aside></article>
 </div>

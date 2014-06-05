@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://matthieuchoplin.github.io/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Thu, 05 Jun 2014 14:37:22 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Port forwarding</title><link>http://matthieuchoplin.github.io/posts/port-forwarding.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="proxy-configuration"&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://matthieuchoplin.github.io/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Thu, 05 Jun 2014 15:05:39 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Extract list of installed packages</title><link>http://matthieuchoplin.github.io/posts/extract-list-of-installed-packages.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
+dpkg-query -l | awk &lt;span class="s1"&gt;'{print $2 $3}'&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Notice the combinatin of dpkg-query and awk!&lt;/p&gt;</description><guid>http://matthieuchoplin.github.io/posts/extract-list-of-installed-packages.html</guid><pubDate>Thu, 05 Jun 2014 14:03:35 GMT</pubDate></item><item><title>Port forwarding</title><link>http://matthieuchoplin.github.io/posts/port-forwarding.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="proxy-configuration"&gt;
 &lt;h2&gt;Proxy configuration&lt;/h2&gt;
 &lt;pre class="code bash literal-block"&gt;
 ssh -D 8888 youruser@yourserver.com
