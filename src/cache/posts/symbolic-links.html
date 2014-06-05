@@ -1,0 +1,12 @@
+<p>Find broken symlinks and delete them</p>
+<pre class="code bash literal-block">
+<span class="nv">$find</span> -L /path/to/check -type l -delete
+</pre>
+<p>List them</p>
+<pre class="code bash literal-block">
+<span class="nv">$find</span> -L /path -type l
+</pre>
+<p>If you want to delete them with confirmation first, do</p>
+<pre class="code bash literal-block">
+find -L /path -type l -exec rm -i <span class="o">{}</span> +
+</pre>

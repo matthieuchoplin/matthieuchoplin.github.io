@@ -6,174 +6,134 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>http://matthieuchoplin.github.io/2014/index.html</loc>
-  <lastmod>2014-05-30</lastmod>
+  <lastmod>2014-06-04</lastmod>
+ </url>
+ <url>
+  <loc>http://matthieuchoplin.github.io/404.html</loc>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
   <loc>http://matthieuchoplin.github.io/archive.html</loc>
-  <lastmod>2014-05-30</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
   <loc>http://matthieuchoplin.github.io/categories/blog.html</loc>
-  <lastmod>2014-05-30</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/categories/editor.html</loc>
-  <lastmod>2014-05-30</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/categories/email.html</loc>
-  <lastmod>2014-05-30</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
   <loc>http://matthieuchoplin.github.io/categories/index.html</loc>
-  <lastmod>2014-05-30</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/categories/linux.html</loc>
-  <lastmod>2014-05-30</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/categories/mutt.html</loc>
-  <lastmod>2014-05-30</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
   <loc>http://matthieuchoplin.github.io/categories/nikola.html</loc>
-  <lastmod>2014-05-30</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/categories/vim.html</loc>
-  <lastmod>2014-05-30</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
   <loc>http://matthieuchoplin.github.io/galleries/index.html</loc>
-  <lastmod>2014-05-30</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
   <loc>http://matthieuchoplin.github.io/index.html</loc>
-  <lastmod>2014-05-30</lastmod>
+  <lastmod>2014-06-04</lastmod>
+ </url>
+ <url>
+  <loc>http://matthieuchoplin.github.io/listings/hello.py.html</loc>
+  <lastmod>2014-06-04</lastmod>
+ </url>
+ <url>
+  <loc>http://matthieuchoplin.github.io/listings/index.html</loc>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
   <loc>http://matthieuchoplin.github.io/posts/blog-creation.html</loc>
-  <lastmod>2014-05-30</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/posts/email-from-command-line.html</loc>
-  <lastmod>2014-05-30</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/posts/learn-to-use-vim.html</loc>
-  <lastmod>2014-05-30</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/posts/symbolic-links.html</loc>
-  <lastmod>2014-05-30</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
   <loc>http://matthieuchoplin.github.io/src/2014/index.html</loc>
-  <lastmod>2014-05-27</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
   <loc>http://matthieuchoplin.github.io/src/archive.html</loc>
-  <lastmod>2014-05-27</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
   <loc>http://matthieuchoplin.github.io/src/categories/blog.html</loc>
-  <lastmod>2014-05-27</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
   <loc>http://matthieuchoplin.github.io/src/categories/index.html</loc>
-  <lastmod>2014-05-27</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
   <loc>http://matthieuchoplin.github.io/src/categories/nikola.html</loc>
-  <lastmod>2014-05-27</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
   <loc>http://matthieuchoplin.github.io/src/galleries/index.html</loc>
-  <lastmod>2014-05-27</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
   <loc>http://matthieuchoplin.github.io/src/index.html</loc>
-  <lastmod>2014-05-27</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
   <loc>http://matthieuchoplin.github.io/src/output/2014/index.html</loc>
-  <lastmod>2014-05-29</lastmod>
+  <lastmod>2014-06-04</lastmod>
+ </url>
+ <url>
+  <loc>http://matthieuchoplin.github.io/src/output/404.html</loc>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
   <loc>http://matthieuchoplin.github.io/src/output/archive.html</loc>
-  <lastmod>2014-05-29</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/src/output/categories/bash.html</loc>
-  <lastmod>2014-05-29</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
   <loc>http://matthieuchoplin.github.io/src/output/categories/blog.html</loc>
-  <lastmod>2014-05-29</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/src/output/categories/editor.html</loc>
-  <lastmod>2014-05-29</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/src/output/categories/email.html</loc>
-  <lastmod>2014-05-29</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
   <loc>http://matthieuchoplin.github.io/src/output/categories/index.html</loc>
-  <lastmod>2014-05-29</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/src/output/categories/linux.html</loc>
-  <lastmod>2014-05-29</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/src/output/categories/mutt.html</loc>
-  <lastmod>2014-05-29</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
   <loc>http://matthieuchoplin.github.io/src/output/categories/nikola.html</loc>
-  <lastmod>2014-05-29</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/src/output/categories/vim.html</loc>
-  <lastmod>2014-05-29</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
   <loc>http://matthieuchoplin.github.io/src/output/galleries/index.html</loc>
-  <lastmod>2014-05-29</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
   <loc>http://matthieuchoplin.github.io/src/output/index.html</loc>
-  <lastmod>2014-05-29</lastmod>
+  <lastmod>2014-06-04</lastmod>
+ </url>
+ <url>
+  <loc>http://matthieuchoplin.github.io/src/output/listings/hello.py.html</loc>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
   <loc>http://matthieuchoplin.github.io/src/output/listings/index.html</loc>
-  <lastmod>2014-05-27</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
   <loc>http://matthieuchoplin.github.io/src/output/posts/blog-creation.html</loc>
-  <lastmod>2014-05-29</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/src/output/posts/email-from-command-line.html</loc>
-  <lastmod>2014-05-29</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/src/output/posts/learn-to-use-vim.html</loc>
-  <lastmod>2014-05-29</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
   <loc>http://matthieuchoplin.github.io/src/output/posts/openerp-changes-its-name-to-odoo.html</loc>
-  <lastmod>2014-05-27</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
-  <loc>http://matthieuchoplin.github.io/src/output/posts/symbolic-links.html</loc>
-  <lastmod>2014-05-29</lastmod>
+  <loc>http://matthieuchoplin.github.io/src/output/stories/404.html</loc>
+  <lastmod>2014-06-04</lastmod>
  </url>
  <url>
   <loc>http://matthieuchoplin.github.io/src/posts/blog-creation.html</loc>
-  <lastmod>2014-05-27</lastmod>
+  <lastmod>2014-06-04</lastmod>
+ </url>
+ <url>
+  <loc>http://matthieuchoplin.github.io/stories/404.html</loc>
+  <lastmod>2014-06-04</lastmod>
  </url>
 </urlset>

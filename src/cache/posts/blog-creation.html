@@ -1,0 +1,41 @@
+<div class="section" id="website-hosted-from-my-github-repository">
+<h1>Website hosted from my Github Repository</h1>
+<p>It is using <a class="reference external" href="https://pages.github.com/">Github Pages</a>.
+Create a repository called <em>username.github.io</em>, where username is your username (or organization name) on GitHub and put your website files in there.</p>
+</div>
+<div class="section" id="website-generation-using-a-python-framework-nikola">
+<h1>Website generation using a Python framework: Nikola</h1>
+<p>This website is using <a class="reference external" href="http://getnikola.com">Nikola</a> which is a Python static website generator.
+Assuming that you have created a github repository called <em>username.github.io</em>, clone it with:</p>
+<pre class="code bash literal-block">
+git clone git&#64;github.com:username/username.github.io.git
+</pre>
+<p>Then initialize your website with this command:</p>
+<pre class="code bash literal-block">
+nikola init username.github.io
+</pre>
+<p>where <em>username.github.io</em> is the repository you have just cloned.</p>
+<p>cd in this directory and execute this command:</p>
+<pre class="code bash literal-block">
+nikola build <span class="o">&amp;&amp;</span> nikola serve -b
+</pre>
+<p>The website will open at the url <a class="reference external" href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>.</p>
+<p>To deploy to Github, change the file conf.py such as:</p>
+<pre class="code bash literal-block">
+<span class="nv">GITHUB_DEPLOY_BRANCH</span> <span class="o">=</span> <span class="s1">'master'</span>
+</pre>
+<p>Once you are happy with it, you can deploy to Github with the command:</p>
+<pre class="code bash literal-block">
+nikola github_deploy
+</pre>
+</div>
+<div class="section" id="posts-written-using-restructuredtext">
+<h1>Posts written using reStructuredText</h1>
+<p>Useful cheatsheet for the basics: <a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt">http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt</a></p>
+</div>
+<div class="section" id="download-a-pre-built-template-from-bootswatch">
+<h1>Download a pre-built template from bootswatch</h1>
+<pre class="code bash literal-block">
+nikola bootswatch_theme -n custom_theme -s spruce -p bootstrap3
+</pre>
+</div>

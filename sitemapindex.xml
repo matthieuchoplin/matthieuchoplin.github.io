@@ -6,114 +6,74 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://matthieuchoplin.github.io/categories/blog.xml</loc>
-  <lastmod>2014-05-30</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://matthieuchoplin.github.io/categories/editor.xml</loc>
-  <lastmod>2014-05-30</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://matthieuchoplin.github.io/categories/email.xml</loc>
-  <lastmod>2014-05-30</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://matthieuchoplin.github.io/categories/linux.xml</loc>
-  <lastmod>2014-05-30</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://matthieuchoplin.github.io/categories/mutt.xml</loc>
-  <lastmod>2014-05-30</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://matthieuchoplin.github.io/categories/nikola.xml</loc>
-  <lastmod>2014-05-30</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://matthieuchoplin.github.io/categories/vim.xml</loc>
-  <lastmod>2014-05-30</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://matthieuchoplin.github.io/galleries/rss.xml</loc>
-  <lastmod>2014-05-30</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://matthieuchoplin.github.io/rss.xml</loc>
-  <lastmod>2014-05-30</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://matthieuchoplin.github.io/sitemap.xml</loc>
-  <lastmod>2014-05-30</lastmod>
+  <lastmod>2014-06-04</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://matthieuchoplin.github.io/sitemapindex.xml</loc>
+  <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://matthieuchoplin.github.io/src/categories/blog.xml</loc>
-  <lastmod>2014-05-27</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://matthieuchoplin.github.io/src/categories/nikola.xml</loc>
-  <lastmod>2014-05-27</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://matthieuchoplin.github.io/src/galleries/rss.xml</loc>
-  <lastmod>2014-05-27</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://matthieuchoplin.github.io/src/output/categories/bash.xml</loc>
-  <lastmod>2014-05-29</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://matthieuchoplin.github.io/src/output/categories/blog.xml</loc>
-  <lastmod>2014-05-29</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://matthieuchoplin.github.io/src/output/categories/editor.xml</loc>
-  <lastmod>2014-05-29</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://matthieuchoplin.github.io/src/output/categories/email.xml</loc>
-  <lastmod>2014-05-29</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://matthieuchoplin.github.io/src/output/categories/linux.xml</loc>
-  <lastmod>2014-05-29</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://matthieuchoplin.github.io/src/output/categories/mutt.xml</loc>
-  <lastmod>2014-05-29</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://matthieuchoplin.github.io/src/output/categories/nikola.xml</loc>
-  <lastmod>2014-05-29</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://matthieuchoplin.github.io/src/output/categories/vim.xml</loc>
-  <lastmod>2014-05-29</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://matthieuchoplin.github.io/src/output/galleries/rss.xml</loc>
-  <lastmod>2014-05-29</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://matthieuchoplin.github.io/src/output/rss.xml</loc>
-  <lastmod>2014-05-29</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://matthieuchoplin.github.io/src/output/sitemap.xml</loc>
-  <lastmod>2014-05-27</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://matthieuchoplin.github.io/src/output/sitemapindex.xml</loc>
-  <lastmod>2014-05-27</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://matthieuchoplin.github.io/src/rss.xml</loc>
-  <lastmod>2014-05-27</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://matthieuchoplin.github.io/src/sitemap.xml</loc>
-  <lastmod>2014-05-27</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://matthieuchoplin.github.io/src/sitemapindex.xml</loc>
-  <lastmod>2014-05-27</lastmod>
+  <lastmod>2014-06-04</lastmod>
  </sitemap>
 </sitemapindex>
