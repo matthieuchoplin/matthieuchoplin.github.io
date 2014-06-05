@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://matthieuchoplin.github.io/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Thu, 05 Jun 2014 09:29:29 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Progress bar in python</title><link>http://matthieuchoplin.github.io/posts/progress-bar-in-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;Writing 'r' will move the cursor back to the beginning of the line.&lt;/p&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://matthieuchoplin.github.io/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Thu, 05 Jun 2014 14:37:22 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Port forwarding</title><link>http://matthieuchoplin.github.io/posts/port-forwarding.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="proxy-configuration"&gt;
+&lt;h2&gt;Proxy configuration&lt;/h2&gt;
+&lt;pre class="code bash literal-block"&gt;
+ssh -D 8888 youruser@yourserver.com
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="for-firefox"&gt;
+&lt;h2&gt;For Firefox&lt;/h2&gt;
+&lt;p&gt;Install foxyproxy addons.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="for-chrome"&gt;
+&lt;h2&gt;For Chrome&lt;/h2&gt;
+&lt;p&gt;Install Foxy Proxy standard:
+&lt;a class="reference external" href="https://chrome.google.com/webstore/detail/foxyproxy-standard/gcknhkkoolaabfmlnjonogaaifnjlfnp"&gt;https://chrome.google.com/webstore/detail/foxyproxy-standard/gcknhkkoolaabfmlnjonogaaifnjlfnp&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Then in Tools | Extensions | Options of FoxyProxy, change the settings.&lt;/p&gt;
+&lt;dl class="docutils"&gt;&lt;dt&gt;Other links:&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;&lt;li&gt;&lt;a class="reference external" href="http://fr.flossmanuals.net/comment-contourner-la-censure-sur-internet/ch019_reglages-proxy-et-foxyproxy"&gt;http://fr.flossmanuals.net/comment-contourner-la-censure-sur-internet/ch019_reglages-proxy-et-foxyproxy&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/dd&gt;
+&lt;/dl&gt;&lt;/div&gt;</description><category>internet</category><guid>http://matthieuchoplin.github.io/posts/port-forwarding.html</guid><pubDate>Thu, 05 Jun 2014 13:21:55 GMT</pubDate></item><item><title>Progress bar in python</title><link>http://matthieuchoplin.github.io/posts/progress-bar-in-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;Writing 'r' will move the cursor back to the beginning of the line.&lt;/p&gt;
 &lt;p&gt;This displays a percentage counter:&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="nn"&gt;sys&lt;/span&gt;

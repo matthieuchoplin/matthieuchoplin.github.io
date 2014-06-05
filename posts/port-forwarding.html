@@ -3,21 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Progress bar in python | Standing on the shoulders of giants</title>
+<title>Port forwarding | Standing on the shoulders of giants</title>
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
-<link rel="canonical" href="http://matthieuchoplin.github.io/posts/progress-bar-in-python.html">
+<link rel="canonical" href="http://matthieuchoplin.github.io/posts/port-forwarding.html">
 <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="Matthieu Choplin">
-<meta name="og:title" content="Progress bar in python">
-<meta name="og:url" content="http://matthieuchoplin.github.io/posts/progress-bar-in-python.html">
-<meta name="og:description" content="Writing 'r' will move the cursor back to the beginning of the line.
-This displays a percentage counter:
+<meta name="og:title" content="Port forwarding">
+<meta name="og:url" content="http://matthieuchoplin.github.io/posts/port-forwarding.html">
+<meta name="og:description" content="Proxy configuration
 
-import time,sys
-for i in range(100):
-    time.sleep(1)
-        sys.stdout.write(&quot;\r%d%%&quot; %i)
-  ">
+ssh -D 8888 youruser@yourserver.com
+
+
+
+For Firefox
+Install foxyproxy addons.
+
+
+For Chrome
+Install Foxy Proxy standard:
+https://chrome.google.com/webstore/detail/foxyproxy-standard">
 <meta name="og:site_name" content="Standing on the shoulders of giants">
 <meta name="og:type" content="article">
 </head>
@@ -56,7 +61,7 @@ for i in range(100):
 </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-    <a href="progress-bar-in-python.rst" id="sourcelink">Source</a>
+    <a href="port-forwarding.rst" id="sourcelink">Source</a>
     </li>
 
                 
@@ -71,38 +76,47 @@ for i in range(100):
         <div class="row">
             
             
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Progress bar in python</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Port forwarding</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-06-05T09:25:49+01:00" itemprop="datePublished" title="Publication date">2014-06-05 09:25</time></a></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-06-05T14:21:55+01:00" itemprop="datePublished" title="Publication date">2014-06-05 14:21</time></a></p>
             
-        <p class="sourceline"><a href="progress-bar-in-python.rst" id="sourcelink">Source</a></p>
+        <p class="sourceline"><a href="port-forwarding.rst" id="sourcelink">Source</a></p>
 
         </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p>Writing 'r' will move the cursor back to the beginning of the line.</p>
-<p>This displays a percentage counter:</p>
-<pre class="code python literal-block">
-<span class="kn">import</span> <span class="nn">time</span><span class="o">,</span><span class="nn">sys</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">"</span><span class="se">\r</span><span class="si">%d%%</span><span class="s">"</span> <span class="o">%</span><span class="n">i</span><span class="p">)</span>
-            <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+    <div class="section" id="proxy-configuration">
+<h2>Proxy configuration</h2>
+<pre class="code bash literal-block">
+ssh -D 8888 youruser@yourserver.com
 </pre>
-<p>Sourcce: <a class="reference external" href="http://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console">http://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console</a></p>
+</div>
+<div class="section" id="for-firefox">
+<h2>For Firefox</h2>
+<p>Install foxyproxy addons.</p>
+</div>
+<div class="section" id="for-chrome">
+<h2>For Chrome</h2>
+<p>Install Foxy Proxy standard:
+<a class="reference external" href="https://chrome.google.com/webstore/detail/foxyproxy-standard/gcknhkkoolaabfmlnjonogaaifnjlfnp">https://chrome.google.com/webstore/detail/foxyproxy-standard/gcknhkkoolaabfmlnjonogaaifnjlfnp</a></p>
+<p>Then in Tools | Extensions | Options of FoxyProxy, change the settings.</p>
+<dl class="docutils">
+<dt>Other links:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://fr.flossmanuals.net/comment-contourner-la-censure-sur-internet/ch019_reglages-proxy-et-foxyproxy">http://fr.flossmanuals.net/comment-contourner-la-censure-sur-internet/ch019_reglages-proxy-et-foxyproxy</a></li>
+</ul></dd>
+</dl>
+</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../categories/python.html" rel="tag">python</a></li>
+<li><a class="tag p-category" href="../categories/internet.html" rel="tag">internet</a></li>
         </ul>
 <ul class="pager">
 <li class="previous">
-                <a href="vim.html" rel="prev" title="VIM">Previous post</a>
-            </li>
-            <li class="next">
-                <a href="port-forwarding.html" rel="next" title="Port forwarding">Next post</a>
+                <a href="progress-bar-in-python.html" rel="prev" title="Progress bar in python">Previous post</a>
             </li>
         </ul></nav></aside></article>
 </div>
