@@ -3,16 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Extract list of installed packages | Standing on the shoulders of giants</title>
+<title>Git | Standing on the shoulders of giants</title>
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
-<link rel="canonical" href="http://matthieuchoplin.github.io/posts/extract-list-of-installed-packages.html">
+<link rel="canonical" href="http://matthieuchoplin.github.io/posts/git.html">
 <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="Matthieu Choplin">
-<meta name="og:title" content="Extract list of installed packages">
-<meta name="og:url" content="http://matthieuchoplin.github.io/posts/extract-list-of-installed-packages.html">
-<meta name="og:description" content="dpkg-query -l | awk '{print $2 $3}'
-
-Notice the combinatin of dpkg-query and awk!">
+<meta name="og:title" content="Git">
+<meta name="og:url" content="http://matthieuchoplin.github.io/posts/git.html">
+<meta name="og:description" content='git log --graph --all --format=format:"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold
+white)%cn%C(reset)%C(magenta)%d%C(reset)%n%x09%C(white)%s%C(reset)" --abbrev-comm'>
 <meta name="og:site_name" content="Standing on the shoulders of giants">
 <meta name="og:type" content="article">
 </head>
@@ -51,7 +50,7 @@ Notice the combinatin of dpkg-query and awk!">
 </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-    <a href="extract-list-of-installed-packages.rst" id="sourcelink">Source</a>
+    <a href="git.rst" id="sourcelink">Source</a>
     </li>
 
                 
@@ -66,29 +65,29 @@ Notice the combinatin of dpkg-query and awk!">
         <div class="row">
             
             
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Extract list of installed packages</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Git</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-06-05T15:03:35+01:00" itemprop="datePublished" title="Publication date">2014-06-05 15:03</time></a></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-06-06T17:09:03+01:00" itemprop="datePublished" title="Publication date">2014-06-06 17:09</time></a></p>
             
-        <p class="sourceline"><a href="extract-list-of-installed-packages.rst" id="sourcelink">Source</a></p>
+        <p class="sourceline"><a href="git.rst" id="sourcelink">Source</a></p>
 
         </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <pre class="code bash literal-block">
-dpkg-query -l | awk <span class="s1">'{print $2 $3}'</span>
-</pre>
-<p>Notice the combinatin of dpkg-query and awk!</p>
+    
+git log --graph --all --format<span class="o">=</span>format:<span class="s2">"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold
+white)%cn%C(reset)%C(magenta)%d%C(reset)%n%x09%C(white)%s%C(reset)"</span> --abbrev-commit <span class="s2">"$@"</span>
+
     </div>
-    <aside class="postpromonav"><nav><ul class="pager">
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/git.html" rel="tag">git</a></li>
+        </ul>
+<ul class="pager">
 <li class="previous">
-                <a href="port-forwarding.html" rel="prev" title="Port forwarding">Previous post</a>
-            </li>
-            <li class="next">
-                <a href="the-watch-command.html" rel="next" title="The watch command">Next post</a>
+                <a href="the-watch-command.html" rel="prev" title="The watch command">Previous post</a>
             </li>
         </ul></nav></aside></article>
 </div>
