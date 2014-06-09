@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="description" content="Blog about my developer experience">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Standing on the shoulders of giants | Standing on the shoulders of giants</title>
 <link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
@@ -74,9 +74,12 @@ git log --graph --all --format<span class="o">=</span>format:<span class="s2">"%
             <p class="dateline"><a href="posts/the-watch-command.html" rel="bookmark"><time class="published dt-published" datetime="2014-06-05T15:59:51+01:00" itemprop="datePublished" title="Publication date">2014-06-05 15:59</time></a></p>
         </div>
     </header><div class="e-content entry-content">
-    
+    <pre class="code bash literal-block">
 watch -n1 <span class="s1">' ps aux | grep what_you_want'</span>
-
+</pre>
+<div class="line-block">
+<div class="line"><br></div>
+</div>
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/extract-list-of-installed-packages.html" class="u-url">Extract list of installed packages</a></h1>
         <div class="metadata">
@@ -213,12 +216,44 @@ nikola github_deploy
 <div class="section" id="posts-written-using-restructuredtext">
 <h2>Posts written using reStructuredText</h2>
 <p>Useful cheatsheet for the basics: <a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt">http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt</a></p>
+<p>This is also a way to learn how to use Vim. Since Nikola 7.0.1, you can use the -e option when creating a new post.
+But before, you need to set up a default editor.
+If you want to use vim, you can first locate it:</p>
+<pre class="code bash literal-block">
+which vim
+</pre>
+<p>Then you can use it in the export variable:</p>
+<pre class="code bash literal-block">
+<span class="nb">export </span><span class="nv">EDITOR</span><span class="o">=</span>/usr/bin/vim
+</pre>
 </div>
 <div class="section" id="download-a-pre-built-template-from-bootswatch">
 <h2>Download a pre-built template from bootswatch</h2>
 <pre class="code bash literal-block">
 nikola bootswatch_theme -n custom_theme -s spruce -p bootstrap3
 </pre>
+</div>
+<div class="section" id="upgrading-nikola">
+<h2>Upgrading Nikola</h2>
+<p>Since Nikola can be installed with Pip, you can use the following command:</p>
+<pre class="code bash literal-block">
+pip install -U nikola
+</pre>
+<p>As a reminder, pip is installed using setuptools and easyinstall:</p>
+<pre class="code bash literal-block">
+sudo easy install pip
+</pre>
+<p>To upgrade pip:</p>
+<pre class="code bash literal-block">
+sudo easy_install -U pip
+</pre>
+<p>To downgrade pip to a previous version:</p>
+<pre class="code bash literal-block">
+sudo easy_install <span class="nv">pip</span><span class="o">==</span>1.2.1
+</pre>
+<div class="line-block">
+<div class="line"><br></div>
+</div>
 </div>
     </div>
     </article>

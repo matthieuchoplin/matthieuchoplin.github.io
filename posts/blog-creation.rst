@@ -57,6 +57,20 @@ Posts written using reStructuredText
 
 Useful cheatsheet for the basics: http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt
 
+This is also a way to learn how to use Vim. Since Nikola 7.0.1, you can use the -e option when creating a new post.
+But before, you need to set up a default editor.
+If you want to use vim, you can first locate it:
+
+.. code:: bash
+
+  which vim
+
+Then you can use it in the export variable:
+
+.. code:: bash
+
+  export EDITOR=/usr/bin/vim
+
 Download a pre-built template from bootswatch
 =============================================
 
@@ -64,3 +78,31 @@ Download a pre-built template from bootswatch
 
   nikola bootswatch_theme -n custom_theme -s spruce -p bootstrap3
 
+Upgrading Nikola
+================
+
+Since Nikola can be installed with Pip, you can use the following command:
+
+.. code:: bash
+
+  pip install -U nikola
+
+As a reminder, pip is installed using setuptools and easyinstall:
+
+.. code:: bash
+
+  sudo easy install pip
+
+To upgrade pip:
+
+.. code:: bash
+
+  sudo easy_install -U pip
+
+To downgrade pip to a previous version:
+
+.. code:: bash
+
+  sudo easy_install pip==1.2.1
+
+|

@@ -9,3 +9,5 @@
 .. code:: bash
 
   watch -n1 ' ps aux | grep what_you_want'
+
+|
