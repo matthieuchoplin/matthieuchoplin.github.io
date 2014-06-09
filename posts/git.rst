@@ -10,7 +10,9 @@
 Nice display of the current tree
 ================================
 
-.. code:: bash
 
-  git log --graph --all --format=format:"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold
-  white)%cn%C(reset)%C(magenta)%d%C(reset)%n%x09%C(white)%s%C(reset)" --abbrev-commit "$@"
+.. code-block:: bash
+
+   git log --graph --all --format=format:"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold white)%cn%C(reset)%C(magenta)%d%C(reset)%n%x09%C(white)%s%C(reset)" --abbrev-commit "$@"
+
+|

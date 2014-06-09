@@ -61,10 +61,12 @@
             <p class="dateline"><a href="posts/git.html" rel="bookmark"><time class="published dt-published" datetime="2014-06-06T17:09:03+01:00" itemprop="datePublished" title="Publication date">2014-06-06 17:09</time></a></p>
         </div>
     </header><div class="e-content entry-content">
-    
-git log --graph --all --format<span class="o">=</span>format:<span class="s2">"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold
-white)%cn%C(reset)%C(magenta)%d%C(reset)%n%x09%C(white)%s%C(reset)"</span> --abbrev-commit <span class="s2">"$@"</span>
-
+    <pre class="code bash literal-block">
+git log --graph --all --format<span class="o">=</span>format:<span class="s2">"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold white)%cn%C(reset)%C(magenta)%d%C(reset)%n%x09%C(white)%s%C(reset)"</span> --abbrev-commit <span class="s2">"$@"</span>
+</pre>
+<div class="line-block">
+<div class="line"><br></div>
+</div>
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/the-watch-command.html" class="u-url">The watch command</a></h1>
         <div class="metadata">
@@ -128,8 +130,8 @@ ssh -D 8888 youruser@yourserver.com
 <span class="kn">import</span> <span class="nn">time</span><span class="o">,</span><span class="nn">sys</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">"</span><span class="se">\r</span><span class="si">%d%%</span><span class="s">"</span> <span class="o">%</span><span class="n">i</span><span class="p">)</span>
-            <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">"</span><span class="se">\r</span><span class="si">%d%%</span><span class="s">"</span> <span class="o">%</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
 </pre>
 <p>Sourcce: <a class="reference external" href="http://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console">http://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console</a></p>
     </div>

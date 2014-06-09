@@ -15,7 +15,7 @@ This displays a percentage counter:
     import time,sys
     for i in range(100):
         time.sleep(1)
-            sys.stdout.write("\r%d%%" %i)
-                sys.stdout.flush()
+        sys.stdout.write("\r%d%%" %i)
+        sys.stdout.flush()
 
 Sourcce: http://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console
