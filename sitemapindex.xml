@@ -5,91 +5,91 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
-  <loc>http://mchoplin.com/categories/blog.xml</loc>
+  <loc>http://mattchoplin.com/categories/blog.xml</loc>
   <lastmod>2014-06-09</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://mchoplin.com/categories/git.xml</loc>
+  <loc>http://mattchoplin.com/categories/git.xml</loc>
   <lastmod>2014-06-09</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://mchoplin.com/categories/internet.xml</loc>
+  <loc>http://mattchoplin.com/categories/internet.xml</loc>
   <lastmod>2014-06-09</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://mchoplin.com/categories/nikola.xml</loc>
+  <loc>http://mattchoplin.com/categories/nikola.xml</loc>
   <lastmod>2014-06-09</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://mchoplin.com/categories/python.xml</loc>
+  <loc>http://mattchoplin.com/categories/python.xml</loc>
   <lastmod>2014-06-09</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://mchoplin.com/categories/sysadmin.xml</loc>
+  <loc>http://mattchoplin.com/categories/sysadmin.xml</loc>
   <lastmod>2014-06-09</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://mchoplin.com/galleries/rss.xml</loc>
+  <loc>http://mattchoplin.com/galleries/rss.xml</loc>
   <lastmod>2014-06-09</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://mchoplin.com/rss.xml</loc>
+  <loc>http://mattchoplin.com/rss.xml</loc>
   <lastmod>2014-06-09</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://mchoplin.com/sitemap.xml</loc>
+  <loc>http://mattchoplin.com/sitemap.xml</loc>
   <lastmod>2014-06-09</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://mchoplin.com/sitemapindex.xml</loc>
+  <loc>http://mattchoplin.com/sitemapindex.xml</loc>
+  <lastmod>2014-06-09</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://mattchoplin.com/src/categories/blog.xml</loc>
   <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://mchoplin.com/src/categories/blog.xml</loc>
+  <loc>http://mattchoplin.com/src/categories/nikola.xml</loc>
   <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://mchoplin.com/src/categories/nikola.xml</loc>
+  <loc>http://mattchoplin.com/src/galleries/rss.xml</loc>
   <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://mchoplin.com/src/galleries/rss.xml</loc>
+  <loc>http://mattchoplin.com/src/output/categories/blog.xml</loc>
   <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://mchoplin.com/src/output/categories/blog.xml</loc>
+  <loc>http://mattchoplin.com/src/output/categories/nikola.xml</loc>
   <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://mchoplin.com/src/output/categories/nikola.xml</loc>
+  <loc>http://mattchoplin.com/src/output/galleries/rss.xml</loc>
   <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://mchoplin.com/src/output/galleries/rss.xml</loc>
+  <loc>http://mattchoplin.com/src/output/rss.xml</loc>
   <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://mchoplin.com/src/output/rss.xml</loc>
+  <loc>http://mattchoplin.com/src/output/sitemap.xml</loc>
   <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://mchoplin.com/src/output/sitemap.xml</loc>
+  <loc>http://mattchoplin.com/src/output/sitemapindex.xml</loc>
   <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://mchoplin.com/src/output/sitemapindex.xml</loc>
+  <loc>http://mattchoplin.com/src/rss.xml</loc>
   <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://mchoplin.com/src/rss.xml</loc>
+  <loc>http://mattchoplin.com/src/sitemap.xml</loc>
   <lastmod>2014-06-04</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://mchoplin.com/src/sitemap.xml</loc>
-  <lastmod>2014-06-04</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://mchoplin.com/src/sitemapindex.xml</loc>
+  <loc>http://mattchoplin.com/src/sitemapindex.xml</loc>
   <lastmod>2014-06-04</lastmod>
  </sitemap>
 </sitemapindex>

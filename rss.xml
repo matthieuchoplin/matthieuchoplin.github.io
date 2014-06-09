@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Mon, 09 Jun 2014 20:23:03 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Git</title><link>http://mchoplin.com/posts/git.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Mon, 09 Jun 2014 22:50:27 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Git</title><link>http://mattchoplin.com/posts/git.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
 git log --graph --all --format&lt;span class="o"&gt;=&lt;/span&gt;format:&lt;span class="s2"&gt;"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold white)%cn%C(reset)%C(magenta)%d%C(reset)%n%x09%C(white)%s%C(reset)"&lt;/span&gt; --abbrev-commit &lt;span class="s2"&gt;"$@"&lt;/span&gt;
 &lt;/pre&gt;
 &lt;div class="line-block"&gt;
 &lt;div class="line"&gt;&lt;br&gt;&lt;/div&gt;
-&lt;/div&gt;</description><category>git</category><guid>http://mchoplin.com/posts/git.html</guid><pubDate>Fri, 06 Jun 2014 16:09:03 GMT</pubDate></item><item><title>The watch command</title><link>http://mchoplin.com/posts/the-watch-command.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
+&lt;/div&gt;</description><category>git</category><guid>http://mattchoplin.com/posts/git.html</guid><pubDate>Fri, 06 Jun 2014 16:09:03 GMT</pubDate></item><item><title>The watch command</title><link>http://mattchoplin.com/posts/the-watch-command.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
 watch -n1 &lt;span class="s1"&gt;' ps aux | grep what_you_want'&lt;/span&gt;
 &lt;/pre&gt;
 &lt;div class="line-block"&gt;
 &lt;div class="line"&gt;&lt;br&gt;&lt;/div&gt;
-&lt;/div&gt;</description><guid>http://mchoplin.com/posts/the-watch-command.html</guid><pubDate>Thu, 05 Jun 2014 14:59:51 GMT</pubDate></item><item><title>Extract list of installed packages</title><link>http://mchoplin.com/posts/extract-list-of-installed-packages.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
+&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/the-watch-command.html</guid><pubDate>Thu, 05 Jun 2014 14:59:51 GMT</pubDate></item><item><title>Extract list of installed packages</title><link>http://mattchoplin.com/posts/extract-list-of-installed-packages.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
 dpkg-query -l | awk &lt;span class="s1"&gt;'{print $2 $3}'&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;Notice the combinatin of dpkg-query and awk!&lt;/p&gt;</description><guid>http://mchoplin.com/posts/extract-list-of-installed-packages.html</guid><pubDate>Thu, 05 Jun 2014 14:03:35 GMT</pubDate></item><item><title>Port forwarding</title><link>http://mchoplin.com/posts/port-forwarding.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="proxy-configuration"&gt;
+&lt;p&gt;Notice the combinatin of dpkg-query and awk!&lt;/p&gt;</description><guid>http://mattchoplin.com/posts/extract-list-of-installed-packages.html</guid><pubDate>Thu, 05 Jun 2014 14:03:35 GMT</pubDate></item><item><title>Port forwarding</title><link>http://mattchoplin.com/posts/port-forwarding.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="proxy-configuration"&gt;
 &lt;h2&gt;Proxy configuration&lt;/h2&gt;
 &lt;pre class="code bash literal-block"&gt;
 ssh -D 8888 youruser@yourserver.com
@@ -30,7 +30,7 @@ ssh -D 8888 youruser@yourserver.com
 &lt;dl class="docutils"&gt;&lt;dt&gt;Other links:&lt;/dt&gt;
 &lt;dd&gt;&lt;ul class="first last simple"&gt;&lt;li&gt;&lt;a class="reference external" href="http://fr.flossmanuals.net/comment-contourner-la-censure-sur-internet/ch019_reglages-proxy-et-foxyproxy"&gt;http://fr.flossmanuals.net/comment-contourner-la-censure-sur-internet/ch019_reglages-proxy-et-foxyproxy&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/dd&gt;
-&lt;/dl&gt;&lt;/div&gt;</description><category>internet</category><guid>http://mchoplin.com/posts/port-forwarding.html</guid><pubDate>Thu, 05 Jun 2014 13:21:55 GMT</pubDate></item><item><title>Progress bar in python</title><link>http://mchoplin.com/posts/progress-bar-in-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;Writing 'r' will move the cursor back to the beginning of the line.&lt;/p&gt;
+&lt;/dl&gt;&lt;/div&gt;</description><category>internet</category><guid>http://mattchoplin.com/posts/port-forwarding.html</guid><pubDate>Thu, 05 Jun 2014 13:21:55 GMT</pubDate></item><item><title>Progress bar in python</title><link>http://mattchoplin.com/posts/progress-bar-in-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;Writing 'r' will move the cursor back to the beginning of the line.&lt;/p&gt;
 &lt;p&gt;This displays a percentage counter:&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="nn"&gt;sys&lt;/span&gt;
@@ -39,7 +39,7 @@ ssh -D 8888 youruser@yourserver.com
     &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\r&lt;/span&gt;&lt;span class="si"&gt;%d%%&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;flush&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;Sourcce: &lt;a class="reference external" href="http://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console"&gt;http://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console&lt;/a&gt;&lt;/p&gt;</description><category>python</category><guid>http://mchoplin.com/posts/progress-bar-in-python.html</guid><pubDate>Thu, 05 Jun 2014 08:25:49 GMT</pubDate></item><item><title>VIM</title><link>http://mchoplin.com/posts/vim.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="vim-basics"&gt;
+&lt;p&gt;Sourcce: &lt;a class="reference external" href="http://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console"&gt;http://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console&lt;/a&gt;&lt;/p&gt;</description><category>python</category><guid>http://mattchoplin.com/posts/progress-bar-in-python.html</guid><pubDate>Thu, 05 Jun 2014 08:25:49 GMT</pubDate></item><item><title>VIM</title><link>http://mattchoplin.com/posts/vim.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="vim-basics"&gt;
 &lt;h2&gt;VIM basics&lt;/h2&gt;
 &lt;p&gt;The built in tutorial of Vim is very useful to know the basics. To launch it simply type the following in your terminal:&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
@@ -50,7 +50,7 @@ ssh -D 8888 youruser@yourserver.com
 &lt;div class="section" id="configuration"&gt;
 &lt;h2&gt;Configuration&lt;/h2&gt;
 &lt;p&gt;The ~/.vimrc file provides Vim's default configuration&lt;/p&gt;
-&lt;/div&gt;</description><guid>http://mchoplin.com/posts/vim.html</guid><pubDate>Wed, 04 Jun 2014 21:51:32 GMT</pubDate></item><item><title>Symbolic links</title><link>http://mchoplin.com/posts/symbolic-links.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;Find broken symlinks and delete them&lt;/p&gt;
+&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/vim.html</guid><pubDate>Wed, 04 Jun 2014 21:51:32 GMT</pubDate></item><item><title>Symbolic links</title><link>http://mattchoplin.com/posts/symbolic-links.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;Find broken symlinks and delete them&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="nv"&gt;$find&lt;/span&gt; -L /path/to/check -type l -delete
 &lt;/pre&gt;
@@ -61,7 +61,7 @@ ssh -D 8888 youruser@yourserver.com
 &lt;p&gt;If you want to delete them with confirmation first, do&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 find -L /path -type l -exec rm -i &lt;span class="o"&gt;{}&lt;/span&gt; +
-&lt;/pre&gt;</description><category>sysadmin</category><guid>http://mchoplin.com/posts/symbolic-links.html</guid><pubDate>Wed, 04 Jun 2014 21:38:08 GMT</pubDate></item><item><title>Blog creation</title><link>http://mchoplin.com/posts/blog-creation.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="website-hosted-from-my-github-repository"&gt;
+&lt;/pre&gt;</description><category>sysadmin</category><guid>http://mattchoplin.com/posts/symbolic-links.html</guid><pubDate>Wed, 04 Jun 2014 21:38:08 GMT</pubDate></item><item><title>Blog creation</title><link>http://mattchoplin.com/posts/blog-creation.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="website-hosted-from-my-github-repository"&gt;
 &lt;h2&gt;Website hosted from my Github Repository&lt;/h2&gt;
 &lt;p&gt;It is using &lt;a class="reference external" href="https://pages.github.com/"&gt;Github Pages&lt;/a&gt;.
 Create a repository called &lt;em&gt;username.github.io&lt;/em&gt;, where username is your username (or organization name) on GitHub and put your website files in there.&lt;/p&gt;
@@ -133,4 +133,4 @@ sudo easy_install &lt;span class="nv"&gt;pip&lt;/span&gt;&lt;span class="o"&gt;=
 &lt;div class="line-block"&gt;
 &lt;div class="line"&gt;&lt;br&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>Nikola</category><category>blog</category><guid>http://mchoplin.com/posts/blog-creation.html</guid><pubDate>Sun, 25 May 2014 08:30:00 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>Nikola</category><category>blog</category><guid>http://mattchoplin.com/posts/blog-creation.html</guid><pubDate>Sun, 25 May 2014 08:30:00 GMT</pubDate></item></channel></rss>

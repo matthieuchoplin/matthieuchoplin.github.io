@@ -21,10 +21,10 @@ BLOG_AUTHOR = "Matthieu Choplin"  # (translatable)
 BLOG_TITLE = "Standing on the shoulders of giants"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link
-SITE_URL = "http://mchoplin.com/"
+SITE_URL = "http://mattchoplin.com/"
 # This is the URL where nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-BASE_URL = "http://mchoplin.com/"
+BASE_URL = "http://mattchoplin.com/"
 BLOG_EMAIL = "choplin.mat@gmail.com"
 BLOG_DESCRIPTION = "Blog about my developer experience"  # (translatable)
 
