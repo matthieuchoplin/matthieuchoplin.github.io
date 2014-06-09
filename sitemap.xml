@@ -5,135 +5,179 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
-  <loc>http://matthieuchoplin.github.io/2014/index.html</loc>
+  <loc>http://mchoplin.com/2014/index.html</loc>
+  <lastmod>2014-06-09</lastmod>
+ </url>
+ <url>
+  <loc>http://mchoplin.com/404.html</loc>
   <lastmod>2014-06-04</lastmod>
  </url>
  <url>
-  <loc>http://matthieuchoplin.github.io/404.html</loc>
+  <loc>http://mchoplin.com/archive.html</loc>
+  <lastmod>2014-06-09</lastmod>
+ </url>
+ <url>
+  <loc>http://mchoplin.com/categories/blog.html</loc>
+  <lastmod>2014-06-09</lastmod>
+ </url>
+ <url>
+  <loc>http://mchoplin.com/categories/git.html</loc>
+  <lastmod>2014-06-09</lastmod>
+ </url>
+ <url>
+  <loc>http://mchoplin.com/categories/index.html</loc>
+  <lastmod>2014-06-09</lastmod>
+ </url>
+ <url>
+  <loc>http://mchoplin.com/categories/internet.html</loc>
+  <lastmod>2014-06-09</lastmod>
+ </url>
+ <url>
+  <loc>http://mchoplin.com/categories/nikola.html</loc>
+  <lastmod>2014-06-09</lastmod>
+ </url>
+ <url>
+  <loc>http://mchoplin.com/categories/python.html</loc>
+  <lastmod>2014-06-09</lastmod>
+ </url>
+ <url>
+  <loc>http://mchoplin.com/categories/sysadmin.html</loc>
+  <lastmod>2014-06-09</lastmod>
+ </url>
+ <url>
+  <loc>http://mchoplin.com/galleries/index.html</loc>
+  <lastmod>2014-06-09</lastmod>
+ </url>
+ <url>
+  <loc>http://mchoplin.com/index.html</loc>
+  <lastmod>2014-06-09</lastmod>
+ </url>
+ <url>
+  <loc>http://mchoplin.com/listings/hello.py.html</loc>
+  <lastmod>2014-06-09</lastmod>
+ </url>
+ <url>
+  <loc>http://mchoplin.com/listings/index.html</loc>
+  <lastmod>2014-06-09</lastmod>
+ </url>
+ <url>
+  <loc>http://mchoplin.com/posts/blog-creation.html</loc>
+  <lastmod>2014-06-09</lastmod>
+ </url>
+ <url>
+  <loc>http://mchoplin.com/posts/extract-list-of-installed-packages.html</loc>
+  <lastmod>2014-06-09</lastmod>
+ </url>
+ <url>
+  <loc>http://mchoplin.com/posts/git.html</loc>
+  <lastmod>2014-06-09</lastmod>
+ </url>
+ <url>
+  <loc>http://mchoplin.com/posts/port-forwarding.html</loc>
+  <lastmod>2014-06-09</lastmod>
+ </url>
+ <url>
+  <loc>http://mchoplin.com/posts/progress-bar-in-python.html</loc>
+  <lastmod>2014-06-09</lastmod>
+ </url>
+ <url>
+  <loc>http://mchoplin.com/posts/symbolic-links.html</loc>
+  <lastmod>2014-06-09</lastmod>
+ </url>
+ <url>
+  <loc>http://mchoplin.com/posts/the-watch-command.html</loc>
+  <lastmod>2014-06-09</lastmod>
+ </url>
+ <url>
+  <loc>http://mchoplin.com/posts/vim.html</loc>
+  <lastmod>2014-06-09</lastmod>
+ </url>
+ <url>
+  <loc>http://mchoplin.com/src/2014/index.html</loc>
   <lastmod>2014-06-04</lastmod>
  </url>
  <url>
-  <loc>http://matthieuchoplin.github.io/archive.html</loc>
+  <loc>http://mchoplin.com/src/archive.html</loc>
   <lastmod>2014-06-04</lastmod>
  </url>
  <url>
-  <loc>http://matthieuchoplin.github.io/categories/blog.html</loc>
+  <loc>http://mchoplin.com/src/categories/blog.html</loc>
   <lastmod>2014-06-04</lastmod>
  </url>
  <url>
-  <loc>http://matthieuchoplin.github.io/categories/index.html</loc>
+  <loc>http://mchoplin.com/src/categories/index.html</loc>
   <lastmod>2014-06-04</lastmod>
  </url>
  <url>
-  <loc>http://matthieuchoplin.github.io/categories/nikola.html</loc>
+  <loc>http://mchoplin.com/src/categories/nikola.html</loc>
   <lastmod>2014-06-04</lastmod>
  </url>
  <url>
-  <loc>http://matthieuchoplin.github.io/galleries/index.html</loc>
+  <loc>http://mchoplin.com/src/galleries/index.html</loc>
   <lastmod>2014-06-04</lastmod>
  </url>
  <url>
-  <loc>http://matthieuchoplin.github.io/index.html</loc>
+  <loc>http://mchoplin.com/src/index.html</loc>
   <lastmod>2014-06-04</lastmod>
  </url>
  <url>
-  <loc>http://matthieuchoplin.github.io/listings/hello.py.html</loc>
+  <loc>http://mchoplin.com/src/output/2014/index.html</loc>
   <lastmod>2014-06-04</lastmod>
  </url>
  <url>
-  <loc>http://matthieuchoplin.github.io/listings/index.html</loc>
+  <loc>http://mchoplin.com/src/output/404.html</loc>
   <lastmod>2014-06-04</lastmod>
  </url>
  <url>
-  <loc>http://matthieuchoplin.github.io/posts/blog-creation.html</loc>
+  <loc>http://mchoplin.com/src/output/archive.html</loc>
   <lastmod>2014-06-04</lastmod>
  </url>
  <url>
-  <loc>http://matthieuchoplin.github.io/src/2014/index.html</loc>
+  <loc>http://mchoplin.com/src/output/categories/blog.html</loc>
   <lastmod>2014-06-04</lastmod>
  </url>
  <url>
-  <loc>http://matthieuchoplin.github.io/src/archive.html</loc>
+  <loc>http://mchoplin.com/src/output/categories/index.html</loc>
   <lastmod>2014-06-04</lastmod>
  </url>
  <url>
-  <loc>http://matthieuchoplin.github.io/src/categories/blog.html</loc>
+  <loc>http://mchoplin.com/src/output/categories/nikola.html</loc>
   <lastmod>2014-06-04</lastmod>
  </url>
  <url>
-  <loc>http://matthieuchoplin.github.io/src/categories/index.html</loc>
+  <loc>http://mchoplin.com/src/output/galleries/index.html</loc>
   <lastmod>2014-06-04</lastmod>
  </url>
  <url>
-  <loc>http://matthieuchoplin.github.io/src/categories/nikola.html</loc>
+  <loc>http://mchoplin.com/src/output/index.html</loc>
   <lastmod>2014-06-04</lastmod>
  </url>
  <url>
-  <loc>http://matthieuchoplin.github.io/src/galleries/index.html</loc>
+  <loc>http://mchoplin.com/src/output/listings/hello.py.html</loc>
   <lastmod>2014-06-04</lastmod>
  </url>
  <url>
-  <loc>http://matthieuchoplin.github.io/src/index.html</loc>
+  <loc>http://mchoplin.com/src/output/listings/index.html</loc>
   <lastmod>2014-06-04</lastmod>
  </url>
  <url>
-  <loc>http://matthieuchoplin.github.io/src/output/2014/index.html</loc>
+  <loc>http://mchoplin.com/src/output/posts/blog-creation.html</loc>
   <lastmod>2014-06-04</lastmod>
  </url>
  <url>
-  <loc>http://matthieuchoplin.github.io/src/output/404.html</loc>
+  <loc>http://mchoplin.com/src/output/posts/openerp-changes-its-name-to-odoo.html</loc>
   <lastmod>2014-06-04</lastmod>
  </url>
  <url>
-  <loc>http://matthieuchoplin.github.io/src/output/archive.html</loc>
+  <loc>http://mchoplin.com/src/output/stories/404.html</loc>
   <lastmod>2014-06-04</lastmod>
  </url>
  <url>
-  <loc>http://matthieuchoplin.github.io/src/output/categories/blog.html</loc>
+  <loc>http://mchoplin.com/src/posts/blog-creation.html</loc>
   <lastmod>2014-06-04</lastmod>
  </url>
  <url>
-  <loc>http://matthieuchoplin.github.io/src/output/categories/index.html</loc>
-  <lastmod>2014-06-04</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/src/output/categories/nikola.html</loc>
-  <lastmod>2014-06-04</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/src/output/galleries/index.html</loc>
-  <lastmod>2014-06-04</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/src/output/index.html</loc>
-  <lastmod>2014-06-04</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/src/output/listings/hello.py.html</loc>
-  <lastmod>2014-06-04</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/src/output/listings/index.html</loc>
-  <lastmod>2014-06-04</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/src/output/posts/blog-creation.html</loc>
-  <lastmod>2014-06-04</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/src/output/posts/openerp-changes-its-name-to-odoo.html</loc>
-  <lastmod>2014-06-04</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/src/output/stories/404.html</loc>
-  <lastmod>2014-06-04</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/src/posts/blog-creation.html</loc>
-  <lastmod>2014-06-04</lastmod>
- </url>
- <url>
-  <loc>http://matthieuchoplin.github.io/stories/404.html</loc>
-  <lastmod>2014-06-04</lastmod>
+  <loc>http://mchoplin.com/stories/404.html</loc>
+  <lastmod>2014-06-09</lastmod>
  </url>
 </urlset>

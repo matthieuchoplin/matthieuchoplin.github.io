@@ -1,2 +1,2 @@
-Sitemap: http://matthieuchoplin.github.io/sitemapindex.xml
+Sitemap: http://mchoplin.com/sitemapindex.xml
 

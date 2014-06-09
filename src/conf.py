@@ -21,10 +21,10 @@ BLOG_AUTHOR = "Matthieu Choplin"  # (translatable)
 BLOG_TITLE = "Standing on the shoulders of giants"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link
-SITE_URL = "http://matthieuchoplin.github.io/"
+SITE_URL = "http://mchoplin.com/"
 # This is the URL where nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-BASE_URL = "http://matthieuchoplin.github.io/"
+BASE_URL = "http://mchoplin.com/"
 BLOG_EMAIL = "choplin.mat@gmail.com"
 BLOG_DESCRIPTION = "Blog about my developer experience"  # (translatable)
 
@@ -663,6 +663,19 @@ SOCIAL_BUTTONS_CODE=""
 # in the default template (base.tmpl).
 # (translatable)
 # BODY_END = ""
+
+BODY_END = """
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51720394-1', 'mchoplin.com');
+  ga('send', 'pageview');
+
+</script>
+"""
 
 # The possibility to extract metadata from the filename by using a
 # regular expression.

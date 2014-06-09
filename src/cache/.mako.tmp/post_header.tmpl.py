@@ -3,10 +3,10 @@ from mako import runtime, filters, cache
 UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
-_magic_number = 10
-_modified_time = 1402306345.670584
+_magic_number = 9
+_modified_time = 1402341779.812034
 _enable_loop = True
-_template_filename = u'/usr/local/lib/python2.6/dist-packages/nikola/data/themes/base/templates/post_header.tmpl'
+_template_filename = u'/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/post_header.tmpl'
 _template_uri = u'post_header.tmpl'
 _source_encoding = 'utf-8'
 _exports = ['html_post_header', 'html_title', 'html_translations', 'html_sourcelink']
@@ -19,9 +19,11 @@ def _mako_get_namespace(context, name):
         _mako_generate_namespaces(context)
         return context.namespaces[(__name__, name)]
 def _mako_generate_namespaces(context):
+    # SOURCE LINE 3
     ns = runtime.TemplateNamespace(u'comments', context._clean_inheritance_tokens(), templateuri=u'comments_helper.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, u'comments')] = ns
 
+    # SOURCE LINE 2
     ns = runtime.TemplateNamespace(u'helper', context._clean_inheritance_tokens(), templateuri=u'post_helper.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, u'helper')] = ns
 
@@ -31,10 +33,15 @@ def render_body(context,**pageargs):
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         __M_writer = context.writer()
         __M_writer(u'\n')
+        # SOURCE LINE 3
         __M_writer(u'\n\n')
+        # SOURCE LINE 9
         __M_writer(u'\n\n')
+        # SOURCE LINE 22
         __M_writer(u'\n\n')
+        # SOURCE LINE 28
         __M_writer(u'\n\n')
+        # SOURCE LINE 49
         __M_writer(u'\n')
         return ''
     finally:
@@ -56,11 +63,15 @@ def render_html_post_header(context):
         site_has_comments = context.get('site_has_comments', UNDEFINED)
         post = context.get('post', UNDEFINED)
         __M_writer = context.writer()
+        # SOURCE LINE 30
         __M_writer(u'\n    <header>\n        ')
+        # SOURCE LINE 32
         __M_writer(unicode(html_title()))
         __M_writer(u'\n        <div class="metadata">\n            <p class="byline author vcard"><span class="byline-name fn">')
+        # SOURCE LINE 34
         __M_writer(unicode(post.author()))
         __M_writer(u'</span></p>\n            <p class="dateline"><a href="')
+        # SOURCE LINE 35
         __M_writer(unicode(post.permalink()))
         __M_writer(u'" rel="bookmark"><time class="published dt-published" datetime="')
         __M_writer(unicode(post.date.isoformat()))
@@ -69,24 +80,33 @@ def render_html_post_header(context):
         __M_writer(u'">')
         __M_writer(unicode(post.formatted_date(date_format)))
         __M_writer(u'</time></a></p>\n')
+        # SOURCE LINE 36
         if not post.meta('nocomments') and site_has_comments:
+            # SOURCE LINE 37
             __M_writer(u'                <p class="commentline">')
             __M_writer(unicode(comments.comment_link(post.permalink(), post._base_path)))
             __M_writer(u'\n')
+        # SOURCE LINE 39
         __M_writer(u'            ')
         __M_writer(unicode(html_sourcelink()))
         __M_writer(u'\n')
+        # SOURCE LINE 40
         if post.meta('link'):
+            # SOURCE LINE 41
             __M_writer(u"                    <p><a href='")
             __M_writer(unicode(post.meta('link')))
             __M_writer(u"'>")
             __M_writer(unicode(messages("Original site")))
             __M_writer(u'</a></p>\n')
+        # SOURCE LINE 43
         if post.description():
+            # SOURCE LINE 44
             __M_writer(u'                <meta name="description" itemprop="description" content="')
             __M_writer(unicode(post.description()))
             __M_writer(u'">\n')
+        # SOURCE LINE 46
         __M_writer(u'        </div>\n        ')
+        # SOURCE LINE 47
         __M_writer(unicode(html_translations(post)))
         __M_writer(u'\n    </header>\n')
         return ''
@@ -100,8 +120,11 @@ def render_html_title(context):
         post = context.get('post', UNDEFINED)
         title = context.get('title', UNDEFINED)
         __M_writer = context.writer()
+        # SOURCE LINE 5
         __M_writer(u'\n')
+        # SOURCE LINE 6
         if title and not post.meta('hidetitle'):
+            # SOURCE LINE 7
             __M_writer(u'    <h1 class="p-name entry-title" itemprop="headline name"><a href="')
             __M_writer(unicode(post.permalink()))
             __M_writer(u'" class="u-url">')
@@ -120,13 +143,20 @@ def render_html_translations(context,post):
         translations = context.get('translations', UNDEFINED)
         len = context.get('len', UNDEFINED)
         __M_writer = context.writer()
+        # SOURCE LINE 11
         __M_writer(u'\n')
+        # SOURCE LINE 12
         if len(translations) > 1:
+            # SOURCE LINE 13
             __M_writer(u'        <div class="metadata posttranslations translations">\n            <h3 class="posttranslations-intro">')
+            # SOURCE LINE 14
             __M_writer(unicode(messages("Also available in:")))
             __M_writer(u'</h3>\n')
+            # SOURCE LINE 15
             for langname in translations.keys():
+                # SOURCE LINE 16
                 if langname != lang and post.is_translation_available(langname):
+                    # SOURCE LINE 17
                     __M_writer(u'                <p><a href="')
                     __M_writer(unicode(post.permalink(langname)))
                     __M_writer(u'" rel="alternate" hreflang="')
@@ -134,6 +164,7 @@ def render_html_translations(context,post):
                     __M_writer(u'">')
                     __M_writer(unicode(messages("LANGUAGE", langname)))
                     __M_writer(u'</a></p>\n')
+            # SOURCE LINE 20
             __M_writer(u'        </div>\n')
         return ''
     finally:
@@ -147,8 +178,11 @@ def render_html_sourcelink(context):
         messages = context.get('messages', UNDEFINED)
         show_sourcelink = context.get('show_sourcelink', UNDEFINED)
         __M_writer = context.writer()
+        # SOURCE LINE 24
         __M_writer(u'\n')
+        # SOURCE LINE 25
         if show_sourcelink:
+            # SOURCE LINE 26
             __M_writer(u'        <p class="sourceline"><a href="')
             __M_writer(unicode(post.source_link()))
             __M_writer(u'" id="sourcelink">')
@@ -159,8 +193,3 @@ def render_html_sourcelink(context):
         context.caller_stack._pop_frame()
 
 
-"""
-__M_BEGIN_METADATA
-{"source_encoding": "utf-8", "line_map": {"128": 15, "129": 16, "130": 17, "131": 17, "132": 17, "133": 17, "134": 17, "135": 17, "136": 17, "137": 20, "143": 24, "22": 3, "151": 25, "152": 26, "25": 2, "154": 26, "155": 26, "28": 0, "150": 24, "33": 2, "34": 3, "35": 9, "36": 22, "37": 28, "38": 49, "156": 26, "44": 30, "162": 156, "59": 30, "60": 32, "61": 32, "62": 34, "63": 34, "64": 35, "65": 35, "66": 35, "67": 35, "68": 35, "69": 35, "70": 35, "71": 35, "72": 36, "73": 37, "74": 37, "75": 37, "76": 39, "77": 39, "78": 39, "79": 40, "80": 41, "81": 41, "82": 41, "83": 41, "84": 41, "85": 43, "86": 44, "87": 44, "88": 44, "89": 46, "90": 47, "91": 47, "97": 5, "103": 5, "104": 6, "105": 7, "106": 7, "107": 7, "108": 7, "109": 7, "115": 11, "153": 26, "123": 11, "124": 12, "125": 13, "126": 14, "127": 14}, "uri": "post_header.tmpl", "filename": "/usr/local/lib/python2.6/dist-packages/nikola/data/themes/base/templates/post_header.tmpl"}
-__M_END_METADATA
-"""
