@@ -106,3 +106,10 @@ To downgrade pip to a previous version:
   sudo easy_install pip==1.2.1
 
 |
+
+Add your own domain
+===================
+
+Log in to your domain provider website and change the forwarding value to the website url provided by Github-pages e.g.
+username.github.io
+
