@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Tue, 10 Jun 2014 16:48:29 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Git</title><link>http://mattchoplin.com/posts/git.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Wed, 11 Jun 2014 08:55:08 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>TDD with Django at Skills Matter</title><link>http://mattchoplin.com/posts/tdd-with-django-at-skills-matter.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;Session animated by &lt;em&gt;Harry Percival&lt;/em&gt; based on the book &lt;a class="reference external" href="http://www.obeythetestinggoat.com/"&gt;http://www.obeythetestinggoat.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For having the handout:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+sudo pip3 install https://github.com/django/django/archive/stable/1.7.x.zip
+&lt;/pre&gt;
+&lt;div class="section" id="requirement"&gt;
+&lt;h2&gt;Requirement:&lt;/h2&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;Firefox&lt;/li&gt;
+&lt;li&gt;Git&lt;/li&gt;
+&lt;li&gt;Pip3&lt;/li&gt;
+&lt;li&gt;Selenium&lt;/li&gt;
+&lt;li&gt;Django 1.7 beta&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/tdd-with-django-at-skills-matter.html</guid><pubDate>Tue, 10 Jun 2014 17:20:48 GMT</pubDate></item><item><title>Git</title><link>http://mattchoplin.com/posts/git.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
 git log --graph --all --format&lt;span class="o"&gt;=&lt;/span&gt;format:&lt;span class="s2"&gt;"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold white)%cn%C(reset)%C(magenta)%d%C(reset)%n%x09%C(white)%s%C(reset)"&lt;/span&gt; --abbrev-commit &lt;span class="s2"&gt;"$@"&lt;/span&gt;
 &lt;/pre&gt;
 &lt;div class="line-block"&gt;
