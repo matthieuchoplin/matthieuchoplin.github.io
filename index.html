@@ -55,7 +55,19 @@
             
             
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/tdd-with-django-at-skills-matter.html" class="u-url">TDD with Django at Skills Matter</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dummy-smtp-server-in-python-for-testing.html" class="u-url">Dummy smtp server in Python for testing</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
+            <p class="dateline"><a href="posts/dummy-smtp-server-in-python-for-testing.html" rel="bookmark"><time class="published dt-published" datetime="2014-06-12T18:19:30+01:00" itemprop="datePublished" title="Publication date">2014-06-12 18:19</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <pre class="code bash literal-block">
+sudo python -m smtpd -n -c DebuggingServer localhost:25
+</pre>
+<p>The sudo is needed as you can’t bind to a port number lower than 1024 as a normal user.</p>
+<p>Source: <a class="reference external" href="http://www.euperia.com/development/test-smtp-with-a-dummy-server-in-python/460">http://www.euperia.com/development/test-smtp-with-a-dummy-server-in-python/460</a></p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/tdd-with-django-at-skills-matter.html" class="u-url">TDD with Django at Skills Matter</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
             <p class="dateline"><a href="posts/tdd-with-django-at-skills-matter.html" rel="bookmark"><time class="published dt-published" datetime="2014-06-10T18:20:48+01:00" itemprop="datePublished" title="Publication date">2014-06-10 18:20</time></a></p>

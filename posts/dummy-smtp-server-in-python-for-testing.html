@@ -3,20 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TDD with Django at Skills Matter | Standing on the shoulders of giants</title>
+<title>Dummy smtp server in Python for testing | Standing on the shoulders of giants</title>
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
-<link rel="canonical" href="http://mattchoplin.com/posts/tdd-with-django-at-skills-matter.html">
+<link rel="canonical" href="http://mattchoplin.com/posts/dummy-smtp-server-in-python-for-testing.html">
 <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="Matthieu Choplin">
-<meta name="og:title" content="TDD with Django at Skills Matter">
-<meta name="og:url" content="http://mattchoplin.com/posts/tdd-with-django-at-skills-matter.html">
-<meta name="og:description" content="Session animated by Harry Percival based on the book http://www.obeythetestinggoat.com/
-For having the handout:
+<meta name="og:title" content="Dummy smtp server in Python for testing">
+<meta name="og:url" content="http://mattchoplin.com/posts/dummy-smtp-server-in-python-for-testing.html">
+<meta name="og:description" content="sudo python -m smtpd -n -c DebuggingServer localhost:25
 
-sudo pip3 install https://github.com/django/django/archive/stable/1.7.x.zip
-
-
-Requireme">
+The sudo is needed as you can’t bind to a port number lower than 1024 as a normal user.
+Source: http://www.euperia.com/development/test-smtp-wi">
 <meta name="og:site_name" content="Standing on the shoulders of giants">
 <meta name="og:type" content="article">
 </head>
@@ -55,7 +52,7 @@ Requireme">
 </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-    <a href="tdd-with-django-at-skills-matter.rst" id="sourcelink">Source</a>
+    <a href="dummy-smtp-server-in-python-for-testing.rst" id="sourcelink">Source</a>
     </li>
 
                 
@@ -70,40 +67,30 @@ Requireme">
         <div class="row">
             
             
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">TDD with Django at Skills Matter</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Dummy smtp server in Python for testing</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-06-10T18:20:48+01:00" itemprop="datePublished" title="Publication date">2014-06-10 18:20</time></a></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-06-12T18:19:30+01:00" itemprop="datePublished" title="Publication date">2014-06-12 18:19</time></a></p>
             
-        <p class="sourceline"><a href="tdd-with-django-at-skills-matter.rst" id="sourcelink">Source</a></p>
+        <p class="sourceline"><a href="dummy-smtp-server-in-python-for-testing.rst" id="sourcelink">Source</a></p>
 
         </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p>Session animated by <em>Harry Percival</em> based on the book <a class="reference external" href="http://www.obeythetestinggoat.com/">http://www.obeythetestinggoat.com/</a></p>
-<p>For having the handout:</p>
-<pre class="code bash literal-block">
-sudo pip3 install https://github.com/django/django/archive/stable/1.7.x.zip
+    <pre class="code bash literal-block">
+sudo python -m smtpd -n -c DebuggingServer localhost:25
 </pre>
-<div class="section" id="requirement">
-<h2>Requirement:</h2>
-<ul class="simple">
-<li>Firefox</li>
-<li>Git</li>
-<li>Pip3</li>
-<li>Selenium</li>
-<li>Django 1.7 beta</li>
-</ul>
-</div>
+<p>The sudo is needed as you can’t bind to a port number lower than 1024 as a normal user.</p>
+<p>Source: <a class="reference external" href="http://www.euperia.com/development/test-smtp-with-a-dummy-server-in-python/460">http://www.euperia.com/development/test-smtp-with-a-dummy-server-in-python/460</a></p>
     </div>
-    <aside class="postpromonav"><nav><ul class="pager">
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/python.html" rel="tag">python</a></li>
+        </ul>
+<ul class="pager">
 <li class="previous">
-                <a href="git.html" rel="prev" title="Git">Previous post</a>
-            </li>
-            <li class="next">
-                <a href="dummy-smtp-server-in-python-for-testing.html" rel="next" title="Dummy smtp server in Python for testing">Next post</a>
+                <a href="tdd-with-django-at-skills-matter.html" rel="prev" title="TDD with Django at Skills Matter">Previous post</a>
             </li>
         </ul></nav></aside></article>
 </div>

@@ -1,0 +1,5 @@
+<pre class="code bash literal-block">
+sudo python -m smtpd -n -c DebuggingServer localhost:25
+</pre>
+<p>The sudo is needed as you can’t bind to a port number lower than 1024 as a normal user.</p>
+<p>Source: <a class="reference external" href="http://www.euperia.com/development/test-smtp-with-a-dummy-server-in-python/460">http://www.euperia.com/development/test-smtp-with-a-dummy-server-in-python/460</a></p>
