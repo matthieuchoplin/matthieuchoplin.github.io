@@ -15,4 +15,8 @@ Nice display of the current tree
 
    git log --graph --all --format=format:"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold white)%cn%C(reset)%C(magenta)%d%C(reset)%n%x09%C(white)%s%C(reset)" --abbrev-commit "$@"
 
-|
+
+Tutorial
+========
+
+Learn git from your browser: https://try.github.io/levels/1/challenges/1

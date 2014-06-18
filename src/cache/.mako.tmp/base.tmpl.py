@@ -3,10 +3,10 @@ from mako import runtime, filters, cache
 UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
-_magic_number = 10
-_modified_time = 1402593661.105387
+_magic_number = 9
+_modified_time = 1403131261.239899
 _enable_loop = True
-_template_filename = u'/usr/local/lib/python2.6/dist-packages/nikola/data/themes/bootstrap3/templates/base.tmpl'
+_template_filename = u'/usr/local/lib/python2.7/dist-packages/nikola/data/themes/bootstrap3/templates/base.tmpl'
 _template_uri = u'base.tmpl'
 _source_encoding = 'utf-8'
 _exports = [u'content', u'extra_head', u'sourcelink', u'extra_js', u'belowtitle']
@@ -19,9 +19,11 @@ def _mako_get_namespace(context, name):
         _mako_generate_namespaces(context)
         return context.namespaces[(__name__, name)]
 def _mako_generate_namespaces(context):
+    # SOURCE LINE 3
     ns = runtime.TemplateNamespace(u'notes', context._clean_inheritance_tokens(), templateuri=u'annotation_helper.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, u'notes')] = ns
 
+    # SOURCE LINE 2
     ns = runtime.TemplateNamespace(u'base', context._clean_inheritance_tokens(), templateuri=u'base_helper.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, u'base')] = ns
 
@@ -61,84 +63,117 @@ def render_body(context,**pageargs):
         notes = _mako_get_namespace(context, 'notes')
         __M_writer = context.writer()
         __M_writer(u'\n')
+        # SOURCE LINE 3
         __M_writer(u'\n')
+        # SOURCE LINE 4
         __M_writer(unicode(set_locale(lang)))
         __M_writer(u'\n')
+        # SOURCE LINE 5
         __M_writer(unicode(base.html_headstart()))
         __M_writer(u'\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'extra_head'):
             context['self'].extra_head(**pageargs)
         
 
+        # SOURCE LINE 8
         __M_writer(u'\n')
+        # SOURCE LINE 9
         __M_writer(unicode(template_hooks['extra_head']()))
         __M_writer(u'\n</head>\n<body>\n\n<!-- Menubar -->\n\n<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">\n    <div class="container"><!-- This keeps the margins nice -->\n        <div class="navbar-header">\n            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">\n            <span class="sr-only">Toggle navigation</span>\n            <span class="icon-bar"></span>\n            <span class="icon-bar"></span>\n            <span class="icon-bar"></span>\n            </button>\n            <a class="navbar-brand" href="')
+        # SOURCE LINE 24
         __M_writer(unicode(abs_link('/')))
         __M_writer(u'">\n')
+        # SOURCE LINE 25
         if logo_url:
+            # SOURCE LINE 26
             __M_writer(u'                <img src="')
             __M_writer(unicode(logo_url))
             __M_writer(u'" alt="')
             __M_writer(unicode(blog_title))
             __M_writer(u'" id="logo">\n')
+        # SOURCE LINE 28
         __M_writer(u'\n')
+        # SOURCE LINE 29
         if show_blog_title:
+            # SOURCE LINE 30
             __M_writer(u'                <span id="blog-title">')
             __M_writer(unicode(blog_title))
             __M_writer(u'</span>\n')
+        # SOURCE LINE 32
         __M_writer(u'            </a>\n        </div><!-- /.navbar-header -->\n        <div class="collapse navbar-collapse navbar-ex1-collapse">\n            <ul class="nav navbar-nav">\n                ')
+        # SOURCE LINE 36
         __M_writer(unicode(base.html_navigation_links()))
         __M_writer(u'\n                ')
+        # SOURCE LINE 37
         __M_writer(unicode(template_hooks['menu']()))
         __M_writer(u'\n            </ul>\n')
+        # SOURCE LINE 39
         if search_form:
+            # SOURCE LINE 40
             __M_writer(u'                ')
             __M_writer(unicode(search_form))
             __M_writer(u'\n')
+        # SOURCE LINE 42
         __M_writer(u'\n            <ul class="nav navbar-nav navbar-right">\n                ')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'belowtitle'):
             context['self'].belowtitle(**pageargs)
         
 
+        # SOURCE LINE 48
         __M_writer(u'\n')
+        # SOURCE LINE 49
         if show_sourcelink:
+            # SOURCE LINE 50
             __M_writer(u'                    ')
             if 'parent' not in context._data or not hasattr(context._data['parent'], 'sourcelink'):
                 context['self'].sourcelink(**pageargs)
             
 
             __M_writer(u'\n')
+        # SOURCE LINE 52
         __M_writer(u'                ')
         __M_writer(unicode(template_hooks['menu_alt']()))
         __M_writer(u'\n            </ul>\n        </div><!-- /.navbar-collapse -->\n    </div><!-- /.container -->\n</nav>\n\n<!-- End of Menubar -->\n\n<div class="container">\n    <div class="body-content">\n        <!--Body content-->\n        <div class="row">\n            ')
+        # SOURCE LINE 64
         __M_writer(unicode(template_hooks['page_header']()))
         __M_writer(u'\n            ')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
             context['self'].content(**pageargs)
         
 
+        # SOURCE LINE 65
         __M_writer(u'\n        </div>\n        <!--End of body content-->\n\n        <footer>\n            ')
+        # SOURCE LINE 70
         __M_writer(unicode(content_footer))
         __M_writer(u'\n            ')
+        # SOURCE LINE 71
         __M_writer(unicode(template_hooks['page_footer']()))
         __M_writer(u'\n        </footer>\n    </div>\n</div>\n\n')
+        # SOURCE LINE 76
         __M_writer(unicode(base.late_load_js()))
         __M_writer(u'\n    <script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script>\n    ')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'extra_js'):
             context['self'].extra_js(**pageargs)
         
 
+        # SOURCE LINE 78
         __M_writer(u'\n')
+        # SOURCE LINE 79
         if annotations and post and not post.meta('noannotations'):
+            # SOURCE LINE 80
             __M_writer(u'        ')
             __M_writer(unicode(notes.code()))
             __M_writer(u'\n')
+            # SOURCE LINE 81
         elif not annotations and post and post.meta('annotations'):
+            # SOURCE LINE 82
             __M_writer(u'        ')
             __M_writer(unicode(notes.code()))
             __M_writer(u'\n')
+        # SOURCE LINE 84
         __M_writer(unicode(body_end))
         __M_writer(u'\n')
+        # SOURCE LINE 85
         __M_writer(unicode(template_hooks['body_end']()))
         __M_writer(u'\n</body>\n</html>\n')
         return ''
@@ -169,6 +204,7 @@ def render_extra_head(context,**pageargs):
         def extra_head():
             return render_extra_head(context)
         __M_writer = context.writer()
+        # SOURCE LINE 6
         __M_writer(u'\n')
         return ''
     finally:
@@ -215,19 +251,18 @@ def render_belowtitle(context,**pageargs):
         translations = _import_ns.get('translations', context.get('translations', UNDEFINED))
         len = _import_ns.get('len', context.get('len', UNDEFINED))
         __M_writer = context.writer()
+        # SOURCE LINE 44
         __M_writer(u'\n')
+        # SOURCE LINE 45
         if len(translations) > 1:
+            # SOURCE LINE 46
             __M_writer(u'                    <li>')
             __M_writer(unicode(base.html_translations()))
             __M_writer(u'</li>\n')
+        # SOURCE LINE 48
         __M_writer(u'                ')
         return ''
     finally:
         context.caller_stack._pop_frame()
 
 
-"""
-__M_BEGIN_METADATA
-{"source_encoding": "utf-8", "line_map": {"192": 78, "131": 78, "132": 79, "133": 80, "134": 80, "135": 80, "136": 81, "137": 82, "138": 82, "139": 82, "140": 84, "141": 84, "142": 85, "143": 85, "149": 65, "22": 3, "25": 2, "28": 0, "218": 44, "163": 6, "220": 46, "172": 6, "221": 46, "206": 44, "178": 50, "222": 46, "219": 45, "223": 48, "63": 2, "64": 3, "65": 4, "66": 4, "67": 5, "68": 5, "73": 8, "74": 9, "75": 9, "76": 24, "77": 24, "78": 25, "79": 26, "80": 26, "81": 26, "82": 26, "83": 26, "84": 28, "85": 29, "86": 30, "87": 30, "88": 30, "89": 32, "90": 36, "91": 36, "92": 37, "93": 37, "94": 39, "95": 40, "96": 40, "97": 40, "98": 42, "229": 223, "103": 48, "104": 49, "105": 50, "110": 50, "111": 52, "112": 52, "113": 52, "114": 64, "115": 64, "120": 65, "121": 70, "122": 70, "123": 71, "124": 71, "125": 76, "126": 76}, "uri": "base.tmpl", "filename": "/usr/local/lib/python2.6/dist-packages/nikola/data/themes/bootstrap3/templates/base.tmpl"}
-__M_END_METADATA
-"""

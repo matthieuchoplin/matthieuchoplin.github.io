@@ -2,7 +2,7 @@
 <html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width">
 <title>Git | Standing on the shoulders of giants</title>
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
@@ -10,7 +10,9 @@
 <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="Matthieu Choplin">
 <meta name="og:title" content="Git">
 <meta name="og:url" content="http://mattchoplin.com/posts/git.html">
-<meta name="og:description" content='git log --graph --all --format=format:"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold white)%cn%C(reset)%C(magenta)%d%C(reset)%n%x09%C(white)%s%C(reset)" --abbrev-comm'>
+<meta name="og:description" content='Nice display of the current tree
+
+git log --graph --all --format=format:"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold white)%cn%C(reset)%C(magenta)%d%C(reset)%n%x09%'>
 <meta name="og:site_name" content="Standing on the shoulders of giants">
 <meta name="og:type" content="article">
 </head>
@@ -76,11 +78,15 @@
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <pre class="code bash literal-block">
+    <div class="section" id="nice-display-of-the-current-tree">
+<h2>Nice display of the current tree</h2>
+<pre class="code bash literal-block">
 git log --graph --all --format<span class="o">=</span>format:<span class="s2">"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold white)%cn%C(reset)%C(magenta)%d%C(reset)%n%x09%C(white)%s%C(reset)"</span> --abbrev-commit <span class="s2">"$@"</span>
 </pre>
-<div class="line-block">
-<div class="line"><br></div>
+</div>
+<div class="section" id="tutorial">
+<h2>Tutorial</h2>
+<p>Learn git from your browser: <a class="reference external" href="https://try.github.io/levels/1/challenges/1">https://try.github.io/levels/1/challenges/1</a></p>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
