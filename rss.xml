@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Wed, 18 Jun 2014 23:40:45 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Dummy smtp server in Python for testing</title><link>http://mattchoplin.com/posts/dummy-smtp-server-in-python-for-testing.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Mon, 23 Jun 2014 10:48:29 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Unresponsive process</title><link>http://mattchoplin.com/posts/unresponsive-process.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
+pkill -9f process-name
+&lt;/pre&gt;
+&lt;p&gt;Example:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+pkill -9f filezilla
+&lt;/pre&gt;</description><guid>http://mattchoplin.com/posts/unresponsive-process.html</guid><pubDate>Fri, 20 Jun 2014 09:08:44 GMT</pubDate></item><item><title>Dummy smtp server in Python for testing</title><link>http://mattchoplin.com/posts/dummy-smtp-server-in-python-for-testing.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
 sudo python -m smtpd -n -c DebuggingServer localhost:25
 &lt;/pre&gt;
 &lt;p&gt;The sudo is needed as you can’t bind to a port number lower than 1024 as a normal user.&lt;/p&gt;
@@ -70,7 +76,9 @@ ssh -D 8888 youruser@yourserver.com
 &lt;div class="section" id="configuration"&gt;
 &lt;h2&gt;Configuration&lt;/h2&gt;
 &lt;p&gt;The ~/.vimrc file provides Vim's default configuration&lt;/p&gt;
-&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/vim.html</guid><pubDate>Wed, 04 Jun 2014 21:51:32 GMT</pubDate></item><item><title>Symbolic links</title><link>http://mattchoplin.com/posts/symbolic-links.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;Find broken symlinks and delete them&lt;/p&gt;
+&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/vim.html</guid><pubDate>Wed, 04 Jun 2014 21:51:32 GMT</pubDate></item><item><title>Symbolic links</title><link>http://mattchoplin.com/posts/symbolic-links.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="dealing-with-broken-symbolic-links"&gt;
+&lt;h2&gt;Dealing with broken symbolic links&lt;/h2&gt;
+&lt;p&gt;Find broken symlinks and delete them&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="nv"&gt;$find&lt;/span&gt; -L /path/to/check -type l -delete
 &lt;/pre&gt;
@@ -80,82 +88,20 @@ ssh -D 8888 youruser@yourserver.com
 &lt;/pre&gt;
 &lt;p&gt;If you want to delete them with confirmation first, do&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
-find -L /path -type l -exec rm -i &lt;span class="o"&gt;{}&lt;/span&gt; +
-&lt;/pre&gt;</description><category>sysadmin</category><guid>http://mattchoplin.com/posts/symbolic-links.html</guid><pubDate>Wed, 04 Jun 2014 21:38:08 GMT</pubDate></item><item><title>Blog creation</title><link>http://mattchoplin.com/posts/blog-creation.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="website-hosted-from-my-github-repository"&gt;
-&lt;h2&gt;Website hosted from my Github Repository&lt;/h2&gt;
-&lt;p&gt;It is using &lt;a class="reference external" href="https://pages.github.com/"&gt;Github Pages&lt;/a&gt;.
-Create a repository called &lt;em&gt;username.github.io&lt;/em&gt;, where username is your username (or organization name) on GitHub and put your website files in there.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="website-generation-using-a-python-framework-nikola"&gt;
-&lt;h2&gt;Website generation using a Python framework: Nikola&lt;/h2&gt;
-&lt;p&gt;This website is using &lt;a class="reference external" href="http://getnikola.com"&gt;Nikola&lt;/a&gt; which is a Python static website generator.
-Assuming that you have created a github repository called &lt;em&gt;username.github.io&lt;/em&gt;, clone it with:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-git clone git@github.com:username/username.github.io.git
-&lt;/pre&gt;
-&lt;p&gt;Then initialize your website with this command:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-nikola init username.github.io
-&lt;/pre&gt;
-&lt;p&gt;where &lt;em&gt;username.github.io&lt;/em&gt; is the repository you have just cloned.&lt;/p&gt;
-&lt;p&gt;cd in this directory and execute this command:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-nikola build &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; nikola serve -b
-&lt;/pre&gt;
-&lt;p&gt;The website will open at the url &lt;a class="reference external" href="http://127.0.0.1:8000"&gt;http://127.0.0.1:8000&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;To deploy to Github, change the file conf.py such as:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;GITHUB_DEPLOY_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'master'&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;Once you are happy with it, you can deploy to Github with the command:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-nikola github_deploy
+&lt;span class="nv"&gt;$find&lt;/span&gt; -L /path -type l -exec rm -i &lt;span class="o"&gt;{}&lt;/span&gt; +
 &lt;/pre&gt;
 &lt;/div&gt;
-&lt;div class="section" id="posts-written-using-restructuredtext"&gt;
-&lt;h2&gt;Posts written using reStructuredText&lt;/h2&gt;
-&lt;p&gt;Useful cheatsheet for the basics: &lt;a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt"&gt;http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;This is also a way to learn how to use Vim. Since Nikola 7.0.1, you can use the -e option when creating a new post.
-But before, you need to set up a default editor.
-If you want to use vim, you can first locate it:&lt;/p&gt;
+&lt;div class="section" id="creating-symbolik-links"&gt;
+&lt;h2&gt;Creating symbolik links&lt;/h2&gt;
+&lt;p&gt;First cd into your directory and then indicate where your symlinks will point&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
-which vim
+&lt;span class="nv"&gt;$find&lt;/span&gt; /directory_where_yout_symlinks_are/ -maxdepth 1 -type d -exec ln -s  &lt;span class="o"&gt;{}&lt;/span&gt; &lt;span class="se"&gt;\;&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;Then you can use it in the export variable:&lt;/p&gt;
+&lt;p&gt;If you want to update your existing symlinks, use the &lt;strong&gt;-f&lt;/strong&gt; option such as:&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
-&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;EDITOR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/bin/vim
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="download-a-pre-built-template-from-bootswatch"&gt;
-&lt;h2&gt;Download a pre-built template from bootswatch&lt;/h2&gt;
-&lt;pre class="code bash literal-block"&gt;
-nikola bootswatch_theme -n custom_theme -s spruce -p bootstrap3
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="upgrading-nikola"&gt;
-&lt;h2&gt;Upgrading Nikola&lt;/h2&gt;
-&lt;p&gt;Since Nikola can be installed with Pip, you can use the following command:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-pip install -U nikola
-&lt;/pre&gt;
-&lt;p&gt;As a reminder, pip is installed using setuptools and easyinstall:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-sudo easy install pip
-&lt;/pre&gt;
-&lt;p&gt;To upgrade pip:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-sudo easy_install -U pip
-&lt;/pre&gt;
-&lt;p&gt;To downgrade pip to a previous version:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-sudo easy_install &lt;span class="nv"&gt;pip&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;1.2.1
+&lt;span class="nv"&gt;$find&lt;/span&gt; /home/matt/workspace/unified_repos/erp_core/modules/ -maxdepth 1 -type d -exec ln -sf  &lt;span class="o"&gt;{}&lt;/span&gt; &lt;span class="se"&gt;\;&lt;/span&gt;
 &lt;/pre&gt;
 &lt;div class="line-block"&gt;
 &lt;div class="line"&gt;&lt;br&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="add-your-own-domain"&gt;
-&lt;h2&gt;Add your own domain&lt;/h2&gt;
-&lt;p&gt;Log in to your domain provider website and change the forwarding value to the website url provided by Github-pages e.g.
-username.github.io&lt;/p&gt;
-&lt;/div&gt;</description><category>Nikola</category><category>blog</category><guid>http://mattchoplin.com/posts/blog-creation.html</guid><pubDate>Sun, 25 May 2014 08:30:00 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>sysadmin</category><guid>http://mattchoplin.com/posts/symbolic-links.html</guid><pubDate>Wed, 04 Jun 2014 21:38:08 GMT</pubDate></item></channel></rss>
