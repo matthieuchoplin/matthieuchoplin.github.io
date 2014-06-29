@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Sun, 29 Jun 2014 16:13:46 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Liclipse as Python editor</title><link>http://mattchoplin.com/posts/installing-eclipse-luna.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="installation"&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Sun, 29 Jun 2014 16:26:15 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Liclipse as Python editor</title><link>http://mattchoplin.com/posts/Liclipse.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="installation"&gt;
 &lt;h2&gt;Installation&lt;/h2&gt;
 &lt;p&gt;Liclipse seems to be the IDE to go for Python edition if you come from the Eclipse + pydev plugin world: &lt;a class="reference external" href="http://brainwy.github.io/liclipse/index.html"&gt;Liclipse&lt;/a&gt; (Lightweight Eclipse)&lt;/p&gt;
 &lt;p&gt;It comes with pydev and gedit plugin already integrated.&lt;/p&gt;
@@ -57,7 +57,7 @@ git log -p
 &lt;li&gt;&lt;a class="reference external" href="https://github.com/scrooloose/syntastic"&gt;syntastic&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://github.com/klen/python-mode"&gt;python-mode&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.vim.org/scripts/script.php?script_id=1643"&gt;supertab&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/installing-eclipse-luna.html</guid><pubDate>Sat, 28 Jun 2014 12:31:05 GMT</pubDate></item><item><title>Unresponsive process</title><link>http://mattchoplin.com/posts/unresponsive-process.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
+&lt;/ul&gt;&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/Liclipse.html</guid><pubDate>Sat, 28 Jun 2014 12:31:05 GMT</pubDate></item><item><title>Unresponsive process</title><link>http://mattchoplin.com/posts/unresponsive-process.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
 pkill -9f process-name
 &lt;/pre&gt;
 &lt;p&gt;Example:&lt;/p&gt;
