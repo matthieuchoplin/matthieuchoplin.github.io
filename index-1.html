@@ -55,7 +55,43 @@
             
             
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/blog-creation.html" class="u-url">Blog creation</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/symbolic-links.html" class="u-url">Symbolic links</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
+            <p class="dateline"><a href="posts/symbolic-links.html" rel="bookmark"><time class="published dt-published" datetime="2014-06-04T22:38:08+01:00" itemprop="datePublished" title="Publication date">2014-06-04 22:38</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <div class="section" id="dealing-with-broken-symbolic-links">
+<h2>Dealing with broken symbolic links</h2>
+<p>Find broken symlinks and delete them</p>
+<pre class="code bash literal-block">
+<span class="nv">$find</span> -L /path/to/check -type l -delete
+</pre>
+<p>List them</p>
+<pre class="code bash literal-block">
+<span class="nv">$find</span> -L /path -type l
+</pre>
+<p>If you want to delete them with confirmation first, do</p>
+<pre class="code bash literal-block">
+<span class="nv">$find</span> -L /path -type l -exec rm -i <span class="o">{}</span> +
+</pre>
+</div>
+<div class="section" id="creating-symbolik-links">
+<h2>Creating symbolik links</h2>
+<p>First cd into your directory and then indicate where your symlinks will point</p>
+<pre class="code bash literal-block">
+<span class="nv">$find</span> /directory_where_yout_symlinks_are/ -maxdepth 1 -type d -exec ln -s  <span class="o">{}</span> <span class="se">\;</span>
+</pre>
+<p>If you want to update your existing symlinks, use the <strong>-f</strong> option such as:</p>
+<pre class="code bash literal-block">
+<span class="nv">$find</span> /home/matt/workspace/unified_repos/erp_core/modules/ -maxdepth 1 -type d -exec ln -sf  <span class="o">{}</span> <span class="se">\;</span>
+</pre>
+<div class="line-block">
+<div class="line"><br></div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/blog-creation.html" class="u-url">Blog creation</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
             <p class="dateline"><a href="posts/blog-creation.html" rel="bookmark"><time class="published dt-published" datetime="2014-05-25T09:30:00+01:00" itemprop="datePublished" title="Publication date">2014-05-25 09:30</time></a></p>
@@ -94,7 +130,7 @@ nikola github_deploy
 </div>
 <div class="section" id="posts-written-using-restructuredtext">
 <h2>Posts written using reStructuredText</h2>
-<p>Useful cheatsheet for the basics: <a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt">http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt</a></p>
+<p>Useful cheatsheet for the basics: <a class="reference external" href="http://github.com/ralsina/rst-cheatsheet/raw/master/rst-cheatsheet.pdf">http://github.com/ralsina/rst-cheatsheet/raw/master/rst-cheatsheet.pdf</a></p>
 <p>This is also a way to learn how to use Vim. Since Nikola 7.0.1, you can use the -e option when creating a new post.
 But before, you need to set up a default editor.
 If you want to use vim, you can first locate it:</p>

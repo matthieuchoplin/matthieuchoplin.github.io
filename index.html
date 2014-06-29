@@ -55,7 +55,83 @@
             
             
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/unresponsive-process.html" class="u-url">Unresponsive process</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/installing-eclipse-luna.html" class="u-url">Liclipse as Python editor</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
+            <p class="dateline"><a href="posts/installing-eclipse-luna.html" rel="bookmark"><time class="published dt-published" datetime="2014-06-28T13:31:05+01:00" itemprop="datePublished" title="Publication date">2014-06-28 13:31</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <div class="section" id="installation">
+<h2>Installation</h2>
+<p>Liclipse seems to be the IDE to go for Python edition if you come from the Eclipse + pydev plugin world: <a class="reference external" href="http://brainwy.github.io/liclipse/index.html">Liclipse</a> (Lightweight Eclipse)</p>
+<p>It comes with pydev and gedit plugin already integrated.</p>
+<p>On ubuntu 12.04, you need to install the following Java dependencies before being able to launch it.</p>
+<pre class="code bash literal-block">
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java7-installer
+</pre>
+<p>It'll keep your java 7 installation up to date.</p>
+<p>To automatically set up the Java 7 environment variables JAVA_HOME and PATH:</p>
+<pre class="code bash literal-block">
+sudo apt-get install oracle-java7-set-default
+</pre>
+<p>Source: <a class="reference external" href="http://stackoverflow.com/questions/16263556/installing-java-7-on-ubuntu">http://stackoverflow.com/questions/16263556/installing-java-7-on-ubuntu</a></p>
+</div>
+<div class="section" id="importing-a-git-project">
+<h2>Importing a Git project</h2>
+<p>If the project is already cloned in your local environment, then click "File" | "Import"| Select "Git" | "Project from Git"| "Existing local Repository" and select the project you want.</p>
+<p>Else, you can also clone the project from Liclipse by doing "File" | "Import"| Select "Git" | "Project from Git"| "Clone Uri".</p>
+</div>
+<div class="section" id="using-egit">
+<h2>Using eGit</h2>
+<p>Egit enables you to do the same as what git already enables but in a much more friendly way.</p>
+<p>Because egit is already integrated in Jiclipse, you already have all its features. I recommend the <a class="reference external" href="http://wiki.eclipse.org/EGit/User_Guide">documentation</a>. Most of the egit features are available when you right click on a file and select "Team".</p>
+<ul>
+<li>
+<p class="first">Annotations: When you are editing a file, you can access it by right clicking the file, selecting "Team" and "Show annotations".</p>
+<p>Similar to:</p>
+</li>
+</ul>
+<pre class="code bash literal-block">
+git blame
+</pre>
+<ul>
+<li>
+<p class="first">History: When you are editing a file, you can access it by right clicking the file, selecting "Team" and "Show in History".</p>
+<p>Similar to:</p>
+</li>
+</ul>
+<pre class="code bash literal-block">
+git log -p
+</pre>
+</div>
+<div class="section" id="using-pydev">
+<h2>Using Pydev</h2>
+<p><a class="reference external" href="http://pydev.org/">pydev</a> is the Python IDE in Eclipse.</p>
+<p>The debugging mode is very easy to use:</p>
+<ul class="simple">
+<li>Place your breakpoints where you want by double clicking in the margin of the files.</li>
+<li>Edit the "Run configuration" according to your project settings.</li>
+<li>Click on "Run" | "Debug as" and select the configuration you created.</li>
+</ul>
+</div>
+<div class="section" id="alternatives">
+<h2>Alternatives</h2>
+<p>Development environments for Python are listed here: <a class="reference external" href="http://docs.python-guide.org/en/latest/dev/env/">http://docs.python-guide.org/en/latest/dev/env/</a></p>
+<p>As text Editors, Vim is also a good choice combined with the following plugins:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.vim.org/scripts/script.php?script_id=974">indent</a></li>
+<li><a class="reference external" href="http://www.vim.org/scripts/script.php?script_id=790">syntax</a></li>
+<li><a class="reference external" href="https://github.com/nvie/vim-pep8">vim-pep8</a></li>
+<li><a class="reference external" href="https://github.com/nvie/vim-pyflakes">vim-pyflakes</a></li>
+<li><a class="reference external" href="https://github.com/scrooloose/syntastic">syntastic</a></li>
+<li><a class="reference external" href="https://github.com/klen/python-mode">python-mode</a></li>
+<li><a class="reference external" href="http://www.vim.org/scripts/script.php?script_id=1643">supertab</a></li>
+</ul>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/unresponsive-process.html" class="u-url">Unresponsive process</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
             <p class="dateline"><a href="posts/unresponsive-process.html" rel="bookmark"><time class="published dt-published" datetime="2014-06-20T10:08:44+01:00" itemprop="datePublished" title="Publication date">2014-06-20 10:08</time></a></p>
@@ -207,42 +283,6 @@ ssh -D 8888 youruser@yourserver.com
 <div class="section" id="configuration">
 <h2>Configuration</h2>
 <p>The ~/.vimrc file provides Vim's default configuration</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/symbolic-links.html" class="u-url">Symbolic links</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/symbolic-links.html" rel="bookmark"><time class="published dt-published" datetime="2014-06-04T22:38:08+01:00" itemprop="datePublished" title="Publication date">2014-06-04 22:38</time></a></p>
-        </div>
-    </header><div class="e-content entry-content">
-    <div class="section" id="dealing-with-broken-symbolic-links">
-<h2>Dealing with broken symbolic links</h2>
-<p>Find broken symlinks and delete them</p>
-<pre class="code bash literal-block">
-<span class="nv">$find</span> -L /path/to/check -type l -delete
-</pre>
-<p>List them</p>
-<pre class="code bash literal-block">
-<span class="nv">$find</span> -L /path -type l
-</pre>
-<p>If you want to delete them with confirmation first, do</p>
-<pre class="code bash literal-block">
-<span class="nv">$find</span> -L /path -type l -exec rm -i <span class="o">{}</span> +
-</pre>
-</div>
-<div class="section" id="creating-symbolik-links">
-<h2>Creating symbolik links</h2>
-<p>First cd into your directory and then indicate where your symlinks will point</p>
-<pre class="code bash literal-block">
-<span class="nv">$find</span> /directory_where_yout_symlinks_are/ -maxdepth 1 -type d -exec ln -s  <span class="o">{}</span> <span class="se">\;</span>
-</pre>
-<p>If you want to update your existing symlinks, use the <strong>-f</strong> option such as:</p>
-<pre class="code bash literal-block">
-<span class="nv">$find</span> /home/matt/workspace/unified_repos/erp_core/modules/ -maxdepth 1 -type d -exec ln -sf  <span class="o">{}</span> <span class="se">\;</span>
-</pre>
-<div class="line-block">
-<div class="line"><br></div>
-</div>
 </div>
     </div>
     </article>

@@ -4,10 +4,10 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1403516941.6003859
+_modified_time = 1404054844.221441
 _enable_loop = True
-_template_filename = u'/usr/local/lib/python2.6/dist-packages/nikola/data/themes/base/templates/list_post.tmpl'
-_template_uri = 'list_post.tmpl'
+_template_filename = u'/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/list_post.tmpl'
+_template_uri = u'list_post.tmpl'
 _source_encoding = 'utf-8'
 _exports = [u'content']
 
@@ -85,6 +85,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "line_map": {"26": 0, "37": 2, "42": 19, "48": 4, "58": 4, "59": 7, "60": 7, "61": 9, "62": 10, "63": 11, "64": 12, "65": 12, "66": 12, "67": 12, "68": 12, "69": 12, "70": 12, "71": 12, "72": 12, "73": 12, "74": 12, "75": 14, "76": 15, "77": 16, "78": 16, "79": 16, "80": 18, "86": 80}, "uri": "list_post.tmpl", "filename": "/usr/local/lib/python2.6/dist-packages/nikola/data/themes/base/templates/list_post.tmpl"}
+{"source_encoding": "utf-8", "line_map": {"26": 0, "37": 2, "42": 19, "48": 4, "58": 4, "59": 7, "60": 7, "61": 9, "62": 10, "63": 11, "64": 12, "65": 12, "66": 12, "67": 12, "68": 12, "69": 12, "70": 12, "71": 12, "72": 12, "73": 12, "74": 12, "75": 14, "76": 15, "77": 16, "78": 16, "79": 16, "80": 18, "86": 80}, "uri": "list_post.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/list_post.tmpl"}
 __M_END_METADATA
 """

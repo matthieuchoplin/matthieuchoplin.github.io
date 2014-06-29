@@ -4,9 +4,9 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1403516941.77828
+_modified_time = 1404054844.069514
 _enable_loop = True
-_template_filename = u'/usr/local/lib/python2.6/dist-packages/nikola/data/themes/base/templates/comments_helper_disqus.tmpl'
+_template_filename = u'/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/comments_helper_disqus.tmpl'
 _template_uri = u'comments_helper_disqus.tmpl'
 _source_encoding = 'utf-8'
 _exports = ['comment_form', 'comment_link', 'comment_link_script']
@@ -94,6 +94,6 @@ def render_comment_link_script(context):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "line_map": {"15": 2, "22": 0, "27": 7, "28": 31, "29": 37, "30": 44, "36": 9, "42": 9, "43": 10, "44": 11, "45": 13, "46": 13, "47": 14, "48": 15, "49": 15, "50": 15, "51": 17, "52": 17, "53": 17, "54": 18, "55": 18, "56": 20, "57": 20, "63": 33, "68": 33, "69": 34, "70": 35, "71": 35, "72": 35, "73": 35, "74": 35, "80": 40, "85": 40, "86": 41, "87": 42, "88": 42, "89": 42, "95": 89}, "uri": "comments_helper_disqus.tmpl", "filename": "/usr/local/lib/python2.6/dist-packages/nikola/data/themes/base/templates/comments_helper_disqus.tmpl"}
+{"source_encoding": "utf-8", "line_map": {"15": 2, "22": 0, "27": 7, "28": 31, "29": 37, "30": 44, "36": 9, "42": 9, "43": 10, "44": 11, "45": 13, "46": 13, "47": 14, "48": 15, "49": 15, "50": 15, "51": 17, "52": 17, "53": 17, "54": 18, "55": 18, "56": 20, "57": 20, "63": 33, "68": 33, "69": 34, "70": 35, "71": 35, "72": 35, "73": 35, "74": 35, "80": 40, "85": 40, "86": 41, "87": 42, "88": 42, "89": 42, "95": 89}, "uri": "comments_helper_disqus.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/comments_helper_disqus.tmpl"}
 __M_END_METADATA
 """

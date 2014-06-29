@@ -55,7 +55,7 @@ Once you are happy with it, you can deploy to Github with the command:
 Posts written using reStructuredText
 ====================================
 
-Useful cheatsheet for the basics: http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt
+Useful cheatsheet for the basics: http://github.com/ralsina/rst-cheatsheet/raw/master/rst-cheatsheet.pdf
 
 This is also a way to learn how to use Vim. Since Nikola 7.0.1, you can use the -e option when creating a new post.
 But before, you need to set up a default editor.

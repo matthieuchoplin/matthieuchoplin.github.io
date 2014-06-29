@@ -4,9 +4,9 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1403516941.8223021
+_modified_time = 1404054844.232944
 _enable_loop = True
-_template_filename = u'/usr/local/lib/python2.6/dist-packages/nikola/data/themes/bootstrap/templates/post.tmpl'
+_template_filename = u'/usr/local/lib/python2.7/dist-packages/nikola/data/themes/bootstrap/templates/post.tmpl'
 _template_uri = u'post.tmpl'
 _source_encoding = 'utf-8'
 _exports = [u'content', u'extra_head', u'sourcelink']
@@ -166,6 +166,6 @@ def render_sourcelink(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "line_map": {"128": 9, "129": 10, "130": 10, "131": 10, "132": 12, "133": 12, "134": 12, "135": 13, "136": 13, "137": 14, "138": 14, "139": 15, "140": 15, "146": 41, "22": 3, "25": 4, "155": 41, "28": 2, "157": 43, "158": 44, "159": 44, "160": 44, "161": 44, "34": 0, "167": 161, "156": 42, "53": 2, "54": 3, "55": 4, "56": 5, "61": 16, "66": 39, "71": 47, "77": 18, "89": 18, "90": 19, "91": 19, "92": 20, "93": 20, "94": 22, "95": 22, "96": 26, "97": 26, "98": 27, "99": 27, "100": 30, "101": 31, "102": 32, "103": 32, "104": 33, "105": 33, "106": 36, "107": 36, "108": 36, "109": 38, "110": 38, "116": 7, "125": 7, "126": 8, "127": 8}, "uri": "post.tmpl", "filename": "/usr/local/lib/python2.6/dist-packages/nikola/data/themes/bootstrap/templates/post.tmpl"}
+{"source_encoding": "utf-8", "line_map": {"128": 9, "129": 10, "130": 10, "131": 10, "132": 12, "133": 12, "134": 12, "135": 13, "136": 13, "137": 14, "138": 14, "139": 15, "140": 15, "146": 41, "22": 3, "25": 4, "155": 41, "28": 2, "157": 43, "158": 44, "159": 44, "160": 44, "161": 44, "34": 0, "167": 161, "156": 42, "53": 2, "54": 3, "55": 4, "56": 5, "61": 16, "66": 39, "71": 47, "77": 18, "89": 18, "90": 19, "91": 19, "92": 20, "93": 20, "94": 22, "95": 22, "96": 26, "97": 26, "98": 27, "99": 27, "100": 30, "101": 31, "102": 32, "103": 32, "104": 33, "105": 33, "106": 36, "107": 36, "108": 36, "109": 38, "110": 38, "116": 7, "125": 7, "126": 8, "127": 8}, "uri": "post.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/bootstrap/templates/post.tmpl"}
 __M_END_METADATA
 """

@@ -4,9 +4,9 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1403516941.699475
+_modified_time = 1404054844.197863
 _enable_loop = True
-_template_filename = u'/usr/local/lib/python2.6/dist-packages/nikola/data/themes/bootstrap/templates/tags.tmpl'
+_template_filename = u'/usr/local/lib/python2.7/dist-packages/nikola/data/themes/bootstrap/templates/tags.tmpl'
 _template_uri = u'tags.tmpl'
 _source_encoding = 'utf-8'
 _exports = [u'content']
@@ -90,6 +90,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "line_map": {"26": 0, "37": 2, "42": 26, "48": 4, "58": 4, "59": 5, "60": 5, "61": 6, "62": 7, "63": 7, "64": 7, "65": 9, "66": 10, "67": 11, "68": 11, "69": 11, "70": 11, "71": 11, "72": 14, "73": 15, "74": 16, "75": 16, "76": 16, "77": 19, "78": 20, "79": 21, "80": 22, "81": 22, "82": 22, "83": 22, "84": 22, "85": 24, "91": 85}, "uri": "tags.tmpl", "filename": "/usr/local/lib/python2.6/dist-packages/nikola/data/themes/bootstrap/templates/tags.tmpl"}
+{"source_encoding": "utf-8", "line_map": {"26": 0, "37": 2, "42": 26, "48": 4, "58": 4, "59": 5, "60": 5, "61": 6, "62": 7, "63": 7, "64": 7, "65": 9, "66": 10, "67": 11, "68": 11, "69": 11, "70": 11, "71": 11, "72": 14, "73": 15, "74": 16, "75": 16, "76": 16, "77": 19, "78": 20, "79": 21, "80": 22, "81": 22, "82": 22, "83": 22, "84": 22, "85": 24, "91": 85}, "uri": "tags.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/bootstrap/templates/tags.tmpl"}
 __M_END_METADATA
 """

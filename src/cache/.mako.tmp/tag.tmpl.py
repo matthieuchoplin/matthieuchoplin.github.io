@@ -4,9 +4,9 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1403516941.712697
+_modified_time = 1404054844.209032
 _enable_loop = True
-_template_filename = u'/usr/local/lib/python2.6/dist-packages/nikola/data/themes/base/templates/tag.tmpl'
+_template_filename = u'/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/tag.tmpl'
 _template_uri = u'tag.tmpl'
 _source_encoding = 'utf-8'
 _exports = [u'content', u'extra_head']
@@ -159,6 +159,6 @@ def render_extra_head(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "line_map": {"133": 4, "134": 5, "135": 5, "136": 6, "137": 7, "138": 8, "139": 8, "140": 8, "141": 8, "142": 8, "143": 8, "144": 8, "145": 8, "146": 8, "147": 10, "148": 11, "149": 11, "150": 11, "151": 11, "152": 11, "153": 11, "26": 0, "154": 11, "160": 154, "46": 2, "51": 13, "56": 40, "62": 16, "78": 16, "79": 19, "80": 19, "81": 21, "82": 22, "83": 23, "84": 24, "85": 24, "86": 24, "87": 24, "88": 24, "89": 24, "90": 24, "91": 24, "92": 27, "93": 28, "94": 28, "95": 28, "96": 28, "97": 28, "98": 30, "99": 32, "100": 33, "101": 34, "102": 35, "103": 35, "104": 35, "105": 35, "106": 35, "107": 35, "108": 35, "109": 35, "110": 35, "111": 35, "112": 35, "113": 37, "114": 39, "120": 4}, "uri": "tag.tmpl", "filename": "/usr/local/lib/python2.6/dist-packages/nikola/data/themes/base/templates/tag.tmpl"}
+{"source_encoding": "utf-8", "line_map": {"133": 4, "134": 5, "135": 5, "136": 6, "137": 7, "138": 8, "139": 8, "140": 8, "141": 8, "142": 8, "143": 8, "144": 8, "145": 8, "146": 8, "147": 10, "148": 11, "149": 11, "150": 11, "151": 11, "152": 11, "153": 11, "26": 0, "154": 11, "160": 154, "46": 2, "51": 13, "56": 40, "62": 16, "78": 16, "79": 19, "80": 19, "81": 21, "82": 22, "83": 23, "84": 24, "85": 24, "86": 24, "87": 24, "88": 24, "89": 24, "90": 24, "91": 24, "92": 27, "93": 28, "94": 28, "95": 28, "96": 28, "97": 28, "98": 30, "99": 32, "100": 33, "101": 34, "102": 35, "103": 35, "104": 35, "105": 35, "106": 35, "107": 35, "108": 35, "109": 35, "110": 35, "111": 35, "112": 35, "113": 37, "114": 39, "120": 4}, "uri": "tag.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/tag.tmpl"}
 __M_END_METADATA
 """

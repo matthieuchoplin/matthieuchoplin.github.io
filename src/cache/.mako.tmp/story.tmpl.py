@@ -4,9 +4,9 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1403516941.8843
+_modified_time = 1404054844.285172
 _enable_loop = True
-_template_filename = u'/usr/local/lib/python2.6/dist-packages/nikola/data/themes/base/templates/story.tmpl'
+_template_filename = u'/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/story.tmpl'
 _template_uri = u'story.tmpl'
 _source_encoding = 'utf-8'
 _exports = [u'content', u'extra_head']
@@ -134,6 +134,6 @@ def render_extra_head(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "line_map": {"128": 17, "129": 17, "135": 129, "22": 3, "25": 4, "28": 2, "34": 0, "51": 2, "52": 3, "53": 4, "54": 5, "59": 19, "64": 37, "70": 21, "82": 21, "83": 24, "84": 24, "85": 25, "86": 25, "87": 28, "88": 28, "89": 30, "90": 31, "91": 32, "92": 32, "93": 33, "94": 33, "95": 36, "101": 7, "110": 7, "111": 8, "112": 8, "113": 9, "114": 10, "115": 10, "116": 10, "117": 12, "118": 12, "119": 12, "120": 13, "121": 13, "122": 14, "123": 14, "124": 15, "125": 15, "126": 16, "127": 17}, "uri": "story.tmpl", "filename": "/usr/local/lib/python2.6/dist-packages/nikola/data/themes/base/templates/story.tmpl"}
+{"source_encoding": "utf-8", "line_map": {"128": 17, "129": 17, "135": 129, "22": 3, "25": 4, "28": 2, "34": 0, "51": 2, "52": 3, "53": 4, "54": 5, "59": 19, "64": 37, "70": 21, "82": 21, "83": 24, "84": 24, "85": 25, "86": 25, "87": 28, "88": 28, "89": 30, "90": 31, "91": 32, "92": 32, "93": 33, "94": 33, "95": 36, "101": 7, "110": 7, "111": 8, "112": 8, "113": 9, "114": 10, "115": 10, "116": 10, "117": 12, "118": 12, "119": 12, "120": 13, "121": 13, "122": 14, "123": 14, "124": 15, "125": 15, "126": 16, "127": 17}, "uri": "story.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/story.tmpl"}
 __M_END_METADATA
 """

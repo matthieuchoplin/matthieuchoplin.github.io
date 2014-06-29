@@ -1,0 +1,67 @@
+<div class="section" id="installation">
+<h1>Installation</h1>
+<p>Liclipse seems to be the IDE to go for Python edition if you come from the Eclipse + pydev plugin world: <a class="reference external" href="http://brainwy.github.io/liclipse/index.html">Liclipse</a> (Lightweight Eclipse)</p>
+<p>It comes with pydev and gedit plugin already integrated.</p>
+<p>On ubuntu 12.04, you need to install the following Java dependencies before being able to launch it.</p>
+<pre class="code bash literal-block">
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java7-installer
+</pre>
+<p>It'll keep your java 7 installation up to date.</p>
+<p>To automatically set up the Java 7 environment variables JAVA_HOME and PATH:</p>
+<pre class="code bash literal-block">
+sudo apt-get install oracle-java7-set-default
+</pre>
+<p>Source: <a class="reference external" href="http://stackoverflow.com/questions/16263556/installing-java-7-on-ubuntu">http://stackoverflow.com/questions/16263556/installing-java-7-on-ubuntu</a></p>
+</div>
+<div class="section" id="importing-a-git-project">
+<h1>Importing a Git project</h1>
+<p>If the project is already cloned in your local environment, then click &quot;File&quot; | &quot;Import&quot;| Select &quot;Git&quot; | &quot;Project from Git&quot;| &quot;Existing local Repository&quot; and select the project you want.</p>
+<p>Else, you can also clone the project from Liclipse by doing &quot;File&quot; | &quot;Import&quot;| Select &quot;Git&quot; | &quot;Project from Git&quot;| &quot;Clone Uri&quot;.</p>
+</div>
+<div class="section" id="using-egit">
+<h1>Using eGit</h1>
+<p>Egit enables you to do the same as what git already enables but in a much more friendly way.</p>
+<p>Because egit is already integrated in Jiclipse, you already have all its features. I recommend the <a class="reference external" href="http://wiki.eclipse.org/EGit/User_Guide">documentation</a>. Most of the egit features are available when you right click on a file and select &quot;Team&quot;.</p>
+<ul>
+<li><p class="first">Annotations: When you are editing a file, you can access it by right clicking the file, selecting &quot;Team&quot; and &quot;Show annotations&quot;.</p>
+<p>Similar to:</p>
+</li>
+</ul>
+<pre class="code bash literal-block">
+git blame
+</pre>
+<ul>
+<li><p class="first">History: When you are editing a file, you can access it by right clicking the file, selecting &quot;Team&quot; and &quot;Show in History&quot;.</p>
+<p>Similar to:</p>
+</li>
+</ul>
+<pre class="code bash literal-block">
+git log -p
+</pre>
+</div>
+<div class="section" id="using-pydev">
+<h1>Using Pydev</h1>
+<p><a class="reference external" href="http://pydev.org/">pydev</a> is the Python IDE in Eclipse.</p>
+<p>The debugging mode is very easy to use:</p>
+<ul class="simple">
+<li>Place your breakpoints where you want by double clicking in the margin of the files.</li>
+<li>Edit the &quot;Run configuration&quot; according to your project settings.</li>
+<li>Click on &quot;Run&quot; | &quot;Debug as&quot; and select the configuration you created.</li>
+</ul>
+</div>
+<div class="section" id="alternatives">
+<h1>Alternatives</h1>
+<p>Development environments for Python are listed here: <a class="reference external" href="http://docs.python-guide.org/en/latest/dev/env/">http://docs.python-guide.org/en/latest/dev/env/</a></p>
+<p>As text Editors, Vim is also a good choice combined with the following plugins:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.vim.org/scripts/script.php?script_id=974">indent</a></li>
+<li><a class="reference external" href="http://www.vim.org/scripts/script.php?script_id=790">syntax</a></li>
+<li><a class="reference external" href="https://github.com/nvie/vim-pep8">vim-pep8</a></li>
+<li><a class="reference external" href="https://github.com/nvie/vim-pyflakes">vim-pyflakes</a></li>
+<li><a class="reference external" href="https://github.com/scrooloose/syntastic">syntastic</a></li>
+<li><a class="reference external" href="https://github.com/klen/python-mode">python-mode</a></li>
+<li><a class="reference external" href="http://www.vim.org/scripts/script.php?script_id=1643">supertab</a></li>
+</ul>
+</div>
