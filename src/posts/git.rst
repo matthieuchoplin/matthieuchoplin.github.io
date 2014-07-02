@@ -20,3 +20,12 @@ Tutorial
 ========
 
 Learn git from your browser: https://try.github.io/levels/1/challenges/1
+
+Delete current tag
+==================
+
+.. code-block:: bash
+
+  git tag -d 12.15
+  git push origin :refs/tags/12.15
+

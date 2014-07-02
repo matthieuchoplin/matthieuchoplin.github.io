@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Sun, 29 Jun 2014 16:26:15 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Liclipse as Python editor</title><link>http://mattchoplin.com/posts/Liclipse.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="installation"&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Wed, 02 Jul 2014 16:32:21 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Screen</title><link>http://mattchoplin.com/posts/screen.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="install-screen"&gt;
+&lt;h2&gt;Install screen&lt;/h2&gt;
+&lt;pre class="code bash literal-block"&gt;
+sudo apt-get install screen
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="start-a-new-screen-session-with-session-name"&gt;
+&lt;h2&gt;Start a new screen session with session name&lt;/h2&gt;
+&lt;pre class="code bash literal-block"&gt;
+screen -S &amp;lt;script_name&amp;gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="attach-to-a-running-session-with-name"&gt;
+&lt;h2&gt;Attach to a running session with name&lt;/h2&gt;
+&lt;pre class="code bash literal-block"&gt;
+screen -r &amp;lt;script_name&amp;gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="escape-key"&gt;
+&lt;h2&gt;Escape key&lt;/h2&gt;
+&lt;p&gt;Ctrl-a and d&lt;/p&gt;
+&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/screen.html</guid><pubDate>Mon, 30 Jun 2014 12:44:57 GMT</pubDate></item><item><title>Liclipse as Python editor</title><link>http://mattchoplin.com/posts/Liclipse.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="installation"&gt;
 &lt;h2&gt;Installation&lt;/h2&gt;
 &lt;p&gt;Liclipse seems to be the IDE to go for Python edition if you come from the Eclipse + pydev plugin world: &lt;a class="reference external" href="http://brainwy.github.io/liclipse/index.html"&gt;Liclipse&lt;/a&gt; (Lightweight Eclipse)&lt;/p&gt;
 &lt;p&gt;It comes with pydev and gedit plugin already integrated.&lt;/p&gt;
@@ -88,6 +109,13 @@ git log --graph --all --format&lt;span class="o"&gt;=&lt;/span&gt;format:&lt;spa
 &lt;div class="section" id="tutorial"&gt;
 &lt;h2&gt;Tutorial&lt;/h2&gt;
 &lt;p&gt;Learn git from your browser: &lt;a class="reference external" href="https://try.github.io/levels/1/challenges/1"&gt;https://try.github.io/levels/1/challenges/1&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="delete-current-tag"&gt;
+&lt;h2&gt;Delete current tag&lt;/h2&gt;
+&lt;pre class="code bash literal-block"&gt;
+git tag -d 12.15
+git push origin :refs/tags/12.15
+&lt;/pre&gt;
 &lt;/div&gt;</description><category>git</category><guid>http://mattchoplin.com/posts/git.html</guid><pubDate>Fri, 06 Jun 2014 16:09:03 GMT</pubDate></item><item><title>The watch command</title><link>http://mattchoplin.com/posts/the-watch-command.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
 watch -n1 &lt;span class="s1"&gt;' ps aux | grep what_you_want'&lt;/span&gt;
 &lt;/pre&gt;
@@ -123,15 +151,4 @@ ssh -D 8888 youruser@yourserver.com
     &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\r&lt;/span&gt;&lt;span class="si"&gt;%d%%&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;flush&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;Sourcce: &lt;a class="reference external" href="http://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console"&gt;http://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console&lt;/a&gt;&lt;/p&gt;</description><category>python</category><guid>http://mattchoplin.com/posts/progress-bar-in-python.html</guid><pubDate>Thu, 05 Jun 2014 08:25:49 GMT</pubDate></item><item><title>VIM</title><link>http://mattchoplin.com/posts/vim.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="vim-basics"&gt;
-&lt;h2&gt;VIM basics&lt;/h2&gt;
-&lt;p&gt;The built in tutorial of Vim is very useful to know the basics. To launch it simply type the following in your terminal:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$vimtutor&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;It will launch some lessons with an approach 'learning by doing'.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="configuration"&gt;
-&lt;h2&gt;Configuration&lt;/h2&gt;
-&lt;p&gt;The ~/.vimrc file provides Vim's default configuration&lt;/p&gt;
-&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/vim.html</guid><pubDate>Wed, 04 Jun 2014 21:51:32 GMT</pubDate></item></channel></rss>
+&lt;p&gt;Sourcce: &lt;a class="reference external" href="http://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console"&gt;http://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console&lt;/a&gt;&lt;/p&gt;</description><category>python</category><guid>http://mattchoplin.com/posts/progress-bar-in-python.html</guid><pubDate>Thu, 05 Jun 2014 08:25:49 GMT</pubDate></item></channel></rss>
