@@ -217,8 +217,21 @@ sudo pip3 install https://github.com/django/django/archive/stable/1.7.x.zip
     <div class="section" id="nice-display-of-the-current-tree">
 <h2>Nice display of the current tree</h2>
 <pre class="code bash literal-block">
-git log --graph --all --format<span class="o">=</span>format:<span class="s2">"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold white)%cn%C(reset)%C(magenta)%d%C(reset)%n%x09%C(white)%s%C(reset)"</span> --abbrev-commit <span class="s2">"$@"</span>
+git log --graph --pretty<span class="o">=</span>format:<span class="s1">'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset'</span> --abbrev-commit
 </pre>
+<p>You can also make an alias. Copy and paste the line below on your terminal:</p>
+<pre class="code bash literal-block">
+git config --global alias.lg <span class="s2">"log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit"</span>
+</pre>
+<p>And every time you need to see your log, just type in</p>
+<pre class="code bash literal-block">
+git lg
+</pre>
+<p>Or, if you want to see the lines that changed</p>
+<pre class="code bash literal-block">
+git lg -p
+</pre>
+<p>Source: <a class="reference external" href="https://coderwall.com/p/euwpig">https://coderwall.com/p/euwpig</a></p>
 </div>
 <div class="section" id="tutorial">
 <h2>Tutorial</h2>
@@ -241,9 +254,11 @@ git push origin :refs/tags/12.15
     <pre class="code bash literal-block">
 watch -n1 <span class="s1">' ps aux | grep what_you_want'</span>
 </pre>
-<div class="line-block">
-<div class="line"><br></div>
-</div>
+<p>Something interesting when combined with svc:</p>
+<pre class="code bash literal-block">
+watch svstat *
+</pre>
+<p>It will monitor every 2 seconds the state of your service.</p>
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/extract-list-of-installed-packages.html" class="u-url">Extract list of installed packages</a></h1>
         <div class="metadata">

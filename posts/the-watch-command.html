@@ -10,7 +10,13 @@
 <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="Matthieu Choplin">
 <meta name="og:title" content="The watch command">
 <meta name="og:url" content="http://mattchoplin.com/posts/the-watch-command.html">
-<meta name="og:description" content="watch -n1 ' ps aux | grep what_you_want'">
+<meta name="og:description" content="watch -n1 ' ps aux | grep what_you_want'
+
+Something interesting when combined with svc:
+
+watch svstat *
+
+It will monitor every 2 seconds the state of your service.">
 <meta name="og:site_name" content="Standing on the shoulders of giants">
 <meta name="og:type" content="article">
 </head>
@@ -79,9 +85,11 @@
     <pre class="code bash literal-block">
 watch -n1 <span class="s1">' ps aux | grep what_you_want'</span>
 </pre>
-<div class="line-block">
-<div class="line"><br></div>
-</div>
+<p>Something interesting when combined with svc:</p>
+<pre class="code bash literal-block">
+watch svstat *
+</pre>
+<p>It will monitor every 2 seconds the state of your service.</p>
     </div>
     <aside class="postpromonav"><nav><ul class="pager">
 <li class="previous">

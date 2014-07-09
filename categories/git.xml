@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants (git)</title><link>http://mattchoplin.com/</link><description></description><language>en</language><lastBuildDate>Wed, 02 Jul 2014 16:32:21 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Git</title><link>http://mattchoplin.com/posts/git.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="nice-display-of-the-current-tree"&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants (git)</title><link>http://mattchoplin.com/</link><description></description><language>en</language><lastBuildDate>Thu, 03 Jul 2014 08:00:11 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Git</title><link>http://mattchoplin.com/posts/git.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="nice-display-of-the-current-tree"&gt;
 &lt;h2&gt;Nice display of the current tree&lt;/h2&gt;
 &lt;pre class="code bash literal-block"&gt;
-git log --graph --all --format&lt;span class="o"&gt;=&lt;/span&gt;format:&lt;span class="s2"&gt;"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold white)%cn%C(reset)%C(magenta)%d%C(reset)%n%x09%C(white)%s%C(reset)"&lt;/span&gt; --abbrev-commit &lt;span class="s2"&gt;"$@"&lt;/span&gt;
+git log --graph --pretty&lt;span class="o"&gt;=&lt;/span&gt;format:&lt;span class="s1"&gt;'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&amp;lt;%an&amp;gt;%Creset'&lt;/span&gt; --abbrev-commit
 &lt;/pre&gt;
+&lt;p&gt;You can also make an alias. Copy and paste the line below on your terminal:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+git config --global alias.lg &lt;span class="s2"&gt;"log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&amp;lt;%an&amp;gt;%Creset' --abbrev-commit"&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;And every time you need to see your log, just type in&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+git lg
+&lt;/pre&gt;
+&lt;p&gt;Or, if you want to see the lines that changed&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+git lg -p
+&lt;/pre&gt;
+&lt;p&gt;Source: &lt;a class="reference external" href="https://coderwall.com/p/euwpig"&gt;https://coderwall.com/p/euwpig&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="tutorial"&gt;
 &lt;h2&gt;Tutorial&lt;/h2&gt;

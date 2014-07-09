@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Wed, 02 Jul 2014 16:32:21 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Screen</title><link>http://mattchoplin.com/posts/screen.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="install-screen"&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Wed, 09 Jul 2014 17:24:07 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Screen</title><link>http://mattchoplin.com/posts/screen.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="install-screen"&gt;
 &lt;h2&gt;Install screen&lt;/h2&gt;
 &lt;pre class="code bash literal-block"&gt;
 sudo apt-get install screen
@@ -103,8 +103,21 @@ sudo pip3 install https://github.com/django/django/archive/stable/1.7.x.zip
 &lt;/ul&gt;&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/tdd-with-django-at-skills-matter.html</guid><pubDate>Tue, 10 Jun 2014 17:20:48 GMT</pubDate></item><item><title>Git</title><link>http://mattchoplin.com/posts/git.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="nice-display-of-the-current-tree"&gt;
 &lt;h2&gt;Nice display of the current tree&lt;/h2&gt;
 &lt;pre class="code bash literal-block"&gt;
-git log --graph --all --format&lt;span class="o"&gt;=&lt;/span&gt;format:&lt;span class="s2"&gt;"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold white)%cn%C(reset)%C(magenta)%d%C(reset)%n%x09%C(white)%s%C(reset)"&lt;/span&gt; --abbrev-commit &lt;span class="s2"&gt;"$@"&lt;/span&gt;
+git log --graph --pretty&lt;span class="o"&gt;=&lt;/span&gt;format:&lt;span class="s1"&gt;'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&amp;lt;%an&amp;gt;%Creset'&lt;/span&gt; --abbrev-commit
 &lt;/pre&gt;
+&lt;p&gt;You can also make an alias. Copy and paste the line below on your terminal:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+git config --global alias.lg &lt;span class="s2"&gt;"log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&amp;lt;%an&amp;gt;%Creset' --abbrev-commit"&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;And every time you need to see your log, just type in&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+git lg
+&lt;/pre&gt;
+&lt;p&gt;Or, if you want to see the lines that changed&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+git lg -p
+&lt;/pre&gt;
+&lt;p&gt;Source: &lt;a class="reference external" href="https://coderwall.com/p/euwpig"&gt;https://coderwall.com/p/euwpig&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="tutorial"&gt;
 &lt;h2&gt;Tutorial&lt;/h2&gt;
@@ -119,9 +132,11 @@ git push origin :refs/tags/12.15
 &lt;/div&gt;</description><category>git</category><guid>http://mattchoplin.com/posts/git.html</guid><pubDate>Fri, 06 Jun 2014 16:09:03 GMT</pubDate></item><item><title>The watch command</title><link>http://mattchoplin.com/posts/the-watch-command.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
 watch -n1 &lt;span class="s1"&gt;' ps aux | grep what_you_want'&lt;/span&gt;
 &lt;/pre&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;&lt;br&gt;&lt;/div&gt;
-&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/the-watch-command.html</guid><pubDate>Thu, 05 Jun 2014 14:59:51 GMT</pubDate></item><item><title>Extract list of installed packages</title><link>http://mattchoplin.com/posts/extract-list-of-installed-packages.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
+&lt;p&gt;Something interesting when combined with svc:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+watch svstat *
+&lt;/pre&gt;
+&lt;p&gt;It will monitor every 2 seconds the state of your service.&lt;/p&gt;</description><guid>http://mattchoplin.com/posts/the-watch-command.html</guid><pubDate>Thu, 05 Jun 2014 14:59:51 GMT</pubDate></item><item><title>Extract list of installed packages</title><link>http://mattchoplin.com/posts/extract-list-of-installed-packages.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
 dpkg-query -l | awk &lt;span class="s1"&gt;'{print $2 $3}'&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;Notice the combinatin of dpkg-query and awk!&lt;/p&gt;</description><guid>http://mattchoplin.com/posts/extract-list-of-installed-packages.html</guid><pubDate>Thu, 05 Jun 2014 14:03:35 GMT</pubDate></item><item><title>Port forwarding</title><link>http://mattchoplin.com/posts/port-forwarding.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="proxy-configuration"&gt;

@@ -1,6 +1,8 @@
 <pre class="code bash literal-block">
 watch -n1 <span class="s1">' ps aux | grep what_you_want'</span>
 </pre>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
+<p>Something interesting when combined with svc:</p>
+<pre class="code bash literal-block">
+watch svstat *
+</pre>
+<p>It will monitor every 2 seconds the state of your service.</p>

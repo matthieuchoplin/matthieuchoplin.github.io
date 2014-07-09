@@ -10,4 +10,13 @@
 
   watch -n1 ' ps aux | grep what_you_want'
 
-|
+
+Something interesting when combined with svc:
+
+.. code:: bash
+
+  watch svstat *
+
+It will monitor every 2 seconds the state of your service.
+
+

@@ -10,9 +10,11 @@
 <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="Matthieu Choplin">
 <meta name="og:title" content="Git">
 <meta name="og:url" content="http://mattchoplin.com/posts/git.html">
-<meta name="og:description" content='Nice display of the current tree
+<meta name="og:description" content="Nice display of the current tree
 
-git log --graph --all --format=format:"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold white)%cn%C(reset)%C(magenta)%d%C(reset)%n%x09%'>
+git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit
+
+You can also make an alias. Copy and ">
 <meta name="og:site_name" content="Standing on the shoulders of giants">
 <meta name="og:type" content="article">
 </head>
@@ -81,8 +83,21 @@ git log --graph --all --format=format:"%x09%C(yellow)%h%C(reset) %C(green)%ai%x0
     <div class="section" id="nice-display-of-the-current-tree">
 <h2>Nice display of the current tree</h2>
 <pre class="code bash literal-block">
-git log --graph --all --format<span class="o">=</span>format:<span class="s2">"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold white)%cn%C(reset)%C(magenta)%d%C(reset)%n%x09%C(white)%s%C(reset)"</span> --abbrev-commit <span class="s2">"$@"</span>
+git log --graph --pretty<span class="o">=</span>format:<span class="s1">'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset'</span> --abbrev-commit
 </pre>
+<p>You can also make an alias. Copy and paste the line below on your terminal:</p>
+<pre class="code bash literal-block">
+git config --global alias.lg <span class="s2">"log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit"</span>
+</pre>
+<p>And every time you need to see your log, just type in</p>
+<pre class="code bash literal-block">
+git lg
+</pre>
+<p>Or, if you want to see the lines that changed</p>
+<pre class="code bash literal-block">
+git lg -p
+</pre>
+<p>Source: <a class="reference external" href="https://coderwall.com/p/euwpig">https://coderwall.com/p/euwpig</a></p>
 </div>
 <div class="section" id="tutorial">
 <h2>Tutorial</h2>
