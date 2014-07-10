@@ -55,7 +55,24 @@
             
             
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vim.html" class="u-url">VIM</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/progress-bar-in-python.html" class="u-url">Progress bar in python</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
+            <p class="dateline"><a href="posts/progress-bar-in-python.html" rel="bookmark"><time class="published dt-published" datetime="2014-06-05T09:25:49+01:00" itemprop="datePublished" title="Publication date">2014-06-05 09:25</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>Writing 'r' will move the cursor back to the beginning of the line.</p>
+<p>This displays a percentage counter:</p>
+<pre class="code python literal-block">
+<span class="kn">import</span> <span class="nn">time</span><span class="o">,</span><span class="nn">sys</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">"</span><span class="se">\r</span><span class="si">%d%%</span><span class="s">"</span> <span class="o">%</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+</pre>
+<p>Sourcce: <a class="reference external" href="http://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console">http://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console</a></p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vim.html" class="u-url">VIM</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
             <p class="dateline"><a href="posts/vim.html" rel="bookmark"><time class="published dt-published" datetime="2014-06-04T22:51:32+01:00" itemprop="datePublished" title="Publication date">2014-06-04 22:51</time></a></p>
