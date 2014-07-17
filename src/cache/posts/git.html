@@ -1,6 +1,11 @@
 <div class="section" id="nice-display-of-the-current-tree">
 <h1>Nice display of the current tree</h1>
 <pre class="code bash literal-block">
+git log --graph --all --format<span class="o">=</span>format:<span class="s2">&quot;%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold
+white)%cn%C(reset)%C(green)%d%C(reset)%n%x09%C(white)%s%C(reset)&quot;</span> --abbrev-commit <span class="s2">&quot;$&#64;&quot;</span>
+</pre>
+<p>An alternative:</p>
+<pre class="code bash literal-block">
 git log --graph --pretty<span class="o">=</span>format:<span class="s1">'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset'</span> --abbrev-commit
 </pre>
 <p>You can also make an alias. Copy and paste the line below on your terminal:</p>

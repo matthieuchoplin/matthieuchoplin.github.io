@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Thu, 10 Jul 2014 16:12:22 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>VNC</title><link>http://mattchoplin.com/posts/vnc.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;Connect to external machine using VNC.&lt;/p&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Thu, 17 Jul 2014 17:19:51 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Git branching strategy</title><link>http://mattchoplin.com/posts/git-branching-strategy.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="the-git-flow-strategy"&gt;
+&lt;h2&gt;The git-flow strategy&lt;/h2&gt;
+&lt;p&gt;Very nice cheatsheet: &lt;a class="reference external" href="http://danielkummer.github.io/git-flow-cheatsheet/"&gt;http://danielkummer.github.io/git-flow-cheatsheet/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="the-centralized-worklow"&gt;
+&lt;h2&gt;The centralized worklow&lt;/h2&gt;
+&lt;p&gt;Like Subversion, the Centralized Workflow uses a central repository to serve as the single point-of-entry for all changes to the project. Instead of trunk, the default development branch is called master and all changes are committed into this branch. This workflow doesn’t require any other branches besides master.&lt;/p&gt;
+&lt;div class="section" id="pros"&gt;
+&lt;h3&gt;Pros&lt;/h3&gt;
+&lt;p&gt;Developers are always working on the last version of the code.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="cons"&gt;
+&lt;h3&gt;Cons&lt;/h3&gt;
+&lt;p&gt;If some code breaks something, the whole process is stuck, no release can be done.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="feature-branch-workflow"&gt;
+&lt;h2&gt;Feature Branch Workflow&lt;/h2&gt;
+&lt;p&gt;The core idea behind the Feature Branch Workflow is that all feature development should take place in a dedicated branch instead of the master branch. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase. It also means the master branch will never contain broken code, which is a huge advantage for continuous integration environments.&lt;/p&gt;
+&lt;p&gt;Encapsulating feature development also makes it possible to leverage pull requests, which are a way to initiate discussions around a branch. They give other developers the opportunity to sign off on a feature before it gets integrated into the official project. Or, if you get stuck in the middle of a feature, you can open a pull request asking for suggestions from your colleagues. The point is, pull requests make it incredibly easy for your team to comment on each other’s work.&lt;/p&gt;
+&lt;p&gt;source: &lt;a class="reference external" href="https://www.atlassian.com/git/workflows"&gt;https://www.atlassian.com/git/workflows&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</description><category>git</category><guid>http://mattchoplin.com/posts/git-branching-strategy.html</guid><pubDate>Sun, 13 Jul 2014 11:44:49 GMT</pubDate></item><item><title>VNC</title><link>http://mattchoplin.com/posts/vnc.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;Connect to external machine using VNC.&lt;/p&gt;
 &lt;p&gt;Source: &lt;a class="reference external" href="https://help.ubuntu.com/community/VNC/Clients"&gt;https://help.ubuntu.com/community/VNC/Clients&lt;/a&gt;&lt;/p&gt;</description><guid>http://mattchoplin.com/posts/vnc.html</guid><pubDate>Thu, 10 Jul 2014 15:05:22 GMT</pubDate></item><item><title>Screen</title><link>http://mattchoplin.com/posts/screen.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="install-screen"&gt;
 &lt;h2&gt;Install screen&lt;/h2&gt;
 &lt;pre class="code bash literal-block"&gt;
@@ -104,6 +125,11 @@ sudo pip3 install https://github.com/django/django/archive/stable/1.7.x.zip
 &lt;/ul&gt;&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/tdd-with-django-at-skills-matter.html</guid><pubDate>Tue, 10 Jun 2014 17:20:48 GMT</pubDate></item><item><title>Git</title><link>http://mattchoplin.com/posts/git.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="nice-display-of-the-current-tree"&gt;
 &lt;h2&gt;Nice display of the current tree&lt;/h2&gt;
 &lt;pre class="code bash literal-block"&gt;
+git log --graph --all --format&lt;span class="o"&gt;=&lt;/span&gt;format:&lt;span class="s2"&gt;"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold
+white)%cn%C(reset)%C(green)%d%C(reset)%n%x09%C(white)%s%C(reset)"&lt;/span&gt; --abbrev-commit &lt;span class="s2"&gt;"$@"&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;An alternative:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
 git log --graph --pretty&lt;span class="o"&gt;=&lt;/span&gt;format:&lt;span class="s1"&gt;'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&amp;lt;%an&amp;gt;%Creset'&lt;/span&gt; --abbrev-commit
 &lt;/pre&gt;
 &lt;p&gt;You can also make an alias. Copy and paste the line below on your terminal:&lt;/p&gt;
@@ -140,22 +166,4 @@ watch svstat *
 &lt;p&gt;It will monitor every 2 seconds the state of your service.&lt;/p&gt;</description><guid>http://mattchoplin.com/posts/the-watch-command.html</guid><pubDate>Thu, 05 Jun 2014 14:59:51 GMT</pubDate></item><item><title>Extract list of installed packages</title><link>http://mattchoplin.com/posts/extract-list-of-installed-packages.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
 dpkg-query -l | awk &lt;span class="s1"&gt;'{print $2 $3}'&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;Notice the combinatin of dpkg-query and awk!&lt;/p&gt;</description><guid>http://mattchoplin.com/posts/extract-list-of-installed-packages.html</guid><pubDate>Thu, 05 Jun 2014 14:03:35 GMT</pubDate></item><item><title>Port forwarding</title><link>http://mattchoplin.com/posts/port-forwarding.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="proxy-configuration"&gt;
-&lt;h2&gt;Proxy configuration&lt;/h2&gt;
-&lt;pre class="code bash literal-block"&gt;
-ssh -D 8888 youruser@yourserver.com
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="for-firefox"&gt;
-&lt;h2&gt;For Firefox&lt;/h2&gt;
-&lt;p&gt;Install foxyproxy addons.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="for-chrome"&gt;
-&lt;h2&gt;For Chrome&lt;/h2&gt;
-&lt;p&gt;Install Foxy Proxy standard:
-&lt;a class="reference external" href="https://chrome.google.com/webstore/detail/foxyproxy-standard/gcknhkkoolaabfmlnjonogaaifnjlfnp"&gt;https://chrome.google.com/webstore/detail/foxyproxy-standard/gcknhkkoolaabfmlnjonogaaifnjlfnp&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Then in Tools | Extensions | Options of FoxyProxy, change the settings.&lt;/p&gt;
-&lt;dl class="docutils"&gt;&lt;dt&gt;Other links:&lt;/dt&gt;
-&lt;dd&gt;&lt;ul class="first last simple"&gt;&lt;li&gt;&lt;a class="reference external" href="http://fr.flossmanuals.net/comment-contourner-la-censure-sur-internet/ch019_reglages-proxy-et-foxyproxy"&gt;http://fr.flossmanuals.net/comment-contourner-la-censure-sur-internet/ch019_reglages-proxy-et-foxyproxy&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/dd&gt;
-&lt;/dl&gt;&lt;/div&gt;</description><category>internet</category><guid>http://mattchoplin.com/posts/port-forwarding.html</guid><pubDate>Thu, 05 Jun 2014 13:21:55 GMT</pubDate></item></channel></rss>
+&lt;p&gt;Notice the combinatin of dpkg-query and awk!&lt;/p&gt;</description><guid>http://mattchoplin.com/posts/extract-list-of-installed-packages.html</guid><pubDate>Thu, 05 Jun 2014 14:03:35 GMT</pubDate></item></channel></rss>

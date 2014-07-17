@@ -13,6 +13,13 @@ Nice display of the current tree
 
 .. code-block:: bash
 
+ git log --graph --all --format=format:"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold
+ white)%cn%C(reset)%C(green)%d%C(reset)%n%x09%C(white)%s%C(reset)" --abbrev-commit "$@"
+
+An alternative:
+
+.. code-block:: bash
+
   git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
 You can also make an alias. Copy and paste the line below on your terminal:
