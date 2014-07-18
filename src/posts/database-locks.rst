@@ -20,6 +20,7 @@ Fix the lock:
   select pg_cancel_backend(pid int)
 
 Where "pid int" is the pid you find with pg_stat_activity
+
 Sources: 
 
 - http://www.postgresql.org/docs/9.2/static/functions-admin.html
