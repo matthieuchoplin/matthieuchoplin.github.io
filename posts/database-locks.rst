@@ -19,7 +19,7 @@ Fix the lock:
 
   select pg_cancel_backend(pid int)
 
-Where "pid int" is the pid you find with pg_stat_activity
+Where "pid int" is the pid you find with pg_stat_activity.
 
 Sources: 
 
