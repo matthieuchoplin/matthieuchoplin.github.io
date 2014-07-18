@@ -3,8 +3,8 @@ from mako import runtime, filters, cache
 UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
-_magic_number = 10
-_modified_time = 1405699004.246655
+_magic_number = 9
+_modified_time = 1405725493.984629
 _enable_loop = True
 _template_filename = u'/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/comments_helper_intensedebate.tmpl'
 _template_uri = u'comments_helper_intensedebate.tmpl'
@@ -17,8 +17,11 @@ def render_body(context,**pageargs):
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         __M_writer = context.writer()
+        # SOURCE LINE 11
         __M_writer(u'\n\n')
+        # SOURCE LINE 22
         __M_writer(u'\n\n')
+        # SOURCE LINE 25
         __M_writer(u'\n')
         return ''
     finally:
@@ -30,11 +33,15 @@ def render_comment_form(context,url,title,identifier):
     try:
         comment_system_id = context.get('comment_system_id', UNDEFINED)
         __M_writer = context.writer()
+        # SOURCE LINE 2
         __M_writer(u"\n<script>\nvar idcomments_acct = '")
+        # SOURCE LINE 4
         __M_writer(unicode(comment_system_id))
         __M_writer(u'\';\nvar idcomments_post_id = "')
+        # SOURCE LINE 5
         __M_writer(unicode(identifier))
         __M_writer(u'";\nvar idcomments_post_url = "')
+        # SOURCE LINE 6
         __M_writer(unicode(url))
         __M_writer(u'";\n</script>\n<span id="IDCommentsPostTitle" style="display:none"></span>\n<script src=\'http://www.intensedebate.com/js/genericCommentWrapperV2.js\'></script>\n</script>\n')
         return ''
@@ -47,15 +54,20 @@ def render_comment_link(context,link,identifier):
     try:
         comment_system_id = context.get('comment_system_id', UNDEFINED)
         __M_writer = context.writer()
+        # SOURCE LINE 13
         __M_writer(u'\n<a href="{link}" onclick="this.href=\'')
+        # SOURCE LINE 14
         __M_writer(unicode(link))
         __M_writer(u'\'; this.target=\'_self\';"><span class=\'IDCommentsReplace\' style=\'display:none\'>')
         __M_writer(unicode(identifier))
         __M_writer(u"</span>\n<script>\nvar idcomments_acct = '")
+        # SOURCE LINE 16
         __M_writer(unicode(comment_system_id))
         __M_writer(u'\';\nvar idcomments_post_id = "')
+        # SOURCE LINE 17
         __M_writer(unicode(identifier))
         __M_writer(u'";\nvar idcomments_post_url = "')
+        # SOURCE LINE 18
         __M_writer(unicode(link))
         __M_writer(u'";\n</script>\n<script src="http://www.intensedebate.com/js/genericLinkWrapperV2.js"></script>\n</a>\n')
         return ''
@@ -67,14 +79,10 @@ def render_comment_link_script(context):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_writer = context.writer()
+        # SOURCE LINE 24
         __M_writer(u'\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
 
 
-"""
-__M_BEGIN_METADATA
-{"source_encoding": "utf-8", "line_map": {"15": 0, "20": 11, "21": 22, "22": 25, "28": 2, "33": 2, "34": 4, "35": 4, "36": 5, "37": 5, "38": 6, "39": 6, "45": 13, "50": 13, "51": 14, "52": 14, "53": 14, "54": 14, "55": 16, "56": 16, "57": 17, "58": 17, "59": 18, "60": 18, "66": 24, "70": 24, "76": 70}, "uri": "comments_helper_intensedebate.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/comments_helper_intensedebate.tmpl"}
-__M_END_METADATA
-"""

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="description" content="Blog about my developer experience">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width">
 <title>Standing on the shoulders of giants | Standing on the shoulders of giants</title>
 <link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
@@ -55,7 +55,24 @@
             
             
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/copy-records-from-csv-in-postgresql.html" class="u-url">Copy records from csv in postgresql</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/psycopg2.html" class="u-url">Psycopg2</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
+            <p class="dateline"><a href="posts/psycopg2.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-19T00:14:20+01:00" itemprop="datePublished" title="Publication date">2014-07-19 00:14</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <pre class="code python literal-block">
+<span class="kn">import</span> <span class="nn">psycopg2</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">"dbname='template1' user='dbuser' host='localhost' password='dbpass'"</span><span class="p">)</span>
+<span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</pre>
+<p>Once you have the cursor of the database, you can execute queries with:</p>
+<pre class="code python literal-block">
+<span class="n">cr</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">your_query</span><span class="p">;)</span>
+</pre>
+<p>Source: <a class="reference external" href="https://wiki.postgresql.org/wiki/Psycopg2_Tutorial">https://wiki.postgresql.org/wiki/Psycopg2_Tutorial</a></p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/copy-records-from-csv-in-postgresql.html" class="u-url">Copy records from csv in postgresql</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
             <p class="dateline"><a href="posts/copy-records-from-csv-in-postgresql.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-18T16:39:41+01:00" itemprop="datePublished" title="Publication date">2014-07-18 16:39</time></a></p>
@@ -299,21 +316,6 @@ git tag -d 12.15
 git push origin :refs/tags/12.15
 </pre>
 </div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/the-watch-command.html" class="u-url">The watch command</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/the-watch-command.html" rel="bookmark"><time class="published dt-published" datetime="2014-06-05T15:59:51+01:00" itemprop="datePublished" title="Publication date">2014-06-05 15:59</time></a></p>
-        </div>
-    </header><div class="e-content entry-content">
-    <pre class="code bash literal-block">
-watch -n1 <span class="s1">' ps aux | grep what_you_want'</span>
-</pre>
-<p>Something interesting when combined with svc:</p>
-<pre class="code bash literal-block">
-watch svstat *
-</pre>
-<p>It will monitor every 2 seconds the state of your service.</p>
     </div>
     </article>
 </div>
