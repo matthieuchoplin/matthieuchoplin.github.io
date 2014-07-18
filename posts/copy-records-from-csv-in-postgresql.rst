@@ -6,7 +6,7 @@
 .. description: copy csv in sql table
 .. type: text
 
-.. block:: sql
+.. code-block:: sql
 
   CREATE TEMPORARY TABLE original_table_name_temp(like original_table_name including all);
   COPY original_table_name_temp FROM 'path_of_your_csv';

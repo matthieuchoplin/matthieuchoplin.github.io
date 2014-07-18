@@ -61,17 +61,10 @@
             <p class="dateline"><a href="posts/copy-records-from-csv-in-postgresql.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-18T16:39:41+01:00" itemprop="datePublished" title="Publication date">2014-07-18 16:39</time></a></p>
         </div>
     </header><div class="e-content entry-content">
-    <div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">&lt;string&gt;</tt>, line 1)</p>
-<p>Unknown directive type "block".</p>
-<pre class="literal-block">
-.. block:: sql
-
-  CREATE TEMPORARY TABLE original_table_name_temp(like original_table_name including all);
-  COPY original_table_name_temp FROM 'path_of_your_csv';
-
+    <pre class="code sql literal-block">
+<span class="k">CREATE</span> <span class="k">TEMPORARY</span> <span class="k">TABLE</span> <span class="n">original_table_name_temp</span><span class="p">(</span><span class="k">like</span> <span class="n">original_table_name</span> <span class="k">including</span> <span class="k">all</span><span class="p">);</span>
+<span class="k">COPY</span> <span class="n">original_table_name_temp</span> <span class="k">FROM</span> <span class="s1">'path_of_your_csv'</span><span class="p">;</span>
 </pre>
-</div>
 <p>Source: <a class="reference external" href="http://postgresql.1045698.n5.nabble.com/reverse-strpos-td1891709.html">http://postgresql.1045698.n5.nabble.com/reverse-strpos-td1891709.html</a></p>
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/git-branching-strategy.html" class="u-url">Git branching strategy</a></h1>
