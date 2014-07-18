@@ -55,7 +55,26 @@
             
             
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/psycopg2.html" class="u-url">Psycopg2</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/database-locks.html" class="u-url">Database locks</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
+            <p class="dateline"><a href="posts/database-locks.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-19T00:27:04+01:00" itemprop="datePublished" title="Publication date">2014-07-19 00:27</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <pre class="code postgresql literal-block">
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">pg_stat_activity</span> <span class="k">where</span> <span class="n">waiting</span><span class="o">=</span><span class="s1">'t'</span><span class="p">;</span>
+</pre>
+<p>Fix the lock:</p>
+<pre class="code postgresql literal-block">
+<span class="k">select</span> <span class="n">pg_cancel_backend</span><span class="p">(</span><span class="n">pid</span> <span class="nb">int</span><span class="p">)</span>
+</pre>
+<p>Where "pid int" is the pid you find with pg_stat_activity
+Sources:
+- <a class="reference external" href="http://www.postgresql.org/docs/9.2/static/functions-admin.html">http://www.postgresql.org/docs/9.2/static/functions-admin.html</a>
+- <a class="reference external" href="http://wiki.postgresql.org/wiki/Lock_Monitoring">http://wiki.postgresql.org/wiki/Lock_Monitoring</a>
+- <a class="reference external" href="http://chrismiles.info/systemsadmin/databases/articles/viewing-current-postgresql-queries/">http://chrismiles.info/systemsadmin/databases/articles/viewing-current-postgresql-queries/</a></p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/psycopg2.html" class="u-url">Psycopg2</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
             <p class="dateline"><a href="posts/psycopg2.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-19T00:14:20+01:00" itemprop="datePublished" title="Publication date">2014-07-19 00:14</time></a></p>
@@ -273,48 +292,6 @@ sudo pip3 install https://github.com/django/django/archive/stable/1.7.x.zip
 <li>Selenium</li>
 <li>Django 1.7 beta</li>
 </ul>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/git.html" class="u-url">Git</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/git.html" rel="bookmark"><time class="published dt-published" datetime="2014-06-06T17:09:03+01:00" itemprop="datePublished" title="Publication date">2014-06-06 17:09</time></a></p>
-        </div>
-    </header><div class="e-content entry-content">
-    <div class="section" id="nice-display-of-the-current-tree">
-<h2>Nice display of the current tree</h2>
-<pre class="code bash literal-block">
-git log --graph --all --format<span class="o">=</span>format:<span class="s2">"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold
-white)%cn%C(reset)%C(green)%d%C(reset)%n%x09%C(white)%s%C(reset)"</span> --abbrev-commit <span class="s2">"$@"</span>
-</pre>
-<p>An alternative:</p>
-<pre class="code bash literal-block">
-git log --graph --pretty<span class="o">=</span>format:<span class="s1">'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset'</span> --abbrev-commit
-</pre>
-<p>You can also make an alias. Copy and paste the line below on your terminal:</p>
-<pre class="code bash literal-block">
-git config --global alias.lg <span class="s2">"log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit"</span>
-</pre>
-<p>And every time you need to see your log, just type in</p>
-<pre class="code bash literal-block">
-git lg
-</pre>
-<p>Or, if you want to see the lines that changed</p>
-<pre class="code bash literal-block">
-git lg -p
-</pre>
-<p>Source: <a class="reference external" href="https://coderwall.com/p/euwpig">https://coderwall.com/p/euwpig</a></p>
-</div>
-<div class="section" id="tutorial">
-<h2>Tutorial</h2>
-<p>Learn git from your browser: <a class="reference external" href="https://try.github.io/levels/1/challenges/1">https://try.github.io/levels/1/challenges/1</a></p>
-</div>
-<div class="section" id="delete-current-tag">
-<h2>Delete current tag</h2>
-<pre class="code bash literal-block">
-git tag -d 12.15
-git push origin :refs/tags/12.15
-</pre>
 </div>
     </div>
     </article>
