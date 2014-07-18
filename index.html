@@ -55,7 +55,26 @@
             
             
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/git-branching-strategy.html" class="u-url">Git branching strategy</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/copy-records-from-csv-in-postgresql.html" class="u-url">Copy records from csv in postgresql</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
+            <p class="dateline"><a href="posts/copy-records-from-csv-in-postgresql.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-18T16:39:41+01:00" itemprop="datePublished" title="Publication date">2014-07-18 16:39</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">&lt;string&gt;</tt>, line 1)</p>
+<p>Unknown directive type "block".</p>
+<pre class="literal-block">
+.. block:: sql
+
+  CREATE TEMPORARY TABLE original_table_name_temp(like original_table_name including all);
+  COPY original_table_name_temp FROM 'path_of_your_csv';
+
+</pre>
+</div>
+<p>Source: <a class="reference external" href="http://postgresql.1045698.n5.nabble.com/reverse-strpos-td1891709.html">http://postgresql.1045698.n5.nabble.com/reverse-strpos-td1891709.html</a></p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/git-branching-strategy.html" class="u-url">Git branching strategy</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
             <p class="dateline"><a href="posts/git-branching-strategy.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-13T12:44:49+01:00" itemprop="datePublished" title="Publication date">2014-07-13 12:44</time></a></p>
@@ -302,17 +321,6 @@ watch -n1 <span class="s1">' ps aux | grep what_you_want'</span>
 watch svstat *
 </pre>
 <p>It will monitor every 2 seconds the state of your service.</p>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/extract-list-of-installed-packages.html" class="u-url">Extract list of installed packages</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/extract-list-of-installed-packages.html" rel="bookmark"><time class="published dt-published" datetime="2014-06-05T15:03:35+01:00" itemprop="datePublished" title="Publication date">2014-06-05 15:03</time></a></p>
-        </div>
-    </header><div class="e-content entry-content">
-    <pre class="code bash literal-block">
-dpkg-query -l | awk <span class="s1">'{print $2 $3}'</span>
-</pre>
-<p>Notice the combinatin of dpkg-query and awk!</p>
     </div>
     </article>
 </div>
