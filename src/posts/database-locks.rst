@@ -21,6 +21,7 @@ Fix the lock:
 
 Where "pid int" is the pid you find with pg_stat_activity
 Sources: 
- - http://www.postgresql.org/docs/9.2/static/functions-admin.html
- - http://wiki.postgresql.org/wiki/Lock_Monitoring
- - http://chrismiles.info/systemsadmin/databases/articles/viewing-current-postgresql-queries/
+
+- http://www.postgresql.org/docs/9.2/static/functions-admin.html
+- http://wiki.postgresql.org/wiki/Lock_Monitoring
+- http://chrismiles.info/systemsadmin/databases/articles/viewing-current-postgresql-queries/
