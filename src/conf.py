@@ -401,6 +401,11 @@ OUTPUT_FOLDER = '..'
 #     ("icon", "/icon_128x128.png", "128x128"),
 # }
 
+FAVICONS = {
+    ("icon", "/favicon-16x16.png", "16x16"),
+}
+
+
 # Show only teasers in the index pages? Defaults to False.
 # INDEX_TEASERS = False
 
