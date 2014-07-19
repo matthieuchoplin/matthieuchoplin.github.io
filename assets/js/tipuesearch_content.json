@@ -1,0 +1,124 @@
+{
+  "pages": [
+    {
+      "text": "As the number of posts is growing, I think that having a search engine within the website is now relevant. This post only show whqt I am using for that.\nInstead of using an external search engine such as Google or DuckDuckGo, you have a plugin in Nikola than enables searching on the client side by using jQuery.\nAssuming you have installed Nikola > v7.0, you can install the plugin like this:\n\nnikola plugin -i localsearch\n\nIt will give you a configuration sample to paste in your config.py file.\nSource: http://plugins.getnikola.com/#localsearch", 
+      "tags": "Nikola", 
+      "loc": "/posts/tipue-search.html", 
+      "title": "Tipue search"
+    }, 
+    {
+      "text": "select * from pg_stat_activity where waiting='t';\n\nFix the lock:\n\nselect pg_cancel_backend(pid int)\n\nWhere \"pid int\" is the pid you find with pg_stat_activity.\nSources:\nhttp://www.postgresql.org/docs/9.2/static/functions-admin.html\nhttp://wiki.postgresql.org/wiki/Lock_Monitoring\nhttp://chrismiles.info/systemsadmin/databases/articles/viewing-current-postgresql-queries/", 
+      "tags": "lock,postgresql", 
+      "loc": "/posts/database-locks.html", 
+      "title": "Database locks"
+    }, 
+    {
+      "text": "import psycopg2\nconn = psycopg2.connect(\"dbname='template1' user='dbuser' host='localhost' password='dbpass'\")\ncur = conn.cursor()\n\nOnce you have the cursor of the database, you can execute queries with:\n\ncr.execute(your_query;)\n\nSource: https://wiki.postgresql.org/wiki/Psycopg2_Tutorial", 
+      "tags": "", 
+      "loc": "/posts/psycopg2.html", 
+      "title": "Psycopg2"
+    }, 
+    {
+      "text": "CREATE TEMPORARY TABLE original_table_name_temp(like original_table_name including all);\nCOPY original_table_name_temp FROM 'path_of_your_csv';\n\nSource: http://postgresql.1045698.n5.nabble.com/reverse-strpos-td1891709.html", 
+      "tags": "copy,postgresql,sql", 
+      "loc": "/posts/copy-records-from-csv-in-postgresql.html", 
+      "title": "Copy records from csv in postgresql"
+    }, 
+    {
+      "text": "The git-flow strategy\nVery nice cheatsheet: http://danielkummer.github.io/git-flow-cheatsheet/\n\n\nThe centralized worklow\nLike Subversion, the Centralized Workflow uses a central repository to serve as the single point-of-entry for all changes to the project. Instead of trunk, the default development branch is called master and all changes are committed into this branch. This workflow doesn\u2019t require any other branches besides master.\n\nPros\nDevelopers are always working on the last version of the code.\n\n\nCons\nIf some code breaks something, the whole process is stuck, no release can be done.\n\n\n\nFeature Branch Workflow\nThe core idea behind the Feature Branch Workflow is that all feature development should take place in a dedicated branch instead of the master branch. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase. It also means the master branch will never contain broken code, which is a huge advantage for continuous integration environments.\nEncapsulating feature development also makes it possible to leverage pull requests, which are a way to initiate discussions around a branch. They give other developers the opportunity to sign off on a feature before it gets integrated into the official project. Or, if you get stuck in the middle of a feature, you can open a pull request asking for suggestions from your colleagues. The point is, pull requests make it incredibly easy for your team to comment on each other\u2019s work.\nsource: https://www.atlassian.com/git/workflows", 
+      "tags": "git", 
+      "loc": "/posts/git-branching-strategy.html", 
+      "title": "Git branching strategy"
+    }, 
+    {
+      "text": "Connect to external machine using VNC.\nSource: https://help.ubuntu.com/community/VNC/Clients", 
+      "tags": "", 
+      "loc": "/posts/vnc.html", 
+      "title": "VNC"
+    }, 
+    {
+      "text": "Install screen\n\nsudo apt-get install screen\n\n\n\nStart a new screen session with session name\n\nscreen -S <script_name>\n\n\n\nAttach to a running session with name\n\nscreen -r <script_name>\n\n\n\nEscape key\nCtrl-a and d", 
+      "tags": "", 
+      "loc": "/posts/screen.html", 
+      "title": "Screen"
+    }, 
+    {
+      "text": "Installation\nLiclipse seems to be the IDE to go for Python edition if you come from the Eclipse + pydev plugin world: Liclipse (Lightweight Eclipse)\nIt comes with pydev and gedit plugin already integrated.\nOn ubuntu 12.04, you need to install the following Java dependencies before being able to launch it.\n\nsudo add-apt-repository ppa:webupd8team/java\nsudo apt-get update\nsudo apt-get install oracle-java7-installer\n\nIt'll keep your java 7 installation up to date.\nTo automatically set up the Java 7 environment variables JAVA_HOME and PATH:\n\nsudo apt-get install oracle-java7-set-default\n\nSource: http://stackoverflow.com/questions/16263556/installing-java-7-on-ubuntu\n\n\nImporting a Git project\nIf the project is already cloned in your local environment, then click \"File\" | \"Import\"| Select \"Git\" | \"Project from Git\"| \"Existing local Repository\" and select the project you want.\nElse, you can also clone the project from Liclipse by doing \"File\" | \"Import\"| Select \"Git\" | \"Project from Git\"| \"Clone Uri\".\n\n\nUsing eGit\nEgit enables you to do the same as what git already enables but in a much more friendly way.\nBecause egit is already integrated in Jiclipse, you already have all its features. I recommend the documentation. Most of the egit features are available when you right click on a file and select \"Team\".\nAnnotations: When you are editing a file, you can access it by right clicking the file, selecting \"Team\" and \"Show annotations\".\nSimilar to:\n\n\ngit blame\n\nHistory: When you are editing a file, you can access it by right clicking the file, selecting \"Team\" and \"Show in History\".\nSimilar to:\n\n\ngit log -p\n\n\n\nUsing Pydev\npydev is the Python IDE in Eclipse.\nThe debugging mode is very easy to use:\nPlace your breakpoints where you want by double clicking in the margin of the files.\nEdit the \"Run configuration\" according to your project settings.\nClick on \"Run\" | \"Debug as\" and select the configuration you created.\n\n\nAlternatives\nDevelopment environments for Python are listed here: http://docs.python-guide.org/en/latest/dev/env/\nAs text Editors, Vim is also a good choice combined with the following plugins:\nindent\nsyntax\nvim-pep8\nvim-pyflakes\nsyntastic\npython-mode\nsupertab", 
+      "tags": "", 
+      "loc": "/posts/Liclipse.html", 
+      "title": "Liclipse as Python editor"
+    }, 
+    {
+      "text": "pkill -9f process-name\n\nExample:\n\npkill -9f filezilla", 
+      "tags": "", 
+      "loc": "/posts/unresponsive-process.html", 
+      "title": "Unresponsive process"
+    }, 
+    {
+      "text": "sudo python -m smtpd -n -c DebuggingServer localhost:25\n\nThe sudo is needed as you can\u2019t bind to a port number lower than 1024 as a normal user.\nSource: http://www.euperia.com/development/test-smtp-with-a-dummy-server-in-python/460", 
+      "tags": "python", 
+      "loc": "/posts/dummy-smtp-server-in-python-for-testing.html", 
+      "title": "Dummy smtp server in Python for testing"
+    }, 
+    {
+      "text": "Session animated by Harry Percival based on the book http://www.obeythetestinggoat.com/\nFor having the handout:\n\nsudo pip3 install https://github.com/django/django/archive/stable/1.7.x.zip\n\n\nRequirement:\nFirefox\nGit\nPip3\nSelenium\nDjango 1.7 beta", 
+      "tags": "", 
+      "loc": "/posts/tdd-with-django-at-skills-matter.html", 
+      "title": "TDD with Django at Skills Matter"
+    }, 
+    {
+      "text": "Nice display of the current tree\n\ngit log --graph --all --format=format:\"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold\nwhite)%cn%C(reset)%C(green)%d%C(reset)%n%x09%C(white)%s%C(reset)\" --abbrev-commit \"$@\"\n\nAn alternative:\n\ngit log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit\n\nYou can also make an alias. Copy and paste the line below on your terminal:\n\ngit config --global alias.lg \"log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit\"\n\nAnd every time you need to see your log, just type in\n\ngit lg\n\nOr, if you want to see the lines that changed\n\ngit lg -p\n\nSource: https://coderwall.com/p/euwpig\n\n\nTutorial\nLearn git from your browser: https://try.github.io/levels/1/challenges/1\n\n\nDelete current tag\n\ngit tag -d 12.15\ngit push origin :refs/tags/12.15", 
+      "tags": "git", 
+      "loc": "/posts/git.html", 
+      "title": "Git"
+    }, 
+    {
+      "text": "watch -n1 ' ps aux | grep what_you_want'\n\nSomething interesting when combined with svc:\n\nwatch svstat *\n\nIt will monitor every 2 seconds the state of your service.", 
+      "tags": "", 
+      "loc": "/posts/the-watch-command.html", 
+      "title": "The watch command"
+    }, 
+    {
+      "text": "dpkg-query -l | awk '{print $2 $3}'\n\nNotice the combinatin of dpkg-query and awk!", 
+      "tags": "", 
+      "loc": "/posts/extract-list-of-installed-packages.html", 
+      "title": "Extract list of installed packages"
+    }, 
+    {
+      "text": "Proxy configuration\n\nssh -D 8888 youruser@yourserver.com\n\n\n\nFor Firefox\nInstall foxyproxy addons.\n\n\nFor Chrome\nInstall Foxy Proxy standard:\nhttps://chrome.google.com/webstore/detail/foxyproxy-standard/gcknhkkoolaabfmlnjonogaaifnjlfnp\nThen in Tools | Extensions | Options of FoxyProxy, change the settings.\nOther links:\nhttp://fr.flossmanuals.net/comment-contourner-la-censure-sur-internet/ch019_reglages-proxy-et-foxyproxy", 
+      "tags": "internet", 
+      "loc": "/posts/port-forwarding.html", 
+      "title": "Port forwarding"
+    }, 
+    {
+      "text": "Writing 'r' will move the cursor back to the beginning of the line.\nThis displays a percentage counter:\n\nimport time,sys\nfor i in range(100):\n    time.sleep(1)\n    sys.stdout.write(\"\\r%d%%\" %i)\n    sys.stdout.flush()\n\nSourcce: http://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console", 
+      "tags": "python", 
+      "loc": "/posts/progress-bar-in-python.html", 
+      "title": "Progress bar in python"
+    }, 
+    {
+      "text": "VIM basics\nThe built in tutorial of Vim is very useful to know the basics. To launch it simply type the following in your terminal:\n\n$vimtutor\n\nIt will launch some lessons with an approach 'learning by doing'.\n\n\nConfiguration\nThe ~/.vimrc file provides Vim's default configuration", 
+      "tags": "", 
+      "loc": "/posts/vim.html", 
+      "title": "VIM"
+    }, 
+    {
+      "text": "Dealing with broken symbolic links\nFind broken symlinks and delete them\n\n$find -L /path/to/check -type l -delete\n\nList them\n\n$find -L /path -type l\n\nIf you want to delete them with confirmation first, do\n\n$find -L /path -type l -exec rm -i {} +\n\n\n\nCreating symbolik links\nFirst cd into your directory and then indicate where your symlinks will point\n\n$find /directory_where_yout_symlinks_are/ -maxdepth 1 -type d -exec ln -s  {} \\;\n\nIf you want to update your existing symlinks, use the -f option such as:\n\n$find /home/matt/workspace/unified_repos/erp_core/modules/ -maxdepth 1 -type d -exec ln -sf  {} \\;", 
+      "tags": "sysadmin", 
+      "loc": "/posts/symbolic-links.html", 
+      "title": "Symbolic links"
+    }, 
+    {
+      "text": "The page does not exist.", 
+      "tags": "", 
+      "loc": "/stories/404.html", 
+      "title": "404"
+    }, 
+    {
+      "text": "Website hosted from my Github Repository\nIt is using Github Pages.\nCreate a repository called username.github.io, where username is your username (or organization name) on GitHub and put your website files in there.\n\n\nWebsite generation using a Python framework: Nikola\nThis website is using Nikola which is a Python static website generator.\nAssuming that you have created a github repository called username.github.io, clone it with:\n\ngit clone git@github.com:username/username.github.io.git\n\nThen initialize your website with this command:\n\nnikola init username.github.io\n\nwhere username.github.io is the repository you have just cloned.\ncd in this directory and execute this command:\n\nnikola build && nikola serve -b\n\nThe website will open at the url http://127.0.0.1:8000.\nTo deploy to Github, change the file conf.py such as:\n\nGITHUB_DEPLOY_BRANCH = 'master'\n\nOnce you are happy with it, you can deploy to Github with the command:\n\nnikola github_deploy\n\n\n\nPosts written using reStructuredText\nUseful cheatsheet for the basics: http://github.com/ralsina/rst-cheatsheet/raw/master/rst-cheatsheet.pdf\nThis is also a way to learn how to use Vim. Since Nikola 7.0.1, you can use the -e option when creating a new post.\nBut before, you need to set up a default editor.\nIf you want to use vim, you can first locate it:\n\nwhich vim\n\nThen you can use it in the export variable:\n\nexport EDITOR=/usr/bin/vim\n\n\n\nDownload a pre-built template from bootswatch\n\nnikola bootswatch_theme -n custom_theme -s spruce -p bootstrap3\n\n\n\nUpgrading Nikola\nSince Nikola can be installed with Pip, you can use the following command:\n\npip install -U nikola\n\nAs a reminder, pip is installed using setuptools and easyinstall:\n\nsudo easy install pip\n\nTo upgrade pip:\n\nsudo easy_install -U pip\n\nTo downgrade pip to a previous version:\n\nsudo easy_install pip==1.2.1\n\n\n\n\n\n\nAdd your own domain\nLog in to your domain provider website and change the forwarding value to the website url provided by Github-pages e.g.\nusername.github.io", 
+      "tags": "Nikola,blog", 
+      "loc": "/posts/blog-creation.html", 
+      "title": "Blog creation"
+    }
+  ]
+}

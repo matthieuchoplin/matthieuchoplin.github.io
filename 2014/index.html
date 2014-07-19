@@ -8,9 +8,17 @@
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="http://mattchoplin.com/2014/index.html">
-<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><link rel="stylesheet" type="text/css" href="../assets/css/tipuesearch.css">
 </head>
 <body>
+<div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 20px;"></div>
+
+
+
+
+
+
+
 
 <!-- Menubar -->
 
@@ -43,7 +51,10 @@
                 
             </li>
 </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<span class="navbar-form pull-left">
+    <input type="text" id="tipue_search_input"></span>
+
+            <ul class="nav navbar-nav navbar-right"></ul>
 </div>
 <!-- /.navbar-collapse -->
     </div>
@@ -57,6 +68,9 @@
 <article class="listpage"><header><h1>Posts for year 2014</h1>
     </header><ul class="postlist">
 <li>
+<a href="../posts/tipue-search.html" class="listtitle">Tipue search</a> <time class="listdate" datetime="2014-07-19T13:05:20+01:00" title="Publication date">2014-07-19 13:05</time>
+</li>
+        <li>
 <a href="../posts/database-locks.html" class="listtitle">Database locks</a> <time class="listdate" datetime="2014-07-19T00:27:04+01:00" title="Publication date">2014-07-19 00:27</time>
 </li>
         <li>
@@ -131,6 +145,14 @@
   ga('create', 'UA-51792900-1', 'mattchoplin.com');
   ga('send', 'pageview');
 
+</script><script src="../assets/js/tipuesearch_set.js"></script><script src="../assets/js/tipuesearch.js"></script><script>
+    $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch({
+            'mode': 'json',
+            'contentLocation': '/assets/js/tipuesearch_content.json',
+            'showUrl': false
+        });
+    });
 </script>
 </body>
 </html>

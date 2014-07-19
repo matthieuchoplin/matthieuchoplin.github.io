@@ -663,6 +663,18 @@ SOCIAL_BUTTONS_CODE=""
 # in the default template (base.tmpl).
 # (translatable)
 # BODY_END = ""
+
+SEARCH_FORM = """
+    <span class="navbar-form pull-left">
+    <input type="text" id="tipue_search_input">
+    </span>"""
+
+EXTRA_HEAD_DATA = """
+    <link rel="stylesheet" type="text/css" href="/assets/css/tipuesearch.css">
+    <div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 20px;"></div>
+"""
+
+
 BODY_END="""
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -674,6 +686,19 @@ BODY_END="""
   ga('send', 'pageview');
 
 </script>
+
+<script src="/assets/js/tipuesearch_set.js"></script>
+    <script src="/assets/js/tipuesearch.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch({
+            'mode': 'json',
+            'contentLocation': '/assets/js/tipuesearch_content.json',
+            'showUrl': false
+        });
+    });
+</script>
+
 """
 
 # The possibility to extract metadata from the filename by using a

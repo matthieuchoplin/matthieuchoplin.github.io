@@ -7,7 +7,16 @@
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="http://mattchoplin.com/posts/dummy-smtp-server-in-python-for-testing.html">
-<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="Matthieu Choplin">
+<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><link rel="stylesheet" type="text/css" href="../assets/css/tipuesearch.css">
+</head>
+<body>
+<div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 20px;"></div>
+
+
+
+    
+
+    <meta name="author" content="Matthieu Choplin">
 <meta name="og:title" content="Dummy smtp server in Python for testing">
 <meta name="og:url" content="http://mattchoplin.com/posts/dummy-smtp-server-in-python-for-testing.html">
 <meta name="og:description" content="sudo python -m smtpd -n -c DebuggingServer localhost:25
@@ -16,12 +25,7 @@ The sudo is needed as you can’t bind to a port number lower than 1024 as a nor
 Source: http://www.euperia.com/development/test-smtp-wi">
 <meta name="og:site_name" content="Standing on the shoulders of giants">
 <meta name="og:type" content="article">
-</head>
-<body>
-
-<!-- Menubar -->
-
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container">
+<!-- Menubar --><nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container">
 <!-- This keeps the margins nice -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -50,7 +54,10 @@ Source: http://www.euperia.com/development/test-smtp-wi">
                 
             </li>
 </ul>
-<ul class="nav navbar-nav navbar-right">
+<span class="navbar-form pull-left">
+    <input type="text" id="tipue_search_input"></span>
+
+            <ul class="nav navbar-nav navbar-right">
 <li>
     <a href="dummy-smtp-server-in-python-for-testing.rst" id="sourcelink">Source</a>
     </li>
@@ -116,6 +123,14 @@ sudo python -m smtpd -n -c DebuggingServer localhost:25
   ga('create', 'UA-51792900-1', 'mattchoplin.com');
   ga('send', 'pageview');
 
+</script><script src="../assets/js/tipuesearch_set.js"></script><script src="../assets/js/tipuesearch.js"></script><script>
+    $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch({
+            'mode': 'json',
+            'contentLocation': '/assets/js/tipuesearch_content.json',
+            'showUrl': false
+        });
+    });
 </script>
 </body>
 </html>

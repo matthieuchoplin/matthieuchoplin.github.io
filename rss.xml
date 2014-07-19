@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Sat, 19 Jul 2014 00:33:38 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Database locks</title><link>http://mattchoplin.com/posts/database-locks.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code postgresql literal-block"&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Sat, 19 Jul 2014 13:14:36 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Tipue search</title><link>http://mattchoplin.com/posts/tipue-search.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;As the number of posts is growing, I think that having a search engine within the website is now relevant. This post only shows what I am using for that.&lt;/p&gt;
+&lt;p&gt;Instead of using an external search engine such as Google or DuckDuckGo, you have a plugin in Nikola than enables searching on the client side by using jQuery.&lt;/p&gt;
+&lt;p&gt;Assuming you have installed Nikola &amp;gt; v7.0, you can install the plugin like this:&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="n"&gt;nikola&lt;/span&gt; &lt;span class="n"&gt;plugin&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="n"&gt;localsearch&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;It will give you a configuration sample to paste in your config.py file.&lt;/p&gt;
+&lt;p&gt;Source: &lt;a class="reference external" href="http://plugins.getnikola.com/#localsearch"&gt;http://plugins.getnikola.com/#localsearch&lt;/a&gt;&lt;/p&gt;</description><category>Nikola</category><guid>http://mattchoplin.com/posts/tipue-search.html</guid><pubDate>Sat, 19 Jul 2014 12:05:20 GMT</pubDate></item><item><title>Database locks</title><link>http://mattchoplin.com/posts/database-locks.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code postgresql literal-block"&gt;
 &lt;span class="k"&gt;select&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;from&lt;/span&gt; &lt;span class="n"&gt;pg_stat_activity&lt;/span&gt; &lt;span class="k"&gt;where&lt;/span&gt; &lt;span class="n"&gt;waiting&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'t'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;Fix the lock:&lt;/p&gt;
@@ -135,16 +142,4 @@ pkill -9f filezilla
 sudo python -m smtpd -n -c DebuggingServer localhost:25
 &lt;/pre&gt;
 &lt;p&gt;The sudo is needed as you can’t bind to a port number lower than 1024 as a normal user.&lt;/p&gt;
-&lt;p&gt;Source: &lt;a class="reference external" href="http://www.euperia.com/development/test-smtp-with-a-dummy-server-in-python/460"&gt;http://www.euperia.com/development/test-smtp-with-a-dummy-server-in-python/460&lt;/a&gt;&lt;/p&gt;</description><category>python</category><guid>http://mattchoplin.com/posts/dummy-smtp-server-in-python-for-testing.html</guid><pubDate>Thu, 12 Jun 2014 17:19:30 GMT</pubDate></item><item><title>TDD with Django at Skills Matter</title><link>http://mattchoplin.com/posts/tdd-with-django-at-skills-matter.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;Session animated by &lt;em&gt;Harry Percival&lt;/em&gt; based on the book &lt;a class="reference external" href="http://www.obeythetestinggoat.com/"&gt;http://www.obeythetestinggoat.com/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;For having the handout:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-sudo pip3 install https://github.com/django/django/archive/stable/1.7.x.zip
-&lt;/pre&gt;
-&lt;div class="section" id="requirement"&gt;
-&lt;h2&gt;Requirement:&lt;/h2&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;Firefox&lt;/li&gt;
-&lt;li&gt;Git&lt;/li&gt;
-&lt;li&gt;Pip3&lt;/li&gt;
-&lt;li&gt;Selenium&lt;/li&gt;
-&lt;li&gt;Django 1.7 beta&lt;/li&gt;
-&lt;/ul&gt;&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/tdd-with-django-at-skills-matter.html</guid><pubDate>Tue, 10 Jun 2014 17:20:48 GMT</pubDate></item></channel></rss>
+&lt;p&gt;Source: &lt;a class="reference external" href="http://www.euperia.com/development/test-smtp-with-a-dummy-server-in-python/460"&gt;http://www.euperia.com/development/test-smtp-with-a-dummy-server-in-python/460&lt;/a&gt;&lt;/p&gt;</description><category>python</category><guid>http://mattchoplin.com/posts/dummy-smtp-server-in-python-for-testing.html</guid><pubDate>Thu, 12 Jun 2014 17:19:30 GMT</pubDate></item></channel></rss>
