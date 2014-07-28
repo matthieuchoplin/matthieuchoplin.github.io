@@ -31,3 +31,6 @@ or equivalently:
         cat = 3
         dog = 4
 
+Source: http://stackoverflow.com/questions/36932/how-can-i-represent-an-enum-in-python
+
+https://docs.python.org/3/library/enum.html
