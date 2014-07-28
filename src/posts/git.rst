@@ -42,6 +42,12 @@ Or, if you want to see the lines that changed
 
 Source: https://coderwall.com/p/euwpig
 
+Simply add color to your git environment:
+
+.. code-block:: bash
+
+  git config --global color.ui auto
+
 Tutorial
 ========
 
