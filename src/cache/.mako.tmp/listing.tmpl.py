@@ -3,8 +3,8 @@ from mako import runtime, filters, cache
 UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
-_magic_number = 9
-_modified_time = 1405775251.339649
+_magic_number = 10
+_modified_time = 1406537831.066306
 _enable_loop = True
 _template_filename = u'/usr/local/lib/python2.7/dist-packages/nikola/data/themes/bootstrap3/templates/listing.tmpl'
 _template_uri = u'listing.tmpl'
@@ -19,7 +19,6 @@ def _mako_get_namespace(context, name):
         _mako_generate_namespaces(context)
         return context.namespaces[(__name__, name)]
 def _mako_generate_namespaces(context):
-    # SOURCE LINE 3
     ns = runtime.TemplateNamespace(u'ui', context._clean_inheritance_tokens(), templateuri=u'crumbs.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, u'ui')] = ns
 
@@ -44,21 +43,17 @@ def render_body(context,**pageargs):
         crumbs = _import_ns.get('crumbs', context.get('crumbs', UNDEFINED))
         source_link = _import_ns.get('source_link', context.get('source_link', UNDEFINED))
         __M_writer = context.writer()
-        # SOURCE LINE 2
         __M_writer(u'\n')
-        # SOURCE LINE 3
         __M_writer(u'\n\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
             context['self'].content(**pageargs)
         
 
-        # SOURCE LINE 20
         __M_writer(u'\n\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'sourcelink'):
             context['self'].sourcelink(**pageargs)
         
 
-        # SOURCE LINE 28
         __M_writer(u'\n')
         return ''
     finally:
@@ -78,36 +73,25 @@ def render_content(context,**pageargs):
         ui = _mako_get_namespace(context, 'ui')
         crumbs = _import_ns.get('crumbs', context.get('crumbs', UNDEFINED))
         __M_writer = context.writer()
-        # SOURCE LINE 5
         __M_writer(u'\n')
-        # SOURCE LINE 6
         __M_writer(unicode(ui.bar(crumbs)))
         __M_writer(u'\n')
-        # SOURCE LINE 7
         if folders or files:
-            # SOURCE LINE 8
             __M_writer(u'<ul class="list-unstyled">\n')
-            # SOURCE LINE 9
             for name in folders:
-                # SOURCE LINE 10
                 __M_writer(u'    <li><a href="')
                 __M_writer(unicode(name))
                 __M_writer(u'"><i class="glyphicon glyphicon-folder-open"></i> ')
                 __M_writer(unicode(name))
                 __M_writer(u'</a>\n')
-            # SOURCE LINE 12
             for name in files:
-                # SOURCE LINE 13
                 __M_writer(u'    <li><a href="')
                 __M_writer(unicode(name))
                 __M_writer(u'.html"><i class="glyphicon glyphicon-file"></i> ')
                 __M_writer(unicode(name))
                 __M_writer(u'</a>\n')
-            # SOURCE LINE 15
             __M_writer(u'</ul>\n')
-        # SOURCE LINE 17
         if code:
-            # SOURCE LINE 18
             __M_writer(u'    ')
             __M_writer(unicode(code))
             __M_writer(u'\n')
@@ -126,13 +110,9 @@ def render_sourcelink(context,**pageargs):
         messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         source_link = _import_ns.get('source_link', context.get('source_link', UNDEFINED))
         __M_writer = context.writer()
-        # SOURCE LINE 22
         __M_writer(u'\n')
-        # SOURCE LINE 23
         if source_link:
-            # SOURCE LINE 24
             __M_writer(u'    <li>\n    <a href="')
-            # SOURCE LINE 25
             __M_writer(unicode(source_link))
             __M_writer(u'" id="sourcelink">')
             __M_writer(unicode(messages("Source")))
@@ -142,3 +122,8 @@ def render_sourcelink(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
+"""
+__M_BEGIN_METADATA
+{"source_encoding": "utf-8", "line_map": {"22": 3, "28": 0, "46": 2, "47": 3, "52": 20, "57": 28, "63": 5, "76": 5, "77": 6, "78": 6, "79": 7, "80": 8, "81": 9, "82": 10, "83": 10, "84": 10, "85": 10, "86": 10, "87": 12, "88": 13, "89": 13, "90": 13, "91": 13, "92": 13, "93": 15, "94": 17, "95": 18, "96": 18, "97": 18, "103": 22, "113": 22, "114": 23, "115": 24, "116": 25, "117": 25, "118": 25, "119": 25, "125": 119}, "uri": "listing.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/bootstrap3/templates/listing.tmpl"}
+__M_END_METADATA
+"""

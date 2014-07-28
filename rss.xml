@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Sat, 19 Jul 2014 14:06:36 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Tipue search</title><link>http://mattchoplin.com/posts/tipue-search.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;As the number of posts is growing, I think that having a search engine within the website is now relevant. This post only shows what I am using for that.&lt;/p&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Mon, 28 Jul 2014 09:57:11 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Using enum in python</title><link>http://mattchoplin.com/posts/using-enum-in-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
+pip install enum34
+&lt;/pre&gt;
+&lt;div class="section" id="example"&gt;
+&lt;h2&gt;Example:&lt;/h2&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;enum&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Enum&lt;/span&gt;
+&lt;span class="n"&gt;Animal&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;enum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'Animal'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'ant bee cat dog'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;or equivalently:&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Animals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Enum&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;ant&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+    &lt;span class="n"&gt;bee&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+    &lt;span class="n"&gt;cat&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;
+    &lt;span class="n"&gt;dog&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/using-enum-in-python.html</guid><pubDate>Mon, 28 Jul 2014 08:52:22 GMT</pubDate></item><item><title>Tipue search</title><link>http://mattchoplin.com/posts/tipue-search.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;As the number of posts is growing, I think that having a search engine within the website is now relevant. This post only shows what I am using for that.&lt;/p&gt;
 &lt;p&gt;Instead of using an external search engine such as Google or DuckDuckGo, you have a plugin in Nikola than enables searching on the client side by using jQuery.&lt;/p&gt;
 &lt;p&gt;Assuming you have installed Nikola &amp;gt; v7.0, you can install the plugin like this:&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
@@ -138,8 +155,4 @@ pkill -9f process-name
 &lt;p&gt;Example:&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 pkill -9f filezilla
-&lt;/pre&gt;</description><guid>http://mattchoplin.com/posts/unresponsive-process.html</guid><pubDate>Fri, 20 Jun 2014 09:08:44 GMT</pubDate></item><item><title>Dummy smtp server in Python for testing</title><link>http://mattchoplin.com/posts/dummy-smtp-server-in-python-for-testing.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
-sudo python -m smtpd -n -c DebuggingServer localhost:25
-&lt;/pre&gt;
-&lt;p&gt;The sudo is needed as you can’t bind to a port number lower than 1024 as a normal user.&lt;/p&gt;
-&lt;p&gt;Source: &lt;a class="reference external" href="http://www.euperia.com/development/test-smtp-with-a-dummy-server-in-python/460"&gt;http://www.euperia.com/development/test-smtp-with-a-dummy-server-in-python/460&lt;/a&gt;&lt;/p&gt;</description><category>python</category><guid>http://mattchoplin.com/posts/dummy-smtp-server-in-python-for-testing.html</guid><pubDate>Thu, 12 Jun 2014 17:19:30 GMT</pubDate></item></channel></rss>
+&lt;/pre&gt;</description><guid>http://mattchoplin.com/posts/unresponsive-process.html</guid><pubDate>Fri, 20 Jun 2014 09:08:44 GMT</pubDate></item></channel></rss>

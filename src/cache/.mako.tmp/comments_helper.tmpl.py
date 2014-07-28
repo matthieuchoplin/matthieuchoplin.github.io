@@ -3,8 +3,8 @@ from mako import runtime, filters, cache
 UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
-_magic_number = 9
-_modified_time = 1405775251.105353
+_magic_number = 10
+_modified_time = 1406537830.944733
 _enable_loop = True
 _template_filename = u'/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/comments_helper.tmpl'
 _template_uri = u'comments_helper.tmpl'
@@ -19,31 +19,24 @@ def _mako_get_namespace(context, name):
         _mako_generate_namespaces(context)
         return context.namespaces[(__name__, name)]
 def _mako_generate_namespaces(context):
-    # SOURCE LINE 4
     ns = runtime.TemplateNamespace(u'livefyre', context._clean_inheritance_tokens(), templateuri=u'comments_helper_livefyre.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, u'livefyre')] = ns
 
-    # SOURCE LINE 7
     ns = runtime.TemplateNamespace(u'googleplus', context._clean_inheritance_tokens(), templateuri=u'comments_helper_googleplus.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, u'googleplus')] = ns
 
-    # SOURCE LINE 8
     ns = runtime.TemplateNamespace(u'facebook', context._clean_inheritance_tokens(), templateuri=u'comments_helper_facebook.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, u'facebook')] = ns
 
-    # SOURCE LINE 6
     ns = runtime.TemplateNamespace(u'muut', context._clean_inheritance_tokens(), templateuri=u'comments_helper_muut.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, u'muut')] = ns
 
-    # SOURCE LINE 3
     ns = runtime.TemplateNamespace(u'disqus', context._clean_inheritance_tokens(), templateuri=u'comments_helper_disqus.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, u'disqus')] = ns
 
-    # SOURCE LINE 5
     ns = runtime.TemplateNamespace(u'intensedebate', context._clean_inheritance_tokens(), templateuri=u'comments_helper_intensedebate.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, u'intensedebate')] = ns
 
-    # SOURCE LINE 9
     ns = runtime.TemplateNamespace(u'isso', context._clean_inheritance_tokens(), templateuri=u'comments_helper_isso.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, u'isso')] = ns
 
@@ -52,27 +45,16 @@ def render_body(context,**pageargs):
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         __M_writer = context.writer()
-        # SOURCE LINE 2
         __M_writer(u'\n')
-        # SOURCE LINE 3
         __M_writer(u'\n')
-        # SOURCE LINE 4
         __M_writer(u'\n')
-        # SOURCE LINE 5
         __M_writer(u'\n')
-        # SOURCE LINE 6
         __M_writer(u'\n')
-        # SOURCE LINE 7
         __M_writer(u'\n')
-        # SOURCE LINE 8
         __M_writer(u'\n')
-        # SOURCE LINE 9
         __M_writer(u'\n\n')
-        # SOURCE LINE 27
         __M_writer(u'\n\n')
-        # SOURCE LINE 45
         __M_writer(u'\n\n')
-        # SOURCE LINE 63
         __M_writer(u'\n')
         return ''
     finally:
@@ -91,47 +73,32 @@ def render_comment_form(context,url,title,identifier):
         intensedebate = _mako_get_namespace(context, 'intensedebate')
         isso = _mako_get_namespace(context, 'isso')
         __M_writer = context.writer()
-        # SOURCE LINE 11
         __M_writer(u'\n')
-        # SOURCE LINE 12
         if comment_system == 'disqus':
-            # SOURCE LINE 13
             __M_writer(u'        ')
             __M_writer(unicode(disqus.comment_form(url, title, identifier)))
             __M_writer(u'\n')
-            # SOURCE LINE 14
         elif comment_system == 'livefyre':
-            # SOURCE LINE 15
             __M_writer(u'        ')
             __M_writer(unicode(livefyre.comment_form(url, title, identifier)))
             __M_writer(u'\n')
-            # SOURCE LINE 16
         elif comment_system == 'intensedebate':
-            # SOURCE LINE 17
             __M_writer(u'        ')
             __M_writer(unicode(intensedebate.comment_form(url, title, identifier)))
             __M_writer(u'\n')
-            # SOURCE LINE 18
         elif comment_system == 'muut':
-            # SOURCE LINE 19
             __M_writer(u'        ')
             __M_writer(unicode(muut.comment_form(url, title, identifier)))
             __M_writer(u'\n')
-            # SOURCE LINE 20
         elif comment_system == 'googleplus':
-            # SOURCE LINE 21
             __M_writer(u'        ')
             __M_writer(unicode(googleplus.comment_form(url, title, identifier)))
             __M_writer(u'\n')
-            # SOURCE LINE 22
         elif comment_system == 'facebook':
-            # SOURCE LINE 23
             __M_writer(u'        ')
             __M_writer(unicode(facebook.comment_form(url, title, identifier)))
             __M_writer(u'\n')
-            # SOURCE LINE 24
         elif comment_system == 'isso':
-            # SOURCE LINE 25
             __M_writer(u'        ')
             __M_writer(unicode(isso.comment_form(url, title, identifier)))
             __M_writer(u'\n')
@@ -152,47 +119,32 @@ def render_comment_link(context,link,identifier):
         intensedebate = _mako_get_namespace(context, 'intensedebate')
         isso = _mako_get_namespace(context, 'isso')
         __M_writer = context.writer()
-        # SOURCE LINE 29
         __M_writer(u'\n')
-        # SOURCE LINE 30
         if comment_system == 'disqus':
-            # SOURCE LINE 31
             __M_writer(u'        ')
             __M_writer(unicode(disqus.comment_link(link, identifier)))
             __M_writer(u'\n')
-            # SOURCE LINE 32
         elif comment_system == 'livefyre':
-            # SOURCE LINE 33
             __M_writer(u'        ')
             __M_writer(unicode(livefyre.comment_link(link, identifier)))
             __M_writer(u'\n')
-            # SOURCE LINE 34
         elif comment_system == 'intensedebate':
-            # SOURCE LINE 35
             __M_writer(u'        ')
             __M_writer(unicode(intensedebate.comment_link(link, identifier)))
             __M_writer(u'\n')
-            # SOURCE LINE 36
         elif comment_system == 'muut':
-            # SOURCE LINE 37
             __M_writer(u'        ')
             __M_writer(unicode(muut.comment_link(link, identifier)))
             __M_writer(u'\n')
-            # SOURCE LINE 38
         elif comment_system == 'googleplus':
-            # SOURCE LINE 39
             __M_writer(u'        ')
             __M_writer(unicode(googleplus.comment_link(link, identifier)))
             __M_writer(u'\n')
-            # SOURCE LINE 40
         elif comment_system == 'facebook':
-            # SOURCE LINE 41
             __M_writer(u'        ')
             __M_writer(unicode(facebook.comment_link(link, identifier)))
             __M_writer(u'\n')
-            # SOURCE LINE 42
         elif comment_system == 'isso':
-            # SOURCE LINE 43
             __M_writer(u'        ')
             __M_writer(unicode(isso.comment_link(link, identifier)))
             __M_writer(u'\n')
@@ -213,47 +165,32 @@ def render_comment_link_script(context):
         intensedebate = _mako_get_namespace(context, 'intensedebate')
         isso = _mako_get_namespace(context, 'isso')
         __M_writer = context.writer()
-        # SOURCE LINE 47
         __M_writer(u'\n')
-        # SOURCE LINE 48
         if comment_system == 'disqus':
-            # SOURCE LINE 49
             __M_writer(u'        ')
             __M_writer(unicode(disqus.comment_link_script()))
             __M_writer(u'\n')
-            # SOURCE LINE 50
         elif comment_system == 'livefyre':
-            # SOURCE LINE 51
             __M_writer(u'        ')
             __M_writer(unicode(livefyre.comment_link_script()))
             __M_writer(u'\n')
-            # SOURCE LINE 52
         elif comment_system == 'intensedebate':
-            # SOURCE LINE 53
             __M_writer(u'        ')
             __M_writer(unicode(intensedebate.comment_link_script()))
             __M_writer(u'\n')
-            # SOURCE LINE 54
         elif comment_system == 'muut':
-            # SOURCE LINE 55
             __M_writer(u'        ')
             __M_writer(unicode(muut.comment_link_script()))
             __M_writer(u'\n')
-            # SOURCE LINE 56
         elif comment_system == 'googleplus':
-            # SOURCE LINE 57
             __M_writer(u'        ')
             __M_writer(unicode(googleplus.comment_link_script()))
             __M_writer(u'\n')
-            # SOURCE LINE 58
         elif comment_system == 'facebook':
-            # SOURCE LINE 59
             __M_writer(u'        ')
             __M_writer(unicode(facebook.comment_link_script()))
             __M_writer(u'\n')
-            # SOURCE LINE 60
         elif comment_system == 'isso':
-            # SOURCE LINE 61
             __M_writer(u'        ')
             __M_writer(unicode(isso.comment_link_script()))
             __M_writer(u'\n')
@@ -262,3 +199,8 @@ def render_comment_link_script(context):
         context.caller_stack._pop_frame()
 
 
+"""
+__M_BEGIN_METADATA
+{"source_encoding": "utf-8", "line_map": {"22": 4, "25": 7, "28": 8, "31": 6, "34": 3, "37": 5, "40": 9, "43": 0, "48": 2, "49": 3, "50": 4, "51": 5, "52": 6, "53": 7, "54": 8, "55": 9, "56": 27, "57": 45, "58": 63, "64": 11, "76": 11, "77": 12, "78": 13, "79": 13, "80": 13, "81": 14, "82": 15, "83": 15, "84": 15, "85": 16, "86": 17, "87": 17, "88": 17, "89": 18, "90": 19, "91": 19, "92": 19, "93": 20, "94": 21, "95": 21, "96": 21, "97": 22, "98": 23, "99": 23, "100": 23, "101": 24, "102": 25, "103": 25, "104": 25, "110": 29, "122": 29, "123": 30, "124": 31, "125": 31, "126": 31, "127": 32, "128": 33, "129": 33, "130": 33, "131": 34, "132": 35, "133": 35, "134": 35, "135": 36, "136": 37, "137": 37, "138": 37, "139": 38, "140": 39, "141": 39, "142": 39, "143": 40, "144": 41, "145": 41, "146": 41, "147": 42, "148": 43, "149": 43, "150": 43, "156": 47, "168": 47, "169": 48, "170": 49, "171": 49, "172": 49, "173": 50, "174": 51, "175": 51, "176": 51, "177": 52, "178": 53, "179": 53, "180": 53, "181": 54, "182": 55, "183": 55, "184": 55, "185": 56, "186": 57, "187": 57, "188": 57, "189": 58, "190": 59, "191": 59, "192": 59, "193": 60, "194": 61, "195": 61, "196": 61, "202": 196}, "uri": "comments_helper.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/comments_helper.tmpl"}
+__M_END_METADATA
+"""
