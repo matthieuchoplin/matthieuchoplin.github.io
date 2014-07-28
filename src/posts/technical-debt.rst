@@ -10,3 +10,4 @@
 source: http://martinfowler.com/bliki/TechnicalDebtQuadrant.html
 
 
+http://medium.com/@joaomilho/festina-lente-e29070811b84
