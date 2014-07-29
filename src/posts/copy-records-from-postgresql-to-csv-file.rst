@@ -6,7 +6,7 @@
 .. description: 
 .. type: text
 
-.. code-block:: postgresql
+.. code-block:: sql
 
   COPY(QUERY) TO 'FILENAME' WITH CSV HEADER;
 
