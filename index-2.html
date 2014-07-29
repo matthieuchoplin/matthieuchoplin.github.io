@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="description" content="Blog about my developer experience">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width">
 <title>Standing on the shoulders of giants (old posts, page 2) | Standing on the shoulders of giants</title>
 <link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
@@ -67,7 +67,83 @@
             
             
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/unresponsive-process.html" class="u-url">Unresponsive process</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/Liclipse.html" class="u-url">Liclipse as Python editor</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
+            <p class="dateline"><a href="posts/Liclipse.html" rel="bookmark"><time class="published dt-published" datetime="2014-06-28T13:31:05+01:00" itemprop="datePublished" title="Publication date">2014-06-28 13:31</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <div class="section" id="installation">
+<h2>Installation</h2>
+<p>Liclipse seems to be the IDE to go for Python edition if you come from the Eclipse + pydev plugin world: <a class="reference external" href="http://brainwy.github.io/liclipse/index.html">Liclipse</a> (Lightweight Eclipse)</p>
+<p>It comes with pydev and gedit plugin already integrated.</p>
+<p>On ubuntu 12.04, you need to install the following Java dependencies before being able to launch it.</p>
+<pre class="code bash literal-block">
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java7-installer
+</pre>
+<p>It'll keep your java 7 installation up to date.</p>
+<p>To automatically set up the Java 7 environment variables JAVA_HOME and PATH:</p>
+<pre class="code bash literal-block">
+sudo apt-get install oracle-java7-set-default
+</pre>
+<p>Source: <a class="reference external" href="http://stackoverflow.com/questions/16263556/installing-java-7-on-ubuntu">http://stackoverflow.com/questions/16263556/installing-java-7-on-ubuntu</a></p>
+</div>
+<div class="section" id="importing-a-git-project">
+<h2>Importing a Git project</h2>
+<p>If the project is already cloned in your local environment, then click "File" | "Import"| Select "Git" | "Project from Git"| "Existing local Repository" and select the project you want.</p>
+<p>Else, you can also clone the project from Liclipse by doing "File" | "Import"| Select "Git" | "Project from Git"| "Clone Uri".</p>
+</div>
+<div class="section" id="using-egit">
+<h2>Using eGit</h2>
+<p>Egit enables you to do the same as what git already enables but in a much more friendly way.</p>
+<p>Because egit is already integrated in Jiclipse, you already have all its features. I recommend the <a class="reference external" href="http://wiki.eclipse.org/EGit/User_Guide">documentation</a>. Most of the egit features are available when you right click on a file and select "Team".</p>
+<ul>
+<li>
+<p class="first">Annotations: When you are editing a file, you can access it by right clicking the file, selecting "Team" and "Show annotations".</p>
+<p>Similar to:</p>
+</li>
+</ul>
+<pre class="code bash literal-block">
+git blame
+</pre>
+<ul>
+<li>
+<p class="first">History: When you are editing a file, you can access it by right clicking the file, selecting "Team" and "Show in History".</p>
+<p>Similar to:</p>
+</li>
+</ul>
+<pre class="code bash literal-block">
+git log -p
+</pre>
+</div>
+<div class="section" id="using-pydev">
+<h2>Using Pydev</h2>
+<p><a class="reference external" href="http://pydev.org/">pydev</a> is the Python IDE in Eclipse.</p>
+<p>The debugging mode is very easy to use:</p>
+<ul class="simple">
+<li>Place your breakpoints where you want by double clicking in the margin of the files.</li>
+<li>Edit the "Run configuration" according to your project settings.</li>
+<li>Click on "Run" | "Debug as" and select the configuration you created.</li>
+</ul>
+</div>
+<div class="section" id="alternatives">
+<h2>Alternatives</h2>
+<p>Development environments for Python are listed here: <a class="reference external" href="http://docs.python-guide.org/en/latest/dev/env/">http://docs.python-guide.org/en/latest/dev/env/</a></p>
+<p>As text Editors, Vim is also a good choice combined with the following plugins:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.vim.org/scripts/script.php?script_id=974">indent</a></li>
+<li><a class="reference external" href="http://www.vim.org/scripts/script.php?script_id=790">syntax</a></li>
+<li><a class="reference external" href="https://github.com/nvie/vim-pep8">vim-pep8</a></li>
+<li><a class="reference external" href="https://github.com/nvie/vim-pyflakes">vim-pyflakes</a></li>
+<li><a class="reference external" href="https://github.com/scrooloose/syntastic">syntastic</a></li>
+<li><a class="reference external" href="https://github.com/klen/python-mode">python-mode</a></li>
+<li><a class="reference external" href="http://www.vim.org/scripts/script.php?script_id=1643">supertab</a></li>
+</ul>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/unresponsive-process.html" class="u-url">Unresponsive process</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
             <p class="dateline"><a href="posts/unresponsive-process.html" rel="bookmark"><time class="published dt-published" datetime="2014-06-20T10:08:44+01:00" itemprop="datePublished" title="Publication date">2014-06-20 10:08</time></a></p>

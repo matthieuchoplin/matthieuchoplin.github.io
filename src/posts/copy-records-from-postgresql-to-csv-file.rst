@@ -10,3 +10,4 @@
 
   COPY(QUERY) TO 'FILENAME' WITH CSV HEADER;
 
+For the other way around see: `Copy records from csv file to postgres DB <http://mattchoplin.com/posts/copy-records-from-csv-in-postgresql.html>`__

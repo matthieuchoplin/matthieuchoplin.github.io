@@ -3,8 +3,8 @@ from mako import runtime, filters, cache
 UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
-_magic_number = 10
-_modified_time = 1406641526.310286
+_magic_number = 9
+_modified_time = 1406671722.411023
 _enable_loop = True
 _template_filename = u'/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/comments_helper_isso.tmpl'
 _template_uri = u'comments_helper_isso.tmpl'
@@ -17,8 +17,11 @@ def render_body(context,**pageargs):
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         __M_writer = context.writer()
+        # SOURCE LINE 7
         __M_writer(u'\n\n')
+        # SOURCE LINE 13
         __M_writer(u'\n\n\n')
+        # SOURCE LINE 20
         __M_writer(u'\n')
         return ''
     finally:
@@ -30,11 +33,15 @@ def render_comment_form(context,url,title,identifier):
     try:
         comment_system_id = context.get('comment_system_id', UNDEFINED)
         __M_writer = context.writer()
+        # SOURCE LINE 2
         __M_writer(u'\n')
+        # SOURCE LINE 3
         if comment_system_id:
+            # SOURCE LINE 4
             __M_writer(u'        <div data-title="')
             __M_writer(filters.url_escape(unicode(title)))
             __M_writer(u'" id="isso-thread"></div>\n        <script src="')
+            # SOURCE LINE 5
             __M_writer(unicode(comment_system_id))
             __M_writer(u'js/embed.min.js" data-isso="')
             __M_writer(unicode(comment_system_id))
@@ -49,8 +56,11 @@ def render_comment_link(context,link,identifier):
     try:
         comment_system_id = context.get('comment_system_id', UNDEFINED)
         __M_writer = context.writer()
+        # SOURCE LINE 9
         __M_writer(u'\n')
+        # SOURCE LINE 10
         if comment_system_id:
+            # SOURCE LINE 11
             __M_writer(u'        <a href="')
             __M_writer(unicode(link))
             __M_writer(u'#isso-thread">Comments</a>\n')
@@ -64,8 +74,11 @@ def render_comment_link_script(context):
     try:
         comment_system_id = context.get('comment_system_id', UNDEFINED)
         __M_writer = context.writer()
+        # SOURCE LINE 16
         __M_writer(u'\n')
+        # SOURCE LINE 17
         if comment_system_id:
+            # SOURCE LINE 18
             __M_writer(u'        <script src="')
             __M_writer(unicode(comment_system_id))
             __M_writer(u'js/count.min.js" data-isso="')
@@ -76,8 +89,3 @@ def render_comment_link_script(context):
         context.caller_stack._pop_frame()
 
 
-"""
-__M_BEGIN_METADATA
-{"source_encoding": "utf-8", "line_map": {"15": 0, "20": 7, "21": 13, "22": 20, "28": 2, "33": 2, "34": 3, "35": 4, "36": 4, "37": 4, "38": 5, "39": 5, "40": 5, "41": 5, "47": 9, "52": 9, "53": 10, "54": 11, "55": 11, "56": 11, "62": 16, "67": 16, "68": 17, "69": 18, "70": 18, "71": 18, "72": 18, "73": 18, "79": 73}, "uri": "comments_helper_isso.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/comments_helper_isso.tmpl"}
-__M_END_METADATA
-"""

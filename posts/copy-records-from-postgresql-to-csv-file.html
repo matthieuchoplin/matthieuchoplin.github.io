@@ -2,7 +2,7 @@
 <html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width">
 <title>Copy records from postgresql to csv file | Standing on the shoulders of giants</title>
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
@@ -20,7 +20,9 @@
     <meta name="author" content="Matthieu Choplin">
 <meta name="og:title" content="Copy records from postgresql to csv file">
 <meta name="og:url" content="http://mattchoplin.com/posts/copy-records-from-postgresql-to-csv-file.html">
-<meta name="og:description" content="COPY(QUERY) TO 'FILENAME' WITH CSV HEADER;">
+<meta name="og:description" content="COPY(QUERY) TO 'FILENAME' WITH CSV HEADER;
+
+For the other way around see: Copy records from csv file to postgres DB">
 <meta name="og:site_name" content="Standing on the shoulders of giants">
 <meta name="og:type" content="article">
 <!-- Menubar --><nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container">
@@ -84,9 +86,10 @@
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    
+    <pre class="code sql literal-block">
 <span class="k">COPY</span><span class="p">(</span><span class="n">QUERY</span><span class="p">)</span> <span class="k">TO</span> <span class="s1">'FILENAME'</span> <span class="k">WITH</span> <span class="n">CSV</span> <span class="n">HEADER</span><span class="p">;</span>
-
+</pre>
+<p>For the other way around see: <a class="reference external" href="http://mattchoplin.com/posts/copy-records-from-csv-in-postgresql.html">Copy records from csv file to postgres DB</a></p>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../categories/postgresql.html" rel="tag">postgresql</a></li>
@@ -94,6 +97,9 @@
 <ul class="pager">
 <li class="previous">
                 <a href="using-enum-in-python.html" rel="prev" title="Using enum in python">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="agile-testing.html" rel="next" title="Agile testing">Next post</a>
             </li>
         </ul></nav></aside></article>
 </div>

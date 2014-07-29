@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Tue, 29 Jul 2014 14:45:26 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Copy records from postgresql to csv file</title><link>http://mattchoplin.com/posts/copy-records-from-postgresql-to-csv-file.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;span class="k"&gt;COPY&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;QUERY&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;TO&lt;/span&gt; &lt;span class="s1"&gt;'FILENAME'&lt;/span&gt; &lt;span class="k"&gt;WITH&lt;/span&gt; &lt;span class="n"&gt;CSV&lt;/span&gt; &lt;span class="n"&gt;HEADER&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;</description><category>postgresql</category><guid>http://mattchoplin.com/posts/copy-records-from-postgresql-to-csv-file.html</guid><pubDate>Tue, 29 Jul 2014 13:43:19 GMT</pubDate></item><item><title>Using enum in python</title><link>http://mattchoplin.com/posts/using-enum-in-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Tue, 29 Jul 2014 23:03:30 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Agile testing</title><link>http://mattchoplin.com/posts/agile-testing.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;The best book I ever read about testing and best practices in an Agile project is: Agile Testing: A Practical Guide for Testers and Agile Teams (Addison-Wesley Signature)&lt;/p&gt;
+&lt;p&gt;The main idea of Agility is constantly giving and receiving &lt;em&gt;feedback&lt;/em&gt; in order to keep improving the process and the output of the project.&lt;/p&gt;</description><category>agile</category><category>testing</category><guid>http://mattchoplin.com/posts/agile-testing.html</guid><pubDate>Tue, 29 Jul 2014 15:19:08 GMT</pubDate></item><item><title>Copy records from postgresql to csv file</title><link>http://mattchoplin.com/posts/copy-records-from-postgresql-to-csv-file.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code sql literal-block"&gt;
+&lt;span class="k"&gt;COPY&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;QUERY&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;TO&lt;/span&gt; &lt;span class="s1"&gt;'FILENAME'&lt;/span&gt; &lt;span class="k"&gt;WITH&lt;/span&gt; &lt;span class="n"&gt;CSV&lt;/span&gt; &lt;span class="n"&gt;HEADER&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;For the other way around see: &lt;a class="reference external" href="http://mattchoplin.com/posts/copy-records-from-csv-in-postgresql.html"&gt;Copy records from csv file to postgres DB&lt;/a&gt;&lt;/p&gt;</description><category>postgresql</category><guid>http://mattchoplin.com/posts/copy-records-from-postgresql-to-csv-file.html</guid><pubDate>Tue, 29 Jul 2014 13:43:19 GMT</pubDate></item><item><title>Using enum in python</title><link>http://mattchoplin.com/posts/using-enum-in-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
 pip install enum34
 &lt;/pre&gt;
 &lt;div class="section" id="example"&gt;
@@ -93,62 +97,4 @@ screen -r &amp;lt;script_name&amp;gt;
 &lt;div class="section" id="escape-key"&gt;
 &lt;h2&gt;Escape key&lt;/h2&gt;
 &lt;p&gt;Ctrl-a and d&lt;/p&gt;
-&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/screen.html</guid><pubDate>Mon, 30 Jun 2014 12:44:57 GMT</pubDate></item><item><title>Liclipse as Python editor</title><link>http://mattchoplin.com/posts/Liclipse.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="installation"&gt;
-&lt;h2&gt;Installation&lt;/h2&gt;
-&lt;p&gt;Liclipse seems to be the IDE to go for Python edition if you come from the Eclipse + pydev plugin world: &lt;a class="reference external" href="http://brainwy.github.io/liclipse/index.html"&gt;Liclipse&lt;/a&gt; (Lightweight Eclipse)&lt;/p&gt;
-&lt;p&gt;It comes with pydev and gedit plugin already integrated.&lt;/p&gt;
-&lt;p&gt;On ubuntu 12.04, you need to install the following Java dependencies before being able to launch it.&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
-sudo apt-get install oracle-java7-installer
-&lt;/pre&gt;
-&lt;p&gt;It'll keep your java 7 installation up to date.&lt;/p&gt;
-&lt;p&gt;To automatically set up the Java 7 environment variables JAVA_HOME and PATH:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-sudo apt-get install oracle-java7-set-default
-&lt;/pre&gt;
-&lt;p&gt;Source: &lt;a class="reference external" href="http://stackoverflow.com/questions/16263556/installing-java-7-on-ubuntu"&gt;http://stackoverflow.com/questions/16263556/installing-java-7-on-ubuntu&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="importing-a-git-project"&gt;
-&lt;h2&gt;Importing a Git project&lt;/h2&gt;
-&lt;p&gt;If the project is already cloned in your local environment, then click "File" | "Import"| Select "Git" | "Project from Git"| "Existing local Repository" and select the project you want.&lt;/p&gt;
-&lt;p&gt;Else, you can also clone the project from Liclipse by doing "File" | "Import"| Select "Git" | "Project from Git"| "Clone Uri".&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="using-egit"&gt;
-&lt;h2&gt;Using eGit&lt;/h2&gt;
-&lt;p&gt;Egit enables you to do the same as what git already enables but in a much more friendly way.&lt;/p&gt;
-&lt;p&gt;Because egit is already integrated in Jiclipse, you already have all its features. I recommend the &lt;a class="reference external" href="http://wiki.eclipse.org/EGit/User_Guide"&gt;documentation&lt;/a&gt;. Most of the egit features are available when you right click on a file and select "Team".&lt;/p&gt;
-&lt;ul&gt;&lt;li&gt;&lt;p class="first"&gt;Annotations: When you are editing a file, you can access it by right clicking the file, selecting "Team" and "Show annotations".&lt;/p&gt;
-&lt;p&gt;Similar to:&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;&lt;pre class="code bash literal-block"&gt;
-git blame
-&lt;/pre&gt;
-&lt;ul&gt;&lt;li&gt;&lt;p class="first"&gt;History: When you are editing a file, you can access it by right clicking the file, selecting "Team" and "Show in History".&lt;/p&gt;
-&lt;p&gt;Similar to:&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;&lt;pre class="code bash literal-block"&gt;
-git log -p
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class="section" id="using-pydev"&gt;
-&lt;h2&gt;Using Pydev&lt;/h2&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://pydev.org/"&gt;pydev&lt;/a&gt; is the Python IDE in Eclipse.&lt;/p&gt;
-&lt;p&gt;The debugging mode is very easy to use:&lt;/p&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;Place your breakpoints where you want by double clicking in the margin of the files.&lt;/li&gt;
-&lt;li&gt;Edit the "Run configuration" according to your project settings.&lt;/li&gt;
-&lt;li&gt;Click on "Run" | "Debug as" and select the configuration you created.&lt;/li&gt;
-&lt;/ul&gt;&lt;/div&gt;
-&lt;div class="section" id="alternatives"&gt;
-&lt;h2&gt;Alternatives&lt;/h2&gt;
-&lt;p&gt;Development environments for Python are listed here: &lt;a class="reference external" href="http://docs.python-guide.org/en/latest/dev/env/"&gt;http://docs.python-guide.org/en/latest/dev/env/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;As text Editors, Vim is also a good choice combined with the following plugins:&lt;/p&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="http://www.vim.org/scripts/script.php?script_id=974"&gt;indent&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.vim.org/scripts/script.php?script_id=790"&gt;syntax&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://github.com/nvie/vim-pep8"&gt;vim-pep8&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://github.com/nvie/vim-pyflakes"&gt;vim-pyflakes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://github.com/scrooloose/syntastic"&gt;syntastic&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://github.com/klen/python-mode"&gt;python-mode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.vim.org/scripts/script.php?script_id=1643"&gt;supertab&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/Liclipse.html</guid><pubDate>Sat, 28 Jun 2014 12:31:05 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/screen.html</guid><pubDate>Mon, 30 Jun 2014 12:44:57 GMT</pubDate></item></channel></rss>

@@ -3,8 +3,8 @@ from mako import runtime, filters, cache
 UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
-_magic_number = 10
-_modified_time = 1406641526.397484
+_magic_number = 9
+_modified_time = 1406671722.169583
 _enable_loop = True
 _template_filename = u'/usr/local/lib/python2.7/dist-packages/nikola/data/themes/bootstrap/templates/tags.tmpl'
 _template_uri = u'tags.tmpl'
@@ -34,11 +34,13 @@ def render_body(context,**pageargs):
         messages = context.get('messages', UNDEFINED)
         title = context.get('title', UNDEFINED)
         __M_writer = context.writer()
+        # SOURCE LINE 2
         __M_writer(u'\n\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
             context['self'].content(**pageargs)
         
 
+        # SOURCE LINE 26
         __M_writer(u'\n')
         return ''
     finally:
@@ -55,41 +57,51 @@ def render_content(context,**pageargs):
         messages = context.get('messages', UNDEFINED)
         title = context.get('title', UNDEFINED)
         __M_writer = context.writer()
+        # SOURCE LINE 4
         __M_writer(u'\n<h1>')
+        # SOURCE LINE 5
         __M_writer(unicode(title))
         __M_writer(u'</h1>\n')
+        # SOURCE LINE 6
         if cat_items:
+            # SOURCE LINE 7
             __M_writer(u'    <h2>')
             __M_writer(unicode(messages("Categories")))
             __M_writer(u'</h2>\n    <ul class="unstyled">\n')
+            # SOURCE LINE 9
             for text, link in cat_items:
+                # SOURCE LINE 10
                 if text:
+                    # SOURCE LINE 11
                     __M_writer(u'            <li><a class="reference badge" href="')
                     __M_writer(unicode(link))
                     __M_writer(u'">')
                     __M_writer(unicode(text))
                     __M_writer(u'</a></li>\n')
+            # SOURCE LINE 14
             __M_writer(u'    </ul>\n')
+            # SOURCE LINE 15
             if items:
+                # SOURCE LINE 16
                 __M_writer(u'        <h2>')
                 __M_writer(unicode(messages("Tags")))
                 __M_writer(u'</h2>\n')
+        # SOURCE LINE 19
         if items:
+            # SOURCE LINE 20
             __M_writer(u'    <ul class="list-inline">\n')
+            # SOURCE LINE 21
             for text, link in items:
+                # SOURCE LINE 22
                 __M_writer(u'        <li><a class="reference badge" href="')
                 __M_writer(unicode(link))
                 __M_writer(u'">')
                 __M_writer(unicode(text))
                 __M_writer(u'</a></li>\n')
+            # SOURCE LINE 24
             __M_writer(u'    </ul>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
 
 
-"""
-__M_BEGIN_METADATA
-{"source_encoding": "utf-8", "line_map": {"26": 0, "37": 2, "42": 26, "48": 4, "58": 4, "59": 5, "60": 5, "61": 6, "62": 7, "63": 7, "64": 7, "65": 9, "66": 10, "67": 11, "68": 11, "69": 11, "70": 11, "71": 11, "72": 14, "73": 15, "74": 16, "75": 16, "76": 16, "77": 19, "78": 20, "79": 21, "80": 22, "81": 22, "82": 22, "83": 22, "84": 22, "85": 24, "91": 85}, "uri": "tags.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/bootstrap/templates/tags.tmpl"}
-__M_END_METADATA
-"""
