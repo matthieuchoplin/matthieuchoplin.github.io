@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Mon, 28 Jul 2014 10:30:31 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Using enum in python</title><link>http://mattchoplin.com/posts/using-enum-in-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Tue, 29 Jul 2014 14:44:24 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Copy records from postgresql to csv file</title><link>http://mattchoplin.com/posts/copy-records-from-postgresql-to-csv-file.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;span class="k"&gt;COPY&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;QUERY&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;TO&lt;/span&gt; &lt;span class="s1"&gt;'FILENAME'&lt;/span&gt; &lt;span class="k"&gt;WITH&lt;/span&gt; &lt;span class="k"&gt;CSV&lt;/span&gt; &lt;span class="k"&gt;HEADER&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;</description><guid>http://mattchoplin.com/posts/copy-records-from-postgresql-to-csv-file.html</guid><pubDate>Tue, 29 Jul 2014 13:43:19 GMT</pubDate></item><item><title>Using enum in python</title><link>http://mattchoplin.com/posts/using-enum-in-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
 pip install enum34
 &lt;/pre&gt;
 &lt;div class="section" id="example"&gt;
@@ -151,10 +151,4 @@ git log -p
 &lt;li&gt;&lt;a class="reference external" href="https://github.com/scrooloose/syntastic"&gt;syntastic&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://github.com/klen/python-mode"&gt;python-mode&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.vim.org/scripts/script.php?script_id=1643"&gt;supertab&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/Liclipse.html</guid><pubDate>Sat, 28 Jun 2014 12:31:05 GMT</pubDate></item><item><title>Unresponsive process</title><link>http://mattchoplin.com/posts/unresponsive-process.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code bash literal-block"&gt;
-pkill -9f process-name
-&lt;/pre&gt;
-&lt;p&gt;Example:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-pkill -9f filezilla
-&lt;/pre&gt;</description><guid>http://mattchoplin.com/posts/unresponsive-process.html</guid><pubDate>Fri, 20 Jun 2014 09:08:44 GMT</pubDate></item></channel></rss>
+&lt;/ul&gt;&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/Liclipse.html</guid><pubDate>Sat, 28 Jun 2014 12:31:05 GMT</pubDate></item></channel></rss>
