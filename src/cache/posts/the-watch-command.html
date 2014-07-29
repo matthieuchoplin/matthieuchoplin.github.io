@@ -3,6 +3,12 @@ watch -n1 <span class="s1">' ps aux | grep what_you_want'</span>
 </pre>
 <p>Something interesting when combined with svc:</p>
 <pre class="code bash literal-block">
-watch svstat *
+<span class="nb">cd</span> /etc/service <span class="c"># or wherever svc (supervise) is installed
+</span>watch svstat *
 </pre>
 <p>It will monitor every 2 seconds the state of your service.</p>
+<p>Monitor the queries being run in real time:</p>
+<pre class="code bash literal-block">
+watch -n 1 <span class="s1">'sudo -u postgres psql --tuples-only --command &quot;SELECT datname, procpid, date_trunc(\$\$second\$\$, age(current_timestamp, xact_start)), current_query FROM pg_stat_activity;&quot;'</span>
+</pre>
+<p>Source: <a class="reference external" href="http://kevin.deldycke.com/2011/10/postgresql-commands/">http://kevin.deldycke.com/2011/10/postgresql-commands/</a></p>
