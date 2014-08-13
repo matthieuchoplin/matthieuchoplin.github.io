@@ -48,6 +48,8 @@ Simply add color to your git environment:
 
   git config --global color.ui auto
 
+Source: http://git-scm.com/book/en/Customizing-Git-Git-Configuration
+
 Tutorial
 ========
 
