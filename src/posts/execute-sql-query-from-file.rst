@@ -10,3 +10,5 @@
 .. code-block:: sql
 
   psql yourdatabase -f path_of_your_file.sql
+
+|
