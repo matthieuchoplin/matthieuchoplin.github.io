@@ -63,3 +63,10 @@ Delete current tag
   git tag -d 12.15
   git push origin :refs/tags/12.15
 
+Stash current work
+==================
+
+.. code-block:: bash
+
+  git stash save
+  git stash pop

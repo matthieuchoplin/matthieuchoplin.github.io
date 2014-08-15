@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Git | Standing on the shoulders of giants</title>
+<title>Python profiling | Standing on the shoulders of giants</title>
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
-<link rel="canonical" href="http://mattchoplin.com/posts/git.html">
+<link rel="canonical" href="http://mattchoplin.com/posts/python-profiling.html">
 <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
 <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><link rel="stylesheet" type="text/css" href="../assets/css/tipuesearch.css">
 </head>
@@ -18,12 +18,10 @@
     
 
     <meta name="author" content="Matthieu Choplin">
-<meta name="og:title" content="Git">
-<meta name="og:url" content="http://mattchoplin.com/posts/git.html">
-<meta name="og:description" content='Nice display of the current tree
-
-git log --graph --all --format=format:"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold
-white)%cn%C(reset)%C(green)%d%C(reset)%n%x09%C('>
+<meta name="og:title" content="Python profiling">
+<meta name="og:url" content="http://mattchoplin.com/posts/python-profiling.html">
+<meta name="og:description" content="Source: http://www.huyng.com/posts/python-performance-analysis/
+https://code.djangoproject.com/wiki/ProfilingDjango">
 <meta name="og:site_name" content="Standing on the shoulders of giants">
 <meta name="og:type" content="article">
 <!-- Menubar --><nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container">
@@ -60,7 +58,7 @@ white)%cn%C(reset)%C(green)%d%C(reset)%n%x09%C('>
 
             <ul class="nav navbar-nav navbar-right">
 <li>
-    <a href="git.rst" id="sourcelink">Source</a>
+    <a href="python-profiling.rst" id="sourcelink">Source</a>
     </li>
 
                 
@@ -75,77 +73,22 @@ white)%cn%C(reset)%C(green)%d%C(reset)%n%x09%C('>
         <div class="row">
             
             
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Git</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Python profiling</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-06-06T17:09:03+01:00" itemprop="datePublished" title="Publication date">2014-06-06 17:09</time></a></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-10-14T13:14:39+01:00" itemprop="datePublished" title="Publication date">2014-10-14 13:14</time></a></p>
             
-        <p class="sourceline"><a href="git.rst" id="sourcelink">Source</a></p>
+        <p class="sourceline"><a href="python-profiling.rst" id="sourcelink">Source</a></p>
 
         </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div class="section" id="nice-display-of-the-current-tree">
-<h2>Nice display of the current tree</h2>
-<pre class="code bash literal-block">
-git log --graph --all --format<span class="o">=</span>format:<span class="s2">"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold
-white)%cn%C(reset)%C(green)%d%C(reset)%n%x09%C(white)%s%C(reset)"</span> --abbrev-commit <span class="s2">"$@"</span>
-</pre>
-<p>An alternative:</p>
-<pre class="code bash literal-block">
-git log --graph --pretty<span class="o">=</span>format:<span class="s1">'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset'</span> --abbrev-commit
-</pre>
-<p>You can also make an alias. Copy and paste the line below on your terminal:</p>
-<pre class="code bash literal-block">
-git config --global alias.lg <span class="s2">"log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit"</span>
-</pre>
-<p>And every time you need to see your log, just type in</p>
-<pre class="code bash literal-block">
-git lg
-</pre>
-<p>Or, if you want to see the lines that changed</p>
-<pre class="code bash literal-block">
-git lg -p
-</pre>
-<p>Source: <a class="reference external" href="https://coderwall.com/p/euwpig">https://coderwall.com/p/euwpig</a></p>
-<p>Simply add color to your git environment:</p>
-<pre class="code bash literal-block">
-git config --global color.ui auto
-</pre>
-<p>Source: <a class="reference external" href="http://git-scm.com/book/en/Customizing-Git-Git-Configuration">http://git-scm.com/book/en/Customizing-Git-Git-Configuration</a></p>
-</div>
-<div class="section" id="tutorial">
-<h2>Tutorial</h2>
-<p>Learn git from your browser: <a class="reference external" href="https://try.github.io/levels/1/challenges/1">https://try.github.io/levels/1/challenges/1</a></p>
-</div>
-<div class="section" id="delete-current-tag">
-<h2>Delete current tag</h2>
-<pre class="code bash literal-block">
-git tag -d 12.15
-git push origin :refs/tags/12.15
-</pre>
-</div>
-<div class="section" id="stash-current-work">
-<h2>Stash current work</h2>
-<pre class="code bash literal-block">
-git stash save
-git stash pop
-</pre>
-</div>
+    <p>Source: <a class="reference external" href="http://www.huyng.com/posts/python-performance-analysis/">http://www.huyng.com/posts/python-performance-analysis/</a></p>
+<p><a class="reference external" href="https://code.djangoproject.com/wiki/ProfilingDjango">https://code.djangoproject.com/wiki/ProfilingDjango</a></p>
     </div>
-    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../categories/git.html" rel="tag">git</a></li>
-        </ul>
-<ul class="pager">
-<li class="previous">
-                <a href="the-watch-command.html" rel="prev" title="The watch command">Previous post</a>
-            </li>
-            <li class="next">
-                <a href="tdd-with-django-at-skills-matter.html" rel="next" title="TDD with Django at Skills Matter">Next post</a>
-            </li>
-        </ul></nav></aside></article>
+    <aside class="postpromonav"><nav></nav></aside></article>
 </div>
         <!--End of body content-->
 
