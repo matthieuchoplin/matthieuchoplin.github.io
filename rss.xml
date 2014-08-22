@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Fri, 22 Aug 2014 11:36:33 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Logs</title><link>http://mattchoplin.com/posts/logs.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;The configuration and especially right permissions will be done in /etc/rsyslog.conf&lt;/p&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Fri, 22 Aug 2014 11:37:21 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Logs</title><link>http://mattchoplin.com/posts/logs.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;The configuration and especially right permissions will be done in /etc/rsyslog.conf&lt;/p&gt;
 &lt;p&gt;Bitmask is going to be used so use this doc
-://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/Write your post here.&lt;/p&gt;
+&lt;a class="reference external" href="http://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/"&gt;http://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;It will be taken into account for the new log files only when we reload rsylog with this commend:&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 /etc/init.d/rsyslog reload

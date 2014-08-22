@@ -9,7 +9,7 @@
 The configuration and especially right permissions will be done in /etc/rsyslog.conf
 
 Bitmask is going to be used so use this doc
-://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/Write your post here.
+http://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/
 
 It will be taken into account for the new log files only when we reload rsylog with this commend:
 
