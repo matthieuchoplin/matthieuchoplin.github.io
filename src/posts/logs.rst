@@ -13,7 +13,7 @@ Bitmask is going to be used so use this doc
 
 It will be taken into account for the new log files only when we reload rsylog with this commend:
 
-.. code:: bash:
+.. code:: bash
 
   /etc/init.d/rsyslog reload
 
@@ -21,7 +21,7 @@ The old files are still on the old configuration. So, you need to change the rig
 
 Example for vagrant user:
 
-.. code:: bash:
+.. code:: bash
 
   root@openerp-development:/var/log/openerp# chown vagrant:vagrant /var/log/openerp/ -R 
   root@openerp-development:/var/log/openerp# chmod a+r /var/log/openerp/ -R
