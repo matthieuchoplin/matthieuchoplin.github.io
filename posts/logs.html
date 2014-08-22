@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Screen monitoring | Standing on the shoulders of giants</title>
+<title>Logs | Standing on the shoulders of giants</title>
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
-<link rel="canonical" href="http://mattchoplin.com/posts/screen-monitoring.html">
+<link rel="canonical" href="http://mattchoplin.com/posts/logs.html">
 <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
 <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><link rel="stylesheet" type="text/css" href="../assets/css/tipuesearch.css">
 </head>
@@ -18,10 +18,11 @@
     
 
     <meta name="author" content="Matthieu Choplin">
-<meta name="og:title" content="Screen monitoring">
-<meta name="og:url" content="http://mattchoplin.com/posts/screen-monitoring.html">
-<meta name="og:description" content="You can use this chrome plugin if you want to monitor different screen with a slideshow: https://chrome.google.com/webstore/detail/tabcarousel/ddldimidiliclngjipajmjjiakhbcohn?hl=en
-For instance, if y">
+<meta name="og:title" content="Logs">
+<meta name="og:url" content="http://mattchoplin.com/posts/logs.html">
+<meta name="og:description" content="The configuration and especially right permissions will be done in /etc/rsyslog.conf
+Bitmask is going to be used so use this doc
+://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notat">
 <meta name="og:site_name" content="Standing on the shoulders of giants">
 <meta name="og:type" content="article">
 <!-- Menubar --><nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container">
@@ -58,7 +59,7 @@ For instance, if y">
 
             <ul class="nav navbar-nav navbar-right">
 <li>
-    <a href="screen-monitoring.rst" id="sourcelink">Source</a>
+    <a href="logs.rst" id="sourcelink">Source</a>
     </li>
 
                 
@@ -73,30 +74,52 @@ For instance, if y">
         <div class="row">
             
             
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Screen monitoring</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Logs</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-08-21T10:44:17+01:00" itemprop="datePublished" title="Publication date">2014-08-21 10:44</time></a></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-08-22T11:29:21+01:00" itemprop="datePublished" title="Publication date">2014-08-22 11:29</time></a></p>
             
-        <p class="sourceline"><a href="screen-monitoring.rst" id="sourcelink">Source</a></p>
+        <p class="sourceline"><a href="logs.rst" id="sourcelink">Source</a></p>
 
         </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p>You can use this chrome plugin if you want to monitor different screen with a slideshow: <a class="reference external" href="https://chrome.google.com/webstore/detail/tabcarousel/ddldimidiliclngjipajmjjiakhbcohn?hl=en">https://chrome.google.com/webstore/detail/tabcarousel/ddldimidiliclngjipajmjjiakhbcohn?hl=en</a></p>
-<p>For instance, if you want to have a view on your Kanban and on the state of the continuous integration for monitoring if the tests are passing.</p>
+    <p>The configuration and especially right permissions will be done in /etc/rsyslog.conf</p>
+<p>Bitmask is going to be used so use this doc
+://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/Write your post here.</p>
+<p>It will be taken into account for the new log files only when we reload rsylog with this commend:</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 8)</p>
+<p>Cannot analyze code. No Pygments lexer found for "bash:".</p>
+<pre class="literal-block">
+.. code:: bash:
+
+  /etc/init.d/rsyslog reload
+
+</pre>
+</div>
+<p>The old files are still on the old configuration. So, you need to change the right access directly for them with chown and chmod.</p>
+<p>Example for vagrant user:</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 16)</p>
+<p>Cannot analyze code. No Pygments lexer found for "bash:".</p>
+<pre class="literal-block">
+.. code:: bash:
+
+  root@openerp-development:/var/log/openerp# chown vagrant:vagrant /var/log/openerp/ -R
+  root@openerp-development:/var/log/openerp# chmod a+r /var/log/openerp/ -R
+
+</pre>
+</div>
+<div class="line-block">
+<div class="line"><br></div>
+</div>
     </div>
-    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../categories/continuous-integration.html" rel="tag">continuous integration</a></li>
-        </ul>
-<ul class="pager">
+    <aside class="postpromonav"><nav><ul class="pager">
 <li class="previous">
-                <a href="execute-sql-from-file.html" rel="prev" title="Execute sql from file">Previous post</a>
-            </li>
-            <li class="next">
-                <a href="logs.html" rel="next" title="Logs">Next post</a>
+                <a href="screen-monitoring.html" rel="prev" title="Screen monitoring">Previous post</a>
             </li>
         </ul></nav></aside></article>
 </div>

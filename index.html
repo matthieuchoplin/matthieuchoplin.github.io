@@ -67,7 +67,44 @@
             
             
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/screen-monitoring.html" class="u-url">Screen monitoring</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/logs.html" class="u-url">Logs</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
+            <p class="dateline"><a href="posts/logs.html" rel="bookmark"><time class="published dt-published" datetime="2014-08-22T11:29:21+01:00" itemprop="datePublished" title="Publication date">2014-08-22 11:29</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>The configuration and especially right permissions will be done in /etc/rsyslog.conf</p>
+<p>Bitmask is going to be used so use this doc
+://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/Write your post here.</p>
+<p>It will be taken into account for the new log files only when we reload rsylog with this commend:</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 8)</p>
+<p>Cannot analyze code. No Pygments lexer found for "bash:".</p>
+<pre class="literal-block">
+.. code:: bash:
+
+  /etc/init.d/rsyslog reload
+
+</pre>
+</div>
+<p>The old files are still on the old configuration. So, you need to change the right access directly for them with chown and chmod.</p>
+<p>Example for vagrant user:</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 16)</p>
+<p>Cannot analyze code. No Pygments lexer found for "bash:".</p>
+<pre class="literal-block">
+.. code:: bash:
+
+  root@openerp-development:/var/log/openerp# chown vagrant:vagrant /var/log/openerp/ -R
+  root@openerp-development:/var/log/openerp# chmod a+r /var/log/openerp/ -R
+
+</pre>
+</div>
+<div class="line-block">
+<div class="line"><br></div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/screen-monitoring.html" class="u-url">Screen monitoring</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
             <p class="dateline"><a href="posts/screen-monitoring.html" rel="bookmark"><time class="published dt-published" datetime="2014-08-21T10:44:17+01:00" itemprop="datePublished" title="Publication date">2014-08-21 10:44</time></a></p>
@@ -200,35 +237,6 @@ pip install enum34
 <span class="k">COPY</span> <span class="n">original_table_name_temp</span> <span class="k">FROM</span> <span class="s1">'path_of_your_csv'</span><span class="p">;</span>
 </pre>
 <p>Source: <a class="reference external" href="http://postgresql.1045698.n5.nabble.com/reverse-strpos-td1891709.html">http://postgresql.1045698.n5.nabble.com/reverse-strpos-td1891709.html</a></p>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/git-branching-strategy.html" class="u-url">Git branching strategy</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/git-branching-strategy.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-13T12:44:49+01:00" itemprop="datePublished" title="Publication date">2014-07-13 12:44</time></a></p>
-        </div>
-    </header><div class="e-content entry-content">
-    <div class="section" id="the-git-flow-strategy">
-<h2>The git-flow strategy</h2>
-<p>Very nice cheatsheet: <a class="reference external" href="http://danielkummer.github.io/git-flow-cheatsheet/">http://danielkummer.github.io/git-flow-cheatsheet/</a></p>
-</div>
-<div class="section" id="the-centralized-worklow">
-<h2>The centralized worklow</h2>
-<p>Like Subversion, the Centralized Workflow uses a central repository to serve as the single point-of-entry for all changes to the project. Instead of trunk, the default development branch is called master and all changes are committed into this branch. This workflow doesn’t require any other branches besides master.</p>
-<div class="section" id="pros">
-<h3>Pros</h3>
-<p>Developers are always working on the last version of the code.</p>
-</div>
-<div class="section" id="cons">
-<h3>Cons</h3>
-<p>If some code breaks something, the whole process is stuck, no release can be done.</p>
-</div>
-</div>
-<div class="section" id="feature-branch-workflow">
-<h2>Feature Branch Workflow</h2>
-<p>The core idea behind the Feature Branch Workflow is that all feature development should take place in a dedicated branch instead of the master branch. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase. It also means the master branch will never contain broken code, which is a huge advantage for continuous integration environments.</p>
-<p>Encapsulating feature development also makes it possible to leverage pull requests, which are a way to initiate discussions around a branch. They give other developers the opportunity to sign off on a feature before it gets integrated into the official project. Or, if you get stuck in the middle of a feature, you can open a pull request asking for suggestions from your colleagues. The point is, pull requests make it incredibly easy for your team to comment on each other’s work.</p>
-<p>source: <a class="reference external" href="https://www.atlassian.com/git/workflows">https://www.atlassian.com/git/workflows</a></p>
-</div>
     </div>
     </article>
 </div>

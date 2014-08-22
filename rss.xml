@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Thu, 21 Aug 2014 10:46:26 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Screen monitoring</title><link>http://mattchoplin.com/posts/screen-monitoring.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;You can use this chrome plugin if you want to monitor different screen with a slideshow: &lt;a class="reference external" href="https://chrome.google.com/webstore/detail/tabcarousel/ddldimidiliclngjipajmjjiakhbcohn?hl=en"&gt;https://chrome.google.com/webstore/detail/tabcarousel/ddldimidiliclngjipajmjjiakhbcohn?hl=en&lt;/a&gt;&lt;/p&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Fri, 22 Aug 2014 11:34:08 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Logs</title><link>http://mattchoplin.com/posts/logs.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;The configuration and especially right permissions will be done in /etc/rsyslog.conf&lt;/p&gt;
+&lt;p&gt;Bitmask is going to be used so use this doc
+://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/Write your post here.&lt;/p&gt;
+&lt;p&gt;It will be taken into account for the new log files only when we reload rsylog with this commend:&lt;/p&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 8)&lt;/p&gt;
+&lt;p&gt;Cannot analyze code. No Pygments lexer found for "bash:".&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+.. code:: bash:
+
+  /etc/init.d/rsyslog reload
+
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;The old files are still on the old configuration. So, you need to change the right access directly for them with chown and chmod.&lt;/p&gt;
+&lt;p&gt;Example for vagrant user:&lt;/p&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;&amp;lt;string&amp;gt;&lt;/tt&gt;, line 16)&lt;/p&gt;
+&lt;p&gt;Cannot analyze code. No Pygments lexer found for "bash:".&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+.. code:: bash:
+
+  root@openerp-development:/var/log/openerp# chown vagrant:vagrant /var/log/openerp/ -R
+  root@openerp-development:/var/log/openerp# chmod a+r /var/log/openerp/ -R
+
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br&gt;&lt;/div&gt;
+&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/logs.html</guid><pubDate>Fri, 22 Aug 2014 10:29:21 GMT</pubDate></item><item><title>Screen monitoring</title><link>http://mattchoplin.com/posts/screen-monitoring.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;You can use this chrome plugin if you want to monitor different screen with a slideshow: &lt;a class="reference external" href="https://chrome.google.com/webstore/detail/tabcarousel/ddldimidiliclngjipajmjjiakhbcohn?hl=en"&gt;https://chrome.google.com/webstore/detail/tabcarousel/ddldimidiliclngjipajmjjiakhbcohn?hl=en&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;For instance, if you want to have a view on your Kanban and on the state of the continuous integration for monitoring if the tests are passing.&lt;/p&gt;</description><category>continuous integration</category><guid>http://mattchoplin.com/posts/screen-monitoring.html</guid><pubDate>Thu, 21 Aug 2014 09:44:17 GMT</pubDate></item><item><title>Execute sql from file</title><link>http://mattchoplin.com/posts/execute-sql-from-file.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code sql literal-block"&gt;
 &lt;span class="n"&gt;psql&lt;/span&gt; &lt;span class="n"&gt;yourdatabase&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="n"&gt;path_of_your_file&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;sql&lt;/span&gt;
 &lt;/pre&gt;
@@ -60,25 +89,4 @@ pip install enum34
 &lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;TEMPORARY&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="n"&gt;original_table_name_temp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;like&lt;/span&gt; &lt;span class="n"&gt;original_table_name&lt;/span&gt; &lt;span class="k"&gt;including&lt;/span&gt; &lt;span class="k"&gt;all&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="k"&gt;COPY&lt;/span&gt; &lt;span class="n"&gt;original_table_name_temp&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="s1"&gt;'path_of_your_csv'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;Source: &lt;a class="reference external" href="http://postgresql.1045698.n5.nabble.com/reverse-strpos-td1891709.html"&gt;http://postgresql.1045698.n5.nabble.com/reverse-strpos-td1891709.html&lt;/a&gt;&lt;/p&gt;</description><category>copy</category><category>postgresql</category><category>sql</category><guid>http://mattchoplin.com/posts/copy-records-from-csv-in-postgresql.html</guid><pubDate>Fri, 18 Jul 2014 15:39:41 GMT</pubDate></item><item><title>Git branching strategy</title><link>http://mattchoplin.com/posts/git-branching-strategy.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="the-git-flow-strategy"&gt;
-&lt;h2&gt;The git-flow strategy&lt;/h2&gt;
-&lt;p&gt;Very nice cheatsheet: &lt;a class="reference external" href="http://danielkummer.github.io/git-flow-cheatsheet/"&gt;http://danielkummer.github.io/git-flow-cheatsheet/&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="the-centralized-worklow"&gt;
-&lt;h2&gt;The centralized worklow&lt;/h2&gt;
-&lt;p&gt;Like Subversion, the Centralized Workflow uses a central repository to serve as the single point-of-entry for all changes to the project. Instead of trunk, the default development branch is called master and all changes are committed into this branch. This workflow doesn’t require any other branches besides master.&lt;/p&gt;
-&lt;div class="section" id="pros"&gt;
-&lt;h3&gt;Pros&lt;/h3&gt;
-&lt;p&gt;Developers are always working on the last version of the code.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="cons"&gt;
-&lt;h3&gt;Cons&lt;/h3&gt;
-&lt;p&gt;If some code breaks something, the whole process is stuck, no release can be done.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="feature-branch-workflow"&gt;
-&lt;h2&gt;Feature Branch Workflow&lt;/h2&gt;
-&lt;p&gt;The core idea behind the Feature Branch Workflow is that all feature development should take place in a dedicated branch instead of the master branch. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase. It also means the master branch will never contain broken code, which is a huge advantage for continuous integration environments.&lt;/p&gt;
-&lt;p&gt;Encapsulating feature development also makes it possible to leverage pull requests, which are a way to initiate discussions around a branch. They give other developers the opportunity to sign off on a feature before it gets integrated into the official project. Or, if you get stuck in the middle of a feature, you can open a pull request asking for suggestions from your colleagues. The point is, pull requests make it incredibly easy for your team to comment on each other’s work.&lt;/p&gt;
-&lt;p&gt;source: &lt;a class="reference external" href="https://www.atlassian.com/git/workflows"&gt;https://www.atlassian.com/git/workflows&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</description><category>git</category><guid>http://mattchoplin.com/posts/git-branching-strategy.html</guid><pubDate>Sun, 13 Jul 2014 11:44:49 GMT</pubDate></item></channel></rss>
+&lt;p&gt;Source: &lt;a class="reference external" href="http://postgresql.1045698.n5.nabble.com/reverse-strpos-td1891709.html"&gt;http://postgresql.1045698.n5.nabble.com/reverse-strpos-td1891709.html&lt;/a&gt;&lt;/p&gt;</description><category>copy</category><category>postgresql</category><category>sql</category><guid>http://mattchoplin.com/posts/copy-records-from-csv-in-postgresql.html</guid><pubDate>Fri, 18 Jul 2014 15:39:41 GMT</pubDate></item></channel></rss>
