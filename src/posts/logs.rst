@@ -26,4 +26,4 @@ Example for vagrant user:
   root@openerp-development:/var/log/openerp# chown vagrant:vagrant /var/log/openerp/ -R 
   root@openerp-development:/var/log/openerp# chmod a+r /var/log/openerp/ -R
 
-|
+Source: http://www.rsyslog.com/
