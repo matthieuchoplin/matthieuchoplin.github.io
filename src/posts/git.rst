@@ -70,3 +70,26 @@ Stash current work
 
   git stash save
   git stash pop
+
+Push
+====
+
+To avoid doing all the time:
+
+.. code-block::
+
+  git push origin <your-feature-branch>
+
+You can do:
+
+.. code-block::
+
+  git push origin <your-feature-branch> -u
+
+You next, you will just have to do:
+
+.. code-block::
+
+  git push
+
+
