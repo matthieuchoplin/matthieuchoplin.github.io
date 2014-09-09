@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Logs | Standing on the shoulders of giants</title>
+<title>Port in use | Standing on the shoulders of giants</title>
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
-<link rel="canonical" href="http://mattchoplin.com/posts/logs.html">
+<link rel="canonical" href="http://mattchoplin.com/posts/port-in-use.html">
 <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
 <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><link rel="stylesheet" type="text/css" href="../assets/css/tipuesearch.css">
 </head>
@@ -18,11 +18,11 @@
     
 
     <meta name="author" content="Matthieu Choplin">
-<meta name="og:title" content="Logs">
-<meta name="og:url" content="http://mattchoplin.com/posts/logs.html">
-<meta name="og:description" content="The configuration and especially right permissions will be done in /etc/rsyslog.conf
-Bitmask is going to be used so use this doc
-http://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-n">
+<meta name="og:title" content="Port in use">
+<meta name="og:url" content="http://mattchoplin.com/posts/port-in-use.html">
+<meta name="og:description" content="To find which application is using a specific port, do:
+
+lsof -i &lt;port-number&gt;">
 <meta name="og:site_name" content="Standing on the shoulders of giants">
 <meta name="og:type" content="article">
 <!-- Menubar --><nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container">
@@ -59,7 +59,7 @@ http://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-n">
 
             <ul class="nav navbar-nav navbar-right">
 <li>
-    <a href="logs.rst" id="sourcelink">Source</a>
+    <a href="port-in-use.rst" id="sourcelink">Source</a>
     </li>
 
                 
@@ -74,39 +74,26 @@ http://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-n">
         <div class="row">
             
             
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Logs</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Port in use</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-08-22T11:29:21+01:00" itemprop="datePublished" title="Publication date">2014-08-22 11:29</time></a></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-09-09T09:32:20+01:00" itemprop="datePublished" title="Publication date">2014-09-09 09:32</time></a></p>
             
-        <p class="sourceline"><a href="logs.rst" id="sourcelink">Source</a></p>
+        <p class="sourceline"><a href="port-in-use.rst" id="sourcelink">Source</a></p>
 
         </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p>The configuration and especially right permissions will be done in /etc/rsyslog.conf</p>
-<p>Bitmask is going to be used so use this doc
-<a class="reference external" href="http://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/">http://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/</a></p>
-<p>It will be taken into account for the new log files only when we reload rsylog with this commend:</p>
-<pre class="code bash literal-block">
-/etc/init.d/rsyslog reload
+    <p>To find which application is using a specific port, do:</p>
+<pre class="code literal-block">
+lsof -i &lt;port-number&gt;
 </pre>
-<p>The old files are still on the old configuration. So, you need to change the right access directly for them with chown and chmod.</p>
-<p>Example for vagrant user:</p>
-<pre class="code bash literal-block">
-root@openerp-development:/var/log/openerp# chown vagrant:vagrant /var/log/openerp/ -R
-root@openerp-development:/var/log/openerp# chmod a+r /var/log/openerp/ -R
-</pre>
-<p>Source: <a class="reference external" href="http://www.rsyslog.com/">http://www.rsyslog.com/</a></p>
     </div>
     <aside class="postpromonav"><nav><ul class="pager">
 <li class="previous">
-                <a href="screen-monitoring.html" rel="prev" title="Screen monitoring">Previous post</a>
-            </li>
-            <li class="next">
-                <a href="port-in-use.html" rel="next" title="Port in use">Next post</a>
+                <a href="logs.html" rel="prev" title="Logs">Previous post</a>
             </li>
         </ul></nav></aside></article>
 </div>
