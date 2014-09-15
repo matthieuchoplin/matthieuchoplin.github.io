@@ -22,7 +22,11 @@
 <meta name="og:url" content="http://mattchoplin.com/posts/port-in-use.html">
 <meta name="og:description" content="To find which application is using a specific port, do:
 
-lsof -i &lt;port-number&gt;">
+lsof -i &lt;port-number&gt;
+
+Or list ports with associated processes in use:
+
+netstat -putln">
 <meta name="og:site_name" content="Standing on the shoulders of giants">
 <meta name="og:type" content="article">
 <!-- Menubar --><nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container">
@@ -89,6 +93,10 @@ lsof -i &lt;port-number&gt;">
     <p>To find which application is using a specific port, do:</p>
 <pre class="code literal-block">
 lsof -i &lt;port-number&gt;
+</pre>
+<p>Or list ports with associated processes in use:</p>
+<pre class="code literal-block">
+netstat -putln
 </pre>
     </div>
     <aside class="postpromonav"><nav><ul class="pager">

@@ -12,4 +12,10 @@ To find which application is using a specific port, do:
   
   lsof -i <port-number>
 
+Or list ports with associated processes in use:
+
+
+.. code-block::
+  
+  netstat -putln
 
