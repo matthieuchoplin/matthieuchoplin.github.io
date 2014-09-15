@@ -67,7 +67,19 @@
             
             
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/port-in-use.html" class="u-url">Port in use</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/put-an-emoji-icon-in-your-github-commit-message.html" class="u-url">Put an emoji icon in your Github commit message</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
+            <p class="dateline"><a href="posts/put-an-emoji-icon-in-your-github-commit-message.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-15T09:57:45+01:00" itemprop="datePublished" title="Publication date">2014-09-15 09:57</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>Example:</p>
+<pre class="code bash literal-block">
+git commit -m <span class="s1">'Fixed whatever, time for :beers:'</span>
+</pre>
+<p>See list of emoji here: <a class="reference external" href="http://scotch.io/bar-talk/emoji-icons-in-github-commit-messages">http://scotch.io/bar-talk/emoji-icons-in-github-commit-messages</a></p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/port-in-use.html" class="u-url">Port in use</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
             <p class="dateline"><a href="posts/port-in-use.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-09T09:32:20+01:00" itemprop="datePublished" title="Publication date">2014-09-09 09:32</time></a></p>
@@ -204,23 +216,6 @@ pip install enum34
 <li><a class="reference external" href="http://chrismiles.info/systemsadmin/databases/articles/viewing-current-postgresql-queries/">http://chrismiles.info/systemsadmin/databases/articles/viewing-current-postgresql-queries/</a></li>
 </ul>
 </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/psycopg2.html" class="u-url">Psycopg2</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/psycopg2.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-19T00:14:20+01:00" itemprop="datePublished" title="Publication date">2014-07-19 00:14</time></a></p>
-        </div>
-    </header><div class="e-content entry-content">
-    <pre class="code python literal-block">
-<span class="kn">import</span> <span class="nn">psycopg2</span>
-<span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">"dbname='template1' user='dbuser' host='localhost' password='dbpass'"</span><span class="p">)</span>
-<span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-</pre>
-<p>Once you have the cursor of the database, you can execute queries with:</p>
-<pre class="code python literal-block">
-<span class="n">cr</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">your_query</span><span class="p">;)</span>
-</pre>
-<p>Source: <a class="reference external" href="https://wiki.postgresql.org/wiki/Psycopg2_Tutorial">https://wiki.postgresql.org/wiki/Psycopg2_Tutorial</a></p>
-    </div>
     </article>
 </div>
 
