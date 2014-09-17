@@ -67,7 +67,21 @@
             
             
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/put-an-emoji-icon-in-your-github-commit-message.html" class="u-url">Put an emoji icon in your Github commit message</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/python-tips.html" class="u-url">Python tips</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
+            <p class="dateline"><a href="posts/python-tips.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-17T10:57:40+01:00" itemprop="datePublished" title="Publication date">2014-09-17 10:57</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>..code::block</p>
+<blockquote>
+<pre class="doctest-block">
+&gt;&gt;&gt; print r""" This is '\myfolder\'"""
+&gt;&gt;&gt;  This is '\myfolder\'
+</pre>
+</blockquote>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/put-an-emoji-icon-in-your-github-commit-message.html" class="u-url">Put an emoji icon in your Github commit message</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
             <p class="dateline"><a href="posts/put-an-emoji-icon-in-your-github-commit-message.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-15T09:57:45+01:00" itemprop="datePublished" title="Publication date">2014-09-15 09:57</time></a></p>
@@ -199,27 +213,6 @@ pip install enum34
 <p>It will give you a configuration sample to paste in your config.py file.</p>
 <p>Source: <a class="reference external" href="http://plugins.getnikola.com/#localsearch">http://plugins.getnikola.com/#localsearch</a></p>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/database-locks.html" class="u-url">Database locks</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/database-locks.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-19T00:27:04+01:00" itemprop="datePublished" title="Publication date">2014-07-19 00:27</time></a></p>
-        </div>
-    </header><div class="e-content entry-content">
-    <pre class="code postgresql literal-block">
-<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">pg_stat_activity</span> <span class="k">where</span> <span class="n">waiting</span><span class="o">=</span><span class="s1">'t'</span><span class="p">;</span>
-</pre>
-<p>Fix the lock:</p>
-<pre class="code postgresql literal-block">
-<span class="k">select</span> <span class="n">pg_cancel_backend</span><span class="p">(</span><span class="n">pid</span> <span class="nb">int</span><span class="p">)</span>
-</pre>
-<p>Where "pid int" is the pid you find with pg_stat_activity.</p>
-<p>Sources:</p>
-<ul class="simple">
-<li><a class="reference external" href="http://www.postgresql.org/docs/9.2/static/functions-admin.html">http://www.postgresql.org/docs/9.2/static/functions-admin.html</a></li>
-<li><a class="reference external" href="http://wiki.postgresql.org/wiki/Lock_Monitoring">http://wiki.postgresql.org/wiki/Lock_Monitoring</a></li>
-<li><a class="reference external" href="http://chrismiles.info/systemsadmin/databases/articles/viewing-current-postgresql-queries/">http://chrismiles.info/systemsadmin/databases/articles/viewing-current-postgresql-queries/</a></li>
-</ul>
-</div>
     </article>
 </div>
 

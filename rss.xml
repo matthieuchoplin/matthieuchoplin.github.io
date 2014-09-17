@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Mon, 15 Sep 2014 10:10:09 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Put an emoji icon in your Github commit message</title><link>http://mattchoplin.com/posts/put-an-emoji-icon-in-your-github-commit-message.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;Example:&lt;/p&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Wed, 17 Sep 2014 11:04:50 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python tips</title><link>http://mattchoplin.com/posts/python-tips.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;..code::block&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="doctest-block"&gt;
+&amp;gt;&amp;gt;&amp;gt; print r""" This is '\myfolder\'"""
+&amp;gt;&amp;gt;&amp;gt;  This is '\myfolder\'
+&lt;/pre&gt;
+&lt;/blockquote&gt;</description><guid>http://mattchoplin.com/posts/python-tips.html</guid><pubDate>Wed, 17 Sep 2014 09:57:40 GMT</pubDate></item><item><title>Put an emoji icon in your Github commit message</title><link>http://mattchoplin.com/posts/put-an-emoji-icon-in-your-github-commit-message.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;Example:&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 git commit -m &lt;span class="s1"&gt;'Fixed whatever, time for :beers:'&lt;/span&gt;
 &lt;/pre&gt;
@@ -59,16 +65,4 @@ pip install enum34
 &lt;span class="n"&gt;nikola&lt;/span&gt; &lt;span class="n"&gt;plugin&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="n"&gt;localsearch&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;It will give you a configuration sample to paste in your config.py file.&lt;/p&gt;
-&lt;p&gt;Source: &lt;a class="reference external" href="http://plugins.getnikola.com/#localsearch"&gt;http://plugins.getnikola.com/#localsearch&lt;/a&gt;&lt;/p&gt;</description><category>Nikola</category><guid>http://mattchoplin.com/posts/tipue-search.html</guid><pubDate>Sat, 19 Jul 2014 12:05:20 GMT</pubDate></item><item><title>Database locks</title><link>http://mattchoplin.com/posts/database-locks.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code postgresql literal-block"&gt;
-&lt;span class="k"&gt;select&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;from&lt;/span&gt; &lt;span class="n"&gt;pg_stat_activity&lt;/span&gt; &lt;span class="k"&gt;where&lt;/span&gt; &lt;span class="n"&gt;waiting&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'t'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;Fix the lock:&lt;/p&gt;
-&lt;pre class="code postgresql literal-block"&gt;
-&lt;span class="k"&gt;select&lt;/span&gt; &lt;span class="n"&gt;pg_cancel_backend&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pid&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;Where "pid int" is the pid you find with pg_stat_activity.&lt;/p&gt;
-&lt;p&gt;Sources:&lt;/p&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="http://www.postgresql.org/docs/9.2/static/functions-admin.html"&gt;http://www.postgresql.org/docs/9.2/static/functions-admin.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://wiki.postgresql.org/wiki/Lock_Monitoring"&gt;http://wiki.postgresql.org/wiki/Lock_Monitoring&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://chrismiles.info/systemsadmin/databases/articles/viewing-current-postgresql-queries/"&gt;http://chrismiles.info/systemsadmin/databases/articles/viewing-current-postgresql-queries/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><category>lock</category><category>postgresql</category><guid>http://mattchoplin.com/posts/database-locks.html</guid><pubDate>Fri, 18 Jul 2014 23:27:04 GMT</pubDate></item></channel></rss>
+&lt;p&gt;Source: &lt;a class="reference external" href="http://plugins.getnikola.com/#localsearch"&gt;http://plugins.getnikola.com/#localsearch&lt;/a&gt;&lt;/p&gt;</description><category>Nikola</category><guid>http://mattchoplin.com/posts/tipue-search.html</guid><pubDate>Sat, 19 Jul 2014 12:05:20 GMT</pubDate></item></channel></rss>
