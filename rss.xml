@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Wed, 17 Sep 2014 11:04:50 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python tips</title><link>http://mattchoplin.com/posts/python-tips.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;..code::block&lt;/p&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Wed, 17 Sep 2014 11:07:16 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python tips</title><link>http://mattchoplin.com/posts/python-tips.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;..code::block&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;pre class="doctest-block"&gt;
 &amp;gt;&amp;gt;&amp;gt; print r""" This is '\myfolder\'"""
 &amp;gt;&amp;gt;&amp;gt;  This is '\myfolder\'
 &lt;/pre&gt;
-&lt;/blockquote&gt;</description><guid>http://mattchoplin.com/posts/python-tips.html</guid><pubDate>Wed, 17 Sep 2014 09:57:40 GMT</pubDate></item><item><title>Put an emoji icon in your Github commit message</title><link>http://mattchoplin.com/posts/put-an-emoji-icon-in-your-github-commit-message.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;Example:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br&gt;&lt;/div&gt;
+&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/python-tips.html</guid><pubDate>Wed, 17 Sep 2014 09:57:40 GMT</pubDate></item><item><title>Put an emoji icon in your Github commit message</title><link>http://mattchoplin.com/posts/put-an-emoji-icon-in-your-github-commit-message.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;Example:&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 git commit -m &lt;span class="s1"&gt;'Fixed whatever, time for :beers:'&lt;/span&gt;
 &lt;/pre&gt;

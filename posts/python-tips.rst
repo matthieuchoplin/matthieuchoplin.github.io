@@ -13,3 +13,5 @@ Ignore escaping characters such as "\"
 
   >>> print r""" This is '\myfolder\'"""
   >>>  This is '\myfolder\'
+
+|
