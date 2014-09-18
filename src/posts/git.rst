@@ -42,6 +42,8 @@ Or, if you want to see the lines that changed
 
 Source: https://coderwall.com/p/euwpig
 
+NB: If you want to see a list of aliases set up on your linux box, just type *alias* at the prompt.
+
 Simply add color to your git environment:
 
 .. code-block:: bash
