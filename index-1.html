@@ -195,6 +195,10 @@ git bisect good
 git bisect run &lt;command_that_run_the_tests&gt;
 </pre>
 <p>You can now grab a coffee and come back few minutes later to see what commit made the tests failed.</p>
+<p>Finally, you also need to come back to the original revision:</p>
+<pre class="code literal-block">
+git bisect reset
+</pre>
 <p>Sources:</p>
 <ul class="simple">
 <li>first it was JB: <a class="reference external" href="http://tartley.com/">http://tartley.com/</a>

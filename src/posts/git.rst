@@ -133,6 +133,12 @@ Once you have indicated that once it was bad and once it was good. You can leave
 
 You can now grab a coffee and come back few minutes later to see what commit made the tests failed.
 
+Finally, you also need to come back to the original revision:
+
+.. code-block::
+
+  git bisect reset
+
 Sources: 
 
 - first it was JB: http://tartley.com/
