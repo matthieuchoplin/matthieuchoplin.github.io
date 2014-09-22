@@ -24,7 +24,10 @@
 
 Example:
 
-pkill -9f filezilla">
+pkill -9f filezilla
+
+If you have launch a command that you cannot directly stopped with usually ctrl+c,
+you can always put the process in the background with ctrl+z a">
 <meta name="og:site_name" content="Standing on the shoulders of giants">
 <meta name="og:type" content="article">
 <!-- Menubar --><nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container">
@@ -94,6 +97,24 @@ pkill -9f process-name
 <p>Example:</p>
 <pre class="code bash literal-block">
 pkill -9f filezilla
+</pre>
+<p>If you have launch a command that you cannot directly stopped with usually <em>ctrl+c</em>,
+you can always put the process in the background with <em>ctrl+z</em> and then use the
+<em>jobs</em> command to list the job (command) that you have launched.
+Then, you have the number of the job and you can kill it with the command
+<em>kill %&lt;number_of_the_job&gt;</em>.</p>
+<p>Example:</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>sleep 100
+^Z
+<span class="o">[</span>1<span class="o">]</span>+  Stopped                 sleep 100
+<span class="nv">$ </span><span class="nb">jobs</span>
+<span class="o">[</span>1<span class="o">]</span>+  Stopped                 sleep 100
+<span class="nv">$ </span><span class="nb">kill</span> %1
+<span class="nv">$ </span><span class="nb">jobs</span>
+<span class="o">[</span>1<span class="o">]</span>+  Terminated              sleep 100
+<span class="nv">$ </span><span class="nb">jobs</span>
+<span class="err">$</span>
 </pre>
     </div>
     <aside class="postpromonav"><nav><ul class="pager">

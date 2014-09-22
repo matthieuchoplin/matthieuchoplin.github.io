@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Thu, 18 Sep 2014 10:43:54 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python tips</title><link>http://mattchoplin.com/posts/python-tips.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;Ignore escaping characters such as "\"&lt;/p&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Thu, 18 Sep 2014 17:01:41 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Introduction to patching in Python</title><link>http://mattchoplin.com/posts/introduction-to-patching-in-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;span class="nd"&gt;@patch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'time.sleep'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_do_something&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mock_sleep&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+   &lt;span class="n"&gt;mock_sleep&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;return_value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+   &lt;span class="n"&gt;do_something&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;test_do_something&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;ok&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;mock&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;patch&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;do_something&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;'ok'&lt;/span&gt;
+    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;'ko'&lt;/span&gt;
+
+&lt;span class="nd"&gt;@patch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'time.sleep'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_do_something&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mock_sleep&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;mock_sleep&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;return_value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+    &lt;span class="n"&gt;do_something&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="nd"&gt;@patch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'time.sleep'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_do_something&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mock_sleep&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;mock_sleep&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;return_value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+    &lt;span class="n"&gt;do_something&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;test_do_something&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;ko&lt;/span&gt;</description><guid>http://mattchoplin.com/posts/introduction-to-patching-in-python.html</guid><pubDate>Thu, 18 Sep 2014 15:36:00 GMT</pubDate></item><item><title>Python tips</title><link>http://mattchoplin.com/posts/python-tips.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;Ignore escaping characters such as "\"&lt;/p&gt;
 &lt;pre class="code literal-block"&gt;
 &amp;gt;&amp;gt;&amp;gt; print r""" This is '\myfolder\'"""
 &amp;gt;&amp;gt;&amp;gt;  This is '\myfolder\'
@@ -56,11 +83,4 @@ pip install enum34
 &lt;/pre&gt;
 &lt;p&gt;Source: &lt;a class="reference external" href="http://stackoverflow.com/questions/36932/how-can-i-represent-an-enum-in-python"&gt;http://stackoverflow.com/questions/36932/how-can-i-represent-an-enum-in-python&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://docs.python.org/3/library/enum.html"&gt;https://docs.python.org/3/library/enum.html&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/using-enum-in-python.html</guid><pubDate>Mon, 28 Jul 2014 08:52:22 GMT</pubDate></item><item><title>Tipue search</title><link>http://mattchoplin.com/posts/tipue-search.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;As the number of posts is growing, I think that having a search engine within the website is now relevant. This post only shows what I am using for that.&lt;/p&gt;
-&lt;p&gt;Instead of using an external search engine such as Google or DuckDuckGo, you have a plugin in Nikola than enables searching on the client side by using jQuery.&lt;/p&gt;
-&lt;p&gt;Assuming you have installed Nikola &amp;gt; v7.0, you can install the plugin like this:&lt;/p&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="n"&gt;nikola&lt;/span&gt; &lt;span class="n"&gt;plugin&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="n"&gt;localsearch&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;It will give you a configuration sample to paste in your config.py file.&lt;/p&gt;
-&lt;p&gt;Source: &lt;a class="reference external" href="http://plugins.getnikola.com/#localsearch"&gt;http://plugins.getnikola.com/#localsearch&lt;/a&gt;&lt;/p&gt;</description><category>Nikola</category><guid>http://mattchoplin.com/posts/tipue-search.html</guid><pubDate>Sat, 19 Jul 2014 12:05:20 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/using-enum-in-python.html</guid><pubDate>Mon, 28 Jul 2014 08:52:22 GMT</pubDate></item></channel></rss>

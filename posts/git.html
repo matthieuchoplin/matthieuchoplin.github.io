@@ -150,6 +150,39 @@ git push origin &lt;your-feature-branch&gt; -u
 git push
 </pre>
 </div>
+<div class="section" id="find-which-commit-is-breaking-the-test-with-git-bisect">
+<h2>Find which commit is breaking the test with 'git bisect'</h2>
+<p>You may be in situation where you come back from holidays and find the tests that were passing before broken.</p>
+<p>Git can help to find which commit produced the failure.</p>
+<p>To start bisect, run:</p>
+<pre class="code literal-block">
+git bisect start
+</pre>
+<p>You know that the tests are failing so you indicate it with:</p>
+<pre class="code literal-block">
+git bisect bad
+</pre>
+<p>You checkout an earlier revision when you know that the tests were passing (git log can help):</p>
+<pre class="code literal-block">
+git checkout &lt;the_failing_revision&gt;
+</pre>
+<p>Then run the tests, and if they are passing, indicate it:</p>
+<pre class="code literal-block">
+git bisect good
+</pre>
+<p>Once you have indicated that once it was bad and once it was good. You can leave git bisect do the job automatically:</p>
+<pre class="code literal-block">
+git bisect run &lt;command_that_run_the_tests&gt;
+</pre>
+<p>You can now grab a coffee and come back few minutes later to see what commit made the tests failed.</p>
+<p>Sources:</p>
+<ul class="simple">
+<li>first it was JB: <a class="reference external" href="http://tartley.com/">http://tartley.com/</a>
+</li>
+<li><a class="reference external" href="http://git-scm.com/docs/git-bisect">http://git-scm.com/docs/git-bisect</a></li>
+<li><a class="reference external" href="http://www.askbjoernhansen.com/2010/04/30/git_bisect_mini_tutorial.html">http://www.askbjoernhansen.com/2010/04/30/git_bisect_mini_tutorial.html</a></li>
+</ul>
+</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../categories/git.html" rel="tag">git</a></li>

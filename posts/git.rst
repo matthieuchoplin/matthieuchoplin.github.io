@@ -94,4 +94,50 @@ You next, you will just have to do:
 
   git push
 
+Find which commit is breaking the test with 'git bisect'
+========================================================
+
+You may be in situation where you come back from holidays and find the tests that were passing before broken.
+
+Git can help to find which commit produced the failure.
+
+To start bisect, run:
+
+.. code-block::
+
+  git bisect start
+
+You know that the tests are failing so you indicate it with:
+
+.. code-block::
+
+  git bisect bad
+
+You checkout an earlier revision when you know that the tests were passing (git log can help):
+
+.. code-block::
+
+  git checkout <the_failing_revision>
+
+Then run the tests, and if they are passing, indicate it:
+
+.. code-block::
+
+  git bisect good
+
+Once you have indicated that once it was bad and once it was good. You can leave git bisect do the job automatically:
+
+.. code-block::
+
+  git bisect run <command_that_run_the_tests>
+
+You can now grab a coffee and come back few minutes later to see what commit made the tests failed.
+
+Sources: 
+
+- first it was JB: http://tartley.com/
+
+- http://git-scm.com/docs/git-bisect
+
+- http://www.askbjoernhansen.com/2010/04/30/git_bisect_mini_tutorial.html
 

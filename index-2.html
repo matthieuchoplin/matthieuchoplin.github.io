@@ -67,7 +67,22 @@
             
             
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/database-locks.html" class="u-url">Database locks</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/tipue-search.html" class="u-url">Tipue search</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
+            <p class="dateline"><a href="posts/tipue-search.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-19T13:05:20+01:00" itemprop="datePublished" title="Publication date">2014-07-19 13:05</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>As the number of posts is growing, I think that having a search engine within the website is now relevant. This post only shows what I am using for that.</p>
+<p>Instead of using an external search engine such as Google or DuckDuckGo, you have a plugin in Nikola than enables searching on the client side by using jQuery.</p>
+<p>Assuming you have installed Nikola &gt; v7.0, you can install the plugin like this:</p>
+<pre class="code python literal-block">
+<span class="n">nikola</span> <span class="n">plugin</span> <span class="o">-</span><span class="n">i</span> <span class="n">localsearch</span>
+</pre>
+<p>It will give you a configuration sample to paste in your config.py file.</p>
+<p>Source: <a class="reference external" href="http://plugins.getnikola.com/#localsearch">http://plugins.getnikola.com/#localsearch</a></p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/database-locks.html" class="u-url">Database locks</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
             <p class="dateline"><a href="posts/database-locks.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-19T00:27:04+01:00" itemprop="datePublished" title="Publication date">2014-07-19 00:27</time></a></p>
@@ -272,6 +287,24 @@ pkill -9f process-name
 <p>Example:</p>
 <pre class="code bash literal-block">
 pkill -9f filezilla
+</pre>
+<p>If you have launch a command that you cannot directly stopped with usually <em>ctrl+c</em>,
+you can always put the process in the background with <em>ctrl+z</em> and then use the
+<em>jobs</em> command to list the job (command) that you have launched.
+Then, you have the number of the job and you can kill it with the command
+<em>kill %&lt;number_of_the_job&gt;</em>.</p>
+<p>Example:</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>sleep 100
+^Z
+<span class="o">[</span>1<span class="o">]</span>+  Stopped                 sleep 100
+<span class="nv">$ </span><span class="nb">jobs</span>
+<span class="o">[</span>1<span class="o">]</span>+  Stopped                 sleep 100
+<span class="nv">$ </span><span class="nb">kill</span> %1
+<span class="nv">$ </span><span class="nb">jobs</span>
+<span class="o">[</span>1<span class="o">]</span>+  Terminated              sleep 100
+<span class="nv">$ </span><span class="nb">jobs</span>
+<span class="err">$</span>
 </pre>
     </div>
     </article>

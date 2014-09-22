@@ -67,7 +67,44 @@
             
             
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/python-tips.html" class="u-url">Python tips</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/introduction-to-patching-in-python.html" class="u-url">Introduction to patching in Python</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
+            <p class="dateline"><a href="posts/introduction-to-patching-in-python.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-18T16:36:00+01:00" itemprop="datePublished" title="Publication date">2014-09-18 16:36</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    
+<span class="nd">@patch</span><span class="p">(</span><span class="s">'time.sleep'</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test_do_something</span><span class="p">(</span><span class="n">mock_sleep</span><span class="p">):</span>
+   <span class="n">mock_sleep</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="bp">True</span>
+   <span class="n">do_something</span><span class="p">()</span>
+
+<span class="n">test_do_something</span><span class="p">()</span>
+<span class="n">ok</span>
+<span class="kn">from</span> <span class="nn">mock</span> <span class="kn">import</span> <span class="n">patch</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="k">def</span> <span class="nf">do_something</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s">'ok'</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">'ko'</span>
+
+<span class="nd">@patch</span><span class="p">(</span><span class="s">'time.sleep'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_do_something</span><span class="p">(</span><span class="n">mock_sleep</span><span class="p">):</span>
+    <span class="n">mock_sleep</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">do_something</span><span class="p">()</span>
+
+<span class="nd">@patch</span><span class="p">(</span><span class="s">'time.sleep'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_do_something</span><span class="p">(</span><span class="n">mock_sleep</span><span class="p">):</span>
+    <span class="n">mock_sleep</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">do_something</span><span class="p">()</span>
+
+<span class="n">test_do_something</span><span class="p">()</span>
+<span class="n">ko</span>
+
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/python-tips.html" class="u-url">Python tips</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
             <p class="dateline"><a href="posts/python-tips.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-17T10:57:40+01:00" itemprop="datePublished" title="Publication date">2014-09-17 10:57</time></a></p>
@@ -195,21 +232,6 @@ pip install enum34
 <p>Source: <a class="reference external" href="http://stackoverflow.com/questions/36932/how-can-i-represent-an-enum-in-python">http://stackoverflow.com/questions/36932/how-can-i-represent-an-enum-in-python</a></p>
 <p><a class="reference external" href="https://docs.python.org/3/library/enum.html">https://docs.python.org/3/library/enum.html</a></p>
 </div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/tipue-search.html" class="u-url">Tipue search</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/tipue-search.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-19T13:05:20+01:00" itemprop="datePublished" title="Publication date">2014-07-19 13:05</time></a></p>
-        </div>
-    </header><div class="e-content entry-content">
-    <p>As the number of posts is growing, I think that having a search engine within the website is now relevant. This post only shows what I am using for that.</p>
-<p>Instead of using an external search engine such as Google or DuckDuckGo, you have a plugin in Nikola than enables searching on the client side by using jQuery.</p>
-<p>Assuming you have installed Nikola &gt; v7.0, you can install the plugin like this:</p>
-<pre class="code python literal-block">
-<span class="n">nikola</span> <span class="n">plugin</span> <span class="o">-</span><span class="n">i</span> <span class="n">localsearch</span>
-</pre>
-<p>It will give you a configuration sample to paste in your config.py file.</p>
-<p>Source: <a class="reference external" href="http://plugins.getnikola.com/#localsearch">http://plugins.getnikola.com/#localsearch</a></p>
     </div>
     </article>
 </div>

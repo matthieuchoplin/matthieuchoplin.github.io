@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants (git)</title><link>http://mattchoplin.com/</link><description></description><language>en</language><lastBuildDate>Thu, 18 Sep 2014 10:43:54 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Git branching strategy</title><link>http://mattchoplin.com/posts/git-branching-strategy.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="the-git-flow-strategy"&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants (git)</title><link>http://mattchoplin.com/</link><description></description><language>en</language><lastBuildDate>Mon, 22 Sep 2014 11:43:23 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Git branching strategy</title><link>http://mattchoplin.com/posts/git-branching-strategy.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div class="section" id="the-git-flow-strategy"&gt;
 &lt;h2&gt;The git-flow strategy&lt;/h2&gt;
 &lt;p&gt;Very nice cheatsheet: &lt;a class="reference external" href="http://danielkummer.github.io/git-flow-cheatsheet/"&gt;http://danielkummer.github.io/git-flow-cheatsheet/&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -82,4 +82,34 @@ git push origin &amp;lt;your-feature-branch&amp;gt; -u
 &lt;pre class="code literal-block"&gt;
 git push
 &lt;/pre&gt;
-&lt;/div&gt;</description><category>git</category><guid>http://mattchoplin.com/posts/git.html</guid><pubDate>Fri, 06 Jun 2014 16:09:03 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;
+&lt;div class="section" id="find-which-commit-is-breaking-the-test-with-git-bisect"&gt;
+&lt;h2&gt;Find which commit is breaking the test with 'git bisect'&lt;/h2&gt;
+&lt;p&gt;You may be in situation where you come back from holidays and find the tests that were passing before broken.&lt;/p&gt;
+&lt;p&gt;Git can help to find which commit produced the failure.&lt;/p&gt;
+&lt;p&gt;To start bisect, run:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+git bisect start
+&lt;/pre&gt;
+&lt;p&gt;You know that the tests are failing so you indicate it with:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+git bisect bad
+&lt;/pre&gt;
+&lt;p&gt;You checkout an earlier revision when you know that the tests were passing (git log can help):&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+git checkout &amp;lt;the_failing_revision&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;Then run the tests, and if they are passing, indicate it:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+git bisect good
+&lt;/pre&gt;
+&lt;p&gt;Once you have indicated that once it was bad and once it was good. You can leave git bisect do the job automatically:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+git bisect run &amp;lt;command_that_run_the_tests&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;You can now grab a coffee and come back few minutes later to see what commit made the tests failed.&lt;/p&gt;
+&lt;p&gt;Sources:&lt;/p&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;first it was JB: &lt;a class="reference external" href="http://tartley.com/"&gt;http://tartley.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://git-scm.com/docs/git-bisect"&gt;http://git-scm.com/docs/git-bisect&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.askbjoernhansen.com/2010/04/30/git_bisect_mini_tutorial.html"&gt;http://www.askbjoernhansen.com/2010/04/30/git_bisect_mini_tutorial.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;</description><category>git</category><guid>http://mattchoplin.com/posts/git.html</guid><pubDate>Fri, 06 Jun 2014 16:09:03 GMT</pubDate></item></channel></rss>
