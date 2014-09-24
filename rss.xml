@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Wed, 24 Sep 2014 10:03:07 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Size occupied on the server</title><link>http://mattchoplin.com/posts/size-occupied-on-the-server.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;The following command:&lt;/p&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Wed, 24 Sep 2014 10:42:22 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Associate hostname with IP address</title><link>http://mattchoplin.com/posts/associate-hostname-with-ip-address.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;You can do that in the /etc/hosts file:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+127.0.0.1       localhost
+192.168.1.10    foo.mydomain.org       foo
+192.168.1.13    bar.mydomain.org       bar
+146.82.138.7    master.debian.org      master
+209.237.226.90  www.opensource.org
+&lt;/pre&gt;
+&lt;p&gt;So, from the command line, you can do:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+ping foo.mydomain.org
+&lt;/pre&gt;
+&lt;p&gt;Or:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+ssh user@foo
+&lt;/pre&gt;
+&lt;p&gt;Source: &lt;a class="reference external" href="http://linux.die.net/man/5/hosts"&gt;http://linux.die.net/man/5/hosts&lt;/a&gt;&lt;/p&gt;</description><guid>http://mattchoplin.com/posts/associate-hostname-with-ip-address.html</guid><pubDate>Wed, 24 Sep 2014 09:37:55 GMT</pubDate></item><item><title>Size occupied on the server</title><link>http://mattchoplin.com/posts/size-occupied-on-the-server.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;The following command:&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 du -h --max-depth 1
 &lt;/pre&gt;
@@ -65,7 +81,4 @@ root@openerp-development:/var/log/openerp# chmod a+r /var/log/openerp/ -R
 &lt;div class="line-block"&gt;
 &lt;div class="line"&gt;&lt;br&gt;&lt;/div&gt;
 &lt;/div&gt;</description><category>postgresql</category><guid>http://mattchoplin.com/posts/execute-sql-from-file.html</guid><pubDate>Wed, 13 Aug 2014 13:56:53 GMT</pubDate></item><item><title>Agile testing</title><link>http://mattchoplin.com/posts/agile-testing.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;The best book I ever read about testing and best practices in an Agile project is: Agile Testing: A Practical Guide for Testers and Agile Teams (Addison-Wesley Signature)&lt;/p&gt;
-&lt;p&gt;The main idea of Agility is constantly giving and receiving &lt;em&gt;feedback&lt;/em&gt; in order to keep improving the process and the output of the project.&lt;/p&gt;</description><category>agile</category><category>testing</category><guid>http://mattchoplin.com/posts/agile-testing.html</guid><pubDate>Tue, 29 Jul 2014 15:19:08 GMT</pubDate></item><item><title>Copy records from postgresql to csv file</title><link>http://mattchoplin.com/posts/copy-records-from-postgresql-to-csv-file.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code sql literal-block"&gt;
-&lt;span class="k"&gt;COPY&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;QUERY&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;TO&lt;/span&gt; &lt;span class="s1"&gt;'FILENAME'&lt;/span&gt; &lt;span class="k"&gt;WITH&lt;/span&gt; &lt;span class="n"&gt;CSV&lt;/span&gt; &lt;span class="n"&gt;HEADER&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;For the other way around see: &lt;a class="reference external" href="http://mattchoplin.com/posts/copy-records-from-csv-in-postgresql.html"&gt;Copy records from csv file to postgres DB&lt;/a&gt;&lt;/p&gt;</description><category>postgresql</category><guid>http://mattchoplin.com/posts/copy-records-from-postgresql-to-csv-file.html</guid><pubDate>Tue, 29 Jul 2014 13:43:19 GMT</pubDate></item></channel></rss>
+&lt;p&gt;The main idea of Agility is constantly giving and receiving &lt;em&gt;feedback&lt;/em&gt; in order to keep improving the process and the output of the project.&lt;/p&gt;</description><category>agile</category><category>testing</category><guid>http://mattchoplin.com/posts/agile-testing.html</guid><pubDate>Tue, 29 Jul 2014 15:19:08 GMT</pubDate></item></channel></rss>
