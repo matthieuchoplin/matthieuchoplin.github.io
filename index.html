@@ -67,7 +67,81 @@
             
             
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/associate-hostname-with-ip-address.html" class="u-url">Associate hostname with IP address</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/sentry-installation.html" class="u-url">Sentry installation</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
+            <p class="dateline"><a href="posts/sentry-installation.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-24T22:03:47+01:00" itemprop="datePublished" title="Publication date">2014-09-24 22:03</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>Create a directory called sentry:</p>
+<pre class="code bash literal-block">
+<span class="c"># mkdir /opt/sentry &amp;&amp; cd /opt/sentry</span>
+</pre>
+<p>Create a virtual environment and activate it:</p>
+<pre class="code bash literal-block">
+<span class="c"># virtualenv sentry &amp;&amp; source /opt/sentry/sentry/bin/activate</span>
+</pre>
+<p>Install Sentry:</p>
+<pre class="code bash literal-block">
+<span class="c"># easy_install -UZ sentry[postgres]
+# easy_install -UZ sentry</span>
+</pre>
+<p>Initialize the conifguration</p>
+<pre class="code bash literal-block">
+<span class="c"># sentry init /opt/sentry/sentry.conf.py</span>
+</pre>
+<p>In the configuration file /opt/sentry/sentry.conf.py, you are going to change:</p>
+<ul class="simple">
+<li>the database configuration such as:</li>
+</ul>
+<pre class="code python literal-block">
+<span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'default'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s">'ENGINE'</span><span class="p">:</span> <span class="s">'django.db.backends.postgresql_psycopg2'</span><span class="p">,</span>
+                <span class="s">'NAME'</span><span class="p">:</span> <span class="s">'sentry'</span><span class="p">,</span>
+                <span class="s">'USER'</span><span class="p">:</span> <span class="s">'sentry'</span><span class="p">,</span>
+                <span class="s">'PASSWORD'</span><span class="p">:</span> <span class="s">'sentry'</span><span class="p">,</span>
+                <span class="s">'HOST'</span><span class="p">:</span> <span class="s">'localhost'</span><span class="p">,</span>
+                <span class="s">'PORT'</span><span class="p">:</span> <span class="s">''</span><span class="p">,</span>
+             <span class="p">}</span>
+           <span class="p">}</span>
+</pre>
+<ul class="simple">
+<li>And the url:</li>
+</ul>
+<pre class="code python literal-block">
+<span class="n">SENTRY_URL_PREFIX</span> <span class="o">=</span> <span class="s">'http://192.168.50.4:9000'</span> <span class="c"># the ip address of the server</span>
+</pre>
+<p>Install postgresql</p>
+<pre class="code bash literal-block">
+<span class="c"># apt-get install postgresql-9.3</span>
+</pre>
+<p>Create a user for sentry:</p>
+<pre class="code bash literal-block">
+<span class="c"># sudo su postgres
+</span><span class="nv">$ </span>createuser sentry
+<span class="nv">$ </span>psql template1
+<span class="c"># alter role sentry with password 'sentry';</span>
+</pre>
+<p>Create the database as postgres:</p>
+<pre class="code bash literal-block">
+<span class="c"># createdb -E utf-8 sentry</span>
+</pre>
+<p>Create the initial schema using the upgrade command as root:</p>
+<pre class="code bash literal-block">
+<span class="c"># sentry --config=/opt/sentry/sentry.conf.py upgrade</span>
+</pre>
+<p>If you did not create the user on the first run, you can correct this by doing the following:</p>
+<pre class="code bash literal-block">
+<span class="c"># sentry --config=/opt/sentry/sentry.conf.py createsuperuser
+# sentry --config=/opt/sentry/sentry.conf.py repair --owner=sentry</span>
+</pre>
+<p>You can start Sentry with:</p>
+<pre class="code bash literal-block">
+<span class="c"># sentry --config=/opt/sentry/sentry.conf.py start</span>
+</pre>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/associate-hostname-with-ip-address.html" class="u-url">Associate hostname with IP address</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
             <p class="dateline"><a href="posts/associate-hostname-with-ip-address.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-24T10:37:55+01:00" itemprop="datePublished" title="Publication date">2014-09-24 10:37</time></a></p>
@@ -221,15 +295,6 @@ root@openerp-development:/var/log/openerp# chmod a+r /var/log/openerp/ -R
 <div class="line-block">
 <div class="line"><br></div>
 </div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/agile-testing.html" class="u-url">Agile testing</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/agile-testing.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-29T16:19:08+01:00" itemprop="datePublished" title="Publication date">2014-07-29 16:19</time></a></p>
-        </div>
-    </header><div class="e-content entry-content">
-    <p>The best book I ever read about testing and best practices in an Agile project is: Agile Testing: A Practical Guide for Testers and Agile Teams (Addison-Wesley Signature)</p>
-<p>The main idea of Agility is constantly giving and receiving <em>feedback</em> in order to keep improving the process and the output of the project.</p>
     </div>
     </article>
 </div>
