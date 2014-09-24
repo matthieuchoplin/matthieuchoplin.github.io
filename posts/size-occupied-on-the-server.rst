@@ -7,10 +7,10 @@
 .. type: text
 
 
-The following command:
+The following command, executed as *root*:
 
 .. code:: bash
 
-  du -h --max-depth 1
+  du -h --max-depth 1 /
   
-will show used space per directory, looking at /
+will show used space per directory, looking at "/"
