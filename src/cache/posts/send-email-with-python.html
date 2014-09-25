@@ -1,0 +1,32 @@
+<p>This is a simple snippets for sending an email with a gmail smtp server.</p>
+<p>If you want to send emails from localhost, you will have to first enable an smtp server.</p>
+<p>So, the simplest is to use gmail smtp server:</p>
+<pre class="code python literal-block">
+<span class="kn">import</span> <span class="nn">smtplib</span>
+
+<span class="c"># define the method</span>
+<span class="k">def</span> <span class="nf">sendemail</span><span class="p">(</span><span class="n">from_addr</span><span class="p">,</span> <span class="n">to_addr_list</span><span class="p">,</span> <span class="n">cc_addr_list</span><span class="p">,</span>
+              <span class="n">subject</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span>
+              <span class="n">login</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span>
+              <span class="n">smtpserver</span><span class="o">=</span><span class="s">'smtp.gmail.com:587'</span><span class="p">):</span>
+    <span class="n">header</span>  <span class="o">=</span> <span class="s">'From: </span><span class="si">%s</span><span class="se">\n</span><span class="s">'</span> <span class="o">%</span> <span class="n">from_addr</span>
+    <span class="n">header</span> <span class="o">+=</span> <span class="s">'To: </span><span class="si">%s</span><span class="se">\n</span><span class="s">'</span> <span class="o">%</span> <span class="s">','</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">to_addr_list</span><span class="p">)</span>
+    <span class="n">header</span> <span class="o">+=</span> <span class="s">'Cc: </span><span class="si">%s</span><span class="se">\n</span><span class="s">'</span> <span class="o">%</span> <span class="s">','</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cc_addr_list</span><span class="p">)</span>
+    <span class="n">header</span> <span class="o">+=</span> <span class="s">'Subject: </span><span class="si">%s</span><span class="se">\n\n</span><span class="s">'</span> <span class="o">%</span> <span class="n">subject</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">header</span> <span class="o">+</span> <span class="n">message</span>
+
+    <span class="n">server</span> <span class="o">=</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="n">smtpserver</span><span class="p">)</span>
+    <span class="n">server</span><span class="o">.</span><span class="n">starttls</span><span class="p">()</span>
+    <span class="n">server</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">login</span><span class="p">,</span><span class="n">password</span><span class="p">)</span>
+    <span class="n">problems</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="n">from_addr</span><span class="p">,</span> <span class="n">to_addr_list</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+    <span class="n">server</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+
+<span class="c">#execute the method</span>
+<span class="n">sendemail</span><span class="p">(</span><span class="s">'me&#64;domain.com'</span><span class="p">,</span> <span class="p">[</span><span class="s">'you&#64;yourdomain.com'</span><span class="p">],</span> <span class="p">[</span><span class="s">'andyou&#64;yourdomain.com'</span><span class="p">],</span>
+          <span class="s">'test subject'</span><span class="p">,</span> <span class="s">'test message'</span><span class="p">,</span> <span class="s">'mylogin&#64;gmail.com'</span><span class="p">,</span> <span class="s">'mypassword'</span><span class="p">)</span>
+</pre>
+<p>Source:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://rosettacode.org/wiki/Send_an_email#Python">http://rosettacode.org/wiki/Send_an_email#Python</a></li>
+<li><a class="reference external" href="http://www.pythonforbeginners.com/code-snippets-source-code/using-python-to-send-email">http://www.pythonforbeginners.com/code-snippets-source-code/using-python-to-send-email</a></li>
+</ul>
