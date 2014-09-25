@@ -6,7 +6,7 @@
 .. description: 
 .. type: text
 
-It is commonly agreed that keeping */etc* under version control is a good practive.
+It is commonly agreed that keeping */etc* under version control is a good practice.
 
 Source:
 
