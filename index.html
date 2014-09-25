@@ -67,7 +67,31 @@
             
             
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/send-email-with-python.html" class="u-url">Send email with python</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/monitor-disk-usage-with-python.html" class="u-url">Monitor disk usage with python</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
+            <p class="dateline"><a href="posts/monitor-disk-usage-with-python.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-25T11:41:03+01:00" itemprop="datePublished" title="Publication date">2014-09-25 11:41</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>The module to use in python2 is <em>statvfs</em> imported from <em>os</em></p>
+<pre class="code python literal-block">
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">statvfs</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">statvfs</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+<span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_blocks</span>     <span class="c"># Size of filesystem in bytes</span>
+<span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_bfree</span>      <span class="c"># Actual number of free bytes</span>
+<span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_bavail</span>     <span class="c"># Number of free bytes that ordinary users</span>
+</pre>
+<p>NB: it is deprecated in python3, the module to use will be <a class="reference external" href="https://docs.python.org/3.3/library/os.html#os.fstat">fstat</a> os.fstat</p>
+<p>Source:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://stackoverflow.com/questions/4260116/find-size-and-free-space-of-the-filesystem-containing-a-given-file">http://stackoverflow.com/questions/4260116/find-size-and-free-space-of-the-filesystem-containing-a-given-file</a></li>
+</ul>
+<p>Better usage:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://blog.projectfondue.com/archives/2010/01/21/getting-an-early-warning-of-low-disk-space">http://blog.projectfondue.com/archives/2010/01/21/getting-an-early-warning-of-low-disk-space</a></li>
+</ul>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/send-email-with-python.html" class="u-url">Send email with python</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
             <p class="dateline"><a href="posts/send-email-with-python.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-25T11:20:32+01:00" itemprop="datePublished" title="Publication date">2014-09-25 11:20</time></a></p>
@@ -304,27 +328,6 @@ lsof -i &lt;port-number&gt;
 <pre class="code literal-block">
 netstat -putln
 </pre>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/logs.html" class="u-url">Logs</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/logs.html" rel="bookmark"><time class="published dt-published" datetime="2014-08-22T11:29:21+01:00" itemprop="datePublished" title="Publication date">2014-08-22 11:29</time></a></p>
-        </div>
-    </header><div class="e-content entry-content">
-    <p>The configuration and especially right permissions will be done in /etc/rsyslog.conf</p>
-<p>Bitmask is going to be used so use this doc
-<a class="reference external" href="http://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/">http://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/</a></p>
-<p>It will be taken into account for the new log files only when we reload rsylog with this commend:</p>
-<pre class="code bash literal-block">
-/etc/init.d/rsyslog reload
-</pre>
-<p>The old files are still on the old configuration. So, you need to change the right access directly for them with chown and chmod.</p>
-<p>Example for vagrant user:</p>
-<pre class="code bash literal-block">
-root@openerp-development:/var/log/openerp# chown vagrant:vagrant /var/log/openerp/ -R
-root@openerp-development:/var/log/openerp# chmod a+r /var/log/openerp/ -R
-</pre>
-<p>Source: <a class="reference external" href="http://www.rsyslog.com/">http://www.rsyslog.com/</a></p>
     </div>
     </article>
 </div>

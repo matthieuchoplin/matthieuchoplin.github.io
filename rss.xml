@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Thu, 25 Sep 2014 11:27:11 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Send email with python</title><link>http://mattchoplin.com/posts/send-email-with-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;This is a simple snippets for sending an email with a gmail smtp server.&lt;/p&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Thu, 25 Sep 2014 11:52:29 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Monitor disk usage with python</title><link>http://mattchoplin.com/posts/monitor-disk-usage-with-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;The module to use in python2 is &lt;em&gt;statvfs&lt;/em&gt; imported from &lt;em&gt;os&lt;/em&gt;&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+&lt;span class="n"&gt;statvfs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;statvfs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'/'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;statvfs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f_frsize&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;statvfs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f_blocks&lt;/span&gt;     &lt;span class="c"&gt;# Size of filesystem in bytes&lt;/span&gt;
+&lt;span class="n"&gt;statvfs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f_frsize&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;statvfs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f_bfree&lt;/span&gt;      &lt;span class="c"&gt;# Actual number of free bytes&lt;/span&gt;
+&lt;span class="n"&gt;statvfs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f_frsize&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;statvfs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f_bavail&lt;/span&gt;     &lt;span class="c"&gt;# Number of free bytes that ordinary users&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;NB: it is deprecated in python3, the module to use will be &lt;a class="reference external" href="https://docs.python.org/3.3/library/os.html#os.fstat"&gt;fstat&lt;/a&gt; os.fstat&lt;/p&gt;
+&lt;p&gt;Source:&lt;/p&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="http://stackoverflow.com/questions/4260116/find-size-and-free-space-of-the-filesystem-containing-a-given-file"&gt;http://stackoverflow.com/questions/4260116/find-size-and-free-space-of-the-filesystem-containing-a-given-file&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;Better usage:&lt;/p&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="http://blog.projectfondue.com/archives/2010/01/21/getting-an-early-warning-of-low-disk-space"&gt;http://blog.projectfondue.com/archives/2010/01/21/getting-an-early-warning-of-low-disk-space&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><guid>http://mattchoplin.com/posts/monitor-disk-usage-with-python.html</guid><pubDate>Thu, 25 Sep 2014 10:41:03 GMT</pubDate></item><item><title>Send email with python</title><link>http://mattchoplin.com/posts/send-email-with-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;This is a simple snippets for sending an email with a gmail smtp server.&lt;/p&gt;
 &lt;p&gt;If you want to send emails from localhost, you will have to first enable an smtp server.&lt;/p&gt;
 &lt;p&gt;So, the simplest is to use gmail smtp server:&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
@@ -157,17 +170,4 @@ lsof -i &amp;lt;port-number&amp;gt;
 &lt;p&gt;Or list ports with associated processes in use:&lt;/p&gt;
 &lt;pre class="code literal-block"&gt;
 netstat -putln
-&lt;/pre&gt;</description><guid>http://mattchoplin.com/posts/port-in-use.html</guid><pubDate>Tue, 09 Sep 2014 08:32:20 GMT</pubDate></item><item><title>Logs</title><link>http://mattchoplin.com/posts/logs.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;The configuration and especially right permissions will be done in /etc/rsyslog.conf&lt;/p&gt;
-&lt;p&gt;Bitmask is going to be used so use this doc
-&lt;a class="reference external" href="http://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/"&gt;http://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;It will be taken into account for the new log files only when we reload rsylog with this commend:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-/etc/init.d/rsyslog reload
-&lt;/pre&gt;
-&lt;p&gt;The old files are still on the old configuration. So, you need to change the right access directly for them with chown and chmod.&lt;/p&gt;
-&lt;p&gt;Example for vagrant user:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-root@openerp-development:/var/log/openerp# chown vagrant:vagrant /var/log/openerp/ -R
-root@openerp-development:/var/log/openerp# chmod a+r /var/log/openerp/ -R
-&lt;/pre&gt;
-&lt;p&gt;Source: &lt;a class="reference external" href="http://www.rsyslog.com/"&gt;http://www.rsyslog.com/&lt;/a&gt;&lt;/p&gt;</description><guid>http://mattchoplin.com/posts/logs.html</guid><pubDate>Fri, 22 Aug 2014 10:29:21 GMT</pubDate></item></channel></rss>
+&lt;/pre&gt;</description><guid>http://mattchoplin.com/posts/port-in-use.html</guid><pubDate>Tue, 09 Sep 2014 08:32:20 GMT</pubDate></item></channel></rss>
