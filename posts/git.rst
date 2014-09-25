@@ -147,3 +147,12 @@ Sources:
 
 - http://www.askbjoernhansen.com/2010/04/30/git_bisect_mini_tutorial.html
 
+
+What is the original commit of a git repository?
+================================================
+
+You know *git log* to see the history of he commits.
+
+Once you get the results of git log, you can do 'G' (capital G) to inverse the order of commits and see the first one in time.
+
+
