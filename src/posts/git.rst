@@ -156,3 +156,15 @@ You know *git log* to see the history of he commits.
 Once you get the results of git log, you can do 'G' (capital G) to inverse the order of commits and see the first one in time.
 
 
+Reduce the size of a git repository with the garbage collector
+==============================================================
+
+.. code:: bash
+
+  git gc
+
+Source:
+
+- http://stackoverflow.com/questions/2116778/reduce-git-repository-size
+
+- https://www.kernel.org/pub/software/scm/git/docs/git-gc.html
