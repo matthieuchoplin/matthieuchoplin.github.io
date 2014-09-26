@@ -67,7 +67,25 @@
             
             
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/monitor-disk-usage-with-python.html" class="u-url">Monitor disk usage with python</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/monkeypatching-in-python.html" class="u-url">Monkeypatching in python</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
+            <p class="dateline"><a href="posts/monkeypatching-in-python.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-26T10:55:04+01:00" itemprop="datePublished" title="Publication date">2014-09-26 10:55</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>A MonkeyPatch is a piece of Python code which extends or modifies other code at runtime (typically at startup). MonkeyPatching? would be the practice of writing, or running, a monkeypatch.</p>
+<p>A simple example looks like this:</p>
+<pre class="code python literal-block">
+<span class="kn">from</span> <span class="nn">SomeOtherProduct.SomeModule</span> <span class="kn">import</span> <span class="n">SomeClass</span>
+<span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s">"ook ook eee eee eee!"</span>
+
+<span class="n">SomeClass</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="n">speak</span>
+</pre>
+<p>In this example, if <em>SomeClass</em> did not already have a <em>speak()</em> method, it does now :-) If it had a speak() method before, <strong>the new code has replaced the old method definition</strong>.</p>
+<p>Source: <a class="reference external" href="https://web.archive.org/web/20120730014107/http://wiki.zope.org/zope2/MonkeyPatch">https://web.archive.org/web/20120730014107/http://wiki.zope.org/zope2/MonkeyPatch</a></p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/monitor-disk-usage-with-python.html" class="u-url">Monitor disk usage with python</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
             <p class="dateline"><a href="posts/monitor-disk-usage-with-python.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-25T11:41:03+01:00" itemprop="datePublished" title="Publication date">2014-09-25 11:41</time></a></p>
@@ -313,21 +331,6 @@ du -h --max-depth 1 /
 git commit -m <span class="s1">'Fixed whatever, time for :beers:'</span>
 </pre>
 <p>See list of emoji here: <a class="reference external" href="http://scotch.io/bar-talk/emoji-icons-in-github-commit-messages">http://scotch.io/bar-talk/emoji-icons-in-github-commit-messages</a></p>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/port-in-use.html" class="u-url">Port in use</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/port-in-use.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-09T09:32:20+01:00" itemprop="datePublished" title="Publication date">2014-09-09 09:32</time></a></p>
-        </div>
-    </header><div class="e-content entry-content">
-    <p>To find which application is using a specific port, do:</p>
-<pre class="code literal-block">
-lsof -i &lt;port-number&gt;
-</pre>
-<p>Or list ports with associated processes in use:</p>
-<pre class="code literal-block">
-netstat -putln
-</pre>
     </div>
     </article>
 </div>

@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Thu, 25 Sep 2014 11:52:29 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Monitor disk usage with python</title><link>http://mattchoplin.com/posts/monitor-disk-usage-with-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;The module to use in python2 is &lt;em&gt;statvfs&lt;/em&gt; imported from &lt;em&gt;os&lt;/em&gt;&lt;/p&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Fri, 26 Sep 2014 10:58:53 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Monkeypatching in python</title><link>http://mattchoplin.com/posts/monkeypatching-in-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;A MonkeyPatch is a piece of Python code which extends or modifies other code at runtime (typically at startup). MonkeyPatching? would be the practice of writing, or running, a monkeypatch.&lt;/p&gt;
+&lt;p&gt;A simple example looks like this:&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;SomeOtherProduct.SomeModule&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;SomeClass&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;speak&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s"&gt;"ook ook eee eee eee!"&lt;/span&gt;
+
+&lt;span class="n"&gt;SomeClass&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;speak&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;speak&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;In this example, if &lt;em&gt;SomeClass&lt;/em&gt; did not already have a &lt;em&gt;speak()&lt;/em&gt; method, it does now :-) If it had a speak() method before, &lt;strong&gt;the new code has replaced the old method definition&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Source: &lt;a class="reference external" href="https://web.archive.org/web/20120730014107/http://wiki.zope.org/zope2/MonkeyPatch"&gt;https://web.archive.org/web/20120730014107/http://wiki.zope.org/zope2/MonkeyPatch&lt;/a&gt;&lt;/p&gt;</description><guid>http://mattchoplin.com/posts/monkeypatching-in-python.html</guid><pubDate>Fri, 26 Sep 2014 09:55:04 GMT</pubDate></item><item><title>Monitor disk usage with python</title><link>http://mattchoplin.com/posts/monitor-disk-usage-with-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;The module to use in python2 is &lt;em&gt;statvfs&lt;/em&gt; imported from &lt;em&gt;os&lt;/em&gt;&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
 &lt;span class="n"&gt;statvfs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;statvfs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'/'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -163,11 +173,4 @@ du -h --max-depth 1 /
 &lt;pre class="code bash literal-block"&gt;
 git commit -m &lt;span class="s1"&gt;'Fixed whatever, time for :beers:'&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;See list of emoji here: &lt;a class="reference external" href="http://scotch.io/bar-talk/emoji-icons-in-github-commit-messages"&gt;http://scotch.io/bar-talk/emoji-icons-in-github-commit-messages&lt;/a&gt;&lt;/p&gt;</description><guid>http://mattchoplin.com/posts/put-an-emoji-icon-in-your-github-commit-message.html</guid><pubDate>Mon, 15 Sep 2014 08:57:45 GMT</pubDate></item><item><title>Port in use</title><link>http://mattchoplin.com/posts/port-in-use.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;To find which application is using a specific port, do:&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;
-lsof -i &amp;lt;port-number&amp;gt;
-&lt;/pre&gt;
-&lt;p&gt;Or list ports with associated processes in use:&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;
-netstat -putln
-&lt;/pre&gt;</description><guid>http://mattchoplin.com/posts/port-in-use.html</guid><pubDate>Tue, 09 Sep 2014 08:32:20 GMT</pubDate></item></channel></rss>
+&lt;p&gt;See list of emoji here: &lt;a class="reference external" href="http://scotch.io/bar-talk/emoji-icons-in-github-commit-messages"&gt;http://scotch.io/bar-talk/emoji-icons-in-github-commit-messages&lt;/a&gt;&lt;/p&gt;</description><guid>http://mattchoplin.com/posts/put-an-emoji-icon-in-your-github-commit-message.html</guid><pubDate>Mon, 15 Sep 2014 08:57:45 GMT</pubDate></item></channel></rss>
