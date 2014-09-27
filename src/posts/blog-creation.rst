@@ -78,6 +78,25 @@ Download a pre-built template from bootswatch
 
   nikola bootswatch_theme -n custom_theme -s spruce -p bootstrap3
 
+Installing Nikola
+=================
+
+.. code:: bash
+
+  pip install nikola
+
+If you have the following error while installing nikola:
+
+.. code:: bash
+
+  ** make sure the development packages of libxml2 and libxslt are installed **
+
+You can fix it with:
+
+.. code:: bash
+
+  sudo apt-get install libxslt1-dev libxslt1.1 libxml2-dev libxml2 libssl-dev
+
 Upgrading Nikola
 ================
 
@@ -87,11 +106,19 @@ Since Nikola can be installed with Pip, you can use the following command:
 
   pip install -U nikola
 
-As a reminder, pip is installed using setuptools and easyinstall:
+To install pip, see http://pip.readthedocs.org/en/latest/installing.html
+
+If you have the following error:
 
 .. code:: bash
 
-  sudo easy install pip
+  Python.h: No such file or directory
+
+You can fix it with:
+
+.. code:: bash
+
+  sudo apt-get install python-dev
 
 To upgrade pip:
 
@@ -105,7 +132,6 @@ To downgrade pip to a previous version:
 
   sudo easy_install pip==1.2.1
 
-|
 
 Add your own domain
 ===================

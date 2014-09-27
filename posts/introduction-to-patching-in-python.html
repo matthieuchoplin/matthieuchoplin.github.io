@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Introduction to patching in Python | Standing on the shoulders of giants</title>
-<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
-<link rel="canonical" href="http://mattchoplin.com/posts/introduction-to-patching-in-python.html">
-<link rel="icon" href="../favicon-16x16.png" sizes="16x16">
-<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><link rel="stylesheet" type="text/css" href="../assets/css/tipuesearch.css">
-</head>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Introduction to patching in Python | Standing on the shoulders of giants</title>
+
+    
+            <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+
+    
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+
+      <link rel="canonical" href="http://mattchoplin.com/posts/introduction-to-patching-in-python.html">
+
+            <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
+
+
+
+    
+        <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]-->
+
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/tipuesearch.css">
+    </head>
 <body>
 <div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 20px;"></div>
 
@@ -18,23 +35,40 @@
     
 
     <meta name="author" content="Matthieu Choplin">
-<meta name="og:title" content="Introduction to patching in Python">
-<meta name="og:url" content="http://mattchoplin.com/posts/introduction-to-patching-in-python.html">
-<meta name="og:description" content="@patch('time.sleep')
+        <link rel="prev" href="python-tips.html" title="Python tips" type="text/html">
+        <link rel="next" href="size-occupied-on-the-server.html" title="Size occupied on the server" type="text/html">
+    
+    <meta name="og:title" content="Introduction to patching in Python">
+    <meta name="og:url" content="http://mattchoplin.com/posts/introduction-to-patching-in-python.html">
+    <meta name="og:description" content="If you want to use it in a version earlier than python3.3, you need yo install it:
 
-def test_do_something(mock_sleep):
-   mock_sleep.return_value = True
-   do_something()
+sudo pip install mock
 
-test_do_something()
-ok
-from mock import patch
+
+Simple example
+Code to test:
+
 import time
 def do_something():
-    if time.">
-<meta name="og:site_name" content="Standing on the shoulders of giants">
-<meta name="og:type" content="article">
-<!-- Menubar --><nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container">
+    if time.sleep(100):
+      ">
+    <meta name="og:site_name" content="Standing on the shoulders of giants">
+    <meta name="og:type" content="article">
+
+    
+
+    
+
+
+
+
+
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
 <!-- This keeps the margins nice -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -51,7 +85,8 @@ def do_something():
 <!-- /.navbar-header -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-<li>
+                
+                <li>
 <a href="../archive.html">Archive</a>
                 </li>
 <li>
@@ -63,27 +98,40 @@ def do_something():
                 
             </li>
 </ul>
-<span class="navbar-form pull-left">
-    <input type="text" id="tipue_search_input"></span>
+                
+    <span class="navbar-form pull-left">
+    <input type="text" id="tipue_search_input">
+    </span>
 
             <ul class="nav navbar-nav navbar-right">
-<li>
+                
+                
+                    
+    <li>
     <a href="introduction-to-patching-in-python.rst" id="sourcelink">Source</a>
     </li>
 
                 
             </ul>
-</div>
+        </div>
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container -->
-</nav><!-- End of Menubar --><div class="container">
+</nav>
+
+<!-- End of Menubar -->
+
+<div class="container" id="content">
     <div class="body-content">
         <!--Body content-->
         <div class="row">
             
             
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Introduction to patching in Python</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+    <header>
+        
+    <h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Introduction to patching in Python</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
@@ -94,58 +142,94 @@ def do_something():
         </div>
         
 
-    </header><div class="e-content entry-content" itemprop="articleBody text">
-    
-<span class="nd">@patch</span><span class="p">(</span><span class="s">'time.sleep'</span><span class="p">)</span>
+    </header>
 
-<span class="k">def</span> <span class="nf">test_do_something</span><span class="p">(</span><span class="n">mock_sleep</span><span class="p">):</span>
-   <span class="n">mock_sleep</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="bp">True</span>
-   <span class="n">do_something</span><span class="p">()</span>
-
-<span class="n">test_do_something</span><span class="p">()</span>
-<span class="n">ok</span>
-<span class="kn">from</span> <span class="nn">mock</span> <span class="kn">import</span> <span class="n">patch</span>
+    <div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>If you want to use it in a version earlier than python3.3, you need yo install it:</p>
+<pre class="code bash literal-block">
+sudo pip install mock
+</pre>
+<div class="section" id="simple-example">
+<h2>Simple example</h2>
+<p>Code to test:</p>
+<pre class="code python literal-block">
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="k">def</span> <span class="nf">do_something</span><span class="p">():</span>
     <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
         <span class="k">print</span> <span class="s">'ok'</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">print</span> <span class="s">'ko'</span>
-
+</pre>
+<p>Actual test:</p>
+<pre class="code python literal-block">
+<span class="kn">from</span> <span class="nn">mock</span> <span class="kn">import</span> <span class="n">patch</span>
 <span class="nd">@patch</span><span class="p">(</span><span class="s">'time.sleep'</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">test_do_something</span><span class="p">(</span><span class="n">mock_sleep</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">test_do_something1</span><span class="p">(</span><span class="n">mock_sleep</span><span class="p">):</span>
     <span class="n">mock_sleep</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="bp">True</span>
     <span class="n">do_something</span><span class="p">()</span>
 
 <span class="nd">@patch</span><span class="p">(</span><span class="s">'time.sleep'</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">test_do_something</span><span class="p">(</span><span class="n">mock_sleep</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">test_do_something2</span><span class="p">(</span><span class="n">mock_sleep</span><span class="p">):</span>
     <span class="n">mock_sleep</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="n">do_something</span><span class="p">()</span>
-
-<span class="n">test_do_something</span><span class="p">()</span>
-<span class="n">ko</span>
-
+</pre>
+<p>Results:</p>
+<pre class="code bash literal-block">
+&gt;&gt;&gt; test_do_something1<span class="o">()</span>
+ok
+&gt;&gt;&gt; test_do_something2<span class="o">()</span>
+ko
+</pre>
+<p>Source:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://pypi.python.org/pypi/mock">https://pypi.python.org/pypi/mock</a></li>
+</ul>
+</div>
+</div>
     </div>
-    <aside class="postpromonav"><nav><ul class="pager">
-<li class="previous">
+    <aside class="postpromonav">
+    <nav>
+    
+
+    
+        <ul class="pager">
+            <li class="previous">
                 <a href="python-tips.html" rel="prev" title="Python tips">Previous post</a>
             </li>
             <li class="next">
                 <a href="size-occupied-on-the-server.html" rel="next" title="Size occupied on the server">Next post</a>
             </li>
-        </ul></nav></aside></article>
-</div>
+        </ul>
+
+    </nav>
+    </aside>
+    
+
+</article>
+
+
+
+        </div>
         <!--End of body content-->
 
         <footer>
             Contents © 2014         <a href="mailto:choplin.mat@gmail.com">Matthieu Choplin</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
-</div>
+    </div>
 </div>
 
 
-            <script src="../assets/js/all-nocdn.js"></script><script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><script>
+            <script src="../assets/js/jquery.min.js"></script>
+            <script src="../assets/js/bootstrap.min.js"></script>
+        <script src="../assets/js/jquery.colorbox-min.js"></script>
+    
+
+    <script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script>
+    
+
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -154,7 +238,11 @@ def do_something():
   ga('create', 'UA-51792900-1', 'mattchoplin.com');
   ga('send', 'pageview');
 
-</script><script src="../assets/js/tipuesearch_set.js"></script><script src="../assets/js/tipuesearch.js"></script><script>
+</script>
+
+<script src="../assets/js/tipuesearch_set.js"></script>
+    <script src="../assets/js/tipuesearch.js"></script>
+    <script>
     $(document).ready(function() {
         $('#tipue_search_input').tipuesearch({
             'mode': 'json',
@@ -163,5 +251,9 @@ def do_something():
         });
     });
 </script>
+
+
+
+
 </body>
 </html>

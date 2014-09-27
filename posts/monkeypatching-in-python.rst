@@ -1,12 +1,12 @@
 .. title: Monkeypatching in python
 .. slug: monkeypatching-in-python
 .. date: 2014-09-26 10:55:04 UTC+01:00
-.. tags: 
+.. tags: python 
 .. link: 
-.. description: 
+.. description: monkeypatching 
 .. type: text
 
-A MonkeyPatch is a piece of Python code which extends or modifies other code at runtime (typically at startup). MonkeyPatching? would be the practice of writing, or running, a monkeypatch.
+A MonkeyPatch is a piece of Python code which extends or modifies other code at runtime (typically at startup). MonkeyPatching would be the practice of writing, or running, a monkeypatch.
 
 A simple example looks like this:
 
@@ -21,4 +21,8 @@ A simple example looks like this:
 
 In this example, if *SomeClass* did not already have a *speak()* method, it does now :-) If it had a speak() method before, **the new code has replaced the old method definition**.
 
-Source: https://web.archive.org/web/20120730014107/http://wiki.zope.org/zope2/MonkeyPatch
+Sources: 
+
+- https://web.archive.org/web/20120730014107/
+
+- http://wiki.zope.org/zope2/MonkeyPatch

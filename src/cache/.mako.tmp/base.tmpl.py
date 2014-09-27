@@ -4,7 +4,7 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1411725545.834986
+_modified_time = 1411819193.115705
 _enable_loop = True
 _template_filename = u'/usr/local/lib/python2.7/dist-packages/nikola/data/themes/bootstrap3/templates/base.tmpl'
 _template_uri = u'base.tmpl'
@@ -56,9 +56,10 @@ def render_body(context,**pageargs):
         lang = _import_ns.get('lang', context.get('lang', UNDEFINED))
         def belowtitle():
             return render_belowtitle(context._locals(__M_locals))
-        search_form = _import_ns.get('search_form', context.get('search_form', UNDEFINED))
-        set_locale = _import_ns.get('set_locale', context.get('set_locale', UNDEFINED))
         notes = _mako_get_namespace(context, 'notes')
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        set_locale = _import_ns.get('set_locale', context.get('set_locale', UNDEFINED))
+        search_form = _import_ns.get('search_form', context.get('search_form', UNDEFINED))
         __M_writer = context.writer()
         __M_writer(u'\n')
         __M_writer(u'\n')
@@ -72,7 +73,9 @@ def render_body(context,**pageargs):
 
         __M_writer(u'\n')
         __M_writer(unicode(template_hooks['extra_head']()))
-        __M_writer(u'\n</head>\n<body>\n\n<!-- Menubar -->\n\n<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">\n    <div class="container"><!-- This keeps the margins nice -->\n        <div class="navbar-header">\n            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">\n            <span class="sr-only">Toggle navigation</span>\n            <span class="icon-bar"></span>\n            <span class="icon-bar"></span>\n            <span class="icon-bar"></span>\n            </button>\n            <a class="navbar-brand" href="')
+        __M_writer(u'\n</head>\n<body>\n<a href="#content" class="sr-only sr-only-focusable">')
+        __M_writer(unicode(messages("Skip to main content")))
+        __M_writer(u'</a>\n\n<!-- Menubar -->\n\n<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">\n    <div class="container"><!-- This keeps the margins nice -->\n        <div class="navbar-header">\n            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">\n            <span class="sr-only">Toggle navigation</span>\n            <span class="icon-bar"></span>\n            <span class="icon-bar"></span>\n            <span class="icon-bar"></span>\n            </button>\n            <a class="navbar-brand" href="')
         __M_writer(unicode(abs_link('/')))
         __M_writer(u'">\n')
         if logo_url:
@@ -110,7 +113,7 @@ def render_body(context,**pageargs):
             __M_writer(u'\n')
         __M_writer(u'                ')
         __M_writer(unicode(template_hooks['menu_alt']()))
-        __M_writer(u'\n            </ul>\n        </div><!-- /.navbar-collapse -->\n    </div><!-- /.container -->\n</nav>\n\n<!-- End of Menubar -->\n\n<div class="container">\n    <div class="body-content">\n        <!--Body content-->\n        <div class="row">\n            ')
+        __M_writer(u'\n            </ul>\n        </div><!-- /.navbar-collapse -->\n    </div><!-- /.container -->\n</nav>\n\n<!-- End of Menubar -->\n\n<div class="container" id="content">\n    <div class="body-content">\n        <!--Body content-->\n        <div class="row">\n            ')
         __M_writer(unicode(template_hooks['page_header']()))
         __M_writer(u'\n            ')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
@@ -228,6 +231,6 @@ def render_belowtitle(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "line_map": {"192": 78, "131": 78, "132": 79, "133": 80, "134": 80, "135": 80, "136": 81, "137": 82, "138": 82, "139": 82, "140": 84, "141": 84, "142": 85, "143": 85, "149": 65, "22": 3, "25": 2, "28": 0, "218": 44, "163": 6, "220": 46, "172": 6, "221": 46, "206": 44, "178": 50, "222": 46, "219": 45, "223": 48, "63": 2, "64": 3, "65": 4, "66": 4, "67": 5, "68": 5, "73": 8, "74": 9, "75": 9, "76": 24, "77": 24, "78": 25, "79": 26, "80": 26, "81": 26, "82": 26, "83": 26, "84": 28, "85": 29, "86": 30, "87": 30, "88": 30, "89": 32, "90": 36, "91": 36, "92": 37, "93": 37, "94": 39, "95": 40, "96": 40, "97": 40, "98": 42, "229": 223, "103": 48, "104": 49, "105": 50, "110": 50, "111": 52, "112": 52, "113": 52, "114": 64, "115": 64, "120": 65, "121": 70, "122": 70, "123": 71, "124": 71, "125": 76, "126": 76}, "uri": "base.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/bootstrap3/templates/base.tmpl"}
+{"source_encoding": "utf-8", "line_map": {"128": 77, "129": 77, "224": 47, "226": 49, "134": 79, "135": 80, "136": 81, "137": 81, "138": 81, "139": 82, "140": 83, "141": 83, "142": 83, "143": 85, "144": 85, "145": 86, "146": 86, "195": 79, "22": 3, "152": 66, "25": 2, "28": 0, "166": 6, "223": 47, "175": 6, "181": 51, "221": 45, "64": 2, "65": 3, "66": 4, "67": 4, "68": 5, "69": 5, "225": 47, "74": 8, "75": 9, "76": 9, "77": 12, "78": 12, "79": 25, "80": 25, "81": 26, "82": 27, "83": 27, "84": 27, "85": 27, "86": 27, "87": 29, "88": 30, "89": 31, "90": 31, "91": 31, "92": 33, "93": 37, "94": 37, "95": 38, "96": 38, "97": 40, "98": 41, "99": 41, "100": 41, "101": 43, "209": 45, "232": 226, "106": 49, "107": 50, "108": 51, "222": 46, "113": 51, "114": 53, "115": 53, "116": 53, "117": 65, "118": 65, "123": 66, "124": 71, "125": 71, "126": 72, "127": 72}, "uri": "base.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/bootstrap3/templates/base.tmpl"}
 __M_END_METADATA
 """

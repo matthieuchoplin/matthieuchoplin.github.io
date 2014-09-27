@@ -6,37 +6,51 @@
 .. description: 
 .. type: text
 
+
+If you want to use it in a version earlier than python3.3, you need yo install it:
+
+.. code:: bash
+
+  sudo pip install mock
+
 Simple example
 ==============
 
+Code to test:
 
 .. code-block:: python
 
-    @patch('time.sleep')
+  import time
+  def do_something():
+      if time.sleep(100):
+          print 'ok'
+      else:
+          print 'ko'
 
-    def test_do_something(mock_sleep):
-       mock_sleep.return_value = True
-       do_something()
- 
-    test_do_something()
-    ok
-    from mock import patch
-    import time
-    def do_something():
-        if time.sleep(100):
-            print 'ok'
-        else:
-            print 'ko'
-   
-    @patch('time.sleep')
-    def test_do_something(mock_sleep):
-        mock_sleep.return_value = True
-        do_something()
-   
-    @patch('time.sleep')
-    def test_do_something(mock_sleep):
-        mock_sleep.return_value = False
-        do_something()
-   
-    test_do_something()
-    ko
+Actual test:
+
+.. code-block:: python
+
+  from mock import patch
+  @patch('time.sleep')
+  def test_do_something1(mock_sleep):
+      mock_sleep.return_value = True
+      do_something()
+  
+  @patch('time.sleep')
+  def test_do_something2(mock_sleep):
+      mock_sleep.return_value = False
+      do_something()
+
+Results:
+
+.. code:: bash
+
+  >>> test_do_something1()
+  ok
+  >>> test_do_something2()
+  ko
+
+Source:
+
+- https://pypi.python.org/pypi/mock

@@ -49,15 +49,34 @@ which vim
 nikola bootswatch_theme -n custom_theme -s spruce -p bootstrap3
 </pre>
 </div>
+<div class="section" id="installing-nikola">
+<h1>Installing Nikola</h1>
+<pre class="code bash literal-block">
+pip install nikola
+</pre>
+<p>If you have the following error while installing nikola:</p>
+<pre class="code bash literal-block">
+** make sure the development packages of libxml2 and libxslt are installed **
+</pre>
+<p>You can fix it with:</p>
+<pre class="code bash literal-block">
+sudo apt-get install libxslt1-dev libxslt1.1 libxml2-dev libxml2 libssl-dev
+</pre>
+</div>
 <div class="section" id="upgrading-nikola">
 <h1>Upgrading Nikola</h1>
 <p>Since Nikola can be installed with Pip, you can use the following command:</p>
 <pre class="code bash literal-block">
 pip install -U nikola
 </pre>
-<p>As a reminder, pip is installed using setuptools and easyinstall:</p>
+<p>To install pip, see <a class="reference external" href="http://pip.readthedocs.org/en/latest/installing.html">http://pip.readthedocs.org/en/latest/installing.html</a></p>
+<p>If you have the following error:</p>
 <pre class="code bash literal-block">
-sudo easy install pip
+Python.h: No such file or directory
+</pre>
+<p>You can fix it with:</p>
+<pre class="code bash literal-block">
+sudo apt-get install python-dev
 </pre>
 <p>To upgrade pip:</p>
 <pre class="code bash literal-block">
@@ -67,9 +86,6 @@ sudo easy_install -U pip
 <pre class="code bash literal-block">
 sudo easy_install <span class="nv">pip</span><span class="o">==</span>1.2.1
 </pre>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
 </div>
 <div class="section" id="add-your-own-domain">
 <h1>Add your own domain</h1>

@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Associate hostname with IP address | Standing on the shoulders of giants</title>
-<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
-<link rel="canonical" href="http://mattchoplin.com/posts/associate-hostname-with-ip-address.html">
-<link rel="icon" href="../favicon-16x16.png" sizes="16x16">
-<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><link rel="stylesheet" type="text/css" href="../assets/css/tipuesearch.css">
-</head>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Associate hostname with IP address | Standing on the shoulders of giants</title>
+
+    
+            <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+
+    
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+
+      <link rel="canonical" href="http://mattchoplin.com/posts/associate-hostname-with-ip-address.html">
+
+            <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
+
+
+
+    
+        <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]-->
+
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/tipuesearch.css">
+    </head>
 <body>
 <div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 20px;"></div>
 
@@ -18,18 +35,35 @@
     
 
     <meta name="author" content="Matthieu Choplin">
-<meta name="og:title" content="Associate hostname with IP address">
-<meta name="og:url" content="http://mattchoplin.com/posts/associate-hostname-with-ip-address.html">
-<meta name="og:description" content="You can do that in the /etc/hosts file:
+        <link rel="prev" href="size-occupied-on-the-server.html" title="Size occupied on the server" type="text/html">
+        <link rel="next" href="sentry-installation.html" title="Sentry installation" type="text/html">
+    
+    <meta name="og:title" content="Associate hostname with IP address">
+    <meta name="og:url" content="http://mattchoplin.com/posts/associate-hostname-with-ip-address.html">
+    <meta name="og:description" content="You can do that in the /etc/hosts file:
 
 127.0.0.1       localhost
 192.168.1.10    foo.mydomain.org       foo
 192.168.1.13    bar.mydomain.org       bar
 146.82.138.7    master.debian.org      master
 2">
-<meta name="og:site_name" content="Standing on the shoulders of giants">
-<meta name="og:type" content="article">
-<!-- Menubar --><nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container">
+    <meta name="og:site_name" content="Standing on the shoulders of giants">
+    <meta name="og:type" content="article">
+
+    
+
+    
+
+
+
+
+
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
 <!-- This keeps the margins nice -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -46,7 +80,8 @@
 <!-- /.navbar-header -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-<li>
+                
+                <li>
 <a href="../archive.html">Archive</a>
                 </li>
 <li>
@@ -58,27 +93,40 @@
                 
             </li>
 </ul>
-<span class="navbar-form pull-left">
-    <input type="text" id="tipue_search_input"></span>
+                
+    <span class="navbar-form pull-left">
+    <input type="text" id="tipue_search_input">
+    </span>
 
             <ul class="nav navbar-nav navbar-right">
-<li>
+                
+                
+                    
+    <li>
     <a href="associate-hostname-with-ip-address.rst" id="sourcelink">Source</a>
     </li>
 
                 
             </ul>
-</div>
+        </div>
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container -->
-</nav><!-- End of Menubar --><div class="container">
+</nav>
+
+<!-- End of Menubar -->
+
+<div class="container" id="content">
     <div class="body-content">
         <!--Body content-->
         <div class="row">
             
             
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Associate hostname with IP address</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+    <header>
+        
+    <h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Associate hostname with IP address</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
@@ -89,8 +137,11 @@
         </div>
         
 
-    </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p>You can do that in the /etc/hosts file:</p>
+    </header>
+
+    <div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>You can do that in the /etc/hosts file:</p>
 <pre class="code bash literal-block">
 127.0.0.1       localhost
 192.168.1.10    foo.mydomain.org       foo
@@ -107,27 +158,50 @@ ping foo.mydomain.org
 ssh user@foo
 </pre>
 <p>Source: <a class="reference external" href="http://linux.die.net/man/5/hosts">http://linux.die.net/man/5/hosts</a></p>
+</div>
     </div>
-    <aside class="postpromonav"><nav><ul class="pager">
-<li class="previous">
+    <aside class="postpromonav">
+    <nav>
+    
+
+    
+        <ul class="pager">
+            <li class="previous">
                 <a href="size-occupied-on-the-server.html" rel="prev" title="Size occupied on the server">Previous post</a>
             </li>
             <li class="next">
                 <a href="sentry-installation.html" rel="next" title="Sentry installation">Next post</a>
             </li>
-        </ul></nav></aside></article>
-</div>
+        </ul>
+
+    </nav>
+    </aside>
+    
+
+</article>
+
+
+
+        </div>
         <!--End of body content-->
 
         <footer>
             Contents © 2014         <a href="mailto:choplin.mat@gmail.com">Matthieu Choplin</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
-</div>
+    </div>
 </div>
 
 
-            <script src="../assets/js/all-nocdn.js"></script><script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><script>
+            <script src="../assets/js/jquery.min.js"></script>
+            <script src="../assets/js/bootstrap.min.js"></script>
+        <script src="../assets/js/jquery.colorbox-min.js"></script>
+    
+
+    <script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script>
+    
+
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -136,7 +210,11 @@ ssh user@foo
   ga('create', 'UA-51792900-1', 'mattchoplin.com');
   ga('send', 'pageview');
 
-</script><script src="../assets/js/tipuesearch_set.js"></script><script src="../assets/js/tipuesearch.js"></script><script>
+</script>
+
+<script src="../assets/js/tipuesearch_set.js"></script>
+    <script src="../assets/js/tipuesearch.js"></script>
+    <script>
     $(document).ready(function() {
         $('#tipue_search_input').tipuesearch({
             'mode': 'json',
@@ -145,5 +223,9 @@ ssh user@foo
         });
     });
 </script>
+
+
+
+
 </body>
 </html>

@@ -1,4 +1,4 @@
-<p>A MonkeyPatch is a piece of Python code which extends or modifies other code at runtime (typically at startup). MonkeyPatching? would be the practice of writing, or running, a monkeypatch.</p>
+<p>A MonkeyPatch is a piece of Python code which extends or modifies other code at runtime (typically at startup). MonkeyPatching would be the practice of writing, or running, a monkeypatch.</p>
 <p>A simple example looks like this:</p>
 <pre class="code python literal-block">
 <span class="kn">from</span> <span class="nn">SomeOtherProduct.SomeModule</span> <span class="kn">import</span> <span class="n">SomeClass</span>
@@ -8,4 +8,8 @@
 <span class="n">SomeClass</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="n">speak</span>
 </pre>
 <p>In this example, if <em>SomeClass</em> did not already have a <em>speak()</em> method, it does now :-) If it had a speak() method before, <strong>the new code has replaced the old method definition</strong>.</p>
-<p>Source: <a class="reference external" href="https://web.archive.org/web/20120730014107/http://wiki.zope.org/zope2/MonkeyPatch">https://web.archive.org/web/20120730014107/http://wiki.zope.org/zope2/MonkeyPatch</a></p>
+<p>Sources:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://web.archive.org/web/20120730014107/">https://web.archive.org/web/20120730014107/</a></li>
+<li><a class="reference external" href="http://wiki.zope.org/zope2/MonkeyPatch">http://wiki.zope.org/zope2/MonkeyPatch</a></li>
+</ul>
