@@ -12,5 +12,5 @@ Ignore escaping characters such as "\\"
 .. code-block::
   
   >>> print r""" This is '\myfolder\'"""
-  >>>  This is '\myfolder\'
+  >>> This is '\myfolder\'
 
