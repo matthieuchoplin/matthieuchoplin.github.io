@@ -1,0 +1,81 @@
+<p>We are going to create a django project that will be version controlled with <strong>git</strong>.</p>
+<div class="section" id="create-a-git-repository">
+<h1>Create a git repository</h1>
+<p>Make sure that git is installed with:</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>sudo apt-get install git
+</pre>
+<p>Then you can initialise the git repository</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>mkdir myproject
+<span class="nv">$ </span><span class="nb">cd </span>myproject
+<span class="nv">$ </span>git init
+</pre>
+</div>
+<div class="section" id="create-a-virtual-environment">
+<h1>Create a virtual environment</h1>
+<p>To do that you can use virtualenv</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>sudo apt-get install virtualenv
+</pre>
+<p>virtualenv is a tool to create isolated Python environments.</p>
+<p>Source: <a class="reference external" href="http://virtualenv.readthedocs.org/">http://virtualenv.readthedocs.org/</a></p>
+<p>Within <em>myproject</em> created above, you can create the virtual environment with:</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>virtualenv venv
+</pre>
+<p>The directory structure within myproject should look like:</p>
+<pre class="code bash literal-block">
+.
+└── venv
+    ├── bin
+    ├── include
+    ├── lib
+    └── <span class="nb">local</span>
+</pre>
+<p>NB: you can easily view the directory structure with the command <em>tree</em> (sudo apt-get install tree).</p>
+<p>Then, we want to activate the virtual environment:</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span><span class="nb">source </span>venv/bin/activate
+</pre>
+<p>NB: to quit the virtual environment, use <em>deactivate</em></p>
+</div>
+<div class="section" id="configure-the-virtual-environment">
+<h1>Configure the virtual environment</h1>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">&lt;string&gt;</tt>, line 62)</p>
+<p>Title underline too short.</p>
+<pre class="literal-block">
+Configure the virtual environment
+================================
+</pre>
+</div>
+<p>This environment will be used only for this project, we are going to install the dependancies within this environment so that we can easily reinstall them with pip and a requirement.txt file.</p>
+<p>If you do a <em>pip freeze</em>, you will see all the libraries installed.</p>
+<p>If you install a new library, you will see that it has been added if you do a <em>pip freeze</em> again.</p>
+<p>For instance, we want to install south, django-registration and stripe:</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>pip install <span class="nv">django</span><span class="o">==</span>1.5.1 south django-registration stripe
+<span class="nv">$ </span>pip freeze
+<span class="nv">$ </span>pip freeze
+<span class="nv">Django</span><span class="o">==</span>1.5.1
+<span class="nv">South</span><span class="o">==</span>1.0
+<span class="nv">argparse</span><span class="o">==</span>1.2.1
+django-registration<span class="o">==</span>1.0
+<span class="nv">requests</span><span class="o">==</span>2.4.1
+<span class="nv">stripe</span><span class="o">==</span>1.19.0
+<span class="nv">wsgiref</span><span class="o">==</span>0.1.2
+</pre>
+<p>NB: you can precize the version you want. Here, we want to use django with the version 1.5.1</p>
+</div>
+<div class="section" id="create-your-django-project">
+<h1>Create your django project</h1>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>django-admin.py startproject myproject
+</pre>
+<p>Check that it is installed correctly by running the server:</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>python manage.py runserver
+</pre>
+<p>and in your browser, go to the url <a class="reference external" href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></p>
+</div>
