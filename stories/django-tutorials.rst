@@ -67,7 +67,7 @@ Then, we want to activate the virtual environment:
 NB: to quit the virtual environment, use *deactivate*
 
 Configure the virtual environment
-================================
+=================================
 
 This environment will be used only for this project, we are going to install the dependancies within this environment so that we can easily reinstall them with pip and a requirement.txt file.
 
