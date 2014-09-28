@@ -92,6 +92,27 @@ For instance, we want to install south, django-registration and stripe:
 
 NB: you can precize the version you want. Here, we want to use django with the version 1.5.1
 
+We are going to keep the output of *git freeze* in a requirements.txt file:
+
+.. code:: bash
+
+  $ pip freeze > requirement.txt
+
+That way, we can recreate the virtual environment easily with:
+
+.. code:: bash
+
+  $ pip install -r requirement.txt
+
+The virtual environment is going to take a lot of place in the git repository, so we are going to untrack it.
+
+To do that, we are going to create a *.gitignore* file.
+
+.. code:: bash
+
+  $ cat .gitignore
+  venv
+
 Create your django project
 ==========================
 

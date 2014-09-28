@@ -188,6 +188,20 @@ django-registration<span class="o">==</span>1.0
 <span class="nv">wsgiref</span><span class="o">==</span>0.1.2
 </pre>
 <p>NB: you can precize the version you want. Here, we want to use django with the version 1.5.1</p>
+<p>We are going to keep the output of <em>git freeze</em> in a requirements.txt file:</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>pip freeze &gt; requirement.txt
+</pre>
+<p>That way, we can recreate the virtual environment easily with:</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>pip install -r requirement.txt
+</pre>
+<p>The virtual environment is going to take a lot of place in the git repository, so we are going to untrack it.</p>
+<p>To do that, we are going to create a <em>.gitignore</em> file.</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>cat .gitignore
+venv
+</pre>
 </div>
 <div class="section" id="create-your-django-project">
 <h2>Create your django project</h2>
