@@ -41,4 +41,6 @@ Or
   $ grpy to just search in python files
 
 
+Then reboot to make it seen by bash.
+
 Thank you JB!! (http://tartley.com/)
