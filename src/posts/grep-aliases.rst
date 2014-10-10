@@ -41,6 +41,10 @@ Or
   $ grpy to just search in python files
 
 
-Then reboot to make it seen by bash.
+Then reload bashrc with:
+
+.. code:: bash
+
+  $ . ~/.bashrc
 
 Thank you JB!! (http://tartley.com/)
