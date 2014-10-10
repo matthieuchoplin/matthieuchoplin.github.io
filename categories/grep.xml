@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants (grep)</title><link>http://mattchoplin.com/</link><description></description><language>en</language><lastBuildDate>Fri, 10 Oct 2014 10:34:53 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Grep aliases</title><link>http://mattchoplin.com/posts/grep-aliases.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;blockquote&gt;
+In .bashrc&lt;/blockquote&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="c"&gt;# recursive search in files
+&lt;/span&gt;
+&lt;span class="k"&gt;function &lt;/span&gt;grp &lt;span class="o"&gt;{&lt;/span&gt;
+
+    &lt;span class="nv"&gt;GREP_OPTIONS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"-rI --color --exclude-dir=\.bzr --exclude-dir=\.git --exclude-dir=\.hg --exclude-dir=\.svn --exclude=tags $GREP_OPTIONS"&lt;/span&gt; grep &lt;span class="s2"&gt;"$@"&lt;/span&gt;
+
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+
+
+&lt;span class="c"&gt;# recursive search in Python source
+&lt;/span&gt;
+&lt;span class="k"&gt;function &lt;/span&gt;grpy &lt;span class="o"&gt;{&lt;/span&gt;
+
+  &lt;span class="nv"&gt;GREP_OPTIONS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"--exclude-dir=build --exclude-dir=dist --include=*.py $GREP_OPTIONS"&lt;/span&gt; grp &lt;span class="s2"&gt;"$@"&lt;/span&gt;
+
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Use:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;grp WORD .
+&lt;/pre&gt;
+&lt;p&gt;Or&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;grpy to just search in python files
+&lt;/pre&gt;
+&lt;p&gt;Thank you JB!! (&lt;a class="reference external" href="http://tartley.com/"&gt;http://tartley.com/&lt;/a&gt;)&lt;/p&gt;</description><category>grep</category><guid>http://mattchoplin.com/posts/grep-aliases.html</guid><pubDate>Fri, 10 Oct 2014 09:31:27 GMT</pubDate></item></channel></rss>

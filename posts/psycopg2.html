@@ -1,28 +1,15 @@
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
-    <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Psycopg2 | Standing on the shoulders of giants</title>
-
-    
-            <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-
-    
-            <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
-
-      <link rel="canonical" href="http://mattchoplin.com/posts/psycopg2.html">
-
-            <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
-
-
-
-    
-        <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]-->
-
-    
-    <link rel="stylesheet" type="text/css" href="../assets/css/tipuesearch.css">
-    </head>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Psycopg2 | Standing on the shoulders of giants</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="canonical" href="http://mattchoplin.com/posts/psycopg2.html">
+<link rel="icon" href="../favicon-16x16.png" sizes="16x16">
+<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><link rel="stylesheet" type="text/css" href="../assets/css/tipuesearch.css">
+</head>
 <body>
 <div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 20px;"></div>
 
@@ -31,33 +18,16 @@
     
 
     <meta name="author" content="Matthieu Choplin">
-        <link rel="prev" href="copy-records-from-csv-in-postgresql.html" title="Copy records from csv in postgresql" type="text/html">
-        <link rel="next" href="database-locks.html" title="Database locks" type="text/html">
-    
-    <meta name="og:title" content="Psycopg2">
-    <meta name="og:url" content="http://mattchoplin.com/posts/psycopg2.html">
-    <meta name="og:description" content="import psycopg2
+<meta name="og:title" content="Psycopg2">
+<meta name="og:url" content="http://mattchoplin.com/posts/psycopg2.html">
+<meta name="og:description" content="import psycopg2
 conn = psycopg2.connect(&quot;dbname='template1' user='dbuser' host='localhost' password='dbpass'&quot;)
 cur = conn.cursor()
 
 Once you have the cursor of the database, you can execute queries wi">
-    <meta name="og:site_name" content="Standing on the shoulders of giants">
-    <meta name="og:type" content="article">
-
-    
-
-    
-
-
-
-
-
-<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
-
-<!-- Menubar -->
-
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
+<meta name="og:site_name" content="Standing on the shoulders of giants">
+<meta name="og:type" content="article">
+<!-- Menubar --><nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container">
 <!-- This keeps the margins nice -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -74,8 +44,7 @@ Once you have the cursor of the database, you can execute queries wi">
 <!-- /.navbar-header -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                
-                <li>
+<li>
 <a href="../archive.html">Archive</a>
                 </li>
 <li>
@@ -87,40 +56,27 @@ Once you have the cursor of the database, you can execute queries wi">
                 
             </li>
 </ul>
-                
-    <span class="navbar-form pull-left">
-    <input type="text" id="tipue_search_input">
-    </span>
+<span class="navbar-form pull-left">
+    <input type="text" id="tipue_search_input"></span>
 
             <ul class="nav navbar-nav navbar-right">
-                
-                
-                    
-    <li>
+<li>
     <a href="psycopg2.rst" id="sourcelink">Source</a>
     </li>
 
                 
             </ul>
-        </div>
+</div>
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container -->
-</nav>
-
-<!-- End of Menubar -->
-
-<div class="container" id="content">
+</nav><!-- End of Menubar --><div class="container">
     <div class="body-content">
         <!--Body content-->
         <div class="row">
             
             
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
-    
-    <header>
-        
-    <h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Psycopg2</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Psycopg2</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
@@ -131,11 +87,8 @@ Once you have the cursor of the database, you can execute queries wi">
         </div>
         
 
-    </header>
-
-    <div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<pre class="code python literal-block">
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <pre class="code python literal-block">
 <span class="kn">import</span> <span class="nn">psycopg2</span>
 <span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">"dbname='template1' user='dbuser' host='localhost' password='dbpass'"</span><span class="p">)</span>
 <span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
@@ -145,48 +98,27 @@ Once you have the cursor of the database, you can execute queries wi">
 <span class="n">cr</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">your_query</span><span class="p">;)</span>
 </pre>
 <p>Source: <a class="reference external" href="https://wiki.postgresql.org/wiki/Psycopg2_Tutorial">https://wiki.postgresql.org/wiki/Psycopg2_Tutorial</a></p>
-</div>
     </div>
-    <aside class="postpromonav">
-    <nav>
-    
-
-    
-        <ul class="pager">
-            <li class="previous">
+    <aside class="postpromonav"><nav><ul class="pager">
+<li class="previous">
                 <a href="copy-records-from-csv-in-postgresql.html" rel="prev" title="Copy records from csv in postgresql">Previous post</a>
             </li>
             <li class="next">
                 <a href="database-locks.html" rel="next" title="Database locks">Next post</a>
             </li>
-        </ul>
-
-    </nav>
-    </aside>
-    
-
-</article>
-
-
-
-        </div>
+        </ul></nav></aside></article>
+</div>
         <!--End of body content-->
 
         <footer>
             Contents © 2014         <a href="mailto:choplin.mat@gmail.com">Matthieu Choplin</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
-    </div>
+</div>
 </div>
 
 
-            <script src="../assets/js/all-nocdn.js"></script>
-    
-
-    <script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script>
-    
-
-<script>
+            <script src="../assets/js/all-nocdn.js"></script><script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -195,11 +127,7 @@ Once you have the cursor of the database, you can execute queries wi">
   ga('create', 'UA-51792900-1', 'mattchoplin.com');
   ga('send', 'pageview');
 
-</script>
-
-<script src="../assets/js/tipuesearch_set.js"></script>
-    <script src="../assets/js/tipuesearch.js"></script>
-    <script>
+</script><script src="../assets/js/tipuesearch_set.js"></script><script src="../assets/js/tipuesearch.js"></script><script>
     $(document).ready(function() {
         $('#tipue_search_input').tipuesearch({
             'mode': 'json',
@@ -208,9 +136,5 @@ Once you have the cursor of the database, you can execute queries wi">
         });
     });
 </script>
-
-
-
-
 </body>
 </html>

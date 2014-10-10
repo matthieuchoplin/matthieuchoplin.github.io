@@ -4,7 +4,7 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1411908322.53619
+_modified_time = 1412933706.882598
 _enable_loop = True
 _template_filename = u'/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/post_helper.tmpl'
 _template_uri = u'post_helper.tmpl'
@@ -86,23 +86,23 @@ def render_twitter_card_information(context,post):
         __M_writer = context.writer()
         __M_writer(u'\n')
         if twitter_card and twitter_card['use_twitter_cards']:
-            __M_writer(u'    <meta name="twitter:card" content="')
+            __M_writer(u'        <meta name="twitter:card" content="')
             __M_writer(filters.html_escape(unicode(twitter_card.get('card', 'summary'))))
             __M_writer(u'">\n')
             if 'site:id' in twitter_card:
-                __M_writer(u'    <meta name="twitter:site:id" content="')
+                __M_writer(u'            <meta name="twitter:site:id" content="')
                 __M_writer(unicode(twitter_card['site:id']))
                 __M_writer(u'">\n')
             elif 'site' in twitter_card:
-                __M_writer(u'    <meta name="twitter:site" content="')
+                __M_writer(u'            <meta name="twitter:site" content="')
                 __M_writer(unicode(twitter_card['site']))
                 __M_writer(u'">\n')
             if 'creator:id' in twitter_card:
-                __M_writer(u'    <meta name="twitter:creator:id" content="')
+                __M_writer(u'            <meta name="twitter:creator:id" content="')
                 __M_writer(unicode(twitter_card['creator:id']))
                 __M_writer(u'">\n')
             elif 'creator' in twitter_card:
-                __M_writer(u'    <meta name="twitter:creator" content="')
+                __M_writer(u'            <meta name="twitter:creator" content="')
                 __M_writer(unicode(twitter_card['creator']))
                 __M_writer(u'">\n')
         return ''
@@ -154,22 +154,22 @@ def render_open_graph_metadata(context,post):
         __M_writer = context.writer()
         __M_writer(u'\n')
         if use_open_graph:
-            __M_writer(u'    <meta name="og:title" content="')
+            __M_writer(u'        <meta name="og:title" content="')
             __M_writer(filters.html_escape(unicode(post.title()[:70])))
-            __M_writer(u'">\n    <meta name="og:url" content="')
+            __M_writer(u'">\n        <meta name="og:url" content="')
             __M_writer(unicode(abs_link(permalink)))
             __M_writer(u'">\n')
             if post.description():
-                __M_writer(u'    <meta name="og:description" content="')
+                __M_writer(u'            <meta name="og:description" content="')
                 __M_writer(filters.html_escape(unicode(post.description()[:200])))
                 __M_writer(u'">\n')
             else:
-                __M_writer(u'    <meta name="og:description" content="')
+                __M_writer(u'            <meta name="og:description" content="')
                 __M_writer(filters.html_escape(unicode(post.text(strip_html=True)[:200])))
                 __M_writer(u'">\n')
-            __M_writer(u'    <meta name="og:site_name" content="')
+            __M_writer(u'        <meta name="og:site_name" content="')
             __M_writer(striphtml(unicode(blog_title)))
-            __M_writer(u'">\n    <meta name="og:type" content="article">\n')
+            __M_writer(u'">\n        <meta name="og:type" content="article">\n')
         return ''
     finally:
         context.caller_stack._pop_frame()

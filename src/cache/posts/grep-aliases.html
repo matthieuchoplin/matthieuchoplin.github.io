@@ -1,0 +1,30 @@
+<blockquote>
+In .bashrc</blockquote>
+<pre class="code bash literal-block">
+<span class="c"># recursive search in files
+</span>
+<span class="k">function </span>grp <span class="o">{</span>
+
+    <span class="nv">GREP_OPTIONS</span><span class="o">=</span><span class="s2">&quot;-rI --color --exclude-dir=\.bzr --exclude-dir=\.git --exclude-dir=\.hg --exclude-dir=\.svn --exclude=tags $GREP_OPTIONS&quot;</span> grep <span class="s2">&quot;$&#64;&quot;</span>
+
+<span class="o">}</span>
+
+
+
+<span class="c"># recursive search in Python source
+</span>
+<span class="k">function </span>grpy <span class="o">{</span>
+
+  <span class="nv">GREP_OPTIONS</span><span class="o">=</span><span class="s2">&quot;--exclude-dir=build --exclude-dir=dist --include=*.py $GREP_OPTIONS&quot;</span> grp <span class="s2">&quot;$&#64;&quot;</span>
+
+<span class="o">}</span>
+</pre>
+<p>Use:</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>grp WORD .
+</pre>
+<p>Or</p>
+<pre class="code bash literal-block">
+<span class="nv">$ </span>grpy to just search in python files
+</pre>
+<p>Thank you JB!! (<a class="reference external" href="http://tartley.com/">http://tartley.com/</a>)</p>

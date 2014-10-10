@@ -1,28 +1,15 @@
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
-    <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sentry installation | Standing on the shoulders of giants</title>
-
-    
-            <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-
-    
-            <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
-
-      <link rel="canonical" href="http://mattchoplin.com/posts/sentry-installation.html">
-
-            <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
-
-
-
-    
-        <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]-->
-
-    
-    <link rel="stylesheet" type="text/css" href="../assets/css/tipuesearch.css">
-    </head>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sentry installation | Standing on the shoulders of giants</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="canonical" href="http://mattchoplin.com/posts/sentry-installation.html">
+<link rel="icon" href="../favicon-16x16.png" sizes="16x16">
+<!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><link rel="stylesheet" type="text/css" href="../assets/css/tipuesearch.css">
+</head>
 <body>
 <div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 20px;"></div>
 
@@ -31,12 +18,9 @@
     
 
     <meta name="author" content="Matthieu Choplin">
-        <link rel="prev" href="associate-hostname-with-ip-address.html" title="Associate hostname with IP address" type="text/html">
-        <link rel="next" href="version-control-etc-with-etckeeper.html" title="Version Control /etc with etckeeper" type="text/html">
-    
-    <meta name="og:title" content="Sentry installation">
-    <meta name="og:url" content="http://mattchoplin.com/posts/sentry-installation.html">
-    <meta name="og:description" content="Create a directory called sentry:
+<meta name="og:title" content="Sentry installation">
+<meta name="og:url" content="http://mattchoplin.com/posts/sentry-installation.html">
+<meta name="og:description" content="Create a directory called sentry:
 
 # mkdir /opt/sentry &amp;&amp; cd /opt/sentry
 
@@ -46,23 +30,9 @@ Create a virtual environment and activate it:
 
 Install Sentry:
 ">
-    <meta name="og:site_name" content="Standing on the shoulders of giants">
-    <meta name="og:type" content="article">
-
-    
-
-    
-
-
-
-
-
-<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
-
-<!-- Menubar -->
-
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
+<meta name="og:site_name" content="Standing on the shoulders of giants">
+<meta name="og:type" content="article">
+<!-- Menubar --><nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container">
 <!-- This keeps the margins nice -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -79,8 +49,7 @@ Install Sentry:
 <!-- /.navbar-header -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                
-                <li>
+<li>
 <a href="../archive.html">Archive</a>
                 </li>
 <li>
@@ -92,40 +61,27 @@ Install Sentry:
                 
             </li>
 </ul>
-                
-    <span class="navbar-form pull-left">
-    <input type="text" id="tipue_search_input">
-    </span>
+<span class="navbar-form pull-left">
+    <input type="text" id="tipue_search_input"></span>
 
             <ul class="nav navbar-nav navbar-right">
-                
-                
-                    
-    <li>
+<li>
     <a href="sentry-installation.rst" id="sourcelink">Source</a>
     </li>
 
                 
             </ul>
-        </div>
+</div>
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container -->
-</nav>
-
-<!-- End of Menubar -->
-
-<div class="container" id="content">
+</nav><!-- End of Menubar --><div class="container">
     <div class="body-content">
         <!--Body content-->
         <div class="row">
             
             
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
-    
-    <header>
-        
-    <h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Sentry installation</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Sentry installation</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
@@ -136,11 +92,8 @@ Install Sentry:
         </div>
         
 
-    </header>
-
-    <div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p>Create a directory called sentry:</p>
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>Create a directory called sentry:</p>
 <pre class="code bash literal-block">
 <span class="c"># mkdir /opt/sentry &amp;&amp; cd /opt/sentry</span>
 </pre>
@@ -207,48 +160,27 @@ Install Sentry:
 <pre class="code bash literal-block">
 <span class="c"># sentry --config=/opt/sentry/sentry.conf.py start</span>
 </pre>
-</div>
     </div>
-    <aside class="postpromonav">
-    <nav>
-    
-
-    
-        <ul class="pager">
-            <li class="previous">
+    <aside class="postpromonav"><nav><ul class="pager">
+<li class="previous">
                 <a href="associate-hostname-with-ip-address.html" rel="prev" title="Associate hostname with IP address">Previous post</a>
             </li>
             <li class="next">
                 <a href="version-control-etc-with-etckeeper.html" rel="next" title="Version Control /etc with etckeeper">Next post</a>
             </li>
-        </ul>
-
-    </nav>
-    </aside>
-    
-
-</article>
-
-
-
-        </div>
+        </ul></nav></aside></article>
+</div>
         <!--End of body content-->
 
         <footer>
             Contents © 2014         <a href="mailto:choplin.mat@gmail.com">Matthieu Choplin</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
-    </div>
+</div>
 </div>
 
 
-            <script src="../assets/js/all-nocdn.js"></script>
-    
-
-    <script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script>
-    
-
-<script>
+            <script src="../assets/js/all-nocdn.js"></script><script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -257,11 +189,7 @@ Install Sentry:
   ga('create', 'UA-51792900-1', 'mattchoplin.com');
   ga('send', 'pageview');
 
-</script>
-
-<script src="../assets/js/tipuesearch_set.js"></script>
-    <script src="../assets/js/tipuesearch.js"></script>
-    <script>
+</script><script src="../assets/js/tipuesearch_set.js"></script><script src="../assets/js/tipuesearch.js"></script><script>
     $(document).ready(function() {
         $('#tipue_search_input').tipuesearch({
             'mode': 'json',
@@ -270,9 +198,5 @@ Install Sentry:
         });
     });
 </script>
-
-
-
-
 </body>
 </html>
