@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Fri, 10 Oct 2014 11:23:32 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Grep aliases</title><link>http://mattchoplin.com/posts/grep-aliases.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;blockquote&gt;
-In .bashrc&lt;/blockquote&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Sat, 11 Oct 2014 13:49:54 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Grep aliases</title><link>http://mattchoplin.com/posts/grep-aliases.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;In .bashrc&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="c"&gt;# recursive search in files
 &lt;/span&gt;
@@ -32,7 +31,7 @@ In .bashrc&lt;/blockquote&gt;
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="nv"&gt;$ &lt;/span&gt;. ~/.bashrc
 &lt;/pre&gt;
-&lt;p&gt;Thank you JB!! (&lt;a class="reference external" href="http://tartley.com/"&gt;http://tartley.com/&lt;/a&gt;)&lt;/p&gt;</description><category>grep</category><guid>http://mattchoplin.com/posts/grep-aliases.html</guid><pubDate>Fri, 10 Oct 2014 09:31:27 GMT</pubDate></item><item><title>Monkeypatching in python</title><link>http://mattchoplin.com/posts/monkeypatching-in-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;A MonkeyPatch is a piece of Python code which extends or modifies other code at runtime (typically at startup). MonkeyPatching would be the practice of writing, or running, a monkeypatch.&lt;/p&gt;
+&lt;p&gt;Thank you JB!! (&lt;a class="reference external" href="http://tartley.com/"&gt;http://tartley.com/&lt;/a&gt;)&lt;/p&gt;&lt;/div&gt;</description><category>bash</category><category>grep</category><guid>http://mattchoplin.com/posts/grep-aliases.html</guid><pubDate>Fri, 10 Oct 2014 09:31:27 GMT</pubDate></item><item><title>Monkeypatching in python</title><link>http://mattchoplin.com/posts/monkeypatching-in-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;A MonkeyPatch is a piece of Python code which extends or modifies other code at runtime (typically at startup). MonkeyPatching would be the practice of writing, or running, a monkeypatch.&lt;/p&gt;
 &lt;p&gt;A simple example looks like this:&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;SomeOtherProduct.SomeModule&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;SomeClass&lt;/span&gt;
@@ -43,9 +42,10 @@ In .bashrc&lt;/blockquote&gt;
 &lt;/pre&gt;
 &lt;p&gt;In this example, if &lt;em&gt;SomeClass&lt;/em&gt; did not already have a &lt;em&gt;speak()&lt;/em&gt; method, it does now :-) If it had a speak() method before, &lt;strong&gt;the new code has replaced the old method definition&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Sources:&lt;/p&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="https://web.archive.org/web/20120730014107/"&gt;https://web.archive.org/web/20120730014107/&lt;/a&gt;&lt;/li&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://web.archive.org/web/20120730014107/"&gt;https://web.archive.org/web/20120730014107/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://wiki.zope.org/zope2/MonkeyPatch"&gt;http://wiki.zope.org/zope2/MonkeyPatch&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><category>python</category><guid>http://mattchoplin.com/posts/monkeypatching-in-python.html</guid><pubDate>Fri, 26 Sep 2014 09:55:04 GMT</pubDate></item><item><title>Monitor disk usage with python</title><link>http://mattchoplin.com/posts/monitor-disk-usage-with-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;The module to use in python2 is &lt;em&gt;statvfs&lt;/em&gt; imported from &lt;em&gt;os&lt;/em&gt;&lt;/p&gt;
+&lt;/ul&gt;&lt;/div&gt;</description><category>python</category><guid>http://mattchoplin.com/posts/monkeypatching-in-python.html</guid><pubDate>Fri, 26 Sep 2014 09:55:04 GMT</pubDate></item><item><title>Monitor disk usage with python</title><link>http://mattchoplin.com/posts/monitor-disk-usage-with-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;The module to use in python2 is &lt;em&gt;statvfs&lt;/em&gt; imported from &lt;em&gt;os&lt;/em&gt;&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
 &lt;span class="n"&gt;statvfs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;statvfs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'/'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -55,10 +55,13 @@ In .bashrc&lt;/blockquote&gt;
 &lt;/pre&gt;
 &lt;p&gt;NB: it is deprecated in python3, the module to use will be &lt;a class="reference external" href="https://docs.python.org/3.3/library/os.html#os.fstat"&gt;fstat&lt;/a&gt; os.fstat&lt;/p&gt;
 &lt;p&gt;Source:&lt;/p&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="http://stackoverflow.com/questions/4260116/find-size-and-free-space-of-the-filesystem-containing-a-given-file"&gt;http://stackoverflow.com/questions/4260116/find-size-and-free-space-of-the-filesystem-containing-a-given-file&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;Better usage:&lt;/p&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="http://blog.projectfondue.com/archives/2010/01/21/getting-an-early-warning-of-low-disk-space"&gt;http://blog.projectfondue.com/archives/2010/01/21/getting-an-early-warning-of-low-disk-space&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><guid>http://mattchoplin.com/posts/monitor-disk-usage-with-python.html</guid><pubDate>Thu, 25 Sep 2014 10:41:03 GMT</pubDate></item><item><title>Send email with python</title><link>http://mattchoplin.com/posts/send-email-with-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;This is a simple snippets for sending an email with a gmail smtp server.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://stackoverflow.com/questions/4260116/find-size-and-free-space-of-the-filesystem-containing-a-given-file"&gt;http://stackoverflow.com/questions/4260116/find-size-and-free-space-of-the-filesystem-containing-a-given-file&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Better usage:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://blog.projectfondue.com/archives/2010/01/21/getting-an-early-warning-of-low-disk-space"&gt;http://blog.projectfondue.com/archives/2010/01/21/getting-an-early-warning-of-low-disk-space&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/monitor-disk-usage-with-python.html</guid><pubDate>Thu, 25 Sep 2014 10:41:03 GMT</pubDate></item><item><title>Send email with python</title><link>http://mattchoplin.com/posts/send-email-with-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;This is a simple snippets for sending an email with a gmail smtp server.&lt;/p&gt;
 &lt;p&gt;If you want to send emails from localhost, you will have to first enable an smtp server.&lt;/p&gt;
 &lt;p&gt;So, the simplest is to use gmail smtp server:&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
@@ -86,13 +89,15 @@ In .bashrc&lt;/blockquote&gt;
           &lt;span class="s"&gt;'test subject'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'test message'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'mylogin@gmail.com'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'mypassword'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;Source:&lt;/p&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="http://rosettacode.org/wiki/Send_an_email#Python"&gt;http://rosettacode.org/wiki/Send_an_email#Python&lt;/a&gt;&lt;/li&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://rosettacode.org/wiki/Send_an_email#Python"&gt;http://rosettacode.org/wiki/Send_an_email#Python&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.pythonforbeginners.com/code-snippets-source-code/using-python-to-send-email"&gt;http://www.pythonforbeginners.com/code-snippets-source-code/using-python-to-send-email&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><guid>http://mattchoplin.com/posts/send-email-with-python.html</guid><pubDate>Thu, 25 Sep 2014 10:20:32 GMT</pubDate></item><item><title>Version Control /etc with etckeeper</title><link>http://mattchoplin.com/posts/version-control-etc-with-etckeeper.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;It is commonly agreed that keeping &lt;em&gt;/etc&lt;/em&gt; under version control is a good practice.&lt;/p&gt;
+&lt;/ul&gt;&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/send-email-with-python.html</guid><pubDate>Thu, 25 Sep 2014 10:20:32 GMT</pubDate></item><item><title>Version Control /etc with etckeeper</title><link>http://mattchoplin.com/posts/version-control-etc-with-etckeeper.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;It is commonly agreed that keeping &lt;em&gt;/etc&lt;/em&gt; under version control is a good practice.&lt;/p&gt;
 &lt;p&gt;Source:&lt;/p&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="https://help.ubuntu.com/10.04/serverguide/etckeeper.html"&gt;https://help.ubuntu.com/10.04/serverguide/etckeeper.html&lt;/a&gt;&lt;/li&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://help.ubuntu.com/10.04/serverguide/etckeeper.html"&gt;https://help.ubuntu.com/10.04/serverguide/etckeeper.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.tldp.org/LDP/Linux-Filesystem-Hierarchy/html/etc.html"&gt;http://www.tldp.org/LDP/Linux-Filesystem-Hierarchy/html/etc.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><guid>http://mattchoplin.com/posts/version-control-etc-with-etckeeper.html</guid><pubDate>Thu, 25 Sep 2014 09:14:33 GMT</pubDate></item><item><title>Sentry installation</title><link>http://mattchoplin.com/posts/sentry-installation.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;Create a directory called sentry:&lt;/p&gt;
+&lt;/ul&gt;&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/version-control-etc-with-etckeeper.html</guid><pubDate>Thu, 25 Sep 2014 09:14:33 GMT</pubDate></item><item><title>Sentry installation</title><link>http://mattchoplin.com/posts/sentry-installation.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;Create a directory called sentry:&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="c"&gt;# mkdir /opt/sentry &amp;amp;&amp;amp; cd /opt/sentry&lt;/span&gt;
 &lt;/pre&gt;
@@ -110,8 +115,10 @@ In .bashrc&lt;/blockquote&gt;
 &lt;span class="c"&gt;# sentry init /opt/sentry/sentry.conf.py&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;In the configuration file /opt/sentry/sentry.conf.py, you are going to change:&lt;/p&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;the database configuration such as:&lt;/li&gt;
-&lt;/ul&gt;&lt;pre class="code python literal-block"&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;the database configuration such as:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="code python literal-block"&gt;
 &lt;span class="n"&gt;DATABASES&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
   &lt;span class="s"&gt;'default'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
                 &lt;span class="s"&gt;'ENGINE'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;'django.db.backends.postgresql_psycopg2'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -123,8 +130,10 @@ In .bashrc&lt;/blockquote&gt;
              &lt;span class="p"&gt;}&lt;/span&gt;
            &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;And the url:&lt;/li&gt;
-&lt;/ul&gt;&lt;pre class="code python literal-block"&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;And the url:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="code python literal-block"&gt;
 &lt;span class="n"&gt;SENTRY_URL_PREFIX&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'http://192.168.50.4:9000'&lt;/span&gt; &lt;span class="c"&gt;# the ip address of the server&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;Install postgresql&lt;/p&gt;
@@ -154,7 +163,7 @@ In .bashrc&lt;/blockquote&gt;
 &lt;p&gt;You can start Sentry with:&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="c"&gt;# sentry --config=/opt/sentry/sentry.conf.py start&lt;/span&gt;
-&lt;/pre&gt;</description><guid>http://mattchoplin.com/posts/sentry-installation.html</guid><pubDate>Wed, 24 Sep 2014 21:03:47 GMT</pubDate></item><item><title>Associate hostname with IP address</title><link>http://mattchoplin.com/posts/associate-hostname-with-ip-address.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;You can do that in the /etc/hosts file:&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/sentry-installation.html</guid><pubDate>Wed, 24 Sep 2014 21:03:47 GMT</pubDate></item><item><title>Associate hostname with IP address</title><link>http://mattchoplin.com/posts/associate-hostname-with-ip-address.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;You can do that in the /etc/hosts file:&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 127.0.0.1       localhost
 192.168.1.10    foo.mydomain.org       foo
@@ -170,11 +179,11 @@ ping foo.mydomain.org
 &lt;pre class="code bash literal-block"&gt;
 ssh user@foo
 &lt;/pre&gt;
-&lt;p&gt;Source: &lt;a class="reference external" href="http://linux.die.net/man/5/hosts"&gt;http://linux.die.net/man/5/hosts&lt;/a&gt;&lt;/p&gt;</description><guid>http://mattchoplin.com/posts/associate-hostname-with-ip-address.html</guid><pubDate>Wed, 24 Sep 2014 09:37:55 GMT</pubDate></item><item><title>Size occupied on the server</title><link>http://mattchoplin.com/posts/size-occupied-on-the-server.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;The following command, executed as &lt;em&gt;root&lt;/em&gt;:&lt;/p&gt;
+&lt;p&gt;Source: &lt;a class="reference external" href="http://linux.die.net/man/5/hosts"&gt;http://linux.die.net/man/5/hosts&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/associate-hostname-with-ip-address.html</guid><pubDate>Wed, 24 Sep 2014 09:37:55 GMT</pubDate></item><item><title>Size occupied on the server</title><link>http://mattchoplin.com/posts/size-occupied-on-the-server.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;The following command, executed as &lt;em&gt;root&lt;/em&gt;:&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 du -h --max-depth 1 /
 &lt;/pre&gt;
-&lt;p&gt;will show used space per directory, looking at "/"&lt;/p&gt;</description><guid>http://mattchoplin.com/posts/size-occupied-on-the-server.html</guid><pubDate>Wed, 24 Sep 2014 09:00:51 GMT</pubDate></item><item><title>Introduction to patching in Python</title><link>http://mattchoplin.com/posts/introduction-to-patching-in-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;If you want to use it in a version earlier than python3.3, you need yo install it:&lt;/p&gt;
+&lt;p&gt;will show used space per directory, looking at "/"&lt;/p&gt;&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/size-occupied-on-the-server.html</guid><pubDate>Wed, 24 Sep 2014 09:00:51 GMT</pubDate></item><item><title>Introduction to patching in Python</title><link>http://mattchoplin.com/posts/introduction-to-patching-in-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;If you want to use it in a version earlier than python3.3, you need yo install it:&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 sudo pip install mock
 &lt;/pre&gt;
@@ -210,9 +219,11 @@ ok
 ko
 &lt;/pre&gt;
 &lt;p&gt;Source:&lt;/p&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="https://pypi.python.org/pypi/mock"&gt;https://pypi.python.org/pypi/mock&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/introduction-to-patching-in-python.html</guid><pubDate>Thu, 18 Sep 2014 15:36:00 GMT</pubDate></item><item><title>Python tips</title><link>http://mattchoplin.com/posts/python-tips.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;Ignore escaping characters such as "\"&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://pypi.python.org/pypi/mock"&gt;https://pypi.python.org/pypi/mock&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/introduction-to-patching-in-python.html</guid><pubDate>Thu, 18 Sep 2014 15:36:00 GMT</pubDate></item><item><title>Python tips</title><link>http://mattchoplin.com/posts/python-tips.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;Ignore escaping characters such as "\"&lt;/p&gt;
 &lt;pre class="code literal-block"&gt;
 &amp;gt;&amp;gt;&amp;gt; print r""" This is '\myfolder\'"""
 &amp;gt;&amp;gt;&amp;gt; This is '\myfolder\'
-&lt;/pre&gt;</description><guid>http://mattchoplin.com/posts/python-tips.html</guid><pubDate>Wed, 17 Sep 2014 09:57:40 GMT</pubDate></item></channel></rss>
+&lt;/pre&gt;&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/python-tips.html</guid><pubDate>Wed, 17 Sep 2014 09:57:40 GMT</pubDate></item></channel></rss>

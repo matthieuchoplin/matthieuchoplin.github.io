@@ -4,7 +4,7 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1412936612.206381
+_modified_time = 1413031807.151079
 _enable_loop = True
 _template_filename = u'/usr/local/lib/python2.7/dist-packages/nikola/data/themes/bootstrap3/templates/base_helper.tmpl'
 _template_uri = u'base_helper.tmpl'
@@ -41,12 +41,12 @@ def render_late_load_js(context):
         __M_writer(u'\n')
         if use_bundles:
             if use_cdn:
-                __M_writer(u'            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>\n            <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>\n            <script src="/assets/js/all.js"></script>\n')
+                __M_writer(u'            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>\n            <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>\n            <script src="/assets/js/all.js"></script>\n')
             else:
                 __M_writer(u'            <script src="/assets/js/all-nocdn.js"></script>\n')
         else:
             if use_cdn:
-                __M_writer(u'            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>\n            <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>\n')
+                __M_writer(u'            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>\n            <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>\n')
             else:
                 __M_writer(u'            <script src="/assets/js/jquery.min.js"></script>\n            <script src="/assets/js/bootstrap.min.js"></script>\n')
             __M_writer(u'        <script src="/assets/js/jquery.colorbox-min.js"></script>\n')
@@ -68,17 +68,20 @@ def render_html_headstart(context):
         lang = context.get('lang', UNDEFINED)
         extra_head_data = context.get('extra_head_data', UNDEFINED)
         permalink = context.get('permalink', UNDEFINED)
-        favicons = context.get('favicons', UNDEFINED)
+        prevlink = context.get('prevlink', UNDEFINED)
         description = context.get('description', UNDEFINED)
         title = context.get('title', UNDEFINED)
+        url_replacer = context.get('url_replacer', UNDEFINED)
         is_rtl = context.get('is_rtl', UNDEFINED)
         use_cdn = context.get('use_cdn', UNDEFINED)
         mathjax_config = context.get('mathjax_config', UNDEFINED)
+        nextlink = context.get('nextlink', UNDEFINED)
         striphtml = context.get('striphtml', UNDEFINED)
-        def html_feedlinks():
-            return render_html_feedlinks(context)
+        favicons = context.get('favicons', UNDEFINED)
         comment_system_id = context.get('comment_system_id', UNDEFINED)
         use_open_graph = context.get('use_open_graph', UNDEFINED)
+        def html_feedlinks():
+            return render_html_feedlinks(context)
         comment_system = context.get('comment_system', UNDEFINED)
         abs_link = context.get('abs_link', UNDEFINED)
         blog_title = context.get('blog_title', UNDEFINED)
@@ -133,13 +136,24 @@ def render_html_headstart(context):
             __M_writer(u'        <meta property="fb:app_id" content="')
             __M_writer(unicode(comment_system_id))
             __M_writer(u'">\n')
+        __M_writer(u'\n')
+        if prevlink:
+            __M_writer(u'        <link rel="prev" href="')
+            __M_writer(unicode(prevlink))
+            __M_writer(u'" type="text/html">\n')
+        if nextlink:
+            __M_writer(u'        <link rel="next" href="')
+            __M_writer(unicode(nextlink))
+            __M_writer(u'" type="text/html">\n')
         __M_writer(u'\n    ')
         __M_writer(unicode(mathjax_config))
         __M_writer(u'\n')
         if use_cdn:
             __M_writer(u'        <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->\n')
         else:
-            __M_writer(u'        <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]-->\n')
+            __M_writer(u'        <!--[if lt IE 9]><script src="')
+            __M_writer(unicode(url_replacer(permalink, '/assets/js/html5.js', lang)))
+            __M_writer(u'"></script><![endif]-->\n')
         __M_writer(u'\n    ')
         __M_writer(unicode(extra_head_data))
         __M_writer(u'\n')
@@ -209,12 +223,12 @@ def render_html_stylesheets(context):
         __M_writer(u'\n')
         if use_bundles:
             if use_cdn:
-                __M_writer(u'            <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">\n            <link href="/assets/css/all.css" rel="stylesheet" type="text/css">\n')
+                __M_writer(u'            <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">\n            <link href="/assets/css/all.css" rel="stylesheet" type="text/css">\n')
             else:
                 __M_writer(u'            <link href="/assets/css/all-nocdn.css" rel="stylesheet" type="text/css">\n')
         else:
             if use_cdn:
-                __M_writer(u'            <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">\n')
+                __M_writer(u'            <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">\n')
             else:
                 __M_writer(u'            <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">\n')
             __M_writer(u'        <link href="/assets/css/rst.css" rel="stylesheet" type="text/css">\n        <link href="/assets/css/code.css" rel="stylesheet" type="text/css">\n        <link href="/assets/css/colorbox.css" rel="stylesheet" type="text/css">\n        <link href="/assets/css/theme.css" rel="stylesheet" type="text/css">\n')
@@ -289,6 +303,6 @@ def render_html_feedlinks(context):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "line_map": {"15": 0, "20": 2, "21": 58, "22": 83, "23": 113, "24": 136, "25": 150, "26": 158, "32": 60, "41": 60, "42": 61, "43": 62, "44": 63, "45": 66, "46": 67, "47": 69, "48": 70, "49": 71, "50": 73, "51": 74, "52": 77, "53": 79, "54": 80, "55": 80, "56": 80, "57": 82, "58": 82, "59": 82, "65": 3, "89": 3, "90": 7, "91": 8, "92": 9, "93": 10, "94": 12, "95": 13, "96": 15, "97": 16, "98": 18, "99": 21, "100": 22, "101": 25, "102": 25, "103": 25, "104": 28, "105": 29, "106": 29, "107": 29, "108": 31, "109": 32, "110": 32, "111": 32, "112": 32, "113": 34, "114": 34, "115": 35, "116": 35, "117": 36, "118": 37, "119": 37, "120": 37, "121": 39, "122": 40, "123": 41, "124": 42, "125": 42, "126": 42, "127": 42, "128": 42, "129": 42, "130": 42, "131": 45, "132": 46, "133": 47, "134": 47, "135": 47, "136": 49, "137": 50, "138": 50, "139": 51, "140": 52, "141": 53, "142": 54, "143": 56, "144": 57, "145": 57, "151": 115, "161": 115, "162": 116, "163": 117, "164": 118, "165": 118, "166": 118, "167": 120, "168": 121, "169": 122, "170": 122, "171": 122, "172": 122, "173": 122, "174": 123, "175": 124, "176": 124, "177": 124, "178": 124, "179": 124, "180": 127, "181": 128, "182": 129, "183": 130, "184": 130, "185": 130, "186": 130, "187": 130, "188": 131, "189": 132, "190": 132, "191": 132, "192": 132, "193": 132, "199": 86, "209": 86, "210": 87, "211": 88, "212": 89, "213": 91, "214": 92, "215": 94, "216": 95, "217": 96, "218": 97, "219": 98, "220": 100, "221": 104, "222": 105, "223": 108, "224": 109, "225": 109, "226": 109, "227": 110, "228": 111, "229": 111, "230": 111, "236": 152, "244": 152, "245": 153, "246": 154, "247": 155, "248": 155, "249": 155, "250": 155, "251": 155, "252": 155, "253": 155, "259": 138, "268": 138, "269": 139, "270": 140, "271": 140, "272": 140, "273": 141, "274": 142, "275": 143, "276": 144, "277": 144, "278": 144, "279": 144, "280": 144, "281": 146, "282": 147, "283": 147, "284": 147, "290": 284}, "uri": "base_helper.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/bootstrap3/templates/base_helper.tmpl"}
+{"source_encoding": "utf-8", "line_map": {"15": 0, "20": 2, "21": 65, "22": 90, "23": 120, "24": 143, "25": 157, "26": 165, "32": 67, "41": 67, "42": 68, "43": 69, "44": 70, "45": 73, "46": 74, "47": 76, "48": 77, "49": 78, "50": 80, "51": 81, "52": 84, "53": 86, "54": 87, "55": 87, "56": 87, "57": 89, "58": 89, "59": 89, "65": 3, "92": 3, "93": 7, "94": 8, "95": 9, "96": 10, "97": 12, "98": 13, "99": 15, "100": 16, "101": 18, "102": 21, "103": 22, "104": 25, "105": 25, "106": 25, "107": 28, "108": 29, "109": 29, "110": 29, "111": 31, "112": 32, "113": 32, "114": 32, "115": 32, "116": 34, "117": 34, "118": 35, "119": 35, "120": 36, "121": 37, "122": 37, "123": 37, "124": 39, "125": 40, "126": 41, "127": 42, "128": 42, "129": 42, "130": 42, "131": 42, "132": 42, "133": 42, "134": 45, "135": 46, "136": 47, "137": 47, "138": 47, "139": 49, "140": 50, "141": 51, "142": 51, "143": 51, "144": 53, "145": 54, "146": 54, "147": 54, "148": 56, "149": 57, "150": 57, "151": 58, "152": 59, "153": 60, "154": 61, "155": 61, "156": 61, "157": 63, "158": 64, "159": 64, "165": 122, "175": 122, "176": 123, "177": 124, "178": 125, "179": 125, "180": 125, "181": 127, "182": 128, "183": 129, "184": 129, "185": 129, "186": 129, "187": 129, "188": 130, "189": 131, "190": 131, "191": 131, "192": 131, "193": 131, "194": 134, "195": 135, "196": 136, "197": 137, "198": 137, "199": 137, "200": 137, "201": 137, "202": 138, "203": 139, "204": 139, "205": 139, "206": 139, "207": 139, "213": 93, "223": 93, "224": 94, "225": 95, "226": 96, "227": 98, "228": 99, "229": 101, "230": 102, "231": 103, "232": 104, "233": 105, "234": 107, "235": 111, "236": 112, "237": 115, "238": 116, "239": 116, "240": 116, "241": 117, "242": 118, "243": 118, "244": 118, "250": 159, "258": 159, "259": 160, "260": 161, "261": 162, "262": 162, "263": 162, "264": 162, "265": 162, "266": 162, "267": 162, "273": 145, "282": 145, "283": 146, "284": 147, "285": 147, "286": 147, "287": 148, "288": 149, "289": 150, "290": 151, "291": 151, "292": 151, "293": 151, "294": 151, "295": 153, "296": 154, "297": 154, "298": 154, "304": 298}, "uri": "base_helper.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/bootstrap3/templates/base_helper.tmpl"}
 __M_END_METADATA
 """

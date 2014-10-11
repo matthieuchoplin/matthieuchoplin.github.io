@@ -1,12 +1,12 @@
 .. title: Grep aliases
 .. slug: grep-aliases
 .. date: 2014-10-10 10:31:27 UTC+01:00
-.. tags: grep 
+.. tags: grep, bash
 .. link: 
 .. description: 
 .. type: text
 
- In .bashrc
+In .bashrc
 
 .. code:: bash
 

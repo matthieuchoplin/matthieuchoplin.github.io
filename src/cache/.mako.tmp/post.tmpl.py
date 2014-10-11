@@ -4,7 +4,7 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1412936612.30243
+_modified_time = 1413031807.223294
 _enable_loop = True
 _template_filename = u'/usr/local/lib/python2.7/dist-packages/nikola/data/themes/bootstrap/templates/post.tmpl'
 _template_uri = u'post.tmpl'
@@ -126,12 +126,29 @@ def render_extra_head(context,**pageargs):
         __M_writer(unicode(parent.extra_head()))
         __M_writer(u'\n')
         if post.meta('keywords'):
-            __M_writer(u'        <meta name="keywords" content="')
+            __M_writer(u'    <meta name="keywords" content="')
             __M_writer(filters.html_escape(unicode(post.meta('keywords'))))
+            __M_writer(u'">\n')
+        if post.description():
+            __M_writer(u'    <meta name="description" itemprop="description" content="')
+            __M_writer(unicode(post.description()))
             __M_writer(u'">\n')
         __M_writer(u'    <meta name="author" content="')
         __M_writer(unicode(post.author()))
-        __M_writer(u'">\n    ')
+        __M_writer(u'">\n')
+        if post.prev_post:
+            __M_writer(u'        <link rel="prev" href="')
+            __M_writer(unicode(post.prev_post.permalink()))
+            __M_writer(u'" title="')
+            __M_writer(unicode(post.prev_post.title()))
+            __M_writer(u'" type="text/html">\n')
+        if post.next_post:
+            __M_writer(u'        <link rel="next" href="')
+            __M_writer(unicode(post.next_post.permalink()))
+            __M_writer(u'" title="')
+            __M_writer(unicode(post.next_post.title()))
+            __M_writer(u'" type="text/html">\n')
+        __M_writer(u'    ')
         __M_writer(unicode(helper.open_graph_metadata(post)))
         __M_writer(u'\n    ')
         __M_writer(unicode(helper.twitter_card_information(post)))
@@ -166,6 +183,6 @@ def render_sourcelink(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "line_map": {"128": 9, "129": 10, "130": 10, "131": 10, "132": 12, "133": 12, "134": 12, "135": 13, "136": 13, "137": 14, "138": 14, "139": 15, "140": 15, "146": 41, "22": 3, "25": 4, "155": 41, "28": 2, "157": 43, "158": 44, "159": 44, "160": 44, "161": 44, "34": 0, "167": 161, "156": 42, "53": 2, "54": 3, "55": 4, "56": 5, "61": 16, "66": 39, "71": 47, "77": 18, "89": 18, "90": 19, "91": 19, "92": 20, "93": 20, "94": 22, "95": 22, "96": 26, "97": 26, "98": 27, "99": 27, "100": 30, "101": 31, "102": 32, "103": 32, "104": 33, "105": 33, "106": 36, "107": 36, "108": 36, "109": 38, "110": 38, "116": 7, "125": 7, "126": 8, "127": 8}, "uri": "post.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/bootstrap/templates/post.tmpl"}
+{"source_encoding": "utf-8", "line_map": {"128": 9, "129": 10, "130": 10, "131": 10, "132": 12, "133": 13, "134": 13, "135": 13, "136": 15, "137": 15, "138": 15, "139": 16, "140": 17, "141": 17, "142": 17, "143": 17, "144": 17, "145": 19, "146": 20, "147": 20, "148": 20, "149": 20, "22": 3, "151": 22, "152": 22, "25": 4, "154": 23, "155": 23, "28": 2, "157": 24, "150": 20, "34": 0, "163": 50, "156": 24, "172": 50, "173": 51, "174": 52, "175": 53, "176": 53, "177": 53, "178": 53, "53": 2, "54": 3, "55": 4, "56": 5, "61": 25, "66": 48, "71": 56, "77": 27, "184": 178, "89": 27, "90": 28, "91": 28, "92": 29, "93": 29, "94": 31, "95": 31, "96": 35, "97": 35, "98": 36, "99": 36, "100": 39, "101": 40, "102": 41, "103": 41, "104": 42, "105": 42, "106": 45, "107": 45, "108": 45, "109": 47, "110": 47, "116": 7, "153": 22, "125": 7, "126": 8, "127": 8}, "uri": "post.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/bootstrap/templates/post.tmpl"}
 __M_END_METADATA
 """

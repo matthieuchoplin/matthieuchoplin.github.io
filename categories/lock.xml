@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants (lock)</title><link>http://mattchoplin.com/</link><description></description><language>en</language><lastBuildDate>Fri, 10 Oct 2014 10:33:59 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Database locks</title><link>http://mattchoplin.com/posts/database-locks.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;pre class="code postgresql literal-block"&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants (lock)</title><link>http://mattchoplin.com/</link><description></description><language>en</language><lastBuildDate>Sat, 11 Oct 2014 13:49:54 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Database locks</title><link>http://mattchoplin.com/posts/database-locks.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;pre class="code postgresql literal-block"&gt;
 &lt;span class="k"&gt;select&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;from&lt;/span&gt; &lt;span class="n"&gt;pg_stat_activity&lt;/span&gt; &lt;span class="k"&gt;where&lt;/span&gt; &lt;span class="n"&gt;waiting&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'t'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;Fix the lock:&lt;/p&gt;
@@ -8,7 +8,8 @@
 &lt;/pre&gt;
 &lt;p&gt;Where "pid int" is the pid you find with pg_stat_activity.&lt;/p&gt;
 &lt;p&gt;Sources:&lt;/p&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="http://www.postgresql.org/docs/9.2/static/functions-admin.html"&gt;http://www.postgresql.org/docs/9.2/static/functions-admin.html&lt;/a&gt;&lt;/li&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.postgresql.org/docs/9.2/static/functions-admin.html"&gt;http://www.postgresql.org/docs/9.2/static/functions-admin.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://wiki.postgresql.org/wiki/Lock_Monitoring"&gt;http://wiki.postgresql.org/wiki/Lock_Monitoring&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://chrismiles.info/systemsadmin/databases/articles/viewing-current-postgresql-queries/"&gt;http://chrismiles.info/systemsadmin/databases/articles/viewing-current-postgresql-queries/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><category>lock</category><category>postgresql</category><guid>http://mattchoplin.com/posts/database-locks.html</guid><pubDate>Fri, 18 Jul 2014 23:27:04 GMT</pubDate></item></channel></rss>
+&lt;/ul&gt;&lt;/div&gt;</description><category>lock</category><category>postgresql</category><guid>http://mattchoplin.com/posts/database-locks.html</guid><pubDate>Fri, 18 Jul 2014 23:27:04 GMT</pubDate></item></channel></rss>
