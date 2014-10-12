@@ -1,0 +1,113 @@
+<div class="section" id="the-problem">
+<h1>The problem:</h1>
+<p>We want to create a function that is able to determine whether a string is a palindrome.</p>
+<p>A palindrome is a word that is read the same from front-to-back and from back-to-front.</p>
+<p>For instance, the words &quot;noon&quot; and &quot;racecar&quot; are both palindromes.</p>
+</div>
+<div class="section" id="algorithm">
+<h1>Algorithm:</h1>
+<p>Reverse the string.</p>
+<p>Compare the reversed string to the original string.</p>
+</div>
+<div class="section" id="recipe-for-designing-functions">
+<h1>Recipe for designing functions:</h1>
+<ol class="arabic simple" start="0">
+<li>Give the function a name</li>
+<li>Examples</li>
+<li>Type Contract</li>
+<li>Header</li>
+<li>Description</li>
+<li>Body</li>
+<li>Test</li>
+</ol>
+<p>First, we will see the python module <em>doctest</em> which is good for having an up to date documentation.</p>
+<p>But using <em>doctest</em> is not recommended for testing a whole program. This is why we will see the python module <em>unittest</em> which is more relevant.</p>
+<p>For more about the cons of using <em>doctest</em>: <a class="reference external" href="http://bemusement.org/narrative-tests">Narrative tests are lousy tests</a> and <a class="reference external" href="http://bemusement.org/doctests-arent-code">Tests are code and doctests are not</a>.</p>
+<p>Create the file <em>palindrome.py</em>:</p>
+<pre class="code python literal-block">
+<span class="c">#! /usr/bin/python2.7</span>
+
+<span class="k">def</span> <span class="nf">is_palindrome</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;(str) -&gt; bool
+
+    Return True if and only if s is a palindrome.
+
+    &gt;&gt;&gt; is_palindrome('noon')
+    True
+    &gt;&gt;&gt; is_palindrome('racecar')
+    True
+    &gt;&gt;&gt; is_palindrome('dented')
+    False
+    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">reverse</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">==</span> <span class="n">s</span>
+
+<span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;(str) -&gt; str
+
+    Return the reversed string.
+
+    &gt;&gt;&gt; reverse('hello')
+    'olleh'
+    &gt;&gt;&gt; reverse('a')
+    'a'
+    &quot;&quot;&quot;</span>
+    <span class="n">rev</span> <span class="o">=</span> <span class="s">''</span>
+    <span class="c"># for each character in s, add the character at the beginning of rev.</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+        <span class="n">rev</span> <span class="o">=</span> <span class="n">char</span> <span class="o">+</span> <span class="n">rev</span>
+    <span class="k">return</span> <span class="n">rev</span>
+
+<span class="kn">import</span> <span class="nn">doctest</span>
+<span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
+</pre>
+<p>We want to separate the tests from the main program and use the python <em>unittest</em> module.</p>
+<p>Create the file test_palindromes.py</p>
+<pre class="code python literal-block">
+<span class="c">#! /usr/bin/python2.7</span>
+
+<span class="kn">import</span> <span class="nn">unittest</span>
+<span class="kn">import</span> <span class="nn">palindromes</span>
+
+
+<span class="k">class</span> <span class="nc">TestPalindrome</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">test_is_palindrome_true</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">palindromes</span><span class="o">.</span><span class="n">is_palindrome</span><span class="p">(</span><span class="s">'racecar'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_is_palindrome_false</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">palindromes</span><span class="o">.</span><span class="n">is_palindrome</span><span class="p">(</span><span class="s">'dedent'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_reverse_normal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">palindromes</span><span class="o">.</span><span class="n">reverse</span><span class="p">(</span><span class="s">'hello'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s">'olleh'</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_reverse_error</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">list_of_bad_value</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="mi">123</span><span class="p">,</span>
+        <span class="bp">None</span><span class="p">,</span>
+        <span class="p">]</span>
+        <span class="k">for</span> <span class="n">bad_value</span> <span class="ow">in</span> <span class="n">list_of_bad_value</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span>
+                <span class="ne">TypeError</span><span class="p">,</span>
+                <span class="n">palindromes</span><span class="o">.</span><span class="n">reverse</span><span class="p">,</span>
+                <span class="n">bad_value</span>
+            <span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre>
+</div>
+<div class="section" id="choosing-test-cases-to-test">
+<h1>Choosing test cases to test</h1>
+<ul class="simple">
+<li>Size: For collections, test with an empty collection, a collection with 1 item, the smallest interesting case, and a
+collection with several items</li>
+<li>Dichotomies: Vowels/Non Vowels, even/odd, positive/negative, empty/full, and so on.</li>
+<li>Boundaries: If the function behaves differently for values near a particular threshold, test at that threshold.</li>
+<li>Order: If the function behaves differently when the values are in different orders, identify and test each of those
+orders.</li>
+</ul>
+<p>Source: <a class="reference external" href="https://class.coursera.org/programming2-001">https://class.coursera.org/programming2-001</a></p>
+</div>
