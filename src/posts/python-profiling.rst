@@ -1,6 +1,6 @@
 .. title: Python profiling
 .. slug: python-profiling
-.. date: 2014-10-14 13:14:39 UTC+01:00
+.. date: 2014-11-14 13:14:39 UTC+01:00
 .. tags: 
 .. link: 
 .. description: 
