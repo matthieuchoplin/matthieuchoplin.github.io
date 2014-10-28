@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Sun, 12 Oct 2014 21:40:02 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Context Manager in Python</title><link>http://mattchoplin.com/posts/context-manager-in-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="the-keyword-with"&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><language>en</language><lastBuildDate>Tue, 28 Oct 2014 09:56:35 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Multithreading in Python</title><link>http://mattchoplin.com/posts/multithreading-in-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;p&gt;Write your post here.&lt;/p&gt;</description><guid>http://mattchoplin.com/posts/multithreading-in-python.html</guid><pubDate>Tue, 14 Oct 2014 21:04:40 GMT</pubDate></item><item><title>Python profiling</title><link>http://mattchoplin.com/posts/python-profiling.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;Source: &lt;a class="reference external" href="http://www.huyng.com/posts/python-performance-analysis/"&gt;http://www.huyng.com/posts/python-performance-analysis/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://code.djangoproject.com/wiki/ProfilingDjango"&gt;https://code.djangoproject.com/wiki/ProfilingDjango&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/python-profiling.html</guid><pubDate>Tue, 14 Oct 2014 12:14:39 GMT</pubDate></item><item><title>Context Manager in Python</title><link>http://mattchoplin.com/posts/context-manager-in-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="the-keyword-with"&gt;
 &lt;h2&gt;The keyword &lt;em&gt;with&lt;/em&gt;&lt;/h2&gt;
 &lt;p&gt;The context manager is going to be used with the keyword &lt;em&gt;with&lt;/em&gt; such as:&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
@@ -252,47 +253,4 @@ ping foo.mydomain.org
 &lt;pre class="code bash literal-block"&gt;
 ssh user@foo
 &lt;/pre&gt;
-&lt;p&gt;Source: &lt;a class="reference external" href="http://linux.die.net/man/5/hosts"&gt;http://linux.die.net/man/5/hosts&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/associate-hostname-with-ip-address.html</guid><pubDate>Wed, 24 Sep 2014 09:37:55 GMT</pubDate></item><item><title>Size occupied on the server</title><link>http://mattchoplin.com/posts/size-occupied-on-the-server.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;The following command, executed as &lt;em&gt;root&lt;/em&gt;:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-du -h --max-depth 1 /
-&lt;/pre&gt;
-&lt;p&gt;will show used space per directory, looking at "/"&lt;/p&gt;&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/size-occupied-on-the-server.html</guid><pubDate>Wed, 24 Sep 2014 09:00:51 GMT</pubDate></item><item><title>Introduction to patching in Python</title><link>http://mattchoplin.com/posts/introduction-to-patching-in-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;If you want to use it in a version earlier than python3.3, you need yo install it:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-sudo pip install mock
-&lt;/pre&gt;
-&lt;div class="section" id="simple-example"&gt;
-&lt;h2&gt;Simple example&lt;/h2&gt;
-&lt;p&gt;Code to test:&lt;/p&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;do_something&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;'ok'&lt;/span&gt;
-    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;'ko'&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;Actual test:&lt;/p&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;mock&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;patch&lt;/span&gt;
-&lt;span class="nd"&gt;@patch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'time.sleep'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_do_something1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mock_sleep&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="n"&gt;mock_sleep&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;return_value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
-    &lt;span class="n"&gt;do_something&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-
-&lt;span class="nd"&gt;@patch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'time.sleep'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_do_something2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mock_sleep&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="n"&gt;mock_sleep&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;return_value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
-    &lt;span class="n"&gt;do_something&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;Results:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&amp;gt;&amp;gt;&amp;gt; test_do_something1&lt;span class="o"&gt;()&lt;/span&gt;
-ok
-&amp;gt;&amp;gt;&amp;gt; test_do_something2&lt;span class="o"&gt;()&lt;/span&gt;
-ko
-&lt;/pre&gt;
-&lt;p&gt;Source:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://pypi.python.org/pypi/mock"&gt;https://pypi.python.org/pypi/mock&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/introduction-to-patching-in-python.html</guid><pubDate>Thu, 18 Sep 2014 15:36:00 GMT</pubDate></item></channel></rss>
+&lt;p&gt;Source: &lt;a class="reference external" href="http://linux.die.net/man/5/hosts"&gt;http://linux.die.net/man/5/hosts&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/associate-hostname-with-ip-address.html</guid><pubDate>Wed, 24 Sep 2014 09:37:55 GMT</pubDate></item></channel></rss>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants (git)</title><link>http://mattchoplin.com/</link><description></description><language>en</language><lastBuildDate>Sat, 11 Oct 2014 13:49:54 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Git branching strategy</title><link>http://mattchoplin.com/posts/git-branching-strategy.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="the-git-flow-strategy"&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants (git)</title><link>http://mattchoplin.com/</link><description></description><language>en</language><lastBuildDate>Tue, 28 Oct 2014 09:56:35 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Git branching strategy</title><link>http://mattchoplin.com/posts/git-branching-strategy.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="the-git-flow-strategy"&gt;
 &lt;h2&gt;The git-flow strategy&lt;/h2&gt;
 &lt;p&gt;Very nice cheatsheet: &lt;a class="reference external" href="http://danielkummer.github.io/git-flow-cheatsheet/"&gt;http://danielkummer.github.io/git-flow-cheatsheet/&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -123,6 +123,12 @@ git bisect reset
 &lt;h2&gt;What is the original commit of a git repository?&lt;/h2&gt;
 &lt;p&gt;You know &lt;em&gt;git log&lt;/em&gt; to see the history of he commits.&lt;/p&gt;
 &lt;p&gt;Once you get the results of git log, you can do 'G' (capital G) to inverse the order of commits and see the first one in time.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="revert-all-the-changes-you-did"&gt;
+&lt;h2&gt;Revert all the changes you did&lt;/h2&gt;
+&lt;pre class="code bash literal-block"&gt;
+git checkout -f
+&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="reduce-the-size-of-a-git-repository-with-the-garbage-collector"&gt;
 &lt;h2&gt;Reduce the size of a git repository with the garbage collector&lt;/h2&gt;

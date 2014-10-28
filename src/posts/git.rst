@@ -155,6 +155,12 @@ You know *git log* to see the history of he commits.
 
 Once you get the results of git log, you can do 'G' (capital G) to inverse the order of commits and see the first one in time.
 
+Revert all the changes you did
+==============================
+
+.. code:: bash
+
+  git checkout -f
 
 Reduce the size of a git repository with the garbage collector
 ==============================================================
