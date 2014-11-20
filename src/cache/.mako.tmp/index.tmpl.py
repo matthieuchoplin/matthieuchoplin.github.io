@@ -4,7 +4,7 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1414490749.63031
+_modified_time = 1416502619.75543
 _enable_loop = True
 _template_filename = u'/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/index.tmpl'
 _template_uri = u'index.tmpl'
@@ -34,7 +34,6 @@ def render_body(context,**pageargs):
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         date_format = context.get('date_format', UNDEFINED)
         helper = _mako_get_namespace(context, 'helper')
-        messages = context.get('messages', UNDEFINED)
         posts = context.get('posts', UNDEFINED)
         comments = _mako_get_namespace(context, 'comments')
         def content():
@@ -60,7 +59,6 @@ def render_content(context,**pageargs):
     try:
         date_format = context.get('date_format', UNDEFINED)
         helper = _mako_get_namespace(context, 'helper')
-        messages = context.get('messages', UNDEFINED)
         posts = context.get('posts', UNDEFINED)
         comments = _mako_get_namespace(context, 'comments')
         def content():
@@ -83,7 +81,7 @@ def render_content(context,**pageargs):
             __M_writer(u'" rel="bookmark"><time class="published dt-published" datetime="')
             __M_writer(unicode(post.date.isoformat()))
             __M_writer(u'" itemprop="datePublished" title="')
-            __M_writer(unicode(messages("Publication date")))
+            __M_writer(unicode(post.formatted_date(date_format)))
             __M_writer(u'">')
             __M_writer(unicode(post.formatted_date(date_format)))
             __M_writer(u'</time></a></p>\n')
@@ -115,6 +113,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "line_map": {"22": 3, "25": 2, "31": 0, "45": 2, "46": 3, "47": 4, "52": 34, "58": 6, "71": 6, "72": 8, "73": 9, "74": 9, "75": 9, "76": 11, "77": 11, "78": 11, "79": 11, "80": 13, "81": 13, "82": 14, "83": 14, "84": 14, "85": 14, "86": 14, "87": 14, "88": 14, "89": 14, "90": 15, "91": 16, "92": 16, "93": 16, "94": 18, "95": 20, "96": 21, "97": 22, "98": 22, "99": 23, "100": 24, "101": 25, "102": 25, "103": 27, "104": 30, "105": 31, "106": 31, "107": 32, "108": 32, "109": 33, "110": 33, "116": 110}, "uri": "index.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/index.tmpl"}
+{"source_encoding": "utf-8", "line_map": {"22": 3, "25": 2, "31": 0, "44": 2, "45": 3, "46": 4, "51": 34, "57": 6, "69": 6, "70": 8, "71": 9, "72": 9, "73": 9, "74": 11, "75": 11, "76": 11, "77": 11, "78": 13, "79": 13, "80": 14, "81": 14, "82": 14, "83": 14, "84": 14, "85": 14, "86": 14, "87": 14, "88": 15, "89": 16, "90": 16, "91": 16, "92": 18, "93": 20, "94": 21, "95": 22, "96": 22, "97": 23, "98": 24, "99": 25, "100": 25, "101": 27, "102": 30, "103": 31, "104": 31, "105": 32, "106": 32, "107": 33, "108": 33, "114": 108}, "uri": "index.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/index.tmpl"}
 __M_END_METADATA
 """

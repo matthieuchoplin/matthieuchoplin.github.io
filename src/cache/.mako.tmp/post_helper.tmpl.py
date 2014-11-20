@@ -4,7 +4,7 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1414490749.391822
+_modified_time = 1416502619.544428
 _enable_loop = True
 _template_filename = u'/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/post_helper.tmpl'
 _template_uri = u'post_helper.tmpl'
@@ -154,22 +154,35 @@ def render_open_graph_metadata(context,post):
         __M_writer = context.writer()
         __M_writer(u'\n')
         if use_open_graph:
-            __M_writer(u'    <meta name="og:title" content="')
+            __M_writer(u'    <meta property="og:site_name" content="')
+            __M_writer(striphtml(unicode(blog_title)))
+            __M_writer(u'">\n    <meta property="og:title" content="')
             __M_writer(filters.html_escape(unicode(post.title()[:70])))
-            __M_writer(u'">\n    <meta name="og:url" content="')
+            __M_writer(u'">\n    <meta property="og:url" content="')
             __M_writer(unicode(abs_link(permalink)))
             __M_writer(u'">\n')
             if post.description():
-                __M_writer(u'    <meta name="og:description" content="')
+                __M_writer(u'    <meta property="og:description" content="')
                 __M_writer(filters.html_escape(unicode(post.description()[:200])))
                 __M_writer(u'">\n')
             else:
-                __M_writer(u'    <meta name="og:description" content="')
+                __M_writer(u'    <meta property="og:description" content="')
                 __M_writer(filters.html_escape(unicode(post.text(strip_html=True)[:200])))
                 __M_writer(u'">\n')
-            __M_writer(u'    <meta name="og:site_name" content="')
-            __M_writer(striphtml(unicode(blog_title)))
-            __M_writer(u'">\n    <meta name="og:type" content="article">\n')
+            if post.previewimage:
+                __M_writer(u'    <meta property="og:image" content="')
+                __M_writer(unicode(post.previewimage))
+                __M_writer(u'">\n')
+            __M_writer(u'    <meta property="og:type" content="article">\n')
+            if post.date.isoformat():
+                __M_writer(u'    <meta property="article:published_time" content="')
+                __M_writer(unicode(post.date.isoformat()))
+                __M_writer(u'">\n')
+            if post.tags:
+                for tag in post.tags:
+                    __M_writer(u'           <meta property="article:tag" content="')
+                    __M_writer(unicode(tag))
+                    __M_writer(u'">\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -177,6 +190,6 @@ def render_open_graph_metadata(context,post):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "line_map": {"15": 0, "20": 2, "21": 11, "22": 21, "23": 38, "24": 52, "25": 68, "26": 76, "32": 13, "37": 13, "38": 14, "39": 15, "40": 16, "41": 17, "42": 17, "43": 17, "44": 17, "45": 17, "46": 19, "52": 23, "57": 23, "58": 24, "59": 25, "60": 26, "61": 27, "62": 28, "63": 28, "64": 28, "65": 28, "66": 28, "67": 28, "68": 31, "69": 32, "70": 33, "71": 33, "72": 33, "73": 33, "74": 33, "75": 33, "76": 36, "82": 54, "87": 54, "88": 55, "89": 56, "90": 56, "91": 56, "92": 57, "93": 58, "94": 58, "95": 58, "96": 59, "97": 60, "98": 60, "99": 60, "100": 62, "101": 63, "102": 63, "103": 63, "104": 64, "105": 65, "106": 65, "107": 65, "113": 3, "120": 3, "121": 4, "122": 5, "123": 6, "124": 7, "125": 7, "126": 7, "127": 7, "128": 7, "134": 70, "138": 70, "139": 71, "140": 72, "146": 40, "155": 40, "156": 41, "157": 42, "158": 42, "159": 42, "160": 43, "161": 43, "162": 44, "163": 45, "164": 45, "165": 45, "166": 46, "167": 47, "168": 47, "169": 47, "170": 49, "171": 49, "172": 49, "178": 172}, "uri": "post_helper.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/post_helper.tmpl"}
+{"source_encoding": "utf-8", "line_map": {"15": 0, "20": 2, "21": 11, "22": 21, "23": 38, "24": 67, "25": 83, "26": 91, "32": 13, "37": 13, "38": 14, "39": 15, "40": 16, "41": 17, "42": 17, "43": 17, "44": 17, "45": 17, "46": 19, "52": 23, "57": 23, "58": 24, "59": 25, "60": 26, "61": 27, "62": 28, "63": 28, "64": 28, "65": 28, "66": 28, "67": 28, "68": 31, "69": 32, "70": 33, "71": 33, "72": 33, "73": 33, "74": 33, "75": 33, "76": 36, "82": 69, "87": 69, "88": 70, "89": 71, "90": 71, "91": 71, "92": 72, "93": 73, "94": 73, "95": 73, "96": 74, "97": 75, "98": 75, "99": 75, "100": 77, "101": 78, "102": 78, "103": 78, "104": 79, "105": 80, "106": 80, "107": 80, "113": 3, "120": 3, "121": 4, "122": 5, "123": 6, "124": 7, "125": 7, "126": 7, "127": 7, "128": 7, "134": 85, "138": 85, "139": 86, "140": 87, "146": 40, "155": 40, "156": 41, "157": 42, "158": 42, "159": 42, "160": 43, "161": 43, "162": 44, "163": 44, "164": 45, "165": 46, "166": 46, "167": 46, "168": 47, "169": 48, "170": 48, "171": 48, "172": 50, "173": 51, "174": 51, "175": 51, "176": 53, "177": 58, "178": 59, "179": 59, "180": 59, "181": 61, "182": 62, "183": 63, "184": 63, "185": 63, "191": 185}, "uri": "post_helper.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/post_helper.tmpl"}
 __M_END_METADATA
 """

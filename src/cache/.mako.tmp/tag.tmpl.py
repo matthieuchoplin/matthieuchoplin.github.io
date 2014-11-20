@@ -4,7 +4,7 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1414490749.573775
+_modified_time = 1416502619.725931
 _enable_loop = True
 _template_filename = u'/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/tag.tmpl'
 _template_uri = u'tag.tmpl'
@@ -106,7 +106,7 @@ def render_content(context,**pageargs):
                 __M_writer(u'</a> <time class="listdate" datetime="')
                 __M_writer(unicode(post.date.isoformat()))
                 __M_writer(u'" title="')
-                __M_writer(unicode(messages("Publication date")))
+                __M_writer(unicode(post.formatted_date(date_format)))
                 __M_writer(u'">')
                 __M_writer(unicode(post.formatted_date(date_format)))
                 __M_writer(u'</time></li>\n')

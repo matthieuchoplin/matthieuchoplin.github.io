@@ -4,10 +4,10 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1414490749.316465
+_modified_time = 1416502619.739123
 _enable_loop = True
 _template_filename = u'/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/list_post.tmpl'
-_template_uri = 'list_post.tmpl'
+_template_uri = u'list_post.tmpl'
 _source_encoding = 'utf-8'
 _exports = [u'content']
 
@@ -29,9 +29,9 @@ def render_body(context,**pageargs):
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         def content():
             return render_content(context._locals(__M_locals))
-        messages = context.get('messages', UNDEFINED)
-        posts = context.get('posts', UNDEFINED)
         date_format = context.get('date_format', UNDEFINED)
+        posts = context.get('posts', UNDEFINED)
+        messages = context.get('messages', UNDEFINED)
         title = context.get('title', UNDEFINED)
         __M_writer = context.writer()
         __M_writer(u'\n\n')
@@ -50,9 +50,9 @@ def render_content(context,**pageargs):
     try:
         def content():
             return render_content(context)
-        messages = context.get('messages', UNDEFINED)
-        posts = context.get('posts', UNDEFINED)
         date_format = context.get('date_format', UNDEFINED)
+        posts = context.get('posts', UNDEFINED)
+        messages = context.get('messages', UNDEFINED)
         title = context.get('title', UNDEFINED)
         __M_writer = context.writer()
         __M_writer(u'\n<article class="listpage">\n    <header>\n        <h1>')
@@ -68,7 +68,7 @@ def render_content(context,**pageargs):
                 __M_writer(u'</a> <time class="listdate" datetime="')
                 __M_writer(unicode(post.date.isoformat()))
                 __M_writer(u'" title="')
-                __M_writer(unicode(messages("Publication date")))
+                __M_writer(unicode(post.formatted_date(date_format)))
                 __M_writer(u'">')
                 __M_writer(unicode(post.formatted_date(date_format)))
                 __M_writer(u'</time></li>\n')

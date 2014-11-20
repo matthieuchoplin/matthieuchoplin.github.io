@@ -1,5 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants (python)</title><link>http://mattchoplin.com/</link><description></description><language>en</language><lastBuildDate>Sun, 12 Oct 2014 21:40:02 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Context Manager in Python</title><link>http://mattchoplin.com/posts/context-manager-in-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="the-keyword-with"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants (python)</title><link>http://mattchoplin.com/</link><description></description><atom:link href="http://mattchoplin.com/categories/python.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 20 Nov 2014 16:52:55 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python testing with doctest and unittest</title><link>http://mattchoplin.com/posts/python-testing-with-unittest.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="the-problem"&gt;
+&lt;h2&gt;The problem:&lt;/h2&gt;
+&lt;p&gt;We want to create a function that is able to determine whether a string is a palindrome.&lt;/p&gt;
+&lt;p&gt;A palindrome is a word that is read the same from front-to-back and from back-to-front.&lt;/p&gt;
+&lt;p&gt;For instance, the words "noon" and "racecar" are both palindromes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="algorithm"&gt;
+&lt;h2&gt;Algorithm:&lt;/h2&gt;
+&lt;p&gt;Reverse the string.&lt;/p&gt;
+&lt;p&gt;Compare the reversed string to the original string.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="recipe-for-designing-functions"&gt;
+&lt;h2&gt;Recipe for designing functions:&lt;/h2&gt;
+&lt;ol class="arabic simple" start="0"&gt;&lt;li&gt;Give the function a name&lt;/li&gt;
+&lt;li&gt;Examples&lt;/li&gt;
+&lt;li&gt;Type Contract&lt;/li&gt;
+&lt;li&gt;Header&lt;/li&gt;
+&lt;li&gt;Description&lt;/li&gt;
+&lt;li&gt;Body&lt;/li&gt;
+&lt;li&gt;Test&lt;/li&gt;
+&lt;/ol&gt;&lt;p&gt;First, we will see the python module &lt;em&gt;doctest&lt;/em&gt; which is good for having an up to date documentation.&lt;/p&gt;
+&lt;p&gt;But using &lt;em&gt;doctest&lt;/em&gt; is not recommended for testing a whole program. This is why we will see the python module &lt;em&gt;unittest&lt;/em&gt; which is more relevant.&lt;/p&gt;
+&lt;p&gt;For more about the cons of using &lt;em&gt;doctest&lt;/em&gt;: &lt;a class="reference external" href="http://bemusement.org/narrative-tests"&gt;Narrative tests are lousy tests&lt;/a&gt; and &lt;a class="reference external" href="http://bemusement.org/doctests-arent-code"&gt;Tests are code and doctests are not&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Create the file &lt;em&gt;palindrome.py&lt;/em&gt;:&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="c"&gt;#! /usr/bin/python2.7&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;is_palindrome&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;"""(str) -&amp;gt; bool
+
+    Return True if and only if s is a palindrome.
+
+    &amp;gt;&amp;gt;&amp;gt; is_palindrome('noon')
+    True
+    &amp;gt;&amp;gt;&amp;gt; is_palindrome('racecar')
+    True
+    &amp;gt;&amp;gt;&amp;gt; is_palindrome('dented')
+    False
+    """&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;reverse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;reverse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;"""(str) -&amp;gt; str
+
+    Return the reversed string.
+
+    &amp;gt;&amp;gt;&amp;gt; reverse('hello')
+    'olleh'
+    &amp;gt;&amp;gt;&amp;gt; reverse('a')
+    'a'
+    """&lt;/span&gt;
+    &lt;span class="n"&gt;rev&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;''&lt;/span&gt;
+    &lt;span class="c"&gt;# for each character in s, add the character at the beginning of rev.&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;char&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;rev&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;char&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;rev&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;rev&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;doctest&lt;/span&gt;
+&lt;span class="n"&gt;doctest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;testmod&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;We want to separate the tests from the main program and use the python &lt;em&gt;unittest&lt;/em&gt; module.&lt;/p&gt;
+&lt;p&gt;Create the file test_palindromes.py&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="c"&gt;#! /usr/bin/python2.7&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;unittest&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;palindromes&lt;/span&gt;
+
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;TestPalindrome&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;unittest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TestCase&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_is_palindrome_true&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;palindromes&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;is_palindrome&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'racecar'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEquals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_is_palindrome_false&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;palindromes&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;is_palindrome&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'dedent'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEquals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_reverse_normal&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;palindromes&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reverse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'hello'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEquals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'olleh'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_reverse_error&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;list_of_bad_value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+        &lt;span class="mi"&gt;123&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;bad_value&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;list_of_bad_value&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertRaises&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+                &lt;span class="ne"&gt;TypeError&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="n"&gt;palindromes&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reverse&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="n"&gt;bad_value&lt;/span&gt;
+            &lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;'__main__'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;unittest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="choosing-test-cases-to-test"&gt;
+&lt;h2&gt;Choosing test cases to test&lt;/h2&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;Size: For collections, test with an empty collection, a collection with 1 item, the smallest interesting case, and a
+collection with several items&lt;/li&gt;
+&lt;li&gt;Dichotomies: Vowels/Non Vowels, even/odd, positive/negative, empty/full, and so on.&lt;/li&gt;
+&lt;li&gt;Boundaries: If the function behaves differently for values near a particular threshold, test at that threshold.&lt;/li&gt;
+&lt;li&gt;Order: If the function behaves differently when the values are in different orders, identify and test each of those
+orders.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;Source: &lt;a class="reference external" href="https://class.coursera.org/programming2-001"&gt;https://class.coursera.org/programming2-001&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>python</category><category>testing</category><guid>http://mattchoplin.com/posts/python-testing-with-unittest.html</guid><pubDate>Wed, 12 Nov 2014 15:02:45 GMT</pubDate></item><item><title>Context Manager in Python</title><link>http://mattchoplin.com/posts/context-manager-in-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="the-keyword-with"&gt;
 &lt;h2&gt;The keyword &lt;em&gt;with&lt;/em&gt;&lt;/h2&gt;
 &lt;p&gt;The context manager is going to be used with the keyword &lt;em&gt;with&lt;/em&gt; such as:&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
@@ -13,8 +121,7 @@
 &lt;div class="section" id="the-context-manager-can-be-defined-as-a-class"&gt;
 &lt;h2&gt;The context manager can be defined as a class&lt;/h2&gt;
 &lt;p&gt;Two essential methods are required for making the class a context manager:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p class="first"&gt;&lt;em&gt;__enter__(self)&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;p class="first"&gt;&lt;em&gt;__enter__(self)&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Defines what the context manager should do at the &lt;strong&gt;beginning of the block&lt;/strong&gt; created by the with statement.
 Note that the return value of __enter__ is bound to the target of the with statement, or the name after the as.&lt;/p&gt;
 &lt;/li&gt;
@@ -24,8 +131,7 @@ It can be used to handle exceptions, perform cleanup, or do something always don
 If the block executes successfully, exception_type, exception_value, and traceback will be None. Otherwise, you can choose to handle the   exception or let the user handle it; if you want to handle it, make sure __exit__ returns True after all is said and done.
 If you don't want the exception to be handled by the context manager, just let it happen.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
+&lt;/ul&gt;&lt;/div&gt;
 &lt;div class="section" id="example"&gt;
 &lt;h2&gt;Example&lt;/h2&gt;
 &lt;pre class="code python literal-block"&gt;
@@ -67,11 +173,9 @@ __exit__&lt;span class="o"&gt;()&lt;/span&gt;
 &lt;p&gt;First we use the decorator &lt;em&gt;@contextmanager&lt;/em&gt; to indicate to Python that the function will be a context manager.&lt;/p&gt;
 &lt;p&gt;Then, we do a &lt;em&gt;try/finally&lt;/em&gt; (it is not automatic like with __enter__ and __exit__).&lt;/p&gt;
 &lt;p&gt;The word &lt;em&gt;yield&lt;/em&gt; split the code in two parts:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;everything that is before  &lt;em&gt;yield&lt;/em&gt; is similar to what we had above in  &lt;em&gt;__enter__&lt;/em&gt;&lt;/li&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;everything that is before  &lt;em&gt;yield&lt;/em&gt; is similar to what we had above in  &lt;em&gt;__enter__&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;everything that is after is similar to &lt;em&gt;__exit__&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The content (the returned value) of &lt;em&gt;yield&lt;/em&gt; is taken in the variable 'context_var' here defined with the key word &lt;em&gt;as&lt;/em&gt;.&lt;/p&gt;
+&lt;/ul&gt;&lt;p&gt;The content (the returned value) of &lt;em&gt;yield&lt;/em&gt; is taken in the variable 'context_var' here defined with the key word &lt;em&gt;as&lt;/em&gt;.&lt;/p&gt;
 &lt;/div&gt;&lt;/div&gt;</description><category>python</category><guid>http://mattchoplin.com/posts/context-manager-in-python.html</guid><pubDate>Sat, 11 Oct 2014 12:50:58 GMT</pubDate></item><item><title>Monkeypatching in python</title><link>http://mattchoplin.com/posts/monkeypatching-in-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;A MonkeyPatch is a piece of Python code which extends or modifies other code at runtime (typically at startup). MonkeyPatching would be the practice of writing, or running, a monkeypatch.&lt;/p&gt;
 &lt;p&gt;A simple example looks like this:&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
@@ -83,8 +187,7 @@ __exit__&lt;span class="o"&gt;()&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;In this example, if &lt;em&gt;SomeClass&lt;/em&gt; did not already have a &lt;em&gt;speak()&lt;/em&gt; method, it does now :-) If it had a speak() method before, &lt;strong&gt;the new code has replaced the old method definition&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Sources:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://web.archive.org/web/20120730014107/"&gt;https://web.archive.org/web/20120730014107/&lt;/a&gt;&lt;/li&gt;
+&lt;ul class="simple"&gt;&lt;li&gt;&lt;a class="reference external" href="https://web.archive.org/web/20120730014107/"&gt;https://web.archive.org/web/20120730014107/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://wiki.zope.org/zope2/MonkeyPatch"&gt;http://wiki.zope.org/zope2/MonkeyPatch&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/div&gt;</description><category>python</category><guid>http://mattchoplin.com/posts/monkeypatching-in-python.html</guid><pubDate>Fri, 26 Sep 2014 09:55:04 GMT</pubDate></item><item><title>Dummy smtp server in Python for testing</title><link>http://mattchoplin.com/posts/dummy-smtp-server-in-python-for-testing.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;pre class="code bash literal-block"&gt;
 sudo python -m smtpd -n -c DebuggingServer localhost:25

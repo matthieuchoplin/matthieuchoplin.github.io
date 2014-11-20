@@ -1,30 +1,17 @@
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
-    <head>
-    <meta charset="utf-8">
-    <meta name="description" content="Blog about my developer experience">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Standing on the shoulders of giants | Standing on the shoulders of giants</title>
-
-    
-            <link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-
-    
-            <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
-
-      <link rel="canonical" href="http://mattchoplin.com/index.html">
-
-            <link rel="icon" href="favicon-16x16.png" sizes="16x16">
-
-
-        <link rel="next" href="index-3.html" type="text/html">
-
-    
-        <!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]-->
-
-    
-    <link rel="stylesheet" type="text/css" href="assets/css/tipuesearch.css">
-    </head>
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Blog about my developer experience">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Standing on the shoulders of giants | Standing on the shoulders of giants</title>
+<link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+<link rel="canonical" href="http://mattchoplin.com/index.html">
+<link rel="icon" href="favicon-16x16.png" sizes="16x16">
+<link rel="next" href="index-3.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="stylesheet" type="text/css" href="assets/css/tipuesearch.css">
+</head>
 <body>
 <div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 20px;"></div>
 
@@ -38,8 +25,7 @@
 
 <!-- Menubar -->
 
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container">
 <!-- This keeps the margins nice -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -56,8 +42,7 @@
 <!-- /.navbar-header -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                
-                <li>
+<li>
 <a href="archive.html">Archive</a>
                 </li>
 <li>
@@ -69,41 +54,160 @@
                 
             </li>
 </ul>
-                
-    <span class="navbar-form pull-left">
-    <input type="text" id="tipue_search_input">
-    </span>
+<span class="navbar-form pull-left">
+    <input type="text" id="tipue_search_input"></span>
 
-            <ul class="nav navbar-nav navbar-right">
-                
-                
-                    
-                
-            </ul>
-        </div>
+            <ul class="nav navbar-nav navbar-right"></ul>
+</div>
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container -->
-</nav>
-
-<!-- End of Menubar -->
-
-<div class="container" id="content">
+</nav><!-- End of Menubar --><div class="container" id="content">
     <div class="body-content">
         <!--Body content-->
         <div class="row">
             
             
 <div class="postindex">
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="p-name entry-title"><a href="posts/context-manager-in-python.html" class="u-url">Context Manager in Python</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/python-profiling.html" class="u-url">Python profiling</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/context-manager-in-python.html" rel="bookmark"><time class="published dt-published" datetime="2014-10-11T13:50:58+01:00" itemprop="datePublished" title="Publication date">2014-10-11 13:50</time></a></p>
+            <p class="dateline"><a href="posts/python-profiling.html" rel="bookmark"><time class="published dt-published" datetime="2014-11-14T13:14:39+01:00" itemprop="datePublished" title="2014-11-14 13:14">2014-11-14 13:14</time></a></p>
         </div>
-    </header>
-    <div class="e-content entry-content">
+    </header><div class="e-content entry-content">
+    <div>
+<p>Source: <a class="reference external" href="http://www.huyng.com/posts/python-performance-analysis/">http://www.huyng.com/posts/python-performance-analysis/</a></p>
+<p><a class="reference external" href="https://code.djangoproject.com/wiki/ProfilingDjango">https://code.djangoproject.com/wiki/ProfilingDjango</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/python-testing-with-unittest.html" class="u-url">Python testing with doctest and unittest</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
+            <p class="dateline"><a href="posts/python-testing-with-unittest.html" rel="bookmark"><time class="published dt-published" datetime="2014-11-12T16:02:45+01:00" itemprop="datePublished" title="2014-11-12 16:02">2014-11-12 16:02</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <div>
+<div class="section" id="the-problem">
+<h2>The problem:</h2>
+<p>We want to create a function that is able to determine whether a string is a palindrome.</p>
+<p>A palindrome is a word that is read the same from front-to-back and from back-to-front.</p>
+<p>For instance, the words "noon" and "racecar" are both palindromes.</p>
+</div>
+<div class="section" id="algorithm">
+<h2>Algorithm:</h2>
+<p>Reverse the string.</p>
+<p>Compare the reversed string to the original string.</p>
+</div>
+<div class="section" id="recipe-for-designing-functions">
+<h2>Recipe for designing functions:</h2>
+<ol class="arabic simple" start="0">
+<li>Give the function a name</li>
+<li>Examples</li>
+<li>Type Contract</li>
+<li>Header</li>
+<li>Description</li>
+<li>Body</li>
+<li>Test</li>
+</ol>
+<p>First, we will see the python module <em>doctest</em> which is good for having an up to date documentation.</p>
+<p>But using <em>doctest</em> is not recommended for testing a whole program. This is why we will see the python module <em>unittest</em> which is more relevant.</p>
+<p>For more about the cons of using <em>doctest</em>: <a class="reference external" href="http://bemusement.org/narrative-tests">Narrative tests are lousy tests</a> and <a class="reference external" href="http://bemusement.org/doctests-arent-code">Tests are code and doctests are not</a>.</p>
+<p>Create the file <em>palindrome.py</em>:</p>
+<pre class="code python literal-block">
+<span class="c">#! /usr/bin/python2.7</span>
+
+<span class="k">def</span> <span class="nf">is_palindrome</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="sd">"""(str) -&gt; bool
+
+    Return True if and only if s is a palindrome.
+
+    &gt;&gt;&gt; is_palindrome('noon')
+    True
+    &gt;&gt;&gt; is_palindrome('racecar')
+    True
+    &gt;&gt;&gt; is_palindrome('dented')
+    False
+    """</span>
+    <span class="k">return</span> <span class="n">reverse</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">==</span> <span class="n">s</span>
+
+<span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="sd">"""(str) -&gt; str
+
+    Return the reversed string.
+
+    &gt;&gt;&gt; reverse('hello')
+    'olleh'
+    &gt;&gt;&gt; reverse('a')
+    'a'
+    """</span>
+    <span class="n">rev</span> <span class="o">=</span> <span class="s">''</span>
+    <span class="c"># for each character in s, add the character at the beginning of rev.</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+        <span class="n">rev</span> <span class="o">=</span> <span class="n">char</span> <span class="o">+</span> <span class="n">rev</span>
+    <span class="k">return</span> <span class="n">rev</span>
+
+<span class="kn">import</span> <span class="nn">doctest</span>
+<span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
+</pre>
+<p>We want to separate the tests from the main program and use the python <em>unittest</em> module.</p>
+<p>Create the file test_palindromes.py</p>
+<pre class="code python literal-block">
+<span class="c">#! /usr/bin/python2.7</span>
+
+<span class="kn">import</span> <span class="nn">unittest</span>
+<span class="kn">import</span> <span class="nn">palindromes</span>
+
+
+<span class="k">class</span> <span class="nc">TestPalindrome</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">test_is_palindrome_true</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">palindromes</span><span class="o">.</span><span class="n">is_palindrome</span><span class="p">(</span><span class="s">'racecar'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_is_palindrome_false</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">palindromes</span><span class="o">.</span><span class="n">is_palindrome</span><span class="p">(</span><span class="s">'dedent'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_reverse_normal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">palindromes</span><span class="o">.</span><span class="n">reverse</span><span class="p">(</span><span class="s">'hello'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s">'olleh'</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_reverse_error</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">list_of_bad_value</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="mi">123</span><span class="p">,</span>
+        <span class="bp">None</span><span class="p">,</span>
+        <span class="p">]</span>
+        <span class="k">for</span> <span class="n">bad_value</span> <span class="ow">in</span> <span class="n">list_of_bad_value</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span>
+                <span class="ne">TypeError</span><span class="p">,</span>
+                <span class="n">palindromes</span><span class="o">.</span><span class="n">reverse</span><span class="p">,</span>
+                <span class="n">bad_value</span>
+            <span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre>
+</div>
+<div class="section" id="choosing-test-cases-to-test">
+<h2>Choosing test cases to test</h2>
+<ul class="simple">
+<li>Size: For collections, test with an empty collection, a collection with 1 item, the smallest interesting case, and a
+collection with several items</li>
+<li>Dichotomies: Vowels/Non Vowels, even/odd, positive/negative, empty/full, and so on.</li>
+<li>Boundaries: If the function behaves differently for values near a particular threshold, test at that threshold.</li>
+<li>Order: If the function behaves differently when the values are in different orders, identify and test each of those
+orders.</li>
+</ul>
+<p>Source: <a class="reference external" href="https://class.coursera.org/programming2-001">https://class.coursera.org/programming2-001</a></p>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/context-manager-in-python.html" class="u-url">Context Manager in Python</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
+            <p class="dateline"><a href="posts/context-manager-in-python.html" rel="bookmark"><time class="published dt-published" datetime="2014-10-11T13:50:58+01:00" itemprop="datePublished" title="2014-10-11 13:50">2014-10-11 13:50</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
     <div>
 <div class="section" id="the-keyword-with">
 <h2>The keyword <em>with</em>
@@ -186,16 +290,12 @@ __exit__<span class="o">()</span>
 </div>
 </div>
     </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="p-name entry-title"><a href="posts/grep-aliases.html" class="u-url">Grep aliases</a></h1>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/grep-aliases.html" class="u-url">Grep aliases</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/grep-aliases.html" rel="bookmark"><time class="published dt-published" datetime="2014-10-10T10:31:27+01:00" itemprop="datePublished" title="Publication date">2014-10-10 10:31</time></a></p>
+            <p class="dateline"><a href="posts/grep-aliases.html" rel="bookmark"><time class="published dt-published" datetime="2014-10-10T10:31:27+01:00" itemprop="datePublished" title="2014-10-10 10:31">2014-10-10 10:31</time></a></p>
         </div>
-    </header>
-    <div class="e-content entry-content">
+    </header><div class="e-content entry-content">
     <div>
 <p>In .bashrc</p>
 <pre class="code bash literal-block">
@@ -232,16 +332,12 @@ __exit__<span class="o">()</span>
 <p>Thank you JB!! (<a class="reference external" href="http://tartley.com/">http://tartley.com/</a>)</p>
 </div>
     </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="p-name entry-title"><a href="posts/monkeypatching-in-python.html" class="u-url">Monkeypatching in python</a></h1>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/monkeypatching-in-python.html" class="u-url">Monkeypatching in python</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/monkeypatching-in-python.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-26T10:55:04+01:00" itemprop="datePublished" title="Publication date">2014-09-26 10:55</time></a></p>
+            <p class="dateline"><a href="posts/monkeypatching-in-python.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-26T10:55:04+01:00" itemprop="datePublished" title="2014-09-26 10:55">2014-09-26 10:55</time></a></p>
         </div>
-    </header>
-    <div class="e-content entry-content">
+    </header><div class="e-content entry-content">
     <div>
 <p>A MonkeyPatch is a piece of Python code which extends or modifies other code at runtime (typically at startup). MonkeyPatching would be the practice of writing, or running, a monkeypatch.</p>
 <p>A simple example looks like this:</p>
@@ -260,16 +356,12 @@ __exit__<span class="o">()</span>
 </ul>
 </div>
     </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="p-name entry-title"><a href="posts/monitor-disk-usage-with-python.html" class="u-url">Monitor disk usage with python</a></h1>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/monitor-disk-usage-with-python.html" class="u-url">Monitor disk usage with python</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/monitor-disk-usage-with-python.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-25T11:41:03+01:00" itemprop="datePublished" title="Publication date">2014-09-25 11:41</time></a></p>
+            <p class="dateline"><a href="posts/monitor-disk-usage-with-python.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-25T11:41:03+01:00" itemprop="datePublished" title="2014-09-25 11:41">2014-09-25 11:41</time></a></p>
         </div>
-    </header>
-    <div class="e-content entry-content">
+    </header><div class="e-content entry-content">
     <div>
 <p>The module to use in python2 is <em>statvfs</em> imported from <em>os</em></p>
 <pre class="code python literal-block">
@@ -290,16 +382,12 @@ __exit__<span class="o">()</span>
 </ul>
 </div>
     </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="p-name entry-title"><a href="posts/send-email-with-python.html" class="u-url">Send email with python</a></h1>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/send-email-with-python.html" class="u-url">Send email with python</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/send-email-with-python.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-25T11:20:32+01:00" itemprop="datePublished" title="Publication date">2014-09-25 11:20</time></a></p>
+            <p class="dateline"><a href="posts/send-email-with-python.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-25T11:20:32+01:00" itemprop="datePublished" title="2014-09-25 11:20">2014-09-25 11:20</time></a></p>
         </div>
-    </header>
-    <div class="e-content entry-content">
+    </header><div class="e-content entry-content">
     <div>
 <p>This is a simple snippets for sending an email with a gmail smtp server.</p>
 <p>If you want to send emails from localhost, you will have to first enable an smtp server.</p>
@@ -335,16 +423,12 @@ __exit__<span class="o">()</span>
 </ul>
 </div>
     </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="p-name entry-title"><a href="posts/version-control-etc-with-etckeeper.html" class="u-url">Version Control /etc with etckeeper</a></h1>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/version-control-etc-with-etckeeper.html" class="u-url">Version Control /etc with etckeeper</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/version-control-etc-with-etckeeper.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-25T10:14:33+01:00" itemprop="datePublished" title="Publication date">2014-09-25 10:14</time></a></p>
+            <p class="dateline"><a href="posts/version-control-etc-with-etckeeper.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-25T10:14:33+01:00" itemprop="datePublished" title="2014-09-25 10:14">2014-09-25 10:14</time></a></p>
         </div>
-    </header>
-    <div class="e-content entry-content">
+    </header><div class="e-content entry-content">
     <div>
 <p>It is commonly agreed that keeping <em>/etc</em> under version control is a good practice.</p>
 <p>Source:</p>
@@ -354,16 +438,12 @@ __exit__<span class="o">()</span>
 </ul>
 </div>
     </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="p-name entry-title"><a href="posts/sentry-installation.html" class="u-url">Sentry installation</a></h1>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/sentry-installation.html" class="u-url">Sentry installation</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/sentry-installation.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-24T22:03:47+01:00" itemprop="datePublished" title="Publication date">2014-09-24 22:03</time></a></p>
+            <p class="dateline"><a href="posts/sentry-installation.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-24T22:03:47+01:00" itemprop="datePublished" title="2014-09-24 22:03">2014-09-24 22:03</time></a></p>
         </div>
-    </header>
-    <div class="e-content entry-content">
+    </header><div class="e-content entry-content">
     <div>
 <p>Create a directory called sentry:</p>
 <pre class="code bash literal-block">
@@ -434,16 +514,12 @@ __exit__<span class="o">()</span>
 </pre>
 </div>
     </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="p-name entry-title"><a href="posts/associate-hostname-with-ip-address.html" class="u-url">Associate hostname with IP address</a></h1>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/associate-hostname-with-ip-address.html" class="u-url">Associate hostname with IP address</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/associate-hostname-with-ip-address.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-24T10:37:55+01:00" itemprop="datePublished" title="Publication date">2014-09-24 10:37</time></a></p>
+            <p class="dateline"><a href="posts/associate-hostname-with-ip-address.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-24T10:37:55+01:00" itemprop="datePublished" title="2014-09-24 10:37">2014-09-24 10:37</time></a></p>
         </div>
-    </header>
-    <div class="e-content entry-content">
+    </header><div class="e-content entry-content">
     <div>
 <p>You can do that in the /etc/hosts file:</p>
 <pre class="code bash literal-block">
@@ -465,110 +541,28 @@ ssh user@foo
 </div>
     </div>
     </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="p-name entry-title"><a href="posts/size-occupied-on-the-server.html" class="u-url">Size occupied on the server</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/size-occupied-on-the-server.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-24T10:00:51+01:00" itemprop="datePublished" title="Publication date">2014-09-24 10:00</time></a></p>
-        </div>
-    </header>
-    <div class="e-content entry-content">
-    <div>
-<p>The following command, executed as <em>root</em>:</p>
-<pre class="code bash literal-block">
-du -h --max-depth 1 /
-</pre>
-<p>will show used space per directory, looking at "/"</p>
-</div>
-    </div>
-    </article>
-    <article class="h-entry post-text">
-    <header>
-        <h1 class="p-name entry-title"><a href="posts/introduction-to-patching-in-python.html" class="u-url">Introduction to patching in Python</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/introduction-to-patching-in-python.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-18T16:36:00+01:00" itemprop="datePublished" title="Publication date">2014-09-18 16:36</time></a></p>
-        </div>
-    </header>
-    <div class="e-content entry-content">
-    <div>
-<p>If you want to use it in a version earlier than python3.3, you need yo install it:</p>
-<pre class="code bash literal-block">
-sudo pip install mock
-</pre>
-<div class="section" id="simple-example">
-<h2>Simple example</h2>
-<p>Code to test:</p>
-<pre class="code python literal-block">
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="k">def</span> <span class="nf">do_something</span><span class="p">():</span>
-    <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
-        <span class="k">print</span> <span class="s">'ok'</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">print</span> <span class="s">'ko'</span>
-</pre>
-<p>Actual test:</p>
-<pre class="code python literal-block">
-<span class="kn">from</span> <span class="nn">mock</span> <span class="kn">import</span> <span class="n">patch</span>
-<span class="nd">@patch</span><span class="p">(</span><span class="s">'time.sleep'</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">test_do_something1</span><span class="p">(</span><span class="n">mock_sleep</span><span class="p">):</span>
-    <span class="n">mock_sleep</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="bp">True</span>
-    <span class="n">do_something</span><span class="p">()</span>
-
-<span class="nd">@patch</span><span class="p">(</span><span class="s">'time.sleep'</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">test_do_something2</span><span class="p">(</span><span class="n">mock_sleep</span><span class="p">):</span>
-    <span class="n">mock_sleep</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="bp">False</span>
-    <span class="n">do_something</span><span class="p">()</span>
-</pre>
-<p>Results:</p>
-<pre class="code bash literal-block">
-&gt;&gt;&gt; test_do_something1<span class="o">()</span>
-ok
-&gt;&gt;&gt; test_do_something2<span class="o">()</span>
-ko
-</pre>
-<p>Source:</p>
-<ul class="simple">
-<li><a class="reference external" href="https://pypi.python.org/pypi/mock">https://pypi.python.org/pypi/mock</a></li>
-</ul>
-</div>
-</div>
-    </div>
-    </article>
 </div>
 
-        <nav class="postindexpager">
-        <ul class="pager">
-            <li class="next">
+        <nav class="postindexpager"><ul class="pager">
+<li class="next">
                 <a href="index-3.html" rel="next">Older posts</a>
             </li>
-        </ul>
-        </nav>
-
-
-
-
-
-
-        </div>
+        </ul></nav>
+</div>
         <!--End of body content-->
 
         <footer>
             Contents © 2014         <a href="mailto:choplin.mat@gmail.com">Matthieu Choplin</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
-    </div>
+</div>
 </div>
 
 
-            <script src="assets/js/all-nocdn.js"></script>
-    
-
-    <script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script>
-    
-
-<script>
+            <script src="assets/js/all-nocdn.js"></script><script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -577,11 +571,7 @@ ko
   ga('create', 'UA-51792900-1', 'mattchoplin.com');
   ga('send', 'pageview');
 
-</script>
-
-<script src="assets/js/tipuesearch_set.js"></script>
-    <script src="assets/js/tipuesearch.js"></script>
-    <script>
+</script><script src="assets/js/tipuesearch_set.js"></script><script src="assets/js/tipuesearch.js"></script><script>
     $(document).ready(function() {
         $('#tipue_search_input').tipuesearch({
             'mode': 'json',
@@ -590,9 +580,5 @@ ko
         });
     });
 </script>
-
-
-
-
 </body>
 </html>

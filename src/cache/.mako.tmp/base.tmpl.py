@@ -4,7 +4,7 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1414490749.235614
+_modified_time = 1416502619.642568
 _enable_loop = True
 _template_filename = u'/usr/local/lib/python2.7/dist-packages/nikola/data/themes/bootstrap3/templates/base.tmpl'
 _template_uri = u'base.tmpl'
@@ -35,11 +35,14 @@ def render_body(context,**pageargs):
         def sourcelink():
             return render_sourcelink(context._locals(__M_locals))
         show_blog_title = _import_ns.get('show_blog_title', context.get('show_blog_title', UNDEFINED))
+        momentjs_locales = _import_ns.get('momentjs_locales', context.get('momentjs_locales', UNDEFINED))
+        date_fanciness = _import_ns.get('date_fanciness', context.get('date_fanciness', UNDEFINED))
         abs_link = _import_ns.get('abs_link', context.get('abs_link', UNDEFINED))
         blog_title = _import_ns.get('blog_title', context.get('blog_title', UNDEFINED))
         show_sourcelink = _import_ns.get('show_sourcelink', context.get('show_sourcelink', UNDEFINED))
         def extra_head():
             return render_extra_head(context._locals(__M_locals))
+        js_date_format = _import_ns.get('js_date_format', context.get('js_date_format', UNDEFINED))
         content_footer = _import_ns.get('content_footer', context.get('content_footer', UNDEFINED))
         def content():
             return render_content(context._locals(__M_locals))
@@ -56,10 +59,10 @@ def render_body(context,**pageargs):
         lang = _import_ns.get('lang', context.get('lang', UNDEFINED))
         def belowtitle():
             return render_belowtitle(context._locals(__M_locals))
-        notes = _mako_get_namespace(context, 'notes')
+        search_form = _import_ns.get('search_form', context.get('search_form', UNDEFINED))
         messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         set_locale = _import_ns.get('set_locale', context.get('set_locale', UNDEFINED))
-        search_form = _import_ns.get('search_form', context.get('search_form', UNDEFINED))
+        notes = _mako_get_namespace(context, 'notes')
         __M_writer = context.writer()
         __M_writer(u'\n')
         __M_writer(u'\n')
@@ -126,7 +129,13 @@ def render_body(context,**pageargs):
         __M_writer(unicode(template_hooks['page_footer']()))
         __M_writer(u'\n        </footer>\n    </div>\n</div>\n\n')
         __M_writer(unicode(base.late_load_js()))
-        __M_writer(u'\n    <script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script>\n    ')
+        __M_writer(u'\n    <script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script>\n    <!-- fancy dates -->\n    <script>\n    moment.locale("')
+        __M_writer(unicode(momentjs_locales[lang]))
+        __M_writer(u'");\n    fancydates(')
+        __M_writer(unicode(date_fanciness))
+        __M_writer(u', ')
+        __M_writer(unicode(js_date_format))
+        __M_writer(u');\n    </script>\n    <!-- end fancy dates -->\n    ')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'extra_js'):
             context['self'].extra_js(**pageargs)
         
@@ -231,6 +240,6 @@ def render_belowtitle(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "line_map": {"128": 77, "129": 77, "224": 47, "226": 49, "134": 79, "135": 80, "136": 81, "137": 81, "138": 81, "139": 82, "140": 83, "141": 83, "142": 83, "143": 85, "144": 85, "145": 86, "146": 86, "195": 79, "22": 3, "152": 66, "25": 2, "28": 0, "166": 6, "223": 47, "175": 6, "181": 51, "221": 45, "64": 2, "65": 3, "66": 4, "67": 4, "68": 5, "69": 5, "225": 47, "74": 8, "75": 9, "76": 9, "77": 12, "78": 12, "79": 25, "80": 25, "81": 26, "82": 27, "83": 27, "84": 27, "85": 27, "86": 27, "87": 29, "88": 30, "89": 31, "90": 31, "91": 31, "92": 33, "93": 37, "94": 37, "95": 38, "96": 38, "97": 40, "98": 41, "99": 41, "100": 41, "101": 43, "209": 45, "232": 226, "106": 49, "107": 50, "108": 51, "222": 46, "113": 51, "114": 53, "115": 53, "116": 53, "117": 65, "118": 65, "123": 66, "124": 71, "125": 71, "126": 72, "127": 72}, "uri": "base.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/bootstrap3/templates/base.tmpl"}
+{"source_encoding": "utf-8", "line_map": {"128": 71, "129": 72, "130": 72, "131": 77, "132": 77, "133": 81, "134": 81, "135": 82, "136": 82, "137": 82, "138": 82, "190": 51, "143": 85, "144": 86, "145": 87, "146": 87, "147": 87, "148": 88, "149": 89, "22": 3, "151": 89, "152": 91, "25": 2, "154": 92, "155": 92, "28": 0, "218": 45, "150": 89, "230": 45, "161": 66, "241": 235, "175": 6, "184": 6, "153": 91, "67": 2, "68": 3, "69": 4, "70": 4, "71": 5, "72": 5, "204": 85, "77": 8, "78": 9, "79": 9, "80": 12, "81": 12, "82": 25, "83": 25, "84": 26, "85": 27, "86": 27, "87": 27, "88": 27, "89": 27, "90": 29, "91": 30, "92": 31, "93": 31, "94": 31, "95": 33, "96": 37, "97": 37, "98": 38, "99": 38, "100": 40, "101": 41, "102": 41, "103": 41, "104": 43, "233": 47, "234": 47, "231": 46, "235": 49, "109": 49, "110": 50, "111": 51, "232": 47, "116": 51, "117": 53, "118": 53, "119": 53, "120": 65, "121": 65, "126": 66, "127": 71}, "uri": "base.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/bootstrap3/templates/base.tmpl"}
 __M_END_METADATA
 """

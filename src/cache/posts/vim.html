@@ -10,3 +10,70 @@
 <h1>Configuration</h1>
 <p>The ~/.vimrc file provides Vim's default configuration</p>
 </div>
+<div class="section" id="vim-memento">
+<h1>vim memento</h1>
+<div class="section" id="simple-vimrc">
+<h2>Simple vimrc</h2>
+<pre class="code bash literal-block">
+<span class="nb">set </span><span class="nv">textwidth</span><span class="o">=</span><span class="m">79</span>  <span class="s2">&quot; lines longer than 79 columns will be broken
+set shiftwidth=4  &quot;</span> operation &gt;&gt; indents <span class="m">4</span> columns<span class="p">;</span> <span class="s">&lt;&lt; unindents 4 columns
+set tabstop=4     &quot; a hard TAB displays as 4 columns
+set expandtab     &quot; insert spaces when hitting TABs
+set softtabstop=4 &quot; insert/delete 4 spaces when hitting a TAB/BACKSPACE
+set shiftroun</span>d    <span class="s2">&quot; round indent to multiple of 'shiftwidth'
+set autoindent    &quot;</span> align the new line indent with the previous line
+</pre>
+</div>
+<div class="section" id="jump-to-function-definition">
+<h2>Jump to function definition:</h2>
+<pre class="code bash literal-block">
+g + *
+</pre>
+</div>
+<div class="section" id="highlight-variable-under-cursor">
+<h2>Highlight variable under cursor:</h2>
+<pre class="code bash literal-block">
+:autocmd CursorMoved * exe <span class="nb">printf</span><span class="o">(</span><span class="s1">'match IncSearch /\V\&lt;%s\&gt;/'</span>, escape<span class="o">(</span>expand<span class="o">(</span><span class="s1">'&lt;cword&gt;'</span><span class="o">)</span>, <span class="s1">'/\'</span><span class="o">))</span>
+</pre>
+</div>
+<div class="section" id="move-cursor-to-its-last-position">
+<h2>Move cursor to its last position:</h2>
+<p>The quickest way is to hit either:</p>
+<pre class="code bash literal-block">
+<span class="s1">''</span>
+</pre>
+<p>(two apostrophes) or:</p>
+<pre class="code bash literal-block">
+<span class="sb">``</span>
+</pre>
+<p>(two backticks). Note that the difference is that the backtick goes to the same location on the line, whereas the apostrophe goes to the start of the line. On a UK keyboard, the apostrophe is more accessible, so I tend to use that one. There are loads of useful marks like this, see :help mark-motions.
+For some other motions (not 2j I think), there's also the jump-list that lets you navigate back and forth among a number of motions.  Ctrl-O and Ctrl-I do this navigation, but see :help jump-motions for more information.</p>
+</div>
+<div class="section" id="line-numbers">
+<h2>Line numbers</h2>
+<p>To display line numbers along the left side of a window, type any one of the following command while using text editor:</p>
+<pre class="code bash literal-block">
+:set number
+</pre>
+</div>
+<div class="section" id="go-to-line">
+<h2>Go to line</h2>
+<pre class="code bash literal-block">
+:42
+</pre>
+<p>where 42 is the number of line you want to go</p>
+</div>
+<div class="section" id="split-the-screen">
+<h2>Split the screen</h2>
+<pre class="code bash literal-block">
+:vsp
+</pre>
+</div>
+<div class="section" id="paste-from-another-application-into-vim">
+<h2>Paste from another application into vim</h2>
+<p>To avoid indentation issue:</p>
+<pre class="code bash literal-block">
+:set paste
+</pre>
+</div>
+</div>
