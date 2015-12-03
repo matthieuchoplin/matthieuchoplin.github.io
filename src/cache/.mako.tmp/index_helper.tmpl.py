@@ -1,15 +1,16 @@
 # -*- coding:utf-8 -*-
 from mako import runtime, filters, cache
 UNDEFINED = runtime.UNDEFINED
+STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1416502619.764512
+_modified_time = 1449153422.288752
 _enable_loop = True
-_template_filename = u'/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/index_helper.tmpl'
-_template_uri = u'index_helper.tmpl'
+_template_filename = '/Users/matthieuchoplin/work/my_notes/venv/lib/python3.5/site-packages/nikola/data/themes/base/templates/index_helper.tmpl'
+_template_uri = 'index_helper.tmpl'
 _source_encoding = 'utf-8'
-_exports = ['mathjax_script', 'html_pager']
+_exports = ['html_pager', 'mathjax_script']
 
 
 def render_body(context,**pageargs):
@@ -17,21 +18,8 @@ def render_body(context,**pageargs):
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         __M_writer = context.writer()
-        __M_writer(u'\n\n')
-        __M_writer(u'\n')
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
-def render_mathjax_script(context,posts):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        any = context.get('any', UNDEFINED)
-        __M_writer = context.writer()
-        __M_writer(u'\n')
-        if any(post.is_mathjax for post in posts):
-            __M_writer(u'        <script type="text/x-mathjax-config">\n        MathJax.Hub.Config({tex2jax: {inlineMath: [[\'$latex \',\'$\'], [\'\\\\(\',\'\\\\)\']]}});</script>\n        <script src="/assets/js/mathjax.js"></script>\n')
+        __M_writer('\n\n')
+        __M_writer('\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -44,22 +32,39 @@ def render_html_pager(context):
         messages = context.get('messages', UNDEFINED)
         nextlink = context.get('nextlink', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer(u'\n')
+        __M_writer('\n')
         if prevlink or nextlink:
-            __M_writer(u'        <nav class="postindexpager">\n        <ul class="pager">\n')
+            __M_writer('        <nav class="postindexpager">\n        <ul class="pager">\n')
             if prevlink:
-                __M_writer(u'            <li class="previous">\n                <a href="')
-                __M_writer(unicode(prevlink))
-                __M_writer(u'" rel="prev">')
-                __M_writer(unicode(messages("Newer posts")))
-                __M_writer(u'</a>\n            </li>\n')
+                __M_writer('            <li class="previous">\n                <a href="')
+                __M_writer(str(prevlink))
+                __M_writer('" rel="prev">')
+                __M_writer(str(messages("Newer posts")))
+                __M_writer('</a>\n            </li>\n')
             if nextlink:
-                __M_writer(u'            <li class="next">\n                <a href="')
-                __M_writer(unicode(nextlink))
-                __M_writer(u'" rel="next">')
-                __M_writer(unicode(messages("Older posts")))
-                __M_writer(u'</a>\n            </li>\n')
-            __M_writer(u'        </ul>\n        </nav>\n')
+                __M_writer('            <li class="next">\n                <a href="')
+                __M_writer(str(nextlink))
+                __M_writer('" rel="next">')
+                __M_writer(str(messages("Older posts")))
+                __M_writer('</a>\n            </li>\n')
+            __M_writer('        </ul>\n        </nav>\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
+def render_mathjax_script(context,posts):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        use_katex = context.get('use_katex', UNDEFINED)
+        any = context.get('any', UNDEFINED)
+        __M_writer = context.writer()
+        __M_writer('\n')
+        if any(post.is_mathjax for post in posts):
+            if use_katex:
+                __M_writer('            <script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>\n            <script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/contrib/auto-render.min.js"></script>\n            <script>\n                renderMathInElement(document.body);\n            </script>\n')
+            else:
+                __M_writer('            <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>\n            <script type="text/x-mathjax-config">\n            MathJax.Hub.Config({tex2jax: {inlineMath: [[\'$latex \',\'$\'], [\'\\\\(\',\'\\\\)\']]}});\n            </script>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -67,6 +72,6 @@ def render_html_pager(context):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "line_map": {"15": 0, "20": 19, "21": 27, "27": 21, "32": 21, "33": 22, "34": 23, "40": 2, "47": 2, "48": 3, "49": 4, "50": 6, "51": 7, "52": 8, "53": 8, "54": 8, "55": 8, "56": 11, "57": 12, "58": 13, "59": 13, "60": 13, "61": 13, "62": 16, "68": 62}, "uri": "index_helper.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/index_helper.tmpl"}
+{"source_encoding": "utf-8", "filename": "/Users/matthieuchoplin/work/my_notes/venv/lib/python3.5/site-packages/nikola/data/themes/base/templates/index_helper.tmpl", "line_map": {"64": 23, "65": 24, "66": 29, "67": 30, "73": 67, "16": 0, "21": 19, "22": 36, "28": 2, "35": 2, "36": 3, "37": 4, "38": 6, "39": 7, "40": 8, "41": 8, "42": 8, "43": 8, "44": 11, "45": 12, "46": 13, "47": 13, "48": 13, "49": 13, "50": 16, "56": 21, "62": 21, "63": 22}, "uri": "index_helper.tmpl"}
 __M_END_METADATA
 """

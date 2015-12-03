@@ -1,13 +1,14 @@
 # -*- coding:ascii -*-
 from mako import runtime, filters, cache
 UNDEFINED = runtime.UNDEFINED
+STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1416502619.688469
+_modified_time = 1449153422.218155
 _enable_loop = True
-_template_filename = u'/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/annotation_helper.tmpl'
-_template_uri = u'annotation_helper.tmpl'
+_template_filename = '/Users/matthieuchoplin/work/my_notes/venv/lib/python3.5/site-packages/nikola/data/themes/base/templates/annotation_helper.tmpl'
+_template_uri = 'annotation_helper.tmpl'
 _source_encoding = 'ascii'
 _exports = ['code', 'css']
 
@@ -17,8 +18,8 @@ def render_body(context,**pageargs):
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         __M_writer = context.writer()
-        __M_writer(u'\n\n')
-        __M_writer(u'\n')
+        __M_writer('\n\n')
+        __M_writer('\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -28,7 +29,7 @@ def render_code(context):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_writer = context.writer()
-        __M_writer(u'\n    <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>\n    <script src="http://assets.annotateit.org/annotator/v1.2.7/annotator-full.js"></script>\n    <script>\n    jQuery(function ($) {\n        $(\'body\').annotator().annotator(\'setupPlugins\', {}, {\n            // Disable filter bar\n            Filter: false\n        });\n    });\n    </script>\n')
+        __M_writer('\n    <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>\n    <script src="http://assets.annotateit.org/annotator/v1.2.7/annotator-full.js"></script>\n    <script>\n    jQuery(function ($) {\n        $(\'body\').annotator().annotator(\'setupPlugins\', {}, {\n            // Disable filter bar\n            Filter: false\n        });\n    });\n    </script>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -38,7 +39,7 @@ def render_css(context):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_writer = context.writer()
-        __M_writer(u'\n    <link rel="stylesheet" href="http://assets.annotateit.org/annotator/v1.2.5/annotator.min.css">\n')
+        __M_writer('\n    <link rel="stylesheet" href="http://assets.annotateit.org/annotator/v1.2.5/annotator.min.css">\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -46,6 +47,6 @@ def render_css(context):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "ascii", "line_map": {"37": 1, "41": 1, "47": 41, "15": 0, "20": 3, "21": 16, "27": 5, "31": 5}, "uri": "annotation_helper.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/annotation_helper.tmpl"}
+{"source_encoding": "ascii", "filename": "/Users/matthieuchoplin/work/my_notes/venv/lib/python3.5/site-packages/nikola/data/themes/base/templates/annotation_helper.tmpl", "line_map": {"16": 0, "32": 5, "21": 3, "22": 16, "48": 42, "42": 1, "38": 1, "28": 5}, "uri": "annotation_helper.tmpl"}
 __M_END_METADATA
 """

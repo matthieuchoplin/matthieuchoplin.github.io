@@ -1,13 +1,14 @@
 # -*- coding:utf-8 -*-
 from mako import runtime, filters, cache
 UNDEFINED = runtime.UNDEFINED
+STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1416502619.778924
+_modified_time = 1449153422.384047
 _enable_loop = True
-_template_filename = u'/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/crumbs.tmpl'
-_template_uri = u'crumbs.tmpl'
+_template_filename = '/Users/matthieuchoplin/work/my_notes/venv/lib/python3.5/site-packages/nikola/data/themes/base/templates/crumbs.tmpl'
+_template_uri = 'crumbs.tmpl'
 _source_encoding = 'utf-8'
 _exports = ['bar']
 
@@ -17,8 +18,8 @@ def render_body(context,**pageargs):
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         __M_writer = context.writer()
-        __M_writer(u'\n')
-        __M_writer(u'\n')
+        __M_writer('\n')
+        __M_writer('\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -27,17 +28,24 @@ def render_body(context,**pageargs):
 def render_bar(context,crumbs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        index_file = context.get('index_file', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer(u'\n')
+        __M_writer('\n')
         if crumbs:
-            __M_writer(u'<nav class="breadcrumbs">\n<ul class="breadcrumb">\n')
+            __M_writer('<nav class="breadcrumbs">\n<ul class="breadcrumb">\n')
             for link, text in crumbs:
-                __M_writer(u'        <li><a href="')
-                __M_writer(unicode(link))
-                __M_writer(u'">')
-                __M_writer(unicode(text))
-                __M_writer(u'</a></li>\n')
-            __M_writer(u'</ul>\n</nav>\n')
+                if text != index_file:
+                    if link == '#':
+                        __M_writer('                <li>')
+                        __M_writer(str(text.rsplit('.html', 1)[0]))
+                        __M_writer('</li>\n')
+                    else:
+                        __M_writer('                <li><a href="')
+                        __M_writer(str(link))
+                        __M_writer('">')
+                        __M_writer(str(text))
+                        __M_writer('</a></li>\n')
+            __M_writer('</ul>\n</nav>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -45,6 +53,6 @@ def render_bar(context,crumbs):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "line_map": {"32": 4, "33": 5, "34": 7, "35": 8, "36": 8, "37": 8, "38": 8, "39": 8, "40": 10, "46": 40, "15": 0, "20": 2, "21": 13, "27": 3, "31": 3}, "uri": "crumbs.tmpl", "filename": "/usr/local/lib/python2.7/dist-packages/nikola/data/themes/base/templates/crumbs.tmpl"}
+{"source_encoding": "utf-8", "filename": "/Users/matthieuchoplin/work/my_notes/venv/lib/python3.5/site-packages/nikola/data/themes/base/templates/crumbs.tmpl", "line_map": {"33": 3, "34": 4, "35": 5, "36": 7, "37": 8, "38": 9, "39": 10, "40": 10, "41": 10, "42": 11, "43": 12, "44": 12, "45": 12, "46": 12, "47": 12, "16": 0, "48": 16, "21": 2, "22": 19, "54": 48, "28": 3}, "uri": "crumbs.tmpl"}
 __M_END_METADATA
 """
