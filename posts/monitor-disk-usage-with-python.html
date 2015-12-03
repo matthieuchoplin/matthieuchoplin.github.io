@@ -2,9 +2,11 @@
 <html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
 <head>
 <meta charset="utf-8">
+<base href="http://mattchoplin.com/posts/monitor-disk-usage-with-python.html">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Monitor disk usage with python | Standing on the shoulders of giants</title>
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="http://mattchoplin.com/posts/monitor-disk-usage-with-python.html">
 <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
@@ -24,21 +26,20 @@
 <meta property="og:title" content="Monitor disk usage with python">
 <meta property="og:url" content="http://mattchoplin.com/posts/monitor-disk-usage-with-python.html">
 <meta property="og:description" content="The module to use in python2 is statvfs imported from os
-
 import os
 statvfs = os.statvfs('/')
 statvfs.f_frsize * statvfs.f_blocks     # Size of filesystem in bytes
-statvfs.f_frsize * statvfs.f_bfree  ">
+statvfs.f_frsize * statvfs.f_bfree   ">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2014-09-25T11:41:03+01:00">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
 <!-- Menubar -->
 
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container">
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
 <!-- This keeps the margins nice -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -50,7 +51,7 @@ statvfs.f_frsize * statvfs.f_bfree  ">
             </a>
         </div>
 <!-- /.navbar-header -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
             <ul class="nav navbar-nav">
 <li>
 <a href="../archive.html">Archive</a>
@@ -78,7 +79,7 @@ statvfs.f_frsize * statvfs.f_bfree  ">
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container -->
-</nav><!-- End of Menubar --><div class="container" id="content">
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
     <div class="body-content">
         <!--Body content-->
         <div class="row">
@@ -87,7 +88,9 @@ statvfs.f_frsize * statvfs.f_bfree  ">
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Monitor disk usage with python</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
+            <p class="byline author vcard"><span class="byline-name fn">
+                    Matthieu Choplin
+            </span></p>
             <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-09-25T11:41:03+01:00" itemprop="datePublished" title="2014-09-25 11:41">2014-09-25 11:41</time></a></p>
             
         <p class="sourceline"><a href="monitor-disk-usage-with-python.rst" id="sourcelink">Source</a></p>
@@ -98,12 +101,11 @@ statvfs.f_frsize * statvfs.f_bfree  ">
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p>The module to use in python2 is <em>statvfs</em> imported from <em>os</em></p>
-<pre class="code python literal-block">
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="n">statvfs</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">statvfs</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
-<span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_blocks</span>     <span class="c"># Size of filesystem in bytes</span>
-<span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_bfree</span>      <span class="c"># Actual number of free bytes</span>
-<span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_bavail</span>     <span class="c"># Number of free bytes that ordinary users</span>
+<pre class="code python"><a name="rest_code_20fc1f4d698d4a90a96664098b90c8fc-1"></a><span class="kn">import</span> <span class="nn">os</span>
+<a name="rest_code_20fc1f4d698d4a90a96664098b90c8fc-2"></a><span class="n">statvfs</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">statvfs</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+<a name="rest_code_20fc1f4d698d4a90a96664098b90c8fc-3"></a><span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_blocks</span>     <span class="c"># Size of filesystem in bytes</span>
+<a name="rest_code_20fc1f4d698d4a90a96664098b90c8fc-4"></a><span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_bfree</span>      <span class="c"># Actual number of free bytes</span>
+<a name="rest_code_20fc1f4d698d4a90a96664098b90c8fc-5"></a><span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_bavail</span>     <span class="c"># Number of free bytes that ordinary users</span>
 </pre>
 <p>NB: it is deprecated in python3, the module to use will be <a class="reference external" href="https://docs.python.org/3.3/library/os.html#os.fstat">fstat</a> os.fstat</p>
 <p>Source:</p>
@@ -116,7 +118,7 @@ statvfs.f_frsize * statvfs.f_bfree  ">
 </ul>
 </div>
     </div>
-    <aside class="postpromonav"><nav><ul class="pager">
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
 <li class="previous">
                 <a href="send-email-with-python.html" rel="prev" title="Send email with python">Previous post</a>
             </li>
@@ -127,16 +129,16 @@ statvfs.f_frsize * statvfs.f_bfree  ">
 </div>
         <!--End of body content-->
 
-        <footer>
-            Contents © 2014         <a href="mailto:choplin.mat@gmail.com">Matthieu Choplin</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
+        <footer id="footer">
+            Contents © 2015         <a href="mailto:choplin.mat@gmail.com">Matthieu Choplin</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>
 </div>
 
 
-            <script src="../assets/js/all-nocdn.js"></script><script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-    moment.locale("");
+            <script src="../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
     fancydates(0, "YYYY-MM-DD HH:mm");
     </script><!-- end fancy dates --><script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

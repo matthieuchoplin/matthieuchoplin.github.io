@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants (blog)</title><link>http://mattchoplin.com/</link><description></description><language>en</language><lastBuildDate>Sat, 11 Oct 2014 13:49:54 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Blog creation</title><link>http://mattchoplin.com/posts/blog-creation.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="website-hosted-from-my-github-repository"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants (blog)</title><link>http://mattchoplin.com/</link><description></description><atom:link rel="self" type="application/rss+xml" href="http://mattchoplin.com/categories/blog.xml"></atom:link><language>en</language><lastBuildDate>Thu, 03 Dec 2015 14:38:28 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Blog creation</title><link>http://mattchoplin.com/posts/blog-creation.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="website-hosted-from-my-github-repository"&gt;
 &lt;h2&gt;Website hosted from my Github Repository&lt;/h2&gt;
 &lt;p&gt;It is using &lt;a class="reference external" href="https://pages.github.com/"&gt;Github Pages&lt;/a&gt;.
 Create a repository called &lt;em&gt;username.github.io&lt;/em&gt;, where username is your username (or organization name) on GitHub and put your website files in there.&lt;/p&gt;
@@ -8,88 +8,56 @@ Create a repository called &lt;em&gt;username.github.io&lt;/em&gt;, where userna
 &lt;h2&gt;Website generation using a Python framework: Nikola&lt;/h2&gt;
 &lt;p&gt;This website is using &lt;a class="reference external" href="http://getnikola.com"&gt;Nikola&lt;/a&gt; which is a Python static website generator.
 Assuming that you have created a github repository called &lt;em&gt;username.github.io&lt;/em&gt;, clone it with:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-git clone git@github.com:username/username.github.io.git
-&lt;/pre&gt;
-&lt;p&gt;Then initialize your website with this command:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-nikola init username.github.io
-&lt;/pre&gt;
-&lt;p&gt;where &lt;em&gt;username.github.io&lt;/em&gt; is the repository you have just cloned.&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_f775001378cc454ab5a5808e78dfa6fa-1"&gt;&lt;/a&gt;git clone git@github.com:username/username.github.io.git
+&lt;/pre&gt;&lt;p&gt;Then initialize your website with this command:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_46bf04bb2aec422ab54b1bd021d3b721-1"&gt;&lt;/a&gt;nikola init username.github.io
+&lt;/pre&gt;&lt;p&gt;where &lt;em&gt;username.github.io&lt;/em&gt; is the repository you have just cloned.&lt;/p&gt;
 &lt;p&gt;cd in this directory and execute this command:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-nikola build &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; nikola serve -b
-&lt;/pre&gt;
-&lt;p&gt;The website will open at the url &lt;a class="reference external" href="http://127.0.0.1:8000"&gt;http://127.0.0.1:8000&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_511e7a73490748c3ab76d97218c3da74-1"&gt;&lt;/a&gt;nikola build &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; nikola serve -b
+&lt;/pre&gt;&lt;p&gt;The website will open at the url &lt;a class="reference external" href="http://127.0.0.1:8000"&gt;http://127.0.0.1:8000&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;To deploy to Github, change the file conf.py such as:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;GITHUB_DEPLOY_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'master'&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;Once you are happy with it, you can deploy to Github with the command:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-nikola github_deploy
-&lt;/pre&gt;
-&lt;/div&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_00803ef27cb642a7a2b07cd774e7f74b-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;GITHUB_DEPLOY_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'master'&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;Once you are happy with it, you can deploy to Github with the command:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_e6c33a95124e474fa6b709d5e678ec54-1"&gt;&lt;/a&gt;nikola github_deploy
+&lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="posts-written-using-restructuredtext"&gt;
 &lt;h2&gt;Posts written using reStructuredText&lt;/h2&gt;
 &lt;p&gt;Useful cheatsheet for the basics: &lt;a class="reference external" href="http://github.com/ralsina/rst-cheatsheet/raw/master/rst-cheatsheet.pdf"&gt;http://github.com/ralsina/rst-cheatsheet/raw/master/rst-cheatsheet.pdf&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;This is also a way to learn how to use Vim. Since Nikola 7.0.1, you can use the -e option when creating a new post.
 But before, you need to set up a default editor.
 If you want to use vim, you can first locate it:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-which vim
-&lt;/pre&gt;
-&lt;p&gt;Then you can use it in the export variable:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;EDITOR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/bin/vim
-&lt;/pre&gt;
-&lt;/div&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_6727b0182a24424bbad74013f2647fa6-1"&gt;&lt;/a&gt;which vim
+&lt;/pre&gt;&lt;p&gt;Then you can use it in the export variable:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_1e1e2f99c2224194a6c9773bb794b79b-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;EDITOR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/bin/vim
+&lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="download-a-pre-built-template-from-bootswatch"&gt;
 &lt;h2&gt;Download a pre-built template from bootswatch&lt;/h2&gt;
-&lt;pre class="code bash literal-block"&gt;
-nikola bootswatch_theme -n custom_theme -s spruce -p bootstrap3
-&lt;/pre&gt;
-&lt;/div&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_68054017b0684f4dae752ed9e6ef1165-1"&gt;&lt;/a&gt;nikola bootswatch_theme -n custom_theme -s spruce -p bootstrap3
+&lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="installing-nikola"&gt;
 &lt;h2&gt;Installing Nikola&lt;/h2&gt;
-&lt;pre class="code bash literal-block"&gt;
-pip install nikola
-&lt;/pre&gt;
-&lt;p&gt;If you have the following error while installing nikola:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-** make sure the development packages of libxml2 and libxslt are installed **
-&lt;/pre&gt;
-&lt;p&gt;You can fix it with:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-sudo apt-get install libxslt1-dev libxslt1.1 libxml2-dev libxml2 libssl-dev
-&lt;/pre&gt;
-&lt;/div&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_50184da0139b4baf8b9a03672398c874-1"&gt;&lt;/a&gt;pip install nikola
+&lt;/pre&gt;&lt;p&gt;If you have the following error while installing nikola:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_5c258a6df51c482b8a8c719a11780053-1"&gt;&lt;/a&gt;** make sure the development packages of libxml2 and libxslt are installed **
+&lt;/pre&gt;&lt;p&gt;You can fix it with:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_529b3dc4417c46d4b21b115897119a72-1"&gt;&lt;/a&gt;sudo apt-get install libxslt1-dev libxslt1.1 libxml2-dev libxml2 libssl-dev
+&lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="upgrading-nikola"&gt;
 &lt;h2&gt;Upgrading Nikola&lt;/h2&gt;
 &lt;p&gt;Since Nikola can be installed with Pip, you can use the following command:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-pip install -U nikola
-&lt;/pre&gt;
-&lt;p&gt;To install pip, see &lt;a class="reference external" href="http://pip.readthedocs.org/en/latest/installing.html"&gt;http://pip.readthedocs.org/en/latest/installing.html&lt;/a&gt;&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_19a652ae321745bc9332f32e9fb292bf-1"&gt;&lt;/a&gt;pip install -U nikola
+&lt;/pre&gt;&lt;p&gt;To install pip, see &lt;a class="reference external" href="http://pip.readthedocs.org/en/latest/installing.html"&gt;http://pip.readthedocs.org/en/latest/installing.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;If you have the following error:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-Python.h: No such file or directory
-&lt;/pre&gt;
-&lt;p&gt;You can fix it with:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-sudo apt-get install python-dev
-&lt;/pre&gt;
-&lt;p&gt;To upgrade pip:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-sudo easy_install -U pip
-&lt;/pre&gt;
-&lt;p&gt;To downgrade pip to a previous version:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-sudo easy_install &lt;span class="nv"&gt;pip&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;1.2.1
-&lt;/pre&gt;
-&lt;/div&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_655c529691af4badaa294cc704eaa2af-1"&gt;&lt;/a&gt;Python.h: No such file or directory
+&lt;/pre&gt;&lt;p&gt;You can fix it with:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_dabac1b9611a4bce870ee92466f71362-1"&gt;&lt;/a&gt;sudo apt-get install python-dev
+&lt;/pre&gt;&lt;p&gt;To upgrade pip:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_7b4718faae834c478336840cf34b0aa4-1"&gt;&lt;/a&gt;sudo easy_install -U pip
+&lt;/pre&gt;&lt;p&gt;To downgrade pip to a previous version:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_e81a72e793ce4da6851ec31812b89b56-1"&gt;&lt;/a&gt;sudo easy_install &lt;span class="nv"&gt;pip&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;1.2.1
+&lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="add-your-own-domain"&gt;
 &lt;h2&gt;Add your own domain&lt;/h2&gt;
 &lt;p&gt;Log in to your domain provider website and change the forwarding value to the website url provided by Github-pages e.g.
 username.github.io&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>Nikola</category><category>blog</category><guid>http://mattchoplin.com/posts/blog-creation.html</guid><pubDate>Sun, 25 May 2014 08:30:00 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>blog</category><category>Nikola</category><guid>http://mattchoplin.com/posts/blog-creation.html</guid><pubDate>Sun, 25 May 2014 08:30:00 GMT</pubDate></item></channel></rss>

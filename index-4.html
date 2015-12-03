@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<base href="http://mattchoplin.com/index-4.html">
+<meta name="description" content="Blog about my developer experience">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Standing on the shoulders of giants (old posts, page 4) | Standing on the shoulders of giants</title>
+<link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+<link rel="canonical" href="http://mattchoplin.com/index-4.html">
+<link rel="icon" href="favicon-16x16.png" sizes="16x16">
+<link rel="prev" href="index.html" type="text/html">
+<link rel="next" href="index-3.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="stylesheet" type="text/css" href="assets/css/tipuesearch.css">
+</head>
+<body>
+<div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 20px;"></div>
+
+
+
+    
+
+
+
+
+
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://mattchoplin.com/">
+
+                <span id="blog-title">Standing on the shoulders of giants</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="archive.html">Archive</a>
+                </li>
+<li>
+<a href="categories/index.html">Tags</a>
+                </li>
+<li>
+<a href="rss.xml">RSS feed</a>
+
+                
+            </li>
+</ul>
+<span class="navbar-form pull-left">
+    <input type="text" id="tipue_search_input"></span>
+
+            <ul class="nav navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+
+<div class="postindex">
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/associate-hostname-with-ip-address.html" class="u-url">Associate hostname with IP address</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="posts/associate-hostname-with-ip-address.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-24T10:37:55+01:00" title="2014-09-24 10:37">2014-09-24 10:37</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>You can do that in the /etc/hosts file:</p>
+<pre class="code bash"><a name="rest_code_d232d91e366440ca94ed84ff003ce051-1"></a>127.0.0.1       localhost
+<a name="rest_code_d232d91e366440ca94ed84ff003ce051-2"></a>192.168.1.10    foo.mydomain.org       foo
+<a name="rest_code_d232d91e366440ca94ed84ff003ce051-3"></a>192.168.1.13    bar.mydomain.org       bar
+<a name="rest_code_d232d91e366440ca94ed84ff003ce051-4"></a>146.82.138.7    master.debian.org      master
+<a name="rest_code_d232d91e366440ca94ed84ff003ce051-5"></a>209.237.226.90  www.opensource.org
+</pre>
+<p>So, from the command line, you can do:</p>
+<pre class="code bash"><a name="rest_code_73374ee7fb9f49e0914767907aa09e8c-1"></a>ping foo.mydomain.org
+</pre>
+<p>Or:</p>
+<pre class="code bash"><a name="rest_code_f3a5052822e144c39d0a6a2f7f48102f-1"></a>ssh user@foo
+</pre>
+<p>Source: <a class="reference external" href="http://linux.die.net/man/5/hosts">http://linux.die.net/man/5/hosts</a></p>
+</div>
+    </div>
+    </article>
+</div>
+
+        <nav class="postindexpager"><ul class="pager">
+<li class="previous">
+                <a href="index.html" rel="prev">Newer posts</a>
+            </li>
+            <li class="next">
+                <a href="index-3.html" rel="next">Older posts</a>
+            </li>
+        </ul></nav>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2015         <a href="mailto:choplin.mat@gmail.com">Matthieu Choplin</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51792900-1', 'mattchoplin.com');
+  ga('send', 'pageview');
+
+</script><script src="assets/js/tipuesearch_set.js"></script><script src="assets/js/tipuesearch.js"></script><script>
+    $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch({
+            'mode': 'json',
+            'contentLocation': '/assets/js/tipuesearch_content.json',
+            'showUrl': false
+        });
+    });
+</script>
+</body>
+</html>

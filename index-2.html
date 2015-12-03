@@ -2,10 +2,12 @@
 <html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
 <head>
 <meta charset="utf-8">
+<base href="http://mattchoplin.com/index-2.html">
 <meta name="description" content="Blog about my developer experience">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Standing on the shoulders of giants (old posts, page 2) | Standing on the shoulders of giants</title>
 <link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="http://mattchoplin.com/index-2.html">
 <link rel="icon" href="favicon-16x16.png" sizes="16x16">
@@ -18,6 +20,8 @@
 
 
 
+    
+
 
 
 
@@ -26,10 +30,10 @@
 
 <!-- Menubar -->
 
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container">
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
 <!-- This keeps the margins nice -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -41,7 +45,7 @@
             </a>
         </div>
 <!-- /.navbar-header -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
             <ul class="nav navbar-nav">
 <li>
 <a href="archive.html">Archive</a>
@@ -63,54 +67,52 @@
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container -->
-</nav><!-- End of Menubar --><div class="container" id="content">
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
     <div class="body-content">
         <!--Body content-->
         <div class="row">
             
             
+
 <div class="postindex">
     <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/using-enum-in-python.html" class="u-url">Using enum in python</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/using-enum-in-python.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-28T09:52:22+01:00" itemprop="datePublished" title="2014-07-28 09:52">2014-07-28 09:52</time></a></p>
+            <p class="byline author vcard"><span class="byline-name fn">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="posts/using-enum-in-python.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-28T09:52:22+01:00" title="2014-07-28 09:52">2014-07-28 09:52</time></a></p>
         </div>
     </header><div class="e-content entry-content">
     <div>
-<pre class="code bash literal-block">
-pip install enum34
+<pre class="code bash"><a name="rest_code_e7a7b92ee6c74c00916b16e77f06a0e3-1"></a>pip install enum34
 </pre>
-<div class="section" id="example">
-<h2>Example:</h2>
-<pre class="code python literal-block">
-<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
-<span class="n">Animal</span> <span class="o">=</span> <span class="n">enum</span><span class="p">(</span><span class="s">'Animal'</span><span class="p">,</span> <span class="s">'ant bee cat dog'</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_e26188b35ab349228ef750702bcd74fc-1"></a><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<a name="rest_code_e26188b35ab349228ef750702bcd74fc-2"></a><span class="n">Animal</span> <span class="o">=</span> <span class="n">enum</span><span class="p">(</span><span class="s">'Animal'</span><span class="p">,</span> <span class="s">'ant bee cat dog'</span><span class="p">)</span>
 </pre>
 <p>or equivalently:</p>
-<pre class="code python literal-block">
-<span class="k">class</span> <span class="nc">Animals</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
-    <span class="n">ant</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">bee</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="n">cat</span> <span class="o">=</span> <span class="mi">3</span>
-    <span class="n">dog</span> <span class="o">=</span> <span class="mi">4</span>
+<pre class="code python"><a name="rest_code_7a0348bb3d8448ba95b15eecdae45d51-1"></a><span class="k">class</span> <span class="nc">Animals</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<a name="rest_code_7a0348bb3d8448ba95b15eecdae45d51-2"></a>    <span class="n">ant</span> <span class="o">=</span> <span class="mi">1</span>
+<a name="rest_code_7a0348bb3d8448ba95b15eecdae45d51-3"></a>    <span class="n">bee</span> <span class="o">=</span> <span class="mi">2</span>
+<a name="rest_code_7a0348bb3d8448ba95b15eecdae45d51-4"></a>    <span class="n">cat</span> <span class="o">=</span> <span class="mi">3</span>
+<a name="rest_code_7a0348bb3d8448ba95b15eecdae45d51-5"></a>    <span class="n">dog</span> <span class="o">=</span> <span class="mi">4</span>
 </pre>
 <p>Source: <a class="reference external" href="http://stackoverflow.com/questions/36932/how-can-i-represent-an-enum-in-python">http://stackoverflow.com/questions/36932/how-can-i-represent-an-enum-in-python</a></p>
 <p><a class="reference external" href="https://docs.python.org/3/library/enum.html">https://docs.python.org/3/library/enum.html</a></p>
 </div>
-</div>
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/tipue-search.html" class="u-url">Tipue search</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/tipue-search.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-19T13:05:20+01:00" itemprop="datePublished" title="2014-07-19 13:05">2014-07-19 13:05</time></a></p>
+            <p class="byline author vcard"><span class="byline-name fn">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="posts/tipue-search.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-19T13:05:20+01:00" title="2014-07-19 13:05">2014-07-19 13:05</time></a></p>
         </div>
     </header><div class="e-content entry-content">
     <div>
 <p>As the number of posts is growing, I think that having a search engine within the website is now relevant. This post only shows what I am using for that.</p>
 <p>Instead of using an external search engine such as Google or DuckDuckGo, you have a plugin in Nikola than enables searching on the client side by using jQuery.</p>
 <p>Assuming you have installed Nikola &gt; v7.0, you can install the plugin like this:</p>
-<pre class="code python literal-block">
-<span class="n">nikola</span> <span class="n">plugin</span> <span class="o">-</span><span class="n">i</span> <span class="n">localsearch</span>
+<pre class="code python"><a name="rest_code_68fb8774c40042d88c4f57ed372a9962-1"></a><span class="n">nikola</span> <span class="n">plugin</span> <span class="o">-</span><span class="n">i</span> <span class="n">localsearch</span>
 </pre>
 <p>It will give you a configuration sample to paste in your config.py file.</p>
 <p>Source: <a class="reference external" href="http://plugins.getnikola.com/#localsearch">http://plugins.getnikola.com/#localsearch</a></p>
@@ -118,17 +120,17 @@ pip install enum34
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/database-locks.html" class="u-url">Database locks</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/database-locks.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-19T00:27:04+01:00" itemprop="datePublished" title="2014-07-19 00:27">2014-07-19 00:27</time></a></p>
+            <p class="byline author vcard"><span class="byline-name fn">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="posts/database-locks.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-19T00:27:04+01:00" title="2014-07-19 00:27">2014-07-19 00:27</time></a></p>
         </div>
     </header><div class="e-content entry-content">
     <div>
-<pre class="code postgresql literal-block">
-<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">pg_stat_activity</span> <span class="k">where</span> <span class="n">waiting</span><span class="o">=</span><span class="s1">'t'</span><span class="p">;</span>
+<pre class="code postgresql"><a name="rest_code_7284921bb4454facbeea2c7b07d89aea-1"></a><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">pg_stat_activity</span> <span class="k">where</span> <span class="n">waiting</span><span class="o">=</span><span class="s1">'t'</span><span class="p">;</span>
 </pre>
 <p>Fix the lock:</p>
-<pre class="code postgresql literal-block">
-<span class="k">select</span> <span class="n">pg_cancel_backend</span><span class="p">(</span><span class="n">pid</span> <span class="nb">int</span><span class="p">)</span>
+<pre class="code postgresql"><a name="rest_code_9b1c7be0b8ce48c7b88e22c9f04abf51-1"></a><span class="k">select</span> <span class="n">pg_cancel_backend</span><span class="p">(</span><span class="n">pid</span> <span class="nb">int</span><span class="p">)</span>
 </pre>
 <p>Where "pid int" is the pid you find with pg_stat_activity.</p>
 <p>Sources:</p>
@@ -141,41 +143,44 @@ pip install enum34
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/psycopg2.html" class="u-url">Psycopg2</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/psycopg2.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-19T00:14:20+01:00" itemprop="datePublished" title="2014-07-19 00:14">2014-07-19 00:14</time></a></p>
+            <p class="byline author vcard"><span class="byline-name fn">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="posts/psycopg2.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-19T00:14:20+01:00" title="2014-07-19 00:14">2014-07-19 00:14</time></a></p>
         </div>
     </header><div class="e-content entry-content">
     <div>
-<pre class="code python literal-block">
-<span class="kn">import</span> <span class="nn">psycopg2</span>
-<span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">"dbname='template1' user='dbuser' host='localhost' password='dbpass'"</span><span class="p">)</span>
-<span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<pre class="code python"><a name="rest_code_9f2886f1e9854f0ab291383e3c775498-1"></a><span class="kn">import</span> <span class="nn">psycopg2</span>
+<a name="rest_code_9f2886f1e9854f0ab291383e3c775498-2"></a><span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">"dbname='template1' user='dbuser' host='localhost' password='dbpass'"</span><span class="p">)</span>
+<a name="rest_code_9f2886f1e9854f0ab291383e3c775498-3"></a><span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
 </pre>
 <p>Once you have the cursor of the database, you can execute queries with:</p>
-<pre class="code python literal-block">
-<span class="n">cr</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">your_query</span><span class="p">;)</span>
+<pre class="code python"><a name="rest_code_81cea2800d8d48a9bea63bcfd552399f-1"></a><span class="n">cr</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">your_query</span><span class="p">;)</span>
 </pre>
 <p>Source: <a class="reference external" href="https://wiki.postgresql.org/wiki/Psycopg2_Tutorial">https://wiki.postgresql.org/wiki/Psycopg2_Tutorial</a></p>
 </div>
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/copy-records-from-csv-in-postgresql.html" class="u-url">Copy records from csv in postgresql</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/copy-records-from-csv-in-postgresql.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-18T16:39:41+01:00" itemprop="datePublished" title="2014-07-18 16:39">2014-07-18 16:39</time></a></p>
+            <p class="byline author vcard"><span class="byline-name fn">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="posts/copy-records-from-csv-in-postgresql.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-18T16:39:41+01:00" title="2014-07-18 16:39">2014-07-18 16:39</time></a></p>
         </div>
     </header><div class="e-content entry-content">
     <div>
-<pre class="code sql literal-block">
-<span class="k">CREATE</span> <span class="k">TEMPORARY</span> <span class="k">TABLE</span> <span class="n">original_table_name_temp</span><span class="p">(</span><span class="k">like</span> <span class="n">original_table_name</span> <span class="k">including</span> <span class="k">all</span><span class="p">);</span>
-<span class="k">COPY</span> <span class="n">original_table_name_temp</span> <span class="k">FROM</span> <span class="s1">'path_of_your_csv'</span><span class="p">;</span>
+<pre class="code sql"><a name="rest_code_815e726dd03f420bbb142fbd689d3d03-1"></a><span class="k">CREATE</span> <span class="k">TEMPORARY</span> <span class="k">TABLE</span> <span class="n">original_table_name_temp</span><span class="p">(</span><span class="k">like</span> <span class="n">original_table_name</span> <span class="k">including</span> <span class="k">all</span><span class="p">);</span>
+<a name="rest_code_815e726dd03f420bbb142fbd689d3d03-2"></a><span class="k">COPY</span> <span class="n">original_table_name_temp</span> <span class="k">FROM</span> <span class="s1">'path_of_your_csv'</span><span class="p">;</span>
 </pre>
 <p>Source: <a class="reference external" href="http://postgresql.1045698.n5.nabble.com/reverse-strpos-td1891709.html">http://postgresql.1045698.n5.nabble.com/reverse-strpos-td1891709.html</a></p>
 </div>
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/git-branching-strategy.html" class="u-url">Git branching strategy</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/git-branching-strategy.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-13T12:44:49+01:00" itemprop="datePublished" title="2014-07-13 12:44">2014-07-13 12:44</time></a></p>
+            <p class="byline author vcard"><span class="byline-name fn">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="posts/git-branching-strategy.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-13T12:44:49+01:00" title="2014-07-13 12:44">2014-07-13 12:44</time></a></p>
         </div>
     </header><div class="e-content entry-content">
     <div>
@@ -205,8 +210,10 @@ pip install enum34
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vnc.html" class="u-url">VNC</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/vnc.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-10T16:05:22+01:00" itemprop="datePublished" title="2014-07-10 16:05">2014-07-10 16:05</time></a></p>
+            <p class="byline author vcard"><span class="byline-name fn">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="posts/vnc.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-10T16:05:22+01:00" title="2014-07-10 16:05">2014-07-10 16:05</time></a></p>
         </div>
     </header><div class="e-content entry-content">
     <div>
@@ -216,27 +223,26 @@ pip install enum34
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/screen.html" class="u-url">Screen</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/screen.html" rel="bookmark"><time class="published dt-published" datetime="2014-06-30T13:44:57+01:00" itemprop="datePublished" title="2014-06-30 13:44">2014-06-30 13:44</time></a></p>
+            <p class="byline author vcard"><span class="byline-name fn">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="posts/screen.html" rel="bookmark"><time class="published dt-published" datetime="2014-06-30T13:44:57+01:00" title="2014-06-30 13:44">2014-06-30 13:44</time></a></p>
         </div>
     </header><div class="e-content entry-content">
     <div>
 <div class="section" id="install-screen">
 <h2>Install screen</h2>
-<pre class="code bash literal-block">
-sudo apt-get install screen
+<pre class="code bash"><a name="rest_code_c7c6aab139be47ff804535092ef71c10-1"></a>sudo apt-get install screen
 </pre>
 </div>
 <div class="section" id="start-a-new-screen-session-with-session-name">
 <h2>Start a new screen session with session name</h2>
-<pre class="code bash literal-block">
-screen -S &lt;script_name&gt;
+<pre class="code bash"><a name="rest_code_eaf595223851421497265573ad70b5b1-1"></a>screen -S &lt;script_name&gt;
 </pre>
 </div>
 <div class="section" id="attach-to-a-running-session-with-name">
 <h2>Attach to a running session with name</h2>
-<pre class="code bash literal-block">
-screen -r &lt;script_name&gt;
+<pre class="code bash"><a name="rest_code_3be1a53c5b6c4ac5b1a51b93503f69a5-1"></a>screen -r &lt;script_name&gt;
 </pre>
 </div>
 <div class="section" id="escape-key">
@@ -247,8 +253,10 @@ screen -r &lt;script_name&gt;
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/Liclipse.html" class="u-url">Liclipse as Python editor</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/Liclipse.html" rel="bookmark"><time class="published dt-published" datetime="2014-06-28T13:31:05+01:00" itemprop="datePublished" title="2014-06-28 13:31">2014-06-28 13:31</time></a></p>
+            <p class="byline author vcard"><span class="byline-name fn">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="posts/Liclipse.html" rel="bookmark"><time class="published dt-published" datetime="2014-06-28T13:31:05+01:00" title="2014-06-28 13:31">2014-06-28 13:31</time></a></p>
         </div>
     </header><div class="e-content entry-content">
     <div>
@@ -257,15 +265,13 @@ screen -r &lt;script_name&gt;
 <p>Liclipse seems to be the IDE to go for Python edition if you come from the Eclipse + pydev plugin world: <a class="reference external" href="http://brainwy.github.io/liclipse/index.html">Liclipse</a> (Lightweight Eclipse)</p>
 <p>It comes with pydev and gedit plugin already integrated.</p>
 <p>On ubuntu 12.04, you need to install the following Java dependencies before being able to launch it.</p>
-<pre class="code bash literal-block">
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
-sudo apt-get install oracle-java7-installer
+<pre class="code bash"><a name="rest_code_7ae4664322ed456b8f1d3641c7e6bb9a-1"></a>sudo add-apt-repository ppa:webupd8team/java
+<a name="rest_code_7ae4664322ed456b8f1d3641c7e6bb9a-2"></a>sudo apt-get update
+<a name="rest_code_7ae4664322ed456b8f1d3641c7e6bb9a-3"></a>sudo apt-get install oracle-java7-installer
 </pre>
 <p>It'll keep your java 7 installation up to date.</p>
 <p>To automatically set up the Java 7 environment variables JAVA_HOME and PATH:</p>
-<pre class="code bash literal-block">
-sudo apt-get install oracle-java7-set-default
+<pre class="code bash"><a name="rest_code_406f6309d46249be9911be0096f85230-1"></a>sudo apt-get install oracle-java7-set-default
 </pre>
 <p>Source: <a class="reference external" href="http://stackoverflow.com/questions/16263556/installing-java-7-on-ubuntu">http://stackoverflow.com/questions/16263556/installing-java-7-on-ubuntu</a></p>
 </div>
@@ -284,8 +290,7 @@ sudo apt-get install oracle-java7-set-default
 <p>Similar to:</p>
 </li>
 </ul>
-<pre class="code bash literal-block">
-git blame
+<pre class="code bash"><a name="rest_code_ee7ff8f994ec40d0863a1834d270b1e0-1"></a>git blame
 </pre>
 <ul>
 <li>
@@ -293,8 +298,7 @@ git blame
 <p>Similar to:</p>
 </li>
 </ul>
-<pre class="code bash literal-block">
-git log -p
+<pre class="code bash"><a name="rest_code_2751a897dc714421997742b4361202c9-1"></a>git log -p
 </pre>
 </div>
 <div class="section" id="using-pydev">
@@ -325,17 +329,17 @@ git log -p
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/unresponsive-process.html" class="u-url">Unresponsive process</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Matthieu Choplin</span></p>
-            <p class="dateline"><a href="posts/unresponsive-process.html" rel="bookmark"><time class="published dt-published" datetime="2014-06-20T10:08:44+01:00" itemprop="datePublished" title="2014-06-20 10:08">2014-06-20 10:08</time></a></p>
+            <p class="byline author vcard"><span class="byline-name fn">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="posts/unresponsive-process.html" rel="bookmark"><time class="published dt-published" datetime="2014-06-20T10:08:44+01:00" title="2014-06-20 10:08">2014-06-20 10:08</time></a></p>
         </div>
     </header><div class="e-content entry-content">
     <div>
-<pre class="code bash literal-block">
-pkill -9f process-name
+<pre class="code bash"><a name="rest_code_ef336cd686064daba4572c958cb9c90e-1"></a>pkill -9f process-name
 </pre>
 <p>Example:</p>
-<pre class="code bash literal-block">
-pkill -9f filezilla
+<pre class="code bash"><a name="rest_code_21d79f0156f54be5ac06c47af4fd96d1-1"></a>pkill -9f filezilla
 </pre>
 <p>If you have launch a command that you cannot directly stopped with usually <em>ctrl+c</em>,
 you can always put the process in the background with <em>ctrl+z</em> and then use the
@@ -343,17 +347,16 @@ you can always put the process in the background with <em>ctrl+z</em> and then u
 Then, you have the number of the job and you can kill it with the command
 <em>kill %&lt;number_of_the_job&gt;</em>.</p>
 <p>Example:</p>
-<pre class="code bash literal-block">
-<span class="nv">$ </span>sleep 100
-^Z
-<span class="o">[</span>1<span class="o">]</span>+  Stopped                 sleep 100
-<span class="nv">$ </span><span class="nb">jobs</span>
-<span class="o">[</span>1<span class="o">]</span>+  Stopped                 sleep 100
-<span class="nv">$ </span><span class="nb">kill</span> %1
-<span class="nv">$ </span><span class="nb">jobs</span>
-<span class="o">[</span>1<span class="o">]</span>+  Terminated              sleep 100
-<span class="nv">$ </span><span class="nb">jobs</span>
-<span class="err">$</span>
+<pre class="code bash"><a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-1"></a><span class="nv">$ </span>sleep 100
+<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-2"></a>^Z
+<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-3"></a><span class="o">[</span>1<span class="o">]</span>+  Stopped                 sleep 100
+<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-4"></a><span class="nv">$ </span><span class="nb">jobs</span>
+<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-5"></a><span class="o">[</span>1<span class="o">]</span>+  Stopped                 sleep 100
+<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-6"></a><span class="nv">$ </span><span class="nb">kill</span> %1
+<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-7"></a><span class="nv">$ </span><span class="nb">jobs</span>
+<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-8"></a><span class="o">[</span>1<span class="o">]</span>+  Terminated              sleep 100
+<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-9"></a><span class="nv">$ </span><span class="nb">jobs</span>
+<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-10"></a><span class="err">$</span>
 </pre>
 </div>
     </div>
@@ -371,16 +374,16 @@ Then, you have the number of the job and you can kill it with the command
 </div>
         <!--End of body content-->
 
-        <footer>
-            Contents © 2014         <a href="mailto:choplin.mat@gmail.com">Matthieu Choplin</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
+        <footer id="footer">
+            Contents © 2015         <a href="mailto:choplin.mat@gmail.com">Matthieu Choplin</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>
 </div>
 
 
-            <script src="assets/js/all-nocdn.js"></script><script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-    moment.locale("");
+            <script src="assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
     fancydates(0, "YYYY-MM-DD HH:mm");
     </script><!-- end fancy dates --><script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

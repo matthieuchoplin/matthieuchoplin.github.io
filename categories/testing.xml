@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants (testing)</title><link>http://mattchoplin.com/</link><description></description><atom:link href="http://mattchoplin.com/categories/testing.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 20 Nov 2014 16:52:55 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python testing with doctest and unittest</title><link>http://mattchoplin.com/posts/python-testing-with-unittest.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="the-problem"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants (testing)</title><link>http://mattchoplin.com/</link><description></description><atom:link rel="self" type="application/rss+xml" href="http://mattchoplin.com/categories/testing.xml"></atom:link><language>en</language><lastBuildDate>Thu, 03 Dec 2015 14:38:28 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python testing with doctest and unittest</title><link>http://mattchoplin.com/posts/python-testing-with-unittest.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="the-problem"&gt;
 &lt;h2&gt;The problem:&lt;/h2&gt;
 &lt;p&gt;We want to create a function that is able to determine whether a string is a palindrome.&lt;/p&gt;
 &lt;p&gt;A palindrome is a word that is read the same from front-to-back and from back-to-front.&lt;/p&gt;
@@ -12,101 +12,101 @@
 &lt;/div&gt;
 &lt;div class="section" id="recipe-for-designing-functions"&gt;
 &lt;h2&gt;Recipe for designing functions:&lt;/h2&gt;
-&lt;ol class="arabic simple" start="0"&gt;&lt;li&gt;Give the function a name&lt;/li&gt;
+&lt;ol class="arabic simple" start="0"&gt;
+&lt;li&gt;Give the function a name&lt;/li&gt;
 &lt;li&gt;Examples&lt;/li&gt;
 &lt;li&gt;Type Contract&lt;/li&gt;
 &lt;li&gt;Header&lt;/li&gt;
 &lt;li&gt;Description&lt;/li&gt;
 &lt;li&gt;Body&lt;/li&gt;
 &lt;li&gt;Test&lt;/li&gt;
-&lt;/ol&gt;&lt;p&gt;First, we will see the python module &lt;em&gt;doctest&lt;/em&gt; which is good for having an up to date documentation.&lt;/p&gt;
+&lt;/ol&gt;
+&lt;p&gt;First, we will see the python module &lt;em&gt;doctest&lt;/em&gt; which is good for having an up to date documentation.&lt;/p&gt;
 &lt;p&gt;But using &lt;em&gt;doctest&lt;/em&gt; is not recommended for testing a whole program. This is why we will see the python module &lt;em&gt;unittest&lt;/em&gt; which is more relevant.&lt;/p&gt;
 &lt;p&gt;For more about the cons of using &lt;em&gt;doctest&lt;/em&gt;: &lt;a class="reference external" href="http://bemusement.org/narrative-tests"&gt;Narrative tests are lousy tests&lt;/a&gt; and &lt;a class="reference external" href="http://bemusement.org/doctests-arent-code"&gt;Tests are code and doctests are not&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Create the file &lt;em&gt;palindrome.py&lt;/em&gt;:&lt;/p&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="c"&gt;#! /usr/bin/python2.7&lt;/span&gt;
-
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;is_palindrome&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;"""(str) -&amp;gt; bool
-
-    Return True if and only if s is a palindrome.
-
-    &amp;gt;&amp;gt;&amp;gt; is_palindrome('noon')
-    True
-    &amp;gt;&amp;gt;&amp;gt; is_palindrome('racecar')
-    True
-    &amp;gt;&amp;gt;&amp;gt; is_palindrome('dented')
-    False
-    """&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;reverse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;
-
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;reverse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;"""(str) -&amp;gt; str
-
-    Return the reversed string.
-
-    &amp;gt;&amp;gt;&amp;gt; reverse('hello')
-    'olleh'
-    &amp;gt;&amp;gt;&amp;gt; reverse('a')
-    'a'
-    """&lt;/span&gt;
-    &lt;span class="n"&gt;rev&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;''&lt;/span&gt;
-    &lt;span class="c"&gt;# for each character in s, add the character at the beginning of rev.&lt;/span&gt;
-    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;char&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="n"&gt;rev&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;char&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;rev&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;rev&lt;/span&gt;
-
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;doctest&lt;/span&gt;
-&lt;span class="n"&gt;doctest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;testmod&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;We want to separate the tests from the main program and use the python &lt;em&gt;unittest&lt;/em&gt; module.&lt;/p&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-1"&gt;&lt;/a&gt;&lt;span class="c"&gt;#! /usr/bin/python2.7&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-3"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;is_palindrome&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-4"&gt;&lt;/a&gt;    &lt;span class="sd"&gt;"""(str) -&amp;gt; bool&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-6"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    Return True if and only if s is a palindrome.&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-7"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-8"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    &amp;gt;&amp;gt;&amp;gt; is_palindrome('noon')&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-9"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    True&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-10"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    &amp;gt;&amp;gt;&amp;gt; is_palindrome('racecar')&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-11"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    True&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-12"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    &amp;gt;&amp;gt;&amp;gt; is_palindrome('dented')&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-13"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    False&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-14"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    """&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-15"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;reverse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-16"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-17"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;reverse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-18"&gt;&lt;/a&gt;    &lt;span class="sd"&gt;"""(str) -&amp;gt; str&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-19"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-20"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    Return the reversed string.&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-21"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-22"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    &amp;gt;&amp;gt;&amp;gt; reverse('hello')&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-23"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    'olleh'&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-24"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    &amp;gt;&amp;gt;&amp;gt; reverse('a')&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-25"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    'a'&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-26"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    """&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-27"&gt;&lt;/a&gt;    &lt;span class="n"&gt;rev&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;''&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-28"&gt;&lt;/a&gt;    &lt;span class="c"&gt;# for each character in s, add the character at the beginning of rev.&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-29"&gt;&lt;/a&gt;    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;char&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-30"&gt;&lt;/a&gt;        &lt;span class="n"&gt;rev&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;char&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;rev&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-31"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;rev&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-32"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-33"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;doctest&lt;/span&gt;
+&lt;a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-34"&gt;&lt;/a&gt;&lt;span class="n"&gt;doctest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;testmod&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;We want to separate the tests from the main program and use the python &lt;em&gt;unittest&lt;/em&gt; module.&lt;/p&gt;
 &lt;p&gt;Create the file test_palindromes.py&lt;/p&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="c"&gt;#! /usr/bin/python2.7&lt;/span&gt;
-
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;unittest&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;palindromes&lt;/span&gt;
-
-
-&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;TestPalindrome&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;unittest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TestCase&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_is_palindrome_true&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;palindromes&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;is_palindrome&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'racecar'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEquals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_is_palindrome_false&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;palindromes&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;is_palindrome&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'dedent'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEquals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_reverse_normal&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;palindromes&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reverse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'hello'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEquals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'olleh'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_reverse_error&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="n"&gt;list_of_bad_value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
-        &lt;span class="mi"&gt;123&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        &lt;span class="p"&gt;]&lt;/span&gt;
-        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;bad_value&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;list_of_bad_value&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertRaises&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-                &lt;span class="ne"&gt;TypeError&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                &lt;span class="n"&gt;palindromes&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reverse&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                &lt;span class="n"&gt;bad_value&lt;/span&gt;
-            &lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;'__main__'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-    &lt;span class="n"&gt;unittest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;
-&lt;/div&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-1"&gt;&lt;/a&gt;&lt;span class="c"&gt;#! /usr/bin/python2.7&lt;/span&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-3"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;unittest&lt;/span&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-4"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;palindromes&lt;/span&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-6"&gt;&lt;/a&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;TestPalindrome&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;unittest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TestCase&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-8"&gt;&lt;/a&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-9"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_is_palindrome_true&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-10"&gt;&lt;/a&gt;        &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;palindromes&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;is_palindrome&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'racecar'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-11"&gt;&lt;/a&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEquals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-12"&gt;&lt;/a&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-13"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_is_palindrome_false&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-14"&gt;&lt;/a&gt;        &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;palindromes&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;is_palindrome&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'dedent'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-15"&gt;&lt;/a&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEquals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-16"&gt;&lt;/a&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-17"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_reverse_normal&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-18"&gt;&lt;/a&gt;        &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;palindromes&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reverse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'hello'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-19"&gt;&lt;/a&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEquals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'olleh'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-20"&gt;&lt;/a&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-21"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_reverse_error&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-22"&gt;&lt;/a&gt;        &lt;span class="n"&gt;list_of_bad_value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-23"&gt;&lt;/a&gt;        &lt;span class="mi"&gt;123&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-24"&gt;&lt;/a&gt;        &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-25"&gt;&lt;/a&gt;        &lt;span class="p"&gt;]&lt;/span&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-26"&gt;&lt;/a&gt;        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;bad_value&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;list_of_bad_value&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-27"&gt;&lt;/a&gt;            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertRaises&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-28"&gt;&lt;/a&gt;                &lt;span class="ne"&gt;TypeError&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-29"&gt;&lt;/a&gt;                &lt;span class="n"&gt;palindromes&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reverse&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-30"&gt;&lt;/a&gt;                &lt;span class="n"&gt;bad_value&lt;/span&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-31"&gt;&lt;/a&gt;            &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-32"&gt;&lt;/a&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-33"&gt;&lt;/a&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;'__main__'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_78d43c09486a4559b5f9786789e20659-34"&gt;&lt;/a&gt;    &lt;span class="n"&gt;unittest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="choosing-test-cases-to-test"&gt;
 &lt;h2&gt;Choosing test cases to test&lt;/h2&gt;
-&lt;ul class="simple"&gt;&lt;li&gt;Size: For collections, test with an empty collection, a collection with 1 item, the smallest interesting case, and a
+&lt;ul class="simple"&gt;
+&lt;li&gt;Size: For collections, test with an empty collection, a collection with 1 item, the smallest interesting case, and a
 collection with several items&lt;/li&gt;
 &lt;li&gt;Dichotomies: Vowels/Non Vowels, even/odd, positive/negative, empty/full, and so on.&lt;/li&gt;
 &lt;li&gt;Boundaries: If the function behaves differently for values near a particular threshold, test at that threshold.&lt;/li&gt;
 &lt;li&gt;Order: If the function behaves differently when the values are in different orders, identify and test each of those
 orders.&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;Source: &lt;a class="reference external" href="https://class.coursera.org/programming2-001"&gt;https://class.coursera.org/programming2-001&lt;/a&gt;&lt;/p&gt;
+&lt;/ul&gt;
+&lt;p&gt;Source: &lt;a class="reference external" href="https://class.coursera.org/programming2-001"&gt;https://class.coursera.org/programming2-001&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;&lt;/div&gt;</description><category>python</category><category>testing</category><guid>http://mattchoplin.com/posts/python-testing-with-unittest.html</guid><pubDate>Wed, 12 Nov 2014 15:02:45 GMT</pubDate></item><item><title>Agile testing</title><link>http://mattchoplin.com/posts/agile-testing.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;The best book I ever read about testing and best practices in an Agile project is: Agile Testing: A Practical Guide for Testers and Agile Teams (Addison-Wesley Signature)&lt;/p&gt;
 &lt;p&gt;The main idea of Agility is constantly giving and receiving &lt;em&gt;feedback&lt;/em&gt; in order to keep improving the process and the output of the project.&lt;/p&gt;
 &lt;img alt="Testing quadrant" class="well-large align-center" src="http://i.imgur.com/66JWt3b.png"&gt;&lt;/div&gt;</description><category>agile</category><category>testing</category><guid>http://mattchoplin.com/posts/agile-testing.html</guid><pubDate>Tue, 29 Jul 2014 15:19:08 GMT</pubDate></item></channel></rss>

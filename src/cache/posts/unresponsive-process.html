@@ -1,25 +1,20 @@
-<pre class="code bash literal-block">
-pkill -9f process-name
-</pre>
-<p>Example:</p>
-<pre class="code bash literal-block">
-pkill -9f filezilla
-</pre>
-<p>If you have launch a command that you cannot directly stopped with usually <em>ctrl+c</em>,
+<pre class="code bash"><a name="rest_code_ef336cd686064daba4572c958cb9c90e-1"></a>pkill -9f process-name
+</pre><p>Example:</p>
+<pre class="code bash"><a name="rest_code_21d79f0156f54be5ac06c47af4fd96d1-1"></a>pkill -9f filezilla
+</pre><p>If you have launch a command that you cannot directly stopped with usually <em>ctrl+c</em>,
 you can always put the process in the background with <em>ctrl+z</em> and then use the
 <em>jobs</em> command to list the job (command) that you have launched.
 Then, you have the number of the job and you can kill it with the command
 <em>kill %&lt;number_of_the_job&gt;</em>.</p>
 <p>Example:</p>
-<pre class="code bash literal-block">
-<span class="nv">$ </span>sleep 100
-^Z
-<span class="o">[</span>1<span class="o">]</span>+  Stopped                 sleep 100
-<span class="nv">$ </span><span class="nb">jobs</span>
-<span class="o">[</span>1<span class="o">]</span>+  Stopped                 sleep 100
-<span class="nv">$ </span><span class="nb">kill</span> %1
-<span class="nv">$ </span><span class="nb">jobs</span>
-<span class="o">[</span>1<span class="o">]</span>+  Terminated              sleep 100
-<span class="nv">$ </span><span class="nb">jobs</span>
-<span class="err">$</span>
+<pre class="code bash"><a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-1"></a><span class="nv">$ </span>sleep 100
+<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-2"></a>^Z
+<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-3"></a><span class="o">[</span>1<span class="o">]</span>+  Stopped                 sleep 100
+<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-4"></a><span class="nv">$ </span><span class="nb">jobs</span>
+<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-5"></a><span class="o">[</span>1<span class="o">]</span>+  Stopped                 sleep 100
+<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-6"></a><span class="nv">$ </span><span class="nb">kill</span> %1
+<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-7"></a><span class="nv">$ </span><span class="nb">jobs</span>
+<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-8"></a><span class="o">[</span>1<span class="o">]</span>+  Terminated              sleep 100
+<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-9"></a><span class="nv">$ </span><span class="nb">jobs</span>
+<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-10"></a><span class="err">$</span>
 </pre>

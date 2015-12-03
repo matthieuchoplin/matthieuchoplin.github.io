@@ -1,2 +1,4 @@
 Sitemap: http://mattchoplin.com/sitemapindex.xml
 
+User-Agent: *
+Host: mattchoplin.com

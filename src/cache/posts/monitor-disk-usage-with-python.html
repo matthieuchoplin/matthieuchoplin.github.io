@@ -1,12 +1,10 @@
 <p>The module to use in python2 is <em>statvfs</em> imported from <em>os</em></p>
-<pre class="code python literal-block">
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="n">statvfs</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">statvfs</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
-<span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_blocks</span>     <span class="c"># Size of filesystem in bytes</span>
-<span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_bfree</span>      <span class="c"># Actual number of free bytes</span>
-<span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_bavail</span>     <span class="c"># Number of free bytes that ordinary users</span>
-</pre>
-<p>NB: it is deprecated in python3, the module to use will be <a class="reference external" href="https://docs.python.org/3.3/library/os.html#os.fstat">fstat</a> os.fstat</p>
+<pre class="code python"><a name="rest_code_20fc1f4d698d4a90a96664098b90c8fc-1"></a><span class="kn">import</span> <span class="nn">os</span>
+<a name="rest_code_20fc1f4d698d4a90a96664098b90c8fc-2"></a><span class="n">statvfs</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">statvfs</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span>
+<a name="rest_code_20fc1f4d698d4a90a96664098b90c8fc-3"></a><span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_blocks</span>     <span class="c"># Size of filesystem in bytes</span>
+<a name="rest_code_20fc1f4d698d4a90a96664098b90c8fc-4"></a><span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_bfree</span>      <span class="c"># Actual number of free bytes</span>
+<a name="rest_code_20fc1f4d698d4a90a96664098b90c8fc-5"></a><span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_bavail</span>     <span class="c"># Number of free bytes that ordinary users</span>
+</pre><p>NB: it is deprecated in python3, the module to use will be <a class="reference external" href="https://docs.python.org/3.3/library/os.html#os.fstat">fstat</a> os.fstat</p>
 <p>Source:</p>
 <ul class="simple">
 <li><a class="reference external" href="http://stackoverflow.com/questions/4260116/find-size-and-free-space-of-the-filesystem-containing-a-given-file">http://stackoverflow.com/questions/4260116/find-size-and-free-space-of-the-filesystem-containing-a-given-file</a></li>
