@@ -1,7 +1,7 @@
 .. title: Talks
 .. slug: talks
 .. date: 2016-04-30 20:46:47 UTC+01:00
-.. tags: python courses
+.. tags: python, courses
 .. category: python
 .. link: 
 .. description: Public talks
