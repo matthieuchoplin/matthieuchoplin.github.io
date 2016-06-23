@@ -95,35 +95,35 @@
     </header><div class="e-content entry-content">
     <div>
 <p>If you want to use it in a version earlier than python3.3, you need yo install it:</p>
-<pre class="code bash"><a name="rest_code_88c4ad6e24954db6bc938ab2559279ac-1"></a>sudo pip install mock
+<pre class="code bash"><a name="rest_code_3ce08b9632bc48da984199c8368cd5c7-1"></a>sudo pip install mock
 </pre>
 <div class="section" id="simple-example">
 <h2>Simple example</h2>
 <p>Code to test:</p>
-<pre class="code python"><a name="rest_code_fa88291f217743f09d2ed5e65da2c92e-1"></a><span class="kn">import</span> <span class="nn">time</span>
-<a name="rest_code_fa88291f217743f09d2ed5e65da2c92e-2"></a><span class="k">def</span> <span class="nf">do_something</span><span class="p">():</span>
-<a name="rest_code_fa88291f217743f09d2ed5e65da2c92e-3"></a>    <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
-<a name="rest_code_fa88291f217743f09d2ed5e65da2c92e-4"></a>        <span class="k">print</span> <span class="s">'ok'</span>
-<a name="rest_code_fa88291f217743f09d2ed5e65da2c92e-5"></a>    <span class="k">else</span><span class="p">:</span>
-<a name="rest_code_fa88291f217743f09d2ed5e65da2c92e-6"></a>        <span class="k">print</span> <span class="s">'ko'</span>
+<pre class="code python"><a name="rest_code_52c8a8a43e8540a596c88385cdf26cfd-1"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_52c8a8a43e8540a596c88385cdf26cfd-2"></a><span class="k">def</span> <span class="nf">do_something</span><span class="p">():</span>
+<a name="rest_code_52c8a8a43e8540a596c88385cdf26cfd-3"></a>    <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+<a name="rest_code_52c8a8a43e8540a596c88385cdf26cfd-4"></a>        <span class="k">print</span> <span class="s1">'ok'</span>
+<a name="rest_code_52c8a8a43e8540a596c88385cdf26cfd-5"></a>    <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_52c8a8a43e8540a596c88385cdf26cfd-6"></a>        <span class="k">print</span> <span class="s1">'ko'</span>
 </pre>
 <p>Actual test:</p>
-<pre class="code python"><a name="rest_code_e57e549e9b2d474f996f44736f9aa3cb-1"></a><span class="kn">from</span> <span class="nn">mock</span> <span class="kn">import</span> <span class="n">patch</span>
-<a name="rest_code_e57e549e9b2d474f996f44736f9aa3cb-2"></a><span class="nd">@patch</span><span class="p">(</span><span class="s">'time.sleep'</span><span class="p">)</span>
-<a name="rest_code_e57e549e9b2d474f996f44736f9aa3cb-3"></a><span class="k">def</span> <span class="nf">test_do_something1</span><span class="p">(</span><span class="n">mock_sleep</span><span class="p">):</span>
-<a name="rest_code_e57e549e9b2d474f996f44736f9aa3cb-4"></a>    <span class="n">mock_sleep</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="bp">True</span>
-<a name="rest_code_e57e549e9b2d474f996f44736f9aa3cb-5"></a>    <span class="n">do_something</span><span class="p">()</span>
-<a name="rest_code_e57e549e9b2d474f996f44736f9aa3cb-6"></a>
-<a name="rest_code_e57e549e9b2d474f996f44736f9aa3cb-7"></a><span class="nd">@patch</span><span class="p">(</span><span class="s">'time.sleep'</span><span class="p">)</span>
-<a name="rest_code_e57e549e9b2d474f996f44736f9aa3cb-8"></a><span class="k">def</span> <span class="nf">test_do_something2</span><span class="p">(</span><span class="n">mock_sleep</span><span class="p">):</span>
-<a name="rest_code_e57e549e9b2d474f996f44736f9aa3cb-9"></a>    <span class="n">mock_sleep</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="bp">False</span>
-<a name="rest_code_e57e549e9b2d474f996f44736f9aa3cb-10"></a>    <span class="n">do_something</span><span class="p">()</span>
+<pre class="code python"><a name="rest_code_b6f0bf825f92444592ca589dd8c6a643-1"></a><span class="kn">from</span> <span class="nn">mock</span> <span class="kn">import</span> <span class="n">patch</span>
+<a name="rest_code_b6f0bf825f92444592ca589dd8c6a643-2"></a><span class="nd">@patch</span><span class="p">(</span><span class="s1">'time.sleep'</span><span class="p">)</span>
+<a name="rest_code_b6f0bf825f92444592ca589dd8c6a643-3"></a><span class="k">def</span> <span class="nf">test_do_something1</span><span class="p">(</span><span class="n">mock_sleep</span><span class="p">):</span>
+<a name="rest_code_b6f0bf825f92444592ca589dd8c6a643-4"></a>    <span class="n">mock_sleep</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="bp">True</span>
+<a name="rest_code_b6f0bf825f92444592ca589dd8c6a643-5"></a>    <span class="n">do_something</span><span class="p">()</span>
+<a name="rest_code_b6f0bf825f92444592ca589dd8c6a643-6"></a>
+<a name="rest_code_b6f0bf825f92444592ca589dd8c6a643-7"></a><span class="nd">@patch</span><span class="p">(</span><span class="s1">'time.sleep'</span><span class="p">)</span>
+<a name="rest_code_b6f0bf825f92444592ca589dd8c6a643-8"></a><span class="k">def</span> <span class="nf">test_do_something2</span><span class="p">(</span><span class="n">mock_sleep</span><span class="p">):</span>
+<a name="rest_code_b6f0bf825f92444592ca589dd8c6a643-9"></a>    <span class="n">mock_sleep</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="bp">False</span>
+<a name="rest_code_b6f0bf825f92444592ca589dd8c6a643-10"></a>    <span class="n">do_something</span><span class="p">()</span>
 </pre>
 <p>Results:</p>
-<pre class="code bash"><a name="rest_code_e58772234b6b40c98e400baf90309948-1"></a>&gt;&gt;&gt; test_do_something1<span class="o">()</span>
-<a name="rest_code_e58772234b6b40c98e400baf90309948-2"></a>ok
-<a name="rest_code_e58772234b6b40c98e400baf90309948-3"></a>&gt;&gt;&gt; test_do_something2<span class="o">()</span>
-<a name="rest_code_e58772234b6b40c98e400baf90309948-4"></a>ko
+<pre class="code bash"><a name="rest_code_0dd33921da7b48bfa8c73d9f6ca854bc-1"></a>&gt;&gt;&gt; test_do_something1<span class="o">()</span>
+<a name="rest_code_0dd33921da7b48bfa8c73d9f6ca854bc-2"></a>ok
+<a name="rest_code_0dd33921da7b48bfa8c73d9f6ca854bc-3"></a>&gt;&gt;&gt; test_do_something2<span class="o">()</span>
+<a name="rest_code_0dd33921da7b48bfa8c73d9f6ca854bc-4"></a>ko
 </pre>
 <p>Source:</p>
 <ul class="simple">
@@ -148,8 +148,8 @@
     </header><div class="e-content entry-content">
     <div>
 <p>Ignore escaping characters such as "\"</p>
-<pre class="code text"><a name="rest_code_4cf6d34d208544578b2efa32319bd2b3-1"></a>&gt;&gt;&gt; print r""" This is '\myfolder\'"""
-<a name="rest_code_4cf6d34d208544578b2efa32319bd2b3-2"></a>&gt;&gt;&gt; This is '\myfolder\'
+<pre class="code text"><a name="rest_code_eb87ac59e9cf433da072d79329b2eeaa-1"></a>&gt;&gt;&gt; print r""" This is '\myfolder\'"""
+<a name="rest_code_eb87ac59e9cf433da072d79329b2eeaa-2"></a>&gt;&gt;&gt; This is '\myfolder\'
 </pre>
 </div>
     </div>
@@ -169,7 +169,7 @@
     </header><div class="e-content entry-content">
     <div>
 <p>Example:</p>
-<pre class="code bash"><a name="rest_code_2658b764b1554c2e86d9665a53553555-1"></a>git commit -m <span class="s1">'Fixed whatever, time for :beers:'</span>
+<pre class="code bash"><a name="rest_code_44c3ed4536c945f081c306340ba33813-1"></a>git commit -m <span class="s1">'Fixed whatever, time for :beers:'</span>
 </pre>
 <p>See list of emoji here: <a class="reference external" href="http://scotch.io/bar-talk/emoji-icons-in-github-commit-messages">http://scotch.io/bar-talk/emoji-icons-in-github-commit-messages</a></p>
 </div>
@@ -190,10 +190,10 @@
     </header><div class="e-content entry-content">
     <div>
 <p>To find which application is using a specific port, do:</p>
-<pre class="code text"><a name="rest_code_7379becfccb44512b1e4096c1ce6a1b6-1"></a>lsof -i &lt;port-number&gt;
+<pre class="code text"><a name="rest_code_342ef74f21614087905da641ed6e6808-1"></a>lsof -i &lt;port-number&gt;
 </pre>
 <p>Or list ports with associated processes in use:</p>
-<pre class="code text"><a name="rest_code_ac2948b01d8e46dca93880ec12ddac8b-1"></a>netstat -putln
+<pre class="code text"><a name="rest_code_b94c1cffd844458c89025d8d54809164-1"></a>netstat -putln
 </pre>
 </div>
     </div>
@@ -216,12 +216,12 @@
 <p>Bitmask is going to be used so use this doc
 <a class="reference external" href="http://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/">http://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/</a></p>
 <p>It will be taken into account for the new log files only when we reload rsylog with this commend:</p>
-<pre class="code bash"><a name="rest_code_7cd7a604c7e94cdd9d559a5d9568089f-1"></a>/etc/init.d/rsyslog reload
+<pre class="code bash"><a name="rest_code_eba0871550474eda90aaa4a797e8cf2e-1"></a>/etc/init.d/rsyslog reload
 </pre>
 <p>The old files are still on the old configuration. So, you need to change the right access directly for them with chown and chmod.</p>
 <p>Example for vagrant user:</p>
-<pre class="code bash"><a name="rest_code_98dfb64bc6db4e18960247f64964989e-1"></a>root@openerp-development:/var/log/openerp# chown vagrant:vagrant /var/log/openerp/ -R
-<a name="rest_code_98dfb64bc6db4e18960247f64964989e-2"></a>root@openerp-development:/var/log/openerp# chmod a+r /var/log/openerp/ -R
+<pre class="code bash"><a name="rest_code_d942114bd01b417cbc381af18b28c766-1"></a>root@openerp-development:/var/log/openerp# chown vagrant:vagrant /var/log/openerp/ -R
+<a name="rest_code_d942114bd01b417cbc381af18b28c766-2"></a>root@openerp-development:/var/log/openerp# chmod a+r /var/log/openerp/ -R
 </pre>
 <p>Source: <a class="reference external" href="http://www.rsyslog.com/">http://www.rsyslog.com/</a></p>
 </div>
@@ -260,7 +260,7 @@
 </div>
     </header><div class="e-content entry-content">
     <div>
-<pre class="code sql"><a name="rest_code_50949c2586c64a4d8ff86136a8fe6cc5-1"></a><span class="n">psql</span> <span class="n">yourdatabase</span> <span class="o">-</span><span class="n">f</span> <span class="n">path_of_your_file</span><span class="p">.</span><span class="k">sql</span>
+<pre class="code sql"><a name="rest_code_fcaf8475229448f0a1f5a8003da34195-1"></a><span class="n">psql</span> <span class="n">yourdatabase</span> <span class="o">-</span><span class="n">f</span> <span class="n">path_of_your_file</span><span class="p">.</span><span class="k">sql</span>
 </pre>
 <div class="line-block">
 <div class="line"><br></div>
@@ -302,7 +302,7 @@
 </div>
     </header><div class="e-content entry-content">
     <div>
-<pre class="code sql"><a name="rest_code_3298737229ff4faeb8c6b2540e44dd29-1"></a><span class="k">COPY</span><span class="p">(</span><span class="n">QUERY</span><span class="p">)</span> <span class="k">TO</span> <span class="s1">'FILENAME'</span> <span class="k">WITH</span> <span class="n">CSV</span> <span class="n">HEADER</span><span class="p">;</span>
+<pre class="code sql"><a name="rest_code_b423c147542b4481bc8420f810a3e6ff-1"></a><span class="k">COPY</span><span class="p">(</span><span class="n">QUERY</span><span class="p">)</span> <span class="k">TO</span> <span class="s1">'FILENAME'</span> <span class="k">WITH</span> <span class="n">CSV</span> <span class="n">HEADER</span><span class="p">;</span>
 </pre>
 <p>For the other way around see: <a class="reference external" href="http://mattchoplin.com/posts/copy-records-from-csv-in-postgresql.html">Copy records from csv file to postgres DB</a></p>
 </div>

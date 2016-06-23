@@ -1,6 +1,6 @@
-<pre class="code postgresql"><a name="rest_code_7284921bb4454facbeea2c7b07d89aea-1"></a><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">pg_stat_activity</span> <span class="k">where</span> <span class="n">waiting</span><span class="o">=</span><span class="s1">&#39;t&#39;</span><span class="p">;</span>
+<pre class="code postgresql"><a name="rest_code_ebced17f4b26415ea7b386d476709edb-1"></a><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">pg_stat_activity</span> <span class="k">where</span> <span class="n">waiting</span><span class="o">=</span><span class="s1">&#39;t&#39;</span><span class="p">;</span>
 </pre><p>Fix the lock:</p>
-<pre class="code postgresql"><a name="rest_code_9b1c7be0b8ce48c7b88e22c9f04abf51-1"></a><span class="k">select</span> <span class="n">pg_cancel_backend</span><span class="p">(</span><span class="n">pid</span> <span class="nb">int</span><span class="p">)</span>
+<pre class="code postgresql"><a name="rest_code_e95e7c809f104655a48e84ee5990a512-1"></a><span class="k">select</span> <span class="n">pg_cancel_backend</span><span class="p">(</span><span class="n">pid</span> <span class="nb">int</span><span class="p">)</span>
 </pre><p>Where &quot;pid int&quot; is the pid you find with pg_stat_activity.</p>
 <p>Sources:</p>
 <ul class="simple">

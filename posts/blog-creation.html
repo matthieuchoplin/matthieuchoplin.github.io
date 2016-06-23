@@ -118,21 +118,21 @@ Create a repository called <em>username.github.io</em>, where username is your u
 <h2>Website generation using a Python framework: Nikola</h2>
 <p>This website is using <a class="reference external" href="http://getnikola.com">Nikola</a> which is a Python static website generator.
 Assuming that you have created a github repository called <em>username.github.io</em>, clone it with:</p>
-<pre class="code bash"><a name="rest_code_f775001378cc454ab5a5808e78dfa6fa-1"></a>git clone git@github.com:username/username.github.io.git
+<pre class="code bash"><a name="rest_code_cf42e63a939a43cdbc54ca7891806f8e-1"></a>git clone git@github.com:username/username.github.io.git
 </pre>
 <p>Then initialize your website with this command:</p>
-<pre class="code bash"><a name="rest_code_46bf04bb2aec422ab54b1bd021d3b721-1"></a>nikola init username.github.io
+<pre class="code bash"><a name="rest_code_5de61a881b0641979531a410642d0c4c-1"></a>nikola init username.github.io
 </pre>
 <p>where <em>username.github.io</em> is the repository you have just cloned.</p>
 <p>cd in this directory and execute this command:</p>
-<pre class="code bash"><a name="rest_code_511e7a73490748c3ab76d97218c3da74-1"></a>nikola build <span class="o">&amp;&amp;</span> nikola serve -b
+<pre class="code bash"><a name="rest_code_70d14292ddb444f2aa962935951ca46c-1"></a>nikola build <span class="o">&amp;&amp;</span> nikola serve -b
 </pre>
 <p>The website will open at the url <a class="reference external" href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>.</p>
 <p>To deploy to Github, change the file conf.py such as:</p>
-<pre class="code bash"><a name="rest_code_00803ef27cb642a7a2b07cd774e7f74b-1"></a><span class="nv">GITHUB_DEPLOY_BRANCH</span> <span class="o">=</span> <span class="s1">'master'</span>
+<pre class="code bash"><a name="rest_code_14be12c7e7b44f87872ce8c33c642666-1"></a><span class="nv">GITHUB_DEPLOY_BRANCH</span> <span class="o">=</span> <span class="s1">'master'</span>
 </pre>
 <p>Once you are happy with it, you can deploy to Github with the command:</p>
-<pre class="code bash"><a name="rest_code_e6c33a95124e474fa6b709d5e678ec54-1"></a>nikola github_deploy
+<pre class="code bash"><a name="rest_code_c24f04e8f0ad480cafd9474393db5265-1"></a>nikola github_deploy
 </pre>
 </div>
 <div class="section" id="posts-written-using-restructuredtext">
@@ -141,45 +141,45 @@ Assuming that you have created a github repository called <em>username.github.io
 <p>This is also a way to learn how to use Vim. Since Nikola 7.0.1, you can use the -e option when creating a new post.
 But before, you need to set up a default editor.
 If you want to use vim, you can first locate it:</p>
-<pre class="code bash"><a name="rest_code_6727b0182a24424bbad74013f2647fa6-1"></a>which vim
+<pre class="code bash"><a name="rest_code_ec613946db7c4b55bc0d641a234f5b03-1"></a>which vim
 </pre>
 <p>Then you can use it in the export variable:</p>
-<pre class="code bash"><a name="rest_code_1e1e2f99c2224194a6c9773bb794b79b-1"></a><span class="nb">export </span><span class="nv">EDITOR</span><span class="o">=</span>/usr/bin/vim
+<pre class="code bash"><a name="rest_code_8a85ac5529b242e4ad484471a9425502-1"></a><span class="nb">export</span> <span class="nv">EDITOR</span><span class="o">=</span>/usr/bin/vim
 </pre>
 </div>
 <div class="section" id="download-a-pre-built-template-from-bootswatch">
 <h2>Download a pre-built template from bootswatch</h2>
-<pre class="code bash"><a name="rest_code_68054017b0684f4dae752ed9e6ef1165-1"></a>nikola bootswatch_theme -n custom_theme -s spruce -p bootstrap3
+<pre class="code bash"><a name="rest_code_0667718870824e5e91cc607e2047a6b1-1"></a>nikola bootswatch_theme -n custom_theme -s spruce -p bootstrap3
 </pre>
 </div>
 <div class="section" id="installing-nikola">
 <h2>Installing Nikola</h2>
-<pre class="code bash"><a name="rest_code_50184da0139b4baf8b9a03672398c874-1"></a>pip install nikola
+<pre class="code bash"><a name="rest_code_a6229dc71d4d4d728e39d882237f77a0-1"></a>pip install nikola
 </pre>
 <p>If you have the following error while installing nikola:</p>
-<pre class="code bash"><a name="rest_code_5c258a6df51c482b8a8c719a11780053-1"></a>** make sure the development packages of libxml2 and libxslt are installed **
+<pre class="code bash"><a name="rest_code_3aec3cd427e3477a9f61ea8070d1f899-1"></a>** make sure the development packages of libxml2 and libxslt are installed **
 </pre>
 <p>You can fix it with:</p>
-<pre class="code bash"><a name="rest_code_529b3dc4417c46d4b21b115897119a72-1"></a>sudo apt-get install libxslt1-dev libxslt1.1 libxml2-dev libxml2 libssl-dev
+<pre class="code bash"><a name="rest_code_0328e97fc7d24c8f9f8c2a2285f1cbac-1"></a>sudo apt-get install libxslt1-dev libxslt1.1 libxml2-dev libxml2 libssl-dev
 </pre>
 </div>
 <div class="section" id="upgrading-nikola">
 <h2>Upgrading Nikola</h2>
 <p>Since Nikola can be installed with Pip, you can use the following command:</p>
-<pre class="code bash"><a name="rest_code_19a652ae321745bc9332f32e9fb292bf-1"></a>pip install -U nikola
+<pre class="code bash"><a name="rest_code_078da32ba378447f8dd1017d10fa51a3-1"></a>pip install -U nikola
 </pre>
 <p>To install pip, see <a class="reference external" href="http://pip.readthedocs.org/en/latest/installing.html">http://pip.readthedocs.org/en/latest/installing.html</a></p>
 <p>If you have the following error:</p>
-<pre class="code bash"><a name="rest_code_655c529691af4badaa294cc704eaa2af-1"></a>Python.h: No such file or directory
+<pre class="code bash"><a name="rest_code_8f3e2c22f5e349b5b0f92bc77e7e8366-1"></a>Python.h: No such file or directory
 </pre>
 <p>You can fix it with:</p>
-<pre class="code bash"><a name="rest_code_dabac1b9611a4bce870ee92466f71362-1"></a>sudo apt-get install python-dev
+<pre class="code bash"><a name="rest_code_81d02bfc38234f10a2046963f9688ce2-1"></a>sudo apt-get install python-dev
 </pre>
 <p>To upgrade pip:</p>
-<pre class="code bash"><a name="rest_code_7b4718faae834c478336840cf34b0aa4-1"></a>sudo easy_install -U pip
+<pre class="code bash"><a name="rest_code_f252bf37506f414c9f53c5470de4ac1a-1"></a>sudo easy_install -U pip
 </pre>
 <p>To downgrade pip to a previous version:</p>
-<pre class="code bash"><a name="rest_code_e81a72e793ce4da6851ec31812b89b56-1"></a>sudo easy_install <span class="nv">pip</span><span class="o">==</span>1.2.1
+<pre class="code bash"><a name="rest_code_e9d8fca20ceb4d5cad5fda378a851e40-1"></a>sudo easy_install <span class="nv">pip</span><span class="o">==</span>1.2.1
 </pre>
 </div>
 <div class="section" id="add-your-own-domain">

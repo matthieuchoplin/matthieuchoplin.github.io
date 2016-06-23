@@ -111,7 +111,7 @@ It will launch some lessons with an approach 'learning by ">
 <div class="section" id="vim-basics">
 <h2>VIM basics</h2>
 <p>The built in tutorial of Vim is very useful to know the basics. To launch it simply type the following in your terminal:</p>
-<pre class="code bash"><a name="rest_code_054e752425fa478eb777854d6c2b9660-1"></a><span class="nv">$vimtutor</span>
+<pre class="code bash"><a name="rest_code_82104c97535a4f7aab917c89a16ff7f9-1"></a><span class="nv">$vimtutor</span>
 </pre>
 <p>It will launch some lessons with an approach 'learning by doing'.</p>
 </div>
@@ -123,32 +123,32 @@ It will launch some lessons with an approach 'learning by ">
 <h2>vim memento</h2>
 <div class="section" id="simple-vimrc">
 <h3>Simple vimrc</h3>
-<pre class="code bash"><a name="rest_code_d00de16cb21d40738991c1d1365d58ed-1"></a><span class="nb">set </span><span class="nv">textwidth</span><span class="o">=</span><span class="m">79</span>  <span class="s2">" lines longer than 79 columns will be broken</span>
-<a name="rest_code_d00de16cb21d40738991c1d1365d58ed-2"></a><span class="s2">set shiftwidth=4  "</span> operation &gt;&gt; indents <span class="m">4</span> columns<span class="p">;</span> <span class="s">&lt;&lt; unindents 4 columns</span>
-<a name="rest_code_d00de16cb21d40738991c1d1365d58ed-3"></a><span class="s">set tabstop=4     " a hard TAB displays as 4 columns</span>
-<a name="rest_code_d00de16cb21d40738991c1d1365d58ed-4"></a><span class="s">set expandtab     " insert spaces when hitting TABs</span>
-<a name="rest_code_d00de16cb21d40738991c1d1365d58ed-5"></a><span class="s">set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE</span>
-<a name="rest_code_d00de16cb21d40738991c1d1365d58ed-6"></a><span class="s">set shiftroun</span>d    <span class="s2">" round indent to multiple of 'shiftwidth'</span>
-<a name="rest_code_d00de16cb21d40738991c1d1365d58ed-7"></a><span class="s2">set autoindent    "</span> align the new line indent with the previous line
+<pre class="code bash"><a name="rest_code_a9ade10d4b454732acc1d57b9eededa9-1"></a><span class="nb">set</span> <span class="nv">textwidth</span><span class="o">=</span><span class="m">79</span>  <span class="s2">" lines longer than 79 columns will be broken</span>
+<a name="rest_code_a9ade10d4b454732acc1d57b9eededa9-2"></a><span class="s2">set shiftwidth=4  "</span> operation &gt;&gt; indents <span class="m">4</span> columns<span class="p">;</span> <span class="s">&lt;&lt; unindents 4 columns</span>
+<a name="rest_code_a9ade10d4b454732acc1d57b9eededa9-3"></a><span class="s">set tabstop=4     " a hard TAB displays as 4 columns</span>
+<a name="rest_code_a9ade10d4b454732acc1d57b9eededa9-4"></a><span class="s">set expandtab     " insert spaces when hitting TABs</span>
+<a name="rest_code_a9ade10d4b454732acc1d57b9eededa9-5"></a><span class="s">set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE</span>
+<a name="rest_code_a9ade10d4b454732acc1d57b9eededa9-6"></a><span class="s">set shiftroun</span>d    <span class="s2">" round indent to multiple of 'shiftwidth'</span>
+<a name="rest_code_a9ade10d4b454732acc1d57b9eededa9-7"></a><span class="s2">set autoindent    "</span> align the new line indent with the previous line
 </pre>
 </div>
 <div class="section" id="jump-to-function-definition">
 <h3>Jump to function definition:</h3>
-<pre class="code bash"><a name="rest_code_bfb4f85a98f14a4a8082942ec010430d-1"></a>g + *
+<pre class="code bash"><a name="rest_code_382e9a883c6b483a9874ef70d368a7aa-1"></a>g + *
 </pre>
 </div>
 <div class="section" id="highlight-variable-under-cursor">
 <h3>Highlight variable under cursor:</h3>
-<pre class="code bash"><a name="rest_code_9911fd6fd4ec4d60b45925377cf3e57e-1"></a>:autocmd CursorMoved * exe <span class="nb">printf</span><span class="o">(</span><span class="s1">'match IncSearch /\V\&lt;%s\&gt;/'</span>, escape<span class="o">(</span>expand<span class="o">(</span><span class="s1">'&lt;cword&gt;'</span><span class="o">)</span>, <span class="s1">'/\'</span><span class="o">))</span>
+<pre class="code bash"><a name="rest_code_cbe7bb89a4a64ac7ac066ac1144b80f5-1"></a>:autocmd CursorMoved * exe printf<span class="o">(</span><span class="s1">'match IncSearch /\V\&lt;%s\&gt;/'</span>, escape<span class="o">(</span>expand<span class="o">(</span><span class="s1">'&lt;cword&gt;'</span><span class="o">)</span>, <span class="s1">'/\'</span><span class="o">))</span>
 </pre>
 </div>
 <div class="section" id="move-cursor-to-its-last-position">
 <h3>Move cursor to its last position:</h3>
 <p>The quickest way is to hit either:</p>
-<pre class="code bash"><a name="rest_code_d36a5a9e111a4aef831abec3b0aa2563-1"></a><span class="s1">''</span>
+<pre class="code bash"><a name="rest_code_993ecc7c76c14db29d5ff5debe9ae7e8-1"></a><span class="s1">''</span>
 </pre>
 <p>(two apostrophes) or:</p>
-<pre class="code bash"><a name="rest_code_6a40f53304a44d5fafeeae8b4e1c1a00-1"></a><span class="sb">``</span>
+<pre class="code bash"><a name="rest_code_c7deffa6a78744d494274c5895f0e034-1"></a><span class="sb">``</span>
 </pre>
 <p>(two backticks). Note that the difference is that the backtick goes to the same location on the line, whereas the apostrophe goes to the start of the line. On a UK keyboard, the apostrophe is more accessible, so I tend to use that one. There are loads of useful marks like this, see :help mark-motions.
 For some other motions (not 2j I think), there's also the jump-list that lets you navigate back and forth among a number of motions.  Ctrl-O and Ctrl-I do this navigation, but see :help jump-motions for more information.</p>
@@ -156,24 +156,24 @@ For some other motions (not 2j I think), there's also the jump-list that lets yo
 <div class="section" id="line-numbers">
 <h3>Line numbers</h3>
 <p>To display line numbers along the left side of a window, type any one of the following command while using text editor:</p>
-<pre class="code bash"><a name="rest_code_3e8c48f77199401bab18a341ba80c759-1"></a>:set number
+<pre class="code bash"><a name="rest_code_1aa1c6b1cbbd475796d4cba6a985db43-1"></a>:set number
 </pre>
 </div>
 <div class="section" id="go-to-line">
 <h3>Go to line</h3>
-<pre class="code bash"><a name="rest_code_15e59212473149edaac73c979bc7127b-1"></a>:42
+<pre class="code bash"><a name="rest_code_2a51ca4193144be5a648c153cd09f567-1"></a>:42
 </pre>
 <p>where 42 is the number of line you want to go</p>
 </div>
 <div class="section" id="split-the-screen">
 <h3>Split the screen</h3>
-<pre class="code bash"><a name="rest_code_d59d0b3747974f5981e5853c600b628c-1"></a>:vsp
+<pre class="code bash"><a name="rest_code_56216fb0990c48428432659ef269f9c7-1"></a>:vsp
 </pre>
 </div>
 <div class="section" id="paste-from-another-application-into-vim">
 <h3>Paste from another application into vim</h3>
 <p>To avoid indentation issue:</p>
-<pre class="code bash"><a name="rest_code_329794826d0d426aa8172547c018da7a-1"></a>:set paste
+<pre class="code bash"><a name="rest_code_8afe42081a8c4a02a5dd86adbd5827b1-1"></a>:set paste
 </pre>
 </div>
 </div>

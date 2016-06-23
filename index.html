@@ -116,77 +116,77 @@
 <p>But using <em>doctest</em> is not recommended for testing a whole program. This is why we will see the python module <em>unittest</em> which is more relevant.</p>
 <p>For more about the cons of using <em>doctest</em>: <a class="reference external" href="http://bemusement.org/narrative-tests">Narrative tests are lousy tests</a> and <a class="reference external" href="http://bemusement.org/doctests-arent-code">Tests are code and doctests are not</a>.</p>
 <p>Create the file <em>palindrome.py</em>:</p>
-<pre class="code python"><a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-1"></a><span class="c">#! /usr/bin/python2.7</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-2"></a>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-3"></a><span class="k">def</span> <span class="nf">is_palindrome</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-4"></a>    <span class="sd">"""(str) -&gt; bool</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-5"></a>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-6"></a><span class="sd">    Return True if and only if s is a palindrome.</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-7"></a>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-8"></a><span class="sd">    &gt;&gt;&gt; is_palindrome('noon')</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-9"></a><span class="sd">    True</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-10"></a><span class="sd">    &gt;&gt;&gt; is_palindrome('racecar')</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-11"></a><span class="sd">    True</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-12"></a><span class="sd">    &gt;&gt;&gt; is_palindrome('dented')</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-13"></a><span class="sd">    False</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-14"></a><span class="sd">    """</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-15"></a>    <span class="k">return</span> <span class="n">reverse</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">==</span> <span class="n">s</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-16"></a>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-17"></a><span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-18"></a>    <span class="sd">"""(str) -&gt; str</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-19"></a>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-20"></a><span class="sd">    Return the reversed string.</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-21"></a>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-22"></a><span class="sd">    &gt;&gt;&gt; reverse('hello')</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-23"></a><span class="sd">    'olleh'</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-24"></a><span class="sd">    &gt;&gt;&gt; reverse('a')</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-25"></a><span class="sd">    'a'</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-26"></a><span class="sd">    """</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-27"></a>    <span class="n">rev</span> <span class="o">=</span> <span class="s">''</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-28"></a>    <span class="c"># for each character in s, add the character at the beginning of rev.</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-29"></a>    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-30"></a>        <span class="n">rev</span> <span class="o">=</span> <span class="n">char</span> <span class="o">+</span> <span class="n">rev</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-31"></a>    <span class="k">return</span> <span class="n">rev</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-32"></a>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-33"></a><span class="kn">import</span> <span class="nn">doctest</span>
-<a name="rest_code_ea0eba0ad84045e4a94e4af21e7d8710-34"></a><span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
+<pre class="code python"><a name="rest_code_ca79bc873add4aea9fdb696246eec374-1"></a><span class="ch">#! /usr/bin/python2.7</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-2"></a>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-3"></a><span class="k">def</span> <span class="nf">is_palindrome</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-4"></a>    <span class="sd">"""(str) -&gt; bool</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-5"></a>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-6"></a><span class="sd">    Return True if and only if s is a palindrome.</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-7"></a>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-8"></a><span class="sd">    &gt;&gt;&gt; is_palindrome('noon')</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-9"></a><span class="sd">    True</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-10"></a><span class="sd">    &gt;&gt;&gt; is_palindrome('racecar')</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-11"></a><span class="sd">    True</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-12"></a><span class="sd">    &gt;&gt;&gt; is_palindrome('dented')</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-13"></a><span class="sd">    False</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-14"></a><span class="sd">    """</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-15"></a>    <span class="k">return</span> <span class="n">reverse</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">==</span> <span class="n">s</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-16"></a>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-17"></a><span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-18"></a>    <span class="sd">"""(str) -&gt; str</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-19"></a>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-20"></a><span class="sd">    Return the reversed string.</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-21"></a>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-22"></a><span class="sd">    &gt;&gt;&gt; reverse('hello')</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-23"></a><span class="sd">    'olleh'</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-24"></a><span class="sd">    &gt;&gt;&gt; reverse('a')</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-25"></a><span class="sd">    'a'</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-26"></a><span class="sd">    """</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-27"></a>    <span class="n">rev</span> <span class="o">=</span> <span class="s1">''</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-28"></a>    <span class="c1"># for each character in s, add the character at the beginning of rev.</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-29"></a>    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-30"></a>        <span class="n">rev</span> <span class="o">=</span> <span class="n">char</span> <span class="o">+</span> <span class="n">rev</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-31"></a>    <span class="k">return</span> <span class="n">rev</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-32"></a>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-33"></a><span class="kn">import</span> <span class="nn">doctest</span>
+<a name="rest_code_ca79bc873add4aea9fdb696246eec374-34"></a><span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
 </pre>
 <p>We want to separate the tests from the main program and use the python <em>unittest</em> module.</p>
 <p>Create the file test_palindromes.py</p>
-<pre class="code python"><a name="rest_code_78d43c09486a4559b5f9786789e20659-1"></a><span class="c">#! /usr/bin/python2.7</span>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-2"></a>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-3"></a><span class="kn">import</span> <span class="nn">unittest</span>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-4"></a><span class="kn">import</span> <span class="nn">palindromes</span>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-5"></a>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-6"></a>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-7"></a><span class="k">class</span> <span class="nc">TestPalindrome</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-8"></a>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-9"></a>    <span class="k">def</span> <span class="nf">test_is_palindrome_true</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-10"></a>        <span class="n">value</span> <span class="o">=</span> <span class="n">palindromes</span><span class="o">.</span><span class="n">is_palindrome</span><span class="p">(</span><span class="s">'racecar'</span><span class="p">)</span>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-11"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-12"></a>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-13"></a>    <span class="k">def</span> <span class="nf">test_is_palindrome_false</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-14"></a>        <span class="n">value</span> <span class="o">=</span> <span class="n">palindromes</span><span class="o">.</span><span class="n">is_palindrome</span><span class="p">(</span><span class="s">'dedent'</span><span class="p">)</span>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-16"></a>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-17"></a>    <span class="k">def</span> <span class="nf">test_reverse_normal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-18"></a>        <span class="n">value</span> <span class="o">=</span> <span class="n">palindromes</span><span class="o">.</span><span class="n">reverse</span><span class="p">(</span><span class="s">'hello'</span><span class="p">)</span>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-19"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s">'olleh'</span><span class="p">)</span>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-20"></a>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-21"></a>    <span class="k">def</span> <span class="nf">test_reverse_error</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-22"></a>        <span class="n">list_of_bad_value</span> <span class="o">=</span> <span class="p">[</span>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-23"></a>        <span class="mi">123</span><span class="p">,</span>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-24"></a>        <span class="bp">None</span><span class="p">,</span>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-25"></a>        <span class="p">]</span>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-26"></a>        <span class="k">for</span> <span class="n">bad_value</span> <span class="ow">in</span> <span class="n">list_of_bad_value</span><span class="p">:</span>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-27"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-28"></a>                <span class="ne">TypeError</span><span class="p">,</span>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-29"></a>                <span class="n">palindromes</span><span class="o">.</span><span class="n">reverse</span><span class="p">,</span>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-30"></a>                <span class="n">bad_value</span>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-31"></a>            <span class="p">)</span>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-32"></a>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-33"></a><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
-<a name="rest_code_78d43c09486a4559b5f9786789e20659-34"></a>    <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+<pre class="code python"><a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-1"></a><span class="ch">#! /usr/bin/python2.7</span>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-2"></a>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-3"></a><span class="kn">import</span> <span class="nn">unittest</span>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-4"></a><span class="kn">import</span> <span class="nn">palindromes</span>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-5"></a>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-6"></a>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-7"></a><span class="k">class</span> <span class="nc">TestPalindrome</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-8"></a>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-9"></a>    <span class="k">def</span> <span class="nf">test_is_palindrome_true</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-10"></a>        <span class="n">value</span> <span class="o">=</span> <span class="n">palindromes</span><span class="o">.</span><span class="n">is_palindrome</span><span class="p">(</span><span class="s1">'racecar'</span><span class="p">)</span>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-11"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-12"></a>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-13"></a>    <span class="k">def</span> <span class="nf">test_is_palindrome_false</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-14"></a>        <span class="n">value</span> <span class="o">=</span> <span class="n">palindromes</span><span class="o">.</span><span class="n">is_palindrome</span><span class="p">(</span><span class="s1">'dedent'</span><span class="p">)</span>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-16"></a>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-17"></a>    <span class="k">def</span> <span class="nf">test_reverse_normal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-18"></a>        <span class="n">value</span> <span class="o">=</span> <span class="n">palindromes</span><span class="o">.</span><span class="n">reverse</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">)</span>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-19"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s1">'olleh'</span><span class="p">)</span>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-20"></a>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-21"></a>    <span class="k">def</span> <span class="nf">test_reverse_error</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-22"></a>        <span class="n">list_of_bad_value</span> <span class="o">=</span> <span class="p">[</span>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-23"></a>        <span class="mi">123</span><span class="p">,</span>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-24"></a>        <span class="bp">None</span><span class="p">,</span>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-25"></a>        <span class="p">]</span>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-26"></a>        <span class="k">for</span> <span class="n">bad_value</span> <span class="ow">in</span> <span class="n">list_of_bad_value</span><span class="p">:</span>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-27"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-28"></a>                <span class="ne">TypeError</span><span class="p">,</span>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-29"></a>                <span class="n">palindromes</span><span class="o">.</span><span class="n">reverse</span><span class="p">,</span>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-30"></a>                <span class="n">bad_value</span>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-31"></a>            <span class="p">)</span>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-32"></a>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-33"></a><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<a name="rest_code_5414973bdcd4421aaf8a8b25d4dda7b6-34"></a>    <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
 </pre>
 </div>
 <div class="section" id="choosing-test-cases-to-test">
@@ -222,11 +222,11 @@ orders.</li>
 <h2>The keyword <em>with</em>
 </h2>
 <p>The context manager is going to be used with the keyword <em>with</em> such as:</p>
-<pre class="code python"><a name="rest_code_83ee93b33855485d9668f6d623a1465d-1"></a><span class="k">with</span> <span class="n">MyContextManager</span> <span class="k">as</span> <span class="n">context_var</span><span class="p">:</span>
-<a name="rest_code_83ee93b33855485d9668f6d623a1465d-2"></a>    <span class="c"># here the statement is going to evaluate the methods</span>
-<a name="rest_code_83ee93b33855485d9668f6d623a1465d-3"></a>    <span class="c"># __enter__ and __exit__ of the class MyContextManager.</span>
-<a name="rest_code_83ee93b33855485d9668f6d623a1465d-4"></a>    <span class="c"># The value returned by __enter__ is going to be assigned</span>
-<a name="rest_code_83ee93b33855485d9668f6d623a1465d-5"></a>    <span class="c"># to the variable "context_var".</span>
+<pre class="code python"><a name="rest_code_a1eb4dfb74d84663844447727da1546d-1"></a><span class="k">with</span> <span class="n">MyContextManager</span> <span class="k">as</span> <span class="n">context_var</span><span class="p">:</span>
+<a name="rest_code_a1eb4dfb74d84663844447727da1546d-2"></a>    <span class="c1"># here the statement is going to evaluate the methods</span>
+<a name="rest_code_a1eb4dfb74d84663844447727da1546d-3"></a>    <span class="c1"># __enter__ and __exit__ of the class MyContextManager.</span>
+<a name="rest_code_a1eb4dfb74d84663844447727da1546d-4"></a>    <span class="c1"># The value returned by __enter__ is going to be assigned</span>
+<a name="rest_code_a1eb4dfb74d84663844447727da1546d-5"></a>    <span class="c1"># to the variable "context_var".</span>
 </pre>
 </div>
 <div class="section" id="the-context-manager-can-be-defined-as-a-class">
@@ -249,38 +249,38 @@ If you don't want the exception to be handled by the context manager, just let i
 </div>
 <div class="section" id="example">
 <h2>Example</h2>
-<pre class="code python"><a name="rest_code_a26e36d5df3c4a36b628c34a64f285db-1"></a><span class="k">class</span> <span class="nc">MyContextManager</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-<a name="rest_code_a26e36d5df3c4a36b628c34a64f285db-2"></a>    <span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_a26e36d5df3c4a36b628c34a64f285db-3"></a>        <span class="k">print</span> <span class="s">'__enter__()'</span>
-<a name="rest_code_a26e36d5df3c4a36b628c34a64f285db-4"></a>        <span class="k">return</span> <span class="bp">self</span>
-<a name="rest_code_a26e36d5df3c4a36b628c34a64f285db-5"></a>    <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception_type</span><span class="p">,</span> <span class="n">exception_value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
-<a name="rest_code_a26e36d5df3c4a36b628c34a64f285db-6"></a>        <span class="k">print</span> <span class="s">'__exit__()'</span>
-<a name="rest_code_a26e36d5df3c4a36b628c34a64f285db-7"></a>
-<a name="rest_code_a26e36d5df3c4a36b628c34a64f285db-8"></a><span class="k">with</span> <span class="n">MyContextManager</span><span class="p">()</span> <span class="k">as</span> <span class="n">context_var</span><span class="p">:</span>
-<a name="rest_code_a26e36d5df3c4a36b628c34a64f285db-9"></a>    <span class="k">print</span> <span class="s">'Doing work in the context'</span>
+<pre class="code python"><a name="rest_code_53c97a34ecc847d68bac9f8420f743b7-1"></a><span class="k">class</span> <span class="nc">MyContextManager</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<a name="rest_code_53c97a34ecc847d68bac9f8420f743b7-2"></a>    <span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_53c97a34ecc847d68bac9f8420f743b7-3"></a>        <span class="k">print</span> <span class="s1">'__enter__()'</span>
+<a name="rest_code_53c97a34ecc847d68bac9f8420f743b7-4"></a>        <span class="k">return</span> <span class="bp">self</span>
+<a name="rest_code_53c97a34ecc847d68bac9f8420f743b7-5"></a>    <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception_type</span><span class="p">,</span> <span class="n">exception_value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
+<a name="rest_code_53c97a34ecc847d68bac9f8420f743b7-6"></a>        <span class="k">print</span> <span class="s1">'__exit__()'</span>
+<a name="rest_code_53c97a34ecc847d68bac9f8420f743b7-7"></a>
+<a name="rest_code_53c97a34ecc847d68bac9f8420f743b7-8"></a><span class="k">with</span> <span class="n">MyContextManager</span><span class="p">()</span> <span class="k">as</span> <span class="n">context_var</span><span class="p">:</span>
+<a name="rest_code_53c97a34ecc847d68bac9f8420f743b7-9"></a>    <span class="k">print</span> <span class="s1">'Doing work in the context'</span>
 </pre>
 <p>Where the output is:</p>
-<pre class="code bash"><a name="rest_code_6bde38e006f94c50900ad6207239da22-1"></a>__enter__<span class="o">()</span>
-<a name="rest_code_6bde38e006f94c50900ad6207239da22-2"></a>Doing work in the context
-<a name="rest_code_6bde38e006f94c50900ad6207239da22-3"></a>__exit__<span class="o">()</span>
+<pre class="code bash"><a name="rest_code_79b0a71fe346443484eeca4dfb6984ef-1"></a>__enter__<span class="o">()</span>
+<a name="rest_code_79b0a71fe346443484eeca4dfb6984ef-2"></a>Doing work in the context
+<a name="rest_code_79b0a71fe346443484eeca4dfb6984ef-3"></a>__exit__<span class="o">()</span>
 </pre>
 </div>
 <div class="section" id="the-context-manager-can-also-be-defined-as-a-generator">
 <h2>The Context Manager can also be defined as a Generator</h2>
 <p>Here, we use the contextlib library and the module contextmanager.</p>
 <p>The equivalent of the example above would be:</p>
-<pre class="code python"><a name="rest_code_a3b46a5c2d8541ceb652bf24ca67dc9f-1"></a><span class="kn">import</span> <span class="nn">contextlib</span>
-<a name="rest_code_a3b46a5c2d8541ceb652bf24ca67dc9f-2"></a>
-<a name="rest_code_a3b46a5c2d8541ceb652bf24ca67dc9f-3"></a><span class="nd">@contextlib.contextmanager</span>
-<a name="rest_code_a3b46a5c2d8541ceb652bf24ca67dc9f-4"></a><span class="k">def</span> <span class="nf">mycontextmanager</span><span class="p">():</span>
-<a name="rest_code_a3b46a5c2d8541ceb652bf24ca67dc9f-5"></a>    <span class="k">print</span> <span class="s">"__enter__"</span>
-<a name="rest_code_a3b46a5c2d8541ceb652bf24ca67dc9f-6"></a>    <span class="k">try</span><span class="p">:</span>
-<a name="rest_code_a3b46a5c2d8541ceb652bf24ca67dc9f-7"></a>        <span class="k">yield</span>
-<a name="rest_code_a3b46a5c2d8541ceb652bf24ca67dc9f-8"></a>    <span class="k">finally</span><span class="p">:</span>
-<a name="rest_code_a3b46a5c2d8541ceb652bf24ca67dc9f-9"></a>        <span class="k">print</span> <span class="s">"__exit__"</span>
-<a name="rest_code_a3b46a5c2d8541ceb652bf24ca67dc9f-10"></a>
-<a name="rest_code_a3b46a5c2d8541ceb652bf24ca67dc9f-11"></a><span class="k">with</span> <span class="n">mycontextmanager</span><span class="p">()</span> <span class="k">as</span> <span class="n">context_var</span><span class="p">:</span>
-<a name="rest_code_a3b46a5c2d8541ceb652bf24ca67dc9f-12"></a>    <span class="k">print</span> <span class="s">'Doing work in the context'</span>
+<pre class="code python"><a name="rest_code_f4864062485a458c81609177514ba990-1"></a><span class="kn">import</span> <span class="nn">contextlib</span>
+<a name="rest_code_f4864062485a458c81609177514ba990-2"></a>
+<a name="rest_code_f4864062485a458c81609177514ba990-3"></a><span class="nd">@contextlib.contextmanager</span>
+<a name="rest_code_f4864062485a458c81609177514ba990-4"></a><span class="k">def</span> <span class="nf">mycontextmanager</span><span class="p">():</span>
+<a name="rest_code_f4864062485a458c81609177514ba990-5"></a>    <span class="k">print</span> <span class="s2">"__enter__"</span>
+<a name="rest_code_f4864062485a458c81609177514ba990-6"></a>    <span class="k">try</span><span class="p">:</span>
+<a name="rest_code_f4864062485a458c81609177514ba990-7"></a>        <span class="k">yield</span>
+<a name="rest_code_f4864062485a458c81609177514ba990-8"></a>    <span class="k">finally</span><span class="p">:</span>
+<a name="rest_code_f4864062485a458c81609177514ba990-9"></a>        <span class="k">print</span> <span class="s2">"__exit__"</span>
+<a name="rest_code_f4864062485a458c81609177514ba990-10"></a>
+<a name="rest_code_f4864062485a458c81609177514ba990-11"></a><span class="k">with</span> <span class="n">mycontextmanager</span><span class="p">()</span> <span class="k">as</span> <span class="n">context_var</span><span class="p">:</span>
+<a name="rest_code_f4864062485a458c81609177514ba990-12"></a>    <span class="k">print</span> <span class="s1">'Doing work in the context'</span>
 </pre>
 <p>First we use the decorator <em>@contextmanager</em> to indicate to Python that the function will be a context manager.</p>
 <p>Then, we do a <em>try/finally</em> (it is not automatic like with __enter__ and __exit__).</p>
@@ -311,32 +311,32 @@ If you don't want the exception to be handled by the context manager, just let i
     </header><div class="e-content entry-content">
     <div>
 <p>In .bashrc</p>
-<pre class="code bash"><a name="rest_code_0201ffd4dd4b48e191080226bcae83ed-1"></a><span class="c"># recursive search in files</span>
-<a name="rest_code_0201ffd4dd4b48e191080226bcae83ed-2"></a>
-<a name="rest_code_0201ffd4dd4b48e191080226bcae83ed-3"></a><span class="k">function</span> grp <span class="o">{</span>
-<a name="rest_code_0201ffd4dd4b48e191080226bcae83ed-4"></a>
-<a name="rest_code_0201ffd4dd4b48e191080226bcae83ed-5"></a>    <span class="nv">GREP_OPTIONS</span><span class="o">=</span><span class="s2">"-rI --color --exclude-dir=\.bzr --exclude-dir=\.git --exclude-dir=\.hg --exclude-dir=\.svn --exclude=tags </span><span class="nv">$GREP_OPTIONS</span><span class="s2">"</span> grep <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
-<a name="rest_code_0201ffd4dd4b48e191080226bcae83ed-6"></a>
-<a name="rest_code_0201ffd4dd4b48e191080226bcae83ed-7"></a><span class="o">}</span>
-<a name="rest_code_0201ffd4dd4b48e191080226bcae83ed-8"></a>
-<a name="rest_code_0201ffd4dd4b48e191080226bcae83ed-9"></a>
-<a name="rest_code_0201ffd4dd4b48e191080226bcae83ed-10"></a>
-<a name="rest_code_0201ffd4dd4b48e191080226bcae83ed-11"></a><span class="c"># recursive search in Python source</span>
-<a name="rest_code_0201ffd4dd4b48e191080226bcae83ed-12"></a>
-<a name="rest_code_0201ffd4dd4b48e191080226bcae83ed-13"></a><span class="k">function</span> grpy <span class="o">{</span>
-<a name="rest_code_0201ffd4dd4b48e191080226bcae83ed-14"></a>
-<a name="rest_code_0201ffd4dd4b48e191080226bcae83ed-15"></a>  <span class="nv">GREP_OPTIONS</span><span class="o">=</span><span class="s2">"--exclude-dir=build --exclude-dir=dist --include=*.py </span><span class="nv">$GREP_OPTIONS</span><span class="s2">"</span> grp <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
-<a name="rest_code_0201ffd4dd4b48e191080226bcae83ed-16"></a>
-<a name="rest_code_0201ffd4dd4b48e191080226bcae83ed-17"></a><span class="o">}</span>
+<pre class="code bash"><a name="rest_code_897d6439c11f43dbaee3ad67df4016aa-1"></a><span class="c1"># recursive search in files</span>
+<a name="rest_code_897d6439c11f43dbaee3ad67df4016aa-2"></a>
+<a name="rest_code_897d6439c11f43dbaee3ad67df4016aa-3"></a><span class="k">function</span> grp <span class="o">{</span>
+<a name="rest_code_897d6439c11f43dbaee3ad67df4016aa-4"></a>
+<a name="rest_code_897d6439c11f43dbaee3ad67df4016aa-5"></a>    <span class="nv">GREP_OPTIONS</span><span class="o">=</span><span class="s2">"-rI --color --exclude-dir=\.bzr --exclude-dir=\.git --exclude-dir=\.hg --exclude-dir=\.svn --exclude=tags </span><span class="nv">$GREP_OPTIONS</span><span class="s2">"</span> grep <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
+<a name="rest_code_897d6439c11f43dbaee3ad67df4016aa-6"></a>
+<a name="rest_code_897d6439c11f43dbaee3ad67df4016aa-7"></a><span class="o">}</span>
+<a name="rest_code_897d6439c11f43dbaee3ad67df4016aa-8"></a>
+<a name="rest_code_897d6439c11f43dbaee3ad67df4016aa-9"></a>
+<a name="rest_code_897d6439c11f43dbaee3ad67df4016aa-10"></a>
+<a name="rest_code_897d6439c11f43dbaee3ad67df4016aa-11"></a><span class="c1"># recursive search in Python source</span>
+<a name="rest_code_897d6439c11f43dbaee3ad67df4016aa-12"></a>
+<a name="rest_code_897d6439c11f43dbaee3ad67df4016aa-13"></a><span class="k">function</span> grpy <span class="o">{</span>
+<a name="rest_code_897d6439c11f43dbaee3ad67df4016aa-14"></a>
+<a name="rest_code_897d6439c11f43dbaee3ad67df4016aa-15"></a>  <span class="nv">GREP_OPTIONS</span><span class="o">=</span><span class="s2">"--exclude-dir=build --exclude-dir=dist --include=*.py </span><span class="nv">$GREP_OPTIONS</span><span class="s2">"</span> grp <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
+<a name="rest_code_897d6439c11f43dbaee3ad67df4016aa-16"></a>
+<a name="rest_code_897d6439c11f43dbaee3ad67df4016aa-17"></a><span class="o">}</span>
 </pre>
 <p>Use:</p>
-<pre class="code bash"><a name="rest_code_237053d581a340bd8b02a441c59edb41-1"></a><span class="nv">$ </span>grp WORD .
+<pre class="code bash"><a name="rest_code_e7270b6ff35e4481af161e3957913e2b-1"></a>$ grp WORD .
 </pre>
 <p>Or</p>
-<pre class="code bash"><a name="rest_code_8e05ad7c6d134aa38e0bd726e45a3652-1"></a><span class="nv">$ </span>grpy to just search in python files
+<pre class="code bash"><a name="rest_code_45a1ae9513d44347b4ec5b15758ccef0-1"></a>$ grpy to just search in python files
 </pre>
 <p>Then reload bashrc with:</p>
-<pre class="code bash"><a name="rest_code_ae5515c830be46adbcef6ed663e69759-1"></a><span class="nv">$ </span>. ~/.bashrc
+<pre class="code bash"><a name="rest_code_9d388d1fa2424990bc5c5b34e06a3078-1"></a>$ . ~/.bashrc
 </pre>
 <p>Thank you JB!! (<a class="reference external" href="http://tartley.com/">http://tartley.com/</a>)</p>
 </div>
@@ -358,11 +358,11 @@ If you don't want the exception to be handled by the context manager, just let i
     <div>
 <p>A MonkeyPatch is a piece of Python code which extends or modifies other code at runtime (typically at startup). MonkeyPatching would be the practice of writing, or running, a monkeypatch.</p>
 <p>A simple example looks like this:</p>
-<pre class="code python"><a name="rest_code_998332583eb345e689c2d175037947d0-1"></a><span class="kn">from</span> <span class="nn">SomeOtherProduct.SomeModule</span> <span class="kn">import</span> <span class="n">SomeClass</span>
-<a name="rest_code_998332583eb345e689c2d175037947d0-2"></a><span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_998332583eb345e689c2d175037947d0-3"></a>    <span class="k">return</span> <span class="s">"ook ook eee eee eee!"</span>
-<a name="rest_code_998332583eb345e689c2d175037947d0-4"></a>
-<a name="rest_code_998332583eb345e689c2d175037947d0-5"></a><span class="n">SomeClass</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="n">speak</span>
+<pre class="code python"><a name="rest_code_96a9983aa6f8485cb8c62027f153a803-1"></a><span class="kn">from</span> <span class="nn">SomeOtherProduct.SomeModule</span> <span class="kn">import</span> <span class="n">SomeClass</span>
+<a name="rest_code_96a9983aa6f8485cb8c62027f153a803-2"></a><span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_96a9983aa6f8485cb8c62027f153a803-3"></a>    <span class="k">return</span> <span class="s2">"ook ook eee eee eee!"</span>
+<a name="rest_code_96a9983aa6f8485cb8c62027f153a803-4"></a>
+<a name="rest_code_96a9983aa6f8485cb8c62027f153a803-5"></a><span class="n">SomeClass</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="n">speak</span>
 </pre>
 <p>In this example, if <em>SomeClass</em> did not already have a <em>speak()</em> method, it does now :-) If it had a speak() method before, <strong>the new code has replaced the old method definition</strong>.</p>
 <p>Sources:</p>
@@ -388,11 +388,11 @@ If you don't want the exception to be handled by the context manager, just let i
     </header><div class="e-content entry-content">
     <div>
 <p>The module to use in python2 is <em>statvfs</em> imported from <em>os</em></p>
-<pre class="code python"><a name="rest_code_20fc1f4d698d4a90a96664098b90c8fc-1"></a><span class="kn">import</span> <span class="nn">os</span>
-<a name="rest_code_20fc1f4d698d4a90a96664098b90c8fc-2"></a><span class="n">statvfs</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">statvfs</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
-<a name="rest_code_20fc1f4d698d4a90a96664098b90c8fc-3"></a><span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_blocks</span>     <span class="c"># Size of filesystem in bytes</span>
-<a name="rest_code_20fc1f4d698d4a90a96664098b90c8fc-4"></a><span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_bfree</span>      <span class="c"># Actual number of free bytes</span>
-<a name="rest_code_20fc1f4d698d4a90a96664098b90c8fc-5"></a><span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_bavail</span>     <span class="c"># Number of free bytes that ordinary users</span>
+<pre class="code python"><a name="rest_code_2ab0a525928f4f41b130003178d3999c-1"></a><span class="kn">import</span> <span class="nn">os</span>
+<a name="rest_code_2ab0a525928f4f41b130003178d3999c-2"></a><span class="n">statvfs</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">statvfs</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
+<a name="rest_code_2ab0a525928f4f41b130003178d3999c-3"></a><span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_blocks</span>     <span class="c1"># Size of filesystem in bytes</span>
+<a name="rest_code_2ab0a525928f4f41b130003178d3999c-4"></a><span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_bfree</span>      <span class="c1"># Actual number of free bytes</span>
+<a name="rest_code_2ab0a525928f4f41b130003178d3999c-5"></a><span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_bavail</span>     <span class="c1"># Number of free bytes that ordinary users</span>
 </pre>
 <p>NB: it is deprecated in python3, the module to use will be <a class="reference external" href="https://docs.python.org/3.3/library/os.html#os.fstat">fstat</a> os.fstat</p>
 <p>Source:</p>
@@ -423,28 +423,28 @@ If you don't want the exception to be handled by the context manager, just let i
 <p>This is a simple snippets for sending an email with a gmail smtp server.</p>
 <p>If you want to send emails from localhost, you will have to first enable an smtp server.</p>
 <p>So, the simplest is to use gmail smtp server:</p>
-<pre class="code python"><a name="rest_code_0ce3b31e24ad4d358ae4b1d60a41237c-1"></a><span class="kn">import</span> <span class="nn">smtplib</span>
-<a name="rest_code_0ce3b31e24ad4d358ae4b1d60a41237c-2"></a>
-<a name="rest_code_0ce3b31e24ad4d358ae4b1d60a41237c-3"></a><span class="c"># define the method</span>
-<a name="rest_code_0ce3b31e24ad4d358ae4b1d60a41237c-4"></a><span class="k">def</span> <span class="nf">sendemail</span><span class="p">(</span><span class="n">from_addr</span><span class="p">,</span> <span class="n">to_addr_list</span><span class="p">,</span> <span class="n">cc_addr_list</span><span class="p">,</span>
-<a name="rest_code_0ce3b31e24ad4d358ae4b1d60a41237c-5"></a>              <span class="n">subject</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span>
-<a name="rest_code_0ce3b31e24ad4d358ae4b1d60a41237c-6"></a>              <span class="n">login</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span>
-<a name="rest_code_0ce3b31e24ad4d358ae4b1d60a41237c-7"></a>              <span class="n">smtpserver</span><span class="o">=</span><span class="s">'smtp.gmail.com:587'</span><span class="p">):</span>
-<a name="rest_code_0ce3b31e24ad4d358ae4b1d60a41237c-8"></a>    <span class="n">header</span>  <span class="o">=</span> <span class="s">'From: </span><span class="si">%s</span><span class="se">\n</span><span class="s">'</span> <span class="o">%</span> <span class="n">from_addr</span>
-<a name="rest_code_0ce3b31e24ad4d358ae4b1d60a41237c-9"></a>    <span class="n">header</span> <span class="o">+=</span> <span class="s">'To: </span><span class="si">%s</span><span class="se">\n</span><span class="s">'</span> <span class="o">%</span> <span class="s">','</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">to_addr_list</span><span class="p">)</span>
-<a name="rest_code_0ce3b31e24ad4d358ae4b1d60a41237c-10"></a>    <span class="n">header</span> <span class="o">+=</span> <span class="s">'Cc: </span><span class="si">%s</span><span class="se">\n</span><span class="s">'</span> <span class="o">%</span> <span class="s">','</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cc_addr_list</span><span class="p">)</span>
-<a name="rest_code_0ce3b31e24ad4d358ae4b1d60a41237c-11"></a>    <span class="n">header</span> <span class="o">+=</span> <span class="s">'Subject: </span><span class="si">%s</span><span class="se">\n\n</span><span class="s">'</span> <span class="o">%</span> <span class="n">subject</span>
-<a name="rest_code_0ce3b31e24ad4d358ae4b1d60a41237c-12"></a>    <span class="n">message</span> <span class="o">=</span> <span class="n">header</span> <span class="o">+</span> <span class="n">message</span>
-<a name="rest_code_0ce3b31e24ad4d358ae4b1d60a41237c-13"></a>
-<a name="rest_code_0ce3b31e24ad4d358ae4b1d60a41237c-14"></a>    <span class="n">server</span> <span class="o">=</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="n">smtpserver</span><span class="p">)</span>
-<a name="rest_code_0ce3b31e24ad4d358ae4b1d60a41237c-15"></a>    <span class="n">server</span><span class="o">.</span><span class="n">starttls</span><span class="p">()</span>
-<a name="rest_code_0ce3b31e24ad4d358ae4b1d60a41237c-16"></a>    <span class="n">server</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">login</span><span class="p">,</span><span class="n">password</span><span class="p">)</span>
-<a name="rest_code_0ce3b31e24ad4d358ae4b1d60a41237c-17"></a>    <span class="n">problems</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="n">from_addr</span><span class="p">,</span> <span class="n">to_addr_list</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
-<a name="rest_code_0ce3b31e24ad4d358ae4b1d60a41237c-18"></a>    <span class="n">server</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
-<a name="rest_code_0ce3b31e24ad4d358ae4b1d60a41237c-19"></a>
-<a name="rest_code_0ce3b31e24ad4d358ae4b1d60a41237c-20"></a><span class="c">#execute the method</span>
-<a name="rest_code_0ce3b31e24ad4d358ae4b1d60a41237c-21"></a><span class="n">sendemail</span><span class="p">(</span><span class="s">'me@domain.com'</span><span class="p">,</span> <span class="p">[</span><span class="s">'you@yourdomain.com'</span><span class="p">],</span> <span class="p">[</span><span class="s">'andyou@yourdomain.com'</span><span class="p">],</span>
-<a name="rest_code_0ce3b31e24ad4d358ae4b1d60a41237c-22"></a>          <span class="s">'test subject'</span><span class="p">,</span> <span class="s">'test message'</span><span class="p">,</span> <span class="s">'mylogin@gmail.com'</span><span class="p">,</span> <span class="s">'mypassword'</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_22c061e0451f41218ad9115c720ffee0-1"></a><span class="kn">import</span> <span class="nn">smtplib</span>
+<a name="rest_code_22c061e0451f41218ad9115c720ffee0-2"></a>
+<a name="rest_code_22c061e0451f41218ad9115c720ffee0-3"></a><span class="c1"># define the method</span>
+<a name="rest_code_22c061e0451f41218ad9115c720ffee0-4"></a><span class="k">def</span> <span class="nf">sendemail</span><span class="p">(</span><span class="n">from_addr</span><span class="p">,</span> <span class="n">to_addr_list</span><span class="p">,</span> <span class="n">cc_addr_list</span><span class="p">,</span>
+<a name="rest_code_22c061e0451f41218ad9115c720ffee0-5"></a>              <span class="n">subject</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span>
+<a name="rest_code_22c061e0451f41218ad9115c720ffee0-6"></a>              <span class="n">login</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span>
+<a name="rest_code_22c061e0451f41218ad9115c720ffee0-7"></a>              <span class="n">smtpserver</span><span class="o">=</span><span class="s1">'smtp.gmail.com:587'</span><span class="p">):</span>
+<a name="rest_code_22c061e0451f41218ad9115c720ffee0-8"></a>    <span class="n">header</span>  <span class="o">=</span> <span class="s1">'From: </span><span class="si">%s</span><span class="se">\n</span><span class="s1">'</span> <span class="o">%</span> <span class="n">from_addr</span>
+<a name="rest_code_22c061e0451f41218ad9115c720ffee0-9"></a>    <span class="n">header</span> <span class="o">+=</span> <span class="s1">'To: </span><span class="si">%s</span><span class="se">\n</span><span class="s1">'</span> <span class="o">%</span> <span class="s1">','</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">to_addr_list</span><span class="p">)</span>
+<a name="rest_code_22c061e0451f41218ad9115c720ffee0-10"></a>    <span class="n">header</span> <span class="o">+=</span> <span class="s1">'Cc: </span><span class="si">%s</span><span class="se">\n</span><span class="s1">'</span> <span class="o">%</span> <span class="s1">','</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cc_addr_list</span><span class="p">)</span>
+<a name="rest_code_22c061e0451f41218ad9115c720ffee0-11"></a>    <span class="n">header</span> <span class="o">+=</span> <span class="s1">'Subject: </span><span class="si">%s</span><span class="se">\n\n</span><span class="s1">'</span> <span class="o">%</span> <span class="n">subject</span>
+<a name="rest_code_22c061e0451f41218ad9115c720ffee0-12"></a>    <span class="n">message</span> <span class="o">=</span> <span class="n">header</span> <span class="o">+</span> <span class="n">message</span>
+<a name="rest_code_22c061e0451f41218ad9115c720ffee0-13"></a>
+<a name="rest_code_22c061e0451f41218ad9115c720ffee0-14"></a>    <span class="n">server</span> <span class="o">=</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="n">smtpserver</span><span class="p">)</span>
+<a name="rest_code_22c061e0451f41218ad9115c720ffee0-15"></a>    <span class="n">server</span><span class="o">.</span><span class="n">starttls</span><span class="p">()</span>
+<a name="rest_code_22c061e0451f41218ad9115c720ffee0-16"></a>    <span class="n">server</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">login</span><span class="p">,</span><span class="n">password</span><span class="p">)</span>
+<a name="rest_code_22c061e0451f41218ad9115c720ffee0-17"></a>    <span class="n">problems</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="n">from_addr</span><span class="p">,</span> <span class="n">to_addr_list</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+<a name="rest_code_22c061e0451f41218ad9115c720ffee0-18"></a>    <span class="n">server</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+<a name="rest_code_22c061e0451f41218ad9115c720ffee0-19"></a>
+<a name="rest_code_22c061e0451f41218ad9115c720ffee0-20"></a><span class="c1">#execute the method</span>
+<a name="rest_code_22c061e0451f41218ad9115c720ffee0-21"></a><span class="n">sendemail</span><span class="p">(</span><span class="s1">'me@domain.com'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'you@yourdomain.com'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'andyou@yourdomain.com'</span><span class="p">],</span>
+<a name="rest_code_22c061e0451f41218ad9115c720ffee0-22"></a>          <span class="s1">'test subject'</span><span class="p">,</span> <span class="s1">'test message'</span><span class="p">,</span> <span class="s1">'mylogin@gmail.com'</span><span class="p">,</span> <span class="s1">'mypassword'</span><span class="p">)</span>
 </pre>
 <p>Source:</p>
 <ul class="simple">
@@ -492,59 +492,59 @@ If you don't want the exception to be handled by the context manager, just let i
     </header><div class="e-content entry-content">
     <div>
 <p>Create a directory called sentry:</p>
-<pre class="code bash"><a name="rest_code_9027e3e8496d471f826df9d850071ebe-1"></a><span class="c"># mkdir /opt/sentry &amp;&amp; cd /opt/sentry</span>
+<pre class="code bash"><a name="rest_code_c4be1f719ea04fe2ae649ddc0dbd2e39-1"></a><span class="c1"># mkdir /opt/sentry &amp;&amp; cd /opt/sentry</span>
 </pre>
 <p>Create a virtual environment and activate it:</p>
-<pre class="code bash"><a name="rest_code_8c29d9a9e76e401d87e1f11f5658ec95-1"></a><span class="c"># virtualenv sentry &amp;&amp; source /opt/sentry/sentry/bin/activate</span>
+<pre class="code bash"><a name="rest_code_426fb25f0e97456794e5f5583743cfa1-1"></a><span class="c1"># virtualenv sentry &amp;&amp; source /opt/sentry/sentry/bin/activate</span>
 </pre>
 <p>Install Sentry:</p>
-<pre class="code bash"><a name="rest_code_3a9ec75cd896491484394181d68b02dc-1"></a><span class="c"># easy_install -UZ sentry[postgres]</span>
-<a name="rest_code_3a9ec75cd896491484394181d68b02dc-2"></a><span class="c"># easy_install -UZ sentry</span>
+<pre class="code bash"><a name="rest_code_85bd5defa63b462a9b89d7a138153470-1"></a><span class="c1"># easy_install -UZ sentry[postgres]</span>
+<a name="rest_code_85bd5defa63b462a9b89d7a138153470-2"></a><span class="c1"># easy_install -UZ sentry</span>
 </pre>
 <p>Initialize the conifguration</p>
-<pre class="code bash"><a name="rest_code_080494666f484a0ea09be109573b02f9-1"></a><span class="c"># sentry init /opt/sentry/sentry.conf.py</span>
+<pre class="code bash"><a name="rest_code_5e887340fe184055abc11fc4d9a19eb0-1"></a><span class="c1"># sentry init /opt/sentry/sentry.conf.py</span>
 </pre>
 <p>In the configuration file /opt/sentry/sentry.conf.py, you are going to change:</p>
 <ul class="simple">
 <li>the database configuration such as:</li>
 </ul>
-<pre class="code python"><a name="rest_code_87502a5455ee428fbabbe43cd8570f6a-1"></a><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_87502a5455ee428fbabbe43cd8570f6a-2"></a>  <span class="s">'default'</span><span class="p">:</span> <span class="p">{</span>
-<a name="rest_code_87502a5455ee428fbabbe43cd8570f6a-3"></a>                <span class="s">'ENGINE'</span><span class="p">:</span> <span class="s">'django.db.backends.postgresql_psycopg2'</span><span class="p">,</span>
-<a name="rest_code_87502a5455ee428fbabbe43cd8570f6a-4"></a>                <span class="s">'NAME'</span><span class="p">:</span> <span class="s">'sentry'</span><span class="p">,</span>
-<a name="rest_code_87502a5455ee428fbabbe43cd8570f6a-5"></a>                <span class="s">'USER'</span><span class="p">:</span> <span class="s">'sentry'</span><span class="p">,</span>
-<a name="rest_code_87502a5455ee428fbabbe43cd8570f6a-6"></a>                <span class="s">'PASSWORD'</span><span class="p">:</span> <span class="s">'sentry'</span><span class="p">,</span>
-<a name="rest_code_87502a5455ee428fbabbe43cd8570f6a-7"></a>                <span class="s">'HOST'</span><span class="p">:</span> <span class="s">'localhost'</span><span class="p">,</span>
-<a name="rest_code_87502a5455ee428fbabbe43cd8570f6a-8"></a>                <span class="s">'PORT'</span><span class="p">:</span> <span class="s">''</span><span class="p">,</span>
-<a name="rest_code_87502a5455ee428fbabbe43cd8570f6a-9"></a>             <span class="p">}</span>
-<a name="rest_code_87502a5455ee428fbabbe43cd8570f6a-10"></a>           <span class="p">}</span>
+<pre class="code python"><a name="rest_code_137566f1312747a883f186004549bcd7-1"></a><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+<a name="rest_code_137566f1312747a883f186004549bcd7-2"></a>  <span class="s1">'default'</span><span class="p">:</span> <span class="p">{</span>
+<a name="rest_code_137566f1312747a883f186004549bcd7-3"></a>                <span class="s1">'ENGINE'</span><span class="p">:</span> <span class="s1">'django.db.backends.postgresql_psycopg2'</span><span class="p">,</span>
+<a name="rest_code_137566f1312747a883f186004549bcd7-4"></a>                <span class="s1">'NAME'</span><span class="p">:</span> <span class="s1">'sentry'</span><span class="p">,</span>
+<a name="rest_code_137566f1312747a883f186004549bcd7-5"></a>                <span class="s1">'USER'</span><span class="p">:</span> <span class="s1">'sentry'</span><span class="p">,</span>
+<a name="rest_code_137566f1312747a883f186004549bcd7-6"></a>                <span class="s1">'PASSWORD'</span><span class="p">:</span> <span class="s1">'sentry'</span><span class="p">,</span>
+<a name="rest_code_137566f1312747a883f186004549bcd7-7"></a>                <span class="s1">'HOST'</span><span class="p">:</span> <span class="s1">'localhost'</span><span class="p">,</span>
+<a name="rest_code_137566f1312747a883f186004549bcd7-8"></a>                <span class="s1">'PORT'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
+<a name="rest_code_137566f1312747a883f186004549bcd7-9"></a>             <span class="p">}</span>
+<a name="rest_code_137566f1312747a883f186004549bcd7-10"></a>           <span class="p">}</span>
 </pre>
 <ul class="simple">
 <li>And the url:</li>
 </ul>
-<pre class="code python"><a name="rest_code_c6893ed12afd4fe8bcbe428a4735d483-1"></a><span class="n">SENTRY_URL_PREFIX</span> <span class="o">=</span> <span class="s">'http://192.168.50.4:9000'</span> <span class="c"># the ip address of the server</span>
+<pre class="code python"><a name="rest_code_f301e855e0a7466b911261438ddc1214-1"></a><span class="n">SENTRY_URL_PREFIX</span> <span class="o">=</span> <span class="s1">'http://192.168.50.4:9000'</span> <span class="c1"># the ip address of the server</span>
 </pre>
 <p>Install postgresql</p>
-<pre class="code bash"><a name="rest_code_60ddd25b95a447ae9683900e26a581be-1"></a><span class="c"># apt-get install postgresql-9.3</span>
+<pre class="code bash"><a name="rest_code_d3922dd9b58f49b084e88ff27c489d4d-1"></a><span class="c1"># apt-get install postgresql-9.3</span>
 </pre>
 <p>Create a user for sentry:</p>
-<pre class="code bash"><a name="rest_code_e79b0f15623d40c3aa45008ed4992c6a-1"></a><span class="c"># sudo su postgres</span>
-<a name="rest_code_e79b0f15623d40c3aa45008ed4992c6a-2"></a><span class="nv">$ </span>createuser sentry
-<a name="rest_code_e79b0f15623d40c3aa45008ed4992c6a-3"></a><span class="nv">$ </span>psql template1
-<a name="rest_code_e79b0f15623d40c3aa45008ed4992c6a-4"></a><span class="c"># alter role sentry with password 'sentry';</span>
+<pre class="code bash"><a name="rest_code_55a4a56e1d464caabe8d48d6ac8c5401-1"></a><span class="c1"># sudo su postgres</span>
+<a name="rest_code_55a4a56e1d464caabe8d48d6ac8c5401-2"></a>$ createuser sentry
+<a name="rest_code_55a4a56e1d464caabe8d48d6ac8c5401-3"></a>$ psql template1
+<a name="rest_code_55a4a56e1d464caabe8d48d6ac8c5401-4"></a><span class="c1"># alter role sentry with password 'sentry';</span>
 </pre>
 <p>Create the database as postgres:</p>
-<pre class="code bash"><a name="rest_code_998ac2004ee44153b6a075b3f136f6c2-1"></a><span class="c"># createdb -E utf-8 sentry</span>
+<pre class="code bash"><a name="rest_code_e06962fb409a4c95ba80360351dd3280-1"></a><span class="c1"># createdb -E utf-8 sentry</span>
 </pre>
 <p>Create the initial schema using the upgrade command as root:</p>
-<pre class="code bash"><a name="rest_code_d422cb01c14b4e3a845d8ca5fea65bd6-1"></a><span class="c"># sentry --config=/opt/sentry/sentry.conf.py upgrade</span>
+<pre class="code bash"><a name="rest_code_307077b746cf46e59e4ebd0ec5a6f085-1"></a><span class="c1"># sentry --config=/opt/sentry/sentry.conf.py upgrade</span>
 </pre>
 <p>If you did not create the user on the first run, you can correct this by doing the following:</p>
-<pre class="code bash"><a name="rest_code_faa5c29913ed401380b6deba94af6a05-1"></a><span class="c"># sentry --config=/opt/sentry/sentry.conf.py createsuperuser</span>
-<a name="rest_code_faa5c29913ed401380b6deba94af6a05-2"></a><span class="c"># sentry --config=/opt/sentry/sentry.conf.py repair --owner=sentry</span>
+<pre class="code bash"><a name="rest_code_6fe76bc458b843ba9a450b7827e1bb4b-1"></a><span class="c1"># sentry --config=/opt/sentry/sentry.conf.py createsuperuser</span>
+<a name="rest_code_6fe76bc458b843ba9a450b7827e1bb4b-2"></a><span class="c1"># sentry --config=/opt/sentry/sentry.conf.py repair --owner=sentry</span>
 </pre>
 <p>You can start Sentry with:</p>
-<pre class="code bash"><a name="rest_code_cfa7e76fe89b49c882ef0c55aba2cad0-1"></a><span class="c"># sentry --config=/opt/sentry/sentry.conf.py start</span>
+<pre class="code bash"><a name="rest_code_7912e1daa9244e8f921ed1a06f1a0190-1"></a><span class="c1"># sentry --config=/opt/sentry/sentry.conf.py start</span>
 </pre>
 </div>
     </div>
@@ -564,17 +564,17 @@ If you don't want the exception to be handled by the context manager, just let i
     </header><div class="e-content entry-content">
     <div>
 <p>You can do that in the /etc/hosts file:</p>
-<pre class="code bash"><a name="rest_code_d232d91e366440ca94ed84ff003ce051-1"></a>127.0.0.1       localhost
-<a name="rest_code_d232d91e366440ca94ed84ff003ce051-2"></a>192.168.1.10    foo.mydomain.org       foo
-<a name="rest_code_d232d91e366440ca94ed84ff003ce051-3"></a>192.168.1.13    bar.mydomain.org       bar
-<a name="rest_code_d232d91e366440ca94ed84ff003ce051-4"></a>146.82.138.7    master.debian.org      master
-<a name="rest_code_d232d91e366440ca94ed84ff003ce051-5"></a>209.237.226.90  www.opensource.org
+<pre class="code bash"><a name="rest_code_f9b6307d16bf49bf9ffeea5586f091cc-1"></a>127.0.0.1       localhost
+<a name="rest_code_f9b6307d16bf49bf9ffeea5586f091cc-2"></a>192.168.1.10    foo.mydomain.org       foo
+<a name="rest_code_f9b6307d16bf49bf9ffeea5586f091cc-3"></a>192.168.1.13    bar.mydomain.org       bar
+<a name="rest_code_f9b6307d16bf49bf9ffeea5586f091cc-4"></a>146.82.138.7    master.debian.org      master
+<a name="rest_code_f9b6307d16bf49bf9ffeea5586f091cc-5"></a>209.237.226.90  www.opensource.org
 </pre>
 <p>So, from the command line, you can do:</p>
-<pre class="code bash"><a name="rest_code_73374ee7fb9f49e0914767907aa09e8c-1"></a>ping foo.mydomain.org
+<pre class="code bash"><a name="rest_code_a668793b52ab44e19ea31b96b24d6243-1"></a>ping foo.mydomain.org
 </pre>
 <p>Or:</p>
-<pre class="code bash"><a name="rest_code_f3a5052822e144c39d0a6a2f7f48102f-1"></a>ssh user@foo
+<pre class="code bash"><a name="rest_code_9ce9b8508c144416894cdef021d33aa4-1"></a>ssh user@foo
 </pre>
 <p>Source: <a class="reference external" href="http://linux.die.net/man/5/hosts">http://linux.die.net/man/5/hosts</a></p>
 </div>
@@ -595,7 +595,7 @@ If you don't want the exception to be handled by the context manager, just let i
     </header><div class="e-content entry-content">
     <div>
 <p>The following command, executed as <em>root</em>:</p>
-<pre class="code bash"><a name="rest_code_8d0d55865bdb4855b96c8328d5e0d45e-1"></a>du -h --max-depth <span class="m">1</span> /
+<pre class="code bash"><a name="rest_code_2be79786b18843c09eb505e788702a86-1"></a>du -h --max-depth <span class="m">1</span> /
 </pre>
 <p>will show used space per directory, looking at "/"</p>
 </div>

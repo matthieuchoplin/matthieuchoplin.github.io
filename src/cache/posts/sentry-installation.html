@@ -1,44 +1,44 @@
 <p>Create a directory called sentry:</p>
-<pre class="code bash"><a name="rest_code_9027e3e8496d471f826df9d850071ebe-1"></a><span class="c"># mkdir /opt/sentry &amp;&amp; cd /opt/sentry</span>
+<pre class="code bash"><a name="rest_code_c4be1f719ea04fe2ae649ddc0dbd2e39-1"></a><span class="c1"># mkdir /opt/sentry &amp;&amp; cd /opt/sentry</span>
 </pre><p>Create a virtual environment and activate it:</p>
-<pre class="code bash"><a name="rest_code_8c29d9a9e76e401d87e1f11f5658ec95-1"></a><span class="c"># virtualenv sentry &amp;&amp; source /opt/sentry/sentry/bin/activate</span>
+<pre class="code bash"><a name="rest_code_426fb25f0e97456794e5f5583743cfa1-1"></a><span class="c1"># virtualenv sentry &amp;&amp; source /opt/sentry/sentry/bin/activate</span>
 </pre><p>Install Sentry:</p>
-<pre class="code bash"><a name="rest_code_3a9ec75cd896491484394181d68b02dc-1"></a><span class="c"># easy_install -UZ sentry[postgres]</span>
-<a name="rest_code_3a9ec75cd896491484394181d68b02dc-2"></a><span class="c"># easy_install -UZ sentry</span>
+<pre class="code bash"><a name="rest_code_85bd5defa63b462a9b89d7a138153470-1"></a><span class="c1"># easy_install -UZ sentry[postgres]</span>
+<a name="rest_code_85bd5defa63b462a9b89d7a138153470-2"></a><span class="c1"># easy_install -UZ sentry</span>
 </pre><p>Initialize the conifguration</p>
-<pre class="code bash"><a name="rest_code_080494666f484a0ea09be109573b02f9-1"></a><span class="c"># sentry init /opt/sentry/sentry.conf.py</span>
+<pre class="code bash"><a name="rest_code_5e887340fe184055abc11fc4d9a19eb0-1"></a><span class="c1"># sentry init /opt/sentry/sentry.conf.py</span>
 </pre><p>In the configuration file /opt/sentry/sentry.conf.py, you are going to change:</p>
 <ul class="simple">
 <li>the database configuration such as:</li>
 </ul>
-<pre class="code python"><a name="rest_code_87502a5455ee428fbabbe43cd8570f6a-1"></a><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_87502a5455ee428fbabbe43cd8570f6a-2"></a>  <span class="s">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
-<a name="rest_code_87502a5455ee428fbabbe43cd8570f6a-3"></a>                <span class="s">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="s">&#39;django.db.backends.postgresql_psycopg2&#39;</span><span class="p">,</span>
-<a name="rest_code_87502a5455ee428fbabbe43cd8570f6a-4"></a>                <span class="s">&#39;NAME&#39;</span><span class="p">:</span> <span class="s">&#39;sentry&#39;</span><span class="p">,</span>
-<a name="rest_code_87502a5455ee428fbabbe43cd8570f6a-5"></a>                <span class="s">&#39;USER&#39;</span><span class="p">:</span> <span class="s">&#39;sentry&#39;</span><span class="p">,</span>
-<a name="rest_code_87502a5455ee428fbabbe43cd8570f6a-6"></a>                <span class="s">&#39;PASSWORD&#39;</span><span class="p">:</span> <span class="s">&#39;sentry&#39;</span><span class="p">,</span>
-<a name="rest_code_87502a5455ee428fbabbe43cd8570f6a-7"></a>                <span class="s">&#39;HOST&#39;</span><span class="p">:</span> <span class="s">&#39;localhost&#39;</span><span class="p">,</span>
-<a name="rest_code_87502a5455ee428fbabbe43cd8570f6a-8"></a>                <span class="s">&#39;PORT&#39;</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p">,</span>
-<a name="rest_code_87502a5455ee428fbabbe43cd8570f6a-9"></a>             <span class="p">}</span>
-<a name="rest_code_87502a5455ee428fbabbe43cd8570f6a-10"></a>           <span class="p">}</span>
+<pre class="code python"><a name="rest_code_137566f1312747a883f186004549bcd7-1"></a><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+<a name="rest_code_137566f1312747a883f186004549bcd7-2"></a>  <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+<a name="rest_code_137566f1312747a883f186004549bcd7-3"></a>                <span class="s1">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="s1">&#39;django.db.backends.postgresql_psycopg2&#39;</span><span class="p">,</span>
+<a name="rest_code_137566f1312747a883f186004549bcd7-4"></a>                <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;sentry&#39;</span><span class="p">,</span>
+<a name="rest_code_137566f1312747a883f186004549bcd7-5"></a>                <span class="s1">&#39;USER&#39;</span><span class="p">:</span> <span class="s1">&#39;sentry&#39;</span><span class="p">,</span>
+<a name="rest_code_137566f1312747a883f186004549bcd7-6"></a>                <span class="s1">&#39;PASSWORD&#39;</span><span class="p">:</span> <span class="s1">&#39;sentry&#39;</span><span class="p">,</span>
+<a name="rest_code_137566f1312747a883f186004549bcd7-7"></a>                <span class="s1">&#39;HOST&#39;</span><span class="p">:</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+<a name="rest_code_137566f1312747a883f186004549bcd7-8"></a>                <span class="s1">&#39;PORT&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+<a name="rest_code_137566f1312747a883f186004549bcd7-9"></a>             <span class="p">}</span>
+<a name="rest_code_137566f1312747a883f186004549bcd7-10"></a>           <span class="p">}</span>
 </pre><ul class="simple">
 <li>And the url:</li>
 </ul>
-<pre class="code python"><a name="rest_code_c6893ed12afd4fe8bcbe428a4735d483-1"></a><span class="n">SENTRY_URL_PREFIX</span> <span class="o">=</span> <span class="s">&#39;http://192.168.50.4:9000&#39;</span> <span class="c"># the ip address of the server</span>
+<pre class="code python"><a name="rest_code_f301e855e0a7466b911261438ddc1214-1"></a><span class="n">SENTRY_URL_PREFIX</span> <span class="o">=</span> <span class="s1">&#39;http://192.168.50.4:9000&#39;</span> <span class="c1"># the ip address of the server</span>
 </pre><p>Install postgresql</p>
-<pre class="code bash"><a name="rest_code_60ddd25b95a447ae9683900e26a581be-1"></a><span class="c"># apt-get install postgresql-9.3</span>
+<pre class="code bash"><a name="rest_code_d3922dd9b58f49b084e88ff27c489d4d-1"></a><span class="c1"># apt-get install postgresql-9.3</span>
 </pre><p>Create a user for sentry:</p>
-<pre class="code bash"><a name="rest_code_e79b0f15623d40c3aa45008ed4992c6a-1"></a><span class="c"># sudo su postgres</span>
-<a name="rest_code_e79b0f15623d40c3aa45008ed4992c6a-2"></a><span class="nv">$ </span>createuser sentry
-<a name="rest_code_e79b0f15623d40c3aa45008ed4992c6a-3"></a><span class="nv">$ </span>psql template1
-<a name="rest_code_e79b0f15623d40c3aa45008ed4992c6a-4"></a><span class="c"># alter role sentry with password &#39;sentry&#39;;</span>
+<pre class="code bash"><a name="rest_code_55a4a56e1d464caabe8d48d6ac8c5401-1"></a><span class="c1"># sudo su postgres</span>
+<a name="rest_code_55a4a56e1d464caabe8d48d6ac8c5401-2"></a>$ createuser sentry
+<a name="rest_code_55a4a56e1d464caabe8d48d6ac8c5401-3"></a>$ psql template1
+<a name="rest_code_55a4a56e1d464caabe8d48d6ac8c5401-4"></a><span class="c1"># alter role sentry with password &#39;sentry&#39;;</span>
 </pre><p>Create the database as postgres:</p>
-<pre class="code bash"><a name="rest_code_998ac2004ee44153b6a075b3f136f6c2-1"></a><span class="c"># createdb -E utf-8 sentry</span>
+<pre class="code bash"><a name="rest_code_e06962fb409a4c95ba80360351dd3280-1"></a><span class="c1"># createdb -E utf-8 sentry</span>
 </pre><p>Create the initial schema using the upgrade command as root:</p>
-<pre class="code bash"><a name="rest_code_d422cb01c14b4e3a845d8ca5fea65bd6-1"></a><span class="c"># sentry --config=/opt/sentry/sentry.conf.py upgrade</span>
+<pre class="code bash"><a name="rest_code_307077b746cf46e59e4ebd0ec5a6f085-1"></a><span class="c1"># sentry --config=/opt/sentry/sentry.conf.py upgrade</span>
 </pre><p>If you did not create the user on the first run, you can correct this by doing the following:</p>
-<pre class="code bash"><a name="rest_code_faa5c29913ed401380b6deba94af6a05-1"></a><span class="c"># sentry --config=/opt/sentry/sentry.conf.py createsuperuser</span>
-<a name="rest_code_faa5c29913ed401380b6deba94af6a05-2"></a><span class="c"># sentry --config=/opt/sentry/sentry.conf.py repair --owner=sentry</span>
+<pre class="code bash"><a name="rest_code_6fe76bc458b843ba9a450b7827e1bb4b-1"></a><span class="c1"># sentry --config=/opt/sentry/sentry.conf.py createsuperuser</span>
+<a name="rest_code_6fe76bc458b843ba9a450b7827e1bb4b-2"></a><span class="c1"># sentry --config=/opt/sentry/sentry.conf.py repair --owner=sentry</span>
 </pre><p>You can start Sentry with:</p>
-<pre class="code bash"><a name="rest_code_cfa7e76fe89b49c882ef0c55aba2cad0-1"></a><span class="c"># sentry --config=/opt/sentry/sentry.conf.py start</span>
+<pre class="code bash"><a name="rest_code_7912e1daa9244e8f921ed1a06f1a0190-1"></a><span class="c1"># sentry --config=/opt/sentry/sentry.conf.py start</span>
 </pre>

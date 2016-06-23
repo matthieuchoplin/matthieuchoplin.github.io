@@ -2,9 +2,9 @@
 <p>Bitmask is going to be used so use this doc
 <a class="reference external" href="http://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/">http://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/</a></p>
 <p>It will be taken into account for the new log files only when we reload rsylog with this commend:</p>
-<pre class="code bash"><a name="rest_code_7cd7a604c7e94cdd9d559a5d9568089f-1"></a>/etc/init.d/rsyslog reload
+<pre class="code bash"><a name="rest_code_eba0871550474eda90aaa4a797e8cf2e-1"></a>/etc/init.d/rsyslog reload
 </pre><p>The old files are still on the old configuration. So, you need to change the right access directly for them with chown and chmod.</p>
 <p>Example for vagrant user:</p>
-<pre class="code bash"><a name="rest_code_98dfb64bc6db4e18960247f64964989e-1"></a>root@openerp-development:/var/log/openerp# chown vagrant:vagrant /var/log/openerp/ -R
-<a name="rest_code_98dfb64bc6db4e18960247f64964989e-2"></a>root@openerp-development:/var/log/openerp# chmod a+r /var/log/openerp/ -R
+<pre class="code bash"><a name="rest_code_d942114bd01b417cbc381af18b28c766-1"></a>root@openerp-development:/var/log/openerp# chown vagrant:vagrant /var/log/openerp/ -R
+<a name="rest_code_d942114bd01b417cbc381af18b28c766-2"></a>root@openerp-development:/var/log/openerp# chmod a+r /var/log/openerp/ -R
 </pre><p>Source: <a class="reference external" href="http://www.rsyslog.com/">http://www.rsyslog.com/</a></p>

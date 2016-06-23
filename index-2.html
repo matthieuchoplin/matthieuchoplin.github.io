@@ -94,17 +94,17 @@
 </div>
     </header><div class="e-content entry-content">
     <div>
-<pre class="code bash"><a name="rest_code_e7a7b92ee6c74c00916b16e77f06a0e3-1"></a>pip install enum34
+<pre class="code bash"><a name="rest_code_cb3025f614e941fcb41ff5319aba8776-1"></a>pip install enum34
 </pre>
-<pre class="code python"><a name="rest_code_e26188b35ab349228ef750702bcd74fc-1"></a><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
-<a name="rest_code_e26188b35ab349228ef750702bcd74fc-2"></a><span class="n">Animal</span> <span class="o">=</span> <span class="n">enum</span><span class="p">(</span><span class="s">'Animal'</span><span class="p">,</span> <span class="s">'ant bee cat dog'</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_f2deadd478484f579c898f7e54d533cb-1"></a><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<a name="rest_code_f2deadd478484f579c898f7e54d533cb-2"></a><span class="n">Animal</span> <span class="o">=</span> <span class="n">enum</span><span class="p">(</span><span class="s1">'Animal'</span><span class="p">,</span> <span class="s1">'ant bee cat dog'</span><span class="p">)</span>
 </pre>
 <p>or equivalently:</p>
-<pre class="code python"><a name="rest_code_7a0348bb3d8448ba95b15eecdae45d51-1"></a><span class="k">class</span> <span class="nc">Animals</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
-<a name="rest_code_7a0348bb3d8448ba95b15eecdae45d51-2"></a>    <span class="n">ant</span> <span class="o">=</span> <span class="mi">1</span>
-<a name="rest_code_7a0348bb3d8448ba95b15eecdae45d51-3"></a>    <span class="n">bee</span> <span class="o">=</span> <span class="mi">2</span>
-<a name="rest_code_7a0348bb3d8448ba95b15eecdae45d51-4"></a>    <span class="n">cat</span> <span class="o">=</span> <span class="mi">3</span>
-<a name="rest_code_7a0348bb3d8448ba95b15eecdae45d51-5"></a>    <span class="n">dog</span> <span class="o">=</span> <span class="mi">4</span>
+<pre class="code python"><a name="rest_code_4ebfc50eae94464f8e2b0d3868e8f3f1-1"></a><span class="k">class</span> <span class="nc">Animals</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<a name="rest_code_4ebfc50eae94464f8e2b0d3868e8f3f1-2"></a>    <span class="n">ant</span> <span class="o">=</span> <span class="mi">1</span>
+<a name="rest_code_4ebfc50eae94464f8e2b0d3868e8f3f1-3"></a>    <span class="n">bee</span> <span class="o">=</span> <span class="mi">2</span>
+<a name="rest_code_4ebfc50eae94464f8e2b0d3868e8f3f1-4"></a>    <span class="n">cat</span> <span class="o">=</span> <span class="mi">3</span>
+<a name="rest_code_4ebfc50eae94464f8e2b0d3868e8f3f1-5"></a>    <span class="n">dog</span> <span class="o">=</span> <span class="mi">4</span>
 </pre>
 <p>Source: <a class="reference external" href="http://stackoverflow.com/questions/36932/how-can-i-represent-an-enum-in-python">http://stackoverflow.com/questions/36932/how-can-i-represent-an-enum-in-python</a></p>
 <p><a class="reference external" href="https://docs.python.org/3/library/enum.html">https://docs.python.org/3/library/enum.html</a></p>
@@ -128,7 +128,7 @@
 <p>As the number of posts is growing, I think that having a search engine within the website is now relevant. This post only shows what I am using for that.</p>
 <p>Instead of using an external search engine such as Google or DuckDuckGo, you have a plugin in Nikola than enables searching on the client side by using jQuery.</p>
 <p>Assuming you have installed Nikola &gt; v7.0, you can install the plugin like this:</p>
-<pre class="code python"><a name="rest_code_68fb8774c40042d88c4f57ed372a9962-1"></a><span class="n">nikola</span> <span class="n">plugin</span> <span class="o">-</span><span class="n">i</span> <span class="n">localsearch</span>
+<pre class="code python"><a name="rest_code_3e2799f7c99e47a89092656f018aa283-1"></a><span class="n">nikola</span> <span class="n">plugin</span> <span class="o">-</span><span class="n">i</span> <span class="n">localsearch</span>
 </pre>
 <p>It will give you a configuration sample to paste in your config.py file.</p>
 <p>Source: <a class="reference external" href="http://plugins.getnikola.com/#localsearch">http://plugins.getnikola.com/#localsearch</a></p>
@@ -149,10 +149,10 @@
 </div>
     </header><div class="e-content entry-content">
     <div>
-<pre class="code postgresql"><a name="rest_code_7284921bb4454facbeea2c7b07d89aea-1"></a><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">pg_stat_activity</span> <span class="k">where</span> <span class="n">waiting</span><span class="o">=</span><span class="s1">'t'</span><span class="p">;</span>
+<pre class="code postgresql"><a name="rest_code_ebced17f4b26415ea7b386d476709edb-1"></a><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">pg_stat_activity</span> <span class="k">where</span> <span class="n">waiting</span><span class="o">=</span><span class="s1">'t'</span><span class="p">;</span>
 </pre>
 <p>Fix the lock:</p>
-<pre class="code postgresql"><a name="rest_code_9b1c7be0b8ce48c7b88e22c9f04abf51-1"></a><span class="k">select</span> <span class="n">pg_cancel_backend</span><span class="p">(</span><span class="n">pid</span> <span class="nb">int</span><span class="p">)</span>
+<pre class="code postgresql"><a name="rest_code_e95e7c809f104655a48e84ee5990a512-1"></a><span class="k">select</span> <span class="n">pg_cancel_backend</span><span class="p">(</span><span class="n">pid</span> <span class="nb">int</span><span class="p">)</span>
 </pre>
 <p>Where "pid int" is the pid you find with pg_stat_activity.</p>
 <p>Sources:</p>
@@ -178,12 +178,12 @@
 </div>
     </header><div class="e-content entry-content">
     <div>
-<pre class="code python"><a name="rest_code_9f2886f1e9854f0ab291383e3c775498-1"></a><span class="kn">import</span> <span class="nn">psycopg2</span>
-<a name="rest_code_9f2886f1e9854f0ab291383e3c775498-2"></a><span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">"dbname='template1' user='dbuser' host='localhost' password='dbpass'"</span><span class="p">)</span>
-<a name="rest_code_9f2886f1e9854f0ab291383e3c775498-3"></a><span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<pre class="code python"><a name="rest_code_85752d0a1df94038bbf5e9fcdcbfed2d-1"></a><span class="kn">import</span> <span class="nn">psycopg2</span>
+<a name="rest_code_85752d0a1df94038bbf5e9fcdcbfed2d-2"></a><span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"dbname='template1' user='dbuser' host='localhost' password='dbpass'"</span><span class="p">)</span>
+<a name="rest_code_85752d0a1df94038bbf5e9fcdcbfed2d-3"></a><span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
 </pre>
 <p>Once you have the cursor of the database, you can execute queries with:</p>
-<pre class="code python"><a name="rest_code_81cea2800d8d48a9bea63bcfd552399f-1"></a><span class="n">cr</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">your_query</span><span class="p">;)</span>
+<pre class="code python"><a name="rest_code_3984176091644c858c9a8323307d5e35-1"></a><span class="n">cr</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">your_query</span><span class="p">;)</span>
 </pre>
 <p>Source: <a class="reference external" href="https://wiki.postgresql.org/wiki/Psycopg2_Tutorial">https://wiki.postgresql.org/wiki/Psycopg2_Tutorial</a></p>
 </div>
@@ -203,8 +203,8 @@
 </div>
     </header><div class="e-content entry-content">
     <div>
-<pre class="code sql"><a name="rest_code_815e726dd03f420bbb142fbd689d3d03-1"></a><span class="k">CREATE</span> <span class="k">TEMPORARY</span> <span class="k">TABLE</span> <span class="n">original_table_name_temp</span><span class="p">(</span><span class="k">like</span> <span class="n">original_table_name</span> <span class="k">including</span> <span class="k">all</span><span class="p">);</span>
-<a name="rest_code_815e726dd03f420bbb142fbd689d3d03-2"></a><span class="k">COPY</span> <span class="n">original_table_name_temp</span> <span class="k">FROM</span> <span class="s1">'path_of_your_csv'</span><span class="p">;</span>
+<pre class="code sql"><a name="rest_code_b1c5726a07c74832bad13aabd6545aa5-1"></a><span class="k">CREATE</span> <span class="k">TEMPORARY</span> <span class="k">TABLE</span> <span class="n">original_table_name_temp</span><span class="p">(</span><span class="k">like</span> <span class="n">original_table_name</span> <span class="k">including</span> <span class="k">all</span><span class="p">);</span>
+<a name="rest_code_b1c5726a07c74832bad13aabd6545aa5-2"></a><span class="k">COPY</span> <span class="n">original_table_name_temp</span> <span class="k">FROM</span> <span class="s1">'path_of_your_csv'</span><span class="p">;</span>
 </pre>
 <p>Source: <a class="reference external" href="http://postgresql.1045698.n5.nabble.com/reverse-strpos-td1891709.html">http://postgresql.1045698.n5.nabble.com/reverse-strpos-td1891709.html</a></p>
 </div>
@@ -284,17 +284,17 @@
     <div>
 <div class="section" id="install-screen">
 <h2>Install screen</h2>
-<pre class="code bash"><a name="rest_code_c7c6aab139be47ff804535092ef71c10-1"></a>sudo apt-get install screen
+<pre class="code bash"><a name="rest_code_e794b8a3c2d5439695777fd93d013db7-1"></a>sudo apt-get install screen
 </pre>
 </div>
 <div class="section" id="start-a-new-screen-session-with-session-name">
 <h2>Start a new screen session with session name</h2>
-<pre class="code bash"><a name="rest_code_eaf595223851421497265573ad70b5b1-1"></a>screen -S &lt;script_name&gt;
+<pre class="code bash"><a name="rest_code_c6af71ee4bf04921aac175af8b03dd91-1"></a>screen -S &lt;script_name&gt;
 </pre>
 </div>
 <div class="section" id="attach-to-a-running-session-with-name">
 <h2>Attach to a running session with name</h2>
-<pre class="code bash"><a name="rest_code_3be1a53c5b6c4ac5b1a51b93503f69a5-1"></a>screen -r &lt;script_name&gt;
+<pre class="code bash"><a name="rest_code_c35fec6d24ac4df6a3c95fa13d05bb86-1"></a>screen -r &lt;script_name&gt;
 </pre>
 </div>
 <div class="section" id="escape-key">
@@ -323,13 +323,13 @@
 <p>Liclipse seems to be the IDE to go for Python edition if you come from the Eclipse + pydev plugin world: <a class="reference external" href="http://brainwy.github.io/liclipse/index.html">Liclipse</a> (Lightweight Eclipse)</p>
 <p>It comes with pydev and gedit plugin already integrated.</p>
 <p>On ubuntu 12.04, you need to install the following Java dependencies before being able to launch it.</p>
-<pre class="code bash"><a name="rest_code_7ae4664322ed456b8f1d3641c7e6bb9a-1"></a>sudo add-apt-repository ppa:webupd8team/java
-<a name="rest_code_7ae4664322ed456b8f1d3641c7e6bb9a-2"></a>sudo apt-get update
-<a name="rest_code_7ae4664322ed456b8f1d3641c7e6bb9a-3"></a>sudo apt-get install oracle-java7-installer
+<pre class="code bash"><a name="rest_code_f8bc19510d694541b122aab6b023dc91-1"></a>sudo add-apt-repository ppa:webupd8team/java
+<a name="rest_code_f8bc19510d694541b122aab6b023dc91-2"></a>sudo apt-get update
+<a name="rest_code_f8bc19510d694541b122aab6b023dc91-3"></a>sudo apt-get install oracle-java7-installer
 </pre>
 <p>It'll keep your java 7 installation up to date.</p>
 <p>To automatically set up the Java 7 environment variables JAVA_HOME and PATH:</p>
-<pre class="code bash"><a name="rest_code_406f6309d46249be9911be0096f85230-1"></a>sudo apt-get install oracle-java7-set-default
+<pre class="code bash"><a name="rest_code_a3f0298afa0a481a82c9670a7bf05ca6-1"></a>sudo apt-get install oracle-java7-set-default
 </pre>
 <p>Source: <a class="reference external" href="http://stackoverflow.com/questions/16263556/installing-java-7-on-ubuntu">http://stackoverflow.com/questions/16263556/installing-java-7-on-ubuntu</a></p>
 </div>
@@ -348,7 +348,7 @@
 <p>Similar to:</p>
 </li>
 </ul>
-<pre class="code bash"><a name="rest_code_ee7ff8f994ec40d0863a1834d270b1e0-1"></a>git blame
+<pre class="code bash"><a name="rest_code_05e2500b4b374eaba601647ebdc89c9a-1"></a>git blame
 </pre>
 <ul>
 <li>
@@ -356,7 +356,7 @@
 <p>Similar to:</p>
 </li>
 </ul>
-<pre class="code bash"><a name="rest_code_2751a897dc714421997742b4361202c9-1"></a>git log -p
+<pre class="code bash"><a name="rest_code_bc79d20e6cf7425883794f1101b18773-1"></a>git log -p
 </pre>
 </div>
 <div class="section" id="using-pydev">
@@ -400,10 +400,10 @@
 </div>
     </header><div class="e-content entry-content">
     <div>
-<pre class="code bash"><a name="rest_code_ef336cd686064daba4572c958cb9c90e-1"></a>pkill -9f process-name
+<pre class="code bash"><a name="rest_code_4f4a89d397ab495ba77242d5e1a7a078-1"></a>pkill -9f process-name
 </pre>
 <p>Example:</p>
-<pre class="code bash"><a name="rest_code_21d79f0156f54be5ac06c47af4fd96d1-1"></a>pkill -9f filezilla
+<pre class="code bash"><a name="rest_code_20030dc7f0bf4934b3a83c8260b9dee4-1"></a>pkill -9f filezilla
 </pre>
 <p>If you have launch a command that you cannot directly stopped with usually <em>ctrl+c</em>,
 you can always put the process in the background with <em>ctrl+z</em> and then use the
@@ -411,16 +411,16 @@ you can always put the process in the background with <em>ctrl+z</em> and then u
 Then, you have the number of the job and you can kill it with the command
 <em>kill %&lt;number_of_the_job&gt;</em>.</p>
 <p>Example:</p>
-<pre class="code bash"><a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-1"></a><span class="nv">$ </span>sleep 100
-<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-2"></a>^Z
-<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-3"></a><span class="o">[</span>1<span class="o">]</span>+  Stopped                 sleep 100
-<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-4"></a><span class="nv">$ </span><span class="nb">jobs</span>
-<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-5"></a><span class="o">[</span>1<span class="o">]</span>+  Stopped                 sleep 100
-<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-6"></a><span class="nv">$ </span><span class="nb">kill</span> %1
-<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-7"></a><span class="nv">$ </span><span class="nb">jobs</span>
-<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-8"></a><span class="o">[</span>1<span class="o">]</span>+  Terminated              sleep 100
-<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-9"></a><span class="nv">$ </span><span class="nb">jobs</span>
-<a name="rest_code_5a72e7b8f09845b18e82f7f589cf3352-10"></a><span class="err">$</span>
+<pre class="code bash"><a name="rest_code_8f288e1395e34fd4b68c9bb3b3405316-1"></a>$ sleep 100
+<a name="rest_code_8f288e1395e34fd4b68c9bb3b3405316-2"></a>^Z
+<a name="rest_code_8f288e1395e34fd4b68c9bb3b3405316-3"></a><span class="o">[</span>1<span class="o">]</span>+  Stopped                 sleep 100
+<a name="rest_code_8f288e1395e34fd4b68c9bb3b3405316-4"></a>$ <span class="nb">jobs</span>
+<a name="rest_code_8f288e1395e34fd4b68c9bb3b3405316-5"></a><span class="o">[</span>1<span class="o">]</span>+  Stopped                 sleep 100
+<a name="rest_code_8f288e1395e34fd4b68c9bb3b3405316-6"></a>$ <span class="nb">kill</span> %1
+<a name="rest_code_8f288e1395e34fd4b68c9bb3b3405316-7"></a>$ <span class="nb">jobs</span>
+<a name="rest_code_8f288e1395e34fd4b68c9bb3b3405316-8"></a><span class="o">[</span>1<span class="o">]</span>+  Terminated              sleep 100
+<a name="rest_code_8f288e1395e34fd4b68c9bb3b3405316-9"></a>$ <span class="nb">jobs</span>
+<a name="rest_code_8f288e1395e34fd4b68c9bb3b3405316-10"></a>$
 </pre>
 </div>
     </div>
