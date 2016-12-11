@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sorting list with two criteria | Standing on the shoulders of giants</title>
+<title>Sorting a list with two criteria in python | Standing on the shoulders of giants</title>
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
@@ -23,7 +23,7 @@
     <meta name="author" content="Matthieu Choplin">
 <link rel="prev" href="control-the-screen-brightness-in-ubuntu.html" title="Control the screen brightness in Ubuntu" type="text/html">
 <meta property="og:site_name" content="Standing on the shoulders of giants">
-<meta property="og:title" content="Sorting list with two criteria">
+<meta property="og:title" content="Sorting a list with two criteria in python">
 <meta property="og:url" content="http://mattchoplin.com/posts/sorting-list-with-two-criteria.html">
 <meta property="og:description" content="We want to sort a list of elements with the first element in ascending order and the second element in descending order.
 
@@ -89,7 +89,7 @@ sorted(">
         <div class="row">
             
             
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Sorting list with two criteria</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Sorting a list with two criteria in python</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
@@ -113,8 +113,8 @@ sorted(">
 <p>We want to sort a list of elements with the first element in ascending order and the second element in descending order.</p>
 <div class="section" id="using-the-lambda-function">
 <h2>Using the lambda function:</h2>
-<pre class="code python"><a name="rest_code_e4928a0f7abb4a748b2422c95eac2852-1"></a><span class="n">occurences</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'bat'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'mat'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'cat'</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
-<a name="rest_code_e4928a0f7abb4a748b2422c95eac2852-2"></a><span class="nb">sorted</span><span class="p">(</span><span class="n">occurences</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<pre class="code python"><a name="rest_code_f1d5865d308442f28cc59d254044c1d0-1"></a><span class="n">occurences</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'bat'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'mat'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'cat'</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<a name="rest_code_f1d5865d308442f28cc59d254044c1d0-2"></a><span class="nb">sorted</span><span class="p">(</span><span class="n">occurences</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 </pre>
 <p>The -x[1] is for the reversed sort.</p>
 <p>By order of priority, we first sort with the 2nd element (x[1]), then with the 1st element (x[0])</p>
@@ -135,7 +135,7 @@ sorted(">
         <script>
         var disqus_shortname ="mattchoplin",
             disqus_url="http://mattchoplin.com/posts/sorting-list-with-two-criteria.html",
-        disqus_title="Sorting list with two criteria",
+        disqus_title="Sorting a list with two criteria in python",
         disqus_identifier="cache/posts/sorting-list-with-two-criteria.html",
         disqus_config = function () {
             this.language = "en";

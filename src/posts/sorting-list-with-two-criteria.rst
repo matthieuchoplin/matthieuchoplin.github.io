@@ -1,4 +1,4 @@
-.. title: Sorting list with two criteria
+.. title: Sorting a list with two criteria in python
 .. slug: sorting-list-with-two-criteria
 .. date: 2016-12-11 10:26:07 UTC
 .. tags: python
