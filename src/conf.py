@@ -161,10 +161,12 @@ TIMEZONE = "Europe/London"
 #
 
 POSTS = (
+    ("posts/*.ipynb", "blog", "post.tmpl"),
     ("posts/*.rst", "posts", "post.tmpl"),
     ("posts/*.txt", "posts", "post.tmpl"),
 )
 PAGES = (
+    ("posts/*.ipynb", "blog", "story.tmpl"),
     ("stories/*.rst", "stories", "story.tmpl"),
     ("stories/*.txt", "stories", "story.tmpl"),
 )

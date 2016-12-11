@@ -6,119 +6,135 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>http://mattchoplin.com/blog/rss.xml</loc>
+  <lastmod>2016-12-11T10:58:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://mattchoplin.com/categories/agile.xml</loc>
-  <lastmod>2016-06-23T22:39:00Z</lastmod>
+  <lastmod>2016-12-11T10:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/categories/bash.xml</loc>
-  <lastmod>2016-06-23T22:39:00Z</lastmod>
+  <lastmod>2016-12-11T10:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/categories/blog.xml</loc>
-  <lastmod>2016-06-23T22:39:00Z</lastmod>
+  <lastmod>2016-12-11T10:58:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://mattchoplin.com/categories/cat_design-patterns-python-programming.xml</loc>
+  <lastmod>2016-12-11T10:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/categories/continuous-integration.xml</loc>
-  <lastmod>2016-06-23T22:39:00Z</lastmod>
+  <lastmod>2016-12-11T10:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/categories/copy.xml</loc>
-  <lastmod>2016-06-23T22:39:00Z</lastmod>
+  <lastmod>2016-12-11T10:58:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://mattchoplin.com/categories/design-pattern.xml</loc>
+  <lastmod>2016-12-11T10:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/categories/git.xml</loc>
-  <lastmod>2016-06-23T22:39:00Z</lastmod>
+  <lastmod>2016-12-11T10:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/categories/grep.xml</loc>
-  <lastmod>2016-06-23T22:39:00Z</lastmod>
+  <lastmod>2016-12-11T10:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/categories/internet.xml</loc>
-  <lastmod>2016-06-23T22:39:00Z</lastmod>
+  <lastmod>2016-12-11T10:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/categories/lock.xml</loc>
-  <lastmod>2016-06-23T22:39:00Z</lastmod>
+  <lastmod>2016-12-11T10:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/categories/nikola.xml</loc>
-  <lastmod>2016-06-23T22:39:00Z</lastmod>
+  <lastmod>2016-12-11T10:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/categories/postgresql.xml</loc>
-  <lastmod>2016-06-23T22:39:00Z</lastmod>
+  <lastmod>2016-12-11T10:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/categories/python.xml</loc>
-  <lastmod>2016-06-23T22:39:00Z</lastmod>
+  <lastmod>2016-12-11T11:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/categories/sql.xml</loc>
-  <lastmod>2016-06-23T22:39:00Z</lastmod>
+  <lastmod>2016-12-11T10:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/categories/sysadmin.xml</loc>
-  <lastmod>2016-06-23T22:39:00Z</lastmod>
+  <lastmod>2016-12-11T10:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/categories/testing.xml</loc>
-  <lastmod>2016-06-23T22:39:00Z</lastmod>
+  <lastmod>2016-12-11T10:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/categories/ubuntu.xml</loc>
-  <lastmod>2016-06-23T22:28:00Z</lastmod>
+  <lastmod>2016-12-11T10:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/galleries/rss.xml</loc>
-  <lastmod>2016-06-23T22:39:00Z</lastmod>
+  <lastmod>2016-12-11T10:58:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://mattchoplin.com/posts/rss.xml</loc>
+  <lastmod>2016-12-11T10:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/rss.xml</loc>
-  <lastmod>2016-06-23T22:39:00Z</lastmod>
+  <lastmod>2016-12-11T11:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/sitemap.xml</loc>
-  <lastmod>2016-06-23T22:39:00Z</lastmod>
+  <lastmod>2016-12-11T11:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/src/categories/blog.xml</loc>
-  <lastmod>2014-10-11T10:48:00Z</lastmod>
+  <lastmod>2016-10-28T10:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/src/categories/nikola.xml</loc>
-  <lastmod>2014-10-11T10:48:00Z</lastmod>
+  <lastmod>2016-10-28T10:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/src/galleries/rss.xml</loc>
-  <lastmod>2014-10-11T10:48:00Z</lastmod>
+  <lastmod>2016-10-28T10:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/src/output/categories/blog.xml</loc>
-  <lastmod>2014-10-11T10:48:00Z</lastmod>
+  <lastmod>2016-10-28T10:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/src/output/categories/nikola.xml</loc>
-  <lastmod>2014-10-11T10:48:00Z</lastmod>
+  <lastmod>2016-10-28T10:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/src/output/galleries/rss.xml</loc>
-  <lastmod>2014-10-11T10:48:00Z</lastmod>
+  <lastmod>2016-10-28T10:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/src/output/rss.xml</loc>
-  <lastmod>2014-10-11T10:48:00Z</lastmod>
+  <lastmod>2016-10-28T10:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/src/output/sitemap.xml</loc>
-  <lastmod>2014-10-11T10:48:00Z</lastmod>
+  <lastmod>2016-10-28T10:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/src/rss.xml</loc>
-  <lastmod>2014-10-11T10:48:00Z</lastmod>
+  <lastmod>2016-10-28T10:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/src/sitemap.xml</loc>
-  <lastmod>2014-10-11T10:48:00Z</lastmod>
+  <lastmod>2016-10-28T10:19:00Z</lastmod>
  </sitemap>
 </sitemapindex>

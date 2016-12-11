@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Posts (old posts, page 2) | Standing on the shoulders of giants</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="canonical" href="http://mattchoplin.com/posts/index-2.html">
+<link rel="icon" href="../favicon-16x16.png" sizes="16x16">
+<link rel="prev" href="index-3.html" type="text/html">
+<link rel="next" href="index-1.html" type="text/html">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" type="text/css" href="../assets/css/tipuesearch.css">
+</head>
+<body>
+<div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 20px;"></div>
+
+
+
+    
+    
+
+
+
+
+
+
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://mattchoplin.com/">
+
+                <span id="blog-title">Standing on the shoulders of giants</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../archive.html">Archive</a>
+                </li>
+<li>
+<a href="../categories/index.html">Tags</a>
+                </li>
+<li>
+<a href="../stories/talks.html">Talks</a>
+                </li>
+<li>
+<a href="../rss.xml">RSS feed</a>
+
+                
+            </li>
+</ul>
+<span class="navbar-form pull-left">
+    <input type="text" id="tipue_search_input"></span>
+
+            <ul class="nav navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<div class="sectionindex">
+    <header><h2><a href="index.html">Posts (old posts, page 2)</a></h2>
+    </header><div class="postindex">
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="using-enum-in-python.html" class="u-url">Using enum in python</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="using-enum-in-python.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-28T09:52:22+01:00" title="2014-07-28 09:52">2014-07-28 09:52</time></a></p>
+                <p class="commentline">
+        
+    <a href="using-enum-in-python.html#disqus_thread" data-disqus-identifier="cache/posts/using-enum-in-python.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<pre class="code bash"><a name="rest_code_cb3025f614e941fcb41ff5319aba8776-1"></a>pip install enum34
+</pre>
+<pre class="code python"><a name="rest_code_f2deadd478484f579c898f7e54d533cb-1"></a><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<a name="rest_code_f2deadd478484f579c898f7e54d533cb-2"></a><span class="n">Animal</span> <span class="o">=</span> <span class="n">enum</span><span class="p">(</span><span class="s1">'Animal'</span><span class="p">,</span> <span class="s1">'ant bee cat dog'</span><span class="p">)</span>
+</pre>
+<p>or equivalently:</p>
+<pre class="code python"><a name="rest_code_4ebfc50eae94464f8e2b0d3868e8f3f1-1"></a><span class="k">class</span> <span class="nc">Animals</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<a name="rest_code_4ebfc50eae94464f8e2b0d3868e8f3f1-2"></a>    <span class="n">ant</span> <span class="o">=</span> <span class="mi">1</span>
+<a name="rest_code_4ebfc50eae94464f8e2b0d3868e8f3f1-3"></a>    <span class="n">bee</span> <span class="o">=</span> <span class="mi">2</span>
+<a name="rest_code_4ebfc50eae94464f8e2b0d3868e8f3f1-4"></a>    <span class="n">cat</span> <span class="o">=</span> <span class="mi">3</span>
+<a name="rest_code_4ebfc50eae94464f8e2b0d3868e8f3f1-5"></a>    <span class="n">dog</span> <span class="o">=</span> <span class="mi">4</span>
+</pre>
+<p>Source: <a class="reference external" href="http://stackoverflow.com/questions/36932/how-can-i-represent-an-enum-in-python">http://stackoverflow.com/questions/36932/how-can-i-represent-an-enum-in-python</a></p>
+<p><a class="reference external" href="https://docs.python.org/3/library/enum.html">https://docs.python.org/3/library/enum.html</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="tipue-search.html" class="u-url">Tipue search</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="tipue-search.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-19T13:05:20+01:00" title="2014-07-19 13:05">2014-07-19 13:05</time></a></p>
+                <p class="commentline">
+        
+    <a href="tipue-search.html#disqus_thread" data-disqus-identifier="cache/posts/tipue-search.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>As the number of posts is growing, I think that having a search engine within the website is now relevant. This post only shows what I am using for that.</p>
+<p>Instead of using an external search engine such as Google or DuckDuckGo, you have a plugin in Nikola than enables searching on the client side by using jQuery.</p>
+<p>Assuming you have installed Nikola &gt; v7.0, you can install the plugin like this:</p>
+<pre class="code python"><a name="rest_code_3e2799f7c99e47a89092656f018aa283-1"></a><span class="n">nikola</span> <span class="n">plugin</span> <span class="o">-</span><span class="n">i</span> <span class="n">localsearch</span>
+</pre>
+<p>It will give you a configuration sample to paste in your config.py file.</p>
+<p>Source: <a class="reference external" href="http://plugins.getnikola.com/#localsearch">http://plugins.getnikola.com/#localsearch</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="database-locks.html" class="u-url">Database locks</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="database-locks.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-19T00:27:04+01:00" title="2014-07-19 00:27">2014-07-19 00:27</time></a></p>
+                <p class="commentline">
+        
+    <a href="database-locks.html#disqus_thread" data-disqus-identifier="cache/posts/database-locks.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<pre class="code postgresql"><a name="rest_code_ebced17f4b26415ea7b386d476709edb-1"></a><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">pg_stat_activity</span> <span class="k">where</span> <span class="n">waiting</span><span class="o">=</span><span class="s1">'t'</span><span class="p">;</span>
+</pre>
+<p>Fix the lock:</p>
+<pre class="code postgresql"><a name="rest_code_e95e7c809f104655a48e84ee5990a512-1"></a><span class="k">select</span> <span class="n">pg_cancel_backend</span><span class="p">(</span><span class="n">pid</span> <span class="nb">int</span><span class="p">)</span>
+</pre>
+<p>Where "pid int" is the pid you find with pg_stat_activity.</p>
+<p>Sources:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.postgresql.org/docs/9.2/static/functions-admin.html">http://www.postgresql.org/docs/9.2/static/functions-admin.html</a></li>
+<li><a class="reference external" href="http://wiki.postgresql.org/wiki/Lock_Monitoring">http://wiki.postgresql.org/wiki/Lock_Monitoring</a></li>
+<li><a class="reference external" href="http://chrismiles.info/systemsadmin/databases/articles/viewing-current-postgresql-queries/">http://chrismiles.info/systemsadmin/databases/articles/viewing-current-postgresql-queries/</a></li>
+</ul>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="psycopg2.html" class="u-url">Psycopg2</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="psycopg2.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-19T00:14:20+01:00" title="2014-07-19 00:14">2014-07-19 00:14</time></a></p>
+                <p class="commentline">
+        
+    <a href="psycopg2.html#disqus_thread" data-disqus-identifier="cache/posts/psycopg2.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<pre class="code python"><a name="rest_code_85752d0a1df94038bbf5e9fcdcbfed2d-1"></a><span class="kn">import</span> <span class="nn">psycopg2</span>
+<a name="rest_code_85752d0a1df94038bbf5e9fcdcbfed2d-2"></a><span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"dbname='template1' user='dbuser' host='localhost' password='dbpass'"</span><span class="p">)</span>
+<a name="rest_code_85752d0a1df94038bbf5e9fcdcbfed2d-3"></a><span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</pre>
+<p>Once you have the cursor of the database, you can execute queries with:</p>
+<pre class="code python"><a name="rest_code_3984176091644c858c9a8323307d5e35-1"></a><span class="n">cr</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">your_query</span><span class="p">;)</span>
+</pre>
+<p>Source: <a class="reference external" href="https://wiki.postgresql.org/wiki/Psycopg2_Tutorial">https://wiki.postgresql.org/wiki/Psycopg2_Tutorial</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="copy-records-from-csv-in-postgresql.html" class="u-url">Copy records from csv in postgresql</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="copy-records-from-csv-in-postgresql.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-18T16:39:41+01:00" title="2014-07-18 16:39">2014-07-18 16:39</time></a></p>
+                <p class="commentline">
+        
+    <a href="copy-records-from-csv-in-postgresql.html#disqus_thread" data-disqus-identifier="cache/posts/copy-records-from-csv-in-postgresql.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<pre class="code sql"><a name="rest_code_b1c5726a07c74832bad13aabd6545aa5-1"></a><span class="k">CREATE</span> <span class="k">TEMPORARY</span> <span class="k">TABLE</span> <span class="n">original_table_name_temp</span><span class="p">(</span><span class="k">like</span> <span class="n">original_table_name</span> <span class="k">including</span> <span class="k">all</span><span class="p">);</span>
+<a name="rest_code_b1c5726a07c74832bad13aabd6545aa5-2"></a><span class="k">COPY</span> <span class="n">original_table_name_temp</span> <span class="k">FROM</span> <span class="s1">'path_of_your_csv'</span><span class="p">;</span>
+</pre>
+<p>Source: <a class="reference external" href="http://postgresql.1045698.n5.nabble.com/reverse-strpos-td1891709.html">http://postgresql.1045698.n5.nabble.com/reverse-strpos-td1891709.html</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="git-branching-strategy.html" class="u-url">Git branching strategy</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="git-branching-strategy.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-13T12:44:49+01:00" title="2014-07-13 12:44">2014-07-13 12:44</time></a></p>
+                <p class="commentline">
+        
+    <a href="git-branching-strategy.html#disqus_thread" data-disqus-identifier="cache/posts/git-branching-strategy.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<div class="section" id="the-git-flow-strategy">
+<h2>The git-flow strategy</h2>
+<p>Very nice cheatsheet: <a class="reference external" href="http://danielkummer.github.io/git-flow-cheatsheet/">http://danielkummer.github.io/git-flow-cheatsheet/</a></p>
+</div>
+<div class="section" id="the-centralized-worklow">
+<h2>The centralized worklow</h2>
+<p>Like Subversion, the Centralized Workflow uses a central repository to serve as the single point-of-entry for all changes to the project. Instead of trunk, the default development branch is called master and all changes are committed into this branch. This workflow doesn’t require any other branches besides master.</p>
+<div class="section" id="pros">
+<h3>Pros</h3>
+<p>Developers are always working on the last version of the code.</p>
+</div>
+<div class="section" id="cons">
+<h3>Cons</h3>
+<p>If some code breaks something, the whole process is stuck, no release can be done.</p>
+</div>
+</div>
+<div class="section" id="feature-branch-workflow">
+<h2>Feature Branch Workflow</h2>
+<p>The core idea behind the Feature Branch Workflow is that all feature development should take place in a dedicated branch instead of the master branch. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase. It also means the master branch will never contain broken code, which is a huge advantage for continuous integration environments.</p>
+<p>Encapsulating feature development also makes it possible to leverage pull requests, which are a way to initiate discussions around a branch. They give other developers the opportunity to sign off on a feature before it gets integrated into the official project. Or, if you get stuck in the middle of a feature, you can open a pull request asking for suggestions from your colleagues. The point is, pull requests make it incredibly easy for your team to comment on each other’s work.</p>
+<p>source: <a class="reference external" href="https://www.atlassian.com/git/workflows">https://www.atlassian.com/git/workflows</a></p>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="vnc.html" class="u-url">VNC</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="vnc.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-10T16:05:22+01:00" title="2014-07-10 16:05">2014-07-10 16:05</time></a></p>
+                <p class="commentline">
+        
+    <a href="vnc.html#disqus_thread" data-disqus-identifier="cache/posts/vnc.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>Connect to external machine using VNC.</p>
+<p>Source: <a class="reference external" href="https://help.ubuntu.com/community/VNC/Clients">https://help.ubuntu.com/community/VNC/Clients</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="screen.html" class="u-url">Screen</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="screen.html" rel="bookmark"><time class="published dt-published" datetime="2014-06-30T13:44:57+01:00" title="2014-06-30 13:44">2014-06-30 13:44</time></a></p>
+                <p class="commentline">
+        
+    <a href="screen.html#disqus_thread" data-disqus-identifier="cache/posts/screen.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<div class="section" id="install-screen">
+<h2>Install screen</h2>
+<pre class="code bash"><a name="rest_code_e794b8a3c2d5439695777fd93d013db7-1"></a>sudo apt-get install screen
+</pre>
+</div>
+<div class="section" id="start-a-new-screen-session-with-session-name">
+<h2>Start a new screen session with session name</h2>
+<pre class="code bash"><a name="rest_code_c6af71ee4bf04921aac175af8b03dd91-1"></a>screen -S &lt;script_name&gt;
+</pre>
+</div>
+<div class="section" id="attach-to-a-running-session-with-name">
+<h2>Attach to a running session with name</h2>
+<pre class="code bash"><a name="rest_code_c35fec6d24ac4df6a3c95fa13d05bb86-1"></a>screen -r &lt;script_name&gt;
+</pre>
+</div>
+<div class="section" id="escape-key">
+<h2>Escape key</h2>
+<p>Ctrl-a and d</p>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="Liclipse.html" class="u-url">Liclipse as Python editor</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="Liclipse.html" rel="bookmark"><time class="published dt-published" datetime="2014-06-28T13:31:05+01:00" title="2014-06-28 13:31">2014-06-28 13:31</time></a></p>
+                <p class="commentline">
+        
+    <a href="Liclipse.html#disqus_thread" data-disqus-identifier="cache/posts/liclipse.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<div class="section" id="installation">
+<h2>Installation</h2>
+<p>Liclipse seems to be the IDE to go for Python edition if you come from the Eclipse + pydev plugin world: <a class="reference external" href="http://brainwy.github.io/liclipse/index.html">Liclipse</a> (Lightweight Eclipse)</p>
+<p>It comes with pydev and gedit plugin already integrated.</p>
+<p>On ubuntu 12.04, you need to install the following Java dependencies before being able to launch it.</p>
+<pre class="code bash"><a name="rest_code_f8bc19510d694541b122aab6b023dc91-1"></a>sudo add-apt-repository ppa:webupd8team/java
+<a name="rest_code_f8bc19510d694541b122aab6b023dc91-2"></a>sudo apt-get update
+<a name="rest_code_f8bc19510d694541b122aab6b023dc91-3"></a>sudo apt-get install oracle-java7-installer
+</pre>
+<p>It'll keep your java 7 installation up to date.</p>
+<p>To automatically set up the Java 7 environment variables JAVA_HOME and PATH:</p>
+<pre class="code bash"><a name="rest_code_a3f0298afa0a481a82c9670a7bf05ca6-1"></a>sudo apt-get install oracle-java7-set-default
+</pre>
+<p>Source: <a class="reference external" href="http://stackoverflow.com/questions/16263556/installing-java-7-on-ubuntu">http://stackoverflow.com/questions/16263556/installing-java-7-on-ubuntu</a></p>
+</div>
+<div class="section" id="importing-a-git-project">
+<h2>Importing a Git project</h2>
+<p>If the project is already cloned in your local environment, then click "File" | "Import"| Select "Git" | "Project from Git"| "Existing local Repository" and select the project you want.</p>
+<p>Else, you can also clone the project from Liclipse by doing "File" | "Import"| Select "Git" | "Project from Git"| "Clone Uri".</p>
+</div>
+<div class="section" id="using-egit">
+<h2>Using eGit</h2>
+<p>Egit enables you to do the same as what git already enables but in a much more friendly way.</p>
+<p>Because egit is already integrated in Jiclipse, you already have all its features. I recommend the <a class="reference external" href="http://wiki.eclipse.org/EGit/User_Guide">documentation</a>. Most of the egit features are available when you right click on a file and select "Team".</p>
+<ul>
+<li>
+<p class="first">Annotations: When you are editing a file, you can access it by right clicking the file, selecting "Team" and "Show annotations".</p>
+<p>Similar to:</p>
+</li>
+</ul>
+<pre class="code bash"><a name="rest_code_05e2500b4b374eaba601647ebdc89c9a-1"></a>git blame
+</pre>
+<ul>
+<li>
+<p class="first">History: When you are editing a file, you can access it by right clicking the file, selecting "Team" and "Show in History".</p>
+<p>Similar to:</p>
+</li>
+</ul>
+<pre class="code bash"><a name="rest_code_bc79d20e6cf7425883794f1101b18773-1"></a>git log -p
+</pre>
+</div>
+<div class="section" id="using-pydev">
+<h2>Using Pydev</h2>
+<p><a class="reference external" href="http://pydev.org/">pydev</a> is the Python IDE in Eclipse.</p>
+<p>The debugging mode is very easy to use:</p>
+<ul class="simple">
+<li>Place your breakpoints where you want by double clicking in the margin of the files.</li>
+<li>Edit the "Run configuration" according to your project settings.</li>
+<li>Click on "Run" | "Debug as" and select the configuration you created.</li>
+</ul>
+</div>
+<div class="section" id="alternatives">
+<h2>Alternatives</h2>
+<p>Development environments for Python are listed here: <a class="reference external" href="http://docs.python-guide.org/en/latest/dev/env/">http://docs.python-guide.org/en/latest/dev/env/</a></p>
+<p>As text Editors, Vim is also a good choice combined with the following plugins:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.vim.org/scripts/script.php?script_id=974">indent</a></li>
+<li><a class="reference external" href="http://www.vim.org/scripts/script.php?script_id=790">syntax</a></li>
+<li><a class="reference external" href="https://github.com/nvie/vim-pep8">vim-pep8</a></li>
+<li><a class="reference external" href="https://github.com/nvie/vim-pyflakes">vim-pyflakes</a></li>
+<li><a class="reference external" href="https://github.com/scrooloose/syntastic">syntastic</a></li>
+<li><a class="reference external" href="https://github.com/klen/python-mode">python-mode</a></li>
+<li><a class="reference external" href="http://www.vim.org/scripts/script.php?script_id=1643">supertab</a></li>
+</ul>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="unresponsive-process.html" class="u-url">Unresponsive process</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="unresponsive-process.html" rel="bookmark"><time class="published dt-published" datetime="2014-06-20T10:08:44+01:00" title="2014-06-20 10:08">2014-06-20 10:08</time></a></p>
+                <p class="commentline">
+        
+    <a href="unresponsive-process.html#disqus_thread" data-disqus-identifier="cache/posts/unresponsive-process.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<pre class="code bash"><a name="rest_code_4f4a89d397ab495ba77242d5e1a7a078-1"></a>pkill -9f process-name
+</pre>
+<p>Example:</p>
+<pre class="code bash"><a name="rest_code_20030dc7f0bf4934b3a83c8260b9dee4-1"></a>pkill -9f filezilla
+</pre>
+<p>If you have launch a command that you cannot directly stopped with usually <em>ctrl+c</em>,
+you can always put the process in the background with <em>ctrl+z</em> and then use the
+<em>jobs</em> command to list the job (command) that you have launched.
+Then, you have the number of the job and you can kill it with the command
+<em>kill %&lt;number_of_the_job&gt;</em>.</p>
+<p>Example:</p>
+<pre class="code bash"><a name="rest_code_8f288e1395e34fd4b68c9bb3b3405316-1"></a>$ sleep 100
+<a name="rest_code_8f288e1395e34fd4b68c9bb3b3405316-2"></a>^Z
+<a name="rest_code_8f288e1395e34fd4b68c9bb3b3405316-3"></a><span class="o">[</span>1<span class="o">]</span>+  Stopped                 sleep 100
+<a name="rest_code_8f288e1395e34fd4b68c9bb3b3405316-4"></a>$ <span class="nb">jobs</span>
+<a name="rest_code_8f288e1395e34fd4b68c9bb3b3405316-5"></a><span class="o">[</span>1<span class="o">]</span>+  Stopped                 sleep 100
+<a name="rest_code_8f288e1395e34fd4b68c9bb3b3405316-6"></a>$ <span class="nb">kill</span> %1
+<a name="rest_code_8f288e1395e34fd4b68c9bb3b3405316-7"></a>$ <span class="nb">jobs</span>
+<a name="rest_code_8f288e1395e34fd4b68c9bb3b3405316-8"></a><span class="o">[</span>1<span class="o">]</span>+  Terminated              sleep 100
+<a name="rest_code_8f288e1395e34fd4b68c9bb3b3405316-9"></a>$ <span class="nb">jobs</span>
+<a name="rest_code_8f288e1395e34fd4b68c9bb3b3405316-10"></a>$
+</pre>
+</div>
+    </div>
+    </article>
+</div>
+
+        <nav class="postindexpager"><ul class="pager">
+<li class="previous">
+                <a href="index-3.html" rel="prev">Newer posts</a>
+            </li>
+            <li class="next">
+                <a href="index-1.html" rel="next">Older posts</a>
+            </li>
+        </ul></nav><script>var disqus_shortname="mattchoplin";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+
+        </div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2016         <a href="mailto:choplin.mat@gmail.com">Matthieu Choplin</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51792900-1', 'mattchoplin.com');
+  ga('send', 'pageview');
+
+</script><script src="../assets/js/tipuesearch_set.js"></script><script src="../assets/js/tipuesearch.js"></script><script>
+    $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch({
+            'mode': 'json',
+            'contentLocation': '/assets/js/tipuesearch_content.json',
+            'showUrl': false
+        });
+    });
+</script>
+</body>
+</html>

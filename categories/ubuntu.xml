@@ -1,42 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants (ubuntu)</title><link>http://mattchoplin.com/</link><description></description><language>en</language><lastBuildDate>Thu, 23 Jun 2016 23:28:28 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Control the screen brightness in Ubuntu</title><link>http://mattchoplin.com/posts/control-the-screen-brightness-in-ubuntu.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;Controlling the brightness of your screen not working after installing Ubuntu on a laptop equipped with an Intel graphics card?&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants (ubuntu)</title><link>http://mattchoplin.com/</link><description></description><atom:link href="http://mattchoplin.com/categories/ubuntu.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 11 Dec 2016 10:58:33 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Control the screen brightness in Ubuntu</title><link>http://mattchoplin.com/posts/control-the-screen-brightness-in-ubuntu.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;Controlling the brightness of your screen not working after installing Ubuntu on a laptop equipped with an Intel graphics card?&lt;/p&gt;
 &lt;p&gt;You can solve that through the Xorg configuration.&lt;/p&gt;
 &lt;p&gt;First, look at your PCI bus, in order to identify your card:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;lspci | grep -i vga
-
-00:02.0 VGA compatible controller: Intel Corporation 2nd Generation Core Processor Family Integrated Graphics Controller &lt;span class="o"&gt;(&lt;/span&gt;rev 09&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;That's how it looks on my machine. I am interested in the Intel card, so I need to remember its bus id &lt;em&gt;00:02.0&lt;/em&gt;.&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_ade95c47634e4b499f030b0ed7d51a8b-1"&gt;&lt;/a&gt;$ lspci &lt;span class="p"&gt;|&lt;/span&gt; grep -i vga
+&lt;a name="rest_code_ade95c47634e4b499f030b0ed7d51a8b-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ade95c47634e4b499f030b0ed7d51a8b-3"&gt;&lt;/a&gt;00:02.0 VGA compatible controller: Intel Corporation 2nd Generation Core Processor Family Integrated Graphics Controller &lt;span class="o"&gt;(&lt;/span&gt;rev 09&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;That's how it looks on my machine. I am interested in the Intel card, so I need to remember its bus id &lt;em&gt;00:02.0&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Next you need to create the config file:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;sudo nano /usr/share/X11/xorg.conf.d/20-intel.conf
-&lt;/pre&gt;
-&lt;p&gt;and put the following content in, which will tell the xorg driver to use intel_backlight:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-Section &lt;span class="s2"&gt;"Device"&lt;/span&gt;
-        Identifier      &lt;span class="s2"&gt;"card0"&lt;/span&gt;
-        Driver          &lt;span class="s2"&gt;"intel"&lt;/span&gt;
-        Option          &lt;span class="s2"&gt;"Backlight"&lt;/span&gt; &lt;span class="s2"&gt;"intel_backlight"&lt;/span&gt;
-        BusID           &lt;span class="s2"&gt;"PCI:0:2:0"&lt;/span&gt;
-EndSection
-&lt;/pre&gt;
-&lt;p&gt;Please note that the BusID should match.&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_ee74e2eb63af475bb2831ab7fc19eb47-1"&gt;&lt;/a&gt;$ sudo nano /usr/share/X11/xorg.conf.d/20-intel.conf
+&lt;/pre&gt;&lt;p&gt;and put the following content in, which will tell the xorg driver to use intel_backlight:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_3c2718071f884eb5b445972838b70805-1"&gt;&lt;/a&gt;Section &lt;span class="s2"&gt;"Device"&lt;/span&gt;
+&lt;a name="rest_code_3c2718071f884eb5b445972838b70805-2"&gt;&lt;/a&gt;        Identifier      &lt;span class="s2"&gt;"card0"&lt;/span&gt;
+&lt;a name="rest_code_3c2718071f884eb5b445972838b70805-3"&gt;&lt;/a&gt;        Driver          &lt;span class="s2"&gt;"intel"&lt;/span&gt;
+&lt;a name="rest_code_3c2718071f884eb5b445972838b70805-4"&gt;&lt;/a&gt;        Option          &lt;span class="s2"&gt;"Backlight"&lt;/span&gt; &lt;span class="s2"&gt;"intel_backlight"&lt;/span&gt;
+&lt;a name="rest_code_3c2718071f884eb5b445972838b70805-5"&gt;&lt;/a&gt;        BusID           &lt;span class="s2"&gt;"PCI:0:2:0"&lt;/span&gt;
+&lt;a name="rest_code_3c2718071f884eb5b445972838b70805-6"&gt;&lt;/a&gt;EndSection
+&lt;/pre&gt;&lt;p&gt;Please note that the BusID should match.&lt;/p&gt;
 &lt;p&gt;Save, restart your Xorg:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;find which display manager your ubuntu is having with following command:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;cat /etc/X11/default-display-manager
-&lt;/pre&gt;
-&lt;p&gt;For Ubuntu with LightDM:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
- &lt;span class="nv"&gt;$ &lt;/span&gt;sudo restart lightdm
-
-
-
-and you should be able to enjoy controlling brigtness from your keyboard.
-&lt;/pre&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_a585ec6bd852452d88cb500cd7e81672-1"&gt;&lt;/a&gt;$ cat /etc/X11/default-display-manager
+&lt;/pre&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;and, for Ubuntu with LightDM:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_bf2cfacde4624ede9b5048f5e5e3adc1-1"&gt;&lt;/a&gt;$ sudo restart lightdm
+&lt;/pre&gt;&lt;p&gt;It should then work.&lt;/p&gt;
 &lt;p&gt;Source:
 - &lt;a class="reference external" href="https://float-middle.com/screen-brightness-on-intel-ubuntu-14-04/"&gt;https://float-middle.com/screen-brightness-on-intel-ubuntu-14-04/&lt;/a&gt;
 - &lt;a class="reference external" href="http://askubuntu.com/questions/1220/how-to-restart-x-window-server-from-command-line"&gt;http://askubuntu.com/questions/1220/how-to-restart-x-window-server-from-command-line&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><category>ubuntu</category><guid>http://mattchoplin.com/posts/control-the-screen-brightness-in-ubuntu.html</guid><pubDate>Thu, 23 Jun 2016 22:07:34 GMT</pubDate></item></channel></rss>
