@@ -1,11 +1,11 @@
 <div class="section" id="the-keyword-with">
 <h1>The keyword <em>with</em></h1>
 <p>The context manager is going to be used with the keyword <em>with</em> such as:</p>
-<pre class="code python"><a name="rest_code_a1eb4dfb74d84663844447727da1546d-1"></a><span class="k">with</span> <span class="n">MyContextManager</span> <span class="k">as</span> <span class="n">context_var</span><span class="p">:</span>
-<a name="rest_code_a1eb4dfb74d84663844447727da1546d-2"></a>    <span class="c1"># here the statement is going to evaluate the methods</span>
-<a name="rest_code_a1eb4dfb74d84663844447727da1546d-3"></a>    <span class="c1"># __enter__ and __exit__ of the class MyContextManager.</span>
-<a name="rest_code_a1eb4dfb74d84663844447727da1546d-4"></a>    <span class="c1"># The value returned by __enter__ is going to be assigned</span>
-<a name="rest_code_a1eb4dfb74d84663844447727da1546d-5"></a>    <span class="c1"># to the variable &quot;context_var&quot;.</span>
+<pre class="code python"><a name="rest_code_25c6a2cae2e54c6d88771a7bcb3d4d7a-1"></a><span class="k">with</span> <span class="n">MyContextManager</span> <span class="k">as</span> <span class="n">context_var</span><span class="p">:</span>
+<a name="rest_code_25c6a2cae2e54c6d88771a7bcb3d4d7a-2"></a>    <span class="c1"># here the statement is going to evaluate the methods</span>
+<a name="rest_code_25c6a2cae2e54c6d88771a7bcb3d4d7a-3"></a>    <span class="c1"># __enter__ and __exit__ of the class MyContextManager.</span>
+<a name="rest_code_25c6a2cae2e54c6d88771a7bcb3d4d7a-4"></a>    <span class="c1"># The value returned by __enter__ is going to be assigned</span>
+<a name="rest_code_25c6a2cae2e54c6d88771a7bcb3d4d7a-5"></a>    <span class="c1"># to the variable &quot;context_var&quot;.</span>
 </pre></div>
 <div class="section" id="the-context-manager-can-be-defined-as-a-class">
 <h1>The context manager can be defined as a class</h1>
@@ -25,36 +25,36 @@ If you don't want the exception to be handled by the context manager, just let i
 </div>
 <div class="section" id="example">
 <h1>Example</h1>
-<pre class="code python"><a name="rest_code_53c97a34ecc847d68bac9f8420f743b7-1"></a><span class="k">class</span> <span class="nc">MyContextManager</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-<a name="rest_code_53c97a34ecc847d68bac9f8420f743b7-2"></a>    <span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_53c97a34ecc847d68bac9f8420f743b7-3"></a>        <span class="k">print</span> <span class="s1">&#39;__enter__()&#39;</span>
-<a name="rest_code_53c97a34ecc847d68bac9f8420f743b7-4"></a>        <span class="k">return</span> <span class="bp">self</span>
-<a name="rest_code_53c97a34ecc847d68bac9f8420f743b7-5"></a>    <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception_type</span><span class="p">,</span> <span class="n">exception_value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
-<a name="rest_code_53c97a34ecc847d68bac9f8420f743b7-6"></a>        <span class="k">print</span> <span class="s1">&#39;__exit__()&#39;</span>
-<a name="rest_code_53c97a34ecc847d68bac9f8420f743b7-7"></a>
-<a name="rest_code_53c97a34ecc847d68bac9f8420f743b7-8"></a><span class="k">with</span> <span class="n">MyContextManager</span><span class="p">()</span> <span class="k">as</span> <span class="n">context_var</span><span class="p">:</span>
-<a name="rest_code_53c97a34ecc847d68bac9f8420f743b7-9"></a>    <span class="k">print</span> <span class="s1">&#39;Doing work in the context&#39;</span>
+<pre class="code python"><a name="rest_code_c4191d2139ba4fbfabe45eae75ab6454-1"></a><span class="k">class</span> <span class="nc">MyContextManager</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<a name="rest_code_c4191d2139ba4fbfabe45eae75ab6454-2"></a>    <span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_c4191d2139ba4fbfabe45eae75ab6454-3"></a>        <span class="k">print</span> <span class="s1">&#39;__enter__()&#39;</span>
+<a name="rest_code_c4191d2139ba4fbfabe45eae75ab6454-4"></a>        <span class="k">return</span> <span class="bp">self</span>
+<a name="rest_code_c4191d2139ba4fbfabe45eae75ab6454-5"></a>    <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception_type</span><span class="p">,</span> <span class="n">exception_value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
+<a name="rest_code_c4191d2139ba4fbfabe45eae75ab6454-6"></a>        <span class="k">print</span> <span class="s1">&#39;__exit__()&#39;</span>
+<a name="rest_code_c4191d2139ba4fbfabe45eae75ab6454-7"></a>
+<a name="rest_code_c4191d2139ba4fbfabe45eae75ab6454-8"></a><span class="k">with</span> <span class="n">MyContextManager</span><span class="p">()</span> <span class="k">as</span> <span class="n">context_var</span><span class="p">:</span>
+<a name="rest_code_c4191d2139ba4fbfabe45eae75ab6454-9"></a>    <span class="k">print</span> <span class="s1">&#39;Doing work in the context&#39;</span>
 </pre><p>Where the output is:</p>
-<pre class="code bash"><a name="rest_code_79b0a71fe346443484eeca4dfb6984ef-1"></a>__enter__<span class="o">()</span>
-<a name="rest_code_79b0a71fe346443484eeca4dfb6984ef-2"></a>Doing work in the context
-<a name="rest_code_79b0a71fe346443484eeca4dfb6984ef-3"></a>__exit__<span class="o">()</span>
+<pre class="code bash"><a name="rest_code_009fe5062b6447eea1f96902e5226197-1"></a>__enter__<span class="o">()</span>
+<a name="rest_code_009fe5062b6447eea1f96902e5226197-2"></a>Doing work in the context
+<a name="rest_code_009fe5062b6447eea1f96902e5226197-3"></a>__exit__<span class="o">()</span>
 </pre></div>
 <div class="section" id="the-context-manager-can-also-be-defined-as-a-generator">
 <h1>The Context Manager can also be defined as a Generator</h1>
 <p>Here, we use the contextlib library and the module contextmanager.</p>
 <p>The equivalent of the example above would be:</p>
-<pre class="code python"><a name="rest_code_f4864062485a458c81609177514ba990-1"></a><span class="kn">import</span> <span class="nn">contextlib</span>
-<a name="rest_code_f4864062485a458c81609177514ba990-2"></a>
-<a name="rest_code_f4864062485a458c81609177514ba990-3"></a><span class="nd">@contextlib.contextmanager</span>
-<a name="rest_code_f4864062485a458c81609177514ba990-4"></a><span class="k">def</span> <span class="nf">mycontextmanager</span><span class="p">():</span>
-<a name="rest_code_f4864062485a458c81609177514ba990-5"></a>    <span class="k">print</span> <span class="s2">&quot;__enter__&quot;</span>
-<a name="rest_code_f4864062485a458c81609177514ba990-6"></a>    <span class="k">try</span><span class="p">:</span>
-<a name="rest_code_f4864062485a458c81609177514ba990-7"></a>        <span class="k">yield</span>
-<a name="rest_code_f4864062485a458c81609177514ba990-8"></a>    <span class="k">finally</span><span class="p">:</span>
-<a name="rest_code_f4864062485a458c81609177514ba990-9"></a>        <span class="k">print</span> <span class="s2">&quot;__exit__&quot;</span>
-<a name="rest_code_f4864062485a458c81609177514ba990-10"></a>
-<a name="rest_code_f4864062485a458c81609177514ba990-11"></a><span class="k">with</span> <span class="n">mycontextmanager</span><span class="p">()</span> <span class="k">as</span> <span class="n">context_var</span><span class="p">:</span>
-<a name="rest_code_f4864062485a458c81609177514ba990-12"></a>    <span class="k">print</span> <span class="s1">&#39;Doing work in the context&#39;</span>
+<pre class="code python"><a name="rest_code_56765911cd934267b0735335615cb30c-1"></a><span class="kn">import</span> <span class="nn">contextlib</span>
+<a name="rest_code_56765911cd934267b0735335615cb30c-2"></a>
+<a name="rest_code_56765911cd934267b0735335615cb30c-3"></a><span class="nd">@contextlib.contextmanager</span>
+<a name="rest_code_56765911cd934267b0735335615cb30c-4"></a><span class="k">def</span> <span class="nf">mycontextmanager</span><span class="p">():</span>
+<a name="rest_code_56765911cd934267b0735335615cb30c-5"></a>    <span class="k">print</span> <span class="s2">&quot;__enter__&quot;</span>
+<a name="rest_code_56765911cd934267b0735335615cb30c-6"></a>    <span class="k">try</span><span class="p">:</span>
+<a name="rest_code_56765911cd934267b0735335615cb30c-7"></a>        <span class="k">yield</span>
+<a name="rest_code_56765911cd934267b0735335615cb30c-8"></a>    <span class="k">finally</span><span class="p">:</span>
+<a name="rest_code_56765911cd934267b0735335615cb30c-9"></a>        <span class="k">print</span> <span class="s2">&quot;__exit__&quot;</span>
+<a name="rest_code_56765911cd934267b0735335615cb30c-10"></a>
+<a name="rest_code_56765911cd934267b0735335615cb30c-11"></a><span class="k">with</span> <span class="n">mycontextmanager</span><span class="p">()</span> <span class="k">as</span> <span class="n">context_var</span><span class="p">:</span>
+<a name="rest_code_56765911cd934267b0735335615cb30c-12"></a>    <span class="k">print</span> <span class="s1">&#39;Doing work in the context&#39;</span>
 </pre><p>First we use the decorator <em>&#64;contextmanager</em> to indicate to Python that the function will be a context manager.</p>
 <p>Then, we do a <em>try/finally</em> (it is not automatic like with __enter__ and __exit__).</p>
 <p>The word <em>yield</em> split the code in two parts:</p>

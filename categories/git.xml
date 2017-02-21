@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants (git)</title><link>http://mattchoplin.com/</link><description></description><atom:link href="http://mattchoplin.com/categories/git.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 11 Dec 2016 10:58:33 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Git branching strategy</title><link>http://mattchoplin.com/posts/git-branching-strategy.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="the-git-flow-strategy"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants (git)</title><link>http://mattchoplin.com/</link><description></description><atom:link href="http://mattchoplin.com/categories/git.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Tue, 21 Feb 2017 23:29:34 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Git branching strategy</title><link>http://mattchoplin.com/posts/git-branching-strategy.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="the-git-flow-strategy"&gt;
 &lt;h2&gt;The git-flow strategy&lt;/h2&gt;
 &lt;p&gt;Very nice cheatsheet: &lt;a class="reference external" href="http://danielkummer.github.io/git-flow-cheatsheet/"&gt;http://danielkummer.github.io/git-flow-cheatsheet/&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -22,20 +22,20 @@
 &lt;p&gt;source: &lt;a class="reference external" href="https://www.atlassian.com/git/workflows"&gt;https://www.atlassian.com/git/workflows&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;&lt;/div&gt;</description><category>git</category><guid>http://mattchoplin.com/posts/git-branching-strategy.html</guid><pubDate>Sun, 13 Jul 2014 11:44:49 GMT</pubDate></item><item><title>Git</title><link>http://mattchoplin.com/posts/git.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="nice-display-of-the-current-tree"&gt;
 &lt;h2&gt;Nice display of the current tree&lt;/h2&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_8b0b625fd01648f483d476ca10cb4eec-1"&gt;&lt;/a&gt;git log --graph --all --format&lt;span class="o"&gt;=&lt;/span&gt;format:&lt;span class="s2"&gt;"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold&lt;/span&gt;
-&lt;a name="rest_code_8b0b625fd01648f483d476ca10cb4eec-2"&gt;&lt;/a&gt;&lt;span class="s2"&gt;white)%cn%C(reset)%C(green)%d%C(reset)%n%x09%C(white)%s%C(reset)"&lt;/span&gt; --abbrev-commit &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$@&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_62e43c7d36394b4cbabc314c3eb1059e-1"&gt;&lt;/a&gt;git log --graph --all --format&lt;span class="o"&gt;=&lt;/span&gt;format:&lt;span class="s2"&gt;"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold&lt;/span&gt;
+&lt;a name="rest_code_62e43c7d36394b4cbabc314c3eb1059e-2"&gt;&lt;/a&gt;&lt;span class="s2"&gt;white)%cn%C(reset)%C(green)%d%C(reset)%n%x09%C(white)%s%C(reset)"&lt;/span&gt; --abbrev-commit &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$@&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;An alternative:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_bf87d89f2fff48a0bdd7c0e3d1377b5b-1"&gt;&lt;/a&gt;git log --graph --pretty&lt;span class="o"&gt;=&lt;/span&gt;format:&lt;span class="s1"&gt;'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&amp;lt;%an&amp;gt;%Creset'&lt;/span&gt; --abbrev-commit
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_6e181c45902341ccbb9dcece81a06c01-1"&gt;&lt;/a&gt;git log --graph --pretty&lt;span class="o"&gt;=&lt;/span&gt;format:&lt;span class="s1"&gt;'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&amp;lt;%an&amp;gt;%Creset'&lt;/span&gt; --abbrev-commit
 &lt;/pre&gt;&lt;p&gt;You can also make an alias. Copy and paste the line below on your terminal:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_6ffc0e5b5dea4f7faf421960405f8185-1"&gt;&lt;/a&gt;git config --global alias.lg &lt;span class="s2"&gt;"log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&amp;lt;%an&amp;gt;%Creset' --abbrev-commit"&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_fcdb49b8a3664df0b11ae13fc781ef09-1"&gt;&lt;/a&gt;git config --global alias.lg &lt;span class="s2"&gt;"log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&amp;lt;%an&amp;gt;%Creset' --abbrev-commit"&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;And every time you need to see your log, just type in&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_4e480e244aad4ee4a39607bd8adcfb89-1"&gt;&lt;/a&gt;git lg
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_e8e1752c8c9842e7a4fce5f70d84b2f5-1"&gt;&lt;/a&gt;git lg
 &lt;/pre&gt;&lt;p&gt;Or, if you want to see the lines that changed&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_f12b2ada076b4daeac8346715baad605-1"&gt;&lt;/a&gt;git lg -p
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_524755260fe3455494bfd3c35993251d-1"&gt;&lt;/a&gt;git lg -p
 &lt;/pre&gt;&lt;p&gt;Source: &lt;a class="reference external" href="https://coderwall.com/p/euwpig"&gt;https://coderwall.com/p/euwpig&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;NB: If you want to see a list of aliases set up on your linux box, just type &lt;em&gt;alias&lt;/em&gt; at the prompt.&lt;/p&gt;
 &lt;p&gt;Simply add color to your git environment:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_f9af0316812448df91bbee0169aeb972-1"&gt;&lt;/a&gt;git config --global color.ui auto
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_3f372efe9d864e61bcb425692b5ceade-1"&gt;&lt;/a&gt;git config --global color.ui auto
 &lt;/pre&gt;&lt;p&gt;Source: &lt;a class="reference external" href="http://git-scm.com/book/en/Customizing-Git-Git-Configuration"&gt;http://git-scm.com/book/en/Customizing-Git-Git-Configuration&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="tutorial"&gt;
@@ -44,40 +44,40 @@
 &lt;/div&gt;
 &lt;div class="section" id="delete-current-tag"&gt;
 &lt;h2&gt;Delete current tag&lt;/h2&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_a1a32a88f70a479599704339d2c09ab7-1"&gt;&lt;/a&gt;git tag -d 12.15
-&lt;a name="rest_code_a1a32a88f70a479599704339d2c09ab7-2"&gt;&lt;/a&gt;git push origin :refs/tags/12.15
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_cf072e6aa4574a57bbdb49ac57a7fe08-1"&gt;&lt;/a&gt;git tag -d 12.15
+&lt;a name="rest_code_cf072e6aa4574a57bbdb49ac57a7fe08-2"&gt;&lt;/a&gt;git push origin :refs/tags/12.15
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="stash-current-work"&gt;
 &lt;h2&gt;Stash current work&lt;/h2&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_b2cd8d8ea2d2466c8da39aaa50098df0-1"&gt;&lt;/a&gt;git stash save
-&lt;a name="rest_code_b2cd8d8ea2d2466c8da39aaa50098df0-2"&gt;&lt;/a&gt;git stash pop
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_680ab893ee2045c0ac2ae9d2e70197ae-1"&gt;&lt;/a&gt;git stash save
+&lt;a name="rest_code_680ab893ee2045c0ac2ae9d2e70197ae-2"&gt;&lt;/a&gt;git stash pop
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="push"&gt;
 &lt;h2&gt;Push&lt;/h2&gt;
 &lt;p&gt;To avoid doing all the time:&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_46b81d86b90342d1bee73d8bd274eebb-1"&gt;&lt;/a&gt;git push origin &amp;lt;your-feature-branch&amp;gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_b01e75c438c84c68984ae6cc1b607b1f-1"&gt;&lt;/a&gt;git push origin &amp;lt;your-feature-branch&amp;gt;
 &lt;/pre&gt;&lt;p&gt;You can do:&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_c758dbd09d5b4a2aa1b1e0a405dcb9c1-1"&gt;&lt;/a&gt;git push origin &amp;lt;your-feature-branch&amp;gt; -u
+&lt;pre class="code text"&gt;&lt;a name="rest_code_c295593f99704aa7b0d621e5b5d12364-1"&gt;&lt;/a&gt;git push origin &amp;lt;your-feature-branch&amp;gt; -u
 &lt;/pre&gt;&lt;p&gt;You next, you will just have to do:&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_a0ad00c7f7e6454cb56bad6ce751902d-1"&gt;&lt;/a&gt;git push
+&lt;pre class="code text"&gt;&lt;a name="rest_code_93b1c0c725c845f4a4b429bb2de84150-1"&gt;&lt;/a&gt;git push
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="find-which-commit-is-breaking-the-test-with-git-bisect"&gt;
 &lt;h2&gt;Find which commit is breaking the test with 'git bisect'&lt;/h2&gt;
 &lt;p&gt;You may be in situation where you come back from holidays and find the tests that were passing before broken.&lt;/p&gt;
 &lt;p&gt;Git can help to find which commit produced the failure.&lt;/p&gt;
 &lt;p&gt;To start bisect, run:&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_9d0095946e7d4083aa4381c7632abf42-1"&gt;&lt;/a&gt;git bisect start
+&lt;pre class="code text"&gt;&lt;a name="rest_code_ee0403c4dcfe4d14a28c091db4b745d3-1"&gt;&lt;/a&gt;git bisect start
 &lt;/pre&gt;&lt;p&gt;You know that the tests are failing so you indicate it with:&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_2e6bb9c17dc3420a83f14641448fa3d7-1"&gt;&lt;/a&gt;git bisect bad
+&lt;pre class="code text"&gt;&lt;a name="rest_code_1e479b919d3f49288472423de48c5272-1"&gt;&lt;/a&gt;git bisect bad
 &lt;/pre&gt;&lt;p&gt;You checkout an earlier revision when you know that the tests were passing (git log can help):&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_bed2074d58c545a4a2dde0efc6e65344-1"&gt;&lt;/a&gt;git checkout &amp;lt;the_failing_revision&amp;gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_00d53394d6504c789ca48346e5f236e5-1"&gt;&lt;/a&gt;git checkout &amp;lt;the_failing_revision&amp;gt;
 &lt;/pre&gt;&lt;p&gt;Then run the tests, and if they are passing, indicate it:&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_c93256c7926542dfa3d012b778e8b160-1"&gt;&lt;/a&gt;git bisect good
+&lt;pre class="code text"&gt;&lt;a name="rest_code_5e174e51a04a49ecad8c2f94bb833fcb-1"&gt;&lt;/a&gt;git bisect good
 &lt;/pre&gt;&lt;p&gt;Once you have indicated that once it was bad and once it was good. You can leave git bisect do the job automatically:&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_f341721fd031482690ddc5b0ad1b71db-1"&gt;&lt;/a&gt;git bisect run &amp;lt;command_that_run_the_tests&amp;gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_0dea8b97751b4c03b92f7b50095c37d2-1"&gt;&lt;/a&gt;git bisect run &amp;lt;command_that_run_the_tests&amp;gt;
 &lt;/pre&gt;&lt;p&gt;You can now grab a coffee and come back few minutes later to see what commit made the tests failed.&lt;/p&gt;
 &lt;p&gt;Finally, you also need to come back to the original revision:&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_62e080cca90f41e3aab61a27adc2384f-1"&gt;&lt;/a&gt;git bisect reset
+&lt;pre class="code text"&gt;&lt;a name="rest_code_c1d1eb045c57417096ec3d7a0e5f9174-1"&gt;&lt;/a&gt;git bisect reset
 &lt;/pre&gt;&lt;p&gt;Sources:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;first it was JB: &lt;a class="reference external" href="http://tartley.com/"&gt;http://tartley.com/&lt;/a&gt;&lt;/li&gt;
@@ -92,11 +92,11 @@
 &lt;/div&gt;
 &lt;div class="section" id="revert-all-the-changes-you-did"&gt;
 &lt;h2&gt;Revert all the changes you did&lt;/h2&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_342f09e3581a4426a28c369b03d2de01-1"&gt;&lt;/a&gt;git checkout -f
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_89c62103b33e42bc83eace1a025e188f-1"&gt;&lt;/a&gt;git checkout -f
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="reduce-the-size-of-a-git-repository-with-the-garbage-collector"&gt;
 &lt;h2&gt;Reduce the size of a git repository with the garbage collector&lt;/h2&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_ad6dfddec4d54f43940b49cb8fb10005-1"&gt;&lt;/a&gt;git gc
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_fe023dbc72e047b29cde7ccc04e39947-1"&gt;&lt;/a&gt;git gc
 &lt;/pre&gt;&lt;p&gt;Source:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://stackoverflow.com/questions/2116778/reduce-git-repository-size"&gt;http://stackoverflow.com/questions/2116778/reduce-git-repository-size&lt;/a&gt;&lt;/li&gt;

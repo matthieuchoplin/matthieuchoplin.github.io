@@ -1,10 +1,10 @@
 <p>A MonkeyPatch is a piece of Python code which extends or modifies other code at runtime (typically at startup). MonkeyPatching would be the practice of writing, or running, a monkeypatch.</p>
 <p>A simple example looks like this:</p>
-<pre class="code python"><a name="rest_code_96a9983aa6f8485cb8c62027f153a803-1"></a><span class="kn">from</span> <span class="nn">SomeOtherProduct.SomeModule</span> <span class="kn">import</span> <span class="n">SomeClass</span>
-<a name="rest_code_96a9983aa6f8485cb8c62027f153a803-2"></a><span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_96a9983aa6f8485cb8c62027f153a803-3"></a>    <span class="k">return</span> <span class="s2">&quot;ook ook eee eee eee!&quot;</span>
-<a name="rest_code_96a9983aa6f8485cb8c62027f153a803-4"></a>
-<a name="rest_code_96a9983aa6f8485cb8c62027f153a803-5"></a><span class="n">SomeClass</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="n">speak</span>
+<pre class="code python"><a name="rest_code_4f789dc0d0ae4736a3c59bc5e291e0ac-1"></a><span class="kn">from</span> <span class="nn">SomeOtherProduct.SomeModule</span> <span class="kn">import</span> <span class="n">SomeClass</span>
+<a name="rest_code_4f789dc0d0ae4736a3c59bc5e291e0ac-2"></a><span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_4f789dc0d0ae4736a3c59bc5e291e0ac-3"></a>    <span class="k">return</span> <span class="s2">&quot;ook ook eee eee eee!&quot;</span>
+<a name="rest_code_4f789dc0d0ae4736a3c59bc5e291e0ac-4"></a>
+<a name="rest_code_4f789dc0d0ae4736a3c59bc5e291e0ac-5"></a><span class="n">SomeClass</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="n">speak</span>
 </pre><p>In this example, if <em>SomeClass</em> did not already have a <em>speak()</em> method, it does now :-) If it had a speak() method before, <strong>the new code has replaced the old method definition</strong>.</p>
 <p>Sources:</p>
 <ul class="simple">

@@ -1,19 +1,19 @@
 <div class="section" id="nice-display-of-the-current-tree">
 <h1>Nice display of the current tree</h1>
-<pre class="code bash"><a name="rest_code_8b0b625fd01648f483d476ca10cb4eec-1"></a>git log --graph --all --format<span class="o">=</span>format:<span class="s2">&quot;%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold</span>
-<a name="rest_code_8b0b625fd01648f483d476ca10cb4eec-2"></a><span class="s2">white)%cn%C(reset)%C(green)%d%C(reset)%n%x09%C(white)%s%C(reset)&quot;</span> --abbrev-commit <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+<pre class="code bash"><a name="rest_code_62e43c7d36394b4cbabc314c3eb1059e-1"></a>git log --graph --all --format<span class="o">=</span>format:<span class="s2">&quot;%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold</span>
+<a name="rest_code_62e43c7d36394b4cbabc314c3eb1059e-2"></a><span class="s2">white)%cn%C(reset)%C(green)%d%C(reset)%n%x09%C(white)%s%C(reset)&quot;</span> --abbrev-commit <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
 </pre><p>An alternative:</p>
-<pre class="code bash"><a name="rest_code_bf87d89f2fff48a0bdd7c0e3d1377b5b-1"></a>git log --graph --pretty<span class="o">=</span>format:<span class="s1">&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39;</span> --abbrev-commit
+<pre class="code bash"><a name="rest_code_6e181c45902341ccbb9dcece81a06c01-1"></a>git log --graph --pretty<span class="o">=</span>format:<span class="s1">&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39;</span> --abbrev-commit
 </pre><p>You can also make an alias. Copy and paste the line below on your terminal:</p>
-<pre class="code bash"><a name="rest_code_6ffc0e5b5dea4f7faf421960405f8185-1"></a>git config --global alias.lg <span class="s2">&quot;log --color --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit&quot;</span>
+<pre class="code bash"><a name="rest_code_fcdb49b8a3664df0b11ae13fc781ef09-1"></a>git config --global alias.lg <span class="s2">&quot;log --color --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit&quot;</span>
 </pre><p>And every time you need to see your log, just type in</p>
-<pre class="code bash"><a name="rest_code_4e480e244aad4ee4a39607bd8adcfb89-1"></a>git lg
+<pre class="code bash"><a name="rest_code_e8e1752c8c9842e7a4fce5f70d84b2f5-1"></a>git lg
 </pre><p>Or, if you want to see the lines that changed</p>
-<pre class="code bash"><a name="rest_code_f12b2ada076b4daeac8346715baad605-1"></a>git lg -p
+<pre class="code bash"><a name="rest_code_524755260fe3455494bfd3c35993251d-1"></a>git lg -p
 </pre><p>Source: <a class="reference external" href="https://coderwall.com/p/euwpig">https://coderwall.com/p/euwpig</a></p>
 <p>NB: If you want to see a list of aliases set up on your linux box, just type <em>alias</em> at the prompt.</p>
 <p>Simply add color to your git environment:</p>
-<pre class="code bash"><a name="rest_code_f9af0316812448df91bbee0169aeb972-1"></a>git config --global color.ui auto
+<pre class="code bash"><a name="rest_code_3f372efe9d864e61bcb425692b5ceade-1"></a>git config --global color.ui auto
 </pre><p>Source: <a class="reference external" href="http://git-scm.com/book/en/Customizing-Git-Git-Configuration">http://git-scm.com/book/en/Customizing-Git-Git-Configuration</a></p>
 </div>
 <div class="section" id="tutorial">
@@ -22,40 +22,40 @@
 </div>
 <div class="section" id="delete-current-tag">
 <h1>Delete current tag</h1>
-<pre class="code bash"><a name="rest_code_a1a32a88f70a479599704339d2c09ab7-1"></a>git tag -d 12.15
-<a name="rest_code_a1a32a88f70a479599704339d2c09ab7-2"></a>git push origin :refs/tags/12.15
+<pre class="code bash"><a name="rest_code_cf072e6aa4574a57bbdb49ac57a7fe08-1"></a>git tag -d 12.15
+<a name="rest_code_cf072e6aa4574a57bbdb49ac57a7fe08-2"></a>git push origin :refs/tags/12.15
 </pre></div>
 <div class="section" id="stash-current-work">
 <h1>Stash current work</h1>
-<pre class="code bash"><a name="rest_code_b2cd8d8ea2d2466c8da39aaa50098df0-1"></a>git stash save
-<a name="rest_code_b2cd8d8ea2d2466c8da39aaa50098df0-2"></a>git stash pop
+<pre class="code bash"><a name="rest_code_680ab893ee2045c0ac2ae9d2e70197ae-1"></a>git stash save
+<a name="rest_code_680ab893ee2045c0ac2ae9d2e70197ae-2"></a>git stash pop
 </pre></div>
 <div class="section" id="push">
 <h1>Push</h1>
 <p>To avoid doing all the time:</p>
-<pre class="code text"><a name="rest_code_46b81d86b90342d1bee73d8bd274eebb-1"></a>git push origin &lt;your-feature-branch&gt;
+<pre class="code text"><a name="rest_code_b01e75c438c84c68984ae6cc1b607b1f-1"></a>git push origin &lt;your-feature-branch&gt;
 </pre><p>You can do:</p>
-<pre class="code text"><a name="rest_code_c758dbd09d5b4a2aa1b1e0a405dcb9c1-1"></a>git push origin &lt;your-feature-branch&gt; -u
+<pre class="code text"><a name="rest_code_c295593f99704aa7b0d621e5b5d12364-1"></a>git push origin &lt;your-feature-branch&gt; -u
 </pre><p>You next, you will just have to do:</p>
-<pre class="code text"><a name="rest_code_a0ad00c7f7e6454cb56bad6ce751902d-1"></a>git push
+<pre class="code text"><a name="rest_code_93b1c0c725c845f4a4b429bb2de84150-1"></a>git push
 </pre></div>
 <div class="section" id="find-which-commit-is-breaking-the-test-with-git-bisect">
 <h1>Find which commit is breaking the test with 'git bisect'</h1>
 <p>You may be in situation where you come back from holidays and find the tests that were passing before broken.</p>
 <p>Git can help to find which commit produced the failure.</p>
 <p>To start bisect, run:</p>
-<pre class="code text"><a name="rest_code_9d0095946e7d4083aa4381c7632abf42-1"></a>git bisect start
+<pre class="code text"><a name="rest_code_ee0403c4dcfe4d14a28c091db4b745d3-1"></a>git bisect start
 </pre><p>You know that the tests are failing so you indicate it with:</p>
-<pre class="code text"><a name="rest_code_2e6bb9c17dc3420a83f14641448fa3d7-1"></a>git bisect bad
+<pre class="code text"><a name="rest_code_1e479b919d3f49288472423de48c5272-1"></a>git bisect bad
 </pre><p>You checkout an earlier revision when you know that the tests were passing (git log can help):</p>
-<pre class="code text"><a name="rest_code_bed2074d58c545a4a2dde0efc6e65344-1"></a>git checkout &lt;the_failing_revision&gt;
+<pre class="code text"><a name="rest_code_00d53394d6504c789ca48346e5f236e5-1"></a>git checkout &lt;the_failing_revision&gt;
 </pre><p>Then run the tests, and if they are passing, indicate it:</p>
-<pre class="code text"><a name="rest_code_c93256c7926542dfa3d012b778e8b160-1"></a>git bisect good
+<pre class="code text"><a name="rest_code_5e174e51a04a49ecad8c2f94bb833fcb-1"></a>git bisect good
 </pre><p>Once you have indicated that once it was bad and once it was good. You can leave git bisect do the job automatically:</p>
-<pre class="code text"><a name="rest_code_f341721fd031482690ddc5b0ad1b71db-1"></a>git bisect run &lt;command_that_run_the_tests&gt;
+<pre class="code text"><a name="rest_code_0dea8b97751b4c03b92f7b50095c37d2-1"></a>git bisect run &lt;command_that_run_the_tests&gt;
 </pre><p>You can now grab a coffee and come back few minutes later to see what commit made the tests failed.</p>
 <p>Finally, you also need to come back to the original revision:</p>
-<pre class="code text"><a name="rest_code_62e080cca90f41e3aab61a27adc2384f-1"></a>git bisect reset
+<pre class="code text"><a name="rest_code_c1d1eb045c57417096ec3d7a0e5f9174-1"></a>git bisect reset
 </pre><p>Sources:</p>
 <ul class="simple">
 <li>first it was JB: <a class="reference external" href="http://tartley.com/">http://tartley.com/</a></li>
@@ -70,11 +70,11 @@
 </div>
 <div class="section" id="revert-all-the-changes-you-did">
 <h1>Revert all the changes you did</h1>
-<pre class="code bash"><a name="rest_code_342f09e3581a4426a28c369b03d2de01-1"></a>git checkout -f
+<pre class="code bash"><a name="rest_code_89c62103b33e42bc83eace1a025e188f-1"></a>git checkout -f
 </pre></div>
 <div class="section" id="reduce-the-size-of-a-git-repository-with-the-garbage-collector">
 <h1>Reduce the size of a git repository with the garbage collector</h1>
-<pre class="code bash"><a name="rest_code_ad6dfddec4d54f43940b49cb8fb10005-1"></a>git gc
+<pre class="code bash"><a name="rest_code_fe023dbc72e047b29cde7ccc04e39947-1"></a>git gc
 </pre><p>Source:</p>
 <ul class="simple">
 <li><a class="reference external" href="http://stackoverflow.com/questions/2116778/reduce-git-repository-size">http://stackoverflow.com/questions/2116778/reduce-git-repository-size</a></li>

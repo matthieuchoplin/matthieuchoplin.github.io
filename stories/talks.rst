@@ -13,9 +13,7 @@
 .. _city: http://mattchoplin.com/python_city/
 __ city_
 
-
 * `Courses given as a freelance`__.
-
 
 .. _freelance: http://mattchoplin.com/python_beginner/
 __ freelance_

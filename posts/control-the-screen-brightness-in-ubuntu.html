@@ -113,33 +113,33 @@
 <p>Controlling the brightness of your screen not working after installing Ubuntu on a laptop equipped with an Intel graphics card?</p>
 <p>You can solve that through the Xorg configuration.</p>
 <p>First, look at your PCI bus, in order to identify your card:</p>
-<pre class="code bash"><a name="rest_code_ade95c47634e4b499f030b0ed7d51a8b-1"></a>$ lspci <span class="p">|</span> grep -i vga
-<a name="rest_code_ade95c47634e4b499f030b0ed7d51a8b-2"></a>
-<a name="rest_code_ade95c47634e4b499f030b0ed7d51a8b-3"></a>00:02.0 VGA compatible controller: Intel Corporation 2nd Generation Core Processor Family Integrated Graphics Controller <span class="o">(</span>rev 09<span class="o">)</span>
+<pre class="code bash"><a name="rest_code_577c359055084e72b07dd6d1a32604fd-1"></a>$ lspci <span class="p">|</span> grep -i vga
+<a name="rest_code_577c359055084e72b07dd6d1a32604fd-2"></a>
+<a name="rest_code_577c359055084e72b07dd6d1a32604fd-3"></a>00:02.0 VGA compatible controller: Intel Corporation 2nd Generation Core Processor Family Integrated Graphics Controller <span class="o">(</span>rev 09<span class="o">)</span>
 </pre>
 <p>That's how it looks on my machine. I am interested in the Intel card, so I need to remember its bus id <em>00:02.0</em>.</p>
 <p>Next you need to create the config file:</p>
-<pre class="code bash"><a name="rest_code_ee74e2eb63af475bb2831ab7fc19eb47-1"></a>$ sudo nano /usr/share/X11/xorg.conf.d/20-intel.conf
+<pre class="code bash"><a name="rest_code_fb78a1777476494982ed87ccc07d05cc-1"></a>$ sudo nano /usr/share/X11/xorg.conf.d/20-intel.conf
 </pre>
 <p>and put the following content in, which will tell the xorg driver to use intel_backlight:</p>
-<pre class="code bash"><a name="rest_code_3c2718071f884eb5b445972838b70805-1"></a>Section <span class="s2">"Device"</span>
-<a name="rest_code_3c2718071f884eb5b445972838b70805-2"></a>        Identifier      <span class="s2">"card0"</span>
-<a name="rest_code_3c2718071f884eb5b445972838b70805-3"></a>        Driver          <span class="s2">"intel"</span>
-<a name="rest_code_3c2718071f884eb5b445972838b70805-4"></a>        Option          <span class="s2">"Backlight"</span> <span class="s2">"intel_backlight"</span>
-<a name="rest_code_3c2718071f884eb5b445972838b70805-5"></a>        BusID           <span class="s2">"PCI:0:2:0"</span>
-<a name="rest_code_3c2718071f884eb5b445972838b70805-6"></a>EndSection
+<pre class="code bash"><a name="rest_code_34103e3c4a974b6d9b64bda7dc634051-1"></a>Section <span class="s2">"Device"</span>
+<a name="rest_code_34103e3c4a974b6d9b64bda7dc634051-2"></a>        Identifier      <span class="s2">"card0"</span>
+<a name="rest_code_34103e3c4a974b6d9b64bda7dc634051-3"></a>        Driver          <span class="s2">"intel"</span>
+<a name="rest_code_34103e3c4a974b6d9b64bda7dc634051-4"></a>        Option          <span class="s2">"Backlight"</span> <span class="s2">"intel_backlight"</span>
+<a name="rest_code_34103e3c4a974b6d9b64bda7dc634051-5"></a>        BusID           <span class="s2">"PCI:0:2:0"</span>
+<a name="rest_code_34103e3c4a974b6d9b64bda7dc634051-6"></a>EndSection
 </pre>
 <p>Please note that the BusID should match.</p>
 <p>Save, restart your Xorg:</p>
 <ul class="simple">
 <li>find which display manager your ubuntu is having with following command:</li>
 </ul>
-<pre class="code bash"><a name="rest_code_a585ec6bd852452d88cb500cd7e81672-1"></a>$ cat /etc/X11/default-display-manager
+<pre class="code bash"><a name="rest_code_65c8d391e5c64852897ac2aac1c03ef9-1"></a>$ cat /etc/X11/default-display-manager
 </pre>
 <ul class="simple">
 <li>and, for Ubuntu with LightDM:</li>
 </ul>
-<pre class="code bash"><a name="rest_code_bf2cfacde4624ede9b5048f5e5e3adc1-1"></a>$ sudo restart lightdm
+<pre class="code bash"><a name="rest_code_4653b8646ef64626a0c40c3709d0793e-1"></a>$ sudo restart lightdm
 </pre>
 <p>It should then work.</p>
 <p>Source:

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants (sysadmin)</title><link>http://mattchoplin.com/</link><description></description><atom:link href="http://mattchoplin.com/categories/sysadmin.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 11 Dec 2016 10:58:33 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Symbolic links</title><link>http://mattchoplin.com/posts/symbolic-links.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="dealing-with-broken-symbolic-links"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants (sysadmin)</title><link>http://mattchoplin.com/</link><description></description><atom:link href="http://mattchoplin.com/categories/sysadmin.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Tue, 21 Feb 2017 23:29:34 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Symbolic links</title><link>http://mattchoplin.com/posts/symbolic-links.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="dealing-with-broken-symbolic-links"&gt;
 &lt;h2&gt;Dealing with broken symbolic links&lt;/h2&gt;
 &lt;p&gt;Find broken symlinks and delete them&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_052b6e80b8cc4c58b08051b1159fb925-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$find&lt;/span&gt; -L /path/to/check -type l -delete
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_224cd50db41b4369af7637b0e1caabaf-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$find&lt;/span&gt; -L /path/to/check -type l -delete
 &lt;/pre&gt;&lt;p&gt;List them&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_76bb5a4bfef74077ad6bce4cad80960f-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$find&lt;/span&gt; -L /path -type l
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_90afbf92d1c2403189ab7a84f5cf525c-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$find&lt;/span&gt; -L /path -type l
 &lt;/pre&gt;&lt;p&gt;If you want to delete them with confirmation first, do&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_030a63c6d67c4727aacb2fe0e8471d28-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$find&lt;/span&gt; -L /path -type l -exec rm -i &lt;span class="o"&gt;{}&lt;/span&gt; +
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_f658d0f4099f41339416c96ded838d7a-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$find&lt;/span&gt; -L /path -type l -exec rm -i &lt;span class="o"&gt;{}&lt;/span&gt; +
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="creating-symbolik-links"&gt;
 &lt;h2&gt;Creating symbolik links&lt;/h2&gt;
 &lt;p&gt;First cd into your directory and then indicate where your symlinks will point&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_c78264a949994657a3402792212142a1-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$find&lt;/span&gt; /directory_where_yout_symlinks_are/ -maxdepth &lt;span class="m"&gt;1&lt;/span&gt; -type d -exec ln -s  &lt;span class="o"&gt;{}&lt;/span&gt; &lt;span class="se"&gt;\;&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_5b8d4216abbb420ca565feda32dc36cf-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$find&lt;/span&gt; /directory_where_yout_symlinks_are/ -maxdepth &lt;span class="m"&gt;1&lt;/span&gt; -type d -exec ln -s  &lt;span class="o"&gt;{}&lt;/span&gt; &lt;span class="se"&gt;\;&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;If you want to update your existing symlinks, use the &lt;strong&gt;-f&lt;/strong&gt; option such as:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_ba225b87a6ff4b0791dad6740882584b-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$find&lt;/span&gt; /home/matt/workspace/unified_repos/erp_core/modules/ -maxdepth &lt;span class="m"&gt;1&lt;/span&gt; -type d -exec ln -sf  &lt;span class="o"&gt;{}&lt;/span&gt; &lt;span class="se"&gt;\;&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_03a839d3f816456494cad13f0fed9c55-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$find&lt;/span&gt; /home/matt/workspace/unified_repos/erp_core/modules/ -maxdepth &lt;span class="m"&gt;1&lt;/span&gt; -type d -exec ln -sf  &lt;span class="o"&gt;{}&lt;/span&gt; &lt;span class="se"&gt;\;&lt;/span&gt;
 &lt;/pre&gt;&lt;div class="line-block"&gt;
 &lt;div class="line"&gt;&lt;br&gt;&lt;/div&gt;
 &lt;/div&gt;

@@ -2,30 +2,30 @@
 <div class="section" id="create-a-git-repository">
 <h1>Create a git repository</h1>
 <p>Make sure that git is installed with:</p>
-<pre class="code bash"><a name="rest_code_4cfcae4206f744778ed5422dc3f50aa0-1"></a>$ sudo apt-get install git
+<pre class="code bash"><a name="rest_code_3baa9598734d44c99408bae6dba1dd5a-1"></a>$ sudo apt-get install git
 </pre><p>Then you can initialise the git repository</p>
-<pre class="code bash"><a name="rest_code_6f4ae47e1a514945bf1bdd7b95afe327-1"></a>$ mkdir myproject
-<a name="rest_code_6f4ae47e1a514945bf1bdd7b95afe327-2"></a>$ <span class="nb">cd</span> myproject
-<a name="rest_code_6f4ae47e1a514945bf1bdd7b95afe327-3"></a>$ git init
+<pre class="code bash"><a name="rest_code_7fdccf912c644f8f81e299b31fb3f69d-1"></a>$ mkdir myproject
+<a name="rest_code_7fdccf912c644f8f81e299b31fb3f69d-2"></a>$ <span class="nb">cd</span> myproject
+<a name="rest_code_7fdccf912c644f8f81e299b31fb3f69d-3"></a>$ git init
 </pre></div>
 <div class="section" id="create-a-virtual-environment">
 <h1>Create a virtual environment</h1>
 <p>To do that you can use virtualenv</p>
-<pre class="code bash"><a name="rest_code_45049fba655b4b438429f0390f0c57c8-1"></a>$ sudo apt-get install virtualenv
+<pre class="code bash"><a name="rest_code_6a2350e9c27549dd88cfac6551ec85cc-1"></a>$ sudo apt-get install virtualenv
 </pre><p>virtualenv is a tool to create isolated Python environments.</p>
 <p>Source: <a class="reference external" href="http://virtualenv.readthedocs.org/">http://virtualenv.readthedocs.org/</a></p>
 <p>Within <em>myproject</em> created above, you can create the virtual environment with:</p>
-<pre class="code bash"><a name="rest_code_56e403b983b04f89941093a941b30da7-1"></a>$ virtualenv venv
+<pre class="code bash"><a name="rest_code_11bc9e6ecf9b4fea8ff5847150c2d0e3-1"></a>$ virtualenv venv
 </pre><p>The directory structure within myproject should look like:</p>
-<pre class="code bash"><a name="rest_code_5ad3377540414f33ba1799482ae32ebf-1"></a>.
-<a name="rest_code_5ad3377540414f33ba1799482ae32ebf-2"></a>└── venv
-<a name="rest_code_5ad3377540414f33ba1799482ae32ebf-3"></a>    ├── bin
-<a name="rest_code_5ad3377540414f33ba1799482ae32ebf-4"></a>    ├── include
-<a name="rest_code_5ad3377540414f33ba1799482ae32ebf-5"></a>    ├── lib
-<a name="rest_code_5ad3377540414f33ba1799482ae32ebf-6"></a>    └── <span class="nb">local</span>
+<pre class="code bash"><a name="rest_code_64535d31990a41ca86f8ed69b2e4b371-1"></a>.
+<a name="rest_code_64535d31990a41ca86f8ed69b2e4b371-2"></a>└── venv
+<a name="rest_code_64535d31990a41ca86f8ed69b2e4b371-3"></a>    ├── bin
+<a name="rest_code_64535d31990a41ca86f8ed69b2e4b371-4"></a>    ├── include
+<a name="rest_code_64535d31990a41ca86f8ed69b2e4b371-5"></a>    ├── lib
+<a name="rest_code_64535d31990a41ca86f8ed69b2e4b371-6"></a>    └── <span class="nb">local</span>
 </pre><p>NB: you can easily view the directory structure with the command <em>tree</em> (sudo apt-get install tree).</p>
 <p>Then, we want to activate the virtual environment:</p>
-<pre class="code bash"><a name="rest_code_43b6d081e88a4bfc9b50bc2f64c05dab-1"></a>$ <span class="nb">source</span> venv/bin/activate
+<pre class="code bash"><a name="rest_code_a97177383af34e1a9f97a37f48ee0104-1"></a>$ <span class="nb">source</span> venv/bin/activate
 </pre><p>NB: to quit the virtual environment, use <em>deactivate</em></p>
 </div>
 <div class="section" id="configure-the-virtual-environment">
@@ -34,30 +34,30 @@
 <p>If you do a <em>pip freeze</em>, you will see all the libraries installed.</p>
 <p>If you install a new library, you will see that it has been added if you do a <em>pip freeze</em> again.</p>
 <p>For instance, we want to install south, django-registration and stripe:</p>
-<pre class="code bash"><a name="rest_code_c6eef0946da04d21877b50805c5d53a3-1"></a>$ pip install <span class="nv">django</span><span class="o">==</span>1.5.1 south django-registration stripe
-<a name="rest_code_c6eef0946da04d21877b50805c5d53a3-2"></a>$ pip freeze
-<a name="rest_code_c6eef0946da04d21877b50805c5d53a3-3"></a>$ pip freeze
-<a name="rest_code_c6eef0946da04d21877b50805c5d53a3-4"></a><span class="nv">Django</span><span class="o">==</span>1.5.1
-<a name="rest_code_c6eef0946da04d21877b50805c5d53a3-5"></a><span class="nv">South</span><span class="o">==</span>1.0
-<a name="rest_code_c6eef0946da04d21877b50805c5d53a3-6"></a><span class="nv">argparse</span><span class="o">==</span>1.2.1
-<a name="rest_code_c6eef0946da04d21877b50805c5d53a3-7"></a>django-registration<span class="o">==</span>1.0
-<a name="rest_code_c6eef0946da04d21877b50805c5d53a3-8"></a><span class="nv">requests</span><span class="o">==</span>2.4.1
-<a name="rest_code_c6eef0946da04d21877b50805c5d53a3-9"></a><span class="nv">stripe</span><span class="o">==</span>1.19.0
-<a name="rest_code_c6eef0946da04d21877b50805c5d53a3-10"></a><span class="nv">wsgiref</span><span class="o">==</span>0.1.2
+<pre class="code bash"><a name="rest_code_30794363d22e45348a58dde5f54cee9b-1"></a>$ pip install <span class="nv">django</span><span class="o">==</span>1.5.1 south django-registration stripe
+<a name="rest_code_30794363d22e45348a58dde5f54cee9b-2"></a>$ pip freeze
+<a name="rest_code_30794363d22e45348a58dde5f54cee9b-3"></a>$ pip freeze
+<a name="rest_code_30794363d22e45348a58dde5f54cee9b-4"></a><span class="nv">Django</span><span class="o">==</span>1.5.1
+<a name="rest_code_30794363d22e45348a58dde5f54cee9b-5"></a><span class="nv">South</span><span class="o">==</span>1.0
+<a name="rest_code_30794363d22e45348a58dde5f54cee9b-6"></a><span class="nv">argparse</span><span class="o">==</span>1.2.1
+<a name="rest_code_30794363d22e45348a58dde5f54cee9b-7"></a>django-registration<span class="o">==</span>1.0
+<a name="rest_code_30794363d22e45348a58dde5f54cee9b-8"></a><span class="nv">requests</span><span class="o">==</span>2.4.1
+<a name="rest_code_30794363d22e45348a58dde5f54cee9b-9"></a><span class="nv">stripe</span><span class="o">==</span>1.19.0
+<a name="rest_code_30794363d22e45348a58dde5f54cee9b-10"></a><span class="nv">wsgiref</span><span class="o">==</span>0.1.2
 </pre><p>NB: you can precize the version you want. Here, we want to use django with the version 1.5.1</p>
 <p>We are going to keep the output of <em>git freeze</em> in a requirements.txt file:</p>
-<pre class="code bash"><a name="rest_code_3c435cf447774036bba70cd9b54f80ff-1"></a>$ pip freeze &gt; requirement.txt
+<pre class="code bash"><a name="rest_code_6b41d4658e6846ecbd2d9442fcf445a9-1"></a>$ pip freeze &gt; requirement.txt
 </pre><p>That way, we can recreate the virtual environment easily with:</p>
-<pre class="code bash"><a name="rest_code_d0e8127e3f884dc8bb18aa6a20fa4710-1"></a>$ pip install -r requirement.txt
+<pre class="code bash"><a name="rest_code_28db63715f604188b158980d62f0bf30-1"></a>$ pip install -r requirement.txt
 </pre><p>The virtual environment is going to take a lot of place in the git repository, so we are going to untrack it.</p>
 <p>To do that, we are going to create a <em>.gitignore</em> file.</p>
-<pre class="code bash"><a name="rest_code_3d95f5d48467400790354f72ad70f869-1"></a>$ cat .gitignore
-<a name="rest_code_3d95f5d48467400790354f72ad70f869-2"></a>venv
+<pre class="code bash"><a name="rest_code_57e4749fc10b41b892041f0bde20cc36-1"></a>$ cat .gitignore
+<a name="rest_code_57e4749fc10b41b892041f0bde20cc36-2"></a>venv
 </pre></div>
 <div class="section" id="create-your-django-project">
 <h1>Create your django project</h1>
-<pre class="code bash"><a name="rest_code_c2158648c9084574bc55dfc3d5385b69-1"></a>$ django-admin.py startproject myproject
+<pre class="code bash"><a name="rest_code_2066925a17c446a1bf7cd2e95a32cc20-1"></a>$ django-admin.py startproject myproject
 </pre><p>Check that it is installed correctly by running the server:</p>
-<pre class="code bash"><a name="rest_code_7bb59bb927c8452388dee89dfc9e733f-1"></a>$ python manage.py runserver
+<pre class="code bash"><a name="rest_code_6173987e434b4de2a1ad5f6acc9c9fd4-1"></a>$ python manage.py runserver
 </pre><p>and in your browser, go to the url <a class="reference external" href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></p>
 </div>

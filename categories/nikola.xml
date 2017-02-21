@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants (Nikola)</title><link>http://mattchoplin.com/</link><description></description><atom:link href="http://mattchoplin.com/categories/nikola.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 11 Dec 2016 10:58:33 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Tipue search</title><link>http://mattchoplin.com/posts/tipue-search.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;As the number of posts is growing, I think that having a search engine within the website is now relevant. This post only shows what I am using for that.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants (Nikola)</title><link>http://mattchoplin.com/</link><description></description><atom:link href="http://mattchoplin.com/categories/nikola.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Tue, 21 Feb 2017 23:29:34 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Tipue search</title><link>http://mattchoplin.com/posts/tipue-search.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;As the number of posts is growing, I think that having a search engine within the website is now relevant. This post only shows what I am using for that.&lt;/p&gt;
 &lt;p&gt;Instead of using an external search engine such as Google or DuckDuckGo, you have a plugin in Nikola than enables searching on the client side by using jQuery.&lt;/p&gt;
 &lt;p&gt;Assuming you have installed Nikola &amp;gt; v7.0, you can install the plugin like this:&lt;/p&gt;
-&lt;pre class="code python"&gt;&lt;a name="rest_code_3e2799f7c99e47a89092656f018aa283-1"&gt;&lt;/a&gt;&lt;span class="n"&gt;nikola&lt;/span&gt; &lt;span class="n"&gt;plugin&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="n"&gt;localsearch&lt;/span&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_70c6bb81400f4de6b064d794145ede00-1"&gt;&lt;/a&gt;&lt;span class="n"&gt;nikola&lt;/span&gt; &lt;span class="n"&gt;plugin&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="n"&gt;localsearch&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;It will give you a configuration sample to paste in your config.py file.&lt;/p&gt;
 &lt;p&gt;Source: &lt;a class="reference external" href="http://plugins.getnikola.com/#localsearch"&gt;http://plugins.getnikola.com/#localsearch&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><category>Nikola</category><guid>http://mattchoplin.com/posts/tipue-search.html</guid><pubDate>Sat, 19 Jul 2014 12:05:20 GMT</pubDate></item><item><title>Blog creation</title><link>http://mattchoplin.com/posts/blog-creation.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="website-hosted-from-my-github-repository"&gt;
 &lt;h2&gt;Website hosted from my Github Repository&lt;/h2&gt;
@@ -13,17 +13,17 @@ Create a repository called &lt;em&gt;username.github.io&lt;/em&gt;, where userna
 &lt;h2&gt;Website generation using a Python framework: Nikola&lt;/h2&gt;
 &lt;p&gt;This website is using &lt;a class="reference external" href="http://getnikola.com"&gt;Nikola&lt;/a&gt; which is a Python static website generator.
 Assuming that you have created a github repository called &lt;em&gt;username.github.io&lt;/em&gt;, clone it with:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_cf42e63a939a43cdbc54ca7891806f8e-1"&gt;&lt;/a&gt;git clone git@github.com:username/username.github.io.git
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_902789c0a8ce4c8f8e464c8aa6916022-1"&gt;&lt;/a&gt;git clone git@github.com:username/username.github.io.git
 &lt;/pre&gt;&lt;p&gt;Then initialize your website with this command:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_5de61a881b0641979531a410642d0c4c-1"&gt;&lt;/a&gt;nikola init username.github.io
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_7b037953aed34b2ab71d6a16a7aeda76-1"&gt;&lt;/a&gt;nikola init username.github.io
 &lt;/pre&gt;&lt;p&gt;where &lt;em&gt;username.github.io&lt;/em&gt; is the repository you have just cloned.&lt;/p&gt;
 &lt;p&gt;cd in this directory and execute this command:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_70d14292ddb444f2aa962935951ca46c-1"&gt;&lt;/a&gt;nikola build &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; nikola serve -b
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_36527b1abbe347419ab5209d4984aa44-1"&gt;&lt;/a&gt;nikola build &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; nikola serve -b
 &lt;/pre&gt;&lt;p&gt;The website will open at the url &lt;a class="reference external" href="http://127.0.0.1:8000"&gt;http://127.0.0.1:8000&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;To deploy to Github, change the file conf.py such as:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_14be12c7e7b44f87872ce8c33c642666-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;GITHUB_DEPLOY_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'master'&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_eff5bd0f1e0549269c0aede460ba878e-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;GITHUB_DEPLOY_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'master'&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;Once you are happy with it, you can deploy to Github with the command:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_c24f04e8f0ad480cafd9474393db5265-1"&gt;&lt;/a&gt;nikola github_deploy
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_8c001b89356b41fe979992b9bf7e17de-1"&gt;&lt;/a&gt;nikola github_deploy
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="posts-written-using-restructuredtext"&gt;
 &lt;h2&gt;Posts written using reStructuredText&lt;/h2&gt;
@@ -31,35 +31,35 @@ Assuming that you have created a github repository called &lt;em&gt;username.git
 &lt;p&gt;This is also a way to learn how to use Vim. Since Nikola 7.0.1, you can use the -e option when creating a new post.
 But before, you need to set up a default editor.
 If you want to use vim, you can first locate it:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_ec613946db7c4b55bc0d641a234f5b03-1"&gt;&lt;/a&gt;which vim
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_915d46a0fbce438e95cd54c4a9fce0b1-1"&gt;&lt;/a&gt;which vim
 &lt;/pre&gt;&lt;p&gt;Then you can use it in the export variable:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_8a85ac5529b242e4ad484471a9425502-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;EDITOR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/bin/vim
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_8f9b10b96fd84decb9630d59f7382de9-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;EDITOR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/bin/vim
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="download-a-pre-built-template-from-bootswatch"&gt;
 &lt;h2&gt;Download a pre-built template from bootswatch&lt;/h2&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_0667718870824e5e91cc607e2047a6b1-1"&gt;&lt;/a&gt;nikola bootswatch_theme -n custom_theme -s spruce -p bootstrap3
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_40ab2143659542f9817f5e530f91f87d-1"&gt;&lt;/a&gt;nikola bootswatch_theme -n custom_theme -s spruce -p bootstrap3
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="installing-nikola"&gt;
 &lt;h2&gt;Installing Nikola&lt;/h2&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_a6229dc71d4d4d728e39d882237f77a0-1"&gt;&lt;/a&gt;pip install nikola
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_6fff8b8f4ade49c98258abee37f6b938-1"&gt;&lt;/a&gt;pip install nikola
 &lt;/pre&gt;&lt;p&gt;If you have the following error while installing nikola:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_3aec3cd427e3477a9f61ea8070d1f899-1"&gt;&lt;/a&gt;** make sure the development packages of libxml2 and libxslt are installed **
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_856acad6abb3488a804fbd06c0d140f6-1"&gt;&lt;/a&gt;** make sure the development packages of libxml2 and libxslt are installed **
 &lt;/pre&gt;&lt;p&gt;You can fix it with:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_0328e97fc7d24c8f9f8c2a2285f1cbac-1"&gt;&lt;/a&gt;sudo apt-get install libxslt1-dev libxslt1.1 libxml2-dev libxml2 libssl-dev
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_d44c93824e7b4302addac1577d7ddc64-1"&gt;&lt;/a&gt;sudo apt-get install libxslt1-dev libxslt1.1 libxml2-dev libxml2 libssl-dev
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="upgrading-nikola"&gt;
 &lt;h2&gt;Upgrading Nikola&lt;/h2&gt;
 &lt;p&gt;Since Nikola can be installed with Pip, you can use the following command:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_078da32ba378447f8dd1017d10fa51a3-1"&gt;&lt;/a&gt;pip install -U nikola
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_fc36cde3b87d44d88d3c4a491b1aadb0-1"&gt;&lt;/a&gt;pip install -U nikola
 &lt;/pre&gt;&lt;p&gt;To install pip, see &lt;a class="reference external" href="http://pip.readthedocs.org/en/latest/installing.html"&gt;http://pip.readthedocs.org/en/latest/installing.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;If you have the following error:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_8f3e2c22f5e349b5b0f92bc77e7e8366-1"&gt;&lt;/a&gt;Python.h: No such file or directory
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_1df63dfc0e624f088d22cb4e087bf450-1"&gt;&lt;/a&gt;Python.h: No such file or directory
 &lt;/pre&gt;&lt;p&gt;You can fix it with:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_81d02bfc38234f10a2046963f9688ce2-1"&gt;&lt;/a&gt;sudo apt-get install python-dev
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_a52fda1812c9439e965fa6e66aeb09fc-1"&gt;&lt;/a&gt;sudo apt-get install python-dev
 &lt;/pre&gt;&lt;p&gt;To upgrade pip:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_f252bf37506f414c9f53c5470de4ac1a-1"&gt;&lt;/a&gt;sudo easy_install -U pip
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_34c75e38832a4bf390ea7d149567a23b-1"&gt;&lt;/a&gt;sudo easy_install -U pip
 &lt;/pre&gt;&lt;p&gt;To downgrade pip to a previous version:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_e9d8fca20ceb4d5cad5fda378a851e40-1"&gt;&lt;/a&gt;sudo easy_install &lt;span class="nv"&gt;pip&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;1.2.1
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_16247c8ebd8f4911889e63237d25e539-1"&gt;&lt;/a&gt;sudo easy_install &lt;span class="nv"&gt;pip&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;1.2.1
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="add-your-own-domain"&gt;
 &lt;h2&gt;Add your own domain&lt;/h2&gt;

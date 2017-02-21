@@ -27,7 +27,7 @@ SITE_URL = "http://mattchoplin.com/"
 BASE_URL = "http://mattchoplin.com/"
 BLOG_EMAIL = "choplin.mat@gmail.com"
 BLOG_DESCRIPTION = "Blog about my developer experience"  # (translatable)
-
+WRITE_TAG_CLOUD = False
 # Nikola is multilingual!
 #
 # Currently supported languages are:
