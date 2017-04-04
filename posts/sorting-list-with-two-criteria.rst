@@ -21,3 +21,7 @@ Using the lambda function:
 The -x[1] is for the reversed sort.
 
 By order of priority, we first sort with the 2nd element (x[1]), then with the 1st element (x[0])
+
+Example for an interview question:
+
+

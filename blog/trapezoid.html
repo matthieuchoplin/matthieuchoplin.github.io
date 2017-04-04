@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Blog | Standing on the shoulders of giants</title>
+<title>Trapezoid | Standing on the shoulders of giants</title>
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta content="#5670d4" name="theme-color">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
-<link rel="canonical" href="http://mattchoplin.com/blog/index.html">
+<link rel="canonical" href="http://mattchoplin.com/blog/trapezoid.html">
 <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" type="text/css" href="../assets/css/tipuesearch.css">
 </head>
@@ -19,13 +19,27 @@
 
 
     
+
+    <meta name="author" content="Matthieu Choplin">
+<link rel="prev" href="../posts/sorting-list-with-two-criteria.html" title="Sorting a list with two criteria in python" type="text/html">
+<meta property="og:site_name" content="Standing on the shoulders of giants">
+<meta property="og:title" content="Trapezoid">
+<meta property="og:url" content="http://mattchoplin.com/blog/trapezoid.html">
+<meta property="og:description" content="In [1]:
+
     
+# coding: utf-8
 
+# # Basic Numerical Integration: the Trapezoid Rule
 
-
-
-
-
+# A simple illustration of the trapezoid rule for definite integration:
+# 
+# $$
+# $$
+# &lt;br&gt;
+# First, we define a sim">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-03-19T18:23:24Z">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
 <!-- Menubar -->
@@ -65,7 +79,13 @@
 <span class="navbar-form pull-left">
     <input type="text" id="tipue_search_input"></span>
 
-            <ul class="nav navbar-nav navbar-right"></ul>
+            <ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="trapezoid.ipynb" id="sourcelink">Source</a>
+    </li>
+
+                
+            </ul>
 </div>
 <!-- /.navbar-collapse -->
     </div>
@@ -76,23 +96,26 @@
         <div class="row">
             
             
-<div class="sectionindex">
-    <header><h2><a href="#">Blog</a></h2>
-    </header><div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="trapezoid.html" class="u-url">Trapezoid</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Trapezoid</a></h1>
+
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
-                Matthieu Choplin
+                    Matthieu Choplin
             </span></p>
-            <p class="dateline"><a href="trapezoid.html" rel="bookmark"><time class="published dt-published" datetime="2017-03-19T18:23:24Z" title="2017-03-19 18:23">2017-03-19 18:23</time></a></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2017-03-19T18:23:24Z" itemprop="datePublished" title="2017-03-19 18:23">2017-03-19 18:23</time></a></p>
                 <p class="commentline">
         
     <a href="trapezoid.html#disqus_thread" data-disqus-identifier="cache/posts/trapezoid.html">Comments</a>
 
 
+            
         </p>
-</div>
-    </header><div class="e-content entry-content">
+<p class="sourceline"><a href="trapezoid.ipynb" id="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
     <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
@@ -204,18 +227,36 @@ The trapezoid approximation with 5 points is: 559.890625
   </div>
 
     </div>
-    </article>
-</div>
-
-
-
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../posts/sorting-list-with-two-criteria.html" rel="prev" title="Sorting a list with two criteria in python">Previous post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
-       <script>var disqus_shortname="mattchoplin";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script><script type="text/x-mathjax-config">
-            MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
-            </script>
-</div>
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="mattchoplin",
+            disqus_url="http://mattchoplin.com/blog/trapezoid.html",
+        disqus_title="Trapezoid",
+        disqus_identifier="cache/posts/trapezoid.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
-        </div>
+
+        </section><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script><script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+            </script></article><script>var disqus_shortname="mattchoplin";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
         <!--End of body content-->
 
         <footer id="footer">

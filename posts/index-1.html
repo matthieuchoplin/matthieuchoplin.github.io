@@ -95,7 +95,7 @@
 </div>
     </header><div class="e-content entry-content">
     <div>
-<pre class="code bash"><a name="rest_code_960af97d93f54d458a5b9dda0ec486ce-1"></a>sudo python -m smtpd -n -c DebuggingServer localhost:25
+<pre class="code bash"><a name="rest_code_3de8b4be4dbb448db314f3a4b46f7de3-1"></a>sudo python -m smtpd -n -c DebuggingServer localhost:25
 </pre>
 <p>The sudo is needed as you can’t bind to a port number lower than 1024 as a normal user.</p>
 <p>Source: <a class="reference external" href="http://www.euperia.com/development/test-smtp-with-a-dummy-server-in-python/460">http://www.euperia.com/development/test-smtp-with-a-dummy-server-in-python/460</a></p>
@@ -118,7 +118,7 @@
     <div>
 <p>Session animated by <em>Harry Percival</em> based on the book <a class="reference external" href="http://www.obeythetestinggoat.com/">http://www.obeythetestinggoat.com/</a></p>
 <p>For having the handout:</p>
-<pre class="code bash"><a name="rest_code_cba112a725ad4ace82c53f8f3a3f03f2-1"></a>sudo pip3 install https://github.com/django/django/archive/stable/1.7.x.zip
+<pre class="code bash"><a name="rest_code_3629a5c5a0114f16848970b1d6ac0e5a-1"></a>sudo pip3 install https://github.com/django/django/archive/stable/1.7.x.zip
 </pre>
 <div class="section" id="requirement">
 <h2>Requirement:</h2>
@@ -149,25 +149,25 @@
     <div>
 <div class="section" id="nice-display-of-the-current-tree">
 <h2>Nice display of the current tree</h2>
-<pre class="code bash"><a name="rest_code_8b0b625fd01648f483d476ca10cb4eec-1"></a>git log --graph --all --format<span class="o">=</span>format:<span class="s2">"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold</span>
-<a name="rest_code_8b0b625fd01648f483d476ca10cb4eec-2"></a><span class="s2">white)%cn%C(reset)%C(green)%d%C(reset)%n%x09%C(white)%s%C(reset)"</span> --abbrev-commit <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
+<pre class="code bash"><a name="rest_code_62e43c7d36394b4cbabc314c3eb1059e-1"></a>git log --graph --all --format<span class="o">=</span>format:<span class="s2">"%x09%C(yellow)%h%C(reset) %C(green)%ai%x08%x08%x08%x08%x08%x08%C(reset) %C(bold</span>
+<a name="rest_code_62e43c7d36394b4cbabc314c3eb1059e-2"></a><span class="s2">white)%cn%C(reset)%C(green)%d%C(reset)%n%x09%C(white)%s%C(reset)"</span> --abbrev-commit <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
 </pre>
 <p>An alternative:</p>
-<pre class="code bash"><a name="rest_code_bf87d89f2fff48a0bdd7c0e3d1377b5b-1"></a>git log --graph --pretty<span class="o">=</span>format:<span class="s1">'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset'</span> --abbrev-commit
+<pre class="code bash"><a name="rest_code_6e181c45902341ccbb9dcece81a06c01-1"></a>git log --graph --pretty<span class="o">=</span>format:<span class="s1">'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset'</span> --abbrev-commit
 </pre>
 <p>You can also make an alias. Copy and paste the line below on your terminal:</p>
-<pre class="code bash"><a name="rest_code_6ffc0e5b5dea4f7faf421960405f8185-1"></a>git config --global alias.lg <span class="s2">"log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit"</span>
+<pre class="code bash"><a name="rest_code_fcdb49b8a3664df0b11ae13fc781ef09-1"></a>git config --global alias.lg <span class="s2">"log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit"</span>
 </pre>
 <p>And every time you need to see your log, just type in</p>
-<pre class="code bash"><a name="rest_code_4e480e244aad4ee4a39607bd8adcfb89-1"></a>git lg
+<pre class="code bash"><a name="rest_code_e8e1752c8c9842e7a4fce5f70d84b2f5-1"></a>git lg
 </pre>
 <p>Or, if you want to see the lines that changed</p>
-<pre class="code bash"><a name="rest_code_f12b2ada076b4daeac8346715baad605-1"></a>git lg -p
+<pre class="code bash"><a name="rest_code_524755260fe3455494bfd3c35993251d-1"></a>git lg -p
 </pre>
 <p>Source: <a class="reference external" href="https://coderwall.com/p/euwpig">https://coderwall.com/p/euwpig</a></p>
 <p>NB: If you want to see a list of aliases set up on your linux box, just type <em>alias</em> at the prompt.</p>
 <p>Simply add color to your git environment:</p>
-<pre class="code bash"><a name="rest_code_f9af0316812448df91bbee0169aeb972-1"></a>git config --global color.ui auto
+<pre class="code bash"><a name="rest_code_3f372efe9d864e61bcb425692b5ceade-1"></a>git config --global color.ui auto
 </pre>
 <p>Source: <a class="reference external" href="http://git-scm.com/book/en/Customizing-Git-Git-Configuration">http://git-scm.com/book/en/Customizing-Git-Git-Configuration</a></p>
 </div>
@@ -177,26 +177,26 @@
 </div>
 <div class="section" id="delete-current-tag">
 <h2>Delete current tag</h2>
-<pre class="code bash"><a name="rest_code_a1a32a88f70a479599704339d2c09ab7-1"></a>git tag -d 12.15
-<a name="rest_code_a1a32a88f70a479599704339d2c09ab7-2"></a>git push origin :refs/tags/12.15
+<pre class="code bash"><a name="rest_code_cf072e6aa4574a57bbdb49ac57a7fe08-1"></a>git tag -d 12.15
+<a name="rest_code_cf072e6aa4574a57bbdb49ac57a7fe08-2"></a>git push origin :refs/tags/12.15
 </pre>
 </div>
 <div class="section" id="stash-current-work">
 <h2>Stash current work</h2>
-<pre class="code bash"><a name="rest_code_b2cd8d8ea2d2466c8da39aaa50098df0-1"></a>git stash save
-<a name="rest_code_b2cd8d8ea2d2466c8da39aaa50098df0-2"></a>git stash pop
+<pre class="code bash"><a name="rest_code_680ab893ee2045c0ac2ae9d2e70197ae-1"></a>git stash save
+<a name="rest_code_680ab893ee2045c0ac2ae9d2e70197ae-2"></a>git stash pop
 </pre>
 </div>
 <div class="section" id="push">
 <h2>Push</h2>
 <p>To avoid doing all the time:</p>
-<pre class="code text"><a name="rest_code_46b81d86b90342d1bee73d8bd274eebb-1"></a>git push origin &lt;your-feature-branch&gt;
+<pre class="code text"><a name="rest_code_b01e75c438c84c68984ae6cc1b607b1f-1"></a>git push origin &lt;your-feature-branch&gt;
 </pre>
 <p>You can do:</p>
-<pre class="code text"><a name="rest_code_c758dbd09d5b4a2aa1b1e0a405dcb9c1-1"></a>git push origin &lt;your-feature-branch&gt; -u
+<pre class="code text"><a name="rest_code_c295593f99704aa7b0d621e5b5d12364-1"></a>git push origin &lt;your-feature-branch&gt; -u
 </pre>
 <p>You next, you will just have to do:</p>
-<pre class="code text"><a name="rest_code_a0ad00c7f7e6454cb56bad6ce751902d-1"></a>git push
+<pre class="code text"><a name="rest_code_93b1c0c725c845f4a4b429bb2de84150-1"></a>git push
 </pre>
 </div>
 <div class="section" id="find-which-commit-is-breaking-the-test-with-git-bisect">
@@ -204,23 +204,23 @@
 <p>You may be in situation where you come back from holidays and find the tests that were passing before broken.</p>
 <p>Git can help to find which commit produced the failure.</p>
 <p>To start bisect, run:</p>
-<pre class="code text"><a name="rest_code_9d0095946e7d4083aa4381c7632abf42-1"></a>git bisect start
+<pre class="code text"><a name="rest_code_ee0403c4dcfe4d14a28c091db4b745d3-1"></a>git bisect start
 </pre>
 <p>You know that the tests are failing so you indicate it with:</p>
-<pre class="code text"><a name="rest_code_2e6bb9c17dc3420a83f14641448fa3d7-1"></a>git bisect bad
+<pre class="code text"><a name="rest_code_1e479b919d3f49288472423de48c5272-1"></a>git bisect bad
 </pre>
 <p>You checkout an earlier revision when you know that the tests were passing (git log can help):</p>
-<pre class="code text"><a name="rest_code_bed2074d58c545a4a2dde0efc6e65344-1"></a>git checkout &lt;the_failing_revision&gt;
+<pre class="code text"><a name="rest_code_00d53394d6504c789ca48346e5f236e5-1"></a>git checkout &lt;the_failing_revision&gt;
 </pre>
 <p>Then run the tests, and if they are passing, indicate it:</p>
-<pre class="code text"><a name="rest_code_c93256c7926542dfa3d012b778e8b160-1"></a>git bisect good
+<pre class="code text"><a name="rest_code_5e174e51a04a49ecad8c2f94bb833fcb-1"></a>git bisect good
 </pre>
 <p>Once you have indicated that once it was bad and once it was good. You can leave git bisect do the job automatically:</p>
-<pre class="code text"><a name="rest_code_f341721fd031482690ddc5b0ad1b71db-1"></a>git bisect run &lt;command_that_run_the_tests&gt;
+<pre class="code text"><a name="rest_code_0dea8b97751b4c03b92f7b50095c37d2-1"></a>git bisect run &lt;command_that_run_the_tests&gt;
 </pre>
 <p>You can now grab a coffee and come back few minutes later to see what commit made the tests failed.</p>
 <p>Finally, you also need to come back to the original revision:</p>
-<pre class="code text"><a name="rest_code_62e080cca90f41e3aab61a27adc2384f-1"></a>git bisect reset
+<pre class="code text"><a name="rest_code_c1d1eb045c57417096ec3d7a0e5f9174-1"></a>git bisect reset
 </pre>
 <p>Sources:</p>
 <ul class="simple">
@@ -237,12 +237,12 @@
 </div>
 <div class="section" id="revert-all-the-changes-you-did">
 <h2>Revert all the changes you did</h2>
-<pre class="code bash"><a name="rest_code_342f09e3581a4426a28c369b03d2de01-1"></a>git checkout -f
+<pre class="code bash"><a name="rest_code_89c62103b33e42bc83eace1a025e188f-1"></a>git checkout -f
 </pre>
 </div>
 <div class="section" id="reduce-the-size-of-a-git-repository-with-the-garbage-collector">
 <h2>Reduce the size of a git repository with the garbage collector</h2>
-<pre class="code bash"><a name="rest_code_ad6dfddec4d54f43940b49cb8fb10005-1"></a>git gc
+<pre class="code bash"><a name="rest_code_fe023dbc72e047b29cde7ccc04e39947-1"></a>git gc
 </pre>
 <p>Source:</p>
 <ul class="simple">
@@ -267,15 +267,15 @@
 </div>
     </header><div class="e-content entry-content">
     <div>
-<pre class="code bash"><a name="rest_code_5a283af7e1c84b778efafc5bb4543197-1"></a>watch -n1 <span class="s1">' ps aux | grep what_you_want'</span>
+<pre class="code bash"><a name="rest_code_d921c68591ee433f8a474b7354bede51-1"></a>watch -n1 <span class="s1">' ps aux | grep what_you_want'</span>
 </pre>
 <p>Something interesting when combined with svc:</p>
-<pre class="code bash"><a name="rest_code_67b95df8f3094f669ed1505d31f3f78a-1"></a><span class="nb">cd</span> /etc/service <span class="c1"># or wherever svc (supervise) is installed</span>
-<a name="rest_code_67b95df8f3094f669ed1505d31f3f78a-2"></a>watch svstat *
+<pre class="code bash"><a name="rest_code_8654a6dfcb5649669d36f83277861b7f-1"></a><span class="nb">cd</span> /etc/service <span class="c1"># or wherever svc (supervise) is installed</span>
+<a name="rest_code_8654a6dfcb5649669d36f83277861b7f-2"></a>watch svstat *
 </pre>
 <p>It will monitor every 2 seconds the state of your service.</p>
 <p>Monitor the queries being run in real time:</p>
-<pre class="code bash"><a name="rest_code_f2c7f972580e443781b34412a66b66e7-1"></a>watch -n <span class="m">1</span> <span class="s1">'sudo -u postgres psql --tuples-only --command "SELECT datname, procpid, date_trunc(\$\$second\$\$, age(current_timestamp, xact_start)), current_query FROM pg_stat_activity;"'</span>
+<pre class="code bash"><a name="rest_code_3c80edd191da40508251d1b411a7d5dd-1"></a>watch -n <span class="m">1</span> <span class="s1">'sudo -u postgres psql --tuples-only --command "SELECT datname, procpid, date_trunc(\$\$second\$\$, age(current_timestamp, xact_start)), current_query FROM pg_stat_activity;"'</span>
 </pre>
 <p>Source: <a class="reference external" href="http://kevin.deldycke.com/2011/10/postgresql-commands/">http://kevin.deldycke.com/2011/10/postgresql-commands/</a></p>
 </div>
@@ -295,7 +295,7 @@
 </div>
     </header><div class="e-content entry-content">
     <div>
-<pre class="code bash"><a name="rest_code_86bcfab1ceb24dc8a9d0dcb7eb094bbf-1"></a>dpkg-query -l <span class="p">|</span> awk <span class="s1">'{print $2 $3}'</span>
+<pre class="code bash"><a name="rest_code_dbbbd6fa4efa40f59151e19128cd47ed-1"></a>dpkg-query -l <span class="p">|</span> awk <span class="s1">'{print $2 $3}'</span>
 </pre>
 <p>Notice the combinatin of dpkg-query and awk!</p>
 </div>
@@ -317,7 +317,7 @@
     <div>
 <div class="section" id="proxy-configuration">
 <h2>Proxy configuration</h2>
-<pre class="code bash"><a name="rest_code_e5c823123a9248c6ac01a12e3ed6da52-1"></a>ssh -D <span class="m">8888</span> youruser@yourserver.com
+<pre class="code bash"><a name="rest_code_2e8c55db8ee54d45aef11d0a555b5b26-1"></a>ssh -D <span class="m">8888</span> youruser@yourserver.com
 </pre>
 </div>
 <div class="section" id="for-firefox">
@@ -355,11 +355,11 @@
     <div>
 <p>Writing 'r' will move the cursor back to the beginning of the line.</p>
 <p>This displays a percentage counter:</p>
-<pre class="code python"><a name="rest_code_b8819b0f12c14dcdaf7ddd467a1741b8-1"></a><span class="kn">import</span> <span class="nn">time</span><span class="o">,</span><span class="nn">sys</span>
-<a name="rest_code_b8819b0f12c14dcdaf7ddd467a1741b8-2"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
-<a name="rest_code_b8819b0f12c14dcdaf7ddd467a1741b8-3"></a>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<a name="rest_code_b8819b0f12c14dcdaf7ddd467a1741b8-4"></a>    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"</span><span class="se">\r</span><span class="si">%d%%</span><span class="s2">"</span> <span class="o">%</span><span class="n">i</span><span class="p">)</span>
-<a name="rest_code_b8819b0f12c14dcdaf7ddd467a1741b8-5"></a>    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+<pre class="code python"><a name="rest_code_9e075ec978ee424cbf2944662b7c566a-1"></a><span class="kn">import</span> <span class="nn">time</span><span class="o">,</span><span class="nn">sys</span>
+<a name="rest_code_9e075ec978ee424cbf2944662b7c566a-2"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+<a name="rest_code_9e075ec978ee424cbf2944662b7c566a-3"></a>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="rest_code_9e075ec978ee424cbf2944662b7c566a-4"></a>    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"</span><span class="se">\r</span><span class="si">%d%%</span><span class="s2">"</span> <span class="o">%</span><span class="n">i</span><span class="p">)</span>
+<a name="rest_code_9e075ec978ee424cbf2944662b7c566a-5"></a>    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
 </pre>
 <p>Sourcce: <a class="reference external" href="http://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console">http://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console</a></p>
 </div>
@@ -382,7 +382,7 @@
 <div class="section" id="vim-basics">
 <h2>VIM basics</h2>
 <p>The built in tutorial of Vim is very useful to know the basics. To launch it simply type the following in your terminal:</p>
-<pre class="code bash"><a name="rest_code_82104c97535a4f7aab917c89a16ff7f9-1"></a><span class="nv">$vimtutor</span>
+<pre class="code bash"><a name="rest_code_8ce635a9e7fe419cb18f370a9c6e7bf6-1"></a><span class="nv">$vimtutor</span>
 </pre>
 <p>It will launch some lessons with an approach 'learning by doing'.</p>
 </div>
@@ -394,32 +394,32 @@
 <h2>vim memento</h2>
 <div class="section" id="simple-vimrc">
 <h3>Simple vimrc</h3>
-<pre class="code bash"><a name="rest_code_a9ade10d4b454732acc1d57b9eededa9-1"></a><span class="nb">set</span> <span class="nv">textwidth</span><span class="o">=</span><span class="m">79</span>  <span class="s2">" lines longer than 79 columns will be broken</span>
-<a name="rest_code_a9ade10d4b454732acc1d57b9eededa9-2"></a><span class="s2">set shiftwidth=4  "</span> operation &gt;&gt; indents <span class="m">4</span> columns<span class="p">;</span> <span class="s">&lt;&lt; unindents 4 columns</span>
-<a name="rest_code_a9ade10d4b454732acc1d57b9eededa9-3"></a><span class="s">set tabstop=4     " a hard TAB displays as 4 columns</span>
-<a name="rest_code_a9ade10d4b454732acc1d57b9eededa9-4"></a><span class="s">set expandtab     " insert spaces when hitting TABs</span>
-<a name="rest_code_a9ade10d4b454732acc1d57b9eededa9-5"></a><span class="s">set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE</span>
-<a name="rest_code_a9ade10d4b454732acc1d57b9eededa9-6"></a><span class="s">set shiftroun</span>d    <span class="s2">" round indent to multiple of 'shiftwidth'</span>
-<a name="rest_code_a9ade10d4b454732acc1d57b9eededa9-7"></a><span class="s2">set autoindent    "</span> align the new line indent with the previous line
+<pre class="code bash"><a name="rest_code_86413a9524a4493d83ce22e35260cf31-1"></a><span class="nb">set</span> <span class="nv">textwidth</span><span class="o">=</span><span class="m">79</span>  <span class="s2">" lines longer than 79 columns will be broken</span>
+<a name="rest_code_86413a9524a4493d83ce22e35260cf31-2"></a><span class="s2">set shiftwidth=4  "</span> operation &gt;&gt; indents <span class="m">4</span> columns<span class="p">;</span> <span class="s">&lt;&lt; unindents 4 columns</span>
+<a name="rest_code_86413a9524a4493d83ce22e35260cf31-3"></a><span class="s">set tabstop=4     " a hard TAB displays as 4 columns</span>
+<a name="rest_code_86413a9524a4493d83ce22e35260cf31-4"></a><span class="s">set expandtab     " insert spaces when hitting TABs</span>
+<a name="rest_code_86413a9524a4493d83ce22e35260cf31-5"></a><span class="s">set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE</span>
+<a name="rest_code_86413a9524a4493d83ce22e35260cf31-6"></a><span class="s">set shiftroun</span>d    <span class="s2">" round indent to multiple of 'shiftwidth'</span>
+<a name="rest_code_86413a9524a4493d83ce22e35260cf31-7"></a><span class="s2">set autoindent    "</span> align the new line indent with the previous line
 </pre>
 </div>
 <div class="section" id="jump-to-function-definition">
 <h3>Jump to function definition:</h3>
-<pre class="code bash"><a name="rest_code_382e9a883c6b483a9874ef70d368a7aa-1"></a>g + *
+<pre class="code bash"><a name="rest_code_c9793c35d5bc4cb88683cd94707fc4b2-1"></a>g + *
 </pre>
 </div>
 <div class="section" id="highlight-variable-under-cursor">
 <h3>Highlight variable under cursor:</h3>
-<pre class="code bash"><a name="rest_code_cbe7bb89a4a64ac7ac066ac1144b80f5-1"></a>:autocmd CursorMoved * exe printf<span class="o">(</span><span class="s1">'match IncSearch /\V\&lt;%s\&gt;/'</span>, escape<span class="o">(</span>expand<span class="o">(</span><span class="s1">'&lt;cword&gt;'</span><span class="o">)</span>, <span class="s1">'/\'</span><span class="o">))</span>
+<pre class="code bash"><a name="rest_code_fee6acc49ccd45e797165e188d20c2c0-1"></a>:autocmd CursorMoved * exe printf<span class="o">(</span><span class="s1">'match IncSearch /\V\&lt;%s\&gt;/'</span>, escape<span class="o">(</span>expand<span class="o">(</span><span class="s1">'&lt;cword&gt;'</span><span class="o">)</span>, <span class="s1">'/\'</span><span class="o">))</span>
 </pre>
 </div>
 <div class="section" id="move-cursor-to-its-last-position">
 <h3>Move cursor to its last position:</h3>
 <p>The quickest way is to hit either:</p>
-<pre class="code bash"><a name="rest_code_993ecc7c76c14db29d5ff5debe9ae7e8-1"></a><span class="s1">''</span>
+<pre class="code bash"><a name="rest_code_81c1b5f5a7fd4c5c86e4895ebf30fd7e-1"></a><span class="s1">''</span>
 </pre>
 <p>(two apostrophes) or:</p>
-<pre class="code bash"><a name="rest_code_c7deffa6a78744d494274c5895f0e034-1"></a><span class="sb">``</span>
+<pre class="code bash"><a name="rest_code_0be64b2e654c49c2ba69c4e1bd7ba432-1"></a><span class="sb">``</span>
 </pre>
 <p>(two backticks). Note that the difference is that the backtick goes to the same location on the line, whereas the apostrophe goes to the start of the line. On a UK keyboard, the apostrophe is more accessible, so I tend to use that one. There are loads of useful marks like this, see :help mark-motions.
 For some other motions (not 2j I think), there's also the jump-list that lets you navigate back and forth among a number of motions.  Ctrl-O and Ctrl-I do this navigation, but see :help jump-motions for more information.</p>
@@ -427,24 +427,24 @@ For some other motions (not 2j I think), there's also the jump-list that lets yo
 <div class="section" id="line-numbers">
 <h3>Line numbers</h3>
 <p>To display line numbers along the left side of a window, type any one of the following command while using text editor:</p>
-<pre class="code bash"><a name="rest_code_1aa1c6b1cbbd475796d4cba6a985db43-1"></a>:set number
+<pre class="code bash"><a name="rest_code_2924ad6f37704594b90c2a0f3212a21d-1"></a>:set number
 </pre>
 </div>
 <div class="section" id="go-to-line">
 <h3>Go to line</h3>
-<pre class="code bash"><a name="rest_code_2a51ca4193144be5a648c153cd09f567-1"></a>:42
+<pre class="code bash"><a name="rest_code_4b441206c22641aaa1c2211826aa220e-1"></a>:42
 </pre>
 <p>where 42 is the number of line you want to go</p>
 </div>
 <div class="section" id="split-the-screen">
 <h3>Split the screen</h3>
-<pre class="code bash"><a name="rest_code_56216fb0990c48428432659ef269f9c7-1"></a>:vsp
+<pre class="code bash"><a name="rest_code_ef916d3a237d425db1f557fc01ac8bdb-1"></a>:vsp
 </pre>
 </div>
 <div class="section" id="paste-from-another-application-into-vim">
 <h3>Paste from another application into vim</h3>
 <p>To avoid indentation issue:</p>
-<pre class="code bash"><a name="rest_code_8afe42081a8c4a02a5dd86adbd5827b1-1"></a>:set paste
+<pre class="code bash"><a name="rest_code_dfc01037684b42018707d0d1b097ea2a-1"></a>:set paste
 </pre>
 </div>
 </div>
@@ -468,22 +468,22 @@ For some other motions (not 2j I think), there's also the jump-list that lets yo
 <div class="section" id="dealing-with-broken-symbolic-links">
 <h2>Dealing with broken symbolic links</h2>
 <p>Find broken symlinks and delete them</p>
-<pre class="code bash"><a name="rest_code_052b6e80b8cc4c58b08051b1159fb925-1"></a><span class="nv">$find</span> -L /path/to/check -type l -delete
+<pre class="code bash"><a name="rest_code_224cd50db41b4369af7637b0e1caabaf-1"></a><span class="nv">$find</span> -L /path/to/check -type l -delete
 </pre>
 <p>List them</p>
-<pre class="code bash"><a name="rest_code_76bb5a4bfef74077ad6bce4cad80960f-1"></a><span class="nv">$find</span> -L /path -type l
+<pre class="code bash"><a name="rest_code_90afbf92d1c2403189ab7a84f5cf525c-1"></a><span class="nv">$find</span> -L /path -type l
 </pre>
 <p>If you want to delete them with confirmation first, do</p>
-<pre class="code bash"><a name="rest_code_030a63c6d67c4727aacb2fe0e8471d28-1"></a><span class="nv">$find</span> -L /path -type l -exec rm -i <span class="o">{}</span> +
+<pre class="code bash"><a name="rest_code_f658d0f4099f41339416c96ded838d7a-1"></a><span class="nv">$find</span> -L /path -type l -exec rm -i <span class="o">{}</span> +
 </pre>
 </div>
 <div class="section" id="creating-symbolik-links">
 <h2>Creating symbolik links</h2>
 <p>First cd into your directory and then indicate where your symlinks will point</p>
-<pre class="code bash"><a name="rest_code_c78264a949994657a3402792212142a1-1"></a><span class="nv">$find</span> /directory_where_yout_symlinks_are/ -maxdepth <span class="m">1</span> -type d -exec ln -s  <span class="o">{}</span> <span class="se">\;</span>
+<pre class="code bash"><a name="rest_code_5b8d4216abbb420ca565feda32dc36cf-1"></a><span class="nv">$find</span> /directory_where_yout_symlinks_are/ -maxdepth <span class="m">1</span> -type d -exec ln -s  <span class="o">{}</span> <span class="se">\;</span>
 </pre>
 <p>If you want to update your existing symlinks, use the <strong>-f</strong> option such as:</p>
-<pre class="code bash"><a name="rest_code_ba225b87a6ff4b0791dad6740882584b-1"></a><span class="nv">$find</span> /home/matt/workspace/unified_repos/erp_core/modules/ -maxdepth <span class="m">1</span> -type d -exec ln -sf  <span class="o">{}</span> <span class="se">\;</span>
+<pre class="code bash"><a name="rest_code_03a839d3f816456494cad13f0fed9c55-1"></a><span class="nv">$find</span> /home/matt/workspace/unified_repos/erp_core/modules/ -maxdepth <span class="m">1</span> -type d -exec ln -sf  <span class="o">{}</span> <span class="se">\;</span>
 </pre>
 <div class="line-block">
 <div class="line"><br></div>
@@ -515,21 +515,21 @@ Create a repository called <em>username.github.io</em>, where username is your u
 <h2>Website generation using a Python framework: Nikola</h2>
 <p>This website is using <a class="reference external" href="http://getnikola.com">Nikola</a> which is a Python static website generator.
 Assuming that you have created a github repository called <em>username.github.io</em>, clone it with:</p>
-<pre class="code bash"><a name="rest_code_cf42e63a939a43cdbc54ca7891806f8e-1"></a>git clone git@github.com:username/username.github.io.git
+<pre class="code bash"><a name="rest_code_902789c0a8ce4c8f8e464c8aa6916022-1"></a>git clone git@github.com:username/username.github.io.git
 </pre>
 <p>Then initialize your website with this command:</p>
-<pre class="code bash"><a name="rest_code_5de61a881b0641979531a410642d0c4c-1"></a>nikola init username.github.io
+<pre class="code bash"><a name="rest_code_7b037953aed34b2ab71d6a16a7aeda76-1"></a>nikola init username.github.io
 </pre>
 <p>where <em>username.github.io</em> is the repository you have just cloned.</p>
 <p>cd in this directory and execute this command:</p>
-<pre class="code bash"><a name="rest_code_70d14292ddb444f2aa962935951ca46c-1"></a>nikola build <span class="o">&amp;&amp;</span> nikola serve -b
+<pre class="code bash"><a name="rest_code_36527b1abbe347419ab5209d4984aa44-1"></a>nikola build <span class="o">&amp;&amp;</span> nikola serve -b
 </pre>
 <p>The website will open at the url <a class="reference external" href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>.</p>
 <p>To deploy to Github, change the file conf.py such as:</p>
-<pre class="code bash"><a name="rest_code_14be12c7e7b44f87872ce8c33c642666-1"></a><span class="nv">GITHUB_DEPLOY_BRANCH</span> <span class="o">=</span> <span class="s1">'master'</span>
+<pre class="code bash"><a name="rest_code_eff5bd0f1e0549269c0aede460ba878e-1"></a><span class="nv">GITHUB_DEPLOY_BRANCH</span> <span class="o">=</span> <span class="s1">'master'</span>
 </pre>
 <p>Once you are happy with it, you can deploy to Github with the command:</p>
-<pre class="code bash"><a name="rest_code_c24f04e8f0ad480cafd9474393db5265-1"></a>nikola github_deploy
+<pre class="code bash"><a name="rest_code_8c001b89356b41fe979992b9bf7e17de-1"></a>nikola github_deploy
 </pre>
 </div>
 <div class="section" id="posts-written-using-restructuredtext">
@@ -538,45 +538,45 @@ Assuming that you have created a github repository called <em>username.github.io
 <p>This is also a way to learn how to use Vim. Since Nikola 7.0.1, you can use the -e option when creating a new post.
 But before, you need to set up a default editor.
 If you want to use vim, you can first locate it:</p>
-<pre class="code bash"><a name="rest_code_ec613946db7c4b55bc0d641a234f5b03-1"></a>which vim
+<pre class="code bash"><a name="rest_code_915d46a0fbce438e95cd54c4a9fce0b1-1"></a>which vim
 </pre>
 <p>Then you can use it in the export variable:</p>
-<pre class="code bash"><a name="rest_code_8a85ac5529b242e4ad484471a9425502-1"></a><span class="nb">export</span> <span class="nv">EDITOR</span><span class="o">=</span>/usr/bin/vim
+<pre class="code bash"><a name="rest_code_8f9b10b96fd84decb9630d59f7382de9-1"></a><span class="nb">export</span> <span class="nv">EDITOR</span><span class="o">=</span>/usr/bin/vim
 </pre>
 </div>
 <div class="section" id="download-a-pre-built-template-from-bootswatch">
 <h2>Download a pre-built template from bootswatch</h2>
-<pre class="code bash"><a name="rest_code_0667718870824e5e91cc607e2047a6b1-1"></a>nikola bootswatch_theme -n custom_theme -s spruce -p bootstrap3
+<pre class="code bash"><a name="rest_code_40ab2143659542f9817f5e530f91f87d-1"></a>nikola bootswatch_theme -n custom_theme -s spruce -p bootstrap3
 </pre>
 </div>
 <div class="section" id="installing-nikola">
 <h2>Installing Nikola</h2>
-<pre class="code bash"><a name="rest_code_a6229dc71d4d4d728e39d882237f77a0-1"></a>pip install nikola
+<pre class="code bash"><a name="rest_code_6fff8b8f4ade49c98258abee37f6b938-1"></a>pip install nikola
 </pre>
 <p>If you have the following error while installing nikola:</p>
-<pre class="code bash"><a name="rest_code_3aec3cd427e3477a9f61ea8070d1f899-1"></a>** make sure the development packages of libxml2 and libxslt are installed **
+<pre class="code bash"><a name="rest_code_856acad6abb3488a804fbd06c0d140f6-1"></a>** make sure the development packages of libxml2 and libxslt are installed **
 </pre>
 <p>You can fix it with:</p>
-<pre class="code bash"><a name="rest_code_0328e97fc7d24c8f9f8c2a2285f1cbac-1"></a>sudo apt-get install libxslt1-dev libxslt1.1 libxml2-dev libxml2 libssl-dev
+<pre class="code bash"><a name="rest_code_d44c93824e7b4302addac1577d7ddc64-1"></a>sudo apt-get install libxslt1-dev libxslt1.1 libxml2-dev libxml2 libssl-dev
 </pre>
 </div>
 <div class="section" id="upgrading-nikola">
 <h2>Upgrading Nikola</h2>
 <p>Since Nikola can be installed with Pip, you can use the following command:</p>
-<pre class="code bash"><a name="rest_code_078da32ba378447f8dd1017d10fa51a3-1"></a>pip install -U nikola
+<pre class="code bash"><a name="rest_code_fc36cde3b87d44d88d3c4a491b1aadb0-1"></a>pip install -U nikola
 </pre>
 <p>To install pip, see <a class="reference external" href="http://pip.readthedocs.org/en/latest/installing.html">http://pip.readthedocs.org/en/latest/installing.html</a></p>
 <p>If you have the following error:</p>
-<pre class="code bash"><a name="rest_code_8f3e2c22f5e349b5b0f92bc77e7e8366-1"></a>Python.h: No such file or directory
+<pre class="code bash"><a name="rest_code_1df63dfc0e624f088d22cb4e087bf450-1"></a>Python.h: No such file or directory
 </pre>
 <p>You can fix it with:</p>
-<pre class="code bash"><a name="rest_code_81d02bfc38234f10a2046963f9688ce2-1"></a>sudo apt-get install python-dev
+<pre class="code bash"><a name="rest_code_a52fda1812c9439e965fa6e66aeb09fc-1"></a>sudo apt-get install python-dev
 </pre>
 <p>To upgrade pip:</p>
-<pre class="code bash"><a name="rest_code_f252bf37506f414c9f53c5470de4ac1a-1"></a>sudo easy_install -U pip
+<pre class="code bash"><a name="rest_code_34c75e38832a4bf390ea7d149567a23b-1"></a>sudo easy_install -U pip
 </pre>
 <p>To downgrade pip to a previous version:</p>
-<pre class="code bash"><a name="rest_code_e9d8fca20ceb4d5cad5fda378a851e40-1"></a>sudo easy_install <span class="nv">pip</span><span class="o">==</span>1.2.1
+<pre class="code bash"><a name="rest_code_16247c8ebd8f4911889e63237d25e539-1"></a>sudo easy_install <span class="nv">pip</span><span class="o">==</span>1.2.1
 </pre>
 </div>
 <div class="section" id="add-your-own-domain">
@@ -600,7 +600,7 @@ username.github.io</p>
         <!--End of body content-->
 
         <footer id="footer">
-            Contents © 2016         <a href="mailto:choplin.mat@gmail.com">Matthieu Choplin</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2017         <a href="mailto:choplin.mat@gmail.com">Matthieu Choplin</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>

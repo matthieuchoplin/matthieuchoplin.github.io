@@ -22,7 +22,7 @@
 
     
 
-        <link rel="prefetch" href="posts/sorting-list-with-two-criteria.html" type="text/html">
+        <link rel="prefetch" href="posts/abstraction-in-python.html" type="text/html">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
 <!-- Menubar -->
@@ -76,7 +76,37 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/sorting-list-with-two-criteria.html" class="u-url">Sorting a list with two criteria in python</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/abstraction-in-python.html" class="u-url">Abstraction in python</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="posts/abstraction-in-python.html" rel="bookmark"><time class="published dt-published" datetime="2017-04-04T12:43:16+01:00" title="2017-04-04 12:43">2017-04-04 12:43</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/abstraction-in-python.html#disqus_thread" data-disqus-identifier="cache/posts/abstraction-in-python.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>For example, when copying files:</p>
+<pre class="code python"><a name="rest_code_179003cdb2de44ca81faae870dbe9294-1"></a><span class="kn">import</span> <span class="nn">shutil</span>
+<a name="rest_code_179003cdb2de44ca81faae870dbe9294-2"></a><span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="s1">'file.txt'</span><span class="p">,</span> <span class="s1">'copy.txt'</span><span class="p">)</span>
+</pre>
+<p>It is much more abstract (and simpler) to use the <em>shutil</em> library than:</p>
+<pre class="code python"><a name="rest_code_8f944d67cf2e4540901308141d228bae-1"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fsrc</span><span class="p">:</span>
+<a name="rest_code_8f944d67cf2e4540901308141d228bae-2"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span> <span class="s1">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fdst</span><span class="p">:</span>
+<a name="rest_code_8f944d67cf2e4540901308141d228bae-3"></a>        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<a name="rest_code_8f944d67cf2e4540901308141d228bae-4"></a>            <span class="n">buf</span> <span class="o">=</span> <span class="n">fsrc</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">buf_size</span><span class="p">)</span>
+<a name="rest_code_8f944d67cf2e4540901308141d228bae-5"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="n">buf</span><span class="p">:</span>
+<a name="rest_code_8f944d67cf2e4540901308141d228bae-6"></a>                <span class="k">break</span>
+<a name="rest_code_8f944d67cf2e4540901308141d228bae-7"></a>            <span class="n">fdst</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span>
+</pre>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/sorting-list-with-two-criteria.html" class="u-url">Sorting a list with two criteria in python</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 Matthieu Choplin
@@ -94,11 +124,12 @@
 <p>We want to sort a list of elements with the first element in ascending order and the second element in descending order.</p>
 <div class="section" id="using-the-lambda-function">
 <h2>Using the lambda function:</h2>
-<pre class="code python"><a name="rest_code_a615c51f45234af4a9e109876ebd1133-1"></a><span class="n">occurences</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'bat'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'mat'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'cat'</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
-<a name="rest_code_a615c51f45234af4a9e109876ebd1133-2"></a><span class="nb">sorted</span><span class="p">(</span><span class="n">occurences</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<pre class="code python"><a name="rest_code_051b9b78c4b340ca8aeb5704db7b083a-1"></a><span class="n">occurences</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'bat'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'mat'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'cat'</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<a name="rest_code_051b9b78c4b340ca8aeb5704db7b083a-2"></a><span class="nb">sorted</span><span class="p">(</span><span class="n">occurences</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 </pre>
 <p>The -x[1] is for the reversed sort.</p>
 <p>By order of priority, we first sort with the 2nd element (x[1]), then with the 1st element (x[0])</p>
+<p>Example for an interview question:</p>
 </div>
 </div>
     </div>
@@ -553,78 +584,6 @@ If you don't want the exception to be handled by the context manager, just let i
 <li><a class="reference external" href="https://help.ubuntu.com/10.04/serverguide/etckeeper.html">https://help.ubuntu.com/10.04/serverguide/etckeeper.html</a></li>
 <li><a class="reference external" href="http://www.tldp.org/LDP/Linux-Filesystem-Hierarchy/html/etc.html">http://www.tldp.org/LDP/Linux-Filesystem-Hierarchy/html/etc.html</a></li>
 </ul>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/sentry-installation.html" class="u-url">Sentry installation</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                Matthieu Choplin
-            </span></p>
-            <p class="dateline"><a href="posts/sentry-installation.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-24T22:03:47+01:00" title="2014-09-24 22:03">2014-09-24 22:03</time></a></p>
-                <p class="commentline">
-        
-    <a href="posts/sentry-installation.html#disqus_thread" data-disqus-identifier="cache/posts/sentry-installation.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="e-content entry-content">
-    <div>
-<p>Create a directory called sentry:</p>
-<pre class="code bash"><a name="rest_code_772014f5fa8f47ce8a507522abf7cf8b-1"></a><span class="c1"># mkdir /opt/sentry &amp;&amp; cd /opt/sentry</span>
-</pre>
-<p>Create a virtual environment and activate it:</p>
-<pre class="code bash"><a name="rest_code_712693c6e9bf4b06b5bce438b0247fa0-1"></a><span class="c1"># virtualenv sentry &amp;&amp; source /opt/sentry/sentry/bin/activate</span>
-</pre>
-<p>Install Sentry:</p>
-<pre class="code bash"><a name="rest_code_5de94b9816d84af8a07762cc99c3ef57-1"></a><span class="c1"># easy_install -UZ sentry[postgres]</span>
-<a name="rest_code_5de94b9816d84af8a07762cc99c3ef57-2"></a><span class="c1"># easy_install -UZ sentry</span>
-</pre>
-<p>Initialize the conifguration</p>
-<pre class="code bash"><a name="rest_code_1feda7536d2f4889876e77c090f223c7-1"></a><span class="c1"># sentry init /opt/sentry/sentry.conf.py</span>
-</pre>
-<p>In the configuration file /opt/sentry/sentry.conf.py, you are going to change:</p>
-<ul class="simple">
-<li>the database configuration such as:</li>
-</ul>
-<pre class="code python"><a name="rest_code_362b70d004ad487bb943c631ef636cb1-1"></a><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_362b70d004ad487bb943c631ef636cb1-2"></a>  <span class="s1">'default'</span><span class="p">:</span> <span class="p">{</span>
-<a name="rest_code_362b70d004ad487bb943c631ef636cb1-3"></a>                <span class="s1">'ENGINE'</span><span class="p">:</span> <span class="s1">'django.db.backends.postgresql_psycopg2'</span><span class="p">,</span>
-<a name="rest_code_362b70d004ad487bb943c631ef636cb1-4"></a>                <span class="s1">'NAME'</span><span class="p">:</span> <span class="s1">'sentry'</span><span class="p">,</span>
-<a name="rest_code_362b70d004ad487bb943c631ef636cb1-5"></a>                <span class="s1">'USER'</span><span class="p">:</span> <span class="s1">'sentry'</span><span class="p">,</span>
-<a name="rest_code_362b70d004ad487bb943c631ef636cb1-6"></a>                <span class="s1">'PASSWORD'</span><span class="p">:</span> <span class="s1">'sentry'</span><span class="p">,</span>
-<a name="rest_code_362b70d004ad487bb943c631ef636cb1-7"></a>                <span class="s1">'HOST'</span><span class="p">:</span> <span class="s1">'localhost'</span><span class="p">,</span>
-<a name="rest_code_362b70d004ad487bb943c631ef636cb1-8"></a>                <span class="s1">'PORT'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
-<a name="rest_code_362b70d004ad487bb943c631ef636cb1-9"></a>             <span class="p">}</span>
-<a name="rest_code_362b70d004ad487bb943c631ef636cb1-10"></a>           <span class="p">}</span>
-</pre>
-<ul class="simple">
-<li>And the url:</li>
-</ul>
-<pre class="code python"><a name="rest_code_c42c79f7ea894e8288a09c31f6b085db-1"></a><span class="n">SENTRY_URL_PREFIX</span> <span class="o">=</span> <span class="s1">'http://192.168.50.4:9000'</span> <span class="c1"># the ip address of the server</span>
-</pre>
-<p>Install postgresql</p>
-<pre class="code bash"><a name="rest_code_0f6a63de094a4f48999a6b17e8e71ad7-1"></a><span class="c1"># apt-get install postgresql-9.3</span>
-</pre>
-<p>Create a user for sentry:</p>
-<pre class="code bash"><a name="rest_code_f07ac5ea00f3419286b40c1c2200c701-1"></a><span class="c1"># sudo su postgres</span>
-<a name="rest_code_f07ac5ea00f3419286b40c1c2200c701-2"></a>$ createuser sentry
-<a name="rest_code_f07ac5ea00f3419286b40c1c2200c701-3"></a>$ psql template1
-<a name="rest_code_f07ac5ea00f3419286b40c1c2200c701-4"></a><span class="c1"># alter role sentry with password 'sentry';</span>
-</pre>
-<p>Create the database as postgres:</p>
-<pre class="code bash"><a name="rest_code_939d7103905b49cd94b3080776db999b-1"></a><span class="c1"># createdb -E utf-8 sentry</span>
-</pre>
-<p>Create the initial schema using the upgrade command as root:</p>
-<pre class="code bash"><a name="rest_code_e8b33205f55243569efafe18f6c5c5ee-1"></a><span class="c1"># sentry --config=/opt/sentry/sentry.conf.py upgrade</span>
-</pre>
-<p>If you did not create the user on the first run, you can correct this by doing the following:</p>
-<pre class="code bash"><a name="rest_code_8a499849748144578ad3d8a61634d17c-1"></a><span class="c1"># sentry --config=/opt/sentry/sentry.conf.py createsuperuser</span>
-<a name="rest_code_8a499849748144578ad3d8a61634d17c-2"></a><span class="c1"># sentry --config=/opt/sentry/sentry.conf.py repair --owner=sentry</span>
-</pre>
-<p>You can start Sentry with:</p>
-<pre class="code bash"><a name="rest_code_56f9cb8339424028b58f5f8896596a2f-1"></a><span class="c1"># sentry --config=/opt/sentry/sentry.conf.py start</span>
-</pre>
 </div>
     </div>
     </article>

@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sorting a list with two criteria in python | Standing on the shoulders of giants</title>
+<title>Abstraction in python | Standing on the shoulders of giants</title>
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta content="#5670d4" name="theme-color">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
-<link rel="canonical" href="http://mattchoplin.com/posts/sorting-list-with-two-criteria.html">
+<link rel="canonical" href="http://mattchoplin.com/posts/abstraction-in-python.html">
 <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" type="text/css" href="../assets/css/tipuesearch.css">
 </head>
@@ -21,19 +21,18 @@
     
 
     <meta name="author" content="Matthieu Choplin">
-<link rel="prev" href="control-the-screen-brightness-in-ubuntu.html" title="Control the screen brightness in Ubuntu" type="text/html">
-<link rel="next" href="abstraction-in-python.html" title="Abstraction in python" type="text/html">
+<link rel="prev" href="sorting-list-with-two-criteria.html" title="Sorting a list with two criteria in python" type="text/html">
 <meta property="og:site_name" content="Standing on the shoulders of giants">
-<meta property="og:title" content="Sorting a list with two criteria in python">
-<meta property="og:url" content="http://mattchoplin.com/posts/sorting-list-with-two-criteria.html">
-<meta property="og:description" content="We want to sort a list of elements with the first element in ascending order and the second element in descending order.
-
-Using the lambda function:
-occurences = {'bat': 2, 'mat': 1, 'cat': 3}
-sorted(">
+<meta property="og:title" content="Abstraction in python">
+<meta property="og:url" content="http://mattchoplin.com/posts/abstraction-in-python.html">
+<meta property="og:description" content="For example, when copying files:
+import shutil
+shutil.copy('file.txt', 'copy.txt')
+It is much more abstract (and simpler) to use the shutil library than:
+with open(src, 'rb') as fsrc:
+    with open(ds">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2016-12-11T10:26:07Z">
-<meta property="article:tag" content="python">
+<meta property="article:published_time" content="2017-04-04T12:43:16+01:00">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
 <!-- Menubar -->
@@ -75,7 +74,7 @@ sorted(">
 
             <ul class="nav navbar-nav navbar-right">
 <li>
-    <a href="sorting-list-with-two-criteria.rst" id="sourcelink">Source</a>
+    <a href="abstraction-in-python.rst" id="sourcelink">Source</a>
     </li>
 
                 
@@ -90,48 +89,45 @@ sorted(">
         <div class="row">
             
             
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Sorting a list with two criteria in python</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Abstraction in python</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                     Matthieu Choplin
             </span></p>
-            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2016-12-11T10:26:07Z" itemprop="datePublished" title="2016-12-11 10:26">2016-12-11 10:26</time></a></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2017-04-04T12:43:16+01:00" itemprop="datePublished" title="2017-04-04 12:43">2017-04-04 12:43</time></a></p>
                 <p class="commentline">
         
-    <a href="sorting-list-with-two-criteria.html#disqus_thread" data-disqus-identifier="cache/posts/sorting-list-with-two-criteria.html">Comments</a>
+    <a href="abstraction-in-python.html#disqus_thread" data-disqus-identifier="cache/posts/abstraction-in-python.html">Comments</a>
 
 
             
         </p>
-<p class="sourceline"><a href="sorting-list-with-two-criteria.rst" id="sourcelink">Source</a></p>
+<p class="sourceline"><a href="abstraction-in-python.rst" id="sourcelink">Source</a></p>
 
         </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<p>We want to sort a list of elements with the first element in ascending order and the second element in descending order.</p>
-<div class="section" id="using-the-lambda-function">
-<h2>Using the lambda function:</h2>
-<pre class="code python"><a name="rest_code_051b9b78c4b340ca8aeb5704db7b083a-1"></a><span class="n">occurences</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'bat'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'mat'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'cat'</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
-<a name="rest_code_051b9b78c4b340ca8aeb5704db7b083a-2"></a><span class="nb">sorted</span><span class="p">(</span><span class="n">occurences</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<p>For example, when copying files:</p>
+<pre class="code python"><a name="rest_code_179003cdb2de44ca81faae870dbe9294-1"></a><span class="kn">import</span> <span class="nn">shutil</span>
+<a name="rest_code_179003cdb2de44ca81faae870dbe9294-2"></a><span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="s1">'file.txt'</span><span class="p">,</span> <span class="s1">'copy.txt'</span><span class="p">)</span>
 </pre>
-<p>The -x[1] is for the reversed sort.</p>
-<p>By order of priority, we first sort with the 2nd element (x[1]), then with the 1st element (x[0])</p>
-<p>Example for an interview question:</p>
-</div>
+<p>It is much more abstract (and simpler) to use the <em>shutil</em> library than:</p>
+<pre class="code python"><a name="rest_code_8f944d67cf2e4540901308141d228bae-1"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fsrc</span><span class="p">:</span>
+<a name="rest_code_8f944d67cf2e4540901308141d228bae-2"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span> <span class="s1">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fdst</span><span class="p">:</span>
+<a name="rest_code_8f944d67cf2e4540901308141d228bae-3"></a>        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<a name="rest_code_8f944d67cf2e4540901308141d228bae-4"></a>            <span class="n">buf</span> <span class="o">=</span> <span class="n">fsrc</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">buf_size</span><span class="p">)</span>
+<a name="rest_code_8f944d67cf2e4540901308141d228bae-5"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="n">buf</span><span class="p">:</span>
+<a name="rest_code_8f944d67cf2e4540901308141d228bae-6"></a>                <span class="k">break</span>
+<a name="rest_code_8f944d67cf2e4540901308141d228bae-7"></a>            <span class="n">fdst</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span>
+</pre>
 </div>
     </div>
-    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../categories/python.html" rel="tag">python</a></li>
-        </ul>
-<ul class="pager hidden-print">
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
 <li class="previous">
-                <a href="control-the-screen-brightness-in-ubuntu.html" rel="prev" title="Control the screen brightness in Ubuntu">Previous post</a>
-            </li>
-            <li class="next">
-                <a href="abstraction-in-python.html" rel="next" title="Abstraction in python">Next post</a>
+                <a href="sorting-list-with-two-criteria.html" rel="prev" title="Sorting a list with two criteria in python">Previous post</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
@@ -139,9 +135,9 @@ sorted(">
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="mattchoplin",
-            disqus_url="http://mattchoplin.com/posts/sorting-list-with-two-criteria.html",
-        disqus_title="Sorting a list with two criteria in python",
-        disqus_identifier="cache/posts/sorting-list-with-two-criteria.html",
+            disqus_url="http://mattchoplin.com/posts/abstraction-in-python.html",
+        disqus_title="Abstraction in python",
+        disqus_identifier="cache/posts/abstraction-in-python.html",
         disqus_config = function () {
             this.language = "en";
         };
