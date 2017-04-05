@@ -19,11 +19,11 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/2017/index.html</loc>
-  <lastmod>2017-04-04T11:49:00Z</lastmod>
+  <lastmod>2017-04-05T15:57:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/archive.html</loc>
-  <lastmod>2017-04-04T11:49:00Z</lastmod>
+  <lastmod>2017-04-05T15:57:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/blog/index.html</loc>
@@ -131,11 +131,11 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/index-4.html</loc>
-  <lastmod>2017-04-04T11:49:00Z</lastmod>
+  <lastmod>2017-04-05T15:57:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/index.html</loc>
-  <lastmod>2017-04-04T11:49:00Z</lastmod>
+  <lastmod>2017-04-05T15:57:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/listings/hello.py.html</loc>
@@ -151,7 +151,7 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/abstraction-in-python.html</loc>
-  <lastmod>2017-04-04T11:49:00Z</lastmod>
+  <lastmod>2017-04-05T15:57:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/agile-testing.html</loc>
@@ -208,6 +208,10 @@
  <url>
   <loc>http://mattchoplin.com/posts/grep-aliases.html</loc>
   <lastmod>2017-02-21T23:29:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/how-to-get-the-firstlast-day-of-the-previous-month.html</loc>
+  <lastmod>2017-04-05T15:57:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/index-1.html</loc>

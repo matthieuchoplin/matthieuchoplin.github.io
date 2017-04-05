@@ -22,7 +22,7 @@
 
     
 
-        <link rel="prefetch" href="posts/abstraction-in-python.html" type="text/html">
+        <link rel="prefetch" href="posts/how-to-get-the-firstlast-day-of-the-previous-month.html" type="text/html">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
 <!-- Menubar -->
@@ -76,7 +76,32 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/abstraction-in-python.html" class="u-url">Abstraction in python</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/how-to-get-the-firstlast-day-of-the-previous-month.html" class="u-url">How to get the first/last day of the previous month?</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="posts/how-to-get-the-firstlast-day-of-the-previous-month.html" rel="bookmark"><time class="published dt-published" datetime="2017-04-05T16:55:47+01:00" title="2017-04-05 16:55">2017-04-05 16:55</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/how-to-get-the-firstlast-day-of-the-previous-month.html#disqus_thread" data-disqus-identifier="cache/posts/how-to-get-the-firstlast-day-of-the-previous-month.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <pre class="code python"><a name="rest_code_f8d21e7f1bbd40b39f6a0b897745e1fd-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<a name="rest_code_f8d21e7f1bbd40b39f6a0b897745e1fd-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">dateutil.relativedelta</span> <span class="kn">import</span> <span class="n">relativedelta</span>
+<a name="rest_code_f8d21e7f1bbd40b39f6a0b897745e1fd-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">today</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<a name="rest_code_f8d21e7f1bbd40b39f6a0b897745e1fd-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">today</span> <span class="o">-</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">months</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<a name="rest_code_f8d21e7f1bbd40b39f6a0b897745e1fd-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">date</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">d</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a name="rest_code_f8d21e7f1bbd40b39f6a0b897745e1fd-6"></a><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a name="rest_code_f8d21e7f1bbd40b39f6a0b897745e1fd-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">date</span><span class="p">(</span><span class="n">today</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">today</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<a name="rest_code_f8d21e7f1bbd40b39f6a0b897745e1fd-8"></a><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+<a name="rest_code_f8d21e7f1bbd40b39f6a0b897745e1fd-9"></a><span class="o">&gt;&gt;&gt;</span>
+</pre>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/abstraction-in-python.html" class="u-url">Abstraction in python</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 Matthieu Choplin
@@ -560,29 +585,6 @@ If you don't want the exception to be handled by the context manager, just let i
 <ul class="simple">
 <li><a class="reference external" href="http://rosettacode.org/wiki/Send_an_email#Python">http://rosettacode.org/wiki/Send_an_email#Python</a></li>
 <li><a class="reference external" href="http://www.pythonforbeginners.com/code-snippets-source-code/using-python-to-send-email">http://www.pythonforbeginners.com/code-snippets-source-code/using-python-to-send-email</a></li>
-</ul>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/version-control-etc-with-etckeeper.html" class="u-url">Version Control /etc with etckeeper</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                Matthieu Choplin
-            </span></p>
-            <p class="dateline"><a href="posts/version-control-etc-with-etckeeper.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-25T10:14:33+01:00" title="2014-09-25 10:14">2014-09-25 10:14</time></a></p>
-                <p class="commentline">
-        
-    <a href="posts/version-control-etc-with-etckeeper.html#disqus_thread" data-disqus-identifier="cache/posts/version-control-etc-with-etckeeper.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="e-content entry-content">
-    <div>
-<p>It is commonly agreed that keeping <em>/etc</em> under version control is a good practice.</p>
-<p>Source:</p>
-<ul class="simple">
-<li><a class="reference external" href="https://help.ubuntu.com/10.04/serverguide/etckeeper.html">https://help.ubuntu.com/10.04/serverguide/etckeeper.html</a></li>
-<li><a class="reference external" href="http://www.tldp.org/LDP/Linux-Filesystem-Hierarchy/html/etc.html">http://www.tldp.org/LDP/Linux-Filesystem-Hierarchy/html/etc.html</a></li>
 </ul>
 </div>
     </div>

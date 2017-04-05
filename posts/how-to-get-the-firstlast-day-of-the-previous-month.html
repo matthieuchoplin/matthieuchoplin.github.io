@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Abstraction in python | Standing on the shoulders of giants</title>
+<title>How to get the first/last day of the previous month? | Standing on the shoulders of giants</title>
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta content="#5670d4" name="theme-color">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
-<link rel="canonical" href="http://mattchoplin.com/posts/abstraction-in-python.html">
+<link rel="canonical" href="http://mattchoplin.com/posts/how-to-get-the-firstlast-day-of-the-previous-month.html">
 <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" type="text/css" href="../assets/css/tipuesearch.css">
 </head>
@@ -21,19 +21,18 @@
     
 
     <meta name="author" content="Matthieu Choplin">
-<link rel="prev" href="sorting-list-with-two-criteria.html" title="Sorting a list with two criteria in python" type="text/html">
-<link rel="next" href="how-to-get-the-firstlast-day-of-the-previous-month.html" title="How to get the first/last day of the previous month?" type="text/html">
+<link rel="prev" href="abstraction-in-python.html" title="Abstraction in python" type="text/html">
 <meta property="og:site_name" content="Standing on the shoulders of giants">
-<meta property="og:title" content="Abstraction in python">
-<meta property="og:url" content="http://mattchoplin.com/posts/abstraction-in-python.html">
-<meta property="og:description" content="For example, when copying files:
-import shutil
-shutil.copy('file.txt', 'copy.txt')
-It is much more abstract (and simpler) to use the shutil library than:
-with open(src, 'rb') as fsrc:
-    with open(ds">
+<meta property="og:title" content="How to get the first/last day of the previous month?">
+<meta property="og:url" content="http://mattchoplin.com/posts/how-to-get-the-firstlast-day-of-the-previous-month.html">
+<meta property="og:description" content="&gt;&gt;&gt; from datetime import date
+&gt;&gt;&gt; from dateutil.relativedelta import relativedelta
+&gt;&gt;&gt; today = date.today()
+&gt;&gt;&gt; d = today - relativedelta(months=1)
+&gt;&gt;&gt; date(d.year, d.month, 1)
+datetime.date(2008, 12,">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2017-04-04T12:43:16+01:00">
+<meta property="article:published_time" content="2017-04-05T16:55:47+01:00">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
 <!-- Menubar -->
@@ -75,7 +74,7 @@ with open(src, 'rb') as fsrc:
 
             <ul class="nav navbar-nav navbar-right">
 <li>
-    <a href="abstraction-in-python.rst" id="sourcelink">Source</a>
+    <a href="how-to-get-the-firstlast-day-of-the-previous-month.rst" id="sourcelink">Source</a>
     </li>
 
                 
@@ -90,48 +89,40 @@ with open(src, 'rb') as fsrc:
         <div class="row">
             
             
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Abstraction in python</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">How to get the first/last day of the previous month?</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                     Matthieu Choplin
             </span></p>
-            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2017-04-04T12:43:16+01:00" itemprop="datePublished" title="2017-04-04 12:43">2017-04-04 12:43</time></a></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2017-04-05T16:55:47+01:00" itemprop="datePublished" title="2017-04-05 16:55">2017-04-05 16:55</time></a></p>
                 <p class="commentline">
         
-    <a href="abstraction-in-python.html#disqus_thread" data-disqus-identifier="cache/posts/abstraction-in-python.html">Comments</a>
+    <a href="how-to-get-the-firstlast-day-of-the-previous-month.html#disqus_thread" data-disqus-identifier="cache/posts/how-to-get-the-firstlast-day-of-the-previous-month.html">Comments</a>
 
 
             
         </p>
-<p class="sourceline"><a href="abstraction-in-python.rst" id="sourcelink">Source</a></p>
+<p class="sourceline"><a href="how-to-get-the-firstlast-day-of-the-previous-month.rst" id="sourcelink">Source</a></p>
 
         </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p>For example, when copying files:</p>
-<pre class="code python"><a name="rest_code_179003cdb2de44ca81faae870dbe9294-1"></a><span class="kn">import</span> <span class="nn">shutil</span>
-<a name="rest_code_179003cdb2de44ca81faae870dbe9294-2"></a><span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="s1">'file.txt'</span><span class="p">,</span> <span class="s1">'copy.txt'</span><span class="p">)</span>
+    <pre class="code python"><a name="rest_code_f8d21e7f1bbd40b39f6a0b897745e1fd-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<a name="rest_code_f8d21e7f1bbd40b39f6a0b897745e1fd-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">dateutil.relativedelta</span> <span class="kn">import</span> <span class="n">relativedelta</span>
+<a name="rest_code_f8d21e7f1bbd40b39f6a0b897745e1fd-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">today</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<a name="rest_code_f8d21e7f1bbd40b39f6a0b897745e1fd-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">today</span> <span class="o">-</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">months</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<a name="rest_code_f8d21e7f1bbd40b39f6a0b897745e1fd-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">date</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">d</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a name="rest_code_f8d21e7f1bbd40b39f6a0b897745e1fd-6"></a><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a name="rest_code_f8d21e7f1bbd40b39f6a0b897745e1fd-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">date</span><span class="p">(</span><span class="n">today</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">today</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<a name="rest_code_f8d21e7f1bbd40b39f6a0b897745e1fd-8"></a><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+<a name="rest_code_f8d21e7f1bbd40b39f6a0b897745e1fd-9"></a><span class="o">&gt;&gt;&gt;</span>
 </pre>
-<p>It is much more abstract (and simpler) to use the <em>shutil</em> library than:</p>
-<pre class="code python"><a name="rest_code_8f944d67cf2e4540901308141d228bae-1"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fsrc</span><span class="p">:</span>
-<a name="rest_code_8f944d67cf2e4540901308141d228bae-2"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span> <span class="s1">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fdst</span><span class="p">:</span>
-<a name="rest_code_8f944d67cf2e4540901308141d228bae-3"></a>        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-<a name="rest_code_8f944d67cf2e4540901308141d228bae-4"></a>            <span class="n">buf</span> <span class="o">=</span> <span class="n">fsrc</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">buf_size</span><span class="p">)</span>
-<a name="rest_code_8f944d67cf2e4540901308141d228bae-5"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="n">buf</span><span class="p">:</span>
-<a name="rest_code_8f944d67cf2e4540901308141d228bae-6"></a>                <span class="k">break</span>
-<a name="rest_code_8f944d67cf2e4540901308141d228bae-7"></a>            <span class="n">fdst</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span>
-</pre>
-</div>
     </div>
     <aside class="postpromonav"><nav><ul class="pager hidden-print">
 <li class="previous">
-                <a href="sorting-list-with-two-criteria.html" rel="prev" title="Sorting a list with two criteria in python">Previous post</a>
-            </li>
-            <li class="next">
-                <a href="how-to-get-the-firstlast-day-of-the-previous-month.html" rel="next" title="How to get the first/last day of the previous month?">Next post</a>
+                <a href="abstraction-in-python.html" rel="prev" title="Abstraction in python">Previous post</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
@@ -139,9 +130,9 @@ with open(src, 'rb') as fsrc:
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="mattchoplin",
-            disqus_url="http://mattchoplin.com/posts/abstraction-in-python.html",
-        disqus_title="Abstraction in python",
-        disqus_identifier="cache/posts/abstraction-in-python.html",
+            disqus_url="http://mattchoplin.com/posts/how-to-get-the-firstlast-day-of-the-previous-month.html",
+        disqus_title="How to get the first/last day of the previous month?",
+        disqus_identifier="cache/posts/how-to-get-the-firstlast-day-of-the-previous-month.html",
         disqus_config = function () {
             this.language = "en";
         };
