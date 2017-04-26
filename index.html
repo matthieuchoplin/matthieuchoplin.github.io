@@ -22,7 +22,7 @@
 
     
 
-        <link rel="prefetch" href="posts/how-to-get-the-firstlast-day-of-the-previous-month.html" type="text/html">
+        <link rel="prefetch" href="posts/introspection-in-python.html" type="text/html">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
 <!-- Menubar -->
@@ -76,7 +76,28 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/how-to-get-the-firstlast-day-of-the-previous-month.html" class="u-url">How to get the first/last day of the previous month?</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/introspection-in-python.html" class="u-url">Introspection in python</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="posts/introspection-in-python.html" rel="bookmark"><time class="published dt-published" datetime="2017-04-25T12:43:16+01:00" title="2017-04-25 12:43">2017-04-25 12:43</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/introspection-in-python.html#disqus_thread" data-disqus-identifier="cache/posts/introspection.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>Imagine that you are debugging and that you want to know the methods that you can call on an object, this pseudo code can be helpful. Here "some_object" is any python object:</p>
+<pre class="code python"><a name="rest_code_90cc005095484b7cad70330562f95523-1"></a><span class="p">[</span><span class="n">method</span> <span class="k">for</span> <span class="n">method</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">some_object</span><span class="p">)</span> <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">some_object</span><span class="p">,</span> <span class="n">method</span><span class="p">))]</span>
+</pre>
+<p>Source: <a class="reference external" href="http://www.diveintopython.net/power_of_introspection/index.html">http://www.diveintopython.net/power_of_introspection/index.html</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/how-to-get-the-firstlast-day-of-the-previous-month.html" class="u-url">How to get the first/last day of the previous month?</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 Matthieu Choplin
@@ -537,54 +558,6 @@ If you don't want the exception to be handled by the context manager, just let i
 <p>Better usage:</p>
 <ul class="simple">
 <li><a class="reference external" href="http://blog.projectfondue.com/archives/2010/01/21/getting-an-early-warning-of-low-disk-space">http://blog.projectfondue.com/archives/2010/01/21/getting-an-early-warning-of-low-disk-space</a></li>
-</ul>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/send-email-with-python.html" class="u-url">Send email with python</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                Matthieu Choplin
-            </span></p>
-            <p class="dateline"><a href="posts/send-email-with-python.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-25T11:20:32+01:00" title="2014-09-25 11:20">2014-09-25 11:20</time></a></p>
-                <p class="commentline">
-        
-    <a href="posts/send-email-with-python.html#disqus_thread" data-disqus-identifier="cache/posts/send-email-with-python.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="e-content entry-content">
-    <div>
-<p>This is a simple snippets for sending an email with a gmail smtp server.</p>
-<p>If you want to send emails from localhost, you will have to first enable an smtp server.</p>
-<p>So, the simplest is to use gmail smtp server:</p>
-<pre class="code python"><a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-1"></a><span class="kn">import</span> <span class="nn">smtplib</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-2"></a>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-3"></a><span class="c1"># define the method</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-4"></a><span class="k">def</span> <span class="nf">sendemail</span><span class="p">(</span><span class="n">from_addr</span><span class="p">,</span> <span class="n">to_addr_list</span><span class="p">,</span> <span class="n">cc_addr_list</span><span class="p">,</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-5"></a>              <span class="n">subject</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-6"></a>              <span class="n">login</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-7"></a>              <span class="n">smtpserver</span><span class="o">=</span><span class="s1">'smtp.gmail.com:587'</span><span class="p">):</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-8"></a>    <span class="n">header</span>  <span class="o">=</span> <span class="s1">'From: </span><span class="si">%s</span><span class="se">\n</span><span class="s1">'</span> <span class="o">%</span> <span class="n">from_addr</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-9"></a>    <span class="n">header</span> <span class="o">+=</span> <span class="s1">'To: </span><span class="si">%s</span><span class="se">\n</span><span class="s1">'</span> <span class="o">%</span> <span class="s1">','</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">to_addr_list</span><span class="p">)</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-10"></a>    <span class="n">header</span> <span class="o">+=</span> <span class="s1">'Cc: </span><span class="si">%s</span><span class="se">\n</span><span class="s1">'</span> <span class="o">%</span> <span class="s1">','</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cc_addr_list</span><span class="p">)</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-11"></a>    <span class="n">header</span> <span class="o">+=</span> <span class="s1">'Subject: </span><span class="si">%s</span><span class="se">\n\n</span><span class="s1">'</span> <span class="o">%</span> <span class="n">subject</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-12"></a>    <span class="n">message</span> <span class="o">=</span> <span class="n">header</span> <span class="o">+</span> <span class="n">message</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-13"></a>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-14"></a>    <span class="n">server</span> <span class="o">=</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="n">smtpserver</span><span class="p">)</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-15"></a>    <span class="n">server</span><span class="o">.</span><span class="n">starttls</span><span class="p">()</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-16"></a>    <span class="n">server</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">login</span><span class="p">,</span><span class="n">password</span><span class="p">)</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-17"></a>    <span class="n">problems</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="n">from_addr</span><span class="p">,</span> <span class="n">to_addr_list</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-18"></a>    <span class="n">server</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-19"></a>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-20"></a><span class="c1">#execute the method</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-21"></a><span class="n">sendemail</span><span class="p">(</span><span class="s1">'me@domain.com'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'you@yourdomain.com'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'andyou@yourdomain.com'</span><span class="p">],</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-22"></a>          <span class="s1">'test subject'</span><span class="p">,</span> <span class="s1">'test message'</span><span class="p">,</span> <span class="s1">'mylogin@gmail.com'</span><span class="p">,</span> <span class="s1">'mypassword'</span><span class="p">)</span>
-</pre>
-<p>Source:</p>
-<ul class="simple">
-<li><a class="reference external" href="http://rosettacode.org/wiki/Send_an_email#Python">http://rosettacode.org/wiki/Send_an_email#Python</a></li>
-<li><a class="reference external" href="http://www.pythonforbeginners.com/code-snippets-source-code/using-python-to-send-email">http://www.pythonforbeginners.com/code-snippets-source-code/using-python-to-send-email</a></li>
 </ul>
 </div>
     </div>
