@@ -22,7 +22,7 @@
 
     
 
-        <link rel="prefetch" href="posts/introspection-in-python.html" type="text/html">
+        <link rel="prefetch" href="posts/using-pip-with-different-python-versions.html" type="text/html">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
 <!-- Menubar -->
@@ -76,7 +76,32 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/introspection-in-python.html" class="u-url">Introspection in python</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/using-pip-with-different-python-versions.html" class="u-url">Using pip with different python versions</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="posts/using-pip-with-different-python-versions.html" rel="bookmark"><time class="published dt-published" datetime="2017-04-28T11:33:19+01:00" title="2017-04-28 11:33">2017-04-28 11:33</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/using-pip-with-different-python-versions.html#disqus_thread" data-disqus-identifier="cache/posts/using-pip-with-different-python-versions.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>Let us say that you have python2 and python3 installed.</p>
+<p>Use pip for python2</p>
+<pre class="code bash"><a name="rest_code_cbf5a4fae1744f109c9cdcbf581b4237-1"></a>pip2.6 install otherpackage
+<a name="rest_code_cbf5a4fae1744f109c9cdcbf581b4237-2"></a>pip2.7 install mybarpackage
+</pre>
+<p>You can see which version of python pip is using by default with:</p>
+<pre class="code bash"><a name="rest_code_efa3229c02094ea4938deba1cbcc81a5-1"></a>pip -V
+</pre>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/introspection-in-python.html" class="u-url">Introspection in python</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 Matthieu Choplin
@@ -525,39 +550,6 @@ If you don't want the exception to be handled by the context manager, just let i
 <ul class="simple">
 <li><a class="reference external" href="https://web.archive.org/web/20120730014107/">https://web.archive.org/web/20120730014107/</a></li>
 <li><a class="reference external" href="http://wiki.zope.org/zope2/MonkeyPatch">http://wiki.zope.org/zope2/MonkeyPatch</a></li>
-</ul>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/monitor-disk-usage-with-python.html" class="u-url">Monitor disk usage with python</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                Matthieu Choplin
-            </span></p>
-            <p class="dateline"><a href="posts/monitor-disk-usage-with-python.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-25T11:41:03+01:00" title="2014-09-25 11:41">2014-09-25 11:41</time></a></p>
-                <p class="commentline">
-        
-    <a href="posts/monitor-disk-usage-with-python.html#disqus_thread" data-disqus-identifier="cache/posts/monitor-disk-usage-with-python.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="e-content entry-content">
-    <div>
-<p>The module to use in python2 is <em>statvfs</em> imported from <em>os</em></p>
-<pre class="code python"><a name="rest_code_09e39ec77d6d409d9940e44c20ea7580-1"></a><span class="kn">import</span> <span class="nn">os</span>
-<a name="rest_code_09e39ec77d6d409d9940e44c20ea7580-2"></a><span class="n">statvfs</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">statvfs</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
-<a name="rest_code_09e39ec77d6d409d9940e44c20ea7580-3"></a><span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_blocks</span>     <span class="c1"># Size of filesystem in bytes</span>
-<a name="rest_code_09e39ec77d6d409d9940e44c20ea7580-4"></a><span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_bfree</span>      <span class="c1"># Actual number of free bytes</span>
-<a name="rest_code_09e39ec77d6d409d9940e44c20ea7580-5"></a><span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_bavail</span>     <span class="c1"># Number of free bytes that ordinary users</span>
-</pre>
-<p>NB: it is deprecated in python3, the module to use will be <a class="reference external" href="https://docs.python.org/3.3/library/os.html#os.fstat">fstat</a> os.fstat</p>
-<p>Source:</p>
-<ul class="simple">
-<li><a class="reference external" href="http://stackoverflow.com/questions/4260116/find-size-and-free-space-of-the-filesystem-containing-a-given-file">http://stackoverflow.com/questions/4260116/find-size-and-free-space-of-the-filesystem-containing-a-given-file</a></li>
-</ul>
-<p>Better usage:</p>
-<ul class="simple">
-<li><a class="reference external" href="http://blog.projectfondue.com/archives/2010/01/21/getting-an-early-warning-of-low-disk-space">http://blog.projectfondue.com/archives/2010/01/21/getting-an-early-warning-of-low-disk-space</a></li>
 </ul>
 </div>
     </div>

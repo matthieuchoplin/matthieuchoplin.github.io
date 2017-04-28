@@ -19,11 +19,11 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/2017/index.html</loc>
-  <lastmod>2017-04-26T16:10:00Z</lastmod>
+  <lastmod>2017-04-28T10:37:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/archive.html</loc>
-  <lastmod>2017-04-26T16:07:00Z</lastmod>
+  <lastmod>2017-04-28T10:37:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/blog/index.html</loc>
@@ -131,11 +131,11 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/index-4.html</loc>
-  <lastmod>2017-04-26T16:07:00Z</lastmod>
+  <lastmod>2017-04-28T10:37:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/index.html</loc>
-  <lastmod>2017-04-26T16:10:00Z</lastmod>
+  <lastmod>2017-04-28T10:37:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/listings/hello.py.html</loc>
@@ -239,7 +239,7 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/introspection-in-python.html</loc>
-  <lastmod>2017-04-26T16:10:00Z</lastmod>
+  <lastmod>2017-04-28T10:37:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/logs.html</loc>
@@ -344,6 +344,10 @@
  <url>
   <loc>http://mattchoplin.com/posts/using-enum-in-python.html</loc>
   <lastmod>2017-02-21T23:29:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/using-pip-with-different-python-versions.html</loc>
+  <lastmod>2017-04-28T10:37:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/version-control-etc-with-etckeeper.html</loc>
