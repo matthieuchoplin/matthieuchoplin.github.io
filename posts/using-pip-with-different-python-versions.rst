@@ -25,3 +25,5 @@ You can see which version of python pip is using by default with:
 .. code:: bash
 
     pip -V
+    
+Source: http://stackoverflow.com/questions/6504810/how-to-install-lxml-on-ubuntu?answertab=votes#tab-top
