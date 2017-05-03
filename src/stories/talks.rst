@@ -17,3 +17,8 @@ __ city_
 
 .. _freelance: http://mattchoplin.com/python_beginner/
 __ freelance_
+
+* `Code Review matters`__.
+
+.. _CodeReviewMatters: http://mattchoplin.com/vcs_demos/
+__ CodeReviewMatters_
