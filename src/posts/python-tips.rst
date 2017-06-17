@@ -14,3 +14,12 @@ Ignore escaping characters such as "\\"
   >>> print r""" This is '\myfolder\'"""
   >>> This is '\myfolder\'
 
+
+
+For more see:
+
+http://sahandsaba.com/thirty-python-language-features-and-tricks-you-may-not-know.html#id1
+
+http://oswalpalash.com/python-oddity/
+
+https://twitter.com/python_tip

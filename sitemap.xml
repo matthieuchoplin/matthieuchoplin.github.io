@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>http://mattchoplin.com/2014/index.html</loc>
-  <lastmod>2017-06-17T08:26:00Z</lastmod>
+  <lastmod>2017-06-17T17:18:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/2015/index.html</loc>
@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/2017/index.html</loc>
-  <lastmod>2017-06-17T16:30:00Z</lastmod>
+  <lastmod>2017-06-17T17:21:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/archive.html</loc>
@@ -50,6 +50,10 @@
   <lastmod>2017-06-17T08:26:00Z</lastmod>
  </url>
  <url>
+  <loc>http://mattchoplin.com/categories/cat_api.html</loc>
+  <lastmod>2017-06-17T17:21:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://mattchoplin.com/categories/cat_design-patterns-python-programming.html</loc>
   <lastmod>2017-06-17T08:05:00Z</lastmod>
  </url>
@@ -75,7 +79,7 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/index.html</loc>
-  <lastmod>2017-06-17T09:59:00Z</lastmod>
+  <lastmod>2017-06-17T17:18:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/internet.html</loc>
@@ -99,7 +103,7 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/skype.html</loc>
-  <lastmod>2017-06-17T16:30:00Z</lastmod>
+  <lastmod>2017-06-17T17:21:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/sql.html</loc>
@@ -131,7 +135,7 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/index-3.html</loc>
-  <lastmod>2017-06-17T08:26:00Z</lastmod>
+  <lastmod>2017-06-17T17:18:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/index-4.html</loc>
@@ -139,7 +143,7 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/index.html</loc>
-  <lastmod>2017-06-17T16:30:00Z</lastmod>
+  <lastmod>2017-06-17T17:21:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/listings/hello.py.html</loc>
@@ -295,7 +299,7 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/python-tips.html</loc>
-  <lastmod>2017-06-17T08:26:00Z</lastmod>
+  <lastmod>2017-06-17T17:18:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/screen-monitoring.html</loc>
@@ -319,7 +323,7 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/skype-with-python.html</loc>
-  <lastmod>2017-06-17T16:30:00Z</lastmod>
+  <lastmod>2017-06-17T17:21:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/sorting-list-with-two-criteria.html</loc>

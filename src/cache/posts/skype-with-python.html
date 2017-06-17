@@ -1,29 +1,29 @@
 <div class="section" id="create-the-virtualenv">
 <h1>Create the virtualenv</h1>
-<pre class="code bash"><a name="rest_code_bccfa4b96f784548bd9f6edf5494e753-1"></a>virtualenv skype_venv -p /usr/bin/python2.7 --system-site-packages
-</pre><p>Note that I am specyfying the python2 interpreter, and using the system site packages (<a class="reference external" href="https://virtualenv.pypa.io/en/stable/userguide/#the-system-site-packages-option/">the python libraries already installed</a>.).</p>
+<pre class="code bash"><a name="rest_code_94f90709c4844e80aa9f18c1febebf3f-1"></a>virtualenv skype_venv -p /usr/bin/python2.7 --system-site-packages
+</pre><p>Note that I am specyfying the python2 interpreter, and using the system site packages (<a class="reference external" href="https://virtualenv.pypa.io/en/stable/userguide/#the-system-site-packages-option/">the python libraries already installed</a>).</p>
 </div>
 <div class="section" id="install-the-skype4py-library">
 <h1>Install the Skype4Py library</h1>
 <p>You can install it with pip.</p>
-<pre class="code bash"><a name="rest_code_2f5ba49cb54d4976bbb2c1ad88cf42f4-1"></a><span class="nb">source</span> skype_venv/bin/activate
-<a name="rest_code_2f5ba49cb54d4976bbb2c1ad88cf42f4-2"></a>pip install Skype4Py
-</pre><p>Note that this library allow us to control Skype client application. It means that you will need to have a skype client installed with which you will interact using python.</p>
+<pre class="code bash"><a name="rest_code_c19a0439955d4072966fc6cd4fe9b1f0-1"></a><span class="nb">source</span> skype_venv/bin/activate
+<a name="rest_code_c19a0439955d4072966fc6cd4fe9b1f0-2"></a>pip install Skype4Py
+</pre><p>Note that this library allows us to control Skype client application. It means that you will need to have a skype client installed with which you will interact using python.</p>
 <p>Source: <a class="reference external" href="https://pypi.python.org/pypi/Skype4Py/">https://pypi.python.org/pypi/Skype4Py/</a></p>
 </div>
 <div class="section" id="use-the-library">
 <h1>Use the library</h1>
 <p>Open your skype client and launch a python prompt</p>
-<pre class="code bash"><a name="rest_code_31751469f0934fdb804946da26fdf90e-1"></a>&gt;&gt;&gt; import Skype4Py
-<a name="rest_code_31751469f0934fdb804946da26fdf90e-2"></a>&gt;&gt;&gt; <span class="nv">skype</span> <span class="o">=</span> Skype4Py.Skype<span class="o">()</span>
-<a name="rest_code_31751469f0934fdb804946da26fdf90e-3"></a>&gt;&gt;&gt; skype.Attach<span class="o">()</span>
+<pre class="code bash"><a name="rest_code_8f02747714ce434daf9a2d21b5f76cc0-1"></a>&gt;&gt;&gt; import Skype4Py
+<a name="rest_code_8f02747714ce434daf9a2d21b5f76cc0-2"></a>&gt;&gt;&gt; <span class="nv">skype</span> <span class="o">=</span> Skype4Py.Skype<span class="o">()</span>
+<a name="rest_code_8f02747714ce434daf9a2d21b5f76cc0-3"></a>&gt;&gt;&gt; skype.Attach<span class="o">()</span>
 </pre><p>At this point, the Skype client will ask for authorization:</p>
 <img alt="Skype4Py authorisation" class="well-large align-center" src="http://imgur.com/gKj46yz.png" />
-<p>And now, you can for example get the list of all your contact:</p>
-<pre class="code bash"><a name="rest_code_52560d8ed4724722a9e0ff58151b3970-1"></a>&gt;&gt;&gt; print <span class="s1">&#39;Your full name:&#39;</span>, skype.CurrentUser.FullName
-<a name="rest_code_52560d8ed4724722a9e0ff58151b3970-2"></a>&gt;&gt;&gt; print <span class="s1">&#39;Your contacts:&#39;</span>
-<a name="rest_code_52560d8ed4724722a9e0ff58151b3970-3"></a>&gt;&gt;&gt; <span class="k">for</span> user in skype.Friends:
-<a name="rest_code_52560d8ed4724722a9e0ff58151b3970-4"></a>        print <span class="s1">&#39;    &#39;</span>, user.FullName
+<p>And now, you can for example get the list of all your contacts:</p>
+<pre class="code bash"><a name="rest_code_b35c42f2c01141389c57e0e9dea15806-1"></a>&gt;&gt;&gt; print <span class="s1">&#39;Your full name:&#39;</span>, skype.CurrentUser.FullName
+<a name="rest_code_b35c42f2c01141389c57e0e9dea15806-2"></a>&gt;&gt;&gt; print <span class="s1">&#39;Your contacts:&#39;</span>
+<a name="rest_code_b35c42f2c01141389c57e0e9dea15806-3"></a>&gt;&gt;&gt; <span class="k">for</span> user in skype.Friends:
+<a name="rest_code_b35c42f2c01141389c57e0e9dea15806-4"></a>        print <span class="s1">&#39;    &#39;</span>, user.FullName
 </pre><p>To go further:</p>
 <p><a class="reference external" href="https://leakforums.net/thread-641974?tid=641974&amp;&amp;tid=641974&amp;&amp;pq=2">https://leakforums.net/thread-641974?tid=641974&amp;&amp;tid=641974&amp;&amp;pq=2</a></p>
 <p><a class="reference external" href="https://sinister.ly/Thread-Tutorial-Create-your-own-SkypeBOT">https://sinister.ly/Thread-Tutorial-Create-your-own-SkypeBOT</a></p>

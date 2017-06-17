@@ -2,7 +2,7 @@
 .. slug: skype-with-python
 .. date: 2017-06-17 10:28:07 UTC+01:00
 .. tags: skype
-.. category: 
+.. category: api
 .. link: 
 .. description: use skype with python
 .. type: text
@@ -14,7 +14,7 @@ Create the virtualenv
 
   virtualenv skype_venv -p /usr/bin/python2.7 --system-site-packages
 
-Note that I am specyfying the python2 interpreter, and using the system site packages (`the python libraries already installed <https://virtualenv.pypa.io/en/stable/userguide/#the-system-site-packages-option/>`__.).
+Note that I am specyfying the python2 interpreter, and using the system site packages (`the python libraries already installed <https://virtualenv.pypa.io/en/stable/userguide/#the-system-site-packages-option/>`__).
 
 
 Install the Skype4Py library
@@ -27,7 +27,7 @@ You can install it with pip.
   source skype_venv/bin/activate
   pip install Skype4Py
   
-Note that this library allow us to control Skype client application. It means that you will need to have a skype client installed with which you will interact using python.
+Note that this library allows us to control Skype client application. It means that you will need to have a skype client installed with which you will interact using python.
 
 
 Source: https://pypi.python.org/pypi/Skype4Py/
@@ -51,7 +51,7 @@ At this point, the Skype client will ask for authorization:
    :align: center
    :class: well-large
 
-And now, you can for example get the list of all your contact:
+And now, you can for example get the list of all your contacts:
 
 .. code:: bash
 
