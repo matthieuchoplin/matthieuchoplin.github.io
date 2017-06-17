@@ -7,7 +7,8 @@
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta content="#5670d4" name="theme-color">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="http://mattchoplin.com/posts/dummy-smtp-server-in-python-for-testing.html">
 <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
@@ -91,7 +92,7 @@ Source: http://www.euperia.com/development/test-smtp-wit">
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Dummy smtp server in Python for testing</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-06-12T18:19:30+01:00" itemprop="datePublished" title="2014-06-12 18:19">2014-06-12 18:19</time></a></p>
@@ -102,14 +103,14 @@ Source: http://www.euperia.com/development/test-smtp-wit">
 
             
         </p>
-<p class="sourceline"><a href="dummy-smtp-server-in-python-for-testing.rst" id="sourcelink">Source</a></p>
+<p class="sourceline"><a href="dummy-smtp-server-in-python-for-testing.rst" class="sourcelink">Source</a></p>
 
         </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<pre class="code bash"><a name="rest_code_3de8b4be4dbb448db314f3a4b46f7de3-1"></a>sudo python -m smtpd -n -c DebuggingServer localhost:25
+<pre class="code bash"><a name="rest_code_7402117c3f3d4d0a9a302ab596de6d95-1"></a>sudo python -m smtpd -n -c DebuggingServer localhost:25
 </pre>
 <p>The sudo is needed as you can’t bind to a port number lower than 1024 as a normal user.</p>
 <p>Source: <a class="reference external" href="http://www.euperia.com/development/test-smtp-with-a-dummy-server-in-python/460">http://www.euperia.com/development/test-smtp-with-a-dummy-server-in-python/460</a></p>

@@ -7,7 +7,8 @@
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta content="#5670d4" name="theme-color">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="http://mattchoplin.com/posts/using-enum-in-python.html">
 <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
@@ -97,7 +98,7 @@ Source: http://stackoverflow.c">
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Using enum in python</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-07-28T09:52:22+01:00" itemprop="datePublished" title="2014-07-28 09:52">2014-07-28 09:52</time></a></p>
@@ -108,24 +109,24 @@ Source: http://stackoverflow.c">
 
             
         </p>
-<p class="sourceline"><a href="using-enum-in-python.rst" id="sourcelink">Source</a></p>
+<p class="sourceline"><a href="using-enum-in-python.rst" class="sourcelink">Source</a></p>
 
         </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<pre class="code bash"><a name="rest_code_38e44d57324c44fea75eee5f4f2f6e73-1"></a>pip install enum34
+<pre class="code bash"><a name="rest_code_4b0967d1bc054be7a680df165d7ccc5c-1"></a>pip install enum34
 </pre>
-<pre class="code python"><a name="rest_code_97d9463edd544ff7b8ac025aaa30a3d3-1"></a><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
-<a name="rest_code_97d9463edd544ff7b8ac025aaa30a3d3-2"></a><span class="n">Animal</span> <span class="o">=</span> <span class="n">enum</span><span class="p">(</span><span class="s1">'Animal'</span><span class="p">,</span> <span class="s1">'ant bee cat dog'</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_b0a3194a7b0d4b01ae3150d30074adc8-1"></a><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<a name="rest_code_b0a3194a7b0d4b01ae3150d30074adc8-2"></a><span class="n">Animal</span> <span class="o">=</span> <span class="n">enum</span><span class="p">(</span><span class="s1">'Animal'</span><span class="p">,</span> <span class="s1">'ant bee cat dog'</span><span class="p">)</span>
 </pre>
 <p>or equivalently:</p>
-<pre class="code python"><a name="rest_code_0666264414c54bb7aac5cd798ab0ee8c-1"></a><span class="k">class</span> <span class="nc">Animals</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
-<a name="rest_code_0666264414c54bb7aac5cd798ab0ee8c-2"></a>    <span class="n">ant</span> <span class="o">=</span> <span class="mi">1</span>
-<a name="rest_code_0666264414c54bb7aac5cd798ab0ee8c-3"></a>    <span class="n">bee</span> <span class="o">=</span> <span class="mi">2</span>
-<a name="rest_code_0666264414c54bb7aac5cd798ab0ee8c-4"></a>    <span class="n">cat</span> <span class="o">=</span> <span class="mi">3</span>
-<a name="rest_code_0666264414c54bb7aac5cd798ab0ee8c-5"></a>    <span class="n">dog</span> <span class="o">=</span> <span class="mi">4</span>
+<pre class="code python"><a name="rest_code_7bfcb6f8d5ab4310812c11bcaff0aaec-1"></a><span class="k">class</span> <span class="nc">Animals</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<a name="rest_code_7bfcb6f8d5ab4310812c11bcaff0aaec-2"></a>    <span class="n">ant</span> <span class="o">=</span> <span class="mi">1</span>
+<a name="rest_code_7bfcb6f8d5ab4310812c11bcaff0aaec-3"></a>    <span class="n">bee</span> <span class="o">=</span> <span class="mi">2</span>
+<a name="rest_code_7bfcb6f8d5ab4310812c11bcaff0aaec-4"></a>    <span class="n">cat</span> <span class="o">=</span> <span class="mi">3</span>
+<a name="rest_code_7bfcb6f8d5ab4310812c11bcaff0aaec-5"></a>    <span class="n">dog</span> <span class="o">=</span> <span class="mi">4</span>
 </pre>
 <p>Source: <a class="reference external" href="http://stackoverflow.com/questions/36932/how-can-i-represent-an-enum-in-python">http://stackoverflow.com/questions/36932/how-can-i-represent-an-enum-in-python</a></p>
 <p><a class="reference external" href="https://docs.python.org/3/library/enum.html">https://docs.python.org/3/library/enum.html</a></p>

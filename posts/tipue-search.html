@@ -8,7 +8,8 @@
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta content="#5670d4" name="theme-color">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="http://mattchoplin.com/posts/tipue-search.html">
 <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
@@ -21,8 +22,7 @@
 
     
 
-    <meta name="description" itemprop="description" content="Introducing Tipue search">
-<meta name="author" content="Matthieu Choplin">
+    <meta name="author" content="Matthieu Choplin">
 <link rel="prev" href="database-locks.html" title="Database locks" type="text/html">
 <link rel="next" href="using-enum-in-python.html" title="Using enum in python" type="text/html">
 <meta property="og:site_name" content="Standing on the shoulders of giants">
@@ -91,7 +91,7 @@
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Tipue search</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-07-19T13:05:20+01:00" itemprop="datePublished" title="2014-07-19 13:05">2014-07-19 13:05</time></a></p>
@@ -102,10 +102,9 @@
 
             
         </p>
-<p class="sourceline"><a href="tipue-search.rst" id="sourcelink">Source</a></p>
+<p class="sourceline"><a href="tipue-search.rst" class="sourcelink">Source</a></p>
 
-                <meta name="description" itemprop="description" content="Introducing Tipue search">
-</div>
+        </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
@@ -113,7 +112,7 @@
 <p>As the number of posts is growing, I think that having a search engine within the website is now relevant. This post only shows what I am using for that.</p>
 <p>Instead of using an external search engine such as Google or DuckDuckGo, you have a plugin in Nikola than enables searching on the client side by using jQuery.</p>
 <p>Assuming you have installed Nikola &gt; v7.0, you can install the plugin like this:</p>
-<pre class="code python"><a name="rest_code_70c6bb81400f4de6b064d794145ede00-1"></a><span class="n">nikola</span> <span class="n">plugin</span> <span class="o">-</span><span class="n">i</span> <span class="n">localsearch</span>
+<pre class="code python"><a name="rest_code_cf313b9bb5434f22a4c98ee82c818129-1"></a><span class="n">nikola</span> <span class="n">plugin</span> <span class="o">-</span><span class="n">i</span> <span class="n">localsearch</span>
 </pre>
 <p>It will give you a configuration sample to paste in your config.py file.</p>
 <p>Source: <a class="reference external" href="http://plugins.getnikola.com/#localsearch">http://plugins.getnikola.com/#localsearch</a></p>

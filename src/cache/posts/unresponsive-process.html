@@ -1,20 +1,20 @@
-<pre class="code bash"><a name="rest_code_a03d4a2b1a924bd1853c8c58959481ce-1"></a>pkill -9f process-name
+<pre class="code bash"><a name="rest_code_0e3f80952b674622ba04b975d36d2fbf-1"></a>pkill -9f process-name
 </pre><p>Example:</p>
-<pre class="code bash"><a name="rest_code_9cb0d1bbe87b42d799c739c35a0008eb-1"></a>pkill -9f filezilla
+<pre class="code bash"><a name="rest_code_2c63a08b6d8344439f56f951aff416a5-1"></a>pkill -9f filezilla
 </pre><p>If you have launch a command that you cannot directly stopped with usually <em>ctrl+c</em>,
 you can always put the process in the background with <em>ctrl+z</em> and then use the
 <em>jobs</em> command to list the job (command) that you have launched.
 Then, you have the number of the job and you can kill it with the command
 <em>kill %&lt;number_of_the_job&gt;</em>.</p>
 <p>Example:</p>
-<pre class="code bash"><a name="rest_code_d24124aa30834636bd22079e6ef951e9-1"></a>$ sleep 100
-<a name="rest_code_d24124aa30834636bd22079e6ef951e9-2"></a>^Z
-<a name="rest_code_d24124aa30834636bd22079e6ef951e9-3"></a><span class="o">[</span>1<span class="o">]</span>+  Stopped                 sleep 100
-<a name="rest_code_d24124aa30834636bd22079e6ef951e9-4"></a>$ <span class="nb">jobs</span>
-<a name="rest_code_d24124aa30834636bd22079e6ef951e9-5"></a><span class="o">[</span>1<span class="o">]</span>+  Stopped                 sleep 100
-<a name="rest_code_d24124aa30834636bd22079e6ef951e9-6"></a>$ <span class="nb">kill</span> %1
-<a name="rest_code_d24124aa30834636bd22079e6ef951e9-7"></a>$ <span class="nb">jobs</span>
-<a name="rest_code_d24124aa30834636bd22079e6ef951e9-8"></a><span class="o">[</span>1<span class="o">]</span>+  Terminated              sleep 100
-<a name="rest_code_d24124aa30834636bd22079e6ef951e9-9"></a>$ <span class="nb">jobs</span>
-<a name="rest_code_d24124aa30834636bd22079e6ef951e9-10"></a>$
+<pre class="code bash"><a name="rest_code_867bad2e309f4bbf989196a3df01cae9-1"></a>$ sleep <span class="m">100</span>
+<a name="rest_code_867bad2e309f4bbf989196a3df01cae9-2"></a>^Z
+<a name="rest_code_867bad2e309f4bbf989196a3df01cae9-3"></a><span class="o">[</span><span class="m">1</span><span class="o">]</span>+  Stopped                 sleep <span class="m">100</span>
+<a name="rest_code_867bad2e309f4bbf989196a3df01cae9-4"></a>$ <span class="nb">jobs</span>
+<a name="rest_code_867bad2e309f4bbf989196a3df01cae9-5"></a><span class="o">[</span><span class="m">1</span><span class="o">]</span>+  Stopped                 sleep <span class="m">100</span>
+<a name="rest_code_867bad2e309f4bbf989196a3df01cae9-6"></a>$ <span class="nb">kill</span> %1
+<a name="rest_code_867bad2e309f4bbf989196a3df01cae9-7"></a>$ <span class="nb">jobs</span>
+<a name="rest_code_867bad2e309f4bbf989196a3df01cae9-8"></a><span class="o">[</span><span class="m">1</span><span class="o">]</span>+  Terminated              sleep <span class="m">100</span>
+<a name="rest_code_867bad2e309f4bbf989196a3df01cae9-9"></a>$ <span class="nb">jobs</span>
+<a name="rest_code_867bad2e309f4bbf989196a3df01cae9-10"></a>$
 </pre>

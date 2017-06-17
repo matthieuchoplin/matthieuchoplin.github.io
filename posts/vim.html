@@ -7,7 +7,8 @@
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta content="#5670d4" name="theme-color">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="http://mattchoplin.com/posts/vim.html">
 <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
@@ -91,7 +92,7 @@ It will launch some lessons with an approach 'learning by ">
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">VIM</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-06-04T22:51:32+01:00" itemprop="datePublished" title="2014-06-04 22:51">2014-06-04 22:51</time></a></p>
@@ -102,7 +103,7 @@ It will launch some lessons with an approach 'learning by ">
 
             
         </p>
-<p class="sourceline"><a href="vim.rst" id="sourcelink">Source</a></p>
+<p class="sourceline"><a href="vim.rst" class="sourcelink">Source</a></p>
 
         </div>
         
@@ -112,7 +113,7 @@ It will launch some lessons with an approach 'learning by ">
 <div class="section" id="vim-basics">
 <h2>VIM basics</h2>
 <p>The built in tutorial of Vim is very useful to know the basics. To launch it simply type the following in your terminal:</p>
-<pre class="code bash"><a name="rest_code_8ce635a9e7fe419cb18f370a9c6e7bf6-1"></a><span class="nv">$vimtutor</span>
+<pre class="code bash"><a name="rest_code_ecffc4e3da484745961272a7e59c6315-1"></a><span class="nv">$vimtutor</span>
 </pre>
 <p>It will launch some lessons with an approach 'learning by doing'.</p>
 </div>
@@ -124,32 +125,32 @@ It will launch some lessons with an approach 'learning by ">
 <h2>vim memento</h2>
 <div class="section" id="simple-vimrc">
 <h3>Simple vimrc</h3>
-<pre class="code bash"><a name="rest_code_86413a9524a4493d83ce22e35260cf31-1"></a><span class="nb">set</span> <span class="nv">textwidth</span><span class="o">=</span><span class="m">79</span>  <span class="s2">" lines longer than 79 columns will be broken</span>
-<a name="rest_code_86413a9524a4493d83ce22e35260cf31-2"></a><span class="s2">set shiftwidth=4  "</span> operation &gt;&gt; indents <span class="m">4</span> columns<span class="p">;</span> <span class="s">&lt;&lt; unindents 4 columns</span>
-<a name="rest_code_86413a9524a4493d83ce22e35260cf31-3"></a><span class="s">set tabstop=4     " a hard TAB displays as 4 columns</span>
-<a name="rest_code_86413a9524a4493d83ce22e35260cf31-4"></a><span class="s">set expandtab     " insert spaces when hitting TABs</span>
-<a name="rest_code_86413a9524a4493d83ce22e35260cf31-5"></a><span class="s">set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE</span>
-<a name="rest_code_86413a9524a4493d83ce22e35260cf31-6"></a><span class="s">set shiftroun</span>d    <span class="s2">" round indent to multiple of 'shiftwidth'</span>
-<a name="rest_code_86413a9524a4493d83ce22e35260cf31-7"></a><span class="s2">set autoindent    "</span> align the new line indent with the previous line
+<pre class="code bash"><a name="rest_code_ad29c41165da4e3594238506ab446f4b-1"></a><span class="nb">set</span> <span class="nv">textwidth</span><span class="o">=</span><span class="m">79</span>  <span class="s2">" lines longer than 79 columns will be broken</span>
+<a name="rest_code_ad29c41165da4e3594238506ab446f4b-2"></a><span class="s2">set shiftwidth=4  "</span> operation &gt;&gt; indents <span class="m">4</span> columns<span class="p">;</span> <span class="s">&lt;&lt; unindents 4 columns</span>
+<a name="rest_code_ad29c41165da4e3594238506ab446f4b-3"></a><span class="s">set tabstop=4     " a hard TAB displays as 4 columns</span>
+<a name="rest_code_ad29c41165da4e3594238506ab446f4b-4"></a><span class="s">set expandtab     " insert spaces when hitting TABs</span>
+<a name="rest_code_ad29c41165da4e3594238506ab446f4b-5"></a><span class="s">set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE</span>
+<a name="rest_code_ad29c41165da4e3594238506ab446f4b-6"></a><span class="s">set shiftroun</span>d    <span class="s2">" round indent to multiple of 'shiftwidth'</span>
+<a name="rest_code_ad29c41165da4e3594238506ab446f4b-7"></a><span class="s2">set autoindent    "</span> align the new line indent with the previous line
 </pre>
 </div>
 <div class="section" id="jump-to-function-definition">
 <h3>Jump to function definition:</h3>
-<pre class="code bash"><a name="rest_code_c9793c35d5bc4cb88683cd94707fc4b2-1"></a>g + *
+<pre class="code bash"><a name="rest_code_21b6478e0e354ef79a05ac98b98b1f1a-1"></a>g + *
 </pre>
 </div>
 <div class="section" id="highlight-variable-under-cursor">
 <h3>Highlight variable under cursor:</h3>
-<pre class="code bash"><a name="rest_code_fee6acc49ccd45e797165e188d20c2c0-1"></a>:autocmd CursorMoved * exe printf<span class="o">(</span><span class="s1">'match IncSearch /\V\&lt;%s\&gt;/'</span>, escape<span class="o">(</span>expand<span class="o">(</span><span class="s1">'&lt;cword&gt;'</span><span class="o">)</span>, <span class="s1">'/\'</span><span class="o">))</span>
+<pre class="code bash"><a name="rest_code_82c21a2a7b2445a98b5029e6868b2e82-1"></a>:autocmd CursorMoved * exe printf<span class="o">(</span><span class="s1">'match IncSearch /\V\&lt;%s\&gt;/'</span>, escape<span class="o">(</span>expand<span class="o">(</span><span class="s1">'&lt;cword&gt;'</span><span class="o">)</span>, <span class="s1">'/\'</span><span class="o">))</span>
 </pre>
 </div>
 <div class="section" id="move-cursor-to-its-last-position">
 <h3>Move cursor to its last position:</h3>
 <p>The quickest way is to hit either:</p>
-<pre class="code bash"><a name="rest_code_81c1b5f5a7fd4c5c86e4895ebf30fd7e-1"></a><span class="s1">''</span>
+<pre class="code bash"><a name="rest_code_19f8db21e90146518e0740e4afbd20c7-1"></a><span class="s1">''</span>
 </pre>
 <p>(two apostrophes) or:</p>
-<pre class="code bash"><a name="rest_code_0be64b2e654c49c2ba69c4e1bd7ba432-1"></a><span class="sb">``</span>
+<pre class="code bash"><a name="rest_code_d19b3592b84d44658987eecc97255fde-1"></a><span class="sb">``</span>
 </pre>
 <p>(two backticks). Note that the difference is that the backtick goes to the same location on the line, whereas the apostrophe goes to the start of the line. On a UK keyboard, the apostrophe is more accessible, so I tend to use that one. There are loads of useful marks like this, see :help mark-motions.
 For some other motions (not 2j I think), there's also the jump-list that lets you navigate back and forth among a number of motions.  Ctrl-O and Ctrl-I do this navigation, but see :help jump-motions for more information.</p>
@@ -157,24 +158,24 @@ For some other motions (not 2j I think), there's also the jump-list that lets yo
 <div class="section" id="line-numbers">
 <h3>Line numbers</h3>
 <p>To display line numbers along the left side of a window, type any one of the following command while using text editor:</p>
-<pre class="code bash"><a name="rest_code_2924ad6f37704594b90c2a0f3212a21d-1"></a>:set number
+<pre class="code bash"><a name="rest_code_3e516f04ac65478ab1776945c120643c-1"></a>:set number
 </pre>
 </div>
 <div class="section" id="go-to-line">
 <h3>Go to line</h3>
-<pre class="code bash"><a name="rest_code_4b441206c22641aaa1c2211826aa220e-1"></a>:42
+<pre class="code bash"><a name="rest_code_9db527bdf6854f538255d24e4dcce74c-1"></a>:42
 </pre>
 <p>where 42 is the number of line you want to go</p>
 </div>
 <div class="section" id="split-the-screen">
 <h3>Split the screen</h3>
-<pre class="code bash"><a name="rest_code_ef916d3a237d425db1f557fc01ac8bdb-1"></a>:vsp
+<pre class="code bash"><a name="rest_code_daeafa9c3dc64c138e89063c7ebe17fc-1"></a>:vsp
 </pre>
 </div>
 <div class="section" id="paste-from-another-application-into-vim">
 <h3>Paste from another application into vim</h3>
 <p>To avoid indentation issue:</p>
-<pre class="code bash"><a name="rest_code_dfc01037684b42018707d0d1b097ea2a-1"></a>:set paste
+<pre class="code bash"><a name="rest_code_dfb5750a418d420f856bbee763b0e690-1"></a>:set paste
 </pre>
 </div>
 </div>

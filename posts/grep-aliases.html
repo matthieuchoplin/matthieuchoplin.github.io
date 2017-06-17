@@ -7,7 +7,8 @@
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta content="#5670d4" name="theme-color">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="http://mattchoplin.com/posts/grep-aliases.html">
 <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
@@ -95,7 +96,7 @@ function grp {
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Grep aliases</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-10-10T10:31:27+01:00" itemprop="datePublished" title="2014-10-10 10:31">2014-10-10 10:31</time></a></p>
@@ -106,7 +107,7 @@ function grp {
 
             
         </p>
-<p class="sourceline"><a href="grep-aliases.rst" id="sourcelink">Source</a></p>
+<p class="sourceline"><a href="grep-aliases.rst" class="sourcelink">Source</a></p>
 
         </div>
         
@@ -114,32 +115,32 @@ function grp {
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p>In .bashrc</p>
-<pre class="code bash"><a name="rest_code_000c22a85a9444f1bcf0f40d72511691-1"></a><span class="c1"># recursive search in files</span>
-<a name="rest_code_000c22a85a9444f1bcf0f40d72511691-2"></a>
-<a name="rest_code_000c22a85a9444f1bcf0f40d72511691-3"></a><span class="k">function</span> grp <span class="o">{</span>
-<a name="rest_code_000c22a85a9444f1bcf0f40d72511691-4"></a>
-<a name="rest_code_000c22a85a9444f1bcf0f40d72511691-5"></a>    <span class="nv">GREP_OPTIONS</span><span class="o">=</span><span class="s2">"-rI --color --exclude-dir=\.bzr --exclude-dir=\.git --exclude-dir=\.hg --exclude-dir=\.svn --exclude=tags </span><span class="nv">$GREP_OPTIONS</span><span class="s2">"</span> grep <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
-<a name="rest_code_000c22a85a9444f1bcf0f40d72511691-6"></a>
-<a name="rest_code_000c22a85a9444f1bcf0f40d72511691-7"></a><span class="o">}</span>
-<a name="rest_code_000c22a85a9444f1bcf0f40d72511691-8"></a>
-<a name="rest_code_000c22a85a9444f1bcf0f40d72511691-9"></a>
-<a name="rest_code_000c22a85a9444f1bcf0f40d72511691-10"></a>
-<a name="rest_code_000c22a85a9444f1bcf0f40d72511691-11"></a><span class="c1"># recursive search in Python source</span>
-<a name="rest_code_000c22a85a9444f1bcf0f40d72511691-12"></a>
-<a name="rest_code_000c22a85a9444f1bcf0f40d72511691-13"></a><span class="k">function</span> grpy <span class="o">{</span>
-<a name="rest_code_000c22a85a9444f1bcf0f40d72511691-14"></a>
-<a name="rest_code_000c22a85a9444f1bcf0f40d72511691-15"></a>  <span class="nv">GREP_OPTIONS</span><span class="o">=</span><span class="s2">"--exclude-dir=build --exclude-dir=dist --include=*.py </span><span class="nv">$GREP_OPTIONS</span><span class="s2">"</span> grp <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
-<a name="rest_code_000c22a85a9444f1bcf0f40d72511691-16"></a>
-<a name="rest_code_000c22a85a9444f1bcf0f40d72511691-17"></a><span class="o">}</span>
+<pre class="code bash"><a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-1"></a><span class="c1"># recursive search in files</span>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-2"></a>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-3"></a><span class="k">function</span> grp <span class="o">{</span>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-4"></a>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-5"></a>    <span class="nv">GREP_OPTIONS</span><span class="o">=</span><span class="s2">"-rI --color --exclude-dir=\.bzr --exclude-dir=\.git --exclude-dir=\.hg --exclude-dir=\.svn --exclude=tags </span><span class="nv">$GREP_OPTIONS</span><span class="s2">"</span> grep <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-6"></a>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-7"></a><span class="o">}</span>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-8"></a>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-9"></a>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-10"></a>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-11"></a><span class="c1"># recursive search in Python source</span>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-12"></a>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-13"></a><span class="k">function</span> grpy <span class="o">{</span>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-14"></a>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-15"></a>  <span class="nv">GREP_OPTIONS</span><span class="o">=</span><span class="s2">"--exclude-dir=build --exclude-dir=dist --include=*.py </span><span class="nv">$GREP_OPTIONS</span><span class="s2">"</span> grp <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-16"></a>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-17"></a><span class="o">}</span>
 </pre>
 <p>Use:</p>
-<pre class="code bash"><a name="rest_code_ec2ef986f63c4fb98f1332222e6620bc-1"></a>$ grp WORD .
+<pre class="code bash"><a name="rest_code_a0650bfc6c174fdd9dde494e8ae63430-1"></a>$ grp WORD .
 </pre>
 <p>Or</p>
-<pre class="code bash"><a name="rest_code_a2f0eae61bed4028bb1b3783c98c7a54-1"></a>$ grpy to just search in python files
+<pre class="code bash"><a name="rest_code_f1a73ad939fc4553981c097deba43ad2-1"></a>$ grpy to just search in python files
 </pre>
 <p>Then reload bashrc with:</p>
-<pre class="code bash"><a name="rest_code_f482296c2e424957ad61bb2210c5081a-1"></a>$ . ~/.bashrc
+<pre class="code bash"><a name="rest_code_f6f070df12bd41a5aa230fbbc37ba4fe-1"></a>$ . ~/.bashrc
 </pre>
 <p>Thank you JB!! (<a class="reference external" href="http://tartley.com/">http://tartley.com/</a>)</p>
 </div>

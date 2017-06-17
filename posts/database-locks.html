@@ -7,7 +7,8 @@
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta content="#5670d4" name="theme-color">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="http://mattchoplin.com/posts/database-locks.html">
 <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
@@ -96,7 +97,7 @@ http://www.postgresql.org/docs/9.">
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Database locks</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-07-19T00:27:04+01:00" itemprop="datePublished" title="2014-07-19 00:27">2014-07-19 00:27</time></a></p>
@@ -107,17 +108,17 @@ http://www.postgresql.org/docs/9.">
 
             
         </p>
-<p class="sourceline"><a href="database-locks.rst" id="sourcelink">Source</a></p>
+<p class="sourceline"><a href="database-locks.rst" class="sourcelink">Source</a></p>
 
         </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<pre class="code postgresql"><a name="rest_code_9f53eebdb72d4daabf5730a732925a22-1"></a><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">pg_stat_activity</span> <span class="k">where</span> <span class="n">waiting</span><span class="o">=</span><span class="s1">'t'</span><span class="p">;</span>
+<pre class="code postgresql"><a name="rest_code_253bb4144c004386b6b774a8ce1d4447-1"></a><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">pg_stat_activity</span> <span class="k">where</span> <span class="n">waiting</span><span class="o">=</span><span class="s1">'t'</span><span class="p">;</span>
 </pre>
 <p>Fix the lock:</p>
-<pre class="code postgresql"><a name="rest_code_e170b37c3cb1482bbe5fd8eb374714bd-1"></a><span class="k">select</span> <span class="n">pg_cancel_backend</span><span class="p">(</span><span class="n">pid</span> <span class="nb">int</span><span class="p">)</span>
+<pre class="code postgresql"><a name="rest_code_e7d904c2908940569be1a2e593c152b6-1"></a><span class="k">select</span> <span class="n">pg_cancel_backend</span><span class="p">(</span><span class="n">pid</span> <span class="nb">int</span><span class="p">)</span>
 </pre>
 <p>Where "pid int" is the pid you find with pg_stat_activity.</p>
 <p>Sources:</p>

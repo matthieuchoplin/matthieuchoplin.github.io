@@ -8,7 +8,8 @@
 <link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta content="#5670d4" name="theme-color">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="http://mattchoplin.com/index-4.html">
 <link rel="icon" href="favicon-16x16.png" sizes="16x16">
@@ -20,6 +21,8 @@
 <div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 20px;"></div>
 
 
+
+    
 
     
 
@@ -79,10 +82,13 @@
             
 
     
+
+
+    
 <div class="postindex">
     <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/monitor-disk-usage-with-python.html" class="u-url">Monitor disk usage with python</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="posts/monitor-disk-usage-with-python.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-25T11:41:03+01:00" title="2014-09-25 11:41">2014-09-25 11:41</time></a></p>
@@ -96,11 +102,11 @@
     </header><div class="e-content entry-content">
     <div>
 <p>The module to use in python2 is <em>statvfs</em> imported from <em>os</em></p>
-<pre class="code python"><a name="rest_code_09e39ec77d6d409d9940e44c20ea7580-1"></a><span class="kn">import</span> <span class="nn">os</span>
-<a name="rest_code_09e39ec77d6d409d9940e44c20ea7580-2"></a><span class="n">statvfs</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">statvfs</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
-<a name="rest_code_09e39ec77d6d409d9940e44c20ea7580-3"></a><span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_blocks</span>     <span class="c1"># Size of filesystem in bytes</span>
-<a name="rest_code_09e39ec77d6d409d9940e44c20ea7580-4"></a><span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_bfree</span>      <span class="c1"># Actual number of free bytes</span>
-<a name="rest_code_09e39ec77d6d409d9940e44c20ea7580-5"></a><span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_bavail</span>     <span class="c1"># Number of free bytes that ordinary users</span>
+<pre class="code python"><a name="rest_code_b96328c6c4ef49ba9a6630da741766bf-1"></a><span class="kn">import</span> <span class="nn">os</span>
+<a name="rest_code_b96328c6c4ef49ba9a6630da741766bf-2"></a><span class="n">statvfs</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">statvfs</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
+<a name="rest_code_b96328c6c4ef49ba9a6630da741766bf-3"></a><span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_blocks</span>     <span class="c1"># Size of filesystem in bytes</span>
+<a name="rest_code_b96328c6c4ef49ba9a6630da741766bf-4"></a><span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_bfree</span>      <span class="c1"># Actual number of free bytes</span>
+<a name="rest_code_b96328c6c4ef49ba9a6630da741766bf-5"></a><span class="n">statvfs</span><span class="o">.</span><span class="n">f_frsize</span> <span class="o">*</span> <span class="n">statvfs</span><span class="o">.</span><span class="n">f_bavail</span>     <span class="c1"># Number of free bytes that ordinary users</span>
 </pre>
 <p>NB: it is deprecated in python3, the module to use will be <a class="reference external" href="https://docs.python.org/3.3/library/os.html#os.fstat">fstat</a> os.fstat</p>
 <p>Source:</p>
@@ -115,7 +121,7 @@
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/send-email-with-python.html" class="u-url">Send email with python</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="posts/send-email-with-python.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-25T11:20:32+01:00" title="2014-09-25 11:20">2014-09-25 11:20</time></a></p>
@@ -131,28 +137,28 @@
 <p>This is a simple snippets for sending an email with a gmail smtp server.</p>
 <p>If you want to send emails from localhost, you will have to first enable an smtp server.</p>
 <p>So, the simplest is to use gmail smtp server:</p>
-<pre class="code python"><a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-1"></a><span class="kn">import</span> <span class="nn">smtplib</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-2"></a>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-3"></a><span class="c1"># define the method</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-4"></a><span class="k">def</span> <span class="nf">sendemail</span><span class="p">(</span><span class="n">from_addr</span><span class="p">,</span> <span class="n">to_addr_list</span><span class="p">,</span> <span class="n">cc_addr_list</span><span class="p">,</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-5"></a>              <span class="n">subject</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-6"></a>              <span class="n">login</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-7"></a>              <span class="n">smtpserver</span><span class="o">=</span><span class="s1">'smtp.gmail.com:587'</span><span class="p">):</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-8"></a>    <span class="n">header</span>  <span class="o">=</span> <span class="s1">'From: </span><span class="si">%s</span><span class="se">\n</span><span class="s1">'</span> <span class="o">%</span> <span class="n">from_addr</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-9"></a>    <span class="n">header</span> <span class="o">+=</span> <span class="s1">'To: </span><span class="si">%s</span><span class="se">\n</span><span class="s1">'</span> <span class="o">%</span> <span class="s1">','</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">to_addr_list</span><span class="p">)</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-10"></a>    <span class="n">header</span> <span class="o">+=</span> <span class="s1">'Cc: </span><span class="si">%s</span><span class="se">\n</span><span class="s1">'</span> <span class="o">%</span> <span class="s1">','</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cc_addr_list</span><span class="p">)</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-11"></a>    <span class="n">header</span> <span class="o">+=</span> <span class="s1">'Subject: </span><span class="si">%s</span><span class="se">\n\n</span><span class="s1">'</span> <span class="o">%</span> <span class="n">subject</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-12"></a>    <span class="n">message</span> <span class="o">=</span> <span class="n">header</span> <span class="o">+</span> <span class="n">message</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-13"></a>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-14"></a>    <span class="n">server</span> <span class="o">=</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="n">smtpserver</span><span class="p">)</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-15"></a>    <span class="n">server</span><span class="o">.</span><span class="n">starttls</span><span class="p">()</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-16"></a>    <span class="n">server</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">login</span><span class="p">,</span><span class="n">password</span><span class="p">)</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-17"></a>    <span class="n">problems</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="n">from_addr</span><span class="p">,</span> <span class="n">to_addr_list</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-18"></a>    <span class="n">server</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-19"></a>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-20"></a><span class="c1">#execute the method</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-21"></a><span class="n">sendemail</span><span class="p">(</span><span class="s1">'me@domain.com'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'you@yourdomain.com'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'andyou@yourdomain.com'</span><span class="p">],</span>
-<a name="rest_code_302009fc0d8f4074a27bcb845aac8e9a-22"></a>          <span class="s1">'test subject'</span><span class="p">,</span> <span class="s1">'test message'</span><span class="p">,</span> <span class="s1">'mylogin@gmail.com'</span><span class="p">,</span> <span class="s1">'mypassword'</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_f31d2ac5ca1246c5960aa18caa108dc9-1"></a><span class="kn">import</span> <span class="nn">smtplib</span>
+<a name="rest_code_f31d2ac5ca1246c5960aa18caa108dc9-2"></a>
+<a name="rest_code_f31d2ac5ca1246c5960aa18caa108dc9-3"></a><span class="c1"># define the method</span>
+<a name="rest_code_f31d2ac5ca1246c5960aa18caa108dc9-4"></a><span class="k">def</span> <span class="nf">sendemail</span><span class="p">(</span><span class="n">from_addr</span><span class="p">,</span> <span class="n">to_addr_list</span><span class="p">,</span> <span class="n">cc_addr_list</span><span class="p">,</span>
+<a name="rest_code_f31d2ac5ca1246c5960aa18caa108dc9-5"></a>              <span class="n">subject</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span>
+<a name="rest_code_f31d2ac5ca1246c5960aa18caa108dc9-6"></a>              <span class="n">login</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span>
+<a name="rest_code_f31d2ac5ca1246c5960aa18caa108dc9-7"></a>              <span class="n">smtpserver</span><span class="o">=</span><span class="s1">'smtp.gmail.com:587'</span><span class="p">):</span>
+<a name="rest_code_f31d2ac5ca1246c5960aa18caa108dc9-8"></a>    <span class="n">header</span>  <span class="o">=</span> <span class="s1">'From: </span><span class="si">%s</span><span class="se">\n</span><span class="s1">'</span> <span class="o">%</span> <span class="n">from_addr</span>
+<a name="rest_code_f31d2ac5ca1246c5960aa18caa108dc9-9"></a>    <span class="n">header</span> <span class="o">+=</span> <span class="s1">'To: </span><span class="si">%s</span><span class="se">\n</span><span class="s1">'</span> <span class="o">%</span> <span class="s1">','</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">to_addr_list</span><span class="p">)</span>
+<a name="rest_code_f31d2ac5ca1246c5960aa18caa108dc9-10"></a>    <span class="n">header</span> <span class="o">+=</span> <span class="s1">'Cc: </span><span class="si">%s</span><span class="se">\n</span><span class="s1">'</span> <span class="o">%</span> <span class="s1">','</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cc_addr_list</span><span class="p">)</span>
+<a name="rest_code_f31d2ac5ca1246c5960aa18caa108dc9-11"></a>    <span class="n">header</span> <span class="o">+=</span> <span class="s1">'Subject: </span><span class="si">%s</span><span class="se">\n\n</span><span class="s1">'</span> <span class="o">%</span> <span class="n">subject</span>
+<a name="rest_code_f31d2ac5ca1246c5960aa18caa108dc9-12"></a>    <span class="n">message</span> <span class="o">=</span> <span class="n">header</span> <span class="o">+</span> <span class="n">message</span>
+<a name="rest_code_f31d2ac5ca1246c5960aa18caa108dc9-13"></a>
+<a name="rest_code_f31d2ac5ca1246c5960aa18caa108dc9-14"></a>    <span class="n">server</span> <span class="o">=</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="n">smtpserver</span><span class="p">)</span>
+<a name="rest_code_f31d2ac5ca1246c5960aa18caa108dc9-15"></a>    <span class="n">server</span><span class="o">.</span><span class="n">starttls</span><span class="p">()</span>
+<a name="rest_code_f31d2ac5ca1246c5960aa18caa108dc9-16"></a>    <span class="n">server</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">login</span><span class="p">,</span><span class="n">password</span><span class="p">)</span>
+<a name="rest_code_f31d2ac5ca1246c5960aa18caa108dc9-17"></a>    <span class="n">problems</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="n">from_addr</span><span class="p">,</span> <span class="n">to_addr_list</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+<a name="rest_code_f31d2ac5ca1246c5960aa18caa108dc9-18"></a>    <span class="n">server</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+<a name="rest_code_f31d2ac5ca1246c5960aa18caa108dc9-19"></a>
+<a name="rest_code_f31d2ac5ca1246c5960aa18caa108dc9-20"></a><span class="c1">#execute the method</span>
+<a name="rest_code_f31d2ac5ca1246c5960aa18caa108dc9-21"></a><span class="n">sendemail</span><span class="p">(</span><span class="s1">'me@domain.com'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'you@yourdomain.com'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'andyou@yourdomain.com'</span><span class="p">],</span>
+<a name="rest_code_f31d2ac5ca1246c5960aa18caa108dc9-22"></a>          <span class="s1">'test subject'</span><span class="p">,</span> <span class="s1">'test message'</span><span class="p">,</span> <span class="s1">'mylogin@gmail.com'</span><span class="p">,</span> <span class="s1">'mypassword'</span><span class="p">)</span>
 </pre>
 <p>Source:</p>
 <ul class="simple">
@@ -163,7 +169,7 @@
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/version-control-etc-with-etckeeper.html" class="u-url">Version Control /etc with etckeeper</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="posts/version-control-etc-with-etckeeper.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-25T10:14:33+01:00" title="2014-09-25 10:14">2014-09-25 10:14</time></a></p>
@@ -186,7 +192,7 @@
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/sentry-installation.html" class="u-url">Sentry installation</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="posts/sentry-installation.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-24T22:03:47+01:00" title="2014-09-24 22:03">2014-09-24 22:03</time></a></p>
@@ -200,65 +206,65 @@
     </header><div class="e-content entry-content">
     <div>
 <p>Create a directory called sentry:</p>
-<pre class="code bash"><a name="rest_code_772014f5fa8f47ce8a507522abf7cf8b-1"></a><span class="c1"># mkdir /opt/sentry &amp;&amp; cd /opt/sentry</span>
+<pre class="code bash"><a name="rest_code_5f0a10cfa9af442185243ee470af0560-1"></a><span class="c1"># mkdir /opt/sentry &amp;&amp; cd /opt/sentry</span>
 </pre>
 <p>Create a virtual environment and activate it:</p>
-<pre class="code bash"><a name="rest_code_712693c6e9bf4b06b5bce438b0247fa0-1"></a><span class="c1"># virtualenv sentry &amp;&amp; source /opt/sentry/sentry/bin/activate</span>
+<pre class="code bash"><a name="rest_code_f56cb59d8d4448acb67473f3bf40a54f-1"></a><span class="c1"># virtualenv sentry &amp;&amp; source /opt/sentry/sentry/bin/activate</span>
 </pre>
 <p>Install Sentry:</p>
-<pre class="code bash"><a name="rest_code_5de94b9816d84af8a07762cc99c3ef57-1"></a><span class="c1"># easy_install -UZ sentry[postgres]</span>
-<a name="rest_code_5de94b9816d84af8a07762cc99c3ef57-2"></a><span class="c1"># easy_install -UZ sentry</span>
+<pre class="code bash"><a name="rest_code_87e0d68866364480b3af7c038ba218b1-1"></a><span class="c1"># easy_install -UZ sentry[postgres]</span>
+<a name="rest_code_87e0d68866364480b3af7c038ba218b1-2"></a><span class="c1"># easy_install -UZ sentry</span>
 </pre>
 <p>Initialize the conifguration</p>
-<pre class="code bash"><a name="rest_code_1feda7536d2f4889876e77c090f223c7-1"></a><span class="c1"># sentry init /opt/sentry/sentry.conf.py</span>
+<pre class="code bash"><a name="rest_code_b2b6abe9b888475f85ac0018dd0bdd70-1"></a><span class="c1"># sentry init /opt/sentry/sentry.conf.py</span>
 </pre>
 <p>In the configuration file /opt/sentry/sentry.conf.py, you are going to change:</p>
 <ul class="simple">
 <li>the database configuration such as:</li>
 </ul>
-<pre class="code python"><a name="rest_code_362b70d004ad487bb943c631ef636cb1-1"></a><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_362b70d004ad487bb943c631ef636cb1-2"></a>  <span class="s1">'default'</span><span class="p">:</span> <span class="p">{</span>
-<a name="rest_code_362b70d004ad487bb943c631ef636cb1-3"></a>                <span class="s1">'ENGINE'</span><span class="p">:</span> <span class="s1">'django.db.backends.postgresql_psycopg2'</span><span class="p">,</span>
-<a name="rest_code_362b70d004ad487bb943c631ef636cb1-4"></a>                <span class="s1">'NAME'</span><span class="p">:</span> <span class="s1">'sentry'</span><span class="p">,</span>
-<a name="rest_code_362b70d004ad487bb943c631ef636cb1-5"></a>                <span class="s1">'USER'</span><span class="p">:</span> <span class="s1">'sentry'</span><span class="p">,</span>
-<a name="rest_code_362b70d004ad487bb943c631ef636cb1-6"></a>                <span class="s1">'PASSWORD'</span><span class="p">:</span> <span class="s1">'sentry'</span><span class="p">,</span>
-<a name="rest_code_362b70d004ad487bb943c631ef636cb1-7"></a>                <span class="s1">'HOST'</span><span class="p">:</span> <span class="s1">'localhost'</span><span class="p">,</span>
-<a name="rest_code_362b70d004ad487bb943c631ef636cb1-8"></a>                <span class="s1">'PORT'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
-<a name="rest_code_362b70d004ad487bb943c631ef636cb1-9"></a>             <span class="p">}</span>
-<a name="rest_code_362b70d004ad487bb943c631ef636cb1-10"></a>           <span class="p">}</span>
+<pre class="code python"><a name="rest_code_82aac8e1cb3e4b3498fd20f94de616df-1"></a><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+<a name="rest_code_82aac8e1cb3e4b3498fd20f94de616df-2"></a>  <span class="s1">'default'</span><span class="p">:</span> <span class="p">{</span>
+<a name="rest_code_82aac8e1cb3e4b3498fd20f94de616df-3"></a>                <span class="s1">'ENGINE'</span><span class="p">:</span> <span class="s1">'django.db.backends.postgresql_psycopg2'</span><span class="p">,</span>
+<a name="rest_code_82aac8e1cb3e4b3498fd20f94de616df-4"></a>                <span class="s1">'NAME'</span><span class="p">:</span> <span class="s1">'sentry'</span><span class="p">,</span>
+<a name="rest_code_82aac8e1cb3e4b3498fd20f94de616df-5"></a>                <span class="s1">'USER'</span><span class="p">:</span> <span class="s1">'sentry'</span><span class="p">,</span>
+<a name="rest_code_82aac8e1cb3e4b3498fd20f94de616df-6"></a>                <span class="s1">'PASSWORD'</span><span class="p">:</span> <span class="s1">'sentry'</span><span class="p">,</span>
+<a name="rest_code_82aac8e1cb3e4b3498fd20f94de616df-7"></a>                <span class="s1">'HOST'</span><span class="p">:</span> <span class="s1">'localhost'</span><span class="p">,</span>
+<a name="rest_code_82aac8e1cb3e4b3498fd20f94de616df-8"></a>                <span class="s1">'PORT'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
+<a name="rest_code_82aac8e1cb3e4b3498fd20f94de616df-9"></a>             <span class="p">}</span>
+<a name="rest_code_82aac8e1cb3e4b3498fd20f94de616df-10"></a>           <span class="p">}</span>
 </pre>
 <ul class="simple">
 <li>And the url:</li>
 </ul>
-<pre class="code python"><a name="rest_code_c42c79f7ea894e8288a09c31f6b085db-1"></a><span class="n">SENTRY_URL_PREFIX</span> <span class="o">=</span> <span class="s1">'http://192.168.50.4:9000'</span> <span class="c1"># the ip address of the server</span>
+<pre class="code python"><a name="rest_code_ab71b2b5e2f241eba92d721eeae3eaa8-1"></a><span class="n">SENTRY_URL_PREFIX</span> <span class="o">=</span> <span class="s1">'http://192.168.50.4:9000'</span> <span class="c1"># the ip address of the server</span>
 </pre>
 <p>Install postgresql</p>
-<pre class="code bash"><a name="rest_code_0f6a63de094a4f48999a6b17e8e71ad7-1"></a><span class="c1"># apt-get install postgresql-9.3</span>
+<pre class="code bash"><a name="rest_code_cb61f9a89ec2406881d608084bff647d-1"></a><span class="c1"># apt-get install postgresql-9.3</span>
 </pre>
 <p>Create a user for sentry:</p>
-<pre class="code bash"><a name="rest_code_f07ac5ea00f3419286b40c1c2200c701-1"></a><span class="c1"># sudo su postgres</span>
-<a name="rest_code_f07ac5ea00f3419286b40c1c2200c701-2"></a>$ createuser sentry
-<a name="rest_code_f07ac5ea00f3419286b40c1c2200c701-3"></a>$ psql template1
-<a name="rest_code_f07ac5ea00f3419286b40c1c2200c701-4"></a><span class="c1"># alter role sentry with password 'sentry';</span>
+<pre class="code bash"><a name="rest_code_938974c84d364c388fb7ffcd26429f57-1"></a><span class="c1"># sudo su postgres</span>
+<a name="rest_code_938974c84d364c388fb7ffcd26429f57-2"></a>$ createuser sentry
+<a name="rest_code_938974c84d364c388fb7ffcd26429f57-3"></a>$ psql template1
+<a name="rest_code_938974c84d364c388fb7ffcd26429f57-4"></a><span class="c1"># alter role sentry with password 'sentry';</span>
 </pre>
 <p>Create the database as postgres:</p>
-<pre class="code bash"><a name="rest_code_939d7103905b49cd94b3080776db999b-1"></a><span class="c1"># createdb -E utf-8 sentry</span>
+<pre class="code bash"><a name="rest_code_9ede5ea1ee3742a4abee79c750f32368-1"></a><span class="c1"># createdb -E utf-8 sentry</span>
 </pre>
 <p>Create the initial schema using the upgrade command as root:</p>
-<pre class="code bash"><a name="rest_code_e8b33205f55243569efafe18f6c5c5ee-1"></a><span class="c1"># sentry --config=/opt/sentry/sentry.conf.py upgrade</span>
+<pre class="code bash"><a name="rest_code_0056695986504c13a43e9f5935023f1d-1"></a><span class="c1"># sentry --config=/opt/sentry/sentry.conf.py upgrade</span>
 </pre>
 <p>If you did not create the user on the first run, you can correct this by doing the following:</p>
-<pre class="code bash"><a name="rest_code_8a499849748144578ad3d8a61634d17c-1"></a><span class="c1"># sentry --config=/opt/sentry/sentry.conf.py createsuperuser</span>
-<a name="rest_code_8a499849748144578ad3d8a61634d17c-2"></a><span class="c1"># sentry --config=/opt/sentry/sentry.conf.py repair --owner=sentry</span>
+<pre class="code bash"><a name="rest_code_517a31d7403947a488d06d5933a8cc3d-1"></a><span class="c1"># sentry --config=/opt/sentry/sentry.conf.py createsuperuser</span>
+<a name="rest_code_517a31d7403947a488d06d5933a8cc3d-2"></a><span class="c1"># sentry --config=/opt/sentry/sentry.conf.py repair --owner=sentry</span>
 </pre>
 <p>You can start Sentry with:</p>
-<pre class="code bash"><a name="rest_code_56f9cb8339424028b58f5f8896596a2f-1"></a><span class="c1"># sentry --config=/opt/sentry/sentry.conf.py start</span>
+<pre class="code bash"><a name="rest_code_46d1ccedb1e14dd68c15d00487ad96da-1"></a><span class="c1"># sentry --config=/opt/sentry/sentry.conf.py start</span>
 </pre>
 </div>
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/associate-hostname-with-ip-address.html" class="u-url">Associate hostname with IP address</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="posts/associate-hostname-with-ip-address.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-24T10:37:55+01:00" title="2014-09-24 10:37">2014-09-24 10:37</time></a></p>
@@ -272,17 +278,17 @@
     </header><div class="e-content entry-content">
     <div>
 <p>You can do that in the /etc/hosts file:</p>
-<pre class="code bash"><a name="rest_code_c2f0ce1faedb43938ea5741f0092efd9-1"></a>127.0.0.1       localhost
-<a name="rest_code_c2f0ce1faedb43938ea5741f0092efd9-2"></a>192.168.1.10    foo.mydomain.org       foo
-<a name="rest_code_c2f0ce1faedb43938ea5741f0092efd9-3"></a>192.168.1.13    bar.mydomain.org       bar
-<a name="rest_code_c2f0ce1faedb43938ea5741f0092efd9-4"></a>146.82.138.7    master.debian.org      master
-<a name="rest_code_c2f0ce1faedb43938ea5741f0092efd9-5"></a>209.237.226.90  www.opensource.org
+<pre class="code bash"><a name="rest_code_f8a429d5425045b1aae6f7cfd72f50d7-1"></a><span class="m">127</span>.0.0.1       localhost
+<a name="rest_code_f8a429d5425045b1aae6f7cfd72f50d7-2"></a><span class="m">192</span>.168.1.10    foo.mydomain.org       foo
+<a name="rest_code_f8a429d5425045b1aae6f7cfd72f50d7-3"></a><span class="m">192</span>.168.1.13    bar.mydomain.org       bar
+<a name="rest_code_f8a429d5425045b1aae6f7cfd72f50d7-4"></a><span class="m">146</span>.82.138.7    master.debian.org      master
+<a name="rest_code_f8a429d5425045b1aae6f7cfd72f50d7-5"></a><span class="m">209</span>.237.226.90  www.opensource.org
 </pre>
 <p>So, from the command line, you can do:</p>
-<pre class="code bash"><a name="rest_code_27602c7fc2714231b05625e26dec807d-1"></a>ping foo.mydomain.org
+<pre class="code bash"><a name="rest_code_ff121e4b0e7d4d40a465e285f03d299d-1"></a>ping foo.mydomain.org
 </pre>
 <p>Or:</p>
-<pre class="code bash"><a name="rest_code_eb96f54922354f95b7a1bf3f118a766a-1"></a>ssh user@foo
+<pre class="code bash"><a name="rest_code_29996b2f373347e3bfa6223bb95eb226-1"></a>ssh user@foo
 </pre>
 <p>Source: <a class="reference external" href="http://linux.die.net/man/5/hosts">http://linux.die.net/man/5/hosts</a></p>
 </div>

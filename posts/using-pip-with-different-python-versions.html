@@ -7,7 +7,8 @@
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta content="#5670d4" name="theme-color">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="http://mattchoplin.com/posts/using-pip-with-different-python-versions.html">
 <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
@@ -92,7 +93,7 @@ pi">
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Using pip with different python versions</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2017-04-28T11:33:19+01:00" itemprop="datePublished" title="2017-04-28 11:33">2017-04-28 11:33</time></a></p>
@@ -103,7 +104,7 @@ pi">
 
             
         </p>
-<p class="sourceline"><a href="using-pip-with-different-python-versions.rst" id="sourcelink">Source</a></p>
+<p class="sourceline"><a href="using-pip-with-different-python-versions.rst" class="sourcelink">Source</a></p>
 
         </div>
         
@@ -112,11 +113,11 @@ pi">
     <div>
 <p>Let us say that you have python2 and python3 installed.</p>
 <p>Use pip for python2</p>
-<pre class="code bash"><a name="rest_code_f25b193067fc4e85a5a31aae6a0a000f-1"></a>pip2.6 install otherpackage
-<a name="rest_code_f25b193067fc4e85a5a31aae6a0a000f-2"></a>pip2.7 install mybarpackage
+<pre class="code bash"><a name="rest_code_6524ec74d42345079ada664547ce54a3-1"></a>pip2.6 install otherpackage
+<a name="rest_code_6524ec74d42345079ada664547ce54a3-2"></a>pip2.7 install mybarpackage
 </pre>
 <p>You can see which version of python pip is using by default with:</p>
-<pre class="code bash"><a name="rest_code_75fbe48f8ead4689a1565bc9a2a38963-1"></a>pip -V
+<pre class="code bash"><a name="rest_code_de037fac07ac4a2c8369663745789f4b-1"></a>pip -V
 </pre>
 <p>Source: <a class="reference external" href="http://stackoverflow.com/questions/6504810/how-to-install-lxml-on-ubuntu?answertab=votes#tab-top">http://stackoverflow.com/questions/6504810/how-to-install-lxml-on-ubuntu?answertab=votes#tab-top</a></p>
 </div>

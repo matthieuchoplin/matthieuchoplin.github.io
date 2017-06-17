@@ -8,7 +8,8 @@
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta content="#5670d4" name="theme-color">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="http://mattchoplin.com/posts/control-the-screen-brightness-in-ubuntu.html">
 <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
@@ -21,8 +22,7 @@
 
     
 
-    <meta name="description" itemprop="description" content="screen brigthness not working from the keyboard">
-<meta name="author" content="Matthieu Choplin">
+    <meta name="author" content="Matthieu Choplin">
 <link rel="prev" href="python-testing-with-unittest.html" title="Python testing with doctest and unittest" type="text/html">
 <link rel="next" href="sorting-list-with-two-criteria.html" title="Sorting a list with two criteria in python" type="text/html">
 <meta property="og:site_name" content="Standing on the shoulders of giants">
@@ -91,7 +91,7 @@
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Control the screen brightness in Ubuntu</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2016-06-23T23:07:34+01:00" itemprop="datePublished" title="2016-06-23 23:07">2016-06-23 23:07</time></a></p>
@@ -102,10 +102,9 @@
 
             
         </p>
-<p class="sourceline"><a href="control-the-screen-brightness-in-ubuntu.rst" id="sourcelink">Source</a></p>
+<p class="sourceline"><a href="control-the-screen-brightness-in-ubuntu.rst" class="sourcelink">Source</a></p>
 
-                <meta name="description" itemprop="description" content="screen brigthness not working from the keyboard">
-</div>
+        </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
@@ -113,33 +112,33 @@
 <p>Controlling the brightness of your screen not working after installing Ubuntu on a laptop equipped with an Intel graphics card?</p>
 <p>You can solve that through the Xorg configuration.</p>
 <p>First, look at your PCI bus, in order to identify your card:</p>
-<pre class="code bash"><a name="rest_code_577c359055084e72b07dd6d1a32604fd-1"></a>$ lspci <span class="p">|</span> grep -i vga
-<a name="rest_code_577c359055084e72b07dd6d1a32604fd-2"></a>
-<a name="rest_code_577c359055084e72b07dd6d1a32604fd-3"></a>00:02.0 VGA compatible controller: Intel Corporation 2nd Generation Core Processor Family Integrated Graphics Controller <span class="o">(</span>rev 09<span class="o">)</span>
+<pre class="code bash"><a name="rest_code_dc01983e85714c2988c066c73141537c-1"></a>$ lspci <span class="p">|</span> grep -i vga
+<a name="rest_code_dc01983e85714c2988c066c73141537c-2"></a>
+<a name="rest_code_dc01983e85714c2988c066c73141537c-3"></a><span class="m">00</span>:02.0 VGA compatible controller: Intel Corporation 2nd Generation Core Processor Family Integrated Graphics Controller <span class="o">(</span>rev <span class="m">09</span><span class="o">)</span>
 </pre>
 <p>That's how it looks on my machine. I am interested in the Intel card, so I need to remember its bus id <em>00:02.0</em>.</p>
 <p>Next you need to create the config file:</p>
-<pre class="code bash"><a name="rest_code_fb78a1777476494982ed87ccc07d05cc-1"></a>$ sudo nano /usr/share/X11/xorg.conf.d/20-intel.conf
+<pre class="code bash"><a name="rest_code_e65060cc5da44c5d945bcda022d74498-1"></a>$ sudo nano /usr/share/X11/xorg.conf.d/20-intel.conf
 </pre>
 <p>and put the following content in, which will tell the xorg driver to use intel_backlight:</p>
-<pre class="code bash"><a name="rest_code_34103e3c4a974b6d9b64bda7dc634051-1"></a>Section <span class="s2">"Device"</span>
-<a name="rest_code_34103e3c4a974b6d9b64bda7dc634051-2"></a>        Identifier      <span class="s2">"card0"</span>
-<a name="rest_code_34103e3c4a974b6d9b64bda7dc634051-3"></a>        Driver          <span class="s2">"intel"</span>
-<a name="rest_code_34103e3c4a974b6d9b64bda7dc634051-4"></a>        Option          <span class="s2">"Backlight"</span> <span class="s2">"intel_backlight"</span>
-<a name="rest_code_34103e3c4a974b6d9b64bda7dc634051-5"></a>        BusID           <span class="s2">"PCI:0:2:0"</span>
-<a name="rest_code_34103e3c4a974b6d9b64bda7dc634051-6"></a>EndSection
+<pre class="code bash"><a name="rest_code_eb40f3288296427a99fb805dac266193-1"></a>Section <span class="s2">"Device"</span>
+<a name="rest_code_eb40f3288296427a99fb805dac266193-2"></a>        Identifier      <span class="s2">"card0"</span>
+<a name="rest_code_eb40f3288296427a99fb805dac266193-3"></a>        Driver          <span class="s2">"intel"</span>
+<a name="rest_code_eb40f3288296427a99fb805dac266193-4"></a>        Option          <span class="s2">"Backlight"</span> <span class="s2">"intel_backlight"</span>
+<a name="rest_code_eb40f3288296427a99fb805dac266193-5"></a>        BusID           <span class="s2">"PCI:0:2:0"</span>
+<a name="rest_code_eb40f3288296427a99fb805dac266193-6"></a>EndSection
 </pre>
 <p>Please note that the BusID should match.</p>
 <p>Save, restart your Xorg:</p>
 <ul class="simple">
 <li>find which display manager your ubuntu is having with following command:</li>
 </ul>
-<pre class="code bash"><a name="rest_code_65c8d391e5c64852897ac2aac1c03ef9-1"></a>$ cat /etc/X11/default-display-manager
+<pre class="code bash"><a name="rest_code_f69f7017d2ae446bad0045062b12a1da-1"></a>$ cat /etc/X11/default-display-manager
 </pre>
 <ul class="simple">
 <li>and, for Ubuntu with LightDM:</li>
 </ul>
-<pre class="code bash"><a name="rest_code_4653b8646ef64626a0c40c3709d0793e-1"></a>$ sudo restart lightdm
+<pre class="code bash"><a name="rest_code_b16d78ac9227402abf9463983d5dcf08-1"></a>$ sudo restart lightdm
 </pre>
 <p>It should then work.</p>
 <p>Source:

@@ -8,7 +8,8 @@
 <link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta content="#5670d4" name="theme-color">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="http://mattchoplin.com/index-3.html">
 <link rel="icon" href="favicon-16x16.png" sizes="16x16">
@@ -20,6 +21,8 @@
 <div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 20px;"></div>
 
 
+
+    
 
     
 
@@ -79,10 +82,13 @@
             
 
     
+
+
+    
 <div class="postindex">
     <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/size-occupied-on-the-server.html" class="u-url">Size occupied on the server</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="posts/size-occupied-on-the-server.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-24T10:00:51+01:00" title="2014-09-24 10:00">2014-09-24 10:00</time></a></p>
@@ -96,14 +102,14 @@
     </header><div class="e-content entry-content">
     <div>
 <p>The following command, executed as <em>root</em>:</p>
-<pre class="code bash"><a name="rest_code_458eb9bce4f44d04acba9543de6aad4e-1"></a>du -h --max-depth <span class="m">1</span> /
+<pre class="code bash"><a name="rest_code_83ed6bb77fc14289a64da566bc2d5bea-1"></a>du -h --max-depth <span class="m">1</span> /
 </pre>
 <p>will show used space per directory, looking at "/"</p>
 </div>
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/introduction-to-patching-in-python.html" class="u-url">Introduction to patching in Python</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="posts/introduction-to-patching-in-python.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-18T16:36:00+01:00" title="2014-09-18 16:36">2014-09-18 16:36</time></a></p>
@@ -117,35 +123,35 @@
     </header><div class="e-content entry-content">
     <div>
 <p>If you want to use it in a version earlier than python3.3, you need yo install it:</p>
-<pre class="code bash"><a name="rest_code_4f5b1052268e42b485140f8ea5aac09e-1"></a>sudo pip install mock
+<pre class="code bash"><a name="rest_code_7cc61fd42938480a9cb6376f91aa6c8b-1"></a>sudo pip install mock
 </pre>
 <div class="section" id="simple-example">
 <h2>Simple example</h2>
 <p>Code to test:</p>
-<pre class="code python"><a name="rest_code_5d36c51d02a24482a7833c6a0ac92abf-1"></a><span class="kn">import</span> <span class="nn">time</span>
-<a name="rest_code_5d36c51d02a24482a7833c6a0ac92abf-2"></a><span class="k">def</span> <span class="nf">do_something</span><span class="p">():</span>
-<a name="rest_code_5d36c51d02a24482a7833c6a0ac92abf-3"></a>    <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
-<a name="rest_code_5d36c51d02a24482a7833c6a0ac92abf-4"></a>        <span class="k">print</span> <span class="s1">'ok'</span>
-<a name="rest_code_5d36c51d02a24482a7833c6a0ac92abf-5"></a>    <span class="k">else</span><span class="p">:</span>
-<a name="rest_code_5d36c51d02a24482a7833c6a0ac92abf-6"></a>        <span class="k">print</span> <span class="s1">'ko'</span>
+<pre class="code python"><a name="rest_code_62a3a326b3d344d5981847961004d797-1"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_62a3a326b3d344d5981847961004d797-2"></a><span class="k">def</span> <span class="nf">do_something</span><span class="p">():</span>
+<a name="rest_code_62a3a326b3d344d5981847961004d797-3"></a>    <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+<a name="rest_code_62a3a326b3d344d5981847961004d797-4"></a>        <span class="k">print</span> <span class="s1">'ok'</span>
+<a name="rest_code_62a3a326b3d344d5981847961004d797-5"></a>    <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_62a3a326b3d344d5981847961004d797-6"></a>        <span class="k">print</span> <span class="s1">'ko'</span>
 </pre>
 <p>Actual test:</p>
-<pre class="code python"><a name="rest_code_87f74fcd38fd49108a2a8ca771a430d4-1"></a><span class="kn">from</span> <span class="nn">mock</span> <span class="kn">import</span> <span class="n">patch</span>
-<a name="rest_code_87f74fcd38fd49108a2a8ca771a430d4-2"></a><span class="nd">@patch</span><span class="p">(</span><span class="s1">'time.sleep'</span><span class="p">)</span>
-<a name="rest_code_87f74fcd38fd49108a2a8ca771a430d4-3"></a><span class="k">def</span> <span class="nf">test_do_something1</span><span class="p">(</span><span class="n">mock_sleep</span><span class="p">):</span>
-<a name="rest_code_87f74fcd38fd49108a2a8ca771a430d4-4"></a>    <span class="n">mock_sleep</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="bp">True</span>
-<a name="rest_code_87f74fcd38fd49108a2a8ca771a430d4-5"></a>    <span class="n">do_something</span><span class="p">()</span>
-<a name="rest_code_87f74fcd38fd49108a2a8ca771a430d4-6"></a>
-<a name="rest_code_87f74fcd38fd49108a2a8ca771a430d4-7"></a><span class="nd">@patch</span><span class="p">(</span><span class="s1">'time.sleep'</span><span class="p">)</span>
-<a name="rest_code_87f74fcd38fd49108a2a8ca771a430d4-8"></a><span class="k">def</span> <span class="nf">test_do_something2</span><span class="p">(</span><span class="n">mock_sleep</span><span class="p">):</span>
-<a name="rest_code_87f74fcd38fd49108a2a8ca771a430d4-9"></a>    <span class="n">mock_sleep</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="bp">False</span>
-<a name="rest_code_87f74fcd38fd49108a2a8ca771a430d4-10"></a>    <span class="n">do_something</span><span class="p">()</span>
+<pre class="code python"><a name="rest_code_36b9c4d1a5694dc985b0dd0747ddc3ab-1"></a><span class="kn">from</span> <span class="nn">mock</span> <span class="kn">import</span> <span class="n">patch</span>
+<a name="rest_code_36b9c4d1a5694dc985b0dd0747ddc3ab-2"></a><span class="nd">@patch</span><span class="p">(</span><span class="s1">'time.sleep'</span><span class="p">)</span>
+<a name="rest_code_36b9c4d1a5694dc985b0dd0747ddc3ab-3"></a><span class="k">def</span> <span class="nf">test_do_something1</span><span class="p">(</span><span class="n">mock_sleep</span><span class="p">):</span>
+<a name="rest_code_36b9c4d1a5694dc985b0dd0747ddc3ab-4"></a>    <span class="n">mock_sleep</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="bp">True</span>
+<a name="rest_code_36b9c4d1a5694dc985b0dd0747ddc3ab-5"></a>    <span class="n">do_something</span><span class="p">()</span>
+<a name="rest_code_36b9c4d1a5694dc985b0dd0747ddc3ab-6"></a>
+<a name="rest_code_36b9c4d1a5694dc985b0dd0747ddc3ab-7"></a><span class="nd">@patch</span><span class="p">(</span><span class="s1">'time.sleep'</span><span class="p">)</span>
+<a name="rest_code_36b9c4d1a5694dc985b0dd0747ddc3ab-8"></a><span class="k">def</span> <span class="nf">test_do_something2</span><span class="p">(</span><span class="n">mock_sleep</span><span class="p">):</span>
+<a name="rest_code_36b9c4d1a5694dc985b0dd0747ddc3ab-9"></a>    <span class="n">mock_sleep</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="bp">False</span>
+<a name="rest_code_36b9c4d1a5694dc985b0dd0747ddc3ab-10"></a>    <span class="n">do_something</span><span class="p">()</span>
 </pre>
 <p>Results:</p>
-<pre class="code bash"><a name="rest_code_8a58c3a279e74d54886cc70097c8acbe-1"></a>&gt;&gt;&gt; test_do_something1<span class="o">()</span>
-<a name="rest_code_8a58c3a279e74d54886cc70097c8acbe-2"></a>ok
-<a name="rest_code_8a58c3a279e74d54886cc70097c8acbe-3"></a>&gt;&gt;&gt; test_do_something2<span class="o">()</span>
-<a name="rest_code_8a58c3a279e74d54886cc70097c8acbe-4"></a>ko
+<pre class="code bash"><a name="rest_code_429bb8526cf447c7b77b2d6e679636b7-1"></a>&gt;&gt;&gt; test_do_something1<span class="o">()</span>
+<a name="rest_code_429bb8526cf447c7b77b2d6e679636b7-2"></a>ok
+<a name="rest_code_429bb8526cf447c7b77b2d6e679636b7-3"></a>&gt;&gt;&gt; test_do_something2<span class="o">()</span>
+<a name="rest_code_429bb8526cf447c7b77b2d6e679636b7-4"></a>ko
 </pre>
 <p>Source:</p>
 <ul class="simple">
@@ -156,7 +162,7 @@
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/python-tips.html" class="u-url">Python tips</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="posts/python-tips.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-17T10:57:40+01:00" title="2014-09-17 10:57">2014-09-17 10:57</time></a></p>
@@ -170,14 +176,14 @@
     </header><div class="e-content entry-content">
     <div>
 <p>Ignore escaping characters such as "\"</p>
-<pre class="code text"><a name="rest_code_fbe40d4459d24b65b1d7762a4079ba75-1"></a>&gt;&gt;&gt; print r""" This is '\myfolder\'"""
-<a name="rest_code_fbe40d4459d24b65b1d7762a4079ba75-2"></a>&gt;&gt;&gt; This is '\myfolder\'
+<pre class="code text"><a name="rest_code_ff8b0e39b9ce42ccbb3e77fd6f81cccb-1"></a>&gt;&gt;&gt; print r""" This is '\myfolder\'"""
+<a name="rest_code_ff8b0e39b9ce42ccbb3e77fd6f81cccb-2"></a>&gt;&gt;&gt; This is '\myfolder\'
 </pre>
 </div>
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/put-an-emoji-icon-in-your-github-commit-message.html" class="u-url">Put an emoji icon in your Github commit message</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="posts/put-an-emoji-icon-in-your-github-commit-message.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-15T09:57:45+01:00" title="2014-09-15 09:57">2014-09-15 09:57</time></a></p>
@@ -191,14 +197,14 @@
     </header><div class="e-content entry-content">
     <div>
 <p>Example:</p>
-<pre class="code bash"><a name="rest_code_2f0ba0023f8b4d359edae1ef20f75d3b-1"></a>git commit -m <span class="s1">'Fixed whatever, time for :beers:'</span>
+<pre class="code bash"><a name="rest_code_3542a8395ed740a88538b05f309a4b65-1"></a>git commit -m <span class="s1">'Fixed whatever, time for :beers:'</span>
 </pre>
 <p>See list of emoji here: <a class="reference external" href="http://scotch.io/bar-talk/emoji-icons-in-github-commit-messages">http://scotch.io/bar-talk/emoji-icons-in-github-commit-messages</a></p>
 </div>
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/port-in-use.html" class="u-url">Port in use</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="posts/port-in-use.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-09T09:32:20+01:00" title="2014-09-09 09:32">2014-09-09 09:32</time></a></p>
@@ -212,16 +218,16 @@
     </header><div class="e-content entry-content">
     <div>
 <p>To find which application is using a specific port, do:</p>
-<pre class="code text"><a name="rest_code_438ce362401a4549831e7355cd6dc6d2-1"></a>lsof -i &lt;port-number&gt;
+<pre class="code text"><a name="rest_code_aa646de6218a489ab8433135a3067315-1"></a>lsof -i &lt;port-number&gt;
 </pre>
 <p>Or list ports with associated processes in use:</p>
-<pre class="code text"><a name="rest_code_57bc6ac489884211813fdc1dfcfc3c75-1"></a>netstat -putln
+<pre class="code text"><a name="rest_code_831d9ac9f0794d3eb6d86471ccbe942f-1"></a>netstat -putln
 </pre>
 </div>
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/logs.html" class="u-url">Logs</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="posts/logs.html" rel="bookmark"><time class="published dt-published" datetime="2014-08-22T11:29:21+01:00" title="2014-08-22 11:29">2014-08-22 11:29</time></a></p>
@@ -238,19 +244,19 @@
 <p>Bitmask is going to be used so use this doc
 <a class="reference external" href="http://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/">http://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/</a></p>
 <p>It will be taken into account for the new log files only when we reload rsylog with this commend:</p>
-<pre class="code bash"><a name="rest_code_abdd746530c0476791334b0cc1130b91-1"></a>/etc/init.d/rsyslog reload
+<pre class="code bash"><a name="rest_code_1f5ddde1828e4e729a3ca2a70d8792c5-1"></a>/etc/init.d/rsyslog reload
 </pre>
 <p>The old files are still on the old configuration. So, you need to change the right access directly for them with chown and chmod.</p>
 <p>Example for vagrant user:</p>
-<pre class="code bash"><a name="rest_code_b4723dc67e72493f943c8bcad04a7282-1"></a>root@openerp-development:/var/log/openerp# chown vagrant:vagrant /var/log/openerp/ -R
-<a name="rest_code_b4723dc67e72493f943c8bcad04a7282-2"></a>root@openerp-development:/var/log/openerp# chmod a+r /var/log/openerp/ -R
+<pre class="code bash"><a name="rest_code_15fae14fd8a242c9ba7f987ff5b41261-1"></a>root@openerp-development:/var/log/openerp# chown vagrant:vagrant /var/log/openerp/ -R
+<a name="rest_code_15fae14fd8a242c9ba7f987ff5b41261-2"></a>root@openerp-development:/var/log/openerp# chmod a+r /var/log/openerp/ -R
 </pre>
 <p>Source: <a class="reference external" href="http://www.rsyslog.com/">http://www.rsyslog.com/</a></p>
 </div>
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/screen-monitoring.html" class="u-url">Screen monitoring</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="posts/screen-monitoring.html" rel="bookmark"><time class="published dt-published" datetime="2014-08-21T10:44:17+01:00" title="2014-08-21 10:44">2014-08-21 10:44</time></a></p>
@@ -269,7 +275,7 @@
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/execute-sql-from-file.html" class="u-url">Execute sql from file</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="posts/execute-sql-from-file.html" rel="bookmark"><time class="published dt-published" datetime="2014-08-13T14:56:53+01:00" title="2014-08-13 14:56">2014-08-13 14:56</time></a></p>
@@ -282,7 +288,7 @@
 </div>
     </header><div class="e-content entry-content">
     <div>
-<pre class="code sql"><a name="rest_code_1df125e5cf57430cb07625c5d85f7eec-1"></a><span class="n">psql</span> <span class="n">yourdatabase</span> <span class="o">-</span><span class="n">f</span> <span class="n">path_of_your_file</span><span class="p">.</span><span class="k">sql</span>
+<pre class="code sql"><a name="rest_code_856a0fa477fc451c95ac188c6ac56db6-1"></a><span class="n">psql</span> <span class="n">yourdatabase</span> <span class="o">-</span><span class="n">f</span> <span class="n">path_of_your_file</span><span class="p">.</span><span class="k">sql</span>
 </pre>
 <div class="line-block">
 <div class="line"><br></div>
@@ -291,7 +297,7 @@
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/agile-testing.html" class="u-url">Agile testing</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="posts/agile-testing.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-29T16:19:08+01:00" title="2014-07-29 16:19">2014-07-29 16:19</time></a></p>
@@ -311,7 +317,7 @@
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/copy-records-from-postgresql-to-csv-file.html" class="u-url">Copy records from postgresql to csv file</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="posts/copy-records-from-postgresql-to-csv-file.html" rel="bookmark"><time class="published dt-published" datetime="2014-07-29T14:43:19+01:00" title="2014-07-29 14:43">2014-07-29 14:43</time></a></p>
@@ -324,7 +330,7 @@
 </div>
     </header><div class="e-content entry-content">
     <div>
-<pre class="code sql"><a name="rest_code_38abf52c5e174d3bbb3cea05aca7292d-1"></a><span class="k">COPY</span><span class="p">(</span><span class="n">QUERY</span><span class="p">)</span> <span class="k">TO</span> <span class="s1">'FILENAME'</span> <span class="k">WITH</span> <span class="n">CSV</span> <span class="n">HEADER</span><span class="p">;</span>
+<pre class="code sql"><a name="rest_code_929ec605877949529328591343657ad5-1"></a><span class="k">COPY</span><span class="p">(</span><span class="n">QUERY</span><span class="p">)</span> <span class="k">TO</span> <span class="s1">'FILENAME'</span> <span class="k">WITH</span> <span class="n">CSV</span> <span class="n">HEADER</span><span class="p">;</span>
 </pre>
 <p>For the other way around see: <a class="reference external" href="http://mattchoplin.com/posts/copy-records-from-csv-in-postgresql.html">Copy records from csv file to postgres DB</a></p>
 </div>

@@ -1,12 +1,12 @@
 <p>For example, when copying files:</p>
-<pre class="code python"><a name="rest_code_179003cdb2de44ca81faae870dbe9294-1"></a><span class="kn">import</span> <span class="nn">shutil</span>
-<a name="rest_code_179003cdb2de44ca81faae870dbe9294-2"></a><span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;copy.txt&#39;</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_d3bc19d92fab4f7492263ad2780cde5f-1"></a><span class="kn">import</span> <span class="nn">shutil</span>
+<a name="rest_code_d3bc19d92fab4f7492263ad2780cde5f-2"></a><span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;copy.txt&#39;</span><span class="p">)</span>
 </pre><p>It is much more abstract (and simpler) to use the <em>shutil</em> library than:</p>
-<pre class="code python"><a name="rest_code_8f944d67cf2e4540901308141d228bae-1"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fsrc</span><span class="p">:</span>
-<a name="rest_code_8f944d67cf2e4540901308141d228bae-2"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fdst</span><span class="p">:</span>
-<a name="rest_code_8f944d67cf2e4540901308141d228bae-3"></a>        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-<a name="rest_code_8f944d67cf2e4540901308141d228bae-4"></a>            <span class="n">buf</span> <span class="o">=</span> <span class="n">fsrc</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">buf_size</span><span class="p">)</span>
-<a name="rest_code_8f944d67cf2e4540901308141d228bae-5"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="n">buf</span><span class="p">:</span>
-<a name="rest_code_8f944d67cf2e4540901308141d228bae-6"></a>                <span class="k">break</span>
-<a name="rest_code_8f944d67cf2e4540901308141d228bae-7"></a>            <span class="n">fdst</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_a6577345960547178514e08ac98b8ebc-1"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fsrc</span><span class="p">:</span>
+<a name="rest_code_a6577345960547178514e08ac98b8ebc-2"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fdst</span><span class="p">:</span>
+<a name="rest_code_a6577345960547178514e08ac98b8ebc-3"></a>        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<a name="rest_code_a6577345960547178514e08ac98b8ebc-4"></a>            <span class="n">buf</span> <span class="o">=</span> <span class="n">fsrc</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">buf_size</span><span class="p">)</span>
+<a name="rest_code_a6577345960547178514e08ac98b8ebc-5"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="n">buf</span><span class="p">:</span>
+<a name="rest_code_a6577345960547178514e08ac98b8ebc-6"></a>                <span class="k">break</span>
+<a name="rest_code_a6577345960547178514e08ac98b8ebc-7"></a>            <span class="n">fdst</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span>
 </pre>

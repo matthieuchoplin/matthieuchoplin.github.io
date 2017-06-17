@@ -7,7 +7,8 @@
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta content="#5670d4" name="theme-color">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="http://mattchoplin.com/posts/abstraction-in-python.html">
 <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
@@ -93,7 +94,7 @@ with open(src, 'rb') as fsrc:
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Abstraction in python</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2017-04-04T12:43:16+01:00" itemprop="datePublished" title="2017-04-04 12:43">2017-04-04 12:43</time></a></p>
@@ -104,7 +105,7 @@ with open(src, 'rb') as fsrc:
 
             
         </p>
-<p class="sourceline"><a href="abstraction-in-python.rst" id="sourcelink">Source</a></p>
+<p class="sourceline"><a href="abstraction-in-python.rst" class="sourcelink">Source</a></p>
 
         </div>
         
@@ -112,17 +113,17 @@ with open(src, 'rb') as fsrc:
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p>For example, when copying files:</p>
-<pre class="code python"><a name="rest_code_179003cdb2de44ca81faae870dbe9294-1"></a><span class="kn">import</span> <span class="nn">shutil</span>
-<a name="rest_code_179003cdb2de44ca81faae870dbe9294-2"></a><span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="s1">'file.txt'</span><span class="p">,</span> <span class="s1">'copy.txt'</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_d3bc19d92fab4f7492263ad2780cde5f-1"></a><span class="kn">import</span> <span class="nn">shutil</span>
+<a name="rest_code_d3bc19d92fab4f7492263ad2780cde5f-2"></a><span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="s1">'file.txt'</span><span class="p">,</span> <span class="s1">'copy.txt'</span><span class="p">)</span>
 </pre>
 <p>It is much more abstract (and simpler) to use the <em>shutil</em> library than:</p>
-<pre class="code python"><a name="rest_code_8f944d67cf2e4540901308141d228bae-1"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fsrc</span><span class="p">:</span>
-<a name="rest_code_8f944d67cf2e4540901308141d228bae-2"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span> <span class="s1">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fdst</span><span class="p">:</span>
-<a name="rest_code_8f944d67cf2e4540901308141d228bae-3"></a>        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-<a name="rest_code_8f944d67cf2e4540901308141d228bae-4"></a>            <span class="n">buf</span> <span class="o">=</span> <span class="n">fsrc</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">buf_size</span><span class="p">)</span>
-<a name="rest_code_8f944d67cf2e4540901308141d228bae-5"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="n">buf</span><span class="p">:</span>
-<a name="rest_code_8f944d67cf2e4540901308141d228bae-6"></a>                <span class="k">break</span>
-<a name="rest_code_8f944d67cf2e4540901308141d228bae-7"></a>            <span class="n">fdst</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_a6577345960547178514e08ac98b8ebc-1"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fsrc</span><span class="p">:</span>
+<a name="rest_code_a6577345960547178514e08ac98b8ebc-2"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span> <span class="s1">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fdst</span><span class="p">:</span>
+<a name="rest_code_a6577345960547178514e08ac98b8ebc-3"></a>        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<a name="rest_code_a6577345960547178514e08ac98b8ebc-4"></a>            <span class="n">buf</span> <span class="o">=</span> <span class="n">fsrc</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">buf_size</span><span class="p">)</span>
+<a name="rest_code_a6577345960547178514e08ac98b8ebc-5"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="n">buf</span><span class="p">:</span>
+<a name="rest_code_a6577345960547178514e08ac98b8ebc-6"></a>                <span class="k">break</span>
+<a name="rest_code_a6577345960547178514e08ac98b8ebc-7"></a>            <span class="n">fdst</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span>
 </pre>
 </div>
     </div>

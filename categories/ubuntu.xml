@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Standing on the shoulders of giants (ubuntu)</title><link>http://mattchoplin.com/</link><description></description><atom:link href="http://mattchoplin.com/categories/ubuntu.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Tue, 21 Feb 2017 23:29:34 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Control the screen brightness in Ubuntu</title><link>http://mattchoplin.com/posts/control-the-screen-brightness-in-ubuntu.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;Controlling the brightness of your screen not working after installing Ubuntu on a laptop equipped with an Intel graphics card?&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Standing on the shoulders of giants (Posts about ubuntu)</title><link>http://mattchoplin.com/</link><description></description><atom:link href="http://mattchoplin.com/categories/ubuntu.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sat, 17 Jun 2017 08:26:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Control the screen brightness in Ubuntu</title><link>http://mattchoplin.com/posts/control-the-screen-brightness-in-ubuntu.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;Controlling the brightness of your screen not working after installing Ubuntu on a laptop equipped with an Intel graphics card?&lt;/p&gt;
 &lt;p&gt;You can solve that through the Xorg configuration.&lt;/p&gt;
 &lt;p&gt;First, look at your PCI bus, in order to identify your card:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_577c359055084e72b07dd6d1a32604fd-1"&gt;&lt;/a&gt;$ lspci &lt;span class="p"&gt;|&lt;/span&gt; grep -i vga
-&lt;a name="rest_code_577c359055084e72b07dd6d1a32604fd-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_577c359055084e72b07dd6d1a32604fd-3"&gt;&lt;/a&gt;00:02.0 VGA compatible controller: Intel Corporation 2nd Generation Core Processor Family Integrated Graphics Controller &lt;span class="o"&gt;(&lt;/span&gt;rev 09&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_dc01983e85714c2988c066c73141537c-1"&gt;&lt;/a&gt;$ lspci &lt;span class="p"&gt;|&lt;/span&gt; grep -i vga
+&lt;a name="rest_code_dc01983e85714c2988c066c73141537c-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_dc01983e85714c2988c066c73141537c-3"&gt;&lt;/a&gt;&lt;span class="m"&gt;00&lt;/span&gt;:02.0 VGA compatible controller: Intel Corporation 2nd Generation Core Processor Family Integrated Graphics Controller &lt;span class="o"&gt;(&lt;/span&gt;rev &lt;span class="m"&gt;09&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;That's how it looks on my machine. I am interested in the Intel card, so I need to remember its bus id &lt;em&gt;00:02.0&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Next you need to create the config file:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_fb78a1777476494982ed87ccc07d05cc-1"&gt;&lt;/a&gt;$ sudo nano /usr/share/X11/xorg.conf.d/20-intel.conf
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_e65060cc5da44c5d945bcda022d74498-1"&gt;&lt;/a&gt;$ sudo nano /usr/share/X11/xorg.conf.d/20-intel.conf
 &lt;/pre&gt;&lt;p&gt;and put the following content in, which will tell the xorg driver to use intel_backlight:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_34103e3c4a974b6d9b64bda7dc634051-1"&gt;&lt;/a&gt;Section &lt;span class="s2"&gt;"Device"&lt;/span&gt;
-&lt;a name="rest_code_34103e3c4a974b6d9b64bda7dc634051-2"&gt;&lt;/a&gt;        Identifier      &lt;span class="s2"&gt;"card0"&lt;/span&gt;
-&lt;a name="rest_code_34103e3c4a974b6d9b64bda7dc634051-3"&gt;&lt;/a&gt;        Driver          &lt;span class="s2"&gt;"intel"&lt;/span&gt;
-&lt;a name="rest_code_34103e3c4a974b6d9b64bda7dc634051-4"&gt;&lt;/a&gt;        Option          &lt;span class="s2"&gt;"Backlight"&lt;/span&gt; &lt;span class="s2"&gt;"intel_backlight"&lt;/span&gt;
-&lt;a name="rest_code_34103e3c4a974b6d9b64bda7dc634051-5"&gt;&lt;/a&gt;        BusID           &lt;span class="s2"&gt;"PCI:0:2:0"&lt;/span&gt;
-&lt;a name="rest_code_34103e3c4a974b6d9b64bda7dc634051-6"&gt;&lt;/a&gt;EndSection
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_eb40f3288296427a99fb805dac266193-1"&gt;&lt;/a&gt;Section &lt;span class="s2"&gt;"Device"&lt;/span&gt;
+&lt;a name="rest_code_eb40f3288296427a99fb805dac266193-2"&gt;&lt;/a&gt;        Identifier      &lt;span class="s2"&gt;"card0"&lt;/span&gt;
+&lt;a name="rest_code_eb40f3288296427a99fb805dac266193-3"&gt;&lt;/a&gt;        Driver          &lt;span class="s2"&gt;"intel"&lt;/span&gt;
+&lt;a name="rest_code_eb40f3288296427a99fb805dac266193-4"&gt;&lt;/a&gt;        Option          &lt;span class="s2"&gt;"Backlight"&lt;/span&gt; &lt;span class="s2"&gt;"intel_backlight"&lt;/span&gt;
+&lt;a name="rest_code_eb40f3288296427a99fb805dac266193-5"&gt;&lt;/a&gt;        BusID           &lt;span class="s2"&gt;"PCI:0:2:0"&lt;/span&gt;
+&lt;a name="rest_code_eb40f3288296427a99fb805dac266193-6"&gt;&lt;/a&gt;EndSection
 &lt;/pre&gt;&lt;p&gt;Please note that the BusID should match.&lt;/p&gt;
 &lt;p&gt;Save, restart your Xorg:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;find which display manager your ubuntu is having with following command:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_65c8d391e5c64852897ac2aac1c03ef9-1"&gt;&lt;/a&gt;$ cat /etc/X11/default-display-manager
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_f69f7017d2ae446bad0045062b12a1da-1"&gt;&lt;/a&gt;$ cat /etc/X11/default-display-manager
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;and, for Ubuntu with LightDM:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_4653b8646ef64626a0c40c3709d0793e-1"&gt;&lt;/a&gt;$ sudo restart lightdm
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_b16d78ac9227402abf9463983d5dcf08-1"&gt;&lt;/a&gt;$ sudo restart lightdm
 &lt;/pre&gt;&lt;p&gt;It should then work.&lt;/p&gt;
 &lt;p&gt;Source:
 - &lt;a class="reference external" href="https://float-middle.com/screen-brightness-on-intel-ubuntu-14-04/"&gt;https://float-middle.com/screen-brightness-on-intel-ubuntu-14-04/&lt;/a&gt;

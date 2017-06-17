@@ -8,7 +8,8 @@
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta content="#5670d4" name="theme-color">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="http://mattchoplin.com/posts/monkeypatching-in-python.html">
 <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
@@ -21,8 +22,7 @@
 
     
 
-    <meta name="description" itemprop="description" content="monkeypatching">
-<meta name="author" content="Matthieu Choplin">
+    <meta name="author" content="Matthieu Choplin">
 <link rel="prev" href="monitor-disk-usage-with-python.html" title="Monitor disk usage with python" type="text/html">
 <link rel="next" href="grep-aliases.html" title="Grep aliases" type="text/html">
 <meta property="og:site_name" content="Standing on the shoulders of giants">
@@ -91,7 +91,7 @@
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Monkeypatching in python</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-09-26T10:55:04+01:00" itemprop="datePublished" title="2014-09-26 10:55">2014-09-26 10:55</time></a></p>
@@ -102,21 +102,20 @@
 
             
         </p>
-<p class="sourceline"><a href="monkeypatching-in-python.rst" id="sourcelink">Source</a></p>
+<p class="sourceline"><a href="monkeypatching-in-python.rst" class="sourcelink">Source</a></p>
 
-                <meta name="description" itemprop="description" content="monkeypatching">
-</div>
+        </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p>A MonkeyPatch is a piece of Python code which extends or modifies other code at runtime (typically at startup). MonkeyPatching would be the practice of writing, or running, a monkeypatch.</p>
 <p>A simple example looks like this:</p>
-<pre class="code python"><a name="rest_code_4f789dc0d0ae4736a3c59bc5e291e0ac-1"></a><span class="kn">from</span> <span class="nn">SomeOtherProduct.SomeModule</span> <span class="kn">import</span> <span class="n">SomeClass</span>
-<a name="rest_code_4f789dc0d0ae4736a3c59bc5e291e0ac-2"></a><span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_4f789dc0d0ae4736a3c59bc5e291e0ac-3"></a>    <span class="k">return</span> <span class="s2">"ook ook eee eee eee!"</span>
-<a name="rest_code_4f789dc0d0ae4736a3c59bc5e291e0ac-4"></a>
-<a name="rest_code_4f789dc0d0ae4736a3c59bc5e291e0ac-5"></a><span class="n">SomeClass</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="n">speak</span>
+<pre class="code python"><a name="rest_code_de621fc593644048aa6ce8fdd5669dcf-1"></a><span class="kn">from</span> <span class="nn">SomeOtherProduct.SomeModule</span> <span class="kn">import</span> <span class="n">SomeClass</span>
+<a name="rest_code_de621fc593644048aa6ce8fdd5669dcf-2"></a><span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_de621fc593644048aa6ce8fdd5669dcf-3"></a>    <span class="k">return</span> <span class="s2">"ook ook eee eee eee!"</span>
+<a name="rest_code_de621fc593644048aa6ce8fdd5669dcf-4"></a>
+<a name="rest_code_de621fc593644048aa6ce8fdd5669dcf-5"></a><span class="n">SomeClass</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="n">speak</span>
 </pre>
 <p>In this example, if <em>SomeClass</em> did not already have a <em>speak()</em> method, it does now :-) If it had a speak() method before, <strong>the new code has replaced the old method definition</strong>.</p>
 <p>Sources:</p>

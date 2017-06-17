@@ -8,7 +8,8 @@
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta content="#5670d4" name="theme-color">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="http://mattchoplin.com/posts/copy-records-from-csv-in-postgresql.html">
 <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
@@ -21,8 +22,7 @@
 
     
 
-    <meta name="description" itemprop="description" content="copy csv in sql table">
-<meta name="author" content="Matthieu Choplin">
+    <meta name="author" content="Matthieu Choplin">
 <link rel="prev" href="git-branching-strategy.html" title="Git branching strategy" type="text/html">
 <link rel="next" href="psycopg2.html" title="Psycopg2" type="text/html">
 <meta property="og:site_name" content="Standing on the shoulders of giants">
@@ -93,7 +93,7 @@
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Copy records from csv in postgresql</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-07-18T16:39:41+01:00" itemprop="datePublished" title="2014-07-18 16:39">2014-07-18 16:39</time></a></p>
@@ -104,16 +104,15 @@
 
             
         </p>
-<p class="sourceline"><a href="copy-records-from-csv-in-postgresql.rst" id="sourcelink">Source</a></p>
+<p class="sourceline"><a href="copy-records-from-csv-in-postgresql.rst" class="sourcelink">Source</a></p>
 
-                <meta name="description" itemprop="description" content="copy csv in sql table">
-</div>
+        </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<pre class="code sql"><a name="rest_code_77336bd01037409eac583bc6e2a81c5c-1"></a><span class="k">CREATE</span> <span class="k">TEMPORARY</span> <span class="k">TABLE</span> <span class="n">original_table_name_temp</span><span class="p">(</span><span class="k">like</span> <span class="n">original_table_name</span> <span class="k">including</span> <span class="k">all</span><span class="p">);</span>
-<a name="rest_code_77336bd01037409eac583bc6e2a81c5c-2"></a><span class="k">COPY</span> <span class="n">original_table_name_temp</span> <span class="k">FROM</span> <span class="s1">'path_of_your_csv'</span><span class="p">;</span>
+<pre class="code sql"><a name="rest_code_ab1d0265540d4b8f8f8f887db4ff6d1c-1"></a><span class="k">CREATE</span> <span class="k">TEMPORARY</span> <span class="k">TABLE</span> <span class="n">original_table_name_temp</span><span class="p">(</span><span class="k">like</span> <span class="n">original_table_name</span> <span class="k">including</span> <span class="k">all</span><span class="p">);</span>
+<a name="rest_code_ab1d0265540d4b8f8f8f887db4ff6d1c-2"></a><span class="k">COPY</span> <span class="n">original_table_name_temp</span> <span class="k">FROM</span> <span class="s1">'path_of_your_csv'</span><span class="p">;</span>
 </pre>
 <p>Source: <a class="reference external" href="http://postgresql.1045698.n5.nabble.com/reverse-strpos-td1891709.html">http://postgresql.1045698.n5.nabble.com/reverse-strpos-td1891709.html</a></p>
 </div>

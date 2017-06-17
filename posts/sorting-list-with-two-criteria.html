@@ -7,7 +7,8 @@
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta content="#5670d4" name="theme-color">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="http://mattchoplin.com/posts/sorting-list-with-two-criteria.html">
 <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
@@ -93,7 +94,7 @@ sorted(">
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Sorting a list with two criteria in python</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2016-12-11T10:26:07Z" itemprop="datePublished" title="2016-12-11 10:26">2016-12-11 10:26</time></a></p>
@@ -104,7 +105,7 @@ sorted(">
 
             
         </p>
-<p class="sourceline"><a href="sorting-list-with-two-criteria.rst" id="sourcelink">Source</a></p>
+<p class="sourceline"><a href="sorting-list-with-two-criteria.rst" class="sourcelink">Source</a></p>
 
         </div>
         
@@ -114,8 +115,8 @@ sorted(">
 <p>We want to sort a list of elements with the first element in ascending order and the second element in descending order.</p>
 <div class="section" id="using-the-lambda-function">
 <h2>Using the lambda function:</h2>
-<pre class="code python"><a name="rest_code_051b9b78c4b340ca8aeb5704db7b083a-1"></a><span class="n">occurences</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'bat'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'mat'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'cat'</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
-<a name="rest_code_051b9b78c4b340ca8aeb5704db7b083a-2"></a><span class="nb">sorted</span><span class="p">(</span><span class="n">occurences</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<pre class="code python"><a name="rest_code_27a91a458d044d2b8b422508d5614a23-1"></a><span class="n">occurences</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'bat'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'mat'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'cat'</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<a name="rest_code_27a91a458d044d2b8b422508d5614a23-2"></a><span class="nb">sorted</span><span class="p">(</span><span class="n">occurences</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 </pre>
 <p>The -x[1] is for the reversed sort.</p>
 <p>By order of priority, we first sort with the 2nd element (x[1]), then with the 1st element (x[0])</p>

@@ -7,7 +7,8 @@
 <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta content="#5670d4" name="theme-color">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="http://mattchoplin.com/posts/logs.html">
 <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
@@ -90,7 +91,7 @@ http://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-n">
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Logs</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     Matthieu Choplin
             </span></p>
             <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-08-22T11:29:21+01:00" itemprop="datePublished" title="2014-08-22 11:29">2014-08-22 11:29</time></a></p>
@@ -101,7 +102,7 @@ http://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-n">
 
             
         </p>
-<p class="sourceline"><a href="logs.rst" id="sourcelink">Source</a></p>
+<p class="sourceline"><a href="logs.rst" class="sourcelink">Source</a></p>
 
         </div>
         
@@ -112,12 +113,12 @@ http://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-n">
 <p>Bitmask is going to be used so use this doc
 <a class="reference external" href="http://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/">http://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/</a></p>
 <p>It will be taken into account for the new log files only when we reload rsylog with this commend:</p>
-<pre class="code bash"><a name="rest_code_abdd746530c0476791334b0cc1130b91-1"></a>/etc/init.d/rsyslog reload
+<pre class="code bash"><a name="rest_code_1f5ddde1828e4e729a3ca2a70d8792c5-1"></a>/etc/init.d/rsyslog reload
 </pre>
 <p>The old files are still on the old configuration. So, you need to change the right access directly for them with chown and chmod.</p>
 <p>Example for vagrant user:</p>
-<pre class="code bash"><a name="rest_code_b4723dc67e72493f943c8bcad04a7282-1"></a>root@openerp-development:/var/log/openerp# chown vagrant:vagrant /var/log/openerp/ -R
-<a name="rest_code_b4723dc67e72493f943c8bcad04a7282-2"></a>root@openerp-development:/var/log/openerp# chmod a+r /var/log/openerp/ -R
+<pre class="code bash"><a name="rest_code_15fae14fd8a242c9ba7f987ff5b41261-1"></a>root@openerp-development:/var/log/openerp# chown vagrant:vagrant /var/log/openerp/ -R
+<a name="rest_code_15fae14fd8a242c9ba7f987ff5b41261-2"></a>root@openerp-development:/var/log/openerp# chmod a+r /var/log/openerp/ -R
 </pre>
 <p>Source: <a class="reference external" href="http://www.rsyslog.com/">http://www.rsyslog.com/</a></p>
 </div>
