@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Standing on the shoulders of giants (Posts about skype)</title><link>http://mattchoplin.com/</link><description></description><atom:link href="http://mattchoplin.com/categories/skype.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sat, 17 Jun 2017 10:02:08 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Skype with Python</title><link>http://mattchoplin.com/posts/skype-with-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="create-the-virtualenv"&gt;
+&lt;h2&gt;Create the virtualenv&lt;/h2&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_4391a59684274bf59f78aadac3ff9b26-1"&gt;&lt;/a&gt;virtualenv skype_venv -p /usr/bin/python2.7 --system-site-packages
+&lt;/pre&gt;&lt;p&gt;Note that I am specyfying the python2 interpreter, and using the system site packages (&lt;a class="reference external" href="https://virtualenv.pypa.io/en/stable/userguide/#the-system-site-packages-option/"&gt;the python libraries already installed&lt;/a&gt;.).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="install-the-skype4py-library"&gt;
+&lt;h2&gt;Install the Skype4Py library&lt;/h2&gt;
+&lt;p&gt;You can install it with pip.&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_e2a1ceb5725a421bb1da8e0fbf907048-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;source&lt;/span&gt; skype_venv/bin/activate
+&lt;a name="rest_code_e2a1ceb5725a421bb1da8e0fbf907048-2"&gt;&lt;/a&gt;pip install Skype4Py
+&lt;/pre&gt;&lt;p&gt;Note that this library allow us to control Skype client application. It means that you will need to have a skype client installed with which you will interact using python.&lt;/p&gt;
+&lt;p&gt;Source: &lt;a class="reference external" href="https://pypi.python.org/pypi/Skype4Py/"&gt;https://pypi.python.org/pypi/Skype4Py/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="use-the-library"&gt;
+&lt;h2&gt;Use the library&lt;/h2&gt;
+&lt;p&gt;Open your skype client and launch a python prompt&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_2b97f06abb0d4513bc983cfe81dcc28b-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; import Skype4Py
+&lt;a name="rest_code_2b97f06abb0d4513bc983cfe81dcc28b-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span class="nv"&gt;skype&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; Skype4Py.Skype&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_2b97f06abb0d4513bc983cfe81dcc28b-3"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; skype.Attach&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;At this point, the Skype client will ask for authorization:&lt;/p&gt;
+&lt;img alt="Skype4Py authorisation" class="well-large align-center" src="http://imgur.com/gKj46yz"&gt;
+&lt;p&gt;And now, you can for example get the list of all your contact:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_dbe4acabf4e74658bb5bf14d61771aad-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; print &lt;span class="s1"&gt;'Your full name:'&lt;/span&gt;, skype.CurrentUser.FullName
+&lt;a name="rest_code_dbe4acabf4e74658bb5bf14d61771aad-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; print &lt;span class="s1"&gt;'Your contacts:'&lt;/span&gt;
+&lt;a name="rest_code_dbe4acabf4e74658bb5bf14d61771aad-3"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span class="k"&gt;for&lt;/span&gt; user in skype.Friends:
+&lt;a name="rest_code_dbe4acabf4e74658bb5bf14d61771aad-4"&gt;&lt;/a&gt;        print &lt;span class="s1"&gt;'    '&lt;/span&gt;, user.FullName
+&lt;/pre&gt;&lt;p&gt;To go further:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://leakforums.net/thread-641974?tid=641974&amp;amp;&amp;amp;tid=641974&amp;amp;&amp;amp;pq=2"&gt;https://leakforums.net/thread-641974?tid=641974&amp;amp;&amp;amp;tid=641974&amp;amp;&amp;amp;pq=2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://sinister.ly/Thread-Tutorial-Create-your-own-SkypeBOT"&gt;https://sinister.ly/Thread-Tutorial-Create-your-own-SkypeBOT&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://media.readthedocs.org/pdf/sevabot-skype-bot/latest/sevabot-skype-bot.pdf"&gt;https://media.readthedocs.org/pdf/sevabot-skype-bot/latest/sevabot-skype-bot.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>skype</category><guid>http://mattchoplin.com/posts/skype-with-python.html</guid><pubDate>Sat, 17 Jun 2017 09:28:07 GMT</pubDate></item></channel></rss>

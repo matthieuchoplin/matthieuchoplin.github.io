@@ -23,7 +23,7 @@
 
     
 
-        <link rel="prefetch" href="posts/using-pip-with-different-python-versions.html" type="text/html">
+        <link rel="prefetch" href="posts/skype-with-python.html" type="text/html">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
 <!-- Menubar -->
@@ -80,7 +80,58 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/using-pip-with-different-python-versions.html" class="u-url">Using pip with different python versions</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/skype-with-python.html" class="u-url">Skype with Python</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="posts/skype-with-python.html" rel="bookmark"><time class="published dt-published" datetime="2017-06-17T10:28:07+01:00" title="2017-06-17 10:28">2017-06-17 10:28</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/skype-with-python.html#disqus_thread" data-disqus-identifier="cache/posts/skype-with-python.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<div class="section" id="create-the-virtualenv">
+<h2>Create the virtualenv</h2>
+<pre class="code bash"><a name="rest_code_4391a59684274bf59f78aadac3ff9b26-1"></a>virtualenv skype_venv -p /usr/bin/python2.7 --system-site-packages
+</pre>
+<p>Note that I am specyfying the python2 interpreter, and using the system site packages (<a class="reference external" href="https://virtualenv.pypa.io/en/stable/userguide/#the-system-site-packages-option/">the python libraries already installed</a>.).</p>
+</div>
+<div class="section" id="install-the-skype4py-library">
+<h2>Install the Skype4Py library</h2>
+<p>You can install it with pip.</p>
+<pre class="code bash"><a name="rest_code_e2a1ceb5725a421bb1da8e0fbf907048-1"></a><span class="nb">source</span> skype_venv/bin/activate
+<a name="rest_code_e2a1ceb5725a421bb1da8e0fbf907048-2"></a>pip install Skype4Py
+</pre>
+<p>Note that this library allow us to control Skype client application. It means that you will need to have a skype client installed with which you will interact using python.</p>
+<p>Source: <a class="reference external" href="https://pypi.python.org/pypi/Skype4Py/">https://pypi.python.org/pypi/Skype4Py/</a></p>
+</div>
+<div class="section" id="use-the-library">
+<h2>Use the library</h2>
+<p>Open your skype client and launch a python prompt</p>
+<pre class="code bash"><a name="rest_code_2b97f06abb0d4513bc983cfe81dcc28b-1"></a>&gt;&gt;&gt; import Skype4Py
+<a name="rest_code_2b97f06abb0d4513bc983cfe81dcc28b-2"></a>&gt;&gt;&gt; <span class="nv">skype</span> <span class="o">=</span> Skype4Py.Skype<span class="o">()</span>
+<a name="rest_code_2b97f06abb0d4513bc983cfe81dcc28b-3"></a>&gt;&gt;&gt; skype.Attach<span class="o">()</span>
+</pre>
+<p>At this point, the Skype client will ask for authorization:</p>
+<img alt="Skype4Py authorisation" class="well-large align-center" src="http://imgur.com/gKj46yz"><p>And now, you can for example get the list of all your contact:</p>
+<pre class="code bash"><a name="rest_code_dbe4acabf4e74658bb5bf14d61771aad-1"></a>&gt;&gt;&gt; print <span class="s1">'Your full name:'</span>, skype.CurrentUser.FullName
+<a name="rest_code_dbe4acabf4e74658bb5bf14d61771aad-2"></a>&gt;&gt;&gt; print <span class="s1">'Your contacts:'</span>
+<a name="rest_code_dbe4acabf4e74658bb5bf14d61771aad-3"></a>&gt;&gt;&gt; <span class="k">for</span> user in skype.Friends:
+<a name="rest_code_dbe4acabf4e74658bb5bf14d61771aad-4"></a>        print <span class="s1">'    '</span>, user.FullName
+</pre>
+<p>To go further:</p>
+<p><a class="reference external" href="https://leakforums.net/thread-641974?tid=641974&amp;&amp;tid=641974&amp;&amp;pq=2">https://leakforums.net/thread-641974?tid=641974&amp;&amp;tid=641974&amp;&amp;pq=2</a></p>
+<p><a class="reference external" href="https://sinister.ly/Thread-Tutorial-Create-your-own-SkypeBOT">https://sinister.ly/Thread-Tutorial-Create-your-own-SkypeBOT</a></p>
+<p><a class="reference external" href="https://media.readthedocs.org/pdf/sevabot-skype-bot/latest/sevabot-skype-bot.pdf">https://media.readthedocs.org/pdf/sevabot-skype-bot/latest/sevabot-skype-bot.pdf</a></p>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/using-pip-with-different-python-versions.html" class="u-url">Using pip with different python versions</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Matthieu Choplin
@@ -525,37 +576,6 @@ If you don't want the exception to be handled by the context manager, just let i
 <pre class="code bash"><a name="rest_code_f6f070df12bd41a5aa230fbbc37ba4fe-1"></a>$ . ~/.bashrc
 </pre>
 <p>Thank you JB!! (<a class="reference external" href="http://tartley.com/">http://tartley.com/</a>)</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/monkeypatching-in-python.html" class="u-url">Monkeypatching in python</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Matthieu Choplin
-            </span></p>
-            <p class="dateline"><a href="posts/monkeypatching-in-python.html" rel="bookmark"><time class="published dt-published" datetime="2014-09-26T10:55:04+01:00" title="2014-09-26 10:55">2014-09-26 10:55</time></a></p>
-                <p class="commentline">
-        
-    <a href="posts/monkeypatching-in-python.html#disqus_thread" data-disqus-identifier="cache/posts/monkeypatching-in-python.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="e-content entry-content">
-    <div>
-<p>A MonkeyPatch is a piece of Python code which extends or modifies other code at runtime (typically at startup). MonkeyPatching would be the practice of writing, or running, a monkeypatch.</p>
-<p>A simple example looks like this:</p>
-<pre class="code python"><a name="rest_code_de621fc593644048aa6ce8fdd5669dcf-1"></a><span class="kn">from</span> <span class="nn">SomeOtherProduct.SomeModule</span> <span class="kn">import</span> <span class="n">SomeClass</span>
-<a name="rest_code_de621fc593644048aa6ce8fdd5669dcf-2"></a><span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_de621fc593644048aa6ce8fdd5669dcf-3"></a>    <span class="k">return</span> <span class="s2">"ook ook eee eee eee!"</span>
-<a name="rest_code_de621fc593644048aa6ce8fdd5669dcf-4"></a>
-<a name="rest_code_de621fc593644048aa6ce8fdd5669dcf-5"></a><span class="n">SomeClass</span><span class="o">.</span><span class="n">speak</span> <span class="o">=</span> <span class="n">speak</span>
-</pre>
-<p>In this example, if <em>SomeClass</em> did not already have a <em>speak()</em> method, it does now :-) If it had a speak() method before, <strong>the new code has replaced the old method definition</strong>.</p>
-<p>Sources:</p>
-<ul class="simple">
-<li><a class="reference external" href="https://web.archive.org/web/20120730014107/">https://web.archive.org/web/20120730014107/</a></li>
-<li><a class="reference external" href="http://wiki.zope.org/zope2/MonkeyPatch">http://wiki.zope.org/zope2/MonkeyPatch</a></li>
-</ul>
 </div>
     </div>
     </article>

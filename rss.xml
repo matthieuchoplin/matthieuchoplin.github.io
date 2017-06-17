@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><atom:link href="http://mattchoplin.com/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sat, 17 Jun 2017 08:26:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Using pip with different python versions</title><link>http://mattchoplin.com/posts/using-pip-with-different-python-versions.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;Let us say that you have python2 and python3 installed.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><atom:link href="http://mattchoplin.com/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sat, 17 Jun 2017 10:02:08 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Skype with Python</title><link>http://mattchoplin.com/posts/skype-with-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="create-the-virtualenv"&gt;
+&lt;h2&gt;Create the virtualenv&lt;/h2&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_4391a59684274bf59f78aadac3ff9b26-1"&gt;&lt;/a&gt;virtualenv skype_venv -p /usr/bin/python2.7 --system-site-packages
+&lt;/pre&gt;&lt;p&gt;Note that I am specyfying the python2 interpreter, and using the system site packages (&lt;a class="reference external" href="https://virtualenv.pypa.io/en/stable/userguide/#the-system-site-packages-option/"&gt;the python libraries already installed&lt;/a&gt;.).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="install-the-skype4py-library"&gt;
+&lt;h2&gt;Install the Skype4Py library&lt;/h2&gt;
+&lt;p&gt;You can install it with pip.&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_e2a1ceb5725a421bb1da8e0fbf907048-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;source&lt;/span&gt; skype_venv/bin/activate
+&lt;a name="rest_code_e2a1ceb5725a421bb1da8e0fbf907048-2"&gt;&lt;/a&gt;pip install Skype4Py
+&lt;/pre&gt;&lt;p&gt;Note that this library allow us to control Skype client application. It means that you will need to have a skype client installed with which you will interact using python.&lt;/p&gt;
+&lt;p&gt;Source: &lt;a class="reference external" href="https://pypi.python.org/pypi/Skype4Py/"&gt;https://pypi.python.org/pypi/Skype4Py/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="use-the-library"&gt;
+&lt;h2&gt;Use the library&lt;/h2&gt;
+&lt;p&gt;Open your skype client and launch a python prompt&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_2b97f06abb0d4513bc983cfe81dcc28b-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; import Skype4Py
+&lt;a name="rest_code_2b97f06abb0d4513bc983cfe81dcc28b-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span class="nv"&gt;skype&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; Skype4Py.Skype&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_2b97f06abb0d4513bc983cfe81dcc28b-3"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; skype.Attach&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;At this point, the Skype client will ask for authorization:&lt;/p&gt;
+&lt;img alt="Skype4Py authorisation" class="well-large align-center" src="http://imgur.com/gKj46yz"&gt;
+&lt;p&gt;And now, you can for example get the list of all your contact:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_dbe4acabf4e74658bb5bf14d61771aad-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; print &lt;span class="s1"&gt;'Your full name:'&lt;/span&gt;, skype.CurrentUser.FullName
+&lt;a name="rest_code_dbe4acabf4e74658bb5bf14d61771aad-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; print &lt;span class="s1"&gt;'Your contacts:'&lt;/span&gt;
+&lt;a name="rest_code_dbe4acabf4e74658bb5bf14d61771aad-3"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span class="k"&gt;for&lt;/span&gt; user in skype.Friends:
+&lt;a name="rest_code_dbe4acabf4e74658bb5bf14d61771aad-4"&gt;&lt;/a&gt;        print &lt;span class="s1"&gt;'    '&lt;/span&gt;, user.FullName
+&lt;/pre&gt;&lt;p&gt;To go further:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://leakforums.net/thread-641974?tid=641974&amp;amp;&amp;amp;tid=641974&amp;amp;&amp;amp;pq=2"&gt;https://leakforums.net/thread-641974?tid=641974&amp;amp;&amp;amp;tid=641974&amp;amp;&amp;amp;pq=2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://sinister.ly/Thread-Tutorial-Create-your-own-SkypeBOT"&gt;https://sinister.ly/Thread-Tutorial-Create-your-own-SkypeBOT&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://media.readthedocs.org/pdf/sevabot-skype-bot/latest/sevabot-skype-bot.pdf"&gt;https://media.readthedocs.org/pdf/sevabot-skype-bot/latest/sevabot-skype-bot.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>skype</category><guid>http://mattchoplin.com/posts/skype-with-python.html</guid><pubDate>Sat, 17 Jun 2017 09:28:07 GMT</pubDate></item><item><title>Using pip with different python versions</title><link>http://mattchoplin.com/posts/using-pip-with-different-python-versions.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;Let us say that you have python2 and python3 installed.&lt;/p&gt;
 &lt;p&gt;Use pip for python2&lt;/p&gt;
 &lt;pre class="code bash"&gt;&lt;a name="rest_code_6524ec74d42345079ada664547ce54a3-1"&gt;&lt;/a&gt;pip2.6 install otherpackage
 &lt;a name="rest_code_6524ec74d42345079ada664547ce54a3-2"&gt;&lt;/a&gt;pip2.7 install mybarpackage
@@ -261,16 +291,4 @@ If you don't want the exception to be handled by the context manager, just let i
 &lt;pre class="code bash"&gt;&lt;a name="rest_code_f1a73ad939fc4553981c097deba43ad2-1"&gt;&lt;/a&gt;$ grpy to just search in python files
 &lt;/pre&gt;&lt;p&gt;Then reload bashrc with:&lt;/p&gt;
 &lt;pre class="code bash"&gt;&lt;a name="rest_code_f6f070df12bd41a5aa230fbbc37ba4fe-1"&gt;&lt;/a&gt;$ . ~/.bashrc
-&lt;/pre&gt;&lt;p&gt;Thank you JB!! (&lt;a class="reference external" href="http://tartley.com/"&gt;http://tartley.com/&lt;/a&gt;)&lt;/p&gt;&lt;/div&gt;</description><category>bash</category><category>grep</category><guid>http://mattchoplin.com/posts/grep-aliases.html</guid><pubDate>Fri, 10 Oct 2014 09:31:27 GMT</pubDate></item><item><title>Monkeypatching in python</title><link>http://mattchoplin.com/posts/monkeypatching-in-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;A MonkeyPatch is a piece of Python code which extends or modifies other code at runtime (typically at startup). MonkeyPatching would be the practice of writing, or running, a monkeypatch.&lt;/p&gt;
-&lt;p&gt;A simple example looks like this:&lt;/p&gt;
-&lt;pre class="code python"&gt;&lt;a name="rest_code_de621fc593644048aa6ce8fdd5669dcf-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;SomeOtherProduct.SomeModule&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;SomeClass&lt;/span&gt;
-&lt;a name="rest_code_de621fc593644048aa6ce8fdd5669dcf-2"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;speak&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_de621fc593644048aa6ce8fdd5669dcf-3"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s2"&gt;"ook ook eee eee eee!"&lt;/span&gt;
-&lt;a name="rest_code_de621fc593644048aa6ce8fdd5669dcf-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_de621fc593644048aa6ce8fdd5669dcf-5"&gt;&lt;/a&gt;&lt;span class="n"&gt;SomeClass&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;speak&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;speak&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;In this example, if &lt;em&gt;SomeClass&lt;/em&gt; did not already have a &lt;em&gt;speak()&lt;/em&gt; method, it does now :-) If it had a speak() method before, &lt;strong&gt;the new code has replaced the old method definition&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Sources:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://web.archive.org/web/20120730014107/"&gt;https://web.archive.org/web/20120730014107/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://wiki.zope.org/zope2/MonkeyPatch"&gt;http://wiki.zope.org/zope2/MonkeyPatch&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/div&gt;</description><category>python</category><guid>http://mattchoplin.com/posts/monkeypatching-in-python.html</guid><pubDate>Fri, 26 Sep 2014 09:55:04 GMT</pubDate></item></channel></rss>
+&lt;/pre&gt;&lt;p&gt;Thank you JB!! (&lt;a class="reference external" href="http://tartley.com/"&gt;http://tartley.com/&lt;/a&gt;)&lt;/p&gt;&lt;/div&gt;</description><category>bash</category><category>grep</category><guid>http://mattchoplin.com/posts/grep-aliases.html</guid><pubDate>Fri, 10 Oct 2014 09:31:27 GMT</pubDate></item></channel></rss>
