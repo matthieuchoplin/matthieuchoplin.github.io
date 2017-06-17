@@ -46,7 +46,7 @@ Open your skype client and launch a python prompt
   
 At this point, the Skype client will ask for authorization:
 
-.. image:: http://imgur.com/gKj46yz
+.. image:: http://imgur.com/gKj46yz.png
    :alt: Skype4Py authorisation
    :align: center
    :class: well-large
