@@ -23,7 +23,7 @@
 
     
 
-        <link rel="prefetch" href="posts/skype-with-python.html" type="text/html">
+        <link rel="prefetch" href="posts/python-and-google-spreadsheet.html" type="text/html">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
 <!-- Menubar -->
@@ -80,7 +80,33 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/skype-with-python.html" class="u-url">Skype with Python</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/python-and-google-spreadsheet.html" class="u-url">Python and Google spreadsheet</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="posts/python-and-google-spreadsheet.html" rel="bookmark"><time class="published dt-published" datetime="2017-06-27T15:08:18+01:00" title="2017-06-27 15:08">2017-06-27 15:08</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/python-and-google-spreadsheet.html#disqus_thread" data-disqus-identifier="cache/posts/python-and-google-spreadsheet.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<ul class="simple">
+<li>gspread: see <a class="reference external" href="https://www.twilio.com/blog/2017/02/an-easy-way-to-read-and-write-to-a-google-spreadsheet-in-python.html">https://www.twilio.com/blog/2017/02/an-easy-way-to-read-and-write-to-a-google-spreadsheet-in-python.html</a> and <a class="reference external" href="https://github.com/burnash/gspread">https://github.com/burnash/gspread</a>
+</li>
+</ul>
+<p>or</p>
+<ul class="simple">
+<li>google-api-python-client: <a class="reference external" href="https://www.youtube.com/watch?v=VLdrgE8iJZI&amp;t=1s">https://www.youtube.com/watch?v=VLdrgE8iJZI&amp;t=1s</a> and <a class="reference external" href="https://developers.google.com/sheets/api/quickstart/python?utm_campaign=drive_launch_google_sheets_api_061416&amp;utm_source=gdev&amp;utm_medium=yt-desc">https://developers.google.com/sheets/api/quickstart/python?utm_campaign=drive_launch_google_sheets_api_061416&amp;utm_source=gdev&amp;utm_medium=yt-desc</a>
+</li>
+</ul>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/skype-with-python.html" class="u-url">Skype with Python</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Matthieu Choplin
@@ -530,52 +556,6 @@ If you don't want the exception to be handled by the context manager, just let i
 </ul>
 <p>The content (the returned value) of <em>yield</em> is taken in the variable 'context_var' here defined with the key word <em>as</em>.</p>
 </div>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/grep-aliases.html" class="u-url">Grep aliases</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Matthieu Choplin
-            </span></p>
-            <p class="dateline"><a href="posts/grep-aliases.html" rel="bookmark"><time class="published dt-published" datetime="2014-10-10T10:31:27+01:00" title="2014-10-10 10:31">2014-10-10 10:31</time></a></p>
-                <p class="commentline">
-        
-    <a href="posts/grep-aliases.html#disqus_thread" data-disqus-identifier="cache/posts/grep-aliases.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="e-content entry-content">
-    <div>
-<p>In .bashrc</p>
-<pre class="code bash"><a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-1"></a><span class="c1"># recursive search in files</span>
-<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-2"></a>
-<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-3"></a><span class="k">function</span> grp <span class="o">{</span>
-<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-4"></a>
-<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-5"></a>    <span class="nv">GREP_OPTIONS</span><span class="o">=</span><span class="s2">"-rI --color --exclude-dir=\.bzr --exclude-dir=\.git --exclude-dir=\.hg --exclude-dir=\.svn --exclude=tags </span><span class="nv">$GREP_OPTIONS</span><span class="s2">"</span> grep <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
-<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-6"></a>
-<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-7"></a><span class="o">}</span>
-<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-8"></a>
-<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-9"></a>
-<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-10"></a>
-<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-11"></a><span class="c1"># recursive search in Python source</span>
-<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-12"></a>
-<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-13"></a><span class="k">function</span> grpy <span class="o">{</span>
-<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-14"></a>
-<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-15"></a>  <span class="nv">GREP_OPTIONS</span><span class="o">=</span><span class="s2">"--exclude-dir=build --exclude-dir=dist --include=*.py </span><span class="nv">$GREP_OPTIONS</span><span class="s2">"</span> grp <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
-<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-16"></a>
-<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-17"></a><span class="o">}</span>
-</pre>
-<p>Use:</p>
-<pre class="code bash"><a name="rest_code_a0650bfc6c174fdd9dde494e8ae63430-1"></a>$ grp WORD .
-</pre>
-<p>Or</p>
-<pre class="code bash"><a name="rest_code_f1a73ad939fc4553981c097deba43ad2-1"></a>$ grpy to just search in python files
-</pre>
-<p>Then reload bashrc with:</p>
-<pre class="code bash"><a name="rest_code_f6f070df12bd41a5aa230fbbc37ba4fe-1"></a>$ . ~/.bashrc
-</pre>
-<p>Thank you JB!! (<a class="reference external" href="http://tartley.com/">http://tartley.com/</a>)</p>
 </div>
     </div>
     </article>

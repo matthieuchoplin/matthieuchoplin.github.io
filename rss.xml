@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><atom:link href="http://mattchoplin.com/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sat, 17 Jun 2017 17:21:50 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Skype with Python</title><link>http://mattchoplin.com/posts/skype-with-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="create-the-virtualenv"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><atom:link href="http://mattchoplin.com/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 27 Jun 2017 14:22:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python and Google spreadsheet</title><link>http://mattchoplin.com/posts/python-and-google-spreadsheet.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;ul class="simple"&gt;
+&lt;li&gt;gspread: see &lt;a class="reference external" href="https://www.twilio.com/blog/2017/02/an-easy-way-to-read-and-write-to-a-google-spreadsheet-in-python.html"&gt;https://www.twilio.com/blog/2017/02/an-easy-way-to-read-and-write-to-a-google-spreadsheet-in-python.html&lt;/a&gt; and &lt;a class="reference external" href="https://github.com/burnash/gspread"&gt;https://github.com/burnash/gspread&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;or&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;google-api-python-client: &lt;a class="reference external" href="https://www.youtube.com/watch?v=VLdrgE8iJZI&amp;amp;t=1s"&gt;https://www.youtube.com/watch?v=VLdrgE8iJZI&amp;amp;t=1s&lt;/a&gt; and &lt;a class="reference external" href="https://developers.google.com/sheets/api/quickstart/python?utm_campaign=drive_launch_google_sheets_api_061416&amp;amp;utm_source=gdev&amp;amp;utm_medium=yt-desc"&gt;https://developers.google.com/sheets/api/quickstart/python?utm_campaign=drive_launch_google_sheets_api_061416&amp;amp;utm_source=gdev&amp;amp;utm_medium=yt-desc&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;</description><guid>http://mattchoplin.com/posts/python-and-google-spreadsheet.html</guid><pubDate>Tue, 27 Jun 2017 14:08:18 GMT</pubDate></item><item><title>Skype with Python</title><link>http://mattchoplin.com/posts/skype-with-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="create-the-virtualenv"&gt;
 &lt;h2&gt;Create the virtualenv&lt;/h2&gt;
 &lt;pre class="code bash"&gt;&lt;a name="rest_code_94f90709c4844e80aa9f18c1febebf3f-1"&gt;&lt;/a&gt;virtualenv skype_venv -p /usr/bin/python2.7 --system-site-packages
 &lt;/pre&gt;&lt;p&gt;Note that I am specyfying the python2 interpreter, and using the system site packages (&lt;a class="reference external" href="https://virtualenv.pypa.io/en/stable/userguide/#the-system-site-packages-option/"&gt;the python libraries already installed&lt;/a&gt;).&lt;/p&gt;
@@ -267,28 +273,4 @@ If you don't want the exception to be handled by the context manager, just let i
 &lt;li&gt;everything that is after is similar to &lt;em&gt;__exit__&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The content (the returned value) of &lt;em&gt;yield&lt;/em&gt; is taken in the variable 'context_var' here defined with the key word &lt;em&gt;as&lt;/em&gt;.&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>python</category><guid>http://mattchoplin.com/posts/context-manager-in-python.html</guid><pubDate>Sat, 11 Oct 2014 12:50:58 GMT</pubDate></item><item><title>Grep aliases</title><link>http://mattchoplin.com/posts/grep-aliases.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;In .bashrc&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# recursive search in files&lt;/span&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-3"&gt;&lt;/a&gt;&lt;span class="k"&gt;function&lt;/span&gt; grp &lt;span class="o"&gt;{&lt;/span&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-5"&gt;&lt;/a&gt;    &lt;span class="nv"&gt;GREP_OPTIONS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"-rI --color --exclude-dir=\.bzr --exclude-dir=\.git --exclude-dir=\.hg --exclude-dir=\.svn --exclude=tags &lt;/span&gt;&lt;span class="nv"&gt;$GREP_OPTIONS&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; grep &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$@&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-6"&gt;&lt;/a&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-7"&gt;&lt;/a&gt;&lt;span class="o"&gt;}&lt;/span&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-8"&gt;&lt;/a&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-9"&gt;&lt;/a&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-10"&gt;&lt;/a&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-11"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# recursive search in Python source&lt;/span&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-12"&gt;&lt;/a&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-13"&gt;&lt;/a&gt;&lt;span class="k"&gt;function&lt;/span&gt; grpy &lt;span class="o"&gt;{&lt;/span&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-14"&gt;&lt;/a&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-15"&gt;&lt;/a&gt;  &lt;span class="nv"&gt;GREP_OPTIONS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"--exclude-dir=build --exclude-dir=dist --include=*.py &lt;/span&gt;&lt;span class="nv"&gt;$GREP_OPTIONS&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; grp &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$@&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-16"&gt;&lt;/a&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-17"&gt;&lt;/a&gt;&lt;span class="o"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;Use:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_a0650bfc6c174fdd9dde494e8ae63430-1"&gt;&lt;/a&gt;$ grp WORD .
-&lt;/pre&gt;&lt;p&gt;Or&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_f1a73ad939fc4553981c097deba43ad2-1"&gt;&lt;/a&gt;$ grpy to just search in python files
-&lt;/pre&gt;&lt;p&gt;Then reload bashrc with:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_f6f070df12bd41a5aa230fbbc37ba4fe-1"&gt;&lt;/a&gt;$ . ~/.bashrc
-&lt;/pre&gt;&lt;p&gt;Thank you JB!! (&lt;a class="reference external" href="http://tartley.com/"&gt;http://tartley.com/&lt;/a&gt;)&lt;/p&gt;&lt;/div&gt;</description><category>bash</category><category>grep</category><guid>http://mattchoplin.com/posts/grep-aliases.html</guid><pubDate>Fri, 10 Oct 2014 09:31:27 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>python</category><guid>http://mattchoplin.com/posts/context-manager-in-python.html</guid><pubDate>Sat, 11 Oct 2014 12:50:58 GMT</pubDate></item></channel></rss>

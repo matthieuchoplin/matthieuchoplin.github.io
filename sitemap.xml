@@ -19,11 +19,11 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/2017/index.html</loc>
-  <lastmod>2017-06-17T17:21:00Z</lastmod>
+  <lastmod>2017-06-27T14:22:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/archive.html</loc>
-  <lastmod>2017-06-17T09:59:00Z</lastmod>
+  <lastmod>2017-06-27T14:20:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/blog/index.html</loc>
@@ -139,11 +139,11 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/index-4.html</loc>
-  <lastmod>2017-06-17T09:59:00Z</lastmod>
+  <lastmod>2017-06-27T14:20:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/index.html</loc>
-  <lastmod>2017-06-17T17:21:00Z</lastmod>
+  <lastmod>2017-06-27T14:22:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/listings/hello.py.html</loc>
@@ -290,6 +290,10 @@
   <lastmod>2017-06-17T08:26:00Z</lastmod>
  </url>
  <url>
+  <loc>http://mattchoplin.com/posts/python-and-google-spreadsheet.html</loc>
+  <lastmod>2017-06-27T14:22:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://mattchoplin.com/posts/python-profiling.html</loc>
   <lastmod>2017-06-17T08:05:00Z</lastmod>
  </url>
@@ -323,7 +327,7 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/skype-with-python.html</loc>
-  <lastmod>2017-06-17T17:21:00Z</lastmod>
+  <lastmod>2017-06-27T14:20:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/sorting-list-with-two-criteria.html</loc>

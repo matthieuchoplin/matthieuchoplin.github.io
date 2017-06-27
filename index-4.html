@@ -86,7 +86,53 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/monkeypatching-in-python.html" class="u-url">Monkeypatching in python</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/grep-aliases.html" class="u-url">Grep aliases</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="posts/grep-aliases.html" rel="bookmark"><time class="published dt-published" datetime="2014-10-10T10:31:27+01:00" title="2014-10-10 10:31">2014-10-10 10:31</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/grep-aliases.html#disqus_thread" data-disqus-identifier="cache/posts/grep-aliases.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>In .bashrc</p>
+<pre class="code bash"><a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-1"></a><span class="c1"># recursive search in files</span>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-2"></a>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-3"></a><span class="k">function</span> grp <span class="o">{</span>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-4"></a>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-5"></a>    <span class="nv">GREP_OPTIONS</span><span class="o">=</span><span class="s2">"-rI --color --exclude-dir=\.bzr --exclude-dir=\.git --exclude-dir=\.hg --exclude-dir=\.svn --exclude=tags </span><span class="nv">$GREP_OPTIONS</span><span class="s2">"</span> grep <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-6"></a>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-7"></a><span class="o">}</span>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-8"></a>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-9"></a>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-10"></a>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-11"></a><span class="c1"># recursive search in Python source</span>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-12"></a>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-13"></a><span class="k">function</span> grpy <span class="o">{</span>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-14"></a>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-15"></a>  <span class="nv">GREP_OPTIONS</span><span class="o">=</span><span class="s2">"--exclude-dir=build --exclude-dir=dist --include=*.py </span><span class="nv">$GREP_OPTIONS</span><span class="s2">"</span> grp <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-16"></a>
+<a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-17"></a><span class="o">}</span>
+</pre>
+<p>Use:</p>
+<pre class="code bash"><a name="rest_code_a0650bfc6c174fdd9dde494e8ae63430-1"></a>$ grp WORD .
+</pre>
+<p>Or</p>
+<pre class="code bash"><a name="rest_code_f1a73ad939fc4553981c097deba43ad2-1"></a>$ grpy to just search in python files
+</pre>
+<p>Then reload bashrc with:</p>
+<pre class="code bash"><a name="rest_code_f6f070df12bd41a5aa230fbbc37ba4fe-1"></a>$ . ~/.bashrc
+</pre>
+<p>Thank you JB!! (<a class="reference external" href="http://tartley.com/">http://tartley.com/</a>)</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/monkeypatching-in-python.html" class="u-url">Monkeypatching in python</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Matthieu Choplin
