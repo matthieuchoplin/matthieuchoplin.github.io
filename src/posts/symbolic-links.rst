@@ -1,13 +1,23 @@
 .. title: Symbolic links
 .. slug: symbolic-links
 .. date: 06/04/2014 10:38:08 PM UTC+01:00
-.. tags: sysadmin 
+.. tags: sysadmin symlinks
 .. link: 
-.. description: Symbolic likns
+.. description: Symbolic links
 .. type: text
 
-Dealing with broken symbolic links
+Creating symlinks (symbolic links)
 ==================================
+
+If you want to symlink all file in a directory to an other directory:
+
+.. code:: bash
+
+  $ln -s /path_to_source_directory/* /path_to_destination_directory/
+
+
+Dealing with broken symlinks
+============================
 
 Find broken symlinks and delete them
 
@@ -28,8 +38,8 @@ If you want to delete them with confirmation first, do
   $find -L /path -type l -exec rm -i {} +
 
 
-Creating symbolik links
-=======================
+Creating symlinks
+=================
 
 First cd into your directory and then indicate where your symlinks will point
 

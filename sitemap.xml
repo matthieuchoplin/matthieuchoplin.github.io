@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>http://mattchoplin.com/2014/index.html</loc>
-  <lastmod>2017-06-17T17:18:00Z</lastmod>
+  <lastmod>2017-06-30T11:43:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/2015/index.html</loc>
@@ -79,7 +79,7 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/index.html</loc>
-  <lastmod>2017-06-17T17:18:00Z</lastmod>
+  <lastmod>2017-06-30T11:43:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/internet.html</loc>
@@ -110,6 +110,10 @@
   <lastmod>2017-06-17T08:26:00Z</lastmod>
  </url>
  <url>
+  <loc>http://mattchoplin.com/categories/sysadmin-symlinks.html</loc>
+  <lastmod>2017-06-30T11:43:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://mattchoplin.com/categories/sysadmin.html</loc>
   <lastmod>2017-06-17T08:26:00Z</lastmod>
  </url>
@@ -127,7 +131,7 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/index-1.html</loc>
-  <lastmod>2017-06-17T08:26:00Z</lastmod>
+  <lastmod>2017-06-30T11:43:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/index-2.html</loc>
@@ -335,7 +339,7 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/symbolic-links.html</loc>
-  <lastmod>2017-06-17T08:26:00Z</lastmod>
+  <lastmod>2017-06-30T11:43:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/tdd-with-django-at-skills-matter.html</loc>
