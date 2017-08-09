@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><atom:link href="http://mattchoplin.com/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 30 Jun 2017 11:43:30 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python and Google spreadsheet</title><link>http://mattchoplin.com/posts/python-and-google-spreadsheet.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;ul class="simple"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Standing on the shoulders of giants</title><link>http://mattchoplin.com/</link><description>Blog about my developer experience</description><atom:link type="application/rss+xml" rel="self" href="http://mattchoplin.com/rss.xml"></atom:link><language>en</language><lastBuildDate>Wed, 09 Aug 2017 15:49:56 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>defaultdict of defaultdict, nested</title><link>http://mattchoplin.com/posts/defaultdict-of-defaultdict-nested.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;Creating arbitrary level of nested dictionaries using &lt;a class="reference external" href="https://docs.python.org/2/library/collections.html#collections.defaultdict"&gt;defaultdict&lt;/a&gt;:&lt;/p&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_1bf34e97706942d789e2345d5f413fc6-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;collections&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;defaultdict&lt;/span&gt;
+&lt;a name="rest_code_1bf34e97706942d789e2345d5f413fc6-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_1bf34e97706942d789e2345d5f413fc6-3"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;recursive_defaultdict&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;a name="rest_code_1bf34e97706942d789e2345d5f413fc6-4"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;defaultdict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;recursive_defaultdict&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_0cf09c20295d482f8a25a5ba9bf4712e-1"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;recursive_defaultdict&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_0cf09c20295d482f8a25a5ba9bf4712e-2"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'a'&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;'b'&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;'c'&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;'d'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;a name="rest_code_0cf09c20295d482f8a25a5ba9bf4712e-3"&gt;&lt;/a&gt;&lt;span class="n"&gt;defaultdict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;recursive_defaultdict&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="mh"&gt;0x7fbf9b0496e0&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{})&lt;/span&gt;
+&lt;a name="rest_code_0cf09c20295d482f8a25a5ba9bf4712e-4"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;json&lt;/span&gt;
+&lt;a name="rest_code_0cf09c20295d482f8a25a5ba9bf4712e-5"&gt;&lt;/a&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dumps&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_0cf09c20295d482f8a25a5ba9bf4712e-6"&gt;&lt;/a&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"a"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"b"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"c"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"d"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{}}}}}&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;With a lambda:&lt;/p&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_fc2ada8955ca4e9eaa1e66ac66347697-1"&gt;&lt;/a&gt;&lt;span class="n"&gt;recursive_defaultdict&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;defaultdict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rec_dd&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;Source: &lt;a class="reference external" href="https://stackoverflow.com/questions/19189274/defaultdict-of-defaultdict-nested"&gt;https://stackoverflow.com/questions/19189274/defaultdict-of-defaultdict-nested&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><category>defaultdict</category><category>python</category><guid>http://mattchoplin.com/posts/defaultdict-of-defaultdict-nested.html</guid><pubDate>Wed, 09 Aug 2017 15:38:01 GMT</pubDate></item><item><title>Python and Google spreadsheet</title><link>http://mattchoplin.com/posts/python-and-google-spreadsheet.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;gspread: see &lt;a class="reference external" href="https://www.twilio.com/blog/2017/02/an-easy-way-to-read-and-write-to-a-google-spreadsheet-in-python.html"&gt;https://www.twilio.com/blog/2017/02/an-easy-way-to-read-and-write-to-a-google-spreadsheet-in-python.html&lt;/a&gt; and &lt;a class="reference external" href="https://github.com/burnash/gspread"&gt;https://github.com/burnash/gspread&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;or&lt;/p&gt;
@@ -208,69 +221,4 @@ collection with several items&lt;/li&gt;
 orders.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Source: &lt;a class="reference external" href="https://class.coursera.org/programming2-001"&gt;https://class.coursera.org/programming2-001&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>python</category><category>testing</category><guid>http://mattchoplin.com/posts/python-testing-with-unittest.html</guid><pubDate>Wed, 12 Nov 2014 15:02:45 GMT</pubDate></item><item><title>Context Manager in Python</title><link>http://mattchoplin.com/posts/context-manager-in-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="the-keyword-with"&gt;
-&lt;h2&gt;The keyword &lt;em&gt;with&lt;/em&gt;&lt;/h2&gt;
-&lt;p&gt;The context manager is going to be used with the keyword &lt;em&gt;with&lt;/em&gt; such as:&lt;/p&gt;
-&lt;pre class="code python"&gt;&lt;a name="rest_code_ebc0b2d110484c17b2cb2615e1118e11-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;MyContextManager&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;context_var&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_ebc0b2d110484c17b2cb2615e1118e11-2"&gt;&lt;/a&gt;    &lt;span class="c1"&gt;# here the statement is going to evaluate the methods&lt;/span&gt;
-&lt;a name="rest_code_ebc0b2d110484c17b2cb2615e1118e11-3"&gt;&lt;/a&gt;    &lt;span class="c1"&gt;# __enter__ and __exit__ of the class MyContextManager.&lt;/span&gt;
-&lt;a name="rest_code_ebc0b2d110484c17b2cb2615e1118e11-4"&gt;&lt;/a&gt;    &lt;span class="c1"&gt;# The value returned by __enter__ is going to be assigned&lt;/span&gt;
-&lt;a name="rest_code_ebc0b2d110484c17b2cb2615e1118e11-5"&gt;&lt;/a&gt;    &lt;span class="c1"&gt;# to the variable "context_var".&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="section" id="the-context-manager-can-be-defined-as-a-class"&gt;
-&lt;h2&gt;The context manager can be defined as a class&lt;/h2&gt;
-&lt;p&gt;Two essential methods are required for making the class a context manager:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p class="first"&gt;&lt;em&gt;__enter__(self)&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Defines what the context manager should do at the &lt;strong&gt;beginning of the block&lt;/strong&gt; created by the with statement.
-Note that the return value of __enter__ is bound to the target of the with statement, or the name after the as.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;&lt;em&gt;__exit__(self, exception_type, exception_value, traceback)&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Defines what the context manager should do &lt;strong&gt;after its block has been executed (or terminates)&lt;/strong&gt;.
-It can be used to handle exceptions, perform cleanup, or do something always done immediately after the action in the block.
-If the block executes successfully, exception_type, exception_value, and traceback will be None. Otherwise, you can choose to handle the   exception or let the user handle it; if you want to handle it, make sure __exit__ returns True after all is said and done.
-If you don't want the exception to be handled by the context manager, just let it happen.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="example"&gt;
-&lt;h2&gt;Example&lt;/h2&gt;
-&lt;pre class="code python"&gt;&lt;a name="rest_code_355d297bfd724bb3a57555753d6a5296-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MyContextManager&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_355d297bfd724bb3a57555753d6a5296-2"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__enter__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_355d297bfd724bb3a57555753d6a5296-3"&gt;&lt;/a&gt;        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;'__enter__()'&lt;/span&gt;
-&lt;a name="rest_code_355d297bfd724bb3a57555753d6a5296-4"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;
-&lt;a name="rest_code_355d297bfd724bb3a57555753d6a5296-5"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__exit__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;exception_type&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;exception_value&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;traceback&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_355d297bfd724bb3a57555753d6a5296-6"&gt;&lt;/a&gt;        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;'__exit__()'&lt;/span&gt;
-&lt;a name="rest_code_355d297bfd724bb3a57555753d6a5296-7"&gt;&lt;/a&gt;
-&lt;a name="rest_code_355d297bfd724bb3a57555753d6a5296-8"&gt;&lt;/a&gt;&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;MyContextManager&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;context_var&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_355d297bfd724bb3a57555753d6a5296-9"&gt;&lt;/a&gt;    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;'Doing work in the context'&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;Where the output is:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_ae08e2798cf24086aac25477b92fd272-1"&gt;&lt;/a&gt;__enter__&lt;span class="o"&gt;()&lt;/span&gt;
-&lt;a name="rest_code_ae08e2798cf24086aac25477b92fd272-2"&gt;&lt;/a&gt;Doing work in the context
-&lt;a name="rest_code_ae08e2798cf24086aac25477b92fd272-3"&gt;&lt;/a&gt;__exit__&lt;span class="o"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="section" id="the-context-manager-can-also-be-defined-as-a-generator"&gt;
-&lt;h2&gt;The Context Manager can also be defined as a Generator&lt;/h2&gt;
-&lt;p&gt;Here, we use the contextlib library and the module contextmanager.&lt;/p&gt;
-&lt;p&gt;The equivalent of the example above would be:&lt;/p&gt;
-&lt;pre class="code python"&gt;&lt;a name="rest_code_e0642c07c41b4a1bbf0a3ef53995675d-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;contextlib&lt;/span&gt;
-&lt;a name="rest_code_e0642c07c41b4a1bbf0a3ef53995675d-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_e0642c07c41b4a1bbf0a3ef53995675d-3"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@contextlib.contextmanager&lt;/span&gt;
-&lt;a name="rest_code_e0642c07c41b4a1bbf0a3ef53995675d-4"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;mycontextmanager&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
-&lt;a name="rest_code_e0642c07c41b4a1bbf0a3ef53995675d-5"&gt;&lt;/a&gt;    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;"__enter__"&lt;/span&gt;
-&lt;a name="rest_code_e0642c07c41b4a1bbf0a3ef53995675d-6"&gt;&lt;/a&gt;    &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_e0642c07c41b4a1bbf0a3ef53995675d-7"&gt;&lt;/a&gt;        &lt;span class="k"&gt;yield&lt;/span&gt;
-&lt;a name="rest_code_e0642c07c41b4a1bbf0a3ef53995675d-8"&gt;&lt;/a&gt;    &lt;span class="k"&gt;finally&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_e0642c07c41b4a1bbf0a3ef53995675d-9"&gt;&lt;/a&gt;        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;"__exit__"&lt;/span&gt;
-&lt;a name="rest_code_e0642c07c41b4a1bbf0a3ef53995675d-10"&gt;&lt;/a&gt;
-&lt;a name="rest_code_e0642c07c41b4a1bbf0a3ef53995675d-11"&gt;&lt;/a&gt;&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mycontextmanager&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;context_var&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_e0642c07c41b4a1bbf0a3ef53995675d-12"&gt;&lt;/a&gt;    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;'Doing work in the context'&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;First we use the decorator &lt;em&gt;@contextmanager&lt;/em&gt; to indicate to Python that the function will be a context manager.&lt;/p&gt;
-&lt;p&gt;Then, we do a &lt;em&gt;try/finally&lt;/em&gt; (it is not automatic like with __enter__ and __exit__).&lt;/p&gt;
-&lt;p&gt;The word &lt;em&gt;yield&lt;/em&gt; split the code in two parts:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;everything that is before  &lt;em&gt;yield&lt;/em&gt; is similar to what we had above in  &lt;em&gt;__enter__&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;everything that is after is similar to &lt;em&gt;__exit__&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The content (the returned value) of &lt;em&gt;yield&lt;/em&gt; is taken in the variable 'context_var' here defined with the key word &lt;em&gt;as&lt;/em&gt;.&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>python</category><guid>http://mattchoplin.com/posts/context-manager-in-python.html</guid><pubDate>Sat, 11 Oct 2014 12:50:58 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>python</category><category>testing</category><guid>http://mattchoplin.com/posts/python-testing-with-unittest.html</guid><pubDate>Wed, 12 Nov 2014 15:02:45 GMT</pubDate></item></channel></rss>

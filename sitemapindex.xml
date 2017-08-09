@@ -38,6 +38,10 @@
   <lastmod>2017-06-17T08:26:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>http://mattchoplin.com/categories/defaultdict.xml</loc>
+  <lastmod>2017-08-09T15:49:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://mattchoplin.com/categories/design-pattern.xml</loc>
   <lastmod>2017-06-17T08:05:00Z</lastmod>
  </sitemap>
@@ -67,7 +71,7 @@
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/categories/python.xml</loc>
-  <lastmod>2017-06-17T08:26:00Z</lastmod>
+  <lastmod>2017-08-09T15:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/categories/skype.xml</loc>
@@ -95,7 +99,7 @@
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/galleries/rss.xml</loc>
-  <lastmod>2017-06-17T08:26:00Z</lastmod>
+  <lastmod>2017-08-09T15:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/posts/rss.xml</loc>
@@ -103,11 +107,11 @@
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/rss.xml</loc>
-  <lastmod>2017-06-30T11:43:00Z</lastmod>
+  <lastmod>2017-08-09T15:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/sitemap.xml</loc>
-  <lastmod>2017-06-30T11:43:00Z</lastmod>
+  <lastmod>2017-08-09T15:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://mattchoplin.com/src/categories/blog.xml</loc>

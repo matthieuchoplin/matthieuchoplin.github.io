@@ -86,7 +86,99 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/grep-aliases.html" class="u-url">Grep aliases</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/context-manager-in-python.html" class="u-url">Context Manager in Python</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="posts/context-manager-in-python.html" rel="bookmark"><time class="published dt-published" datetime="2014-10-11T13:50:58+01:00" title="2014-10-11 13:50">2014-10-11 13:50</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/context-manager-in-python.html#disqus_thread" data-disqus-identifier="cache/posts/context-manager-in-python.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<div class="section" id="the-keyword-with">
+<h2>The keyword <em>with</em>
+</h2>
+<p>The context manager is going to be used with the keyword <em>with</em> such as:</p>
+<pre class="code python"><a name="rest_code_ebc0b2d110484c17b2cb2615e1118e11-1"></a><span class="k">with</span> <span class="n">MyContextManager</span> <span class="k">as</span> <span class="n">context_var</span><span class="p">:</span>
+<a name="rest_code_ebc0b2d110484c17b2cb2615e1118e11-2"></a>    <span class="c1"># here the statement is going to evaluate the methods</span>
+<a name="rest_code_ebc0b2d110484c17b2cb2615e1118e11-3"></a>    <span class="c1"># __enter__ and __exit__ of the class MyContextManager.</span>
+<a name="rest_code_ebc0b2d110484c17b2cb2615e1118e11-4"></a>    <span class="c1"># The value returned by __enter__ is going to be assigned</span>
+<a name="rest_code_ebc0b2d110484c17b2cb2615e1118e11-5"></a>    <span class="c1"># to the variable "context_var".</span>
+</pre>
+</div>
+<div class="section" id="the-context-manager-can-be-defined-as-a-class">
+<h2>The context manager can be defined as a class</h2>
+<p>Two essential methods are required for making the class a context manager:</p>
+<ul>
+<li>
+<p class="first"><em>__enter__(self)</em></p>
+<p>Defines what the context manager should do at the <strong>beginning of the block</strong> created by the with statement.
+Note that the return value of __enter__ is bound to the target of the with statement, or the name after the as.</p>
+</li>
+<li>
+<p class="first"><em>__exit__(self, exception_type, exception_value, traceback)</em></p>
+<p>Defines what the context manager should do <strong>after its block has been executed (or terminates)</strong>.
+It can be used to handle exceptions, perform cleanup, or do something always done immediately after the action in the block.
+If the block executes successfully, exception_type, exception_value, and traceback will be None. Otherwise, you can choose to handle the   exception or let the user handle it; if you want to handle it, make sure __exit__ returns True after all is said and done.
+If you don't want the exception to be handled by the context manager, just let it happen.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="example">
+<h2>Example</h2>
+<pre class="code python"><a name="rest_code_355d297bfd724bb3a57555753d6a5296-1"></a><span class="k">class</span> <span class="nc">MyContextManager</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<a name="rest_code_355d297bfd724bb3a57555753d6a5296-2"></a>    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_355d297bfd724bb3a57555753d6a5296-3"></a>        <span class="k">print</span> <span class="s1">'__enter__()'</span>
+<a name="rest_code_355d297bfd724bb3a57555753d6a5296-4"></a>        <span class="k">return</span> <span class="bp">self</span>
+<a name="rest_code_355d297bfd724bb3a57555753d6a5296-5"></a>    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception_type</span><span class="p">,</span> <span class="n">exception_value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
+<a name="rest_code_355d297bfd724bb3a57555753d6a5296-6"></a>        <span class="k">print</span> <span class="s1">'__exit__()'</span>
+<a name="rest_code_355d297bfd724bb3a57555753d6a5296-7"></a>
+<a name="rest_code_355d297bfd724bb3a57555753d6a5296-8"></a><span class="k">with</span> <span class="n">MyContextManager</span><span class="p">()</span> <span class="k">as</span> <span class="n">context_var</span><span class="p">:</span>
+<a name="rest_code_355d297bfd724bb3a57555753d6a5296-9"></a>    <span class="k">print</span> <span class="s1">'Doing work in the context'</span>
+</pre>
+<p>Where the output is:</p>
+<pre class="code bash"><a name="rest_code_ae08e2798cf24086aac25477b92fd272-1"></a>__enter__<span class="o">()</span>
+<a name="rest_code_ae08e2798cf24086aac25477b92fd272-2"></a>Doing work in the context
+<a name="rest_code_ae08e2798cf24086aac25477b92fd272-3"></a>__exit__<span class="o">()</span>
+</pre>
+</div>
+<div class="section" id="the-context-manager-can-also-be-defined-as-a-generator">
+<h2>The Context Manager can also be defined as a Generator</h2>
+<p>Here, we use the contextlib library and the module contextmanager.</p>
+<p>The equivalent of the example above would be:</p>
+<pre class="code python"><a name="rest_code_e0642c07c41b4a1bbf0a3ef53995675d-1"></a><span class="kn">import</span> <span class="nn">contextlib</span>
+<a name="rest_code_e0642c07c41b4a1bbf0a3ef53995675d-2"></a>
+<a name="rest_code_e0642c07c41b4a1bbf0a3ef53995675d-3"></a><span class="nd">@contextlib.contextmanager</span>
+<a name="rest_code_e0642c07c41b4a1bbf0a3ef53995675d-4"></a><span class="k">def</span> <span class="nf">mycontextmanager</span><span class="p">():</span>
+<a name="rest_code_e0642c07c41b4a1bbf0a3ef53995675d-5"></a>    <span class="k">print</span> <span class="s2">"__enter__"</span>
+<a name="rest_code_e0642c07c41b4a1bbf0a3ef53995675d-6"></a>    <span class="k">try</span><span class="p">:</span>
+<a name="rest_code_e0642c07c41b4a1bbf0a3ef53995675d-7"></a>        <span class="k">yield</span>
+<a name="rest_code_e0642c07c41b4a1bbf0a3ef53995675d-8"></a>    <span class="k">finally</span><span class="p">:</span>
+<a name="rest_code_e0642c07c41b4a1bbf0a3ef53995675d-9"></a>        <span class="k">print</span> <span class="s2">"__exit__"</span>
+<a name="rest_code_e0642c07c41b4a1bbf0a3ef53995675d-10"></a>
+<a name="rest_code_e0642c07c41b4a1bbf0a3ef53995675d-11"></a><span class="k">with</span> <span class="n">mycontextmanager</span><span class="p">()</span> <span class="k">as</span> <span class="n">context_var</span><span class="p">:</span>
+<a name="rest_code_e0642c07c41b4a1bbf0a3ef53995675d-12"></a>    <span class="k">print</span> <span class="s1">'Doing work in the context'</span>
+</pre>
+<p>First we use the decorator <em>@contextmanager</em> to indicate to Python that the function will be a context manager.</p>
+<p>Then, we do a <em>try/finally</em> (it is not automatic like with __enter__ and __exit__).</p>
+<p>The word <em>yield</em> split the code in two parts:</p>
+<ul class="simple">
+<li>everything that is before  <em>yield</em> is similar to what we had above in  <em>__enter__</em>
+</li>
+<li>everything that is after is similar to <em>__exit__</em>
+</li>
+</ul>
+<p>The content (the returned value) of <em>yield</em> is taken in the variable 'context_var' here defined with the key word <em>as</em>.</p>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/grep-aliases.html" class="u-url">Grep aliases</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Matthieu Choplin
