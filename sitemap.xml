@@ -19,11 +19,11 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/2017/index.html</loc>
-  <lastmod>2017-08-09T15:49:00Z</lastmod>
+  <lastmod>2017-08-17T11:41:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/archive.html</loc>
-  <lastmod>2017-08-09T15:40:00Z</lastmod>
+  <lastmod>2017-08-17T11:39:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/blog/index.html</loc>
@@ -58,6 +58,10 @@
   <lastmod>2017-06-17T08:05:00Z</lastmod>
  </url>
  <url>
+  <loc>http://mattchoplin.com/categories/cat_python.html</loc>
+  <lastmod>2017-08-17T11:41:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://mattchoplin.com/categories/continuous-integration.html</loc>
   <lastmod>2017-08-09T15:36:00Z</lastmod>
  </url>
@@ -83,7 +87,7 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/index.html</loc>
-  <lastmod>2017-08-09T15:40:00Z</lastmod>
+  <lastmod>2017-08-17T11:39:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/internet.html</loc>
@@ -103,7 +107,7 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/python.html</loc>
-  <lastmod>2017-08-09T15:49:00Z</lastmod>
+  <lastmod>2017-08-17T11:41:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/skype.html</loc>
@@ -147,11 +151,11 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/index-4.html</loc>
-  <lastmod>2017-08-09T15:40:00Z</lastmod>
+  <lastmod>2017-08-17T11:39:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/index.html</loc>
-  <lastmod>2017-08-09T15:49:00Z</lastmod>
+  <lastmod>2017-08-17T11:41:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/listings/hello.py.html</loc>
@@ -203,7 +207,7 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/defaultdict-of-defaultdict-nested.html</loc>
-  <lastmod>2017-08-09T15:49:00Z</lastmod>
+  <lastmod>2017-08-17T11:39:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/dummy-smtp-server-in-python-for-testing.html</loc>
@@ -344,6 +348,10 @@
  <url>
   <loc>http://mattchoplin.com/posts/sorting-list-with-two-criteria.html</loc>
   <lastmod>2017-08-09T15:36:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/string-in-python2-vs-python3.html</loc>
+  <lastmod>2017-08-17T11:41:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/symbolic-links.html</loc>

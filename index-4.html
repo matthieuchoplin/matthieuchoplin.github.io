@@ -86,7 +86,135 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/context-manager-in-python.html" class="u-url">Context Manager in Python</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/python-testing-with-unittest.html" class="u-url">Python testing with doctest and unittest</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="posts/python-testing-with-unittest.html" rel="bookmark"><time class="published dt-published" datetime="2014-11-12T16:02:45+01:00" title="2014-11-12 16:02">2014-11-12 16:02</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/python-testing-with-unittest.html#disqus_thread" data-disqus-identifier="cache/posts/python-testing-with-unittest.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<div class="section" id="the-problem">
+<h2>The problem:</h2>
+<p>We want to create a function that is able to determine whether a string is a palindrome.</p>
+<p>A palindrome is a word that is read the same from front-to-back and from back-to-front.</p>
+<p>For instance, the words "noon" and "racecar" are both palindromes.</p>
+</div>
+<div class="section" id="algorithm">
+<h2>Algorithm:</h2>
+<p>Reverse the string.</p>
+<p>Compare the reversed string to the original string.</p>
+</div>
+<div class="section" id="recipe-for-designing-functions">
+<h2>Recipe for designing functions:</h2>
+<ol class="arabic simple" start="0">
+<li>Give the function a name</li>
+<li>Examples</li>
+<li>Type Contract</li>
+<li>Header</li>
+<li>Description</li>
+<li>Body</li>
+<li>Test</li>
+</ol>
+<p>First, we will see the python module <em>doctest</em> which is good for having an up to date documentation.</p>
+<p>But using <em>doctest</em> is not recommended for testing a whole program. This is why we will see the python module <em>unittest</em> which is more relevant.</p>
+<p>For more about the cons of using <em>doctest</em>: <a class="reference external" href="http://bemusement.org/narrative-tests">Narrative tests are lousy tests</a> and <a class="reference external" href="http://bemusement.org/doctests-arent-code">Tests are code and doctests are not</a>.</p>
+<p>Create the file <em>palindrome.py</em>:</p>
+<pre class="code python"><a name="rest_code_0e52c184e3e3487d81c210ab3404d701-1"></a><span class="ch">#! /usr/bin/python2.7</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-2"></a>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-3"></a><span class="k">def</span> <span class="nf">is_palindrome</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-4"></a>    <span class="sd">"""(str) -&gt; bool</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-5"></a>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-6"></a><span class="sd">    Return True if and only if s is a palindrome.</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-7"></a>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-8"></a><span class="sd">    &gt;&gt;&gt; is_palindrome('noon')</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-9"></a><span class="sd">    True</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-10"></a><span class="sd">    &gt;&gt;&gt; is_palindrome('racecar')</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-11"></a><span class="sd">    True</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-12"></a><span class="sd">    &gt;&gt;&gt; is_palindrome('dented')</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-13"></a><span class="sd">    False</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-14"></a><span class="sd">    """</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-15"></a>    <span class="k">return</span> <span class="n">reverse</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">==</span> <span class="n">s</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-16"></a>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-17"></a><span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-18"></a>    <span class="sd">"""(str) -&gt; str</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-19"></a>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-20"></a><span class="sd">    Return the reversed string.</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-21"></a>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-22"></a><span class="sd">    &gt;&gt;&gt; reverse('hello')</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-23"></a><span class="sd">    'olleh'</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-24"></a><span class="sd">    &gt;&gt;&gt; reverse('a')</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-25"></a><span class="sd">    'a'</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-26"></a><span class="sd">    """</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-27"></a>    <span class="n">rev</span> <span class="o">=</span> <span class="s1">''</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-28"></a>    <span class="c1"># for each character in s, add the character at the beginning of rev.</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-29"></a>    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-30"></a>        <span class="n">rev</span> <span class="o">=</span> <span class="n">char</span> <span class="o">+</span> <span class="n">rev</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-31"></a>    <span class="k">return</span> <span class="n">rev</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-32"></a>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-33"></a><span class="kn">import</span> <span class="nn">doctest</span>
+<a name="rest_code_0e52c184e3e3487d81c210ab3404d701-34"></a><span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
+</pre>
+<p>We want to separate the tests from the main program and use the python <em>unittest</em> module.</p>
+<p>Create the file test_palindromes.py</p>
+<pre class="code python"><a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-1"></a><span class="ch">#! /usr/bin/python2.7</span>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-2"></a>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-3"></a><span class="kn">import</span> <span class="nn">unittest</span>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-4"></a><span class="kn">import</span> <span class="nn">palindromes</span>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-5"></a>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-6"></a>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-7"></a><span class="k">class</span> <span class="nc">TestPalindrome</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-8"></a>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-9"></a>    <span class="k">def</span> <span class="nf">test_is_palindrome_true</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-10"></a>        <span class="n">value</span> <span class="o">=</span> <span class="n">palindromes</span><span class="o">.</span><span class="n">is_palindrome</span><span class="p">(</span><span class="s1">'racecar'</span><span class="p">)</span>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-11"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-12"></a>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-13"></a>    <span class="k">def</span> <span class="nf">test_is_palindrome_false</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-14"></a>        <span class="n">value</span> <span class="o">=</span> <span class="n">palindromes</span><span class="o">.</span><span class="n">is_palindrome</span><span class="p">(</span><span class="s1">'dedent'</span><span class="p">)</span>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-16"></a>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-17"></a>    <span class="k">def</span> <span class="nf">test_reverse_normal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-18"></a>        <span class="n">value</span> <span class="o">=</span> <span class="n">palindromes</span><span class="o">.</span><span class="n">reverse</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">)</span>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-19"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s1">'olleh'</span><span class="p">)</span>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-20"></a>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-21"></a>    <span class="k">def</span> <span class="nf">test_reverse_error</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-22"></a>        <span class="n">list_of_bad_value</span> <span class="o">=</span> <span class="p">[</span>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-23"></a>        <span class="mi">123</span><span class="p">,</span>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-24"></a>        <span class="bp">None</span><span class="p">,</span>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-25"></a>        <span class="p">]</span>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-26"></a>        <span class="k">for</span> <span class="n">bad_value</span> <span class="ow">in</span> <span class="n">list_of_bad_value</span><span class="p">:</span>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-27"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-28"></a>                <span class="ne">TypeError</span><span class="p">,</span>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-29"></a>                <span class="n">palindromes</span><span class="o">.</span><span class="n">reverse</span><span class="p">,</span>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-30"></a>                <span class="n">bad_value</span>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-31"></a>            <span class="p">)</span>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-32"></a>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-33"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<a name="rest_code_cc1a3ea457bf42afb7db5d828e06eb01-34"></a>    <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre>
+</div>
+<div class="section" id="choosing-test-cases-to-test">
+<h2>Choosing test cases to test</h2>
+<ul class="simple">
+<li>Size: For collections, test with an empty collection, a collection with 1 item, the smallest interesting case, and a
+collection with several items</li>
+<li>Dichotomies: Vowels/Non Vowels, even/odd, positive/negative, empty/full, and so on.</li>
+<li>Boundaries: If the function behaves differently for values near a particular threshold, test at that threshold.</li>
+<li>Order: If the function behaves differently when the values are in different orders, identify and test each of those
+orders.</li>
+</ul>
+<p>Source: <a class="reference external" href="https://class.coursera.org/programming2-001">https://class.coursera.org/programming2-001</a></p>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/context-manager-in-python.html" class="u-url">Context Manager in Python</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Matthieu Choplin

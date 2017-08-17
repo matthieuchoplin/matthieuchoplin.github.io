@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Difference between basestring and str in python">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>String in python2 vs python3 | Standing on the shoulders of giants</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="canonical" href="http://mattchoplin.com/posts/string-in-python2-vs-python3.html">
+<link rel="icon" href="../favicon-16x16.png" sizes="16x16">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" type="text/css" href="../assets/css/tipuesearch.css">
+</head>
+<body>
+<div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 20px;"></div>
+
+
+
+    
+
+    <meta name="author" content="Matthieu Choplin">
+<link rel="prev" href="defaultdict-of-defaultdict-nested.html" title="defaultdict of defaultdict, nested" type="text/html">
+<meta property="og:site_name" content="Standing on the shoulders of giants">
+<meta property="og:title" content="String in python2 vs python3">
+<meta property="og:url" content="http://mattchoplin.com/posts/string-in-python2-vs-python3.html">
+<meta property="og:description" content="Difference between basestring and str in python">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-08-17T12:35:28+01:00">
+<meta property="article:tag" content="python">
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://mattchoplin.com/">
+
+                <span id="blog-title">Standing on the shoulders of giants</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../archive.html">Archive</a>
+                </li>
+<li>
+<a href="../categories/index.html">Tags</a>
+                </li>
+<li>
+<a href="../stories/talks.html">Talks</a>
+                </li>
+<li>
+<a href="../rss.xml">RSS feed</a>
+
+                
+            </li>
+</ul>
+<span class="navbar-form pull-left">
+    <input type="text" id="tipue_search_input"></span>
+
+            <ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="string-in-python2-vs-python3.rst" id="sourcelink">Source</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">String in python2 vs python3</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Matthieu Choplin
+            </span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2017-08-17T12:35:28+01:00" itemprop="datePublished" title="2017-08-17 12:35">2017-08-17 12:35</time></a></p>
+                <p class="commentline">
+        
+    <a href="string-in-python2-vs-python3.html#disqus_thread" data-disqus-identifier="cache/posts/string-in-python2-vs-python3.html">Comments</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="string-in-python2-vs-python3.rst" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>In Python versions prior to 3.0 there are two kinds of strings "plain strings" and "unicode strings". Plain strings (str) cannot represent characters outside of the Latin alphabet (ignoring details of code pages for simplicity). Unicode strings (unicode) can represent characters from any alphabet including some fictional ones like Klingon.</p>
+<p>So why have two kinds of strings, would it not be better to just have Unicode since that would cover all the cases? Well it is better to have only Unicode but Python was created before Unicode was the preferred method for representing strings. It takes time to transition the string type in a language with many users, in Python 3.0 it is finally the case that all strings are Unicode.</p>
+<p>The inheritance hierarchy of Python strings pre-3.0 is:</p>
+<pre class="code bash"><a name="rest_code_b39858ebd9704c30ae9580c0aec7bee5-1"></a> object
+<a name="rest_code_b39858ebd9704c30ae9580c0aec7bee5-2"></a>    <span class="p">|</span>
+<a name="rest_code_b39858ebd9704c30ae9580c0aec7bee5-3"></a>    <span class="p">|</span>
+<a name="rest_code_b39858ebd9704c30ae9580c0aec7bee5-4"></a>basestring
+<a name="rest_code_b39858ebd9704c30ae9580c0aec7bee5-5"></a>   / <span class="se">\</span>
+<a name="rest_code_b39858ebd9704c30ae9580c0aec7bee5-6"></a>  /   <span class="se">\</span>
+<a name="rest_code_b39858ebd9704c30ae9580c0aec7bee5-7"></a>str  unicode
+</pre>
+<p>'basestring' introduced in Python 2.3 can be thought of as a step in the direction of string unification as it can be used to check whether an object is an instance of str or unicode</p>
+<pre class="code python"><a name="rest_code_8dcae8b5ebd94c4b9107be16e6c7ef64-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">string1</span> <span class="o">=</span> <span class="s2">"I am a plain string"</span>
+<a name="rest_code_8dcae8b5ebd94c4b9107be16e6c7ef64-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">string2</span> <span class="o">=</span> <span class="sa">u</span><span class="s2">"I am a unicode string"</span>
+<a name="rest_code_8dcae8b5ebd94c4b9107be16e6c7ef64-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">string1</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<a name="rest_code_8dcae8b5ebd94c4b9107be16e6c7ef64-4"></a><span class="bp">True</span>
+<a name="rest_code_8dcae8b5ebd94c4b9107be16e6c7ef64-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">string2</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<a name="rest_code_8dcae8b5ebd94c4b9107be16e6c7ef64-6"></a><span class="bp">False</span>
+<a name="rest_code_8dcae8b5ebd94c4b9107be16e6c7ef64-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">string1</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">)</span>
+<a name="rest_code_8dcae8b5ebd94c4b9107be16e6c7ef64-8"></a><span class="bp">False</span>
+<a name="rest_code_8dcae8b5ebd94c4b9107be16e6c7ef64-9"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">string2</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">)</span>
+<a name="rest_code_8dcae8b5ebd94c4b9107be16e6c7ef64-10"></a><span class="bp">True</span>
+<a name="rest_code_8dcae8b5ebd94c4b9107be16e6c7ef64-11"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">string1</span><span class="p">,</span> <span class="nb">basestring</span><span class="p">)</span>
+<a name="rest_code_8dcae8b5ebd94c4b9107be16e6c7ef64-12"></a><span class="bp">True</span>
+<a name="rest_code_8dcae8b5ebd94c4b9107be16e6c7ef64-13"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">string2</span><span class="p">,</span> <span class="nb">basestring</span><span class="p">)</span>
+<a name="rest_code_8dcae8b5ebd94c4b9107be16e6c7ef64-14"></a><span class="bp">True</span>
+</pre>
+<p>Source: <a class="reference external" href="https://stackoverflow.com/questions/1979004/what-is-the-difference-between-isinstanceaaa-basestring-and-isinstanceaaa">https://stackoverflow.com/questions/1979004/what-is-the-difference-between-isinstanceaaa-basestring-and-isinstanceaaa</a></p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/python.html" rel="tag">python</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="defaultdict-of-defaultdict-nested.html" rel="prev" title="defaultdict of defaultdict, nested">Previous post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="mattchoplin",
+            disqus_url="http://mattchoplin.com/posts/string-in-python2-vs-python3.html",
+        disqus_title="String in python2 vs python3",
+        disqus_identifier="cache/posts/string-in-python2-vs-python3.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="mattchoplin";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2017         <a href="mailto:choplin.mat@gmail.com">Matthieu Choplin</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51792900-1', 'mattchoplin.com');
+  ga('send', 'pageview');
+
+</script><script src="../assets/js/tipuesearch_set.js"></script><script src="../assets/js/tipuesearch.js"></script><script>
+    $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch({
+            'mode': 'json',
+            'contentLocation': '/assets/js/tipuesearch_content.json',
+            'showUrl': false
+        });
+    });
+</script>
+</body>
+</html>
