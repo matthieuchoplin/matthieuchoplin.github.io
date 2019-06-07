@@ -1,30 +1,30 @@
 <p>If you want to use it in a version earlier than python3.3, you need yo install it:</p>
-<pre class="code bash"><a name="rest_code_7cc61fd42938480a9cb6376f91aa6c8b-1"></a>sudo pip install mock
+<pre class="code bash"><a name="rest_code_b3446c51daf54e479d6514ab7173730f-1"></a>sudo pip install mock
 </pre><div class="section" id="simple-example">
 <h1>Simple example</h1>
 <p>Code to test:</p>
-<pre class="code python"><a name="rest_code_62a3a326b3d344d5981847961004d797-1"></a><span class="kn">import</span> <span class="nn">time</span>
-<a name="rest_code_62a3a326b3d344d5981847961004d797-2"></a><span class="k">def</span> <span class="nf">do_something</span><span class="p">():</span>
-<a name="rest_code_62a3a326b3d344d5981847961004d797-3"></a>    <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
-<a name="rest_code_62a3a326b3d344d5981847961004d797-4"></a>        <span class="k">print</span> <span class="s1">&#39;ok&#39;</span>
-<a name="rest_code_62a3a326b3d344d5981847961004d797-5"></a>    <span class="k">else</span><span class="p">:</span>
-<a name="rest_code_62a3a326b3d344d5981847961004d797-6"></a>        <span class="k">print</span> <span class="s1">&#39;ko&#39;</span>
+<pre class="code python"><a name="rest_code_ea304e5620b048dc9ddc39230a69ccf7-1"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_ea304e5620b048dc9ddc39230a69ccf7-2"></a><span class="k">def</span> <span class="nf">do_something</span><span class="p">():</span>
+<a name="rest_code_ea304e5620b048dc9ddc39230a69ccf7-3"></a>    <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+<a name="rest_code_ea304e5620b048dc9ddc39230a69ccf7-4"></a>        <span class="k">print</span> <span class="s1">&#39;ok&#39;</span>
+<a name="rest_code_ea304e5620b048dc9ddc39230a69ccf7-5"></a>    <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_ea304e5620b048dc9ddc39230a69ccf7-6"></a>        <span class="k">print</span> <span class="s1">&#39;ko&#39;</span>
 </pre><p>Actual test:</p>
-<pre class="code python"><a name="rest_code_36b9c4d1a5694dc985b0dd0747ddc3ab-1"></a><span class="kn">from</span> <span class="nn">mock</span> <span class="kn">import</span> <span class="n">patch</span>
-<a name="rest_code_36b9c4d1a5694dc985b0dd0747ddc3ab-2"></a><span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;time.sleep&#39;</span><span class="p">)</span>
-<a name="rest_code_36b9c4d1a5694dc985b0dd0747ddc3ab-3"></a><span class="k">def</span> <span class="nf">test_do_something1</span><span class="p">(</span><span class="n">mock_sleep</span><span class="p">):</span>
-<a name="rest_code_36b9c4d1a5694dc985b0dd0747ddc3ab-4"></a>    <span class="n">mock_sleep</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="bp">True</span>
-<a name="rest_code_36b9c4d1a5694dc985b0dd0747ddc3ab-5"></a>    <span class="n">do_something</span><span class="p">()</span>
-<a name="rest_code_36b9c4d1a5694dc985b0dd0747ddc3ab-6"></a>
-<a name="rest_code_36b9c4d1a5694dc985b0dd0747ddc3ab-7"></a><span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;time.sleep&#39;</span><span class="p">)</span>
-<a name="rest_code_36b9c4d1a5694dc985b0dd0747ddc3ab-8"></a><span class="k">def</span> <span class="nf">test_do_something2</span><span class="p">(</span><span class="n">mock_sleep</span><span class="p">):</span>
-<a name="rest_code_36b9c4d1a5694dc985b0dd0747ddc3ab-9"></a>    <span class="n">mock_sleep</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="bp">False</span>
-<a name="rest_code_36b9c4d1a5694dc985b0dd0747ddc3ab-10"></a>    <span class="n">do_something</span><span class="p">()</span>
+<pre class="code python"><a name="rest_code_46824f64d1e248138c46acc3d368d2cf-1"></a><span class="kn">from</span> <span class="nn">mock</span> <span class="kn">import</span> <span class="n">patch</span>
+<a name="rest_code_46824f64d1e248138c46acc3d368d2cf-2"></a><span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;time.sleep&#39;</span><span class="p">)</span>
+<a name="rest_code_46824f64d1e248138c46acc3d368d2cf-3"></a><span class="k">def</span> <span class="nf">test_do_something1</span><span class="p">(</span><span class="n">mock_sleep</span><span class="p">):</span>
+<a name="rest_code_46824f64d1e248138c46acc3d368d2cf-4"></a>    <span class="n">mock_sleep</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="bp">True</span>
+<a name="rest_code_46824f64d1e248138c46acc3d368d2cf-5"></a>    <span class="n">do_something</span><span class="p">()</span>
+<a name="rest_code_46824f64d1e248138c46acc3d368d2cf-6"></a>
+<a name="rest_code_46824f64d1e248138c46acc3d368d2cf-7"></a><span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;time.sleep&#39;</span><span class="p">)</span>
+<a name="rest_code_46824f64d1e248138c46acc3d368d2cf-8"></a><span class="k">def</span> <span class="nf">test_do_something2</span><span class="p">(</span><span class="n">mock_sleep</span><span class="p">):</span>
+<a name="rest_code_46824f64d1e248138c46acc3d368d2cf-9"></a>    <span class="n">mock_sleep</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="bp">False</span>
+<a name="rest_code_46824f64d1e248138c46acc3d368d2cf-10"></a>    <span class="n">do_something</span><span class="p">()</span>
 </pre><p>Results:</p>
-<pre class="code bash"><a name="rest_code_429bb8526cf447c7b77b2d6e679636b7-1"></a>&gt;&gt;&gt; test_do_something1<span class="o">()</span>
-<a name="rest_code_429bb8526cf447c7b77b2d6e679636b7-2"></a>ok
-<a name="rest_code_429bb8526cf447c7b77b2d6e679636b7-3"></a>&gt;&gt;&gt; test_do_something2<span class="o">()</span>
-<a name="rest_code_429bb8526cf447c7b77b2d6e679636b7-4"></a>ko
+<pre class="code bash"><a name="rest_code_1f79a92bd84b44d88304d1b06896123e-1"></a>&gt;&gt;&gt; test_do_something1<span class="o">()</span>
+<a name="rest_code_1f79a92bd84b44d88304d1b06896123e-2"></a>ok
+<a name="rest_code_1f79a92bd84b44d88304d1b06896123e-3"></a>&gt;&gt;&gt; test_do_something2<span class="o">()</span>
+<a name="rest_code_1f79a92bd84b44d88304d1b06896123e-4"></a>ko
 </pre><p>Source:</p>
 <ul class="simple">
 <li><a class="reference external" href="https://pypi.python.org/pypi/mock">https://pypi.python.org/pypi/mock</a></li>

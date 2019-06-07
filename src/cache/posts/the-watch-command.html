@@ -1,8 +1,8 @@
-<pre class="code bash"><a name="rest_code_32666b332bb9461fa1038d56fd6185f3-1"></a>watch -n1 <span class="s1">&#39; ps aux | grep what_you_want&#39;</span>
+<pre class="code bash"><a name="rest_code_80d0fe1f00d7493991023633796878e1-1"></a>watch -n1 <span class="s1">&#39; ps aux | grep what_you_want&#39;</span>
 </pre><p>Something interesting when combined with svc:</p>
-<pre class="code bash"><a name="rest_code_7ed562b60d5f496d9531b753aa8cb29b-1"></a><span class="nb">cd</span> /etc/service <span class="c1"># or wherever svc (supervise) is installed</span>
-<a name="rest_code_7ed562b60d5f496d9531b753aa8cb29b-2"></a>watch svstat *
+<pre class="code bash"><a name="rest_code_79babb0787f64d58b977635496840ec8-1"></a><span class="nb">cd</span> /etc/service <span class="c1"># or wherever svc (supervise) is installed</span>
+<a name="rest_code_79babb0787f64d58b977635496840ec8-2"></a>watch svstat *
 </pre><p>It will monitor every 2 seconds the state of your service.</p>
 <p>Monitor the queries being run in real time:</p>
-<pre class="code bash"><a name="rest_code_b25a0aeb701846a9ac2be672ab2c25fd-1"></a>watch -n <span class="m">1</span> <span class="s1">&#39;sudo -u postgres psql --tuples-only --command &quot;SELECT datname, procpid, date_trunc(\$\$second\$\$, age(current_timestamp, xact_start)), current_query FROM pg_stat_activity;&quot;&#39;</span>
+<pre class="code bash"><a name="rest_code_b3d3550ac5f0449cb575a6c1f33dd05b-1"></a>watch -n <span class="m">1</span> <span class="s1">&#39;sudo -u postgres psql --tuples-only --command &quot;SELECT datname, procpid, date_trunc(\$\$second\$\$, age(current_timestamp, xact_start)), current_query FROM pg_stat_activity;&quot;&#39;</span>
 </pre><p>Source: <a class="reference external" href="http://kevin.deldycke.com/2011/10/postgresql-commands/">http://kevin.deldycke.com/2011/10/postgresql-commands/</a></p>

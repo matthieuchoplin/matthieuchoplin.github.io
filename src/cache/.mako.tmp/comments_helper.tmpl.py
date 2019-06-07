@@ -5,12 +5,12 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1502970141.715734
+_modified_time = 1559901627.93331
 _enable_loop = True
-_template_filename = '/home/matt/PycharmProjects/nikola/venv/lib/python3.5/site-packages/nikola/data/themes/base/templates/comments_helper.tmpl'
+_template_filename = '/home/mchoplin/projects/matthieuchoplin.github.io/nikola/lib/python3.6/site-packages/nikola/data/themes/base/templates/comments_helper.tmpl'
 _template_uri = 'comments_helper.tmpl'
 _source_encoding = 'utf-8'
-_exports = ['comment_link_script', 'comment_link', 'comment_form']
+_exports = ['comment_form', 'comment_link', 'comment_link_script']
 
 
 def _mako_get_namespace(context, name):
@@ -20,11 +20,11 @@ def _mako_get_namespace(context, name):
         _mako_generate_namespaces(context)
         return context.namespaces[(__name__, name)]
 def _mako_generate_namespaces(context):
-    ns = runtime.TemplateNamespace('googleplus', context._clean_inheritance_tokens(), templateuri='comments_helper_googleplus.tmpl', callables=None,  calling_uri=_template_uri)
-    context.namespaces[(__name__, 'googleplus')] = ns
+    ns = runtime.TemplateNamespace('disqus', context._clean_inheritance_tokens(), templateuri='comments_helper_disqus.tmpl', callables=None,  calling_uri=_template_uri)
+    context.namespaces[(__name__, 'disqus')] = ns
 
-    ns = runtime.TemplateNamespace('livefyre', context._clean_inheritance_tokens(), templateuri='comments_helper_livefyre.tmpl', callables=None,  calling_uri=_template_uri)
-    context.namespaces[(__name__, 'livefyre')] = ns
+    ns = runtime.TemplateNamespace('intensedebate', context._clean_inheritance_tokens(), templateuri='comments_helper_intensedebate.tmpl', callables=None,  calling_uri=_template_uri)
+    context.namespaces[(__name__, 'intensedebate')] = ns
 
     ns = runtime.TemplateNamespace('muut', context._clean_inheritance_tokens(), templateuri='comments_helper_muut.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, 'muut')] = ns
@@ -32,14 +32,11 @@ def _mako_generate_namespaces(context):
     ns = runtime.TemplateNamespace('facebook', context._clean_inheritance_tokens(), templateuri='comments_helper_facebook.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, 'facebook')] = ns
 
-    ns = runtime.TemplateNamespace('intensedebate', context._clean_inheritance_tokens(), templateuri='comments_helper_intensedebate.tmpl', callables=None,  calling_uri=_template_uri)
-    context.namespaces[(__name__, 'intensedebate')] = ns
-
-    ns = runtime.TemplateNamespace('disqus', context._clean_inheritance_tokens(), templateuri='comments_helper_disqus.tmpl', callables=None,  calling_uri=_template_uri)
-    context.namespaces[(__name__, 'disqus')] = ns
-
     ns = runtime.TemplateNamespace('isso', context._clean_inheritance_tokens(), templateuri='comments_helper_isso.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, 'isso')] = ns
+
+    ns = runtime.TemplateNamespace('commento', context._clean_inheritance_tokens(), templateuri='comments_helper_commento.tmpl', callables=None,  calling_uri=_template_uri)
+    context.namespaces[(__name__, 'commento')] = ns
 
 def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
@@ -52,103 +49,10 @@ def render_body(context,**pageargs):
         __M_writer('\n')
         __M_writer('\n')
         __M_writer('\n')
-        __M_writer('\n')
         __M_writer('\n\n')
         __M_writer('\n\n')
         __M_writer('\n\n')
         __M_writer('\n')
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
-def render_comment_link_script(context):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        livefyre = _mako_get_namespace(context, 'livefyre')
-        disqus = _mako_get_namespace(context, 'disqus')
-        googleplus = _mako_get_namespace(context, 'googleplus')
-        muut = _mako_get_namespace(context, 'muut')
-        facebook = _mako_get_namespace(context, 'facebook')
-        intensedebate = _mako_get_namespace(context, 'intensedebate')
-        isso = _mako_get_namespace(context, 'isso')
-        comment_system = context.get('comment_system', UNDEFINED)
-        __M_writer = context.writer()
-        __M_writer('\n')
-        if comment_system == 'disqus':
-            __M_writer('        ')
-            __M_writer(str(disqus.comment_link_script()))
-            __M_writer('\n')
-        elif comment_system == 'livefyre':
-            __M_writer('        ')
-            __M_writer(str(livefyre.comment_link_script()))
-            __M_writer('\n')
-        elif comment_system == 'intensedebate':
-            __M_writer('        ')
-            __M_writer(str(intensedebate.comment_link_script()))
-            __M_writer('\n')
-        elif comment_system == 'muut':
-            __M_writer('        ')
-            __M_writer(str(muut.comment_link_script()))
-            __M_writer('\n')
-        elif comment_system == 'googleplus':
-            __M_writer('        ')
-            __M_writer(str(googleplus.comment_link_script()))
-            __M_writer('\n')
-        elif comment_system == 'facebook':
-            __M_writer('        ')
-            __M_writer(str(facebook.comment_link_script()))
-            __M_writer('\n')
-        elif comment_system == 'isso':
-            __M_writer('        ')
-            __M_writer(str(isso.comment_link_script()))
-            __M_writer('\n')
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
-def render_comment_link(context,link,identifier):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        livefyre = _mako_get_namespace(context, 'livefyre')
-        disqus = _mako_get_namespace(context, 'disqus')
-        googleplus = _mako_get_namespace(context, 'googleplus')
-        muut = _mako_get_namespace(context, 'muut')
-        facebook = _mako_get_namespace(context, 'facebook')
-        intensedebate = _mako_get_namespace(context, 'intensedebate')
-        isso = _mako_get_namespace(context, 'isso')
-        comment_system = context.get('comment_system', UNDEFINED)
-        __M_writer = context.writer()
-        __M_writer('\n')
-        if comment_system == 'disqus':
-            __M_writer('        ')
-            __M_writer(str(disqus.comment_link(link, identifier)))
-            __M_writer('\n')
-        elif comment_system == 'livefyre':
-            __M_writer('        ')
-            __M_writer(str(livefyre.comment_link(link, identifier)))
-            __M_writer('\n')
-        elif comment_system == 'intensedebate':
-            __M_writer('        ')
-            __M_writer(str(intensedebate.comment_link(link, identifier)))
-            __M_writer('\n')
-        elif comment_system == 'muut':
-            __M_writer('        ')
-            __M_writer(str(muut.comment_link(link, identifier)))
-            __M_writer('\n')
-        elif comment_system == 'googleplus':
-            __M_writer('        ')
-            __M_writer(str(googleplus.comment_link(link, identifier)))
-            __M_writer('\n')
-        elif comment_system == 'facebook':
-            __M_writer('        ')
-            __M_writer(str(facebook.comment_link(link, identifier)))
-            __M_writer('\n')
-        elif comment_system == 'isso':
-            __M_writer('        ')
-            __M_writer(str(isso.comment_link(link, identifier)))
-            __M_writer('\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -157,23 +61,18 @@ def render_comment_link(context,link,identifier):
 def render_comment_form(context,url,title,identifier):
     __M_caller = context.caller_stack._push_frame()
     try:
-        livefyre = _mako_get_namespace(context, 'livefyre')
         disqus = _mako_get_namespace(context, 'disqus')
-        googleplus = _mako_get_namespace(context, 'googleplus')
+        commento = _mako_get_namespace(context, 'commento')
+        intensedebate = _mako_get_namespace(context, 'intensedebate')
+        comment_system = context.get('comment_system', UNDEFINED)
+        isso = _mako_get_namespace(context, 'isso')
         muut = _mako_get_namespace(context, 'muut')
         facebook = _mako_get_namespace(context, 'facebook')
-        intensedebate = _mako_get_namespace(context, 'intensedebate')
-        isso = _mako_get_namespace(context, 'isso')
-        comment_system = context.get('comment_system', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         if comment_system == 'disqus':
             __M_writer('        ')
             __M_writer(str(disqus.comment_form(url, title, identifier)))
-            __M_writer('\n')
-        elif comment_system == 'livefyre':
-            __M_writer('        ')
-            __M_writer(str(livefyre.comment_form(url, title, identifier)))
             __M_writer('\n')
         elif comment_system == 'intensedebate':
             __M_writer('        ')
@@ -183,10 +82,6 @@ def render_comment_form(context,url,title,identifier):
             __M_writer('        ')
             __M_writer(str(muut.comment_form(url, title, identifier)))
             __M_writer('\n')
-        elif comment_system == 'googleplus':
-            __M_writer('        ')
-            __M_writer(str(googleplus.comment_form(url, title, identifier)))
-            __M_writer('\n')
         elif comment_system == 'facebook':
             __M_writer('        ')
             __M_writer(str(facebook.comment_form(url, title, identifier)))
@@ -195,6 +90,92 @@ def render_comment_form(context,url,title,identifier):
             __M_writer('        ')
             __M_writer(str(isso.comment_form(url, title, identifier)))
             __M_writer('\n')
+        elif comment_system == 'commento':
+            __M_writer('        ')
+            __M_writer(str(commento.comment_form(url, title, identifier)))
+            __M_writer('\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
+def render_comment_link(context,link,identifier):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        disqus = _mako_get_namespace(context, 'disqus')
+        commento = _mako_get_namespace(context, 'commento')
+        intensedebate = _mako_get_namespace(context, 'intensedebate')
+        comment_system = context.get('comment_system', UNDEFINED)
+        isso = _mako_get_namespace(context, 'isso')
+        muut = _mako_get_namespace(context, 'muut')
+        facebook = _mako_get_namespace(context, 'facebook')
+        __M_writer = context.writer()
+        __M_writer('\n')
+        if comment_system == 'disqus':
+            __M_writer('        ')
+            __M_writer(str(disqus.comment_link(link, identifier)))
+            __M_writer('\n')
+        elif comment_system == 'intensedebate':
+            __M_writer('        ')
+            __M_writer(str(intensedebate.comment_link(link, identifier)))
+            __M_writer('\n')
+        elif comment_system == 'muut':
+            __M_writer('        ')
+            __M_writer(str(muut.comment_link(link, identifier)))
+            __M_writer('\n')
+        elif comment_system == 'facebook':
+            __M_writer('        ')
+            __M_writer(str(facebook.comment_link(link, identifier)))
+            __M_writer('\n')
+        elif comment_system == 'isso':
+            __M_writer('        ')
+            __M_writer(str(isso.comment_link(link, identifier)))
+            __M_writer('\n')
+        elif comment_system == 'commento':
+            __M_writer('        ')
+            __M_writer(str(commento.comment_link(link, identifier)))
+            __M_writer('\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
+def render_comment_link_script(context):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        disqus = _mako_get_namespace(context, 'disqus')
+        commento = _mako_get_namespace(context, 'commento')
+        intensedebate = _mako_get_namespace(context, 'intensedebate')
+        comment_system = context.get('comment_system', UNDEFINED)
+        isso = _mako_get_namespace(context, 'isso')
+        muut = _mako_get_namespace(context, 'muut')
+        facebook = _mako_get_namespace(context, 'facebook')
+        __M_writer = context.writer()
+        __M_writer('\n')
+        if comment_system == 'disqus':
+            __M_writer('        ')
+            __M_writer(str(disqus.comment_link_script()))
+            __M_writer('\n')
+        elif comment_system == 'intensedebate':
+            __M_writer('        ')
+            __M_writer(str(intensedebate.comment_link_script()))
+            __M_writer('\n')
+        elif comment_system == 'muut':
+            __M_writer('        ')
+            __M_writer(str(muut.comment_link_script()))
+            __M_writer('\n')
+        elif comment_system == 'facebook':
+            __M_writer('        ')
+            __M_writer(str(facebook.comment_link_script()))
+            __M_writer('\n')
+        elif comment_system == 'isso':
+            __M_writer('        ')
+            __M_writer(str(isso.comment_link_script()))
+            __M_writer('\n')
+        elif comment_system == 'commento':
+            __M_writer('        ')
+            __M_writer(str(commento.comment_link_script()))
+            __M_writer('\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -202,6 +183,6 @@ def render_comment_form(context,url,title,identifier):
 
 """
 __M_BEGIN_METADATA
-{"uri": "comments_helper.tmpl", "filename": "/home/matt/PycharmProjects/nikola/venv/lib/python3.5/site-packages/nikola/data/themes/base/templates/comments_helper.tmpl", "source_encoding": "utf-8", "line_map": {"23": 7, "26": 4, "29": 6, "32": 8, "35": 5, "38": 3, "41": 9, "44": 0, "49": 2, "50": 3, "51": 4, "52": 5, "53": 6, "54": 7, "55": 8, "56": 9, "57": 27, "58": 45, "59": 63, "65": 47, "77": 47, "78": 48, "79": 49, "80": 49, "81": 49, "82": 50, "83": 51, "84": 51, "85": 51, "86": 52, "87": 53, "88": 53, "89": 53, "90": 54, "91": 55, "92": 55, "93": 55, "94": 56, "95": 57, "96": 57, "97": 57, "98": 58, "99": 59, "100": 59, "101": 59, "102": 60, "103": 61, "104": 61, "105": 61, "111": 29, "123": 29, "124": 30, "125": 31, "126": 31, "127": 31, "128": 32, "129": 33, "130": 33, "131": 33, "132": 34, "133": 35, "134": 35, "135": 35, "136": 36, "137": 37, "138": 37, "139": 37, "140": 38, "141": 39, "142": 39, "143": 39, "144": 40, "145": 41, "146": 41, "147": 41, "148": 42, "149": 43, "150": 43, "151": 43, "157": 11, "169": 11, "170": 12, "171": 13, "172": 13, "173": 13, "174": 14, "175": 15, "176": 15, "177": 15, "178": 16, "179": 17, "180": 17, "181": 17, "182": 18, "183": 19, "184": 19, "185": 19, "186": 20, "187": 21, "188": 21, "189": 21, "190": 22, "191": 23, "192": 23, "193": 23, "194": 24, "195": 25, "196": 25, "197": 25, "203": 197}}
+{"filename": "/home/mchoplin/projects/matthieuchoplin.github.io/nikola/lib/python3.6/site-packages/nikola/data/themes/base/templates/comments_helper.tmpl", "uri": "comments_helper.tmpl", "source_encoding": "utf-8", "line_map": {"23": 3, "26": 4, "29": 5, "32": 6, "35": 7, "38": 8, "41": 0, "46": 2, "47": 3, "48": 4, "49": 5, "50": 6, "51": 7, "52": 8, "53": 24, "54": 40, "55": 56, "61": 10, "72": 10, "73": 11, "74": 12, "75": 12, "76": 12, "77": 13, "78": 14, "79": 14, "80": 14, "81": 15, "82": 16, "83": 16, "84": 16, "85": 17, "86": 18, "87": 18, "88": 18, "89": 19, "90": 20, "91": 20, "92": 20, "93": 21, "94": 22, "95": 22, "96": 22, "102": 26, "113": 26, "114": 27, "115": 28, "116": 28, "117": 28, "118": 29, "119": 30, "120": 30, "121": 30, "122": 31, "123": 32, "124": 32, "125": 32, "126": 33, "127": 34, "128": 34, "129": 34, "130": 35, "131": 36, "132": 36, "133": 36, "134": 37, "135": 38, "136": 38, "137": 38, "143": 42, "154": 42, "155": 43, "156": 44, "157": 44, "158": 44, "159": 45, "160": 46, "161": 46, "162": 46, "163": 47, "164": 48, "165": 48, "166": 48, "167": 49, "168": 50, "169": 50, "170": 50, "171": 51, "172": 52, "173": 52, "174": 52, "175": 53, "176": 54, "177": 54, "178": 54, "184": 178}}
 __M_END_METADATA
 """

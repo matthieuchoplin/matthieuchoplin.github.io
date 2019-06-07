@@ -1,6 +1,9 @@
-<pre class="code python"><a name="rest_code_a97f4e5dda454d83ade11667c407bf8c-1"></a><span class="kn">import</span> <span class="nn">psycopg2</span>
-<a name="rest_code_a97f4e5dda454d83ade11667c407bf8c-2"></a><span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;dbname=&#39;template1&#39; user=&#39;dbuser&#39; host=&#39;localhost&#39; password=&#39;dbpass&#39;&quot;</span><span class="p">)</span>
-<a name="rest_code_a97f4e5dda454d83ade11667c407bf8c-3"></a><span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<div class="section" id="connect-to-your-postgresql-database-with-psycopg2">
+<h1>Connect to your postgresql database with psycopg2</h1>
+<pre class="code python"><a name="rest_code_f81466698c6b45319799ce124b1f6720-1"></a><span class="kn">import</span> <span class="nn">psycopg2</span>
+<a name="rest_code_f81466698c6b45319799ce124b1f6720-2"></a><span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;dbname=&#39;template1&#39; user=&#39;dbuser&#39; host=&#39;localhost&#39; password=&#39;dbpass&#39;&quot;</span><span class="p">)</span>
+<a name="rest_code_f81466698c6b45319799ce124b1f6720-3"></a><span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
 </pre><p>Once you have the cursor of the database, you can execute queries with:</p>
-<pre class="code python"><a name="rest_code_017faad740a14ff68a7b86e4fc271f85-1"></a><span class="n">cr</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">your_query</span><span class="p">;)</span>
+<pre class="code python"><a name="rest_code_626a7317d65641acb13b3484bd64e88e-1"></a><span class="n">cr</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">your_query</span><span class="p">;)</span>
 </pre><p>Source: <a class="reference external" href="https://wiki.postgresql.org/wiki/Psycopg2_Tutorial">https://wiki.postgresql.org/wiki/Psycopg2_Tutorial</a></p>
+</div>

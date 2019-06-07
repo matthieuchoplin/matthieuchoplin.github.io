@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liclipse as Python editor | Standing on the shoulders of giants</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="http://mattchoplin.com/posts/Liclipse/">
+<link rel="icon" href="../../favicon-16x16.png" sizes="16x16">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" type="text/css" href="../../assets/css/tipuesearch.css">
+</head>
+<body>
+<div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 20px;"></div>
+
+
+
+    
+
+    <meta name="author" content="Matthieu Choplin">
+<link rel="prev" href="../unresponsive-process/" title="Unresponsive process" type="text/html">
+<link rel="next" href="../screen/" title="Screen" type="text/html">
+<meta property="og:site_name" content="Standing on the shoulders of giants">
+<meta property="og:title" content="Liclipse as Python editor">
+<meta property="og:url" content="http://mattchoplin.com/posts/Liclipse/">
+<meta property="og:description" content="Installation
+Liclipse seems to be the IDE to go for Python edition if you come from the Eclipse + pydev plugin world: Liclipse (Lightweight Eclipse)
+It comes with pydev and gedit plugin already integr">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2014-06-28T13:31:05+01:00">
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+    <span class="navbar-form pull-left">
+    <input type="text" id="tipue_search_input"></span>
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="http://mattchoplin.com/">
+
+            <span id="blog-title">Standing on the shoulders of giants</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item">
+    <a href="index.rst" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">Archive</a>
+                </li>
+<li class="nav-item">
+<a href="../../categories/index.html" class="nav-link">Tags</a>
+                </li>
+<li class="nav-item">
+<a href="../../stories/talks.html" class="nav-link">Talks</a>
+                </li>
+<li class="nav-item">
+<a href="../../rss.xml" class="nav-link">RSS feed</a>
+
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Liclipse as Python editor</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Matthieu Choplin
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2014-06-28T13:31:05+01:00" itemprop="datePublished" title="2014-06-28 13:31">2014-06-28 13:31</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/liclipse.html">Comments</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="index.rst" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<div class="section" id="installation">
+<h2>Installation</h2>
+<p>Liclipse seems to be the IDE to go for Python edition if you come from the Eclipse + pydev plugin world: <a class="reference external" href="http://brainwy.github.io/liclipse/index.html">Liclipse</a> (Lightweight Eclipse)</p>
+<p>It comes with pydev and gedit plugin already integrated.</p>
+<p>On ubuntu 12.04, you need to install the following Java dependencies before being able to launch it.</p>
+<pre class="code bash"><a name="rest_code_87f4ec10c9fa436fb3d4fc6f1866f4ec-1"></a>sudo add-apt-repository ppa:webupd8team/java
+<a name="rest_code_87f4ec10c9fa436fb3d4fc6f1866f4ec-2"></a>sudo apt-get update
+<a name="rest_code_87f4ec10c9fa436fb3d4fc6f1866f4ec-3"></a>sudo apt-get install oracle-java7-installer
+</pre>
+<p>It'll keep your java 7 installation up to date.</p>
+<p>To automatically set up the Java 7 environment variables JAVA_HOME and PATH:</p>
+<pre class="code bash"><a name="rest_code_40624ec838164513a3921be76ac0971f-1"></a>sudo apt-get install oracle-java7-set-default
+</pre>
+<p>Source: <a class="reference external" href="http://stackoverflow.com/questions/16263556/installing-java-7-on-ubuntu">http://stackoverflow.com/questions/16263556/installing-java-7-on-ubuntu</a></p>
+</div>
+<div class="section" id="importing-a-git-project">
+<h2>Importing a Git project</h2>
+<p>If the project is already cloned in your local environment, then click "File" | "Import"| Select "Git" | "Project from Git"| "Existing local Repository" and select the project you want.</p>
+<p>Else, you can also clone the project from Liclipse by doing "File" | "Import"| Select "Git" | "Project from Git"| "Clone Uri".</p>
+</div>
+<div class="section" id="using-egit">
+<h2>Using eGit</h2>
+<p>Egit enables you to do the same as what git already enables but in a much more friendly way.</p>
+<p>Because egit is already integrated in Jiclipse, you already have all its features. I recommend the <a class="reference external" href="http://wiki.eclipse.org/EGit/User_Guide">documentation</a>. Most of the egit features are available when you right click on a file and select "Team".</p>
+<ul>
+<li>
+<p class="first">Annotations: When you are editing a file, you can access it by right clicking the file, selecting "Team" and "Show annotations".</p>
+<p>Similar to:</p>
+</li>
+</ul>
+<pre class="code bash"><a name="rest_code_24e64ce409f94fba9f9eaf7d1639a7a9-1"></a>git blame
+</pre>
+<ul>
+<li>
+<p class="first">History: When you are editing a file, you can access it by right clicking the file, selecting "Team" and "Show in History".</p>
+<p>Similar to:</p>
+</li>
+</ul>
+<pre class="code bash"><a name="rest_code_0e68989261b3403e9bc599fd5ec5b1df-1"></a>git log -p
+</pre>
+</div>
+<div class="section" id="using-pydev">
+<h2>Using Pydev</h2>
+<p><a class="reference external" href="http://pydev.org/">pydev</a> is the Python IDE in Eclipse.</p>
+<p>The debugging mode is very easy to use:</p>
+<ul class="simple">
+<li>Place your breakpoints where you want by double clicking in the margin of the files.</li>
+<li>Edit the "Run configuration" according to your project settings.</li>
+<li>Click on "Run" | "Debug as" and select the configuration you created.</li>
+</ul>
+</div>
+<div class="section" id="alternatives">
+<h2>Alternatives</h2>
+<p>Development environments for Python are listed here: <a class="reference external" href="http://docs.python-guide.org/en/latest/dev/env/">http://docs.python-guide.org/en/latest/dev/env/</a></p>
+<p>As text Editors, Vim is also a good choice combined with the following plugins:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.vim.org/scripts/script.php?script_id=974">indent</a></li>
+<li><a class="reference external" href="http://www.vim.org/scripts/script.php?script_id=790">syntax</a></li>
+<li><a class="reference external" href="https://github.com/nvie/vim-pep8">vim-pep8</a></li>
+<li><a class="reference external" href="https://github.com/nvie/vim-pyflakes">vim-pyflakes</a></li>
+<li><a class="reference external" href="https://github.com/scrooloose/syntastic">syntastic</a></li>
+<li><a class="reference external" href="https://github.com/klen/python-mode">python-mode</a></li>
+<li><a class="reference external" href="http://www.vim.org/scripts/script.php?script_id=1643">supertab</a></li>
+</ul>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../unresponsive-process/" rel="prev" title="Unresponsive process">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../screen/" rel="next" title="Screen">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="mattchoplin",
+            disqus_url="http://mattchoplin.com/posts/Liclipse/",
+        disqus_title="Liclipse as Python editor",
+        disqus_identifier="cache/posts/liclipse.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="mattchoplin";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer">
+            Contents © 2019         <a href="mailto:choplin.mat@gmail.com">Matthieu Choplin</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51792900-1', 'mattchoplin.com');
+  ga('send', 'pageview');
+
+</script><script src="../../assets/js/tipuesearch_set.js"></script><script src="../../assets/js/tipuesearch.js"></script><script>
+    $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch({
+            'mode': 'json',
+            'contentLocation': '/assets/js/tipuesearch_content.json',
+            'showUrl': false
+        });
+    });
+</script>
+</body>
+</html>

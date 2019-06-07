@@ -6,503 +6,815 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
-  <loc>http://mattchoplin.com/2014/index.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <loc>http://mattchoplin.com/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
-  <loc>http://mattchoplin.com/2015/index.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <loc>http://mattchoplin.com/2014/</loc>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
-  <loc>http://mattchoplin.com/2016/index.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <loc>http://mattchoplin.com/2015/</loc>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
-  <loc>http://mattchoplin.com/2017/index.html</loc>
-  <lastmod>2017-08-17T11:41:00Z</lastmod>
+  <loc>http://mattchoplin.com/2016/</loc>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/2017/</loc>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/2019/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/archive.html</loc>
-  <lastmod>2017-08-17T11:39:00Z</lastmod>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
-  <loc>http://mattchoplin.com/blog/index.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <loc>http://mattchoplin.com/blog/</loc>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/blog/jupyter-notebook-basics.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/blog/trapezoid.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/categories/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/agile.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/categories/agile/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/bash.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/categories/bash/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/blog.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/categories/blog/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/cat_api.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/categories/cat_api/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/cat_design-patterns-python-programming.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/cat_python.html</loc>
-  <lastmod>2017-08-17T11:41:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/categories/cat_python/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/continuous-integration.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/categories/continuous-integration/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/copy.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/categories/copy/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/defaultdict.html</loc>
-  <lastmod>2017-08-09T15:49:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/categories/defaultdict/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/design-pattern.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/git.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/categories/git/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/grep.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
-  <loc>http://mattchoplin.com/categories/index.html</loc>
-  <lastmod>2017-08-17T11:39:00Z</lastmod>
+  <loc>http://mattchoplin.com/categories/grep/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/internet.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/categories/internet/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/lock.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/categories/lock/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/nikola.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/categories/nikola/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/postgresql.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/categories/postgresql/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/python.html</loc>
-  <lastmod>2017-08-17T11:41:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/categories/python/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/skype.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/categories/skype/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/sql.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/categories/sql/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/sysadmin-symlinks.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/categories/sysadmin-symlinks/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/sysadmin.html</loc>
-  <lastmod>2017-06-17T08:26:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/testing.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/categories/testing/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/categories/ubuntu.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
-  <loc>http://mattchoplin.com/galleries/index.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <loc>http://mattchoplin.com/categories/ubuntu/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/galleries/</loc>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/index-1.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/index-2.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/index-3.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/index-4.html</loc>
-  <lastmod>2017-08-17T11:39:00Z</lastmod>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
-  <loc>http://mattchoplin.com/index.html</loc>
-  <lastmod>2017-08-17T11:41:00Z</lastmod>
+  <loc>http://mattchoplin.com/listings/</loc>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/listings/hello.py.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
-  <loc>http://mattchoplin.com/listings/index.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <loc>http://mattchoplin.com/nikola/lib/python3.6/site-packages/notebook/templates/browser-open.html</loc>
+  <lastmod>2019-06-07T08:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/nikola/lib/python3.6/site-packages/notebook/templates/page.html</loc>
+  <lastmod>2019-06-07T08:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/nikola/lib/python3.6/site-packages/notebook/templates/view.html</loc>
+  <lastmod>2019-06-07T08:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/nikola/lib/python3.6/site-packages/tornado/test/static/dir/</loc>
+  <lastmod>2019-06-07T08:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/Liclipse.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/Liclipse/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/abstraction-in-python.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/abstraction-in-python/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/agile-testing.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/agile-testing/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/associate-hostname-with-ip-address.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/associate-hostname-with-ip-address/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/blog-creation.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/blog-creation/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/context-manager-in-python.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/context-manager-in-python/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/control-the-screen-brightness-in-ubuntu.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/control-the-screen-brightness-in-ubuntu/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/copy-records-from-csv-in-postgresql.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/copy-records-from-csv-in-postgresql/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/copy-records-from-postgresql-to-csv-file.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/copy-records-from-postgresql-to-csv-file/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/database-locks.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/database-locks/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/defaultdict-of-defaultdict-nested.html</loc>
-  <lastmod>2017-08-17T11:39:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/defaultdict-of-defaultdict-nested/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/dummy-smtp-server-in-python-for-testing.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/dummy-smtp-server-in-python-for-testing/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/execute-sql-from-file.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/execute-sql-from-file/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/extract-list-of-installed-packages.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/extract-list-of-installed-packages/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/git-branching-strategy.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/git-branching-strategy/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/git.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/git/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/grep-aliases.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/grep-aliases/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/how-to-get-the-firstlast-day-of-the-previous-month.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/how-to-get-the-firstlast-day-of-the-previous-month/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/index-1.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/index-2.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/index-3.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/index-4.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
- </url>
- <url>
-  <loc>http://mattchoplin.com/posts/index.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/introduction-to-patching-in-python.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/introduction-to-patching-in-python/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/introspection-in-python.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/introspection-in-python/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/logs.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/logs/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/monitor-disk-usage-with-python.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/monitor-disk-usage-with-python/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/monkeypatching-in-python.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/monkeypatching-in-python/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/multithreading-in-python.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/port-forwarding.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/port-forwarding/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/port-in-use.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/port-in-use/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/progress-bar-in-python.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/progress-bar-in-python/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/prototype-design-pattern-in-python.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/psycopg2.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/psycopg2/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/put-an-emoji-icon-in-your-github-commit-message.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/put-an-emoji-icon-in-your-github-commit-message/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/python-and-google-spreadsheet.html</loc>
-  <lastmod>2017-08-09T15:40:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/python-and-google-spreadsheet/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/python-profiling.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/python-testing-with-unittest.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/python-testing-with-unittest/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/python-tips.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/python-tips/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/running-tests-using-the-contexts-python-library-in-pycharm/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/screen-monitoring.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/screen-monitoring/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/screen.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/screen/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/send-email-with-python.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/send-email-with-python/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/sentry-installation.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/sentry-installation/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/size-occupied-on-the-server.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/size-occupied-on-the-server/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/skype-with-python.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/skype-with-python/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/sorting-list-with-two-criteria.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/sorting-list-with-two-criteria/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/string-in-python2-vs-python3.html</loc>
-  <lastmod>2017-08-17T11:41:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/string-in-python2-vs-python3/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/symbolic-links.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/symbolic-links/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/tdd-with-django-at-skills-matter.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/tdd-with-django-at-skills-matter/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/technical-debt.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/the-watch-command.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/the-watch-command/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/tipue-search.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/tipue-search/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/unresponsive-process.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/unresponsive-process/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/using-enum-in-python.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/using-enum-in-python/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/using-pip-with-different-python-versions.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/using-pip-with-different-python-versions/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/version-control-etc-with-etckeeper.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/version-control-etc-with-etckeeper/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/vim.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/posts/vim/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/vnc.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
-  <loc>http://mattchoplin.com/src/2014/index.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <loc>http://mattchoplin.com/posts/vnc/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/src/</loc>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/src/2014/</loc>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/src/archive.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/src/cache/posts/jupyter-notebook-basics.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/src/cache/posts/trapezoid.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/src/categories/</loc>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/src/categories/blog.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
- </url>
- <url>
-  <loc>http://mattchoplin.com/src/categories/index.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/src/categories/nikola.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
-  <loc>http://mattchoplin.com/src/galleries/index.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <loc>http://mattchoplin.com/src/galleries/</loc>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
-  <loc>http://mattchoplin.com/src/index.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <loc>http://mattchoplin.com/src/output/</loc>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
-  <loc>http://mattchoplin.com/src/output/2014/index.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <loc>http://mattchoplin.com/src/output/2014/</loc>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/src/output/404.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/src/output/archive.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/src/output/categories/</loc>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/src/output/categories/blog.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
- </url>
- <url>
-  <loc>http://mattchoplin.com/src/output/categories/index.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/src/output/categories/nikola.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
-  <loc>http://mattchoplin.com/src/output/galleries/index.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <loc>http://mattchoplin.com/src/output/galleries/</loc>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
-  <loc>http://mattchoplin.com/src/output/index.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <loc>http://mattchoplin.com/src/output/listings/</loc>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/src/output/listings/hello.py.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
- </url>
- <url>
-  <loc>http://mattchoplin.com/src/output/listings/index.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/src/output/posts/blog-creation.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/src/output/posts/openerp-changes-its-name-to-odoo.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/src/output/stories/404.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/src/posts/blog-creation.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/stories/404.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/stories/404/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/stories/django-tutorials.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/stories/django-tutorials/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/stories/talks.html</loc>
-  <lastmod>2017-08-09T15:36:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/stories/talks/</loc>
+  <lastmod>2019-06-07T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/tipue_search.html</loc>
-  <lastmod>2017-06-17T08:05:00Z</lastmod>
+  <lastmod>2019-06-07T08:44:00Z</lastmod>
  </url>
 </urlset>

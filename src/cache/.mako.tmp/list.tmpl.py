@@ -5,12 +5,12 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1502970141.8912494
+_modified_time = 1559901628.0315154
 _enable_loop = True
-_template_filename = '/home/matt/PycharmProjects/nikola/venv/lib/python3.5/site-packages/nikola/data/themes/base/templates/list.tmpl'
+_template_filename = '/home/mchoplin/projects/matthieuchoplin.github.io/nikola/lib/python3.6/site-packages/nikola/data/themes/base/templates/list.tmpl'
 _template_uri = 'list.tmpl'
 _source_encoding = 'utf-8'
-_exports = ['content']
+_exports = ['extra_head', 'content']
 
 
 def _mako_get_namespace(context, name):
@@ -20,11 +20,11 @@ def _mako_get_namespace(context, name):
         _mako_generate_namespaces(context)
         return context.namespaces[(__name__, name)]
 def _mako_generate_namespaces(context):
-    ns = runtime.TemplateNamespace('feeds_translations', context._clean_inheritance_tokens(), templateuri='feeds_translations_helper.tmpl', callables=None,  calling_uri=_template_uri)
-    context.namespaces[(__name__, 'feeds_translations')] = ns
-
     ns = runtime.TemplateNamespace('archive_nav', context._clean_inheritance_tokens(), templateuri='archive_navigation_helper.tmpl', callables=None,  calling_uri=_template_uri)
     context.namespaces[(__name__, 'archive_nav')] = ns
+
+    ns = runtime.TemplateNamespace('feeds_translations', context._clean_inheritance_tokens(), templateuri='feeds_translations_helper.tmpl', callables=None,  calling_uri=_template_uri)
+    context.namespaces[(__name__, 'feeds_translations')] = ns
 
 def _mako_inherit(template, context):
     _mako_generate_namespaces(context)
@@ -34,18 +34,27 @@ def render_body(context,**pageargs):
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         _import_ns = {}
-        _mako_get_namespace(context, 'feeds_translations')._populate(_import_ns, ['*'])
         _mako_get_namespace(context, 'archive_nav')._populate(_import_ns, ['*'])
+        _mako_get_namespace(context, 'feeds_translations')._populate(_import_ns, ['*'])
         title = _import_ns.get('title', context.get('title', UNDEFINED))
-        items = _import_ns.get('items', context.get('items', UNDEFINED))
-        feeds_translations = _mako_get_namespace(context, 'feeds_translations')
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
-        archive_nav = _mako_get_namespace(context, 'archive_nav')
         def content():
             return render_content(context._locals(__M_locals))
+        def extra_head():
+            return render_extra_head(context._locals(__M_locals))
+        items = _import_ns.get('items', context.get('items', UNDEFINED))
+        archive_nav = _mako_get_namespace(context, 'archive_nav')
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        kind = _import_ns.get('kind', context.get('kind', UNDEFINED))
+        has_no_feeds = _import_ns.get('has_no_feeds', context.get('has_no_feeds', UNDEFINED))
+        feeds_translations = _mako_get_namespace(context, 'feeds_translations')
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n')
+        __M_writer('\n\n')
+        if 'parent' not in context._data or not hasattr(context._data['parent'], 'extra_head'):
+            context['self'].extra_head(**pageargs)
+        
+
         __M_writer('\n\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
             context['self'].content(**pageargs)
@@ -57,17 +66,38 @@ def render_body(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
+def render_extra_head(context,**pageargs):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        _import_ns = {}
+        _mako_get_namespace(context, 'archive_nav')._populate(_import_ns, ['*'])
+        _mako_get_namespace(context, 'feeds_translations')._populate(_import_ns, ['*'])
+        def extra_head():
+            return render_extra_head(context)
+        kind = _import_ns.get('kind', context.get('kind', UNDEFINED))
+        has_no_feeds = _import_ns.get('has_no_feeds', context.get('has_no_feeds', UNDEFINED))
+        feeds_translations = _mako_get_namespace(context, 'feeds_translations')
+        __M_writer = context.writer()
+        __M_writer('\n    ')
+        __M_writer(str(feeds_translations.head(kind=kind, rss_override=False, has_no_feeds=has_no_feeds)))
+        __M_writer('\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         _import_ns = {}
-        _mako_get_namespace(context, 'feeds_translations')._populate(_import_ns, ['*'])
         _mako_get_namespace(context, 'archive_nav')._populate(_import_ns, ['*'])
+        _mako_get_namespace(context, 'feeds_translations')._populate(_import_ns, ['*'])
         title = _import_ns.get('title', context.get('title', UNDEFINED))
         items = _import_ns.get('items', context.get('items', UNDEFINED))
         feeds_translations = _mako_get_namespace(context, 'feeds_translations')
-        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
         archive_nav = _mako_get_namespace(context, 'archive_nav')
+        messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
+        kind = _import_ns.get('kind', context.get('kind', UNDEFINED))
         def content():
             return render_content(context)
         __M_writer = context.writer()
@@ -76,7 +106,7 @@ def render_content(context,**pageargs):
         __M_writer('</h1>\n    </header>\n    ')
         __M_writer(str(archive_nav.archive_navigation()))
         __M_writer('\n    ')
-        __M_writer(str(feeds_translations.translation_link()))
+        __M_writer(str(feeds_translations.translation_link(kind)))
         __M_writer('\n')
         if items:
             __M_writer('    <ul class="postlist">\n')
@@ -103,6 +133,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"uri": "list.tmpl", "filename": "/home/matt/PycharmProjects/nikola/venv/lib/python3.5/site-packages/nikola/data/themes/base/templates/list.tmpl", "source_encoding": "utf-8", "line_map": {"96": 23, "74": 6, "75": 9, "76": 9, "77": 11, "78": 11, "79": 12, "80": 12, "81": 13, "82": 14, "83": 15, "84": 16, "85": 16, "86": 16, "23": 4, "88": 16, "89": 17, "26": 3, "91": 18, "92": 18, "90": 18, "94": 22, "95": 23, "32": 0, "97": 23, "98": 25, "104": 98, "93": 21, "47": 2, "48": 3, "49": 4, "54": 26, "87": 16, "60": 6}}
+{"filename": "/home/mchoplin/projects/matthieuchoplin.github.io/nikola/lib/python3.6/site-packages/nikola/data/themes/base/templates/list.tmpl", "uri": "list.tmpl", "source_encoding": "utf-8", "line_map": {"23": 3, "26": 4, "32": 0, "51": 2, "52": 3, "53": 4, "58": 8, "63": 30, "69": 6, "81": 6, "82": 7, "83": 7, "89": 10, "104": 10, "105": 13, "106": 13, "107": 15, "108": 15, "109": 16, "110": 16, "111": 17, "112": 18, "113": 19, "114": 20, "115": 20, "116": 20, "117": 20, "118": 20, "119": 21, "120": 22, "121": 22, "122": 22, "123": 25, "124": 26, "125": 27, "126": 27, "127": 27, "128": 29, "134": 128}}
 __M_END_METADATA
 """

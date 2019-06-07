@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Standing on the shoulders of giants (Posts about grep)</title><link>http://mattchoplin.com/</link><description></description><atom:link href="http://mattchoplin.com/categories/grep.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sat, 17 Jun 2017 08:26:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Grep aliases</title><link>http://mattchoplin.com/posts/grep-aliases.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;In .bashrc&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# recursive search in files&lt;/span&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-3"&gt;&lt;/a&gt;&lt;span class="k"&gt;function&lt;/span&gt; grp &lt;span class="o"&gt;{&lt;/span&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-5"&gt;&lt;/a&gt;    &lt;span class="nv"&gt;GREP_OPTIONS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"-rI --color --exclude-dir=\.bzr --exclude-dir=\.git --exclude-dir=\.hg --exclude-dir=\.svn --exclude=tags &lt;/span&gt;&lt;span class="nv"&gt;$GREP_OPTIONS&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; grep &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$@&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-6"&gt;&lt;/a&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-7"&gt;&lt;/a&gt;&lt;span class="o"&gt;}&lt;/span&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-8"&gt;&lt;/a&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-9"&gt;&lt;/a&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-10"&gt;&lt;/a&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-11"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# recursive search in Python source&lt;/span&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-12"&gt;&lt;/a&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-13"&gt;&lt;/a&gt;&lt;span class="k"&gt;function&lt;/span&gt; grpy &lt;span class="o"&gt;{&lt;/span&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-14"&gt;&lt;/a&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-15"&gt;&lt;/a&gt;  &lt;span class="nv"&gt;GREP_OPTIONS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"--exclude-dir=build --exclude-dir=dist --include=*.py &lt;/span&gt;&lt;span class="nv"&gt;$GREP_OPTIONS&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; grp &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$@&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-16"&gt;&lt;/a&gt;
-&lt;a name="rest_code_02818fa1035a4a5e9c53c1a0b161c910-17"&gt;&lt;/a&gt;&lt;span class="o"&gt;}&lt;/span&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Standing on the shoulders of giants (Posts about grep)</title><link>http://mattchoplin.com/</link><description></description><atom:link href="http://mattchoplin.com/categories/grep.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 07 Jun 2019 09:55:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Grep aliases</title><link>http://mattchoplin.com/posts/grep-aliases/</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;p&gt;In .bashrc&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_b1dfdd1da8b94e1493d6105d62dc4b75-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# recursive search in files&lt;/span&gt;
+&lt;a name="rest_code_b1dfdd1da8b94e1493d6105d62dc4b75-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_b1dfdd1da8b94e1493d6105d62dc4b75-3"&gt;&lt;/a&gt;&lt;span class="k"&gt;function&lt;/span&gt; grp &lt;span class="o"&gt;{&lt;/span&gt;
+&lt;a name="rest_code_b1dfdd1da8b94e1493d6105d62dc4b75-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_b1dfdd1da8b94e1493d6105d62dc4b75-5"&gt;&lt;/a&gt;    &lt;span class="nv"&gt;GREP_OPTIONS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"-rI --color --exclude-dir=\.bzr --exclude-dir=\.git --exclude-dir=\.hg --exclude-dir=\.svn --exclude=tags &lt;/span&gt;&lt;span class="nv"&gt;$GREP_OPTIONS&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; grep &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$@&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;a name="rest_code_b1dfdd1da8b94e1493d6105d62dc4b75-6"&gt;&lt;/a&gt;
+&lt;a name="rest_code_b1dfdd1da8b94e1493d6105d62dc4b75-7"&gt;&lt;/a&gt;&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;a name="rest_code_b1dfdd1da8b94e1493d6105d62dc4b75-8"&gt;&lt;/a&gt;
+&lt;a name="rest_code_b1dfdd1da8b94e1493d6105d62dc4b75-9"&gt;&lt;/a&gt;
+&lt;a name="rest_code_b1dfdd1da8b94e1493d6105d62dc4b75-10"&gt;&lt;/a&gt;
+&lt;a name="rest_code_b1dfdd1da8b94e1493d6105d62dc4b75-11"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# recursive search in Python source&lt;/span&gt;
+&lt;a name="rest_code_b1dfdd1da8b94e1493d6105d62dc4b75-12"&gt;&lt;/a&gt;
+&lt;a name="rest_code_b1dfdd1da8b94e1493d6105d62dc4b75-13"&gt;&lt;/a&gt;&lt;span class="k"&gt;function&lt;/span&gt; grpy &lt;span class="o"&gt;{&lt;/span&gt;
+&lt;a name="rest_code_b1dfdd1da8b94e1493d6105d62dc4b75-14"&gt;&lt;/a&gt;
+&lt;a name="rest_code_b1dfdd1da8b94e1493d6105d62dc4b75-15"&gt;&lt;/a&gt;  &lt;span class="nv"&gt;GREP_OPTIONS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"--exclude-dir=build --exclude-dir=dist --include=*.py &lt;/span&gt;&lt;span class="nv"&gt;$GREP_OPTIONS&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; grp &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$@&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;a name="rest_code_b1dfdd1da8b94e1493d6105d62dc4b75-16"&gt;&lt;/a&gt;
+&lt;a name="rest_code_b1dfdd1da8b94e1493d6105d62dc4b75-17"&gt;&lt;/a&gt;&lt;span class="o"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;Use:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_a0650bfc6c174fdd9dde494e8ae63430-1"&gt;&lt;/a&gt;$ grp WORD .
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_443b7abc5df143068de2f8a75b59bf1f-1"&gt;&lt;/a&gt;$ grp WORD .
 &lt;/pre&gt;&lt;p&gt;Or&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_f1a73ad939fc4553981c097deba43ad2-1"&gt;&lt;/a&gt;$ grpy to just search in python files
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_4017917c5f864f0fb03d36b363a26815-1"&gt;&lt;/a&gt;$ grpy to just search in python files
 &lt;/pre&gt;&lt;p&gt;Then reload bashrc with:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_f6f070df12bd41a5aa230fbbc37ba4fe-1"&gt;&lt;/a&gt;$ . ~/.bashrc
-&lt;/pre&gt;&lt;p&gt;Thank you JB!! (&lt;a class="reference external" href="http://tartley.com/"&gt;http://tartley.com/&lt;/a&gt;)&lt;/p&gt;&lt;/div&gt;</description><category>bash</category><category>grep</category><guid>http://mattchoplin.com/posts/grep-aliases.html</guid><pubDate>Fri, 10 Oct 2014 09:31:27 GMT</pubDate></item></channel></rss>
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_0b9149562aab42e2b30227721b32df8a-1"&gt;&lt;/a&gt;$ . ~/.bashrc
+&lt;/pre&gt;&lt;p&gt;Thank you JB!! (&lt;a class="reference external" href="http://tartley.com/"&gt;http://tartley.com/&lt;/a&gt;)&lt;/p&gt;&lt;/div&gt;</description><category>bash</category><category>grep</category><guid>http://mattchoplin.com/posts/grep-aliases/</guid><pubDate>Fri, 10 Oct 2014 09:31:27 GMT</pubDate></item></channel></rss>

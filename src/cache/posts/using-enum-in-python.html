@@ -1,11 +1,17 @@
-<pre class="code bash"><a name="rest_code_4b0967d1bc054be7a680df165d7ccc5c-1"></a>pip install enum34
-</pre><pre class="code python"><a name="rest_code_b0a3194a7b0d4b01ae3150d30074adc8-1"></a><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
-<a name="rest_code_b0a3194a7b0d4b01ae3150d30074adc8-2"></a><span class="n">Animal</span> <span class="o">=</span> <span class="n">enum</span><span class="p">(</span><span class="s1">&#39;Animal&#39;</span><span class="p">,</span> <span class="s1">&#39;ant bee cat dog&#39;</span><span class="p">)</span>
+<div class="section" id="install-enum-module-prior-to-python-3-4">
+<h1>Install enum module prior to python 3.4</h1>
+<pre class="code bash"><a name="rest_code_bd2cfb01f6e94e9597e825fec4241b41-1"></a>pip install enum34
+</pre><div class="section" id="example">
+<h2>Example:</h2>
+<pre class="code python"><a name="rest_code_9e66ca8d7f4b4b2981471e5a714ebb24-1"></a><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<a name="rest_code_9e66ca8d7f4b4b2981471e5a714ebb24-2"></a><span class="n">Animal</span> <span class="o">=</span> <span class="n">enum</span><span class="p">(</span><span class="s1">&#39;Animal&#39;</span><span class="p">,</span> <span class="s1">&#39;ant bee cat dog&#39;</span><span class="p">)</span>
 </pre><p>or equivalently:</p>
-<pre class="code python"><a name="rest_code_7bfcb6f8d5ab4310812c11bcaff0aaec-1"></a><span class="k">class</span> <span class="nc">Animals</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
-<a name="rest_code_7bfcb6f8d5ab4310812c11bcaff0aaec-2"></a>    <span class="n">ant</span> <span class="o">=</span> <span class="mi">1</span>
-<a name="rest_code_7bfcb6f8d5ab4310812c11bcaff0aaec-3"></a>    <span class="n">bee</span> <span class="o">=</span> <span class="mi">2</span>
-<a name="rest_code_7bfcb6f8d5ab4310812c11bcaff0aaec-4"></a>    <span class="n">cat</span> <span class="o">=</span> <span class="mi">3</span>
-<a name="rest_code_7bfcb6f8d5ab4310812c11bcaff0aaec-5"></a>    <span class="n">dog</span> <span class="o">=</span> <span class="mi">4</span>
+<pre class="code python"><a name="rest_code_a025eb52a2104e8883e8aa08a215dc57-1"></a><span class="k">class</span> <span class="nc">Animals</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<a name="rest_code_a025eb52a2104e8883e8aa08a215dc57-2"></a>    <span class="n">ant</span> <span class="o">=</span> <span class="mi">1</span>
+<a name="rest_code_a025eb52a2104e8883e8aa08a215dc57-3"></a>    <span class="n">bee</span> <span class="o">=</span> <span class="mi">2</span>
+<a name="rest_code_a025eb52a2104e8883e8aa08a215dc57-4"></a>    <span class="n">cat</span> <span class="o">=</span> <span class="mi">3</span>
+<a name="rest_code_a025eb52a2104e8883e8aa08a215dc57-5"></a>    <span class="n">dog</span> <span class="o">=</span> <span class="mi">4</span>
 </pre><p>Source: <a class="reference external" href="http://stackoverflow.com/questions/36932/how-can-i-represent-an-enum-in-python">http://stackoverflow.com/questions/36932/how-can-i-represent-an-enum-in-python</a></p>
 <p><a class="reference external" href="https://docs.python.org/3/library/enum.html">https://docs.python.org/3/library/enum.html</a></p>
+</div>
+</div>

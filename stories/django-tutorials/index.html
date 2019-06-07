@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Django tutorials | Standing on the shoulders of giants</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="http://mattchoplin.com/stories/django-tutorials/">
+<link rel="icon" href="../../favicon-16x16.png" sizes="16x16">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" type="text/css" href="../../assets/css/tipuesearch.css">
+</head>
+<body>
+<div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 20px;"></div>
+
+
+
+    
+
+    <meta name="author" content="Matthieu Choplin">
+<meta property="og:site_name" content="Standing on the shoulders of giants">
+<meta property="og:title" content="Django tutorials">
+<meta property="og:url" content="http://mattchoplin.com/stories/django-tutorials/">
+<meta property="og:description" content="We are going to create a django project that will be version controlled with git.
+
+Create a git repository
+Make sure that git is installed with:
+$ sudo apt-get install git
+Then you can initialise the ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2014-09-28T12:51:00+01:00">
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+    <span class="navbar-form pull-left">
+    <input type="text" id="tipue_search_input"></span>
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="http://mattchoplin.com/">
+
+            <span id="blog-title">Standing on the shoulders of giants</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item">
+    <a href="index.rst" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">Archive</a>
+                </li>
+<li class="nav-item">
+<a href="../../categories/index.html" class="nav-link">Tags</a>
+                </li>
+<li class="nav-item">
+<a href="../talks.html" class="nav-link">Talks</a>
+                </li>
+<li class="nav-item">
+<a href="../../rss.xml" class="nav-link">RSS feed</a>
+
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Django tutorials</a></h1>
+
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>We are going to create a django project that will be version controlled with <strong>git</strong>.</p>
+<div class="section" id="create-a-git-repository">
+<h2>Create a git repository</h2>
+<p>Make sure that git is installed with:</p>
+<pre class="code bash"><a name="rest_code_fc7257912f6d445d8e928183cf96ca67-1"></a>$ sudo apt-get install git
+</pre>
+<p>Then you can initialise the git repository</p>
+<pre class="code bash"><a name="rest_code_f1b3306a33f44f438462ead6cebdc43d-1"></a>$ mkdir myproject
+<a name="rest_code_f1b3306a33f44f438462ead6cebdc43d-2"></a>$ <span class="nb">cd</span> myproject
+<a name="rest_code_f1b3306a33f44f438462ead6cebdc43d-3"></a>$ git init
+</pre>
+</div>
+<div class="section" id="create-a-virtual-environment">
+<h2>Create a virtual environment</h2>
+<p>To do that you can use virtualenv</p>
+<pre class="code bash"><a name="rest_code_a28d6e78b09b49b7ba0d86f598b2355b-1"></a>$ sudo apt-get install virtualenv
+</pre>
+<p>virtualenv is a tool to create isolated Python environments.</p>
+<p>Source: <a class="reference external" href="http://virtualenv.readthedocs.org/">http://virtualenv.readthedocs.org/</a></p>
+<p>Within <em>myproject</em> created above, you can create the virtual environment with:</p>
+<pre class="code bash"><a name="rest_code_9e78328f3aab44bbaaff24b8dc17f611-1"></a>$ virtualenv venv
+</pre>
+<p>The directory structure within myproject should look like:</p>
+<pre class="code bash"><a name="rest_code_64a1fe71fba64b2cb3bbdfe781c0166f-1"></a>.
+<a name="rest_code_64a1fe71fba64b2cb3bbdfe781c0166f-2"></a>└── venv
+<a name="rest_code_64a1fe71fba64b2cb3bbdfe781c0166f-3"></a>    ├── bin
+<a name="rest_code_64a1fe71fba64b2cb3bbdfe781c0166f-4"></a>    ├── include
+<a name="rest_code_64a1fe71fba64b2cb3bbdfe781c0166f-5"></a>    ├── lib
+<a name="rest_code_64a1fe71fba64b2cb3bbdfe781c0166f-6"></a>    └── <span class="nb">local</span>
+</pre>
+<p>NB: you can easily view the directory structure with the command <em>tree</em> (sudo apt-get install tree).</p>
+<p>Then, we want to activate the virtual environment:</p>
+<pre class="code bash"><a name="rest_code_a609326e100d4565a0be5db50bfed16e-1"></a>$ <span class="nb">source</span> venv/bin/activate
+</pre>
+<p>NB: to quit the virtual environment, use <em>deactivate</em></p>
+</div>
+<div class="section" id="configure-the-virtual-environment">
+<h2>Configure the virtual environment</h2>
+<p>This environment will be used only for this project, we are going to install the dependancies within this environment so that we can easily reinstall them with pip and a requirement.txt file.</p>
+<p>If you do a <em>pip freeze</em>, you will see all the libraries installed.</p>
+<p>If you install a new library, you will see that it has been added if you do a <em>pip freeze</em> again.</p>
+<p>For instance, we want to install south, django-registration and stripe:</p>
+<pre class="code bash"><a name="rest_code_7577bfd51d5942c2afa677bdef93e0b6-1"></a>$ pip install <span class="nv">django</span><span class="o">==</span><span class="m">1</span>.5.1 south django-registration stripe
+<a name="rest_code_7577bfd51d5942c2afa677bdef93e0b6-2"></a>$ pip freeze
+<a name="rest_code_7577bfd51d5942c2afa677bdef93e0b6-3"></a>$ pip freeze
+<a name="rest_code_7577bfd51d5942c2afa677bdef93e0b6-4"></a><span class="nv">Django</span><span class="o">==</span><span class="m">1</span>.5.1
+<a name="rest_code_7577bfd51d5942c2afa677bdef93e0b6-5"></a><span class="nv">South</span><span class="o">==</span><span class="m">1</span>.0
+<a name="rest_code_7577bfd51d5942c2afa677bdef93e0b6-6"></a><span class="nv">argparse</span><span class="o">==</span><span class="m">1</span>.2.1
+<a name="rest_code_7577bfd51d5942c2afa677bdef93e0b6-7"></a>django-registration<span class="o">==</span><span class="m">1</span>.0
+<a name="rest_code_7577bfd51d5942c2afa677bdef93e0b6-8"></a><span class="nv">requests</span><span class="o">==</span><span class="m">2</span>.4.1
+<a name="rest_code_7577bfd51d5942c2afa677bdef93e0b6-9"></a><span class="nv">stripe</span><span class="o">==</span><span class="m">1</span>.19.0
+<a name="rest_code_7577bfd51d5942c2afa677bdef93e0b6-10"></a><span class="nv">wsgiref</span><span class="o">==</span><span class="m">0</span>.1.2
+</pre>
+<p>NB: you can precize the version you want. Here, we want to use django with the version 1.5.1</p>
+<p>We are going to keep the output of <em>git freeze</em> in a requirements.txt file:</p>
+<pre class="code bash"><a name="rest_code_d0f2c51728d54cd2a92dc893697dfce5-1"></a>$ pip freeze &gt; requirement.txt
+</pre>
+<p>That way, we can recreate the virtual environment easily with:</p>
+<pre class="code bash"><a name="rest_code_efd89fe064f9430bb0d7724a0139183d-1"></a>$ pip install -r requirement.txt
+</pre>
+<p>The virtual environment is going to take a lot of place in the git repository, so we are going to untrack it.</p>
+<p>To do that, we are going to create a <em>.gitignore</em> file.</p>
+<pre class="code bash"><a name="rest_code_237713b4f6924fac9d6a75151c310926-1"></a>$ cat .gitignore
+<a name="rest_code_237713b4f6924fac9d6a75151c310926-2"></a>venv
+</pre>
+</div>
+<div class="section" id="create-your-django-project">
+<h2>Create your django project</h2>
+<pre class="code bash"><a name="rest_code_d2c51805d8fa49b78974fceec1710961-1"></a>$ django-admin.py startproject myproject
+</pre>
+<p>Check that it is installed correctly by running the server:</p>
+<pre class="code bash"><a name="rest_code_a20d1e5459ad4869a89250bcf67124fe-1"></a>$ python manage.py runserver
+</pre>
+<p>and in your browser, go to the url <a class="reference external" href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></p>
+</div>
+</div>
+    </div>
+    
+
+</article><!--End of body content--><footer id="footer">
+            Contents © 2019         <a href="mailto:choplin.mat@gmail.com">Matthieu Choplin</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51792900-1', 'mattchoplin.com');
+  ga('send', 'pageview');
+
+</script><script src="../../assets/js/tipuesearch_set.js"></script><script src="../../assets/js/tipuesearch.js"></script><script>
+    $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch({
+            'mode': 'json',
+            'contentLocation': '/assets/js/tipuesearch_content.json',
+            'showUrl': false
+        });
+    });
+</script>
+</body>
+</html>

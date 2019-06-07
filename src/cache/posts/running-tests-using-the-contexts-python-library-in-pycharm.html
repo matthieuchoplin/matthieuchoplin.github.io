@@ -1,0 +1,27 @@
+<p>Using:</p>
+<ul class="simple">
+<li>Pycharm CE: <a class="reference external" href="https://www.jetbrains.com/pycharm/download/">https://www.jetbrains.com/pycharm/download/</a></li>
+<li>Contexts: <a class="reference external" href="https://github.com/benjamin-hodgson/Contexts">https://github.com/benjamin-hodgson/Contexts</a></li>
+</ul>
+<div class="section" id="create-a-new-external-tool">
+<h1>1) Create a new External Tool</h1>
+<p>In Pycharm, go to: Settings/Tools/External Tools</p>
+<p>Create a new Tool:</p>
+<blockquote>
+<ul class="simple">
+<li>&quot;Name&quot;: give a distinct name</li>
+<li>&quot;Program&quot;: give the path of where <em>run-contexts</em> is in the path where the python interpreter is located for the project (typically a virtual environment)</li>
+<li>&quot;Arguments&quot;: click on &quot;Insert Macro&quot; for this field and select &quot;SelectedText&quot;</li>
+<li>&quot;Working directory&quot;: Where the python project is</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="create-a-new-keymap">
+<h1>2) Create a new Keymap</h1>
+<p>In Pycharm, go to: Settings/Keymap</p>
+<p>Search for the &quot;Name&quot; you have defined in 1), select the &quot;External Tool&quot; that you have just created and double click to &quot;Add Keyboard Shortcut&quot;, eg &quot;Alt+r&quot;</p>
+</div>
+<div class="section" id="run-tests">
+<h1>3) Run tests</h1>
+<p>Now you can run the tests that you are currently on by pressing the Keymap you have defined in 2), eg &quot;Alt+r&quot; here</p>
+</div>

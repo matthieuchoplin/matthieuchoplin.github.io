@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Standing on the shoulders of giants (Posts about api)</title><link>http://mattchoplin.com/</link><description></description><atom:link href="http://mattchoplin.com/categories/cat_api.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sat, 17 Jun 2017 17:21:50 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Skype with Python</title><link>http://mattchoplin.com/posts/skype-with-python.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="create-the-virtualenv"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Standing on the shoulders of giants (Posts about api)</title><link>http://mattchoplin.com/</link><description></description><atom:link href="http://mattchoplin.com/categories/cat_api.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 07 Jun 2019 09:55:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Skype with Python</title><link>http://mattchoplin.com/posts/skype-with-python/</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="create-the-virtualenv"&gt;
 &lt;h2&gt;Create the virtualenv&lt;/h2&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_94f90709c4844e80aa9f18c1febebf3f-1"&gt;&lt;/a&gt;virtualenv skype_venv -p /usr/bin/python2.7 --system-site-packages
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_353844aeedbe4bc28e5938794edfe01a-1"&gt;&lt;/a&gt;virtualenv skype_venv -p /usr/bin/python2.7 --system-site-packages
 &lt;/pre&gt;&lt;p&gt;Note that I am specyfying the python2 interpreter, and using the system site packages (&lt;a class="reference external" href="https://virtualenv.pypa.io/en/stable/userguide/#the-system-site-packages-option/"&gt;the python libraries already installed&lt;/a&gt;).&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="install-the-skype4py-library"&gt;
 &lt;h2&gt;Install the Skype4Py library&lt;/h2&gt;
 &lt;p&gt;You can install it with pip.&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_c19a0439955d4072966fc6cd4fe9b1f0-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;source&lt;/span&gt; skype_venv/bin/activate
-&lt;a name="rest_code_c19a0439955d4072966fc6cd4fe9b1f0-2"&gt;&lt;/a&gt;pip install Skype4Py
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_fc57bf579ec24c6a933ffe9e7098998b-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;source&lt;/span&gt; skype_venv/bin/activate
+&lt;a name="rest_code_fc57bf579ec24c6a933ffe9e7098998b-2"&gt;&lt;/a&gt;pip install Skype4Py
 &lt;/pre&gt;&lt;p&gt;Note that this library allows us to control Skype client application. It means that you will need to have a skype client installed with which you will interact using python.&lt;/p&gt;
 &lt;p&gt;Source: &lt;a class="reference external" href="https://pypi.python.org/pypi/Skype4Py/"&gt;https://pypi.python.org/pypi/Skype4Py/&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="use-the-library"&gt;
 &lt;h2&gt;Use the library&lt;/h2&gt;
 &lt;p&gt;Open your skype client and launch a python prompt&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_8f02747714ce434daf9a2d21b5f76cc0-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; import Skype4Py
-&lt;a name="rest_code_8f02747714ce434daf9a2d21b5f76cc0-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span class="nv"&gt;skype&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; Skype4Py.Skype&lt;span class="o"&gt;()&lt;/span&gt;
-&lt;a name="rest_code_8f02747714ce434daf9a2d21b5f76cc0-3"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; skype.Attach&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_62102f104581450cabc94cd56cb34fe8-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; import Skype4Py
+&lt;a name="rest_code_62102f104581450cabc94cd56cb34fe8-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span class="nv"&gt;skype&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; Skype4Py.Skype&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_62102f104581450cabc94cd56cb34fe8-3"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; skype.Attach&lt;span class="o"&gt;()&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;At this point, the Skype client will ask for authorization:&lt;/p&gt;
 &lt;img alt="Skype4Py authorisation" class="well-large align-center" src="http://imgur.com/gKj46yz.png"&gt;
 &lt;p&gt;And now, you can for example get the list of all your contacts:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_b35c42f2c01141389c57e0e9dea15806-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; print &lt;span class="s1"&gt;'Your full name:'&lt;/span&gt;, skype.CurrentUser.FullName
-&lt;a name="rest_code_b35c42f2c01141389c57e0e9dea15806-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; print &lt;span class="s1"&gt;'Your contacts:'&lt;/span&gt;
-&lt;a name="rest_code_b35c42f2c01141389c57e0e9dea15806-3"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span class="k"&gt;for&lt;/span&gt; user in skype.Friends:
-&lt;a name="rest_code_b35c42f2c01141389c57e0e9dea15806-4"&gt;&lt;/a&gt;        print &lt;span class="s1"&gt;'    '&lt;/span&gt;, user.FullName
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_65b324f710674c73a24ae86da10a496f-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; print &lt;span class="s1"&gt;'Your full name:'&lt;/span&gt;, skype.CurrentUser.FullName
+&lt;a name="rest_code_65b324f710674c73a24ae86da10a496f-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; print &lt;span class="s1"&gt;'Your contacts:'&lt;/span&gt;
+&lt;a name="rest_code_65b324f710674c73a24ae86da10a496f-3"&gt;&lt;/a&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span class="k"&gt;for&lt;/span&gt; user in skype.Friends:
+&lt;a name="rest_code_65b324f710674c73a24ae86da10a496f-4"&gt;&lt;/a&gt;        print &lt;span class="s1"&gt;'    '&lt;/span&gt;, user.FullName
 &lt;/pre&gt;&lt;p&gt;To go further:&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://leakforums.net/thread-641974?tid=641974&amp;amp;&amp;amp;tid=641974&amp;amp;&amp;amp;pq=2"&gt;https://leakforums.net/thread-641974?tid=641974&amp;amp;&amp;amp;tid=641974&amp;amp;&amp;amp;pq=2&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://sinister.ly/Thread-Tutorial-Create-your-own-SkypeBOT"&gt;https://sinister.ly/Thread-Tutorial-Create-your-own-SkypeBOT&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://media.readthedocs.org/pdf/sevabot-skype-bot/latest/sevabot-skype-bot.pdf"&gt;https://media.readthedocs.org/pdf/sevabot-skype-bot/latest/sevabot-skype-bot.pdf&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>skype</category><guid>http://mattchoplin.com/posts/skype-with-python.html</guid><pubDate>Sat, 17 Jun 2017 09:28:07 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>skype</category><guid>http://mattchoplin.com/posts/skype-with-python/</guid><pubDate>Sat, 17 Jun 2017 09:28:07 GMT</pubDate></item></channel></rss>

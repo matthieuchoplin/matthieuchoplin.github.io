@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Standing on the shoulders of giants (Posts about sysadmin symlinks)</title><link>http://mattchoplin.com/</link><description></description><atom:link href="http://mattchoplin.com/categories/sysadmin-symlinks.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 30 Jun 2017 11:43:30 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Symbolic links</title><link>http://mattchoplin.com/posts/symbolic-links.html</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="creating-symlinks-symbolic-links"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Standing on the shoulders of giants (Posts about sysadmin symlinks)</title><link>http://mattchoplin.com/</link><description></description><atom:link href="http://mattchoplin.com/categories/sysadmin-symlinks.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 07 Jun 2019 09:55:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Symbolic links</title><link>http://mattchoplin.com/posts/symbolic-links/</link><dc:creator>Matthieu Choplin</dc:creator><description>&lt;div&gt;&lt;div class="section" id="creating-symlinks-symbolic-links"&gt;
 &lt;h2&gt;Creating symlinks (symbolic links)&lt;/h2&gt;
 &lt;p&gt;If you want to symlink all file in a directory to an other directory:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_880f46641bfd4978a650c05f5262d72e-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$ln&lt;/span&gt; -s /path_to_source_directory/* /path_to_destination_directory/
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_b8ce4acf99c549e98af522096ed457e0-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$ln&lt;/span&gt; -s /path_to_source_directory/* /path_to_destination_directory/
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="dealing-with-broken-symlinks"&gt;
 &lt;h2&gt;Dealing with broken symlinks&lt;/h2&gt;
 &lt;p&gt;Find broken symlinks and delete them&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_1d3e676746de4d11910d8de4632980f0-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$find&lt;/span&gt; -L /path/to/check -type l -delete
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_ab0d6c6a80ec4e5e98359c995924b56e-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$find&lt;/span&gt; -L /path/to/check -type l -delete
 &lt;/pre&gt;&lt;p&gt;List them&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_61ba8e0e060342dd848854885b186a82-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$find&lt;/span&gt; -L /path -type l
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_43fed86998624e539775e46de09c0235-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$find&lt;/span&gt; -L /path -type l
 &lt;/pre&gt;&lt;p&gt;If you want to delete them with confirmation first, do&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_c4db2da95d644b85b91d575855d5cbaf-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$find&lt;/span&gt; -L /path -type l -exec rm -i &lt;span class="o"&gt;{}&lt;/span&gt; +
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_1ff88c7997094e108015a23a1245597f-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$find&lt;/span&gt; -L /path -type l -exec rm -i &lt;span class="o"&gt;{}&lt;/span&gt; +
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="creating-symlinks"&gt;
 &lt;h2&gt;Creating symlinks&lt;/h2&gt;
 &lt;p&gt;First cd into your directory and then indicate where your symlinks will point&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_e8b5ac87d25f46ecab28fe11f05824ba-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$find&lt;/span&gt; /directory_where_yout_symlinks_are/ -maxdepth &lt;span class="m"&gt;1&lt;/span&gt; -type d -exec ln -s  &lt;span class="o"&gt;{}&lt;/span&gt; &lt;span class="se"&gt;\;&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_2095e47bc525488d87d82e121b46be16-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$find&lt;/span&gt; /directory_where_yout_symlinks_are/ -maxdepth &lt;span class="m"&gt;1&lt;/span&gt; -type d -exec ln -s  &lt;span class="o"&gt;{}&lt;/span&gt; &lt;span class="se"&gt;\;&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;If you want to update your existing symlinks, use the &lt;strong&gt;-f&lt;/strong&gt; option such as:&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_504813c32a1b4672bf2cef27670db089-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$find&lt;/span&gt; /home/matt/workspace/unified_repos/erp_core/modules/ -maxdepth &lt;span class="m"&gt;1&lt;/span&gt; -type d -exec ln -sf  &lt;span class="o"&gt;{}&lt;/span&gt; &lt;span class="se"&gt;\;&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_112ee462eed8457295e2c44149e3061b-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$find&lt;/span&gt; /home/matt/workspace/unified_repos/erp_core/modules/ -maxdepth &lt;span class="m"&gt;1&lt;/span&gt; -type d -exec ln -sf  &lt;span class="o"&gt;{}&lt;/span&gt; &lt;span class="se"&gt;\;&lt;/span&gt;
 &lt;/pre&gt;&lt;div class="line-block"&gt;
 &lt;div class="line"&gt;&lt;br&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>sysadmin symlinks</category><guid>http://mattchoplin.com/posts/symbolic-links.html</guid><pubDate>Wed, 04 Jun 2014 21:38:08 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>sysadmin symlinks</category><guid>http://mattchoplin.com/posts/symbolic-links/</guid><pubDate>Wed, 04 Jun 2014 21:38:08 GMT</pubDate></item></channel></rss>

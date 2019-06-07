@@ -1,29 +1,29 @@
 <p>Controlling the brightness of your screen not working after installing Ubuntu on a laptop equipped with an Intel graphics card?</p>
 <p>You can solve that through the Xorg configuration.</p>
 <p>First, look at your PCI bus, in order to identify your card:</p>
-<pre class="code bash"><a name="rest_code_dc01983e85714c2988c066c73141537c-1"></a>$ lspci <span class="p">|</span> grep -i vga
-<a name="rest_code_dc01983e85714c2988c066c73141537c-2"></a>
-<a name="rest_code_dc01983e85714c2988c066c73141537c-3"></a><span class="m">00</span>:02.0 VGA compatible controller: Intel Corporation 2nd Generation Core Processor Family Integrated Graphics Controller <span class="o">(</span>rev <span class="m">09</span><span class="o">)</span>
+<pre class="code bash"><a name="rest_code_889fa2e14e0946e58a8f20a24d452759-1"></a>$ lspci <span class="p">|</span> grep -i vga
+<a name="rest_code_889fa2e14e0946e58a8f20a24d452759-2"></a>
+<a name="rest_code_889fa2e14e0946e58a8f20a24d452759-3"></a><span class="m">00</span>:02.0 VGA compatible controller: Intel Corporation 2nd Generation Core Processor Family Integrated Graphics Controller <span class="o">(</span>rev <span class="m">09</span><span class="o">)</span>
 </pre><p>That's how it looks on my machine. I am interested in the Intel card, so I need to remember its bus id <em>00:02.0</em>.</p>
 <p>Next you need to create the config file:</p>
-<pre class="code bash"><a name="rest_code_e65060cc5da44c5d945bcda022d74498-1"></a>$ sudo nano /usr/share/X11/xorg.conf.d/20-intel.conf
+<pre class="code bash"><a name="rest_code_1ceb3e06ce164467aa761f72402ae0a0-1"></a>$ sudo nano /usr/share/X11/xorg.conf.d/20-intel.conf
 </pre><p>and put the following content in, which will tell the xorg driver to use intel_backlight:</p>
-<pre class="code bash"><a name="rest_code_eb40f3288296427a99fb805dac266193-1"></a>Section <span class="s2">&quot;Device&quot;</span>
-<a name="rest_code_eb40f3288296427a99fb805dac266193-2"></a>        Identifier      <span class="s2">&quot;card0&quot;</span>
-<a name="rest_code_eb40f3288296427a99fb805dac266193-3"></a>        Driver          <span class="s2">&quot;intel&quot;</span>
-<a name="rest_code_eb40f3288296427a99fb805dac266193-4"></a>        Option          <span class="s2">&quot;Backlight&quot;</span> <span class="s2">&quot;intel_backlight&quot;</span>
-<a name="rest_code_eb40f3288296427a99fb805dac266193-5"></a>        BusID           <span class="s2">&quot;PCI:0:2:0&quot;</span>
-<a name="rest_code_eb40f3288296427a99fb805dac266193-6"></a>EndSection
+<pre class="code bash"><a name="rest_code_9a3596a6e224457fac435d3382ad9338-1"></a>Section <span class="s2">&quot;Device&quot;</span>
+<a name="rest_code_9a3596a6e224457fac435d3382ad9338-2"></a>        Identifier      <span class="s2">&quot;card0&quot;</span>
+<a name="rest_code_9a3596a6e224457fac435d3382ad9338-3"></a>        Driver          <span class="s2">&quot;intel&quot;</span>
+<a name="rest_code_9a3596a6e224457fac435d3382ad9338-4"></a>        Option          <span class="s2">&quot;Backlight&quot;</span> <span class="s2">&quot;intel_backlight&quot;</span>
+<a name="rest_code_9a3596a6e224457fac435d3382ad9338-5"></a>        BusID           <span class="s2">&quot;PCI:0:2:0&quot;</span>
+<a name="rest_code_9a3596a6e224457fac435d3382ad9338-6"></a>EndSection
 </pre><p>Please note that the BusID should match.</p>
 <p>Save, restart your Xorg:</p>
 <ul class="simple">
 <li>find which display manager your ubuntu is having with following command:</li>
 </ul>
-<pre class="code bash"><a name="rest_code_f69f7017d2ae446bad0045062b12a1da-1"></a>$ cat /etc/X11/default-display-manager
+<pre class="code bash"><a name="rest_code_eb2308b9668a4af3b3abd02626fe4336-1"></a>$ cat /etc/X11/default-display-manager
 </pre><ul class="simple">
 <li>and, for Ubuntu with LightDM:</li>
 </ul>
-<pre class="code bash"><a name="rest_code_b16d78ac9227402abf9463983d5dcf08-1"></a>$ sudo restart lightdm
+<pre class="code bash"><a name="rest_code_98da5a5b5c6c49e59233d0f0e4d26ce1-1"></a>$ sudo restart lightdm
 </pre><p>It should then work.</p>
 <p>Source:
 - <a class="reference external" href="https://float-middle.com/screen-brightness-on-intel-ubuntu-14-04/">https://float-middle.com/screen-brightness-on-intel-ubuntu-14-04/</a>
