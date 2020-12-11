@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: mattchoplin.com
+Token: 2b231b0e5fb4813d02841c40dcd14fc863d4fc8d478a0d0e85ccfe9f4b0d4010

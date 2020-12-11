@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
 <link rel="canonical" href="http://mattchoplin.com/2017/">
 <link rel="icon" href="../favicon-16x16.png" sizes="16x16">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" type="text/css" href="../assets/css/tipuesearch.css">
@@ -47,7 +47,7 @@
             </div>
         </div>
           <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
-            <a class="navbar-brand blog-header-logo text-dark" href="http://mattchoplin.com/">
+            <a class="navbar-brand blog-header-logo text-dark" href="../">
 
             <span id="blog-title">Standing on the shoulders of giants</span>
         </a>
@@ -83,6 +83,7 @@
         <!--Body content-->
         
         
+        
 <article class="listpage"><header><h1>Posts for year 2017</h1>
     </header><ul class="postlist">
 <li>
@@ -110,7 +111,8 @@
 <time class="listdate" datetime="2017-04-04T12:43:16+01:00" title="2017-04-04 12:43">2017-04-04 12:43</time><a href="../posts/abstraction-in-python/" class="listtitle">Abstraction in python</a>
 </li>
     </ul></article><!--End of body content--><footer id="footer">
-            Contents © 2019         <a href="mailto:choplin.mat@gmail.com">Matthieu Choplin</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2020         <a href="mailto:choplin.mat@gmail.com">Matthieu Choplin</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
+            
             
         </footer>
 </div>
@@ -120,9 +122,7 @@
         <script src="../assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
-        captions: function(element) {
-            return element.getElementsByTagName('img')[0].alt;
-    }});
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
     </script><script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

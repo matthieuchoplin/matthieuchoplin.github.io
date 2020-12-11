@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>http://mattchoplin.com/</loc>
-  <lastmod>2019-06-07T09:55:00Z</lastmod>
+  <lastmod>2020-12-11T10:23:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/2014/</loc>
@@ -31,7 +31,7 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/archive.html</loc>
-  <lastmod>2019-06-07T09:55:00Z</lastmod>
+  <lastmod>2020-12-11T10:22:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/blog/</loc>
@@ -227,19 +227,19 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/index-1.html</loc>
-  <lastmod>2019-06-07T09:55:00Z</lastmod>
+  <lastmod>2020-12-11T10:17:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/index-2.html</loc>
-  <lastmod>2019-06-07T09:55:00Z</lastmod>
+  <lastmod>2020-12-11T10:17:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/index-3.html</loc>
-  <lastmod>2019-06-07T09:55:00Z</lastmod>
+  <lastmod>2020-12-11T10:17:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/index-4.html</loc>
-  <lastmod>2019-06-07T09:55:00Z</lastmod>
+  <lastmod>2020-12-11T10:22:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/listings/</loc>
@@ -247,23 +247,47 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/listings/hello.py.html</loc>
-  <lastmod>2019-06-07T09:55:00Z</lastmod>
+  <lastmod>2020-12-11T10:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/nikola/lib/python3.6/site-packages/nbconvert/tests/files/notebook1.html</loc>
+  <lastmod>2020-12-11T10:24:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/nikola/lib/python3.6/site-packages/notebook/templates/browser-open.html</loc>
-  <lastmod>2019-06-07T08:46:00Z</lastmod>
+  <lastmod>2020-12-11T10:24:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/nikola/lib/python3.6/site-packages/notebook/templates/page.html</loc>
-  <lastmod>2019-06-07T08:46:00Z</lastmod>
+  <lastmod>2020-12-11T10:24:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/nikola/lib/python3.6/site-packages/notebook/templates/view.html</loc>
-  <lastmod>2019-06-07T08:46:00Z</lastmod>
+  <lastmod>2020-12-11T10:24:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/nikola/lib/python3.6/site-packages/tornado/test/static/dir/</loc>
-  <lastmod>2019-06-07T08:46:00Z</lastmod>
+  <lastmod>2020-12-11T10:24:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/nikola/lib64/python3.6/site-packages/nbconvert/tests/files/notebook1.html</loc>
+  <lastmod>2020-12-11T10:24:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/nikola/lib64/python3.6/site-packages/notebook/templates/browser-open.html</loc>
+  <lastmod>2020-12-11T10:24:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/nikola/lib64/python3.6/site-packages/notebook/templates/page.html</loc>
+  <lastmod>2020-12-11T10:24:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/nikola/lib64/python3.6/site-packages/notebook/templates/view.html</loc>
+  <lastmod>2020-12-11T10:24:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://mattchoplin.com/nikola/lib64/python3.6/site-packages/tornado/test/static/dir/</loc>
+  <lastmod>2020-12-11T10:24:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/posts/</loc>
@@ -699,7 +723,7 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/src/</loc>
-  <lastmod>2019-06-07T08:44:00Z</lastmod>
+  <lastmod>2020-12-11T10:11:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/src/2014/</loc>
@@ -735,7 +759,7 @@
  </url>
  <url>
   <loc>http://mattchoplin.com/src/output/</loc>
-  <lastmod>2019-06-07T08:44:00Z</lastmod>
+  <lastmod>2020-12-11T10:11:00Z</lastmod>
  </url>
  <url>
   <loc>http://mattchoplin.com/src/output/2014/</loc>
