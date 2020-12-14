@@ -102,7 +102,7 @@ NAVIGATION_LINKS = {
 
 # Name of the theme to use.
 #THEME = "bootstrap3"
-THEME = "readable"
+THEME = "bootblog4"
 
 # Below this point, everything is optional
 
@@ -176,6 +176,7 @@ PAGES = (
 # Default is:
 # FILES_FOLDERS = {'files': '' }
 # Which means copy 'files' into 'output'
+FILES_FOLDERS = {'.well-know': 'output/.well-known'}
 
 # A mapping of languages to file-extensions that represent that language.
 # Feel free to add or delete extensions to any list, but don't add any new
@@ -726,7 +727,7 @@ BODY_END="""
 
 # If you hate "Filenames with Capital Letters and Spaces.md", you should
 # set this to true.
-UNSLUGIFY_TITLES = True
+FILE_METADATA_UNSLUGIFY_TITLES = True
 
 # Additional metadata that is added to a post when creating a new_post
 # ADDITIONAL_METADATA = {}
